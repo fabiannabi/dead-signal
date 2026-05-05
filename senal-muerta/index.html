@@ -1,24 +1,279 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Señal Muerta</title>
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Señal Muerta — Archivo Post-Emergencia</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+  :root {
+    --bg: #0a0a08;
+    --bg2: #0f0f0c;
+    --bg3: #141410;
+    --border: #2a2a22;
+    --border2: #3a3a2a;
+    --text: #c8c4a8;
+    --text2: #8a8670;
+    --text3: #5a5648;
+    --accent: #c8a84a;
+    --accent2: #8a6a2a;
+    --red: #8a3a2a;
+    --mono: 'Share Tech Mono', monospace;
+    --serif: 'Crimson Pro', Georgia, serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  .container {
+    max-width: 680px;
+    width: 100%;
+  }
+
+  .header-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .header-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .main-title {
+    font-family: var(--mono);
+    font-size: clamp(28px, 6vw, 52px);
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .main-subtitle {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+    margin-bottom: 48px;
+  }
+
+  .prologue {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text2);
+    font-weight: 300;
+    margin-bottom: 48px;
+    font-style: italic;
+    border-left: 2px solid var(--accent2);
+    padding-left: 20px;
+  }
+
+  .archive-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text3);
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 16px 20px;
+    margin-bottom: 48px;
+    line-height: 2;
+  }
+
+  .archive-info span {
+    color: var(--text2);
+  }
+
+  .redacted {
+    background: var(--text3);
+    color: transparent;
+    user-select: none;
+    padding: 0 4px;
+  }
+
+  .nav-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    margin-bottom: 48px;
+  }
+
+  .nav-item {
+    background: var(--bg2);
+    padding: 20px;
+    text-decoration: none;
+    transition: background 0.15s;
+    display: block;
+  }
+
+  .nav-item:hover {
+    background: var(--bg3);
+  }
+
+  .nav-item-code {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent2);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .nav-item-title {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .nav-item-desc {
+    font-size: 13px;
+    color: var(--text3);
+    font-style: italic;
+  }
+
+  .nav-item.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .nav-item.disabled .nav-item-code::after {
+    content: ' — PENDIENTE';
+    color: var(--red);
+  }
+
+  .footer-bar {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4a6a3a;
+    margin-right: 6px;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Señal Muerta</h1>
-    <nav>
-      <a href="personajes/fabian.html">Personajes</a>
-      <a href="bestiario/index.html">Bestiario</a>
-      <a href="cartografia/index.html">Cartografía</a>
-      <a href="cronologia/index.html">Cronología</a>
-    </nav>
-  </header>
-  <main>
-    <p>Bienvenido al archivo de Señal Muerta.</p>
-  </main>
-  <script src="js/main.js"></script>
+
+<div class="container">
+
+  <div class="header-label">Archivo de Recuperación Post-Emergencia</div>
+
+  <div class="main-title">SEÑAL MUERTA</div>
+  <div class="main-subtitle">// Crónicas de la Emergencia — Documentos recuperados</div>
+
+  <div class="prologue">
+    Lo que sigue es una compilación de documentos recuperados en los años posteriores al evento conocido internamente como la Emergencia. Los testimonios pertenecen a cinco individuos que se encontraban en la ciudad de Aguascalientes cuando ocurrió el colapso. Sus identidades han sido parcialmente redactadas según protocolo <span class="redacted">███</span>-C, aunque sus propios documentos las revelan con frecuencia.
+  </div>
+
+  <div class="archive-info">
+    CLASIFICACIÓN: <span>Clase C — Testimonial</span><br>
+    ORIGEN: <span>Aguascalientes, México</span><br>
+    PERÍODO CUBIERTO: <span>Días 1–<span class="redacted">███</span> post-Emergencia</span><br>
+    SUJETOS DOCUMENTADOS: <span>5 de 5 confirmados</span><br>
+    ESTADO DEL ARCHIVO: <span>Incompleto — actualización continua</span><br>
+    REDACTADO POR: <span>Comité de Preservación <span class="redacted">████████</span></span>
+  </div>
+
+  <div class="nav-grid">
+    <a href="personajes/fabian.html" class="nav-item">
+      <div class="nav-item-code">F-01 — Sujeto</div>
+      <div class="nav-item-title">Fabián</div>
+      <div class="nav-item-desc">Ing. Bioquímica / Programador — 4 capítulos</div>
+    </a>
+    <a href="personajes/felipe.html" class="nav-item">
+      <div class="nav-item-code">F-02 — Sujeto</div>
+      <div class="nav-item-title">Felipe</div>
+      <div class="nav-item-desc">Médico Urgenciólogo — 4 capítulos</div>
+    </a>
+    <a href="personajes/gaby.html" class="nav-item">
+      <div class="nav-item-code">F-03 — Sujeto</div>
+      <div class="nav-item-title">Gaby</div>
+      <div class="nav-item-desc">Médico Anestesiólogo — 1 capítulo</div>
+    </a>
+    <a href="personajes/aaron.html" class="nav-item disabled">
+      <div class="nav-item-code">F-04 — Sujeto</div>
+      <div class="nav-item-title">Aarón</div>
+      <div class="nav-item-desc">Ing. Químico — archivo en proceso</div>
+    </a>
+    <a href="personajes/carlos.html" class="nav-item">
+      <div class="nav-item-code">F-05 — Sujeto</div>
+      <div class="nav-item-title">Carlos</div>
+      <div class="nav-item-desc">Ing. Biomédico — 4 capítulos</div>
+    </a>
+    <a href="bestiario/index.html" class="nav-item">
+      <div class="nav-item-code">Sección II</div>
+      <div class="nav-item-title">Bestiario</div>
+      <div class="nav-item-desc">Criaturas documentadas — en construcción</div>
+    </a>
+    <a href="cartografia/index.html" class="nav-item disabled">
+      <div class="nav-item-code">Sección III</div>
+      <div class="nav-item-title">Cartografía</div>
+      <div class="nav-item-desc">Mapas de zona — pendiente</div>
+    </a>
+    <a href="cronologia/index.html" class="nav-item disabled">
+      <div class="nav-item-code">Sección IV</div>
+      <div class="nav-item-title">Cronología</div>
+      <div class="nav-item-desc">Línea de tiempo — pendiente</div>
+    </a>
+  </div>
+
+  <div class="footer-bar">
+    <span><span class="status-dot"></span>Archivo activo</span>
+    <span>Señal Muerta — Proyecto en desarrollo</span>
+    <span>Año <span class="redacted">████</span> p.E.</span>
+  </div>
+
+</div>
+
 </body>
 </html>
