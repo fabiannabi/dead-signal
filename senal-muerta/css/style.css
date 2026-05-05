@@ -1,0 +1,44 @@
+/* Estilos globales — Señal Muerta */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #0a0a0a;
+  color: #c8c8c8;
+  line-height: 1.6;
+}
+
+header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+nav a {
+  color: #888;
+  text-decoration: none;
+  margin-right: 1.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
