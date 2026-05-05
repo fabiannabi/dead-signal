@@ -13,6 +13,8 @@ dead-signal/
 ├── index.html                  ← Portada principal: grid de navegación a personajes y secciones
 ├── README.md
 ├── CLAUDE.md
+├── _incoming/                  ← Carpeta de entrada para contenido nuevo (ver flujo abajo)
+│   └── README.md
 └── senal-muerta/
     ├── css/
     │   └── style.css           ← Hoja de estilos compartida (usada por secciones temáticas)
@@ -109,24 +111,37 @@ Patrón: verbo + objeto, descripción breve y directa de lo que cambió.
 
 ## Flujo de trabajo para contenido nuevo
 
-Cuando el usuario entregue texto plano nuevo (un capítulo, entrada de personaje, criatura del bestiario, etc.):
+El contenido nuevo llega como archivos de texto en `_incoming/`. El usuario los genera en otra conversación de Claude y los deja ahí antes de pedir la integración.
 
-1. **Identificar qué página recibe el contenido** — ¿es un capítulo de personaje existente? ¿una nueva entrada del bestiario? ¿actualiza la portada?
-2. **Leer el archivo destino completo** antes de editar para entender el estado actual
-3. **Integrar el contenido** respetando:
+### Convención de nombres en `_incoming/`
+
+```
+personaje_nombre_capX.txt       ← capítulo de personaje
+bestiario_nombre-criatura.txt   ← entrada del bestiario
+cronologia_diaX.txt             ← entrada de cronología
+nota_descripcion.txt            ← cualquier otro contenido
+```
+
+### Pasos de integración
+
+1. **Leer el archivo en `_incoming/`** para entender el contenido a integrar
+2. **Identificar qué página recibe el contenido** — ¿capítulo de personaje existente? ¿bestiario? ¿portada?
+3. **Leer el archivo destino completo** antes de editar para entender el estado actual
+4. **Integrar el contenido** respetando:
    - La estructura HTML existente de esa página (tabs, bloques, versiones A/B)
    - Los nombres de clase ya usados (no inventar clases nuevas salvo que sean necesarias)
    - La paleta y tipografía definidas arriba
    - El tono: archivo documental post-emergencia, redacciones parcialmente censuradas
-4. **Si el personaje pasa de `disabled` a activo** en la portada, actualizar `index.html` quitando la clase `disabled` y actualizando el conteo de capítulos en `.nav-item-desc`
-5. **Verificar paths** — las rutas relativas varían según la profundidad del archivo
-6. **Commit** con el estilo documentado arriba
-7. **Push** a `origin main`
+5. **Si el personaje pasa de `disabled` a activo** en la portada, actualizar `index.html` quitando la clase `disabled` y actualizando el conteo de capítulos en `.nav-item-desc`
+6. **Verificar paths** — las rutas relativas varían según la profundidad del archivo
+7. **Commit** con el estilo documentado arriba — incluir solo los archivos del sitio, no el archivo de `_incoming/`
+8. **Push** a `origin main`
 
 ```bash
-git add <archivos modificados>
+git add <archivos modificados del sitio>
 git commit -m "descripción breve del cambio"
 git push
 ```
 
 No usar `git add -A` ni `git add .` — agregar solo los archivos que corresponden al cambio.
+Los archivos en `_incoming/` son materia prima; no se commitean junto con el contenido integrado.
