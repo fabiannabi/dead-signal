@@ -537,11 +537,11 @@ Los archivos de imagen y audio para fichas del bestiario llegan en `_incoming/` 
 
 **Audio** (`.mp3`):
 
-| Nombre limpio | Tipo de fuente | Loop |
-|---|---|---|
-| `vocal-normal-01.mp3`, `…-02.mp3`, `…-03.mp3` | Vocalizaciones en reposo / desplazamiento | Sí — `data-loop-delay="2500"` |
-| `vocal-agresivo-01.mp3`, `…-02.mp3` | Vocalizaciones de advertencia / carga | Sí — `data-loop-delay="2500"` |
-| `narrador-muestra-XX.mp3` | Voz narrada de laboratorio / análisis | No |
+| Nombre limpio | Tipo de fuente |
+|---|---|
+| `vocal-normal-01.mp3`, `…-02.mp3`, `…-03.mp3` | Vocalizaciones en reposo / desplazamiento |
+| `vocal-agresivo-01.mp3`, `…-02.mp3` | Vocalizaciones de advertencia / carga |
+| `narrador-muestra-XX.mp3` | Voz narrada de laboratorio / análisis |
 
 ### Mapeo de nombres generados → nombres limpios
 
@@ -621,22 +621,20 @@ Insertar dentro de `.doc-body`, antes del `</div>` que lo cierra, inmediatamente
         </div>
         <audio controls src="../assets/audio/bestiario/[slug]/narrador-muestra-17.mp3"></audio>
       </div>
-      <!-- Vocalizaciones normales: con data-loop-delay -->
       <div class="audio-item">
         <div class="audio-label">
           <span class="audio-tag">Vocalización normal</span>
           [Descripción — ej. "Frecuencia baja — reposo"]
         </div>
-        <audio controls src="../assets/audio/bestiario/[slug]/vocal-normal-01.mp3" data-loop-delay="2500"></audio>
+        <audio controls src="../assets/audio/bestiario/[slug]/vocal-normal-01.mp3"></audio>
         <div class="audio-damaged">// grabación con interferencia — recuperación parcial</div>
       </div>
-      <!-- Vocalizaciones agresivas: con data-loop-delay -->
       <div class="audio-item">
         <div class="audio-label">
           <span class="audio-tag">Vocalización agresiva</span>
           [Descripción — ej. "Advertencia — pre-carga"]
         </div>
-        <audio controls src="../assets/audio/bestiario/[slug]/vocal-agresivo-01.mp3" data-loop-delay="2500"></audio>
+        <audio controls src="../assets/audio/bestiario/[slug]/vocal-agresivo-01.mp3"></audio>
         <div class="audio-damaged">// archivo parcial — inicio corrompido</div>
       </div>
     </div>
@@ -659,14 +657,6 @@ Omitir bloques que no tengan archivo correspondiente (si no hay narrador, omitir
 | `.audio-tag` | Etiqueta de tipo en mayúsculas sobre el título |
 | `.audio-label` | Título descriptivo del track |
 | `.audio-damaged` | Nota de daño en rojo bajo el reproductor |
-
-### Comportamiento de loop — `data-loop-delay`
-
-El atributo `data-loop-delay="2500"` en un elemento `<audio>` hace que cuando el clip termina, espere 2500 ms y vuelva a reproducirse. Está manejado en `main.js` — no requiere cambios en JS.
-
-- Usar en todas las vocalizaciones de animales (normal y agresivo).
-- **No usar** en narrador ni registros de laboratorio.
-- El valor en ms es ajustable: `data-loop-delay="3000"` para 3 s, `data-loop-delay="1500"` para 1.5 s.
 
 ### Paths desde fichas del bestiario
 
