@@ -1,18 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aarón — Señal Muerta</title>
-  <link rel="stylesheet" href="../css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F-04 Aarón — Señal Muerta</title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header>
-    <h1><a href="../../index.html">Señal Muerta</a></h1>
-  </header>
-  <main>
-    <h2>Aarón</h2>
-  </main>
-  <script src="../js/main.js"></script>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="../../index.html" class="site-logo">APE — <span>SEÑAL MUERTA</span></a>
+    <div class="version-toggle">
+      <button class="version-btn active" onclick="switchVersion('a')">Versión A — Archivo</button>
+      <button class="version-btn" onclick="switchVersion('b')">Versión B — Original</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- VERSIÓN A -->
+  <div class="version-panel active" id="panel-a">
+
+    <div class="archive-stamp">Archivo de Recuperación Post-Emergencia / F-04</div>
+
+    <div class="archive-header">
+      <div class="archive-grid">
+        <div class="archive-field">
+          <span class="field-label">Clasificación</span>
+          <span class="field-value">Testimonial / Clase C</span>
+        </div>
+        <div class="archive-field">
+          <span class="field-label">Sujeto</span>
+          <span class="field-value">F-04 — Ing. Químico</span>
+        </div>
+        <div class="archive-field">
+          <span class="field-label">Origen</span>
+          <span class="field-value">Aguascalientes</span>
+        </div>
+        <div class="archive-field">
+          <span class="field-label">Recuperado</span>
+          <span class="field-value"><span class="redacted">████████████████</span></span>
+        </div>
+        <div class="archive-field">
+          <span class="field-label">Estado</span>
+          <span class="field-value">Archivo en proceso — pendiente de clasificación</span>
+        </div>
+        <div class="archive-field">
+          <span class="field-label">Redactado por</span>
+          <span class="field-value">Comité <span class="redacted">████████</span></span>
+        </div>
+      </div>
+      <hr class="divider">
+      <div class="archive-field">
+        <span class="field-label">Nota de clasificación</span>
+        <span class="field-value">Los documentos de F-04 están pendientes de procesamiento. El material recuperado se encuentra en fase de <span class="redacted">████████████████████████████████████████████████████</span>. Acceso restringido hasta nueva resolución del Comité.</span>
+      </div>
+    </div>
+
+    <div class="archivist-note">
+      <span class="archivist-label">// Nota del archivista</span>
+      <span class="redacted">████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████</span>
+    </div>
+
+  </div>
+
+  <!-- VERSIÓN B -->
+  <div class="version-panel" id="panel-b">
+
+    <div class="original-header">
+      <div class="original-eyebrow">Señal Muerta — Crónicas de la Emergencia</div>
+      <div class="original-title">Aarón</div>
+      <div class="original-chapter">Documentos originales — pendiente de publicación</div>
+    </div>
+
+    <hr class="original-divider">
+
+    <div class="original-body">
+      <p><span class="redacted">████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████</span></p>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span><span class="status-dot"></span>Archivo en proceso</span>
+    <span>F-04 / documentos pendientes</span>
+    <span><a href="../index.html" style="color:var(--text3); text-decoration:none;">← Volver al índice</a></span>
+  </div>
+
+</div>
+
+<script src="../js/main.js"></script>
 </body>
 </html>
