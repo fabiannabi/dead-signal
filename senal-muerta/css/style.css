@@ -215,7 +215,9 @@ hr.divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; 
 .chapter-tab:hover { color: var(--text2); background: var(--bg3); }
 .chapter-tab.active { color: var(--accent); background: var(--bg3); }
 
-a.chapter-tab { text-decoration: none; display: block; }
+a.chapter-tab { text-decoration: none; display: block; color: var(--text3); }
+a.chapter-tab:visited { color: var(--text3); }
+a.chapter-tab.active { color: var(--accent); }
 
 .chapter-content { display: none; }
 .chapter-content.active { display: block; }
@@ -432,6 +434,10 @@ a.chapter-tab { text-decoration: none; display: block; }
   border-bottom: 1px solid var(--accent2);
   transition: color 0.15s, border-color 0.15s;
 }
+.bestiario-ref:visited {
+  color: var(--accent);
+  border-bottom-color: var(--accent2);
+}
 .bestiario-ref:hover {
   border-bottom-color: var(--accent);
 }
@@ -454,6 +460,7 @@ a.chapter-tab { text-decoration: none; display: block; }
   transition: background 0.15s;
 }
 
+.entry-item:visited { color: inherit; }
 .entry-item:hover { background: var(--bg3); }
 
 .entry-threat {
