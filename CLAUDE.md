@@ -17,9 +17,9 @@ dead-signal/
 │   └── README.md
 └── senal-muerta/
     ├── css/
-    │   └── style.css           ← Hoja de estilos compartida (usada por secciones temáticas)
+    │   └── style.css           ← Hoja de estilos compartida (todas las páginas excepto index.html)
     ├── js/
-    │   └── main.js             ← JS mínimo, sin lógica por ahora
+    │   └── main.js             ← switchVersion() y switchChapter() compartidos
     ├── assets/
     │   ├── audio/              ← Vacío, reservado
     │   └── img/                ← Vacío, reservado
@@ -52,13 +52,22 @@ dead-signal/
 
 ## CSS y estilo visual
 
-Hay dos sistemas de CSS en paralelo:
+`index.html` tiene CSS inline en el `<head>` — no moverlo, es intencional.
 
-**CSS inline** — usado por `index.html` y todas las páginas de personajes.
-No importar `style.css` en estas páginas; mantener el CSS dentro del `<head>`.
+Todas las demás páginas (`personajes/`, `bestiario/`, `cartografia/`, `cronologia/`) usan el CSS externo:
 
-**`style.css`** — usado por las secciones temáticas (bestiario, cartografía, cronología).
-Contiene el sistema completo de componentes para cuando esas páginas tengan contenido.
+```html
+<link rel="stylesheet" href="../css/style.css">
+```
+
+El JS interactivo también es externo — va al final del `<body>`:
+
+```html
+<script src="../js/main.js"></script>
+```
+
+No agregar CSS inline ni `<style>` en ninguna página que no sea `index.html`.
+No agregar `<script>` inline en ninguna página que no sea `index.html`.
 
 ### Paleta (variables CSS)
 ```css
@@ -84,10 +93,63 @@ Contiene el sistema completo de componentes para cuando esas páginas tengan con
 ### Componentes clave en páginas de personaje
 - **Dos versiones** por personaje: "Archivo" (estilo ficha documental) y "Original" (prosa narrativa)
 - Navegación entre capítulos via tabs (`.chapter-tab` / `.chapter-btn-b`)
-- Bloques tipo `.field-notes-block` para notas de campo o diario
 - `.redacted` para texto censurado visualmente
 - Textura de ruido SVG como `body::before` fixed, `z-index: 1000`
 - Header sticky con logo y toggle de versión
+
+### Bloques de notas — clases modificadoras de `field-notes-block`
+
+El label flotante del bloque se controla con una clase semántica. Usar siempre una de estas:
+
+| Clase | Label renderizado | Uso |
+|---|---|---|
+| `.field-notes-block.field` | `TRANSCRIPCIÓN — LIBRETA ORIGINAL` | Libreta de campo (Fabián) |
+| `.field-notes-block.clinical` | `NOTAS CLÍNICAS DE CAMPO — TRANSCRIPCIÓN` | Notas clínicas (Felipe) |
+| `.field-notes-block.personal` | `LIBRETA PERSONAL — TRANSCRIPCIÓN` | Diario personal (cualquier personaje) |
+
+Sin modificador: label genérico `TRANSCRIPCIÓN`. Añadir un modificador nuevo a `style.css` si un personaje futuro requiere otro tipo de registro.
+
+### Estructura mínima de una página de personaje nueva
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F-0X Nombre — Señal Muerta</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="../../index.html" class="site-logo">APE — <span>SEÑAL MUERTA</span></a>
+    <div class="version-toggle">
+      <button class="version-btn active" onclick="switchVersion('a')">Versión A — Archivo</button>
+      <button class="version-btn" onclick="switchVersion('b')">Versión B — Original</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="version-panel active" id="panel-a">
+    <!-- contenido versión archivo -->
+  </div>
+  <div class="version-panel" id="panel-b">
+    <!-- contenido versión original -->
+  </div>
+  <div class="page-footer">
+    <span><span class="status-dot"></span>Archivo activo</span>
+    <span>F-0X / N documentos recuperados</span>
+    <span><a href="../index.html" style="color:var(--text3); text-decoration:none;">← Volver al índice</a></span>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
+```
 
 ---
 
@@ -133,9 +195,10 @@ nota_descripcion.txt            ← cualquier otro contenido
    - La paleta y tipografía definidas arriba
    - El tono: archivo documental post-emergencia, redacciones parcialmente censuradas
 5. **Si el personaje pasa de `disabled` a activo** en la portada, actualizar `index.html` quitando la clase `disabled` y actualizando el conteo de capítulos en `.nav-item-desc`
-6. **Verificar paths** — las rutas relativas varían según la profundidad del archivo
-7. **Commit** con el estilo documentado arriba — incluir solo los archivos del sitio, no el archivo de `_incoming/`
-8. **Push** a `origin main`
+6. **Verificar paths** — rutas relativas desde `personajes/` usan `../`, desde la raíz usan `senal-muerta/`
+7. **Eliminar el archivo de `_incoming/`** una vez integrado para mantener la carpeta limpia
+8. **Commit** con el estilo documentado arriba — solo los archivos del sitio modificados
+9. **Push** a `origin main`
 
 ```bash
 git add <archivos modificados del sitio>
@@ -144,4 +207,4 @@ git push
 ```
 
 No usar `git add -A` ni `git add .` — agregar solo los archivos que corresponden al cambio.
-Los archivos en `_incoming/` son materia prima; no se commitean junto con el contenido integrado.
+Los archivos de `_incoming/` se eliminan tras integrar; no se commitean.
