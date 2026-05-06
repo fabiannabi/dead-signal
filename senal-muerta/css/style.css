@@ -481,8 +481,8 @@ a.chapter-tab.active { color: var(--accent); }
 .media-gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  background: var(--border);
+  gap: 20px;
+  background: var(--bg);
   margin-bottom: 32px;
 }
 
@@ -501,11 +501,11 @@ a.chapter-tab.active { color: var(--accent); }
 
 .media-caption {
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text3);
   padding: 10px 14px;
   border-top: 1px solid var(--border);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
 }
 
 .audio-list {
@@ -528,20 +528,20 @@ a.chapter-tab.active { color: var(--accent); }
 
 .audio-tag {
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 15px;
   color: var(--text3);
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   display: block;
   margin-bottom: 4px;
 }
 
 .audio-label {
   font-family: var(--mono);
-  font-size: 17px;
+  font-size: 18px;
   color: var(--text2);
   margin-bottom: 12px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
 }
 
 .audio-item audio {
@@ -552,9 +552,9 @@ a.chapter-tab.active { color: var(--accent); }
 
 .audio-damaged {
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 15px;
   color: var(--red);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   margin-top: 8px;
   opacity: 0.8;
 }
