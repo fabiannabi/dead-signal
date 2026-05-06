@@ -481,7 +481,7 @@ a.chapter-tab.active { color: var(--accent); }
 .media-gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1px;
+  gap: 10px;
   background: var(--border);
   margin-bottom: 32px;
 }
@@ -501,9 +501,9 @@ a.chapter-tab.active { color: var(--accent); }
 
 .media-caption {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text3);
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-top: 1px solid var(--border);
   letter-spacing: 0.06em;
 }
@@ -518,7 +518,7 @@ a.chapter-tab.active { color: var(--accent); }
 
 .audio-item {
   background: var(--bg2);
-  padding: 14px 16px;
+  padding: 16px 18px;
 }
 
 .audio-item.featured {
@@ -528,19 +528,19 @@ a.chapter-tab.active { color: var(--accent); }
 
 .audio-tag {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text3);
   text-transform: uppercase;
   letter-spacing: 0.14em;
   display: block;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 
 .audio-label {
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 17px;
   color: var(--text2);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   letter-spacing: 0.04em;
 }
 
@@ -552,10 +552,10 @@ a.chapter-tab.active { color: var(--accent); }
 
 .audio-damaged {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--red);
   letter-spacing: 0.1em;
-  margin-top: 6px;
+  margin-top: 8px;
   opacity: 0.8;
 }
 

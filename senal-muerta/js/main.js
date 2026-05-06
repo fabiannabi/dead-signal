@@ -1,5 +1,14 @@
 // Señal Muerta — interactividad principal
 
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('audio[data-loop-delay]').forEach(function (audio) {
+    var delay = parseInt(audio.dataset.loopDelay, 10) || 2500;
+    audio.addEventListener('ended', function () {
+      setTimeout(function () { audio.play(); }, delay);
+    });
+  });
+});
+
 function switchVersion(v) {
   document.querySelectorAll('.version-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.version-btn').forEach(b => b.classList.remove('active'));
