@@ -442,6 +442,21 @@ a.chapter-tab.active { color: var(--accent); }
   border-bottom-color: var(--accent);
 }
 
+/* ── Bestiario entries ── */
+
+.entry-section-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin: 36px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.doc-body > p:first-child { margin-top: 0; }
+
 /* ── Bestiario index ── */
 
 .entry-grid {
