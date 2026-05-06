@@ -1,423 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>F-01 Fabián — Señal Muerta</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
-
-  :root {
-    --bg: #0a0a08;
-    --bg2: #0f0f0c;
-    --bg3: #141410;
-    --border: #2a2a22;
-    --border2: #3a3a2a;
-    --text: #c8c4a8;
-    --text2: #8a8670;
-    --text3: #5a5648;
-    --accent: #c8a84a;
-    --accent2: #8a6a2a;
-    --red: #8a3a2a;
-    --green: #4a6a3a;
-    --mono: 'Share Tech Mono', monospace;
-    --serif: 'Crimson Pro', Georgia, serif;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--serif);
-    font-size: 17px;
-    line-height: 1.8;
-    min-height: 100vh;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.4;
-  }
-
-  .site-header {
-    border-bottom: 1px solid var(--border);
-    padding: 12px 0;
-    background: var(--bg2);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .site-header-inner {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
-
-  .site-logo {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text3);
-    letter-spacing: 0.12em;
-    text-decoration: none;
-  }
-
-  .site-logo span { color: var(--accent); }
-
-  .version-toggle {
-    display: flex;
-    gap: 1px;
-    background: var(--border);
-  }
-
-  .version-btn {
-    font-family: var(--mono);
-    font-size: 13px;
-    padding: 5px 12px;
-    background: var(--bg2);
-    border: none;
-    color: var(--text3);
-    cursor: pointer;
-    letter-spacing: 0.08em;
-    transition: all 0.15s;
-    text-transform: uppercase;
-  }
-
-  .version-btn.active {
-    background: var(--bg3);
-    color: var(--accent);
-  }
-
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-  }
-
-  .version-panel { display: none; }
-  .version-panel.active { display: block; }
-
-  .archive-stamp {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text3);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .archive-stamp::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  .archive-header {
-    border: 1px solid var(--border2);
-    background: var(--bg2);
-    padding: 24px;
-    margin-bottom: 24px;
-    position: relative;
-  }
-
-  .archive-header::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 100%;
-    background: var(--accent2);
-  }
-
-  .archive-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 32px;
-    margin-bottom: 16px;
-  }
-
-  .archive-field { font-family: var(--mono); font-size: 11px; }
-
-  .field-label {
-    color: var(--text3);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    display: block;
-    margin-bottom: 2px;
-    font-size: 10px;
-  }
-
-  .field-value { color: var(--text2); }
-
-  .redacted {
-    background: var(--text3);
-    color: transparent;
-    user-select: none;
-    padding: 0 3px;
-  }
-
-  hr.divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
-
-  .archivist-note {
-    font-family: var(--mono);
-    font-size: 15px;
-    color: var(--text2);
-    background: var(--bg3);
-    border-left: 2px solid var(--accent2);
-    padding: 12px 16px;
-    margin-bottom: 32px;
-    line-height: 1.7;
-  }
-
-  .archivist-label {
-    font-size: 13px;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  .chapter-tabs {
-    display: flex;
-    gap: 1px;
-    background: var(--border);
-    margin-bottom: 32px;
-    flex-wrap: wrap;
-  }
-
-  .chapter-tab {
-    font-family: var(--mono);
-    font-size: 13px;
-    padding: 8px 14px;
-    background: var(--bg2);
-    border: none;
-    color: var(--text3);
-    cursor: pointer;
-    letter-spacing: 0.08em;
-    transition: all 0.15s;
-  }
-
-  .chapter-tab:hover { color: var(--text2); background: var(--bg3); }
-  .chapter-tab.active { color: var(--accent); background: var(--bg3); }
-
-  .chapter-content { display: none; }
-  .chapter-content.active { display: block; }
-
-  .chapter-header { margin-bottom: 32px; }
-
-  .chapter-code {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--text3);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
-
-  .chapter-title-a {
-    font-family: var(--mono);
-    font-size: 18px;
-    color: var(--accent);
-    letter-spacing: 0.06em;
-    margin-bottom: 2px;
-  }
-
-  .doc-body p { margin-bottom: 22px; color: var(--text); font-weight: 300; }
-  .doc-body p em { color: var(--text2); font-style: italic; }
-
-  .section-break {
-    text-align: center;
-    color: var(--text3);
-    margin: 36px 0;
-    font-family: var(--mono);
-    font-size: 15px;
-    letter-spacing: 0.3em;
-  }
-
-  .field-notes-block {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    padding: 20px 24px;
-    margin: 36px 0;
-    font-family: var(--mono);
-    font-size: 15px;
-    line-height: 1.9;
-    position: relative;
-  }
-
-  .field-notes-block::before {
-    content: 'TRANSCRIPCIÓN — LIBRETA ORIGINAL';
-    position: absolute;
-    top: -9px;
-    left: 16px;
-    background: var(--bg3);
-    padding: 0 8px;
-    font-size: 12px;
-    color: var(--text3);
-    letter-spacing: 0.15em;
-  }
-
-  .fn-section { margin-bottom: 18px; }
-
-  .fn-title {
-    color: var(--accent);
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 6px;
-  }
-
-  .fn-item {
-    color: var(--text2);
-    padding-left: 14px;
-    border-left: 1px solid var(--border2);
-    margin-bottom: 3px;
-  }
-
-  .fn-comment { color: var(--text3); margin-top: 10px; font-style: italic; }
-
-  /* VERSION B */
-  .original-header { margin-bottom: 40px; }
-
-  .original-eyebrow {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--text3);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .original-title {
-    font-family: var(--serif);
-    font-size: clamp(22px, 4vw, 32px);
-    color: var(--text);
-    font-weight: 300;
-    font-style: italic;
-    margin-bottom: 4px;
-  }
-
-  .original-chapter {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--text2);
-    letter-spacing: 0.08em;
-  }
-
-  .original-divider { border: none; border-top: 1px solid var(--border); margin: 24px 0 36px; }
-
-  .original-body p {
-    margin-bottom: 22px;
-    color: var(--text);
-    font-weight: 300;
-    font-size: 19px;
-    line-height: 1.85;
-  }
-
-  .original-body p em { color: var(--text2); }
-
-  .original-body .break {
-    text-align: center;
-    color: var(--text3);
-    margin: 36px 0;
-    font-family: var(--mono);
-    font-size: 116px;
-    letter-spacing: 0.2em;
-  }
-
-  .original-notes {
-    background: var(--bg2);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 24px;
-    margin: 36px 0;
-    font-family: var(--mono);
-    font-size: 15px;
-    line-height: 2;
-  }
-
-  .original-notes-label {
-    color: var(--text3);
-    font-size: 13px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-
-  .original-notes .fn-item { color: var(--text2); }
-  .original-notes .fn-comment { color: var(--text3); font-style: italic; margin-top: 8px; }
-
-  .chapter-nav-b {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-  }
-
-  .chapter-btn-b {
-    font-family: var(--mono);
-    font-size: 13px;
-    padding: 6px 12px;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    color: var(--text3);
-    cursor: pointer;
-    letter-spacing: 0.08em;
-    transition: all 0.15s;
-  }
-
-  .chapter-btn-b:hover, .chapter-btn-b.active {
-    color: var(--accent);
-    border-color: var(--accent2);
-  }
-
-  .page-footer {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--text3);
-    border-top: 1px solid var(--border);
-    padding-top: 16px;
-    margin-top: 60px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .status-dot {
-    display: inline-block;
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--green);
-    margin-right: 6px;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  @media (max-width: 600px) {
-    .archive-grid { grid-template-columns: 1fr; }
-  }
-</style>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
@@ -502,7 +89,7 @@
         <div class="section-break">— — —</div>
         <p>El segundo día encontró las primeras cosas pequeñas. Estaba revisando el generador en el patio de la cochera cuando vio el primero — del tamaño de su puño cerrado, color gris-café, que había confundido con un cascajo de concreto hasta que uno de los cascajos se movió.</p>
         <p>Era un escarabajo. O algo que había sido un escarabajo. Las placas que lo cubrían eran del mismo color y textura que el concreto viejo. A unos cuarenta centímetros las placas se contrajeron levemente hacia adentro — respuesta defensiva, no de ataque.</p>
-        <div class="field-notes-block">
+        <div class="field-notes-block field">
           <div class="fn-section">
             <div class="fn-title">Libreta de campo — F-01 / Día 3</div>
             <div class="fn-item">Animal grande cuadrúpedo — zona norte, visto una vez. Herbívoro probable. Nombre provisional: Lanudo. [cambiado en entradas posteriores]</div>
@@ -523,7 +110,7 @@
       <div class="doc-body">
         <p>Lo planeó la noche anterior. Objetivo primario: agua. Objetivo secundario: información. Tiempo máximo: cuarenta minutos. El cuchillo de cocina lo miró un momento después de escribirlo. Era lo que había. Lo dejó en la lista.</p>
         <p>A mitad de la primera cuadra se detuvo. Había algo en la banqueta de enfrente que no era un cascajo — del tamaño de un balón, casi negro con reflejos cobrizos, en plena luz sin sombra cercana. A tres metros vio las patas largas con terminación que no era adhesiva. No era herbívoro. Siguió caminando sin correr. La cosa no lo siguió.</p>
-        <div class="field-notes-block">
+        <div class="field-notes-block field">
           <div class="fn-section">
             <div class="fn-title">Libreta — F-01 / Día 4</div>
             <div class="fn-item">Roca Negra: desapareció entre salidas. Perímetro mañana.</div>
@@ -545,7 +132,7 @@
         <p>La Roca Negra estaba en la tercera calle, en sombra de barda. La diferencia con las del patio no era solo de tamaño — la superficie tenía microestructuras que producían el reflejo cobrizo bajo luz directa. No era decoración. Era función.</p>
         <p>A metro y medio algo cambió en la postura sin movimiento visible — una tensión que se percibía más que se veía. Ninguno de los dos se movió durante un buen rato. Fue F-01 quien cedió primero. No era agresiva. Era cautelosa.</p>
         <p>Las hormigas en la esquina noreste: obreras de tres a cuatro centímetros, soldados del doble. Las soldados no defendían — coordinaban. Contacto antenal breve, y la obrera modificaba su trayectoria. Gestión en tiempo real. Forrajeaban la enredadera acelerada.</p>
-        <div class="field-notes-block">
+        <div class="field-notes-block field">
           <div class="fn-section">
             <div class="fn-title">Libreta — F-01 / Día 5</div>
           </div>
@@ -575,7 +162,7 @@
         <p>El inventario de la semana tres tenía números que no le gustaban. La tienda de conveniencia estaba prácticamente agotada. Seis cuadras al norte había un supermercado mediano. Tomó la ruta alternativa.</p>
         <p>En la bodega del supermercado encontró las cápsulas — estructuras adheridas a la parte inferior de los anaqueles, en los ángulos más oscuros. Ocho en total. Todas vacías. Todas en zonas de sombra máxima. Lo que había vivido aquí ya no estaba. Había salido.</p>
         <p>La araña estaba en el pasillo central. No la vio primero — la sintió. Corpulenta, cuerpo del tamaño de un perro mediano, pelos rígidos café oscuro con bandas amarillas en las articulaciones. Ocho ojos, tapetum verde. Dio un paso atrás, lento. La araña bajó las patas delanteras. Siguió así hasta poder rodear hacia la salida.</p>
-        <div class="field-notes-block">
+        <div class="field-notes-block field">
           <div class="fn-section">
             <div class="fn-title">Libreta — F-01 / Semana 3</div>
           </div>
@@ -729,25 +316,6 @@
 
 </div>
 
-<script>
-  function switchVersion(v) {
-    document.querySelectorAll('.version-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.version-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('panel-' + v).classList.add('active');
-    document.querySelectorAll('.version-btn')[v === 'a' ? 0 : 1].classList.add('active');
-    window.scrollTo(0, 0);
-  }
-
-  function switchChapter(version, num) {
-    const panel = document.getElementById('panel-' + version);
-    panel.querySelectorAll('.chapter-content').forEach(c => c.classList.remove('active'));
-    panel.querySelectorAll('.chapter-tab, .chapter-btn-b').forEach(b => b.classList.remove('active'));
-    document.getElementById(version + '-cap' + num).classList.add('active');
-    const tabs = panel.querySelectorAll('.chapter-tab, .chapter-btn-b');
-    if (tabs[num - 1]) tabs[num - 1].classList.add('active');
-    window.scrollTo(0, 0);
-  }
-</script>
-
+<script src="../js/main.js"></script>
 </body>
 </html>
