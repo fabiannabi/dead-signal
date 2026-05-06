@@ -215,6 +215,8 @@ hr.divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; 
 .chapter-tab:hover { color: var(--text2); background: var(--bg3); }
 .chapter-tab.active { color: var(--accent); background: var(--bg3); }
 
+a.chapter-tab { text-decoration: none; display: block; }
+
 .chapter-content { display: none; }
 .chapter-content.active { display: block; }
 

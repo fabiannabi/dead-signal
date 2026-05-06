@@ -24,11 +24,23 @@ dead-signal/
     │   ├── audio/              ← Vacío, reservado
     │   └── img/                ← Vacío, reservado
     ├── personajes/
-    │   ├── fabian.html         ← F-01
-    │   ├── felipe.html         ← F-02
-    │   ├── gaby.html           ← F-03
-    │   ├── aaron.html          ← F-04 (pendiente, marcado disabled en portada)
-    │   └── carlos.html         ← F-05
+    │   ├── fabian/
+    │   │   ├── index.html      ← F-01 ficha + nav
+    │   │   ├── cap-01.html
+    │   │   ├── cap-02.html
+    │   │   ├── cap-03.html
+    │   │   └── cap-04.html
+    │   ├── felipe/
+    │   │   ├── index.html      ← F-02 ficha + nav
+    │   │   ├── cap-01.html … cap-04.html
+    │   ├── gaby/
+    │   │   ├── index.html      ← F-03 ficha + nav
+    │   │   └── cap-01.html
+    │   ├── aaron/
+    │   │   └── index.html      ← F-04 pendiente
+    │   └── carlos/
+    │       ├── index.html      ← F-05 ficha + nav
+    │       └── cap-01.html … cap-04.html
     ├── bestiario/
     │   └── index.html          ← Esqueleto, sin contenido aún
     ├── cartografia/
@@ -42,11 +54,23 @@ dead-signal/
 ## Convenciones de nombres
 
 - Carpetas y archivos: `kebab-case`, en español, sin tildes ni espacios
-- Páginas de personaje: nombre en minúsculas (`fabian.html`, `felipe.html`)
+- Cada personaje tiene su propia carpeta (`fabian/`, `felipe/`, etc.)
+- Dentro de cada carpeta: `index.html` (ficha) + `cap-01.html`, `cap-02.html`… (un archivo por capítulo)
+- Capítulos nuevos: nombrar `cap-XX.html` con dos dígitos
 - Secciones temáticas: carpeta con nombre descriptivo + `index.html` dentro
 - Assets: dentro de `senal-muerta/assets/` en subcarpeta por tipo (`img/`, `audio/`)
-- El CSS externo vive en `senal-muerta/css/style.css`
-- Los paths desde las páginas de personajes hacia CSS/JS usan rutas relativas (`../css/style.css`, `../js/main.js`)
+
+### Paths desde las páginas de personaje
+
+Desde `senal-muerta/personajes/fabian/cap-01.html` (o cualquier `cap-XX.html` o `index.html` de personaje):
+
+```
+../../css/style.css      ← CSS compartido
+../../js/main.js         ← JS compartido
+../../../index.html      ← portada raíz (logo del header y "Volver al archivo")
+index.html               ← ficha del personaje (desde un cap-XX.html)
+cap-01.html              ← capítulo hermano (misma carpeta)
+```
 
 ---
 
@@ -109,7 +133,7 @@ El label flotante del bloque se controla con una clase semántica. Usar siempre 
 
 Sin modificador: label genérico `TRANSCRIPCIÓN`. Añadir un modificador nuevo a `style.css` si un personaje futuro requiere otro tipo de registro.
 
-### Estructura mínima de una página de personaje nueva
+### Estructura mínima de un capítulo nuevo (`cap-XX.html`)
 
 ```html
 <!DOCTYPE html>
@@ -117,14 +141,14 @@ Sin modificador: label genérico `TRANSCRIPCIÓN`. Añadir un modificador nuevo 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>F-0X Nombre — Señal Muerta</title>
-<link rel="stylesheet" href="../css/style.css">
+<title>F-0X / Cap. 0N — Señal Muerta</title>
+<link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="site-header-inner">
-    <a href="../../index.html" class="site-logo">APE — <span>SEÑAL MUERTA</span></a>
+    <a href="../../../index.html" class="site-logo">APE — <span>SEÑAL MUERTA</span></a>
     <div class="version-toggle">
       <button class="version-btn active" onclick="switchVersion('a')">Versión A — Archivo</button>
       <button class="version-btn" onclick="switchVersion('b')">Versión B — Original</button>
@@ -133,20 +157,44 @@ Sin modificador: label genérico `TRANSCRIPCIÓN`. Añadir un modificador nuevo 
 </header>
 
 <div class="container">
+
+  <div class="chapter-tabs">
+    <a class="chapter-tab" href="index.html">F-0X Nombre</a>
+    <a class="chapter-tab" href="cap-01.html">Cap. 01</a>
+    <a class="chapter-tab active" href="cap-0N.html">Cap. 0N</a>
+  </div>
+
   <div class="version-panel active" id="panel-a">
-    <!-- contenido versión archivo -->
+    <div class="archive-stamp">Archivo de Recuperación Post-Emergencia / F-0X</div>
+    <div class="chapter-header">
+      <div class="chapter-code">F-0X / Documento 0N de <span class="redacted">██</span></div>
+      <div class="chapter-title-a">Capítulo N — Título</div>
+    </div>
+    <div class="doc-body">
+      <!-- contenido versión archivo -->
+    </div>
   </div>
+
   <div class="version-panel" id="panel-b">
-    <!-- contenido versión original -->
+    <div class="original-header">
+      <div class="original-eyebrow">Señal Muerta — Crónicas de la Emergencia</div>
+      <div class="original-title">Nombre</div>
+      <div class="original-chapter">Capítulo N — Título</div>
+    </div>
+    <hr class="original-divider">
+    <div class="original-body">
+      <!-- contenido versión original -->
+    </div>
   </div>
+
   <div class="page-footer">
     <span><span class="status-dot"></span>Archivo activo</span>
-    <span>F-0X / N documentos recuperados</span>
-    <span><a href="../index.html" style="color:var(--text3); text-decoration:none;">← Volver al índice</a></span>
+    <span>F-0X / Capítulo N de TOTAL</span>
+    <span><a href="../../../index.html" style="color:var(--text3); text-decoration:none;">← Volver al archivo</a></span>
   </div>
 </div>
 
-<script src="../js/main.js"></script>
+<script src="../../js/main.js"></script>
 </body>
 </html>
 ```
