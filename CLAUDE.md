@@ -78,17 +78,12 @@ cap-01.html              ← capítulo hermano (misma carpeta)
 
 `index.html` tiene CSS inline en el `<head>` — no moverlo, es intencional.
 
-Todas las demás páginas (`personajes/`, `bestiario/`, `cartografia/`, `cronologia/`) usan el CSS externo:
+Todas las demás páginas usan archivos externos. El path varía según la profundidad:
 
-```html
-<link rel="stylesheet" href="../css/style.css">
-```
-
-El JS interactivo también es externo — va al final del `<body>`:
-
-```html
-<script src="../js/main.js"></script>
-```
+| Ubicación | CSS | JS |
+|---|---|---|
+| `senal-muerta/personajes/nombre/` | `../../css/style.css` | `../../js/main.js` |
+| `senal-muerta/bestiario/`, `cartografia/`, `cronologia/` | `../css/style.css` | `../js/main.js` |
 
 No agregar CSS inline ni `<style>` en ninguna página que no sea `index.html`.
 No agregar `<script>` inline en ninguna página que no sea `index.html`.
@@ -115,11 +110,11 @@ No agregar `<script>` inline en ninguna página que no sea `index.html`.
 - Ambas se importan desde Google Fonts
 
 ### Componentes clave en páginas de personaje
-- **Dos versiones** por personaje: "Archivo" (estilo ficha documental) y "Original" (prosa narrativa)
-- Navegación entre capítulos via tabs (`.chapter-tab` / `.chapter-btn-b`)
+- **`index.html` del personaje** — solo ficha de archivo + nota del archivista + links a capítulos. Sin toggle A/B.
+- **`cap-XX.html`** — cada capítulo tiene su propio archivo con toggle A/B (Archivo / Original) y una barra `chapter-tabs` con links a los demás capítulos del mismo personaje
 - `.redacted` para texto censurado visualmente
 - Textura de ruido SVG como `body::before` fixed, `z-index: 1000`
-- Header sticky con logo y toggle de versión
+- Header sticky con logo; el toggle A/B solo aparece en capítulos, no en el `index.html` del personaje
 
 ### Bloques de notas — clases modificadoras de `field-notes-block`
 
@@ -234,17 +229,21 @@ nota_descripcion.txt            ← cualquier otro contenido
 
 ### Pasos de integración
 
-1. **Leer el archivo en `_incoming/`** para entender el contenido a integrar
-2. **Identificar qué página recibe el contenido** — ¿capítulo de personaje existente? ¿bestiario? ¿portada?
-3. **Leer el archivo destino completo** antes de editar para entender el estado actual
-4. **Integrar el contenido** respetando:
-   - La estructura HTML existente de esa página (tabs, bloques, versiones A/B)
-   - Los nombres de clase ya usados (no inventar clases nuevas salvo que sean necesarias)
-   - La paleta y tipografía definidas arriba
-   - El tono: archivo documental post-emergencia, redacciones parcialmente censuradas
-5. **Si el personaje pasa de `disabled` a activo** en la portada, actualizar `index.html` quitando la clase `disabled` y actualizando el conteo de capítulos en `.nav-item-desc`
-6. **Verificar paths** — rutas relativas desde `personajes/` usan `../`, desde la raíz usan `senal-muerta/`
-7. **Eliminar el archivo de `_incoming/`** una vez integrado para mantener la carpeta limpia
+1. **Leer el archivo en `_incoming/`** para entender el contenido
+2. **Identificar el destino:**
+   - ¿Capítulo nuevo de un personaje? → crear `cap-XX.html` en su carpeta usando la plantilla de arriba
+   - ¿Contenido para un capítulo placeholder existente? → editar ese `cap-XX.html`
+   - ¿Bestiario u otra sección? → editar el `index.html` correspondiente
+3. **Si es capítulo nuevo**, también actualizar:
+   - `index.html` del personaje: añadir el tab `<a class="chapter-tab" href="cap-XX.html">Cap. XX — Título</a>` y actualizar el footer con el nuevo conteo
+   - Todos los `cap-XX.html` hermanos: añadir el nuevo tab a su barra `chapter-tabs`
+   - `index.html` raíz: actualizar el conteo en `.nav-item-desc` del personaje
+4. **Si el personaje pasa de `disabled` a activo** en la portada, quitar la clase `disabled` del enlace en `index.html` raíz
+5. **Integrar el contenido** respetando:
+   - Los nombres de clase ya definidos (no inventar nuevas salvo que sean necesarias)
+   - La paleta, tipografía y tono: archivo documental post-emergencia, redacciones parcialmente censuradas
+6. **Verificar paths** — desde `personajes/nombre/` usar `../../css/`, `../../js/`, `../../../index.html`
+7. **Eliminar el archivo de `_incoming/`** una vez integrado
 8. **Commit** con el estilo documentado arriba — solo los archivos del sitio modificados
 9. **Push** a `origin main`
 
