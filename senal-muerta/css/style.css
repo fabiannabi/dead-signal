@@ -426,6 +426,58 @@ a.chapter-tab { text-decoration: none; display: block; }
   animation: pulse 2s infinite;
 }
 
+.bestiario-ref {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent2);
+  transition: color 0.15s, border-color 0.15s;
+}
+.bestiario-ref:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* ── Bestiario index ── */
+
+.entry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  margin-bottom: 40px;
+}
+
+.entry-item {
+  background: var(--bg2);
+  padding: 16px 20px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.15s;
+}
+
+.entry-item:hover { background: var(--bg3); }
+
+.entry-threat {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.entry-name {
+  font-family: var(--mono);
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.entry-type {
+  font-size: 14px;
+  color: var(--text3);
+  font-style: italic;
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
