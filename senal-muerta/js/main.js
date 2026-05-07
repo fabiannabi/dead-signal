@@ -15,8 +15,14 @@ function switchVersion(v) {
   document.querySelectorAll('.version-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('panel-' + v).classList.add('active');
   document.querySelectorAll('.version-btn')[v === 'a' ? 0 : 1].classList.add('active');
+  localStorage.setItem('sm-version', v);
   window.scrollTo(0, 0);
 }
+
+(function () {
+  var saved = localStorage.getItem('sm-version');
+  if (saved && document.getElementById('panel-' + saved)) switchVersion(saved);
+})();
 
 function buildChapterNav() {
   var allTabs = document.querySelectorAll('.chapter-tabs .chapter-tab');
