@@ -51,6 +51,24 @@ function buildChapterNav() {
 
 buildChapterNav();
 
+function buildChapterFooter() {
+  var tabs = Array.from(document.querySelectorAll('.chapter-tabs .chapter-tab'));
+  var chapterTabs = tabs.filter(t => /^cap-\d+\.html$/.test(t.getAttribute('href')));
+  if (!chapterTabs.length) return;
+  var activeIdx = chapterTabs.findIndex(t => t.classList.contains('active'));
+  if (activeIdx === -1) return;
+
+  var charMatch = tabs[0] && tabs[0].textContent.trim().match(/^(F-\d+)/);
+  var prefix = charMatch ? charMatch[1] + ' / ' : '';
+  var text = prefix + 'Capítulo ' + (activeIdx + 1) + ' de ' + chapterTabs.length;
+
+  document.querySelectorAll('.page-footer > span').forEach(function(span) {
+    if (/Capítulo/.test(span.textContent)) span.textContent = text;
+  });
+}
+
+buildChapterFooter();
+
 function switchChapter(version, num) {
   const panel = document.getElementById('panel-' + version);
   panel.querySelectorAll('.chapter-content').forEach(c => c.classList.remove('active'));
