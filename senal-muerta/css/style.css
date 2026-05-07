@@ -404,6 +404,31 @@ a.chapter-tab.active { color: var(--accent); }
   border-color: var(--accent2);
 }
 
+/* ── Chapter nav ── */
+
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-top: 48px;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.chapter-nav-link {
+  color: var(--text2);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: color 0.15s;
+}
+
+.chapter-nav-link:hover { color: var(--accent); }
+.chapter-nav-link:visited { color: var(--text2); }
+.chapter-nav-link.next { margin-left: auto; }
+
 /* ── Footer ── */
 
 .page-footer {
