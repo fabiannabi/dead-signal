@@ -19,30 +19,37 @@ function switchVersion(v) {
 }
 
 function buildChapterNav() {
-  var tabs = Array.from(document.querySelectorAll('.chapter-tabs .chapter-tab'))
-    .filter(t => /^cap-\d+\.html$/.test(t.getAttribute('href')));
-  var activeIdx = tabs.findIndex(t => t.classList.contains('active'));
-  if (activeIdx === -1 || tabs.length <= 1) return;
+  var allTabs = document.querySelectorAll('.chapter-tabs .chapter-tab');
+  var chapterTabs = [];
+  var activeIdx = -1;
 
-  var prev = tabs[activeIdx - 1] || null;
-  var next = tabs[activeIdx + 1] || null;
+  for (var i = 0; i < allTabs.length; i++) {
+    var href = allTabs[i].getAttribute('href') || '';
+    if (/^cap-\d+\.html$/.test(href)) {
+      if (allTabs[i].classList.contains('active')) activeIdx = chapterTabs.length;
+      chapterTabs.push(allTabs[i]);
+    }
+  }
+
+  if (activeIdx === -1 || chapterTabs.length <= 1) return;
 
   var nav = document.createElement('div');
   nav.className = 'chapter-nav';
 
-  if (prev) {
-    var a = document.createElement('a');
-    a.href = prev.getAttribute('href');
-    a.className = 'chapter-nav-link prev';
-    a.textContent = '← ' + prev.textContent.trim();
-    nav.appendChild(a);
+  if (activeIdx > 0) {
+    var aPrev = document.createElement('a');
+    aPrev.href = chapterTabs[activeIdx - 1].getAttribute('href');
+    aPrev.className = 'chapter-nav-link prev';
+    aPrev.textContent = '← ' + chapterTabs[activeIdx - 1].textContent.trim();
+    nav.appendChild(aPrev);
   }
-  if (next) {
-    var a = document.createElement('a');
-    a.href = next.getAttribute('href');
-    a.className = 'chapter-nav-link next';
-    a.textContent = next.textContent.trim() + ' →';
-    nav.appendChild(a);
+
+  if (activeIdx < chapterTabs.length - 1) {
+    var aNext = document.createElement('a');
+    aNext.href = chapterTabs[activeIdx + 1].getAttribute('href');
+    aNext.className = 'chapter-nav-link next';
+    aNext.textContent = chapterTabs[activeIdx + 1].textContent.trim() + ' →';
+    nav.appendChild(aNext);
   }
 
   var footer = document.querySelector('.page-footer');
@@ -52,19 +59,26 @@ function buildChapterNav() {
 buildChapterNav();
 
 function buildChapterFooter() {
-  var tabs = Array.from(document.querySelectorAll('.chapter-tabs .chapter-tab'));
-  var chapterTabs = tabs.filter(t => /^cap-\d+\.html$/.test(t.getAttribute('href')));
-  if (!chapterTabs.length) return;
-  var activeIdx = chapterTabs.findIndex(t => t.classList.contains('active'));
-  if (activeIdx === -1) return;
+  var allTabs = document.querySelectorAll('.chapter-tabs .chapter-tab');
+  var chapterTabs = [];
+  var activeIdx = -1;
 
-  var charMatch = tabs[0] && tabs[0].textContent.trim().match(/^(F-\d+)/);
+  for (var i = 0; i < allTabs.length; i++) {
+    var href = allTabs[i].getAttribute('href') || '';
+    if (/^cap-\d+\.html$/.test(href)) {
+      if (allTabs[i].classList.contains('active')) activeIdx = chapterTabs.length;
+      chapterTabs.push(allTabs[i]);
+    }
+  }
+
+  if (activeIdx === -1 || !chapterTabs.length) return;
+
+  var charMatch = allTabs[0] && allTabs[0].textContent.trim().match(/^(F-\d+)/);
   var prefix = charMatch ? charMatch[1] + ' / ' : '';
   var text = prefix + 'Capítulo ' + (activeIdx + 1) + ' de ' + chapterTabs.length;
 
-  document.querySelectorAll('.page-footer > span').forEach(function(span) {
-    if (/Capítulo/.test(span.textContent)) span.textContent = text;
-  });
+  var footerSpans = document.querySelectorAll('.page-footer > span');
+  if (footerSpans[1]) footerSpans[1].textContent = text;
 }
 
 buildChapterFooter();
