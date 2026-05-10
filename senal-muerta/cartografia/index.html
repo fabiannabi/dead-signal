@@ -113,7 +113,7 @@ body {
 /* ── Layer panel ── */
 .map-layer-panel {
   position: absolute;
-  top: 44px;
+  top: 74px;
   right: 16px;
   z-index: 1000;
   background: rgba(15, 15, 12, 0.93);
@@ -385,16 +385,16 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0;
   z-index: 1001;
-  height: 28px;
-  background: rgba(8,8,6,0.90);
-  border-bottom: 1px solid #1c1c14;
+  height: 58px;
+  background: rgba(8,8,6,0.92);
+  border-bottom: 1px solid #252518;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 10px;
   color: #5a5648;
   display: flex;
-  align-items: center;
-  padding: 0 14px;
-  gap: 8px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 18px;
+  gap: 5px;
   letter-spacing: 0.06em;
   transition: opacity 0.6s;
   pointer-events: none;
@@ -402,10 +402,26 @@ body {
 
 .alert-banner.fading { opacity: 0; }
 
+.ab-row-1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+}
+
+.ab-row-2 {
+  font-size: 13px;
+  color: #9a9480;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  letter-spacing: 0.04em;
+}
+
 .ab-badge {
   color: #c8a84a;
   font-size: 9px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   flex-shrink: 0;
   animation: ab-blink 4s ease-in-out infinite;
 }
@@ -415,10 +431,9 @@ body {
   50% { opacity: 0.08; }
 }
 
-.ab-code { color: #322e20; flex-shrink: 0; }
-.ab-sep  { color: #222018; }
-.ab-text { color: #7a7660; flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-.ab-signals { flex-shrink: 0; white-space: nowrap; }
+.ab-code { color: #3a3626; flex-shrink: 0; }
+.ab-sep  { color: #28241a; }
+.ab-signals { margin-left: auto; white-space: nowrap; }
 .ab-signals-n { color: #c8a84a; }
 </style>
 </head>
@@ -446,22 +461,24 @@ body {
   <div id="map">
 
     <div class="alert-banner fading" id="alert-banner">
-      <span class="ab-badge">▲ ALERTA ACTIVA</span>
-      <span class="ab-sep">—</span>
-      <span class="ab-code">ALR-000</span>
-      <span class="ab-sep">—</span>
-      <span class="ab-text"></span>
-      <span class="ab-sep">—</span>
-      <span class="ab-signals"><span class="ab-signals-n">0</span>&nbsp;SEÑALES</span>
+      <div class="ab-row-1">
+        <span class="ab-badge">▲ ALERTA ACTIVA</span>
+        <span class="ab-sep">—</span>
+        <span class="ab-code">ALR-000</span>
+        <span class="ab-signals"><span class="ab-signals-n">0</span>&nbsp;SEÑALES ACTIVAS</span>
+      </div>
+      <div class="ab-row-2"></div>
     </div>
 
     <div class="map-layer-panel">
       <div class="panel-title">CAPAS</div>
+      <!-- Sujetos desactivados por ahora — solo criaturas
       <label class="layer-toggle">
         <input type="checkbox" id="toggle-sujetos" checked>
         <span class="toggle-dot sujeto"></span>
         Sujetos documentados
       </label>
+      -->
       <label class="layer-toggle">
         <input type="checkbox" id="toggle-avistamientos" checked>
         <span class="toggle-dot amenaza-ii"></span>
@@ -496,7 +513,7 @@ body {
 
     <div class="map-legend">
       <div class="legend-title">LEYENDA</div>
-      <div class="legend-item"><span class="legend-dot sujeto"></span> Sujeto documentado</div>
+      <!-- <div class="legend-item"><span class="legend-dot sujeto"></span> Sujeto documentado</div> -->
       <div class="legend-item"><span class="legend-dot amenaza-i"></span> Avistamiento Amenaza I</div>
       <div class="legend-item"><span class="legend-dot amenaza-ii"></span> Avistamiento Amenaza II</div>
       <div class="legend-item"><span class="legend-dot amenaza-iii"></span> Avistamiento Amenaza III</div>
@@ -538,7 +555,7 @@ body {
   L.control.zoom({ position: 'bottomright' }).addTo(map);
 
   // ── Layer groups ──────────────────────────────────────────────
-  const layerSujetos       = L.layerGroup().addTo(map);
+  // const layerSujetos = L.layerGroup().addTo(map); // desactivado — solo criaturas por ahora
   const layerAvistamientos = L.layerGroup().addTo(map);
   const layerZonas         = L.layerGroup().addTo(map);
   const layerRutas         = L.layerGroup();
@@ -596,18 +613,11 @@ body {
     </div>`;
   }
 
-  // ── Poblar sujetos ────────────────────────────────────────────
-  sujetos.forEach(s => {
-    const icon = L.divIcon({
-      className: 'marker-sujeto',
-      html: `<div class="marker-inner">${s.codigo}</div>`,
-      iconSize: [36, 36],
-      iconAnchor: [18, 18]
-    });
-    L.marker([s.lat, s.lng], { icon })
-      .bindPopup(popupSujeto(s), { maxWidth: 300 })
-      .addTo(layerSujetos);
-  });
+  // ── Poblar sujetos — desactivado por ahora ───────────────────
+  // sujetos.forEach(s => {
+  //   const icon = L.divIcon({ className:'marker-sujeto', html:`<div class="marker-inner">${s.codigo}</div>`, iconSize:[36,36], iconAnchor:[18,18] });
+  //   L.marker([s.lat,s.lng],{icon}).bindPopup(popupSujeto(s),{maxWidth:300}).addTo(layerSujetos);
+  // });
 
   // ── Poblar avistamientos ──────────────────────────────────────
   avistamientos.forEach(a => {
@@ -660,7 +670,7 @@ body {
 
   // ── Checkboxes ────────────────────────────────────────────────
   [
-    ['toggle-sujetos',         layerSujetos],
+    // ['toggle-sujetos', layerSujetos], // desactivado
     ['toggle-avistamientos',   layerAvistamientos],
     ['toggle-zonas',           layerZonas],
     ['toggle-rutas',           layerRutas],
@@ -823,7 +833,7 @@ body {
   // ── Alert banner ──────────────────────────────────────────────
   const banner   = document.getElementById('alert-banner');
   const abCode   = banner.querySelector('.ab-code');
-  const abText   = banner.querySelector('.ab-text');
+  const abText   = banner.querySelector('.ab-row-2');
   const abSignN  = banner.querySelector('.ab-signals-n');
   let alertIdx   = Math.floor(Math.random() * alertasActivas.length);
 
