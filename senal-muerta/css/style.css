@@ -1037,6 +1037,57 @@ a.chapter-tab.active { color: var(--accent); }
   margin-bottom: 8px;
 }
 
+/* ── Classified document pages ── */
+.classified-body p {
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text2);
+  margin-bottom: 20px;
+}
+.classified-body p strong {
+  color: var(--text);
+  font-weight: normal;
+  letter-spacing: 0.04em;
+}
+.classified-warning {
+  border: 1px solid var(--red);
+  background: var(--bg3);
+  border-left: 3px solid var(--red);
+  padding: 14px 18px;
+  margin-bottom: 28px;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.8;
+}
+.classified-warning-label {
+  font-size: 11px;
+  color: var(--red);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+.classified-list { margin: 0 0 20px 0; padding: 0; list-style: none; }
+.classified-list li {
+  font-family: var(--mono);
+  font-size: 15px;
+  color: var(--text2);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.7;
+}
+.classified-list li:last-child { border-bottom: none; }
+.classified-list li::before { content: '— '; color: var(--text3); }
+.cross-ref {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text3);
+  letter-spacing: 0.08em;
+  font-style: italic;
+}
+
 /* ── Institutional footer ── */
 .institutional-footer {
   font-family: var(--mono);
