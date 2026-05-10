@@ -453,6 +453,8 @@ body {
     <span class="separator">|</span>
     <span id="avistamiento-count">██</span>&nbsp;AVISTAMIENTOS INDEXADOS
     <span class="separator">|</span>
+    <span id="senal-count" style="color:var(--accent)">—</span>&nbsp;SEÑALES ACTIVAS
+    <span class="separator">|</span>
     ÚLTIMA ACTUALIZACIÓN: DÍA <span class="redacted" style="font-size:9px">██</span> p.E.
     <span class="separator">|</span>
     ACCESO: CLASE C — DATOS PARCIALES
@@ -553,6 +555,28 @@ body {
   }).addTo(map);
 
   L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+  // ── Niebla de cobertura ───────────────────────────────────────
+  // Capa oscura sobre zonas sin documentar — recortada en el área urbana conocida
+  map.createPane('fogPane');
+  map.getPane('fogPane').style.zIndex = 250;
+  map.getPane('fogPane').style.pointerEvents = 'none';
+
+  const fogOuter = [
+    [22.10, -102.65], [22.10, -102.00],
+    [21.65, -102.00], [21.65, -102.65]
+  ];
+  const fogHole = [
+    [21.935, -102.230], [21.935, -102.385],
+    [21.825, -102.385], [21.825, -102.230]
+  ];
+  L.polygon([fogOuter, fogHole], {
+    pane: 'fogPane',
+    color: 'none',
+    fillColor: '#030302',
+    fillOpacity: 0.58,
+    interactive: false
+  }).addTo(map);
 
   // ── Layer groups ──────────────────────────────────────────────
   // const layerSujetos = L.layerGroup().addTo(map); // desactivado — solo criaturas por ahora
@@ -729,45 +753,142 @@ body {
     ).join('');
   }
 
+  // Fetch a real street route via OSRM (foot profile, free, no key)
+  async function fetchRoute(c) {
+    if (c.fetching) return;
+    c.fetching = true;
+    c.waypoints = null;
+    const angle = Math.random() * Math.PI * 2;
+    const r = (0.2 + Math.random() * 0.8) * c.radio;
+    const tLat = c.homeLat + Math.cos(angle) * r;
+    const tLng = c.homeLng + Math.sin(angle) * r;
+    const url = `https://router.project-osrm.org/route/v1/foot/${c.curLng},${c.curLat};${tLng},${tLat}?overview=full&geometries=geojson`;
+    try {
+      const resp = await fetch(url);
+      const json = await resp.json();
+      if (json.routes && json.routes[0])
+        c.waypoints = json.routes[0].geometry.coordinates.map(([lng, lat]) => [lat, lng]);
+      else
+        c.waypoints = [[tLat, tLng]];
+    } catch(e) {
+      c.waypoints = [[tLat, tLng]];
+    }
+    c.wpIndex = 0;
+    c.fetching = false;
+  }
+
   // Inicializar estado de movimiento para un objeto (criatura o grupo)
   function initMover(obj) {
-    obj.curLat  = obj.lat;
-    obj.curLng  = obj.lng;
-    obj.homeLat = obj.lat;
-    obj.homeLng = obj.lng;
-    obj.pauseTicks = 0;
-    const a = Math.random() * Math.PI * 2;
-    const r = (0.3 + Math.random() * 0.7) * obj.radio;
-    obj.targetLat = obj.homeLat + Math.cos(a) * r;
-    obj.targetLng = obj.homeLng + Math.sin(a) * r;
+    // Scatter the patrol home 0.5–2.5× radio so each reload it patrols a different sub-zone
+    const ha    = Math.random() * Math.PI * 2;
+    const hr    = obj.radio * (0.5 + Math.random() * 2);
+    obj.homeLat = obj.lat + Math.cos(ha) * hr;
+    obj.homeLng = obj.lng + Math.sin(ha) * hr;
+    // Start at a random point near the session home
+    const sa    = Math.random() * Math.PI * 2;
+    const sr    = Math.random() * obj.radio;
+    obj.curLat  = obj.homeLat + Math.cos(sa) * sr;
+    obj.curLng  = obj.homeLng + Math.sin(sa) * sr;
+    // Per-reload speed variation ±30%
+    obj._vel = obj.velocidad * (0.7 + Math.random() * 0.6);
+    // Some already mid-pause on load so they don't all move in sync
+    obj.pauseTicks = Math.random() < 0.45 ? Math.floor(20 + Math.random() * 120) : 0;
+    if (obj.useStreets) {
+      obj.waypoints = null;
+      obj.wpIndex   = 0;
+      obj.fetching  = false;
+    } else {
+      const a = Math.random() * Math.PI * 2;
+      const r = (0.2 + Math.random() * 0.8) * obj.radio;
+      obj.targetLat = obj.homeLat + Math.cos(a) * r;
+      obj.targetLng = obj.homeLng + Math.sin(a) * r;
+    }
   }
 
   // Tick de movimiento para un objeto
   function stepMover(obj) {
     if (obj.pauseTicks > 0) { obj.pauseTicks--; return; }
-    const dlat = obj.targetLat - obj.curLat;
-    const dlng = obj.targetLng - obj.curLng;
-    const dist = Math.sqrt(dlat * dlat + dlng * dlng);
-    if (dist < 0.00003) {
-      obj.curLat = obj.targetLat;
-      obj.curLng = obj.targetLng;
-      if (Math.random() < obj.pauseProb)
-        obj.pauseTicks = Math.floor(40 + Math.random() * 140);
-      const angle  = Math.random() * Math.PI * 2;
-      const radius = (0.2 + Math.random() * 0.8) * obj.radio;
-      obj.targetLat = obj.homeLat + Math.cos(angle) * radius;
-      obj.targetLng = obj.homeLng + Math.sin(angle) * radius;
+
+    if (obj.useStreets) {
+      if (!obj.waypoints || obj.wpIndex >= obj.waypoints.length) {
+        fetchRoute(obj);
+        return;
+      }
+      const [wLat, wLng] = obj.waypoints[obj.wpIndex];
+      const dlat = wLat - obj.curLat;
+      const dlng = wLng - obj.curLng;
+      const dist = Math.sqrt(dlat * dlat + dlng * dlng);
+      if (dist < 0.00004) {
+        obj.curLat = wLat;
+        obj.curLng = wLng;
+        obj.wpIndex++;
+        if (obj.wpIndex >= obj.waypoints.length) {
+          if (Math.random() < obj.pauseProb)
+            obj.pauseTicks = Math.floor(40 + Math.random() * 180);
+          obj.waypoints = null;
+        } else {
+          obj.marker.setLatLng([obj.curLat, obj.curLng]);
+        }
+      } else {
+        obj.curLat += (dlat / dist) * obj._vel;
+        obj.curLng += (dlng / dist) * obj._vel;
+        obj.marker.setLatLng([obj.curLat, obj.curLng]);
+      }
     } else {
-      const jitter = (Math.random() - 0.5) * obj.velocidad * 0.35;
-      obj.curLat += (dlat / dist) * obj.velocidad + jitter;
-      obj.curLng += (dlng / dist) * obj.velocidad + jitter;
-      obj.marker.setLatLng([obj.curLat, obj.curLng]);
+      const dlat = obj.targetLat - obj.curLat;
+      const dlng = obj.targetLng - obj.curLng;
+      const dist = Math.sqrt(dlat * dlat + dlng * dlng);
+      if (dist < 0.00003) {
+        obj.curLat = obj.targetLat;
+        obj.curLng = obj.targetLng;
+        if (Math.random() < obj.pauseProb)
+          obj.pauseTicks = Math.floor(40 + Math.random() * 180);
+        // Occasional redirect mid-route for liveliness (15% chance)
+        const angle  = Math.random() * Math.PI * 2;
+        const radius = (0.15 + Math.random() * 0.85) * obj.radio;
+        obj.targetLat = obj.homeLat + Math.cos(angle) * radius;
+        obj.targetLng = obj.homeLng + Math.sin(angle) * radius;
+        // Re-roll speed at each waypoint ±15%
+        obj._vel = obj.velocidad * (0.85 + Math.random() * 0.3);
+      } else {
+        // Occasional spontaneous redirect (keeps movement unpredictable)
+        if (Math.random() < 0.004) {
+          const a = Math.random() * Math.PI * 2;
+          const r = (0.15 + Math.random() * 0.85) * obj.radio;
+          obj.targetLat = obj.homeLat + Math.cos(a) * r;
+          obj.targetLng = obj.homeLng + Math.sin(a) * r;
+        }
+        const jitter = (Math.random() - 0.5) * obj._vel * 0.4;
+        obj.curLat += (dlat / dist) * obj._vel + jitter;
+        obj.curLng += (dlng / dist) * obj._vel + jitter;
+        obj.marker.setLatLng([obj.curLat, obj.curLng]);
+      }
+    }
+
+    // Actualizar trail — acumula hasta 20 puntos
+    if (obj.trail) {
+      const lp = obj.trailPoints[obj.trailPoints.length - 1];
+      if (!lp || Math.abs(obj.curLat - lp[0]) > 0.000005 || Math.abs(obj.curLng - lp[1]) > 0.000005) {
+        obj.trailPoints.push([obj.curLat, obj.curLng]);
+        if (obj.trailPoints.length > 20) obj.trailPoints.shift();
+        obj.trail.setLatLngs(obj.trailPoints);
+      }
     }
   }
 
   // Crear marcadores de criaturas
+  const trailColors = { i: '#5a8a4a', ii: '#c8a84a', iii: '#c05040', iv: '#8a2020' };
+
   creaturasDinamicas.forEach(c => {
     initMover(c);
+    if (c.useStreets) fetchRoute(c);
+    c.trailPoints = [];
+    c.trail = L.polyline([], {
+      color: trailColors[c.amenaza] || '#c8a84a',
+      weight: 1.5,
+      opacity: 0.30,
+      interactive: false
+    }).addTo(layerCriaturas);
     c.marker = L.marker([c.curLat, c.curLng], {
       icon: L.divIcon({
         className: 'marker-criatura',
@@ -783,10 +904,33 @@ body {
     }).bindPopup(popupCriatura(c), { maxWidth: 300 }).addTo(layerCriaturas);
   });
 
-  // Crear marcadores de grupos
-  gruposActivos.forEach(g => {
-    initMover(g);
-    g.marker = L.marker([g.curLat, g.curLng], {
+  // Seleccionar subconjunto aleatorio del pool de grupos — cambia en cada reload
+  // Garantizar al menos 4 grupos de amenaza III de los alrededores
+  const periferiaIII = gruposActivos.filter(g => g.amenaza === 'iii' &&
+    (g.lat > 21.910 || g.lat < 21.855 || g.lng < -102.335 || g.lng > -102.240));
+  const resto = gruposActivos.filter(g => !periferiaIII.includes(g));
+
+  const forzados = periferiaIII
+    .slice()
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 4 + Math.floor(Math.random() * 3)); // 4–6 de periferia III siempre presentes
+
+  const grupoN = 12 + Math.floor(Math.random() * 7); // 12–18 total
+  const relleno = resto
+    .slice()
+    .sort(() => Math.random() - 0.5)
+    .slice(0, Math.max(0, grupoN - forzados.length));
+
+  const activeGrupos = [...forzados, ...relleno]
+    .sort(() => Math.random() - 0.5); // mezclar para que no haya orden predecible
+
+  // Crear marcadores para el subconjunto activo — estáticos, posición scatteada cada reload
+  activeGrupos.forEach(g => {
+    const sa  = Math.random() * Math.PI * 2;
+    const sr  = g.radio * (0.5 + Math.random() * 2);
+    const lat = g.lat + Math.cos(sa) * sr;
+    const lng = g.lng + Math.sin(sa) * sr;
+    g.marker = L.marker([lat, lng], {
       icon: L.divIcon({
         className: 'marker-grupo',
         html: `<div class="grupo-cluster amenaza-${g.amenaza}">${makeGrupoDots(g)}</div>`,
@@ -804,7 +948,6 @@ body {
     if (movTick) return;
     movTick = setInterval(() => {
       creaturasDinamicas.forEach(stepMover);
-      gruposActivos.forEach(stepMover);
     }, 50);
   }
 
@@ -831,16 +974,44 @@ body {
   });
 
   // ── Alert banner ──────────────────────────────────────────────
-  const banner   = document.getElementById('alert-banner');
-  const abCode   = banner.querySelector('.ab-code');
-  const abText   = banner.querySelector('.ab-row-2');
-  const abSignN  = banner.querySelector('.ab-signals-n');
-  let alertIdx   = Math.floor(Math.random() * alertasActivas.length);
+  const banner    = document.getElementById('alert-banner');
+  const abCode    = banner.querySelector('.ab-code');
+  const abText    = banner.querySelector('.ab-row-2');
+  const abSignN   = banner.querySelector('.ab-signals-n');
+  const senalCount = document.getElementById('senal-count');
+  let alertIdx    = Math.floor(Math.random() * alertasActivas.length);
+
+  // Resalta visualmente la criatura/grupo vinculado a la alerta activa
+  const hlColors = { i: '#5a8a4a', ii: '#c8a84a', iii: '#c05040', iv: '#8a2020' };
+  let hlLayers = [];
+
+  function highlightTarget(id) {
+    hlLayers.forEach(l => { try { map.removeLayer(l); } catch(e){} });
+    hlLayers = [];
+    const found = creaturasDinamicas.find(c => c.id === id)
+               || gruposActivos.find(g => g.id === id);
+    if (!found || !found.marker) return;
+    const pos = found.marker.getLatLng();
+    const clr = hlColors[found.amenaza] || '#c8a84a';
+    [90, 200, 360].forEach((r, i) => {
+      const circle = L.circle(pos, {
+        radius: r,
+        color: clr, weight: i === 0 ? 1.5 : 0.6,
+        opacity: 0.7 - i * 0.2,
+        fillColor: clr, fillOpacity: 0.07 - i * 0.02,
+        interactive: false
+      }).addTo(map);
+      hlLayers.push(circle);
+    });
+  }
 
   function renderAlert(a) {
-    abCode.textContent  = a.codigo;
-    abText.textContent  = a.texto;
-    abSignN.textContent = a.señales;
+    abCode.textContent   = a.codigo;
+    abText.textContent   = a.texto;
+    abSignN.textContent  = a.señales;
+    if (senalCount) senalCount.textContent = a.señales;
+    const tid = alertaTargets && alertaTargets[a.codigo];
+    if (tid) highlightTarget(tid);
   }
 
   function cycleAlert() {
