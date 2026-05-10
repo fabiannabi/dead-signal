@@ -1,18 +1,528 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cartografía — Señal Muerta</title>
-  <link rel="stylesheet" href="../css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartografía — Señal Muerta</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+/* ── Full-height map layout ── */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#map-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── Status bar ── */
+.map-status-bar {
+  height: 32px;
+  flex-shrink: 0;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.map-status-bar .separator { color: var(--border2); margin: 0 4px; }
+.map-status-bar .status-dot { animation: pulse 2s ease-in-out infinite; flex-shrink: 0; }
+#avistamiento-count { color: var(--accent); }
+
+/* ── Map container ── */
+#map {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
+
+/* ── Custom markers ── */
+.marker-sujeto,
+.marker-avistamiento,
+.marker-infra {
+  background: transparent !important;
+  border: none !important;
+}
+
+.marker-inner {
+  width: 36px;
+  height: 36px;
+  background: #c8a84a;
+  border: 2px solid #8a6a2a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  color: #0a0a08;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  transition: transform 0.15s;
+}
+
+.marker-inner:hover { transform: scale(1.1); }
+
+.marker-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.4);
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.marker-dot.amenaza-i   { background: #4a6a3a; }
+.marker-dot.amenaza-ii  { background: #8a6a2a; }
+.marker-dot.amenaza-iii { background: #8a3a2a; }
+.marker-dot.amenaza-iv  { background: #501313; border: 1px solid #8a3a2a; }
+
+.marker-infra-inner {
+  width: 24px;
+  height: 24px;
+  background: #1a1a16;
+  border: 1px solid #5a5648;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* ── Layer panel ── */
+.map-layer-panel {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  background: rgba(15, 15, 12, 0.93);
+  border: 1px solid #2a2a22;
+  padding: 14px 16px;
+  font-family: 'Share Tech Mono', monospace;
+  min-width: 190px;
+  backdrop-filter: blur(6px);
+}
+
+.panel-title {
+  font-size: 10px;
+  color: #5a5648;
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #2a2a22;
+}
+
+.layer-toggle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  color: #5a5648;
+  cursor: pointer;
+  padding: 5px 0;
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.layer-toggle input { display: none; }
+.layer-toggle:has(input:checked) { color: #c8c4a8; }
+
+.toggle-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.4;
+  transition: opacity 0.15s;
+}
+
+.layer-toggle:has(input:checked) .toggle-dot { opacity: 1; }
+
+.toggle-dot.sujeto     { background: #c8a84a; }
+.toggle-dot.amenaza-i  { background: #4a6a3a; }
+.toggle-dot.amenaza-ii { background: #8a6a2a; }
+.toggle-dot.amenaza-iii { background: #8a3a2a; }
+.toggle-dot.ruta       { background: #8a8670; }
+.toggle-dot.infra      { background: #5a5648; }
+
+/* ── Legend ── */
+.map-legend {
+  position: absolute;
+  bottom: 36px;
+  left: 16px;
+  z-index: 1000;
+  background: rgba(15, 15, 12, 0.93);
+  border: 1px solid #2a2a22;
+  padding: 12px 14px;
+  font-family: 'Share Tech Mono', monospace;
+  backdrop-filter: blur(6px);
+}
+
+.legend-title {
+  font-size: 10px;
+  color: #5a5648;
+  letter-spacing: 0.2em;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #2a2a22;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #8a8670;
+  padding: 2px 0;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-dot.amenaza-i   { background: #4a6a3a; }
+.legend-dot.amenaza-ii  { background: #8a6a2a; }
+.legend-dot.amenaza-iii { background: #8a3a2a; }
+.legend-dot.amenaza-iv  { background: #501313; }
+.legend-dot.sujeto      { background: #c8a84a; }
+
+/* ── Popup overrides ── */
+.leaflet-popup-content-wrapper {
+  background: #0f0f0c;
+  border: 1px solid #3a3a2a;
+  border-radius: 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.85);
+  padding: 0;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  width: auto !important;
+}
+
+.leaflet-popup-tip-container { display: none; }
+
+.leaflet-popup-close-button {
+  color: #5a5648 !important;
+  font-size: 18px !important;
+  top: 8px !important;
+  right: 10px !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.leaflet-popup-close-button:hover { color: #c8a84a !important; }
+
+.archivo-popup {
+  font-family: 'Share Tech Mono', monospace;
+  padding: 16px 18px;
+  min-width: 220px;
+  max-width: 280px;
+}
+
+.popup-code  { font-size: 10px; color: #5a5648; letter-spacing: 0.15em; }
+.popup-title { font-size: 14px; color: #c8a84a; margin: 4px 0 8px; line-height: 1.3; }
+.popup-meta  { font-size: 11px; color: #8a8670; display: flex; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+.popup-desc  { font-size: 12px; color: #c8c4a8; line-height: 1.6; margin-bottom: 10px; }
+
+.popup-link {
+  display: inline-block;
+  font-size: 11px;
+  color: #c8a84a;
+  text-decoration: none;
+  border-bottom: 1px solid #8a6a2a;
+  padding-bottom: 1px;
+  transition: color 0.15s;
+}
+.popup-link:hover { color: #e0c060; }
+
+/* ── Leaflet zoom control ── */
+.leaflet-control-zoom a {
+  background: #0f0f0c !important;
+  color: #8a8670 !important;
+  border-color: #2a2a22 !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  border-radius: 0 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #141410 !important;
+  color: #c8a84a !important;
+}
+
+.leaflet-control-zoom-in { border-bottom: 1px solid #2a2a22 !important; }
+
+.leaflet-bar {
+  border-radius: 0 !important;
+  border: 1px solid #2a2a22 !important;
+  box-shadow: none !important;
+}
+
+/* ── Leaflet attribution ── */
+.leaflet-control-attribution {
+  background: rgba(10,10,8,0.85) !important;
+  color: #3a3a30 !important;
+  font-size: 9px !important;
+  font-family: 'Share Tech Mono', monospace !important;
+}
+
+.leaflet-control-attribution a { color: #5a5040 !important; }
+
+/* ── Tile opacity ── */
+.leaflet-tile-pane { opacity: 0.9; }
+</style>
 </head>
 <body>
-  <header>
-    <h1><a href="../index.html">Señal Muerta</a></h1>
-  </header>
-  <main>
-    <h2>Cartografía</h2>
-  </main>
-  <script src="../js/main.js"></script>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="../../index.html" class="site-logo">APE — <span>SEÑAL MUERTA</span></a>
+  </div>
+</header>
+
+<div id="map-wrapper">
+
+  <div class="map-status-bar">
+    <span class="status-dot"></span>
+    SISTEMA DE CARTOGRAFÍA ACTIVO
+    <span class="separator">|</span>
+    <span id="avistamiento-count">██</span>&nbsp;AVISTAMIENTOS INDEXADOS
+    <span class="separator">|</span>
+    ÚLTIMA ACTUALIZACIÓN: DÍA <span class="redacted" style="font-size:9px">██</span> p.E.
+    <span class="separator">|</span>
+    ACCESO: CLASE C — DATOS PARCIALES
+  </div>
+
+  <div id="map">
+
+    <div class="map-layer-panel">
+      <div class="panel-title">CAPAS</div>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-sujetos" checked>
+        <span class="toggle-dot sujeto"></span>
+        Sujetos documentados
+      </label>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-avistamientos" checked>
+        <span class="toggle-dot amenaza-ii"></span>
+        Avistamientos
+      </label>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-zonas" checked>
+        <span class="toggle-dot amenaza-iii"></span>
+        Zonas de riesgo
+      </label>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-rutas">
+        <span class="toggle-dot ruta"></span>
+        Rutas documentadas
+      </label>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-infraestructura">
+        <span class="toggle-dot infra"></span>
+        Infraestructura
+      </label>
+    </div>
+
+    <div class="map-legend">
+      <div class="legend-title">LEYENDA</div>
+      <div class="legend-item"><span class="legend-dot sujeto"></span> Sujeto documentado</div>
+      <div class="legend-item"><span class="legend-dot amenaza-i"></span> Avistamiento Amenaza I</div>
+      <div class="legend-item"><span class="legend-dot amenaza-ii"></span> Avistamiento Amenaza II</div>
+      <div class="legend-item"><span class="legend-dot amenaza-iii"></span> Avistamiento Amenaza III</div>
+      <div class="legend-item"><span class="legend-dot amenaza-iv"></span> Avistamiento Amenaza IV</div>
+    </div>
+
+  </div><!-- #map -->
+
+</div><!-- #map-wrapper -->
+
+<script src="../js/main.js"></script>
+<script src="./datos.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+
+  // ── Inicializar mapa ──────────────────────────────────────────
+  const map = L.map('map', {
+    center: [21.8853, -102.2916],
+    zoom: 13,
+    minZoom: 12,
+    maxZoom: 17,
+    zoomControl: false
+  });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd'
+  }).addTo(map);
+
+  L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+  // ── Layer groups ──────────────────────────────────────────────
+  const layerSujetos       = L.layerGroup().addTo(map);
+  const layerAvistamientos = L.layerGroup().addTo(map);
+  const layerZonas         = L.layerGroup().addTo(map);
+  const layerRutas         = L.layerGroup();
+  const layerInfra         = L.layerGroup();
+
+  // ── Color por amenaza ─────────────────────────────────────────
+  const zonaColors = { i: '#4a6a3a', ii: '#8a6a2a', iii: '#8a3a2a', iv: '#501313' };
+
+  // ── Popup builders ────────────────────────────────────────────
+  function popupSujeto(s) {
+    return `<div class="archivo-popup">
+      <div class="popup-code">${s.codigo} — SUJETO DOCUMENTADO</div>
+      <div class="popup-title">${s.nombre}</div>
+      <div class="popup-meta"><span>${s.zona}</span><span>${s.capitulos} cap.</span></div>
+      <div class="popup-desc">${s.estado}</div>
+      ${s.link ? `<a href="${s.link}" class="popup-link">Ver ficha →</a>` : ''}
+    </div>`;
+  }
+
+  function popupAvistamiento(a) {
+    return `<div class="archivo-popup">
+      <div class="popup-code">${a.id} · ${a.sujeto}</div>
+      <div class="popup-title">${a.criatura}</div>
+      <div class="popup-meta"><span>Amenaza ${a.amenaza.toUpperCase()}</span><span>Día ${a.dia} p.E.</span></div>
+      <div class="popup-desc">${a.descripcion}</div>
+      ${a.link ? `<a href="${a.link}" class="popup-link">Ver documento →</a>` : ''}
+    </div>`;
+  }
+
+  function popupZona(z) {
+    return `<div class="archivo-popup">
+      <div class="popup-code">${z.id} — ZONA DE RIESGO</div>
+      <div class="popup-title">${z.nombre}</div>
+      <div class="popup-meta"><span>Amenaza ${z.amenaza.toUpperCase()}</span></div>
+      <div class="popup-desc">${z.descripcion}</div>
+    </div>`;
+  }
+
+  function popupRuta(r) {
+    return `<div class="archivo-popup">
+      <div class="popup-code">${r.id} — RUTA DOCUMENTADA</div>
+      <div class="popup-title">${r.nombre}</div>
+      <div class="popup-meta"><span>${r.sujeto}</span></div>
+      <div class="popup-desc">${r.descripcion}</div>
+    </div>`;
+  }
+
+  function popupInfra(inf) {
+    const tipos = { medical: 'MÉDICO', base: 'BASE', incidente: 'INCIDENTE' };
+    return `<div class="archivo-popup">
+      <div class="popup-code">${inf.id} — ${tipos[inf.tipo] || 'INFRAESTRUCTURA'}</div>
+      <div class="popup-title">${inf.nombre}</div>
+      <div class="popup-desc">${inf.descripcion}</div>
+      ${inf.link ? `<a href="${inf.link}" class="popup-link">Ver documento →</a>` : ''}
+    </div>`;
+  }
+
+  // ── Poblar sujetos ────────────────────────────────────────────
+  sujetos.forEach(s => {
+    const icon = L.divIcon({
+      className: 'marker-sujeto',
+      html: `<div class="marker-inner">${s.codigo}</div>`,
+      iconSize: [36, 36],
+      iconAnchor: [18, 18]
+    });
+    L.marker([s.lat, s.lng], { icon })
+      .bindPopup(popupSujeto(s), { maxWidth: 300 })
+      .addTo(layerSujetos);
+  });
+
+  // ── Poblar avistamientos ──────────────────────────────────────
+  avistamientos.forEach(a => {
+    const icon = L.divIcon({
+      className: 'marker-avistamiento',
+      html: `<div class="marker-dot amenaza-${a.amenaza}"></div>`,
+      iconSize: [12, 12],
+      iconAnchor: [6, 6]
+    });
+    L.marker([a.lat, a.lng], { icon })
+      .bindPopup(popupAvistamiento(a), { maxWidth: 300 })
+      .addTo(layerAvistamientos);
+  });
+
+  // ── Poblar zonas ──────────────────────────────────────────────
+  zonas.forEach(z => {
+    const color = zonaColors[z.amenaza] || '#8a8670';
+    L.polygon(z.coords, {
+      color: color,
+      fillColor: color,
+      fillOpacity: 0.15,
+      weight: 1,
+      dashArray: '3, 4'
+    }).bindPopup(popupZona(z), { maxWidth: 300 }).addTo(layerZonas);
+  });
+
+  // ── Poblar rutas ──────────────────────────────────────────────
+  rutas.forEach(r => {
+    L.polyline(r.coords, {
+      color: r.color,
+      weight: 2,
+      dashArray: '5, 5',
+      opacity: 0.7
+    }).bindPopup(popupRuta(r), { maxWidth: 300 }).addTo(layerRutas);
+  });
+
+  // ── Poblar infraestructura ────────────────────────────────────
+  const infraGlyphs = { medical: '✚', base: '⊞', incidente: '!' };
+  infraestructura.forEach(inf => {
+    const icon = L.divIcon({
+      className: 'marker-infra',
+      html: `<div class="marker-infra-inner">${infraGlyphs[inf.tipo] || '·'}</div>`,
+      iconSize: [24, 24],
+      iconAnchor: [12, 12]
+    });
+    L.marker([inf.lat, inf.lng], { icon })
+      .bindPopup(popupInfra(inf), { maxWidth: 300 })
+      .addTo(layerInfra);
+  });
+
+  // ── Checkboxes ────────────────────────────────────────────────
+  [
+    ['toggle-sujetos',         layerSujetos],
+    ['toggle-avistamientos',   layerAvistamientos],
+    ['toggle-zonas',           layerZonas],
+    ['toggle-rutas',           layerRutas],
+    ['toggle-infraestructura', layerInfra]
+  ].forEach(([id, layer]) => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', e => {
+      e.target.checked ? layer.addTo(map) : map.removeLayer(layer);
+    });
+  });
+
+  // ── Contador ──────────────────────────────────────────────────
+  const countEl = document.getElementById('avistamiento-count');
+  if (countEl) countEl.textContent = avistamientos.length;
+
+})();
+</script>
 </body>
 </html>

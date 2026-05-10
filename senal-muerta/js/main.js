@@ -115,7 +115,7 @@ function buildGlobalNav() {
   var links = [
     { label: 'Personajes',  href: root,                        active: path.indexOf('/personajes') !== -1 },
     { label: 'Bestiario',   href: base + 'bestiario/',         active: path.indexOf('/bestiario')  !== -1 },
-    { label: 'Cartografía', href: base + 'cartografia/',       active: path.indexOf('/cartografia') !== -1, disabled: true },
+    { label: 'Cartografía', href: base + 'cartografia/',       active: path.indexOf('/cartografia') !== -1 },
     { label: 'Cronología',  href: base + 'cronologia/',        active: path.indexOf('/cronologia')  !== -1, disabled: true }
   ];
 
