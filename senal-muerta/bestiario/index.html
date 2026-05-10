@@ -32,20 +32,45 @@
     Catálogo de fauna mutada documentada por los sujetos del grupo durante el período post-Emergencia. Las entradas están en construcción. Los niveles de amenaza son provisionales.
   </div>
 
+  <div class="tag-filter" id="bestiario-tag-filter">
+    <span class="tag-filter-label">Filtrar por —</span>
+    <div class="tag-filter-row">
+      <button class="tag-btn reset active" data-filter="all">Todas</button>
+    </div>
+    <div class="tag-filter-row">
+      <button class="tag-btn" data-filter="amenaza-i">Amenaza I</button>
+      <button class="tag-btn" data-filter="amenaza-ii">Amenaza II</button>
+      <button class="tag-btn" data-filter="amenaza-iii">Amenaza III</button>
+      <button class="tag-btn" data-filter="amenaza-iv">Amenaza IV</button>
+    </div>
+    <div class="tag-filter-row">
+      <button class="tag-btn" data-filter="herbivoro">Herbívoro</button>
+      <button class="tag-btn" data-filter="carnivoro">Carnívoro</button>
+      <button class="tag-btn" data-filter="parasito">Parásito</button>
+      <button class="tag-btn" data-filter="descomponedor">Descomponedor</button>
+    </div>
+    <div class="tag-filter-row">
+      <button class="tag-btn" data-filter="f-01">F-01 Fabián</button>
+      <button class="tag-btn" data-filter="f-02">F-02 Felipe</button>
+      <button class="tag-btn" data-filter="f-03">F-03 Gaby</button>
+      <button class="tag-btn" data-filter="f-05">F-05 Carlos</button>
+    </div>
+  </div>
+
   <div class="archive-stamp">Amenaza I — Prioridad baja</div>
 
   <div class="entry-grid">
-    <a href="cervato-de-concreto.html" class="entry-item">
+    <a href="cervato-de-concreto.html" class="entry-item" data-tags="amenaza-i,herbivoro,f-01,f-03">
       <div class="entry-threat">Amenaza I — Herbívoro</div>
       <div class="entry-name">Cervato de Concreto</div>
       <div class="entry-type">F-01 día 1 / F-03 km 91</div>
     </a>
-    <a href="gusano-de-asfalto.html" class="entry-item">
+    <a href="gusano-de-asfalto.html" class="entry-item" data-tags="amenaza-i,descomponedor,f-01">
       <div class="entry-threat">Amenaza I — Descomponedor</div>
       <div class="entry-name">Gusano de Asfalto</div>
       <div class="entry-type">F-01 sonido día 1</div>
     </a>
-    <a href="roca.html" class="entry-item">
+    <a href="roca.html" class="entry-item" data-tags="amenaza-i,herbivoro,descomponedor,f-01">
       <div class="entry-threat">Amenaza I — Herbívoro / Descomponedor</div>
       <div class="entry-name">Roca</div>
       <div class="entry-type">F-01 día 2</div>
@@ -55,37 +80,37 @@
   <div class="archive-stamp">Amenaza II — Prioridad alta</div>
 
   <div class="entry-grid">
-    <a href="chacal-de-feria.html" class="entry-item">
+    <a href="chacal-de-feria.html" class="entry-item" data-tags="amenaza-ii,carnivoro,f-02">
       <div class="entry-threat">Amenaza II — Carnívoro / Manada</div>
       <div class="entry-name">Chacal de Feria</div>
       <div class="entry-type">F-02 semana 2</div>
     </a>
-    <a href="arana-hidraulica.html" class="entry-item">
+    <a href="arana-hidraulica.html" class="entry-item" data-tags="amenaza-ii,carnivoro,f-02">
       <div class="entry-threat">Amenaza II — Carnívoro / Emboscada</div>
       <div class="entry-name">Araña Hidráulica</div>
       <div class="entry-type">F-02 farmacia día 4</div>
     </a>
-    <a href="arana-de-casa.html" class="entry-item">
+    <a href="arana-de-casa.html" class="entry-item" data-tags="amenaza-ii,carnivoro,f-01">
       <div class="entry-threat">Amenaza II — Carnívoro / Emboscada</div>
       <div class="entry-name">Araña de Casa</div>
       <div class="entry-type">F-01 supermercado semana 3</div>
     </a>
-    <a href="mosca-forunculo.html" class="entry-item">
+    <a href="mosca-forunculo.html" class="entry-item" data-tags="amenaza-ii,parasito,f-02">
       <div class="entry-threat">Amenaza II — Parásito</div>
       <div class="entry-name">Mosca Forúnculo</div>
       <div class="entry-type">F-02 ciclo semana 3–5</div>
     </a>
-    <a href="roca-negra.html" class="entry-item">
+    <a href="roca-negra.html" class="entry-item" data-tags="amenaza-ii,carnivoro,f-01">
       <div class="entry-threat">Amenaza II — Carnívoro / Oportunista</div>
       <div class="entry-name">Roca Negra</div>
       <div class="entry-type">F-01 día 3</div>
     </a>
-    <a href="hormiga-coordinadora.html" class="entry-item">
+    <a href="hormiga-coordinadora.html" class="entry-item" data-tags="amenaza-ii,herbivoro,f-01">
       <div class="entry-threat">Amenaza II — Herbívoro / Colonia</div>
       <div class="entry-name">Hormiga Coordinadora</div>
       <div class="entry-type">F-01 día 5</div>
     </a>
-    <a href="coyote-mutado.html" class="entry-item">
+    <a href="coyote-mutado.html" class="entry-item" data-tags="amenaza-ii,carnivoro,f-05">
       <div class="entry-threat">Amenaza II — Carnívoro / Manada</div>
       <div class="entry-name">Coyote Mutado</div>
       <div class="entry-type">F-05 semana 2</div>
@@ -95,7 +120,7 @@
   <div class="archive-stamp">Amenaza III — Prioridad crítica</div>
 
   <div class="entry-grid">
-    <a href="toro-de-calicanto.html" class="entry-item">
+    <a href="toro-de-calicanto.html" class="entry-item" data-tags="amenaza-iii,carnivoro,f-02">
       <div class="entry-threat">Amenaza III — Carnívoro / Territorial</div>
       <div class="entry-name">Toro de Calicanto</div>
       <div class="entry-type">Sin avistamiento directo documentado</div>
@@ -105,7 +130,7 @@
   <div class="archive-stamp">Amenaza IV — Extinción</div>
 
   <div class="entry-grid">
-    <a href="la-catedral.html" class="entry-item">
+    <a href="la-catedral.html" class="entry-item" data-tags="amenaza-iv,f-03">
       <div class="entry-threat">Amenaza IV — Extinción / Desconocido</div>
       <div class="entry-name">La Catedral</div>
       <div class="entry-type">F-03 km 87 horizonte</div>
@@ -114,7 +139,7 @@
 
   <div class="page-footer">
     <span><span class="status-dot"></span>Archivo activo</span>
-    <span>Bestiario — 12 entradas documentadas</span>
+    <span>Bestiario — 11 entradas documentadas</span>
     <span><a href="../../index.html" style="color:var(--text3); text-decoration:none;">← Volver al archivo</a></span>
   </div>
 
