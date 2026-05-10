@@ -1,6 +1,78 @@
 // Señal Muerta — Datos cartográficos
 // Cargar antes del script principal del mapa
 
+// SEÑALES EN TIEMPO REAL — posiciones estimadas basadas en último avistamiento
+// radio: grados de margen de movimiento (~0.001° ≈ 111m)
+// velocidad: grados por tick (tick = 50ms)
+const creaturasDinamicas = [
+  {
+    id: 'CD-001',
+    nombre: 'Gusano de Asfalto',
+    amenaza: 'i',
+    lat: 21.8825, lng: -102.2960,
+    radio: 0.0022,
+    velocidad: 0.000012,
+    pauseProb: 0.15,
+    nota: 'Desplazamiento subterráneo — firma sísmica de baja frecuencia',
+    link: '../bestiario/gusano-de-asfalto.html'
+  },
+  {
+    id: 'CD-002',
+    nombre: 'Gusano de Asfalto',
+    amenaza: 'i',
+    lat: 21.8710, lng: -102.3010,
+    radio: 0.0018,
+    velocidad: 0.000010,
+    pauseProb: 0.2,
+    nota: 'Actividad en zona de tránsito — túneles residuales activos',
+    link: '../bestiario/gusano-de-asfalto.html'
+  },
+  {
+    id: 'CD-003',
+    nombre: 'Chacal de Feria',
+    amenaza: 'ii',
+    lat: 21.8835, lng: -102.2895,
+    radio: 0.003,
+    velocidad: 0.000055,
+    pauseProb: 0.1,
+    nota: 'Manada de 5–7 individuos — corredor activo zona centro',
+    link: '../bestiario/chacal-de-feria.html'
+  },
+  {
+    id: 'CD-004',
+    nombre: 'Hormiga Coordinadora',
+    amenaza: 'ii',
+    lat: 21.8818, lng: -102.2955,
+    radio: 0.0012,
+    velocidad: 0.000035,
+    pauseProb: 0.05,
+    nota: 'Columna activa — dos castas documentadas en zona norte',
+    link: '../bestiario/hormiga-coordinadora.html'
+  },
+  {
+    id: 'CD-005',
+    nombre: 'Coyote Mutado',
+    amenaza: 'ii',
+    lat: 21.8652, lng: -102.3055,
+    radio: 0.004,
+    velocidad: 0.000080,
+    pauseProb: 0.12,
+    nota: 'Manada — actividad perimetral campus sur',
+    link: '../bestiario/coyote-mutado.html'
+  },
+  {
+    id: 'CD-006',
+    nombre: 'Cervato de Concreto',
+    amenaza: 'i',
+    lat: 21.8840, lng: -102.2945,
+    radio: 0.0025,
+    velocidad: 0.000030,
+    pauseProb: 0.25,
+    nota: 'Avistamiento recurrente zona norte — comportamiento no agresivo',
+    link: '../bestiario/cervato-de-concreto.html'
+  }
+];
+
 const sujetos = [
   {
     codigo: "F-01",

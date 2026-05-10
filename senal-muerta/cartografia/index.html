@@ -294,6 +294,69 @@ body {
 
 /* ── Tile opacity ── */
 .leaflet-tile-pane { opacity: 0.9; }
+
+/* ── Marcadores dinámicos — señales en tiempo real ── */
+.marker-criatura {
+  background: transparent !important;
+  border: none !important;
+  overflow: visible !important;
+}
+
+.criatura-marker {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.criatura-core {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.criatura-ring {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid;
+  top: 0; left: 0;
+  animation: criatura-ping 2.4s ease-out infinite;
+  z-index: 1;
+}
+
+.criatura-ring:nth-child(3) {
+  animation-delay: -1.2s;
+}
+
+@keyframes criatura-ping {
+  0%   { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(3.2); opacity: 0; }
+}
+
+/* Cores */
+.criatura-marker.amenaza-i  .criatura-core { background: #5a8a4a; }
+.criatura-marker.amenaza-ii .criatura-core { background: #c8a84a; }
+.criatura-marker.amenaza-iii .criatura-core { background: #c05040; }
+.criatura-marker.amenaza-iv  .criatura-core { background: #8a2020; }
+
+/* Rings — heredan color del marker */
+.criatura-marker.amenaza-i  .criatura-ring { border-color: #5a8a4a; }
+.criatura-marker.amenaza-ii .criatura-ring { border-color: #c8a84a; }
+.criatura-marker.amenaza-iii .criatura-ring { border-color: #c05040; }
+.criatura-marker.amenaza-iv  .criatura-ring { border-color: #8a2020; }
+
+/* Legend dot vivo */
+.legend-dot.vivo {
+  background: #c8a84a;
+  animation: criatura-ping 2.4s ease-out infinite;
+}
+
+.toggle-dot.vivo { background: #c8a84a; }
 </style>
 </head>
 <body>
@@ -346,6 +409,11 @@ body {
         <span class="toggle-dot infra"></span>
         Infraestructura
       </label>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-criaturas" checked>
+        <span class="toggle-dot vivo"></span>
+        Señales activas
+      </label>
     </div>
 
     <div class="map-legend">
@@ -355,6 +423,10 @@ body {
       <div class="legend-item"><span class="legend-dot amenaza-ii"></span> Avistamiento Amenaza II</div>
       <div class="legend-item"><span class="legend-dot amenaza-iii"></span> Avistamiento Amenaza III</div>
       <div class="legend-item"><span class="legend-dot amenaza-iv"></span> Avistamiento Amenaza IV</div>
+      <div class="legend-item" style="margin-top:8px; padding-top:8px; border-top:1px solid #2a2a22;">
+        <span class="legend-dot" style="background:#c8a84a;animation:criatura-ping 2.4s ease-out infinite;"></span>
+        Señal activa — tiempo real
+      </div>
     </div>
 
   </div><!-- #map -->
@@ -521,6 +593,117 @@ body {
   // ── Contador ──────────────────────────────────────────────────
   const countEl = document.getElementById('avistamiento-count');
   if (countEl) countEl.textContent = avistamientos.length;
+
+  // ── Criaturas dinámicas — señales en tiempo real ───────────────
+  const layerCriaturas = L.layerGroup().addTo(map);
+
+  const amenazaColors = { i: '#5a8a4a', ii: '#c8a84a', iii: '#c05040', iv: '#8a2020' };
+
+  function popupCriatura(c) {
+    return `<div class="archivo-popup">
+      <div class="popup-code">${c.id} — SEÑAL ACTIVA</div>
+      <div class="popup-title">${c.nombre}</div>
+      <div class="popup-meta">
+        <span>Amenaza ${c.amenaza.toUpperCase()}</span>
+        <span style="color:#c8a84a">● EN MOVIMIENTO</span>
+      </div>
+      <div class="popup-desc">${c.nota}</div>
+      ${c.link ? `<a href="${c.link}" class="popup-link">Ver ficha →</a>` : ''}
+    </div>`;
+  }
+
+  // Inicializar estado de cada criatura
+  creaturasDinamicas.forEach(c => {
+    c.curLat   = c.lat;
+    c.curLng   = c.lng;
+    c.homeLat  = c.lat;
+    c.homeLng  = c.lng;
+    // Primer target aleatorio dentro del radio
+    const a = Math.random() * Math.PI * 2;
+    const r = (0.3 + Math.random() * 0.7) * c.radio;
+    c.targetLat = c.homeLat + Math.cos(a) * r;
+    c.targetLng = c.homeLng + Math.sin(a) * r;
+    c.pauseTicks = 0;
+
+    const icon = L.divIcon({
+      className: 'marker-criatura',
+      html: `<div class="criatura-marker amenaza-${c.amenaza}">
+               <div class="criatura-core"></div>
+               <div class="criatura-ring"></div>
+               <div class="criatura-ring"></div>
+             </div>`,
+      iconSize: [14, 14],
+      iconAnchor: [7, 7]
+    });
+
+    c.marker = L.marker([c.curLat, c.curLng], { icon, zIndexOffset: 200 })
+      .bindPopup(popupCriatura(c), { maxWidth: 300 })
+      .addTo(layerCriaturas);
+  });
+
+  // Tick de movimiento: cada 50ms
+  let movTick = null;
+
+  function startMovement() {
+    if (movTick) return;
+    movTick = setInterval(() => {
+      creaturasDinamicas.forEach(c => {
+        // Pausada
+        if (c.pauseTicks > 0) { c.pauseTicks--; return; }
+
+        const dlat = c.targetLat - c.curLat;
+        const dlng = c.targetLng - c.curLng;
+        const dist = Math.sqrt(dlat * dlat + dlng * dlng);
+
+        if (dist < 0.00004) {
+          // Llegó al target — nuevo target aleatorio
+          c.curLat = c.targetLat;
+          c.curLng = c.targetLng;
+
+          // Pausa ocasional
+          if (Math.random() < c.pauseProb) {
+            c.pauseTicks = Math.floor(40 + Math.random() * 120); // 2-8s
+          }
+
+          const angle = Math.random() * Math.PI * 2;
+          const radius = (0.2 + Math.random() * 0.8) * c.radio;
+          c.targetLat = c.homeLat + Math.cos(angle) * radius;
+          c.targetLng = c.homeLng + Math.sin(angle) * radius;
+        } else {
+          // Avanzar un paso — con micro-jitter orgánico
+          const jitter = (Math.random() - 0.5) * c.velocidad * 0.4;
+          c.curLat += (dlat / dist) * c.velocidad + jitter;
+          c.curLng += (dlng / dist) * c.velocidad + jitter;
+          c.marker.setLatLng([c.curLat, c.curLng]);
+        }
+      });
+    }, 50);
+  }
+
+  function stopMovement() {
+    if (movTick) { clearInterval(movTick); movTick = null; }
+  }
+
+  startMovement();
+
+  // Toggle criaturas
+  const elCriaturas = document.getElementById('toggle-criaturas');
+  if (elCriaturas) {
+    elCriaturas.addEventListener('change', e => {
+      if (e.target.checked) {
+        layerCriaturas.addTo(map);
+        startMovement();
+      } else {
+        map.removeLayer(layerCriaturas);
+        stopMovement();
+      }
+    });
+  }
+
+  // Pausar movimiento cuando el tab no está visible (ahorro de CPU)
+  document.addEventListener('visibilitychange', () => {
+    document.hidden ? stopMovement() : (elCriaturas && elCriaturas.checked && startMovement());
+  });
 
 })();
 </script>
