@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dev": "live-server --port=3000 --open=index.html --ignore=\".git,.claude,_incoming,node_modules\""
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
