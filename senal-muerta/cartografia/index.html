@@ -113,7 +113,7 @@ body {
 /* ── Layer panel ── */
 .map-layer-panel {
   position: absolute;
-  top: 16px;
+  top: 44px;
   right: 16px;
   z-index: 1000;
   background: rgba(15, 15, 12, 0.93);
@@ -356,7 +356,70 @@ body {
   animation: criatura-ping 2.4s ease-out infinite;
 }
 
-.toggle-dot.vivo { background: #c8a84a; }
+.toggle-dot.vivo   { background: #c8a84a; }
+.toggle-dot.grupo  { background: #8a6a2a; border-radius: 2px; }
+
+/* ── Grupos no identificados ── */
+.marker-grupo { background: transparent !important; border: none !important; overflow: visible !important; }
+
+.grupo-cluster {
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+
+.g-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+.grupo-cluster.amenaza-i   .g-dot { background: rgba(90,138,74,0.65); }
+.grupo-cluster.amenaza-ii  .g-dot { background: rgba(200,168,74,0.65); }
+.grupo-cluster.amenaza-iii .g-dot { background: rgba(192,80,64,0.65); }
+.grupo-cluster.amenaza-iv  .g-dot { background: rgba(138,32,32,0.65); }
+
+/* ── Alert banner ── */
+.alert-banner {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 1001;
+  height: 28px;
+  background: rgba(8,8,6,0.90);
+  border-bottom: 1px solid #1c1c14;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: #5a5648;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 8px;
+  letter-spacing: 0.06em;
+  transition: opacity 0.6s;
+  pointer-events: none;
+}
+
+.alert-banner.fading { opacity: 0; }
+
+.ab-badge {
+  color: #c8a84a;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  flex-shrink: 0;
+  animation: ab-blink 4s ease-in-out infinite;
+}
+
+@keyframes ab-blink {
+  0%,44%,56%,100% { opacity: 1; }
+  50% { opacity: 0.08; }
+}
+
+.ab-code { color: #322e20; flex-shrink: 0; }
+.ab-sep  { color: #222018; }
+.ab-text { color: #7a7660; flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.ab-signals { flex-shrink: 0; white-space: nowrap; }
+.ab-signals-n { color: #c8a84a; }
 </style>
 </head>
 <body>
@@ -381,6 +444,16 @@ body {
   </div>
 
   <div id="map">
+
+    <div class="alert-banner fading" id="alert-banner">
+      <span class="ab-badge">▲ ALERTA ACTIVA</span>
+      <span class="ab-sep">—</span>
+      <span class="ab-code">ALR-000</span>
+      <span class="ab-sep">—</span>
+      <span class="ab-text"></span>
+      <span class="ab-sep">—</span>
+      <span class="ab-signals"><span class="ab-signals-n">0</span>&nbsp;SEÑALES</span>
+    </div>
 
     <div class="map-layer-panel">
       <div class="panel-title">CAPAS</div>
@@ -414,6 +487,11 @@ body {
         <span class="toggle-dot vivo"></span>
         Señales activas
       </label>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-grupos" checked>
+        <span class="toggle-dot grupo"></span>
+        No identificados
+      </label>
     </div>
 
     <div class="map-legend">
@@ -426,6 +504,10 @@ body {
       <div class="legend-item" style="margin-top:8px; padding-top:8px; border-top:1px solid #2a2a22;">
         <span class="legend-dot" style="background:#c8a84a;animation:criatura-ping 2.4s ease-out infinite;"></span>
         Señal activa — tiempo real
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background:rgba(200,168,74,0.5);border-radius:2px;"></span>
+        Grupo no identificado
       </div>
     </div>
 
@@ -594,10 +676,9 @@ body {
   const countEl = document.getElementById('avistamiento-count');
   if (countEl) countEl.textContent = avistamientos.length;
 
-  // ── Criaturas dinámicas — señales en tiempo real ───────────────
+  // ── Señales dinámicas — criaturas identificadas ───────────────
   const layerCriaturas = L.layerGroup().addTo(map);
-
-  const amenazaColors = { i: '#5a8a4a', ii: '#c8a84a', iii: '#c05040', iv: '#8a2020' };
+  const layerGrupos    = L.layerGroup().addTo(map);
 
   function popupCriatura(c) {
     return `<div class="archivo-popup">
@@ -612,71 +693,108 @@ body {
     </div>`;
   }
 
-  // Inicializar estado de cada criatura
-  creaturasDinamicas.forEach(c => {
-    c.curLat   = c.lat;
-    c.curLng   = c.lng;
-    c.homeLat  = c.lat;
-    c.homeLng  = c.lng;
-    // Primer target aleatorio dentro del radio
+  function popupGrupo(g) {
+    return `<div class="archivo-popup">
+      <div class="popup-code">${g.id} — SEÑAL NO CLASIFICADA</div>
+      <div class="popup-title">Grupo — ${g.size} puntos activos</div>
+      <div class="popup-meta">
+        <span>Amenaza ${g.amenaza.toUpperCase()}</span>
+        <span style="color:#8a6a2a">● SIN DOCUMENTAR</span>
+      </div>
+      <div class="popup-desc">${g.nota}</div>
+    </div>`;
+  }
+
+  // Posiciones de dots para cada tamaño de grupo
+  const dotLayouts = {
+    3: [{t:4,l:9},{t:15,l:2},{t:14,l:16}],
+    4: [{t:2,l:6},{t:2,l:14},{t:15,l:3},{t:15,l:15}],
+    5: [{t:1,l:8},{t:8,l:17},{t:16,l:4},{t:17,l:14},{t:4,l:0}]
+  };
+
+  function makeGrupoDots(g) {
+    const positions = dotLayouts[g.size] || dotLayouts[3];
+    return positions.map(p =>
+      `<span class="g-dot" style="top:${p.t}px;left:${p.l}px"></span>`
+    ).join('');
+  }
+
+  // Inicializar estado de movimiento para un objeto (criatura o grupo)
+  function initMover(obj) {
+    obj.curLat  = obj.lat;
+    obj.curLng  = obj.lng;
+    obj.homeLat = obj.lat;
+    obj.homeLng = obj.lng;
+    obj.pauseTicks = 0;
     const a = Math.random() * Math.PI * 2;
-    const r = (0.3 + Math.random() * 0.7) * c.radio;
-    c.targetLat = c.homeLat + Math.cos(a) * r;
-    c.targetLng = c.homeLng + Math.sin(a) * r;
-    c.pauseTicks = 0;
+    const r = (0.3 + Math.random() * 0.7) * obj.radio;
+    obj.targetLat = obj.homeLat + Math.cos(a) * r;
+    obj.targetLng = obj.homeLng + Math.sin(a) * r;
+  }
 
-    const icon = L.divIcon({
-      className: 'marker-criatura',
-      html: `<div class="criatura-marker amenaza-${c.amenaza}">
-               <div class="criatura-core"></div>
-               <div class="criatura-ring"></div>
-               <div class="criatura-ring"></div>
-             </div>`,
-      iconSize: [14, 14],
-      iconAnchor: [7, 7]
-    });
+  // Tick de movimiento para un objeto
+  function stepMover(obj) {
+    if (obj.pauseTicks > 0) { obj.pauseTicks--; return; }
+    const dlat = obj.targetLat - obj.curLat;
+    const dlng = obj.targetLng - obj.curLng;
+    const dist = Math.sqrt(dlat * dlat + dlng * dlng);
+    if (dist < 0.00003) {
+      obj.curLat = obj.targetLat;
+      obj.curLng = obj.targetLng;
+      if (Math.random() < obj.pauseProb)
+        obj.pauseTicks = Math.floor(40 + Math.random() * 140);
+      const angle  = Math.random() * Math.PI * 2;
+      const radius = (0.2 + Math.random() * 0.8) * obj.radio;
+      obj.targetLat = obj.homeLat + Math.cos(angle) * radius;
+      obj.targetLng = obj.homeLng + Math.sin(angle) * radius;
+    } else {
+      const jitter = (Math.random() - 0.5) * obj.velocidad * 0.35;
+      obj.curLat += (dlat / dist) * obj.velocidad + jitter;
+      obj.curLng += (dlng / dist) * obj.velocidad + jitter;
+      obj.marker.setLatLng([obj.curLat, obj.curLng]);
+    }
+  }
 
-    c.marker = L.marker([c.curLat, c.curLng], { icon, zIndexOffset: 200 })
-      .bindPopup(popupCriatura(c), { maxWidth: 300 })
-      .addTo(layerCriaturas);
+  // Crear marcadores de criaturas
+  creaturasDinamicas.forEach(c => {
+    initMover(c);
+    c.marker = L.marker([c.curLat, c.curLng], {
+      icon: L.divIcon({
+        className: 'marker-criatura',
+        html: `<div class="criatura-marker amenaza-${c.amenaza}">
+                 <div class="criatura-core"></div>
+                 <div class="criatura-ring"></div>
+                 <div class="criatura-ring"></div>
+               </div>`,
+        iconSize: [14, 14],
+        iconAnchor: [7, 7]
+      }),
+      zIndexOffset: 200
+    }).bindPopup(popupCriatura(c), { maxWidth: 300 }).addTo(layerCriaturas);
   });
 
-  // Tick de movimiento: cada 50ms
+  // Crear marcadores de grupos
+  gruposActivos.forEach(g => {
+    initMover(g);
+    g.marker = L.marker([g.curLat, g.curLng], {
+      icon: L.divIcon({
+        className: 'marker-grupo',
+        html: `<div class="grupo-cluster amenaza-${g.amenaza}">${makeGrupoDots(g)}</div>`,
+        iconSize: [22, 22],
+        iconAnchor: [11, 11]
+      }),
+      zIndexOffset: 150
+    }).bindPopup(popupGrupo(g), { maxWidth: 300 }).addTo(layerGrupos);
+  });
+
+  // Loop de movimiento unificado (50ms)
   let movTick = null;
 
   function startMovement() {
     if (movTick) return;
     movTick = setInterval(() => {
-      creaturasDinamicas.forEach(c => {
-        // Pausada
-        if (c.pauseTicks > 0) { c.pauseTicks--; return; }
-
-        const dlat = c.targetLat - c.curLat;
-        const dlng = c.targetLng - c.curLng;
-        const dist = Math.sqrt(dlat * dlat + dlng * dlng);
-
-        if (dist < 0.00004) {
-          // Llegó al target — nuevo target aleatorio
-          c.curLat = c.targetLat;
-          c.curLng = c.targetLng;
-
-          // Pausa ocasional
-          if (Math.random() < c.pauseProb) {
-            c.pauseTicks = Math.floor(40 + Math.random() * 120); // 2-8s
-          }
-
-          const angle = Math.random() * Math.PI * 2;
-          const radius = (0.2 + Math.random() * 0.8) * c.radio;
-          c.targetLat = c.homeLat + Math.cos(angle) * radius;
-          c.targetLng = c.homeLng + Math.sin(angle) * radius;
-        } else {
-          // Avanzar un paso — con micro-jitter orgánico
-          const jitter = (Math.random() - 0.5) * c.velocidad * 0.4;
-          c.curLat += (dlat / dist) * c.velocidad + jitter;
-          c.curLng += (dlng / dist) * c.velocidad + jitter;
-          c.marker.setLatLng([c.curLat, c.curLng]);
-        }
-      });
+      creaturasDinamicas.forEach(stepMover);
+      gruposActivos.forEach(stepMover);
     }, 50);
   }
 
@@ -686,24 +804,52 @@ body {
 
   startMovement();
 
-  // Toggle criaturas
+  // Toggles
   const elCriaturas = document.getElementById('toggle-criaturas');
-  if (elCriaturas) {
-    elCriaturas.addEventListener('change', e => {
-      if (e.target.checked) {
-        layerCriaturas.addTo(map);
-        startMovement();
-      } else {
-        map.removeLayer(layerCriaturas);
-        stopMovement();
-      }
-    });
+  if (elCriaturas) elCriaturas.addEventListener('change', e => {
+    e.target.checked ? layerCriaturas.addTo(map) : map.removeLayer(layerCriaturas);
+  });
+
+  const elGrupos = document.getElementById('toggle-grupos');
+  if (elGrupos) elGrupos.addEventListener('change', e => {
+    e.target.checked ? layerGrupos.addTo(map) : map.removeLayer(layerGrupos);
+  });
+
+  // Pausar cuando el tab no está visible
+  document.addEventListener('visibilitychange', () => {
+    document.hidden ? stopMovement() : startMovement();
+  });
+
+  // ── Alert banner ──────────────────────────────────────────────
+  const banner   = document.getElementById('alert-banner');
+  const abCode   = banner.querySelector('.ab-code');
+  const abText   = banner.querySelector('.ab-text');
+  const abSignN  = banner.querySelector('.ab-signals-n');
+  let alertIdx   = Math.floor(Math.random() * alertasActivas.length);
+
+  function renderAlert(a) {
+    abCode.textContent  = a.codigo;
+    abText.textContent  = a.texto;
+    abSignN.textContent = a.señales;
   }
 
-  // Pausar movimiento cuando el tab no está visible (ahorro de CPU)
-  document.addEventListener('visibilitychange', () => {
-    document.hidden ? stopMovement() : (elCriaturas && elCriaturas.checked && startMovement());
-  });
+  function cycleAlert() {
+    banner.classList.add('fading');
+    setTimeout(() => {
+      let next;
+      do { next = Math.floor(Math.random() * alertasActivas.length); }
+      while (next === alertIdx && alertasActivas.length > 1);
+      alertIdx = next;
+      renderAlert(alertasActivas[alertIdx]);
+      banner.classList.remove('fading');
+    }, 650);
+  }
+
+  // Mostrar alerta inicial con fade-in
+  renderAlert(alertasActivas[alertIdx]);
+  setTimeout(() => banner.classList.remove('fading'), 400);
+
+  setInterval(cycleAlert, 32000);
 
 })();
 </script>

@@ -10,9 +10,9 @@ const creaturasDinamicas = [
     nombre: 'Gusano de Asfalto',
     amenaza: 'i',
     lat: 21.8825, lng: -102.2960,
-    radio: 0.0022,
-    velocidad: 0.000012,
-    pauseProb: 0.15,
+    radio: 0.0010,
+    velocidad: 0.000003,
+    pauseProb: 0.18,
     nota: 'Desplazamiento subterráneo — firma sísmica de baja frecuencia',
     link: '../bestiario/gusano-de-asfalto.html'
   },
@@ -21,9 +21,9 @@ const creaturasDinamicas = [
     nombre: 'Gusano de Asfalto',
     amenaza: 'i',
     lat: 21.8710, lng: -102.3010,
-    radio: 0.0018,
-    velocidad: 0.000010,
-    pauseProb: 0.2,
+    radio: 0.0009,
+    velocidad: 0.000003,
+    pauseProb: 0.22,
     nota: 'Actividad en zona de tránsito — túneles residuales activos',
     link: '../bestiario/gusano-de-asfalto.html'
   },
@@ -32,9 +32,9 @@ const creaturasDinamicas = [
     nombre: 'Chacal de Feria',
     amenaza: 'ii',
     lat: 21.8835, lng: -102.2895,
-    radio: 0.003,
-    velocidad: 0.000055,
-    pauseProb: 0.1,
+    radio: 0.0015,
+    velocidad: 0.000014,
+    pauseProb: 0.10,
     nota: 'Manada de 5–7 individuos — corredor activo zona centro',
     link: '../bestiario/chacal-de-feria.html'
   },
@@ -43,8 +43,8 @@ const creaturasDinamicas = [
     nombre: 'Hormiga Coordinadora',
     amenaza: 'ii',
     lat: 21.8818, lng: -102.2955,
-    radio: 0.0012,
-    velocidad: 0.000035,
+    radio: 0.0006,
+    velocidad: 0.000009,
     pauseProb: 0.05,
     nota: 'Columna activa — dos castas documentadas en zona norte',
     link: '../bestiario/hormiga-coordinadora.html'
@@ -54,8 +54,8 @@ const creaturasDinamicas = [
     nombre: 'Coyote Mutado',
     amenaza: 'ii',
     lat: 21.8652, lng: -102.3055,
-    radio: 0.004,
-    velocidad: 0.000080,
+    radio: 0.0018,
+    velocidad: 0.000020,
     pauseProb: 0.12,
     nota: 'Manada — actividad perimetral campus sur',
     link: '../bestiario/coyote-mutado.html'
@@ -65,12 +65,91 @@ const creaturasDinamicas = [
     nombre: 'Cervato de Concreto',
     amenaza: 'i',
     lat: 21.8840, lng: -102.2945,
-    radio: 0.0025,
-    velocidad: 0.000030,
-    pauseProb: 0.25,
+    radio: 0.0012,
+    velocidad: 0.000008,
+    pauseProb: 0.28,
     nota: 'Avistamiento recurrente zona norte — comportamiento no agresivo',
     link: '../bestiario/cervato-de-concreto.html'
   }
+];
+
+// GRUPOS NO IDENTIFICADOS — zonas sin cobertura documental previa
+// size: número de puntos en el cluster (3 o 5)
+const gruposActivos = [
+  {
+    id: 'GR-001',
+    size: 5,
+    amenaza: 'ii',
+    lat: 21.8952, lng: -102.2675,
+    radio: 0.0016,
+    velocidad: 0.000011,
+    pauseProb: 0.08,
+    nota: 'Señal no clasificada — patrón de grupo — zona noreste sin cobertura documental'
+  },
+  {
+    id: 'GR-002',
+    size: 3,
+    amenaza: 'i',
+    lat: 21.8925, lng: -102.3115,
+    radio: 0.0012,
+    velocidad: 0.000007,
+    pauseProb: 0.22,
+    nota: 'Señal de baja intensidad — agrupación débil — zona noroeste'
+  },
+  {
+    id: 'GR-003',
+    size: 4,
+    amenaza: 'ii',
+    lat: 21.8815, lng: -102.2715,
+    radio: 0.0014,
+    velocidad: 0.000013,
+    pauseProb: 0.10,
+    nota: 'Señal no clasificada — movimiento coordinado — zona este sin documentar'
+  },
+  {
+    id: 'GR-004',
+    size: 3,
+    amenaza: 'iii',
+    lat: 21.8725, lng: -102.2875,
+    radio: 0.0010,
+    velocidad: 0.000006,
+    pauseProb: 0.28,
+    nota: 'Señal de alta intensidad — origen desconocido — corredor sur'
+  }
+];
+
+// ALERTAS ACTIVAS — se selecciona una aleatoriamente al cargar el mapa
+const alertasActivas = [
+  { codigo: 'ALR-001', texto: 'Manada Chacal de Feria — corredor norte-centro — comportamiento de caza coordinado', señales: 7 },
+  { codigo: 'ALR-002', texto: 'Actividad sísmica Gusano de Asfalto — zona norte — asfalto con deterioro reciente detectado', señales: 2 },
+  { codigo: 'ALR-003', texto: 'Columna Hormiga Coordinadora — cruzando perímetro este — nueva casta documentada', señales: 11 },
+  { codigo: 'ALR-004', texto: 'Coyote Mutado — aproximación a barda norte campus sur — reconocimiento de estructura', señales: 4 },
+  { codigo: 'ALR-005', texto: 'Señal no clasificada — zona noreste sin cobertura previa — patrón de grupo confirmado', señales: 5 },
+  { codigo: 'ALR-006', texto: 'Actividad acústica subterránea — avenida central norte — origen sin confirmar', señales: 1 },
+  { codigo: 'ALR-007', texto: 'Cervato de Concreto — grupo de tres especímenes — zona parques norte — sin agresividad', señales: 3 },
+  { codigo: 'ALR-008', texto: 'Firma vibratoria en zona de drenaje sur — posible Araña Hidráulica — acceso cerrado', señales: 1 },
+  { codigo: 'ALR-009', texto: 'Hormiga Coordinadora — expansión de perímetro conocido — nuevas cámaras detectadas bajo vialidad', señales: 8 },
+  { codigo: 'ALR-010', texto: 'Chacal de Feria — actividad nocturna documentada — zona mercado — centinela avanzado activo', señales: 6 },
+  { codigo: 'ALR-011', texto: 'Señal no clasificada — zona noroeste — patrón circular — sin análogo en catálogo actual', señales: 3 },
+  { codigo: 'ALR-012', texto: 'Gusano de Asfalto — crujido registrado — calle sin mapear sector norte — evacuación preventiva', señales: 1 },
+  { codigo: 'ALR-013', texto: 'Coyote Mutado — reconocimiento de zona residencial nueva — manada ampliada — 9 individuos', señales: 9 },
+  { codigo: 'ALR-014', texto: 'Señal de alta intensidad — ZONA-001 zona poniente — retiro inmediato — protocolo activo', señales: 1 },
+  { codigo: 'ALR-015', texto: 'Cervato de Concreto — espécimen aislado — zona industrial este — comportamiento errático registrado', señales: 1 },
+  { codigo: 'ALR-016', texto: 'Chacal de Feria — centinela avanzado — límite norte — posible expansión de territorio activa', señales: 1 },
+  { codigo: 'ALR-017', texto: 'Actividad de vuelo sobre zona centro — frecuencia subsónica — posible Mosca Forúnculo adulta', señales: 1 },
+  { codigo: 'ALR-018', texto: 'Hormiga Coordinadora — columna cruzando infraestructura vial principal — interrupción de tránsito', señales: 14 },
+  { codigo: 'ALR-019', texto: 'Señal no clasificada — zona industrial este — patrón circular — sin categorización posible', señales: 4 },
+  { codigo: 'ALR-020', texto: 'Gusano de Asfalto — emergencia superficial registrada a mediodía — testigo anónimo — no confirmado', señales: 1 },
+  { codigo: 'ALR-021', texto: 'Chacal de Feria — manada completa en espacio abierto — riesgo de contacto elevado — zona sur', señales: 8 },
+  { codigo: 'ALR-022', texto: 'Señal no clasificada — sector residencial norte — origen indeterminado — patrón persistente', señales: 6 },
+  { codigo: 'ALR-023', texto: 'Coyote Mutado — ruta de patrullaje ampliada 400m respecto a semana anterior — tendencia documentada', señales: 7 },
+  { codigo: 'ALR-024', texto: 'Cervato de Concreto — actividad de forrajeo en zona parques — tres especímenes jóvenes', señales: 3 },
+  { codigo: 'ALR-025', texto: 'Vibración intensa zona poniente — firma no coincide con Gusano de Asfalto — análisis en curso', señales: 1 },
+  { codigo: 'ALR-026', texto: 'Hormiga Coordinadora — nueva cámara detectada bajo infraestructura vial — riesgo estructural menor', señales: 9 },
+  { codigo: 'ALR-027', texto: 'Chacal de Feria — comportamiento de caza sobre objetivo no identificado — zona norte — en curso', señales: 5 },
+  { codigo: 'ALR-028', texto: 'Señal no clasificada — corredor sur — patrón de movimiento no registrado en catálogo actual', señales: 3 },
+  { codigo: 'ALR-029', texto: 'Gusano de Asfalto — red de túneles residuales activos — firma sísmica acumulada — zona norte', señales: 2 },
+  { codigo: 'ALR-030', texto: 'Señal de alta prioridad — datos insuficientes — zona central — clasificación pendiente — no aproximar', señales: 4 }
 ];
 
 const sujetos = [
