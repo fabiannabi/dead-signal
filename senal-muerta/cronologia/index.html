@@ -1,18 +1,1279 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cronología — Señal Muerta</title>
-  <link rel="stylesheet" href="../css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cronología — Señal Muerta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+:root {
+  --bg: #0a0a08;
+  --bg2: #0f0f0c;
+  --bg3: #141410;
+  --border: #2a2a22;
+  --border2: #3a3a2a;
+  --text: #c8c4a8;
+  --text2: #8a8670;
+  --text3: #5a5648;
+  --accent: #c8a84a;
+  --accent2: #8a6a2a;
+  --red: #8a3a2a;
+  --green: #4a6a3a;
+  --mono: 'Share Tech Mono', monospace;
+  --serif: 'Crimson Pro', Georgia, serif;
+}
+
+/* ── Scroll indicator ─────────────────────────────────── */
+#scroll-progress {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 3px;
+  height: 100vh;
+  background: var(--border);
+  z-index: 900;
+  pointer-events: none;
+}
+#scroll-bar {
+  width: 100%;
+  background: var(--accent2);
+  height: 0%;
+}
+
+/* ── Container override for timeline width ────────────── */
+.crono-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* ── Page header ──────────────────────────────────────── */
+.crono-header {
+  margin-bottom: 40px;
+}
+
+.crono-title {
+  font-family: var(--mono);
+  font-size: clamp(26px, 5vw, 46px);
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  margin: 12px 0 6px;
+}
+
+.crono-subtitle {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text3);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* ── Filter section ───────────────────────────────────── */
+.filter-section {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.filter-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.18em;
+  margin-right: 6px;
+  text-transform: uppercase;
+}
+
+.filter-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border: 1px solid var(--border2);
+  background: var(--bg2);
+  color: var(--text3);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: uppercase;
+}
+
+.filter-btn:hover:not(:disabled) {
+  background: var(--bg3);
+  color: var(--text2);
+}
+
+.filter-btn.active {
+  border-color: var(--accent2);
+  color: var(--accent);
+  background: var(--bg3);
+}
+
+.filter-btn:disabled,
+.filter-btn.f04-disabled {
+  opacity: 0.25;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ── Timeline wrapper ─────────────────────────────────── */
+.timeline {
+  position: relative;
+  padding-bottom: 48px;
+}
+
+.timeline-center-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border2);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* ── Phase blocks ─────────────────────────────────────── */
+.phase-block {
+  margin-bottom: 8px;
+}
+
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  padding: 18px 0 16px;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+  background: var(--bg);
+}
+
+.phase-header:hover .phase-info {
+  opacity: 0.75;
+}
+
+.phase-info {
+  flex-shrink: 0;
+  padding-right: 14px;
+  transition: opacity 0.15s;
+}
+
+.phase-code {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent2);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.phase-title {
+  font-family: var(--mono);
+  font-size: 15px;
+  color: var(--text);
+  letter-spacing: 0.08em;
+  display: block;
+  margin-top: 2px;
+}
+
+.phase-period {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.phase-divider {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.phase-toggle {
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--text3);
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* ── Phase entries ────────────────────────────────────── */
+.phase-entries {
+  overflow: hidden;
+  max-height: 9999px;
+  transition: max-height 0.45s ease;
+}
+
+.phase-entries.collapsed {
+  max-height: 0;
+}
+
+/* ── Timeline entry ───────────────────────────────────── */
+.timeline-entry {
+  position: relative;
+  width: 46%;
+  margin-bottom: 20px;
+}
+
+.timeline-entry.left {
+  margin-right: 54%;
+  padding-right: 32px;
+}
+
+.timeline-entry.right {
+  margin-left: 54%;
+  padding-left: 32px;
+}
+
+/* Anchor dot */
+.entry-anchor {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 20px;
+  z-index: 3;
+}
+
+.timeline-entry.left .entry-anchor {
+  right: -5px;
+}
+
+.timeline-entry.right .entry-anchor {
+  left: -5px;
+}
+
+.tipo-sujeto .entry-anchor   { background: var(--accent);  border: 1px solid var(--accent2); }
+.tipo-fauna .entry-anchor    { background: var(--green);   border: 1px solid #2a4a1a; }
+.tipo-incidente .entry-anchor { background: var(--red);    border: 1px solid #6a1a1a; }
+.tipo-redactado .entry-anchor { background: var(--border2); border: 1px solid var(--border); }
+
+/* Archivo entry — full width */
+.tipo-archivo {
+  width: 88%;
+  margin: 4px auto 24px;
+}
+
+/* ── Entry cards ──────────────────────────────────────── */
+.entry-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  position: relative;
+}
+
+.entry-card:hover {
+  border-color: var(--border2);
+  background: var(--bg3);
+}
+
+.entry-card.expanded {
+  border-color: var(--accent2);
+}
+
+.archivo-card {
+  background: var(--bg);
+  border: 1px solid var(--accent2);
+  padding: 14px 20px;
+}
+
+.redactado-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+  opacity: 0.65;
+}
+
+/* ── Entry contents ───────────────────────────────────── */
+.entry-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.entry-day {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.entry-time {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--text3);
+}
+
+.entry-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--text3);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  padding: 1px 5px;
+  letter-spacing: 0.1em;
+}
+
+.archivo-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--accent2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.entry-title {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.redacted-bar {
+  background: var(--text3);
+  color: transparent;
+  user-select: none;
+  display: inline-block;
+  padding: 0 2px;
+}
+
+.entry-preview {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--text3);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.archivo-content {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--text2);
+  line-height: 1.75;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.entry-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.entry-card.expanded .entry-body {
+  max-height: 600px;
+}
+
+.entry-body p {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--text2);
+  line-height: 1.8;
+  margin-top: 12px;
+}
+
+.entry-link {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent2);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  margin-top: 10px;
+  border-bottom: 1px solid var(--border2);
+  padding-bottom: 2px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.entry-link:hover {
+  color: var(--accent);
+  border-color: var(--accent2);
+}
+
+.entry-expand-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--text3);
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.entry-card.expanded .entry-expand-icon {
+  transform: rotate(45deg);
+}
+
+/* ── Faded (filtered out) entries ─────────────────────── */
+.timeline-entry.faded {
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* ── Phase IV styling ─────────────────────────────────── */
+#phase-4 .phase-code  { color: var(--red); }
+#phase-4 .phase-title { color: var(--text3); }
+#phase-4 .phase-toggle { color: var(--red); }
+
+.redactado-archive-card {
+  background: var(--bg);
+  border: 1px solid var(--red);
+  padding: 14px 20px;
+  opacity: 0.7;
+}
+
+.redactado-archive-card .archivo-tag {
+  color: var(--red);
+}
+
+.redactado-archive-card .entry-title {
+  color: var(--text3);
+}
+
+.redactado-archive-card .archivo-content {
+  color: var(--text3);
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+}
+
+/* ── Page footer ──────────────────────────────────────── */
+.crono-footer {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text3);
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.crono-footer a {
+  color: var(--text3);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.crono-footer a:hover {
+  color: var(--text2);
+}
+
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4a6a3a;
+  margin-right: 6px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ── Mobile ───────────────────────────────────────────── */
+@media (max-width: 680px) {
+  .timeline-center-line { left: 16px; }
+
+  .timeline-entry,
+  .timeline-entry.left,
+  .timeline-entry.right {
+    width: calc(100% - 32px);
+    margin-left: 32px;
+    margin-right: 0;
+    padding-left: 20px;
+    padding-right: 0;
+  }
+
+  .timeline-entry .entry-anchor {
+    left: -5px;
+    right: auto;
+  }
+
+  .tipo-archivo {
+    width: calc(100% - 32px);
+    margin-left: 32px;
+    margin-right: 0;
+  }
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1><a href="../index.html">Señal Muerta</a></h1>
-  </header>
-  <main>
-    <h2>Cronología</h2>
-  </main>
-  <script src="../js/main.js"></script>
+
+<div id="scroll-progress"><div id="scroll-bar"></div></div>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="../../index.html" class="site-logo">APE — <span>SEÑAL MUERTA</span></a>
+  </div>
+</header>
+
+<div class="crono-container">
+
+  <div class="crono-header">
+    <div class="archive-stamp">Archivo de Recuperación Post-Emergencia / Sección IV</div>
+    <div class="crono-title">CRONOLOGÍA</div>
+    <div class="crono-subtitle">// Línea de tiempo reconstituida — ordenación provisional</div>
+  </div>
+
+  <!-- ── Filters ─────────────────────────────────────── -->
+  <div class="filter-section">
+    <div class="filter-row" id="filter-tipo">
+      <span class="filter-label">Tipo:</span>
+      <button class="filter-btn active" data-filter="all">Todo</button>
+      <button class="filter-btn" data-filter="sujeto">Sujetos</button>
+      <button class="filter-btn" data-filter="fauna">Fauna</button>
+      <button class="filter-btn" data-filter="incidente">Incidentes</button>
+      <button class="filter-btn" data-filter="archivo">Archivo</button>
+    </div>
+    <div class="filter-row" id="filter-sujeto">
+      <span class="filter-label">Sujeto:</span>
+      <button class="filter-btn sujeto-btn" data-sujeto="f01">F-01</button>
+      <button class="filter-btn sujeto-btn" data-sujeto="f02">F-02</button>
+      <button class="filter-btn sujeto-btn" data-sujeto="f03">F-03</button>
+      <button class="filter-btn sujeto-btn f04-disabled" data-sujeto="f04" disabled>F-04</button>
+      <button class="filter-btn sujeto-btn" data-sujeto="f05">F-05</button>
+    </div>
+  </div>
+
+  <!-- ── Timeline ────────────────────────────────────── -->
+  <div class="timeline" id="timeline">
+    <div class="timeline-center-line"></div>
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- FASE 0 — EL MARTES                            -->
+    <!-- ══════════════════════════════════════════════ -->
+    <div class="phase-block" id="phase-0">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-info">
+          <span class="phase-code">Fase 0</span>
+          <span class="phase-title">El Martes</span>
+        </div>
+        <div class="phase-divider"></div>
+        <span class="phase-period">DÍA 0</span>
+        <span class="phase-toggle">−</span>
+      </div>
+      <div class="phase-entries">
+
+        <div class="timeline-entry tipo-archivo" data-tipo="archivo">
+          <div class="archivo-card">
+            <div class="entry-header">
+              <span class="archivo-tag">Observación del Archivo</span>
+            </div>
+            <div class="entry-title">El mismo martes</div>
+            <div class="archivo-content">Los cuatro sujetos con registro viven el mismo momento en cuatro puntos distintos de la ciudad y la carretera. Ninguno sabe dónde están los otros. Ninguno sabe que los otros también están bien, o que están intentando averiguarlo.</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f01" data-tipo="sujeto" data-sujeto="f01">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 0</span>
+              <span class="entry-time">11:20 hrs aprox.</span>
+              <span class="entry-tag">F-01</span>
+            </div>
+            <div class="entry-title">F-01 — Primer registro</div>
+            <div class="entry-preview">El monitor se va a negro. Primer pensamiento: ¿guardé los cambios?</div>
+            <div class="entry-body">
+              <p>Estaba en videollamada de trabajo cuando ocurrió. El monitor parpadeó, el internet se cortó, algo raro con el aire. Salió al balcón — San Marcos sin ruido, pájaros volando en línea recta hacia el sur. Sin señal. Abrió el chat del grupo por reflejo. El círculo giró. Siguió girando. Primera entrada en libreta: "Observaciones — martes, 11:20 aprox."</p>
+              <a href="../personajes/fabian/cap-01.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f02" data-tipo="sujeto" data-sujeto="f02">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 0</span>
+              <span class="entry-time">11:xx hrs</span>
+              <span class="entry-tag">F-02</span>
+            </div>
+            <div class="entry-title">F-02 — El edificio respira</div>
+            <div class="entry-preview">Estaba revisando una radiografía cuando la presión cambió.</div>
+            <div class="entry-body">
+              <p>En el pasillo del tercer piso del Hospital General. Las paredes se contrajeron levemente, el aire cambió de presión. Las luces se fueron. La planta de emergencia tardó más de lo normal. Cuando volvió la luz ya iba hacia urgencias. Las heridas que llegaron no encajaban en ninguna categoría conocida. Empezó a hacer preguntas que no eran preguntas de médico.</p>
+              <a href="../personajes/felipe/cap-01.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f03" data-tipo="sujeto" data-sujeto="f03">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 0</span>
+              <span class="entry-time">11:xx hrs</span>
+              <span class="entry-tag">F-03</span>
+            </div>
+            <div class="entry-title">F-03 — Km 87, Carretera 45</div>
+            <div class="entry-preview">El accidente en cadena ocurrió antes de que pudiera frenar.</div>
+            <div class="entry-body">
+              <p>Venía de León por la carretera 45 cuando ocurrió. El accidente en cadena la dejó atrapada en el km 87. Mientras atendía heridos del impacto vio algo en el horizonte norte que no era un edificio. Lo anotó como "algo en el horizonte norte, demasiado grande para ignorar." Era La Catedral. No sabía cómo llamarla todavía.</p>
+              <a href="../personajes/gaby/cap-01.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f05" data-tipo="sujeto" data-sujeto="f05">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 0</span>
+              <span class="entry-time">11:xx hrs</span>
+              <span class="entry-tag">F-05</span>
+            </div>
+            <div class="entry-title">F-05 — La reunión de academia</div>
+            <div class="entry-preview">Fue el único en sentir la vibración antes del sonido.</div>
+            <div class="entry-body">
+              <p>La reunión de academia llevaba cuarenta minutos de retraso cuando empezó el fin del mundo. Lo sintió en la silla — frecuencia baja que el cuerpo detecta antes que el oído. Salió antes que todos. Conozco el campus. Campo central: veinte estudiantes mirando hacia el mismo punto. Luego uno corrió. Luego todos en todas direcciones. Eso fue peor que si hubieran corrido desde el principio.</p>
+              <a href="../personajes/carlos/cap-01.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f04" data-tipo="sujeto" data-sujeto="f04">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 0</span>
+              <span class="entry-tag">F-04</span>
+            </div>
+            <div class="entry-title">F-04 — Sin registro</div>
+            <div class="entry-preview">No hay documentación del período inicial.</div>
+            <div class="entry-body">
+              <p>El archivo no cuenta con ningún documento de F-04 correspondiente al día 0 ni a la semana 1. Su ubicación al momento de la Emergencia es desconocida. Las entradas de F-05 en semanas posteriores lo mencionan como referencia — "ojalá estuviera Aarón aquí" — lo que confirma que F-05 no sabía dónde estaba.</p>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-fauna" data-tipo="fauna">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 0</span>
+              <span class="entry-tag">Fauna</span>
+            </div>
+            <div class="entry-title">Primer avistamiento — La Catedral</div>
+            <div class="entry-preview">F-03, km 87. Horizonte norte. Distancia de varios kilómetros.</div>
+            <div class="entry-body">
+              <p>El primer avistamiento documentado de la entidad clasificada como Amenaza IV ocurre el día 0, desde la carretera 45. F-03 la describe como "algo demasiado grande para ignorar" en el horizonte norte. Es el avistamiento más lejano documentado — y el único registrado en el período cubierto por el archivo. El espécimen muerto de Cervato de Concreto encontrado en km 91 al día siguiente presenta herida letal por depredador de mayor talla. El archivo no puede confirmar la relación entre ambos eventos.</p>
+              <a href="../bestiario/la-catedral.html" class="entry-link">Ver entrada del bestiario →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-archivo" data-tipo="archivo">
+          <div class="archivo-card">
+            <div class="entry-header">
+              <span class="archivo-tag">Observación del Archivo</span>
+            </div>
+            <div class="entry-title">Noche del día 0 — cuatro intentos</div>
+            <div class="archivo-content">F-01 intenta mandar mensaje al grupo. En enviando. F-02 sin actividad de red — sigue en urgencias. F-03 intenta llamar. Sin señal. F-05 intenta mandar audio. En enviando. Cuatro intentos. Cero entregas. El grupo existe como concepto. Todavía no como realidad.</div>
+          </div>
+        </div>
+
+      </div><!-- /phase-entries -->
+    </div><!-- /phase-0 -->
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- FASE I — SEMANA 1. DÍAS 1-7.                 -->
+    <!-- ══════════════════════════════════════════════ -->
+    <div class="phase-block" id="phase-1">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-info">
+          <span class="phase-code">Fase I</span>
+          <span class="phase-title">Semana 1</span>
+        </div>
+        <div class="phase-divider"></div>
+        <span class="phase-period">DÍAS 1–7</span>
+        <span class="phase-toggle">−</span>
+      </div>
+      <div class="phase-entries">
+
+        <div class="timeline-entry tipo-sujeto sujeto-f01" data-tipo="sujeto" data-sujeto="f01">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 1</span>
+              <span class="entry-tag">F-01</span>
+            </div>
+            <div class="entry-title">F-01 — Inventario</div>
+            <div class="entry-preview">Cuatro páginas. Lo que falta es más largo que lo que hay.</div>
+            <div class="entry-body">
+              <p>Inventario completo del domicilio: arroz, frijoles, latas, agua embotellada, tinaco con llave de paso, generador nunca encendido. Portones de acero en cochera — ventaja no planeada. Segundo piso con balcones — visión decente en dos direcciones. Agua embotellada para menos de una semana siendo cuidadoso. Lista de pendientes: 1. agua, 2. información, 3. contactar al grupo — no depende de mí pero es el que más me importa.</p>
+              <a href="../personajes/fabian/cap-01.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f02" data-tipo="sujeto" data-sujeto="f02">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Días 1–3</span>
+              <span class="entry-tag">F-02</span>
+            </div>
+            <div class="entry-title">F-02 — El hospital</div>
+            <div class="entry-preview">Urgencias funcionando. Las heridas no cuadran con ninguna categoría.</div>
+            <div class="entry-body">
+              <p>Mantuvo el hospital funcionando durante tres días. Fue el único médico que operó sin interrupción. Las heridas documentadas permitieron inferir dos especies distintas sin haberlas visto: patrón A por aplastamiento distribuido de alta masa, patrón B por laceración paralela con filo curvo. No tenía nombres para ninguna de las dos. El tercer día se acabó el agua corriente.</p>
+              <a href="../personajes/felipe/cap-01.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f05" data-tipo="sujeto" data-sujeto="f05">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 1</span>
+              <span class="entry-tag">F-05</span>
+            </div>
+            <div class="entry-title">F-05 — 34 personas</div>
+            <div class="entry-preview">Recorrido de seguridad que nadie más había pensado en hacer.</div>
+            <div class="entry-body">
+              <p>34 personas en el campus cuando cayó la noche. Guerrero de mantenimiento — el más útil después de mí para conocimiento físico del campus. Barda oriente: dos secciones cuarteadas. Barda sur: baja. Inventario esa noche. La lista de lo que faltaba era más larga que la de lo que había. También es información.</p>
+              <a href="../personajes/carlos/cap-01.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-fauna" data-tipo="fauna">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 1</span>
+              <span class="entry-tag">Fauna</span>
+            </div>
+            <div class="entry-title">Primer avistamiento — Cervato de Concreto</div>
+            <div class="entry-preview">F-01 y F-05 lo ven el mismo día en puntos distintos de la ciudad.</div>
+            <div class="entry-body">
+              <p>F-01 observa un cuadrúpedo grande cruzar la calle desde el balcón — "demasiado grande para un coyote, piel rara, se fue hacia el oriente." F-05 ve algo en el borde norte de la barda del campus — "demasiado grande para ser un coyote, se fue hacia el norte." Ninguno sabe que el otro también lo vio. El archivo los identifica retrospectivamente como la misma especie. F-05 tiene seis años de referencia del coyote normal — es el único del grupo que puede medir el cambio.</p>
+              <a href="../bestiario/cervato-de-concreto.html" class="entry-link">Ver entrada del bestiario →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-fauna" data-tipo="fauna">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 2</span>
+              <span class="entry-tag">Fauna</span>
+            </div>
+            <div class="entry-title">Primer avistamiento — Roca</div>
+            <div class="entry-preview">F-01, patio. Un cascajo del suelo se movió.</div>
+            <div class="entry-body">
+              <p>Cuatro ejemplares en zona de sombra junto a las paredes del patio. Placas superpuestas gris-café, misma textura que el concreto. Fotofóbicos. Respuesta defensiva ante proximidad — no agresiva. F-01 lo llamó Roca con la conciencia plena de que era un nombre terrible. Era exactamente lo que parecía. Primera especie catalogada con nombre provisional por F-01.</p>
+              <a href="../bestiario/roca.html" class="entry-link">Ver entrada del bestiario →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f02" data-tipo="sujeto" data-sujeto="f02">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 4</span>
+              <span class="entry-tag">F-02</span>
+            </div>
+            <div class="entry-title">F-02 — Sale del hospital</div>
+            <div class="entry-preview">Farmacia a tres cuadras. En el pasillo del fondo: algo.</div>
+            <div class="entry-body">
+              <p>Primera salida del hospital. Tomó lo esencial: antibióticos, antifúngicos, tramadol, buprenorfina, atomoxetina — todo el stock disponible. En el pasillo del fondo de la farmacia: clic húmedo, articulado, irregular. No entró. Salió sin correr. Corrió en cuanto pisó la banqueta. Era la Araña de Casa. No lo sabía todavía.</p>
+              <a href="../personajes/felipe/cap-01.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f01" data-tipo="sujeto" data-sujeto="f01">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 4</span>
+              <span class="entry-tag">F-01</span>
+            </div>
+            <div class="entry-title">F-01 — Primera salida</div>
+            <div class="entry-preview">Cuchillo de cocina. Roca Negra en la banqueta de enfrente.</div>
+            <div class="entry-body">
+              <p>Objetivo primario: agua. Tiempo máximo: cuarenta minutos. A mitad de la primera cuadra — algo en la banqueta de enfrente. No era cascajo. Del tamaño de un balón, negro con reflejos cobrizos, sin sombra cercana. Patas largas con terminación no adhesiva. No lo siguió. No era agresivo. Era cauteloso. Eso era diferente.</p>
+              <a href="../personajes/fabian/cap-02.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-fauna" data-tipo="fauna">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 5</span>
+              <span class="entry-tag">Fauna</span>
+            </div>
+            <div class="entry-title">Primer avistamiento — Hormiga Coordinadora</div>
+            <div class="entry-preview">F-01, esquina noreste. Soldados que coordinan, no defienden.</div>
+            <div class="entry-body">
+              <p>Columna activa en esquina noreste del perímetro base de F-01. Obreras de 3–4 cm, soldados de 7 cm. Los soldados no defienden el perímetro — ejecutan contactos antenales breves con obreras que luego modifican su trayectoria. Gestión activa de logística en tiempo real. Primera descripción documentada del comportamiento de coordinación. La columna cruza sobre grietas de Gusano de Asfalto sin modificar la ruta.</p>
+              <a href="../bestiario/hormiga-coordinadora.html" class="entry-link">Ver entrada del bestiario →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-archivo" data-tipo="archivo">
+          <div class="archivo-card">
+            <div class="entry-header">
+              <span class="archivo-tag">Observación del Archivo</span>
+            </div>
+            <div class="entry-title">Semana 1 — Lo que nadie compartió</div>
+            <div class="archivo-content">Al final de la primera semana F-01 tiene cuatro criaturas catalogadas con nombres provisionales. F-02 tiene inferencias morfológicas de dos especies sin nombre. F-05 tiene perfiles de comportamiento de cuatro tipos con códigos provisionales. Ninguno sabe que los otros también están documentando. El bestiario se está construyendo tres veces en paralelo.</div>
+          </div>
+        </div>
+
+      </div><!-- /phase-entries -->
+    </div><!-- /phase-1 -->
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- FASE II — PRIMERAS SEMANAS. DÍAS 8-21.        -->
+    <!-- ══════════════════════════════════════════════ -->
+    <div class="phase-block" id="phase-2">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-info">
+          <span class="phase-code">Fase II</span>
+          <span class="phase-title">Primeras semanas</span>
+        </div>
+        <div class="phase-divider"></div>
+        <span class="phase-period">DÍAS 8–21</span>
+        <span class="phase-toggle">−</span>
+      </div>
+      <div class="phase-entries">
+
+        <div class="timeline-entry tipo-sujeto sujeto-f01" data-tipo="sujeto" data-sujeto="f01">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 18</span>
+              <span class="entry-tag">F-01</span>
+            </div>
+            <div class="entry-title">F-01 — Supermercado norte</div>
+            <div class="entry-preview">Ocho cápsulas de eclosión vacías en la bodega.</div>
+            <div class="entry-body">
+              <p>Radio de acción ampliado hacia el supermercado norte. En la bodega: ocho cápsulas ovoides adheridas a los ángulos más oscuros de los anaqueles, membrana semirrígida, todas vacías, todas en zona de sombra máxima. Lo que había vivido ahí ya no estaba. Había salido. La araña estaba en el pasillo central. Del tamaño de un perro mediano. Ocho ojos, tapetum verde. "El primer output fue 'esto es increíble'. Duró un ciclo. Luego salí."</p>
+              <a href="../personajes/fabian/cap-04.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-fauna" data-tipo="fauna">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 18</span>
+              <span class="entry-tag">Fauna</span>
+            </div>
+            <div class="entry-title">Primer avistamiento documentado — Araña de Casa</div>
+            <div class="entry-preview">F-01, supermercado norte. Cápsulas de eclosión recuperadas.</div>
+            <div class="entry-body">
+              <p>Primer avistamiento visual completo de la especie. F-02 había tenido contacto auditivo el día 4 en la farmacia sin documentar morfología. Las ocho cápsulas recuperadas por F-01 son material físico primario del archivo para esta especie.</p>
+              <a href="../bestiario/arana-de-casa.html" class="entry-link">Ver entrada del bestiario →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f02" data-tipo="sujeto" data-sujeto="f02">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 14</span>
+              <span class="entry-tag">F-02</span>
+            </div>
+            <div class="entry-title">F-02 — Chacal de Feria</div>
+            <div class="entry-preview">Primer avistamiento. Cuatro cazadores más centinela en posición elevada.</div>
+            <div class="entry-body">
+              <p>Tres avistamientos en cuatro noches en el mismo corredor. Siempre el mismo patrón: cuatro o cinco cazadores más un centinela en posición elevada que no caza — permanece en posición durante toda la operación y cierra el recorrido solo después. "No son leales al individuo. Son leales al rol." Primera descripción documentada del comportamiento de abandono selectivo. El Bestiario la cita textualmente.</p>
+              <a href="../personajes/felipe/cap-02.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f05" data-tipo="sujeto" data-sujeto="f05">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 14</span>
+              <span class="entry-tag">F-05</span>
+            </div>
+            <div class="entry-title">F-05 — Sistema de acelerómetros</div>
+            <div class="entry-preview">Firma B1 registrada. Cuatro metros por zancada. Bordea el campus.</div>
+            <div class="entry-body">
+              <p>Acelerómetro de tesis de alumno encontrado en laboratorio de bioquímica. Primera firma de B1: frecuencia 4.2 Hz, intervalo consistente, locomoción cuadrúpeda paso regular. Masa superior al herbívoro grande de los primeros días. Cuatro sensores instalados en las esquinas del administrativo. Triangulación posible. Ruta de B1: bordea el campus de oriente a poniente a treinta metros de la barda. No entra. Está aprendiendo.</p>
+              <a href="../personajes/carlos/cap-02.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-archivo" data-tipo="archivo">
+          <div class="archivo-card">
+            <div class="entry-header">
+              <span class="archivo-tag">Observación del Archivo</span>
+            </div>
+            <div class="entry-title">Semana 2 — Dos bestiarios en paralelo</div>
+            <div class="archivo-content">F-01 construye el bestiario desde San Marcos hacia el norte. F-02 lo construye desde el centro hacia el sur. F-05 lo construye desde el campus mediante firmas sísmicas sin observación visual. Los tres están documentando el mismo ecosistema desde ángulos distintos sin ninguna comunicación entre ellos. Algunas de sus observaciones se confirman mutuamente sin que ninguno lo sepa.</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f02" data-tipo="sujeto" data-sujeto="f02">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 21</span>
+              <span class="entry-tag">F-02</span>
+            </div>
+            <div class="entry-title">F-02 — El centinela</div>
+            <div class="entry-preview">Demora motora. La manada lo evalúa. Se van sin él.</div>
+            <div class="entry-body">
+              <p>El centinela del Chacal no baja. Movimiento con demora entre intención y acción. Los cazadores terminan. Vuelven. El centinela no baja. Evaluación desde abajo. Se van sin él. Al día siguiente: inflamación subcutánea en cuello-hombro. A media mañana se desplomó. Al mediodía la piel cedió. Emergencia larvaria fotofóbica. Primera documentación del ciclo parasitario de la Mosca Forúnculo. La zona de inoculación inferida correctamente sin haber visto al adulto.</p>
+              <a href="../personajes/felipe/cap-03.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-fauna" data-tipo="fauna">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 21</span>
+              <span class="entry-tag">Fauna</span>
+            </div>
+            <div class="entry-title">Primer registro — ciclo Mosca Forúnculo</div>
+            <div class="entry-preview">F-02 documenta la emergencia larvaria. Sin ver al adulto.</div>
+            <div class="entry-body">
+              <p>Primera documentación del ciclo parasitario completo. F-02 reconstruyó el ciclo sin observar al adulto: larva en huésped, emergencia fotofóbica, metamorfosis en interior de edificio, puesta de huevos en superficies verticales protegidas, adulto con zumbido subsónico. Las muestras físicas de mudas conservadas por F-02 son material primario del Bestiario.</p>
+              <a href="../bestiario/mosca-forunculo.html" class="entry-link">Ver entrada del bestiario →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f05" data-tipo="sujeto" data-sujeto="f05">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 21</span>
+              <span class="entry-tag">F-05</span>
+            </div>
+            <div class="entry-title">F-05 — Siete Coyotes Mutados</div>
+            <div class="entry-preview">Alerta a las 5:40. Sistema funciona. Cuatro minutos de ventaja.</div>
+            <div class="entry-body">
+              <p>Siete fuentes activas en sensor sur a las 5:40. Código con Guerrero. Segundo piso. Los coyotes llegaron cuatro minutos después — exactamente para lo que el sistema fue construido. Dos encontraron la sección cuarteada del oriente. Intercambio entre individuos. Se fueron sin entrar. Esa tarde: huellas en el campo norte. Adentro. Tres dedos adelante, uno atrás. Zancada de metro ochenta. La barda norte intacta. Lo que entró no necesitó forzarla.</p>
+              <a href="../personajes/carlos/cap-04.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-incidente" data-tipo="incidente">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día <span style="background:var(--text3);color:transparent;padding:0 2px">██</span></span>
+              <span class="entry-tag">Incidente</span>
+            </div>
+            <div class="entry-title">Primer incidente fatal — Araña Hidráulica</div>
+            <div class="entry-preview">Dos bajas. La información existía. No había sido distribuida.</div>
+            <div class="entry-body">
+              <p>Equipo de reconocimiento entra a estacionamiento subterráneo inundado sin protocolo de detección de cables. Dos bajas. Un sobreviviente. La información de F-02 sobre el comportamiento de la especie existía en el archivo antes del incidente. No había sido distribuida al personal operativo. "No vi el hilo. Nadie nos dijo que había hilos." Ver AH-INC-001.</p>
+              <a href="../bestiario/arana-hidraulica.html" class="entry-link">Ver entrada del bestiario →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+      </div><!-- /phase-entries -->
+    </div><!-- /phase-2 -->
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- FASE III — PERÍODO DE ADAPTACIÓN. DÍAS 22-██. -->
+    <!-- ══════════════════════════════════════════════ -->
+    <div class="phase-block" id="phase-3">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-info">
+          <span class="phase-code">Fase III</span>
+          <span class="phase-title">Período de adaptación</span>
+        </div>
+        <div class="phase-divider"></div>
+        <span class="phase-period">DÍAS 22–<span style="background:var(--text3);color:transparent;padding:0 2px;font-size:9px">██</span></span>
+        <span class="phase-toggle">−</span>
+      </div>
+      <div class="phase-entries">
+
+        <div class="timeline-entry tipo-sujeto sujeto-f02" data-tipo="sujeto" data-sujeto="f02">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 35</span>
+              <span class="entry-tag">F-02</span>
+            </div>
+            <div class="entry-title">F-02 — El adulto</div>
+            <div class="entry-preview">Zumbido que se siente en el pecho antes que en los oídos.</div>
+            <div class="entry-body">
+              <p>Cuatro mudas recuperadas en tres semanas. El ciclo completo reconstruido. Volvió al edificio para documentar. Estaba a punto de bajar cuando escuchó el zumbido — frecuencia que sintió más en el pecho que en los oídos. Algo pasó frente a la ventana. Sombra del tamaño equivocado hacia arriba. Duración: menos de un segundo. Primer avistamiento del adulto de Mosca Forúnculo. Esa noche escribió al chat: "¿alguien?" Se quedó en enviando.</p>
+              <a href="../personajes/felipe/cap-04.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-sujeto sujeto-f05" data-tipo="sujeto" data-sujeto="f05">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 38</span>
+              <span class="entry-tag">F-05</span>
+            </div>
+            <div class="entry-title">F-05 — Sale del campus</div>
+            <div class="entry-preview">La gente encontró sus propios ritmos. Esa fue la señal.</div>
+            <div class="entry-body">
+              <p>Sale en coche hacia el centro. El acelerómetro registra desde el primer semáforo. La ciudad tiene una geografía nueva que el mapa no muestra. Firma nueva en la tablet — frecuencia más baja, amplitud creciente. Pico. Frena. El asfalto cede en secuencia. Del hundimiento emerge el cuerpo: negro, betuminoso, del grosor de un poste de luz. Tres, cuatro metros visibles. De vuelta al sur. Cuatro cuadras después la llanta trasera cae en túnel residual. Inventario de lo que puede cargar a pie. Seis años de pagos. Pero eso era antes.</p>
+              <a href="../personajes/carlos/cap-04.html" class="entry-link">Ver documento →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-fauna" data-tipo="fauna">
+          <div class="entry-anchor"></div>
+          <div class="entry-card" onclick="toggleEntry(this)">
+            <div class="entry-header">
+              <span class="entry-day">Día 38</span>
+              <span class="entry-tag">Fauna</span>
+            </div>
+            <div class="entry-title">Primer avistamiento directo — Gusano de Asfalto</div>
+            <div class="entry-preview">F-05. Detección anticipada por acelerómetro. Primer registro instrumental.</div>
+            <div class="entry-body">
+              <p>Único caso en el archivo de detección anticipada instrumental de esta especie. El registro acústico portátil de F-05 y el dato de persistencia de túnel de cuatro cuadras son material primario del Bestiario. La regla operativa establecida por F-05 — rodear mínimo dos cuadras tras avistamiento, velocidad reducida en asfalto deteriorado — fue adoptada como protocolo estándar del archivo.</p>
+              <a href="../bestiario/gusano-de-asfalto.html" class="entry-link">Ver entrada del bestiario →</a>
+            </div>
+            <div class="entry-expand-icon">+</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-archivo" data-tipo="archivo">
+          <div class="archivo-card">
+            <div class="entry-header">
+              <span class="archivo-tag">Observación del Archivo</span>
+            </div>
+            <div class="entry-title">Este período — cinco sujetos, cero contacto</div>
+            <div class="archivo-content">En este período los cinco sujetos están vivos y en movimiento en distintos puntos de la ciudad o acercándose a ella. Ninguno sabe dónde están los otros. El grupo existe como concepto — el chat, los mensajes que nunca llegaron, los audios en cola para cuando haya señal. No existe todavía como realidad. El archivo sabe que eventualmente se encuentran. Los documentos de este período no lo saben.</div>
+          </div>
+        </div>
+
+      </div><!-- /phase-entries -->
+    </div><!-- /phase-3 -->
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- FASE IV — ACCESO RESTRINGIDO                  -->
+    <!-- ══════════════════════════════════════════════ -->
+    <div class="phase-block" id="phase-4">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-info">
+          <span class="phase-code">Fase IV</span>
+          <span class="phase-title" style="color:var(--text3)">— — —</span>
+        </div>
+        <div class="phase-divider"></div>
+        <span class="phase-period" style="color:var(--red)">CLASIFICADO</span>
+        <span class="phase-toggle">+</span>
+      </div>
+      <div class="phase-entries collapsed">
+
+        <div class="timeline-entry tipo-redactado" data-tipo="redactado">
+          <div class="entry-anchor"></div>
+          <div class="redactado-card">
+            <div class="entry-header">
+              <span class="entry-day">Día <span class="redacted-bar">██</span></span>
+            </div>
+            <div class="entry-title redacted-bar">████████████████████████</div>
+            <div class="entry-preview" style="color:var(--text3);font-size:12px;font-family:var(--mono)">Clasificación A — sin acceso en nivel C</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-redactado" data-tipo="redactado">
+          <div class="entry-anchor"></div>
+          <div class="redactado-card">
+            <div class="entry-header">
+              <span class="entry-day">Día <span class="redacted-bar">██</span></span>
+            </div>
+            <div class="entry-title redacted-bar">████████████████████████████████</div>
+            <div class="entry-preview" style="color:var(--text3);font-size:12px;font-family:var(--mono)">Clasificación A — sin acceso en nivel C</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-redactado" data-tipo="redactado">
+          <div class="entry-anchor"></div>
+          <div class="redactado-card">
+            <div class="entry-header">
+              <span class="entry-day">Día <span class="redacted-bar">██</span></span>
+            </div>
+            <div class="entry-title redacted-bar">██████████████████</div>
+            <div class="entry-preview" style="color:var(--text3);font-size:12px;font-family:var(--mono)">Clasificación A — sin acceso en nivel C</div>
+          </div>
+        </div>
+
+        <div class="timeline-entry tipo-archivo" data-tipo="archivo">
+          <div class="redactado-archive-card">
+            <div class="entry-header">
+              <span class="archivo-tag">Acceso restringido</span>
+            </div>
+            <div class="entry-title">Sección no disponible — Nivel C</div>
+            <div class="archivo-content">Esta sección no está disponible en nivel de acceso Clase C. Los documentos de la Fase IV requieren autorización del Comité <span class="redacted-bar">███</span>-C. Si usted considera que tiene derecho a acceso de nivel superior, contacte a <span class="redacted-bar">████████████</span> mediante el protocolo establecido.</div>
+          </div>
+        </div>
+
+      </div><!-- /phase-entries -->
+    </div><!-- /phase-4 -->
+
+  </div><!-- /timeline -->
+
+  <div class="crono-footer">
+    <span><span class="status-dot"></span>Archivo activo</span>
+    <span>Sección IV — Cronología reconstituida</span>
+    <span><a href="../../index.html">← Volver al archivo</a></span>
+  </div>
+
+</div><!-- /crono-container -->
+
+<script src="../js/main.js"></script>
+<script>
+(function () {
+
+  // ── Assign left/right alternating classes ──────────────────
+  var sideIdx = 0;
+  document.querySelectorAll('.timeline-entry').forEach(function (e) {
+    if (e.classList.contains('tipo-archivo')) return;
+    e.classList.add(sideIdx % 2 === 0 ? 'right' : 'left');
+    sideIdx++;
+  });
+
+  // ── Toggle entry expansion (one at a time) ──────────────────
+  window.toggleEntry = function (card) {
+    if (card.classList.contains('redactado-card') || card.classList.contains('redactado-archive-card')) return;
+    var wasExpanded = card.classList.contains('expanded');
+    document.querySelectorAll('.entry-card.expanded').forEach(function (c) {
+      c.classList.remove('expanded');
+    });
+    if (!wasExpanded) card.classList.add('expanded');
+  };
+
+  // ── Toggle phase collapse/expand ────────────────────────────
+  window.togglePhase = function (header) {
+    var entries = header.parentElement.querySelector('.phase-entries');
+    var icon    = header.querySelector('.phase-toggle');
+    if (!entries) return;
+    var collapsing = !entries.classList.contains('collapsed');
+    entries.classList.toggle('collapsed', collapsing);
+    icon.textContent = collapsing ? '+' : '−';
+  };
+
+  // ── Filters ─────────────────────────────────────────────────
+  var activeTipo   = 'all';
+  var activeSujeto = null;
+
+  function applyFilter() {
+    document.querySelectorAll('.timeline-entry').forEach(function (e) {
+      var tipo   = e.dataset.tipo   || '';
+      var sujeto = e.dataset.sujeto || '';
+
+      var tipoOk   = activeTipo === 'all' || tipo === activeTipo;
+      var sujetoOk = !activeSujeto || sujeto === activeSujeto;
+
+      e.classList.toggle('faded', !(tipoOk && sujetoOk));
+    });
+  }
+
+  document.getElementById('filter-tipo').addEventListener('click', function (e) {
+    var btn = e.target.closest('.filter-btn[data-filter]');
+    if (!btn) return;
+    document.querySelectorAll('#filter-tipo .filter-btn').forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    activeTipo = btn.dataset.filter;
+    applyFilter();
+  });
+
+  document.getElementById('filter-sujeto').addEventListener('click', function (e) {
+    var btn = e.target.closest('.filter-btn[data-sujeto]');
+    if (!btn || btn.disabled) return;
+    var alreadyActive = btn.classList.contains('active');
+    document.querySelectorAll('#filter-sujeto .filter-btn').forEach(function (b) { b.classList.remove('active'); });
+    if (!alreadyActive) {
+      btn.classList.add('active');
+      activeSujeto = btn.dataset.sujeto;
+    } else {
+      activeSujeto = null;
+    }
+    applyFilter();
+  });
+
+  // ── Scroll indicator ────────────────────────────────────────
+  var scrollBar = document.getElementById('scroll-bar');
+  function updateScroll() {
+    var max = document.body.scrollHeight - window.innerHeight;
+    scrollBar.style.height = max > 0 ? (window.scrollY / max * 100) + '%' : '0%';
+  }
+  window.addEventListener('scroll', updateScroll, { passive: true });
+  updateScroll();
+
+}());
+</script>
 </body>
 </html>
