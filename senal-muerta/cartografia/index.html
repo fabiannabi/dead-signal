@@ -435,6 +435,30 @@ body {
 .ab-sep  { color: #28241a; }
 .ab-signals { margin-left: auto; white-space: nowrap; }
 .ab-signals-n { color: #c8a84a; }
+
+/* ── Geo-anchor alert marker ── */
+.alert-anchor {
+  width: 22px;
+  height: 22px;
+  background: #9a2a18;
+  border: 1.5px solid #e04030;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(224, 64, 48, 0.55), 0 0 3px rgba(0,0,0,0.8);
+  animation: anchor-blink 0.75s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes anchor-blink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(224,64,48,0.55); }
+  50%       { opacity: 0.12; box-shadow: none; }
+}
 </style>
 </head>
 <body>
@@ -865,12 +889,12 @@ body {
       }
     }
 
-    // Actualizar trail — acumula hasta 20 puntos
+    // Actualizar trail — muestrea cada ~8m para que se vea en zoom alejado
     if (obj.trail) {
       const lp = obj.trailPoints[obj.trailPoints.length - 1];
-      if (!lp || Math.abs(obj.curLat - lp[0]) > 0.000005 || Math.abs(obj.curLng - lp[1]) > 0.000005) {
+      if (!lp || Math.abs(obj.curLat - lp[0]) > 0.00007 || Math.abs(obj.curLng - lp[1]) > 0.00007) {
         obj.trailPoints.push([obj.curLat, obj.curLng]);
-        if (obj.trailPoints.length > 20) obj.trailPoints.shift();
+        if (obj.trailPoints.length > 35) obj.trailPoints.shift();
         obj.trail.setLatLngs(obj.trailPoints);
       }
     }
@@ -885,8 +909,8 @@ body {
     c.trailPoints = [];
     c.trail = L.polyline([], {
       color: trailColors[c.amenaza] || '#c8a84a',
-      weight: 1.5,
-      opacity: 0.30,
+      weight: 2.5,
+      opacity: 0.45,
       interactive: false
     }).addTo(layerCriaturas);
     c.marker = L.marker([c.curLat, c.curLng], {
@@ -982,7 +1006,6 @@ body {
   let alertIdx    = Math.floor(Math.random() * alertasActivas.length);
 
   // Resalta visualmente la criatura/grupo vinculado a la alerta activa
-  const hlColors = { i: '#5a8a4a', ii: '#c8a84a', iii: '#c05040', iv: '#8a2020' };
   let hlLayers = [];
 
   function highlightTarget(id) {
@@ -992,17 +1015,28 @@ body {
                || gruposActivos.find(g => g.id === id);
     if (!found || !found.marker) return;
     const pos = found.marker.getLatLng();
-    const clr = hlColors[found.amenaza] || '#c8a84a';
-    [90, 200, 360].forEach((r, i) => {
+
+    // Tres anillos concéntricos en rojo de alerta
+    [80, 190, 340].forEach((r, i) => {
       const circle = L.circle(pos, {
         radius: r,
-        color: clr, weight: i === 0 ? 1.5 : 0.6,
-        opacity: 0.7 - i * 0.2,
-        fillColor: clr, fillOpacity: 0.07 - i * 0.02,
+        color: '#e04030', weight: i === 0 ? 1.8 : 0.7,
+        opacity: 0.75 - i * 0.22,
+        fillColor: '#c03020', fillOpacity: 0.08 - i * 0.02,
         interactive: false
       }).addTo(map);
       hlLayers.push(circle);
     });
+
+    // Marcador ! parpadeante encima
+    const iconEl = L.divIcon({
+      className: '',
+      html: '<div class="alert-anchor">!</div>',
+      iconSize: [22, 22],
+      iconAnchor: [11, 11]
+    });
+    const pin = L.marker(pos, { icon: iconEl, zIndexOffset: 1000, interactive: false }).addTo(map);
+    hlLayers.push(pin);
   }
 
   function renderAlert(a) {
