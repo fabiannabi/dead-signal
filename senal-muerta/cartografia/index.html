@@ -436,6 +436,68 @@ body {
 .ab-signals { margin-left: auto; white-space: nowrap; }
 .ab-signals-n { color: #c8a84a; }
 
+/* ── Tracking panel ── */
+#track-panel {
+  display: none;
+  position: absolute;
+  bottom: 48px; left: 16px;
+  z-index: 1000;
+  background: rgba(10,10,8,0.95);
+  border: 1px solid #2a2a22;
+  border-left: 2px solid #c8a84a;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 12px 14px;
+  min-width: 235px;
+  pointer-events: auto;
+}
+
+.tp-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+}
+
+.tp-badge {
+  font-size: 9px;
+  color: #c8a84a;
+  letter-spacing: 0.14em;
+  animation: ab-blink 1.4s ease-in-out infinite;
+}
+
+.tp-cancel {
+  background: none;
+  border: 1px solid #2a2a22;
+  color: #5a5648;
+  cursor: pointer;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  line-height: 1;
+  padding: 2px 6px;
+}
+.tp-cancel:hover { border-color: #c8a84a; color: #c8a84a; }
+
+.tp-id    { font-size: 9px; color: #3a3628; letter-spacing: 0.1em; margin-bottom: 2px; }
+.tp-name  { font-size: 14px; color: #c8c4a8; margin-bottom: 4px; }
+.tp-thr   { font-size: 10px; letter-spacing: 0.1em; margin-bottom: 10px; }
+.tp-thr.amenaza-i   { color: #5a8a4a; }
+.tp-thr.amenaza-ii  { color: #c8a84a; }
+.tp-thr.amenaza-iii { color: #c05040; }
+.tp-thr.amenaza-iv  { color: #8a2020; }
+
+.tp-coords { font-size: 10px; color: #8a8670; margin-bottom: 8px; line-height: 1.8; }
+.tp-coords span { display: block; }
+
+.tp-nota {
+  font-family: 'Crimson Pro', serif;
+  font-size: 11px;
+  font-style: italic;
+  color: #5a5648;
+  border-top: 1px solid #1a1a14;
+  padding-top: 7px;
+  line-height: 1.5;
+}
+
 /* ── Geo-anchor alert marker ── */
 .alert-anchor {
   width: 22px;
@@ -552,6 +614,21 @@ body {
         <span class="legend-dot" style="background:rgba(200,168,74,0.5);border-radius:2px;"></span>
         Grupo no identificado
       </div>
+    </div>
+
+    <div id="track-panel">
+      <div class="tp-bar">
+        <span class="tp-badge">● EN SEGUIMIENTO</span>
+        <button class="tp-cancel" id="track-cancel">×</button>
+      </div>
+      <div class="tp-id" id="tp-id">—</div>
+      <div class="tp-name" id="tp-name">—</div>
+      <div class="tp-thr" id="tp-thr">—</div>
+      <div class="tp-coords">
+        <span id="tp-lat">—</span>
+        <span id="tp-lng">—</span>
+      </div>
+      <div class="tp-nota" id="tp-nota"></div>
     </div>
 
   </div><!-- #map -->
@@ -900,6 +977,46 @@ body {
     }
   }
 
+  // ── Tracking de criatura seleccionada ────────────────────────
+  let trackedCreature  = null;
+  let trackTick        = 0;
+  let justStartedTrack = false;
+
+  const trackPanel = document.getElementById('track-panel');
+  const tpId    = document.getElementById('tp-id');
+  const tpName  = document.getElementById('tp-name');
+  const tpThr   = document.getElementById('tp-thr');
+  const tpLat   = document.getElementById('tp-lat');
+  const tpLng   = document.getElementById('tp-lng');
+  const tpNota  = document.getElementById('tp-nota');
+
+  function startTracking(c) {
+    trackedCreature  = c;
+    justStartedTrack = true;
+    tpId.textContent   = c.id;
+    tpName.textContent = c.nombre;
+    tpThr.textContent  = 'AMENAZA ' + c.amenaza.toUpperCase();
+    tpThr.className    = 'tp-thr amenaza-' + c.amenaza;
+    tpNota.textContent = c.nota || '';
+    trackPanel.style.display = 'block';
+    map.setView([c.curLat, c.curLng], Math.max(map.getZoom(), 14), { animate: true });
+  }
+
+  function stopTracking() {
+    trackedCreature = null;
+    trackPanel.style.display = 'none';
+  }
+
+  document.getElementById('track-cancel').addEventListener('click', e => {
+    e.stopPropagation();
+    stopTracking();
+  });
+
+  map.on('click', () => {
+    if (justStartedTrack) { justStartedTrack = false; return; }
+    stopTracking();
+  });
+
   // Crear marcadores de criaturas
   const trailColors = { i: '#5a8a4a', ii: '#c8a84a', iii: '#c05040', iv: '#8a2020' };
 
@@ -925,7 +1042,8 @@ body {
         iconAnchor: [7, 7]
       }),
       zIndexOffset: 200
-    }).bindPopup(popupCriatura(c), { maxWidth: 300 }).addTo(layerCriaturas);
+    }).on('click', e => { L.DomEvent.stopPropagation(e); startTracking(c); })
+      .addTo(layerCriaturas);
   });
 
   // Seleccionar subconjunto aleatorio del pool de grupos — cambia en cada reload
@@ -972,6 +1090,17 @@ body {
     if (movTick) return;
     movTick = setInterval(() => {
       creaturasDinamicas.forEach(stepMover);
+      if (trackedCreature) {
+        trackTick++;
+        // Actualizar coordenadas en el panel cada tick
+        tpLat.textContent = trackedCreature.curLat.toFixed(5) + '° N';
+        tpLng.textContent = Math.abs(trackedCreature.curLng).toFixed(5) + '° O';
+        // Seguir con la cámara cada 6 ticks (~300ms) para no saturar el renderer
+        if (trackTick % 6 === 0) {
+          map.setView([trackedCreature.curLat, trackedCreature.curLng],
+            map.getZoom(), { animate: false });
+        }
+      }
     }, 50);
   }
 
