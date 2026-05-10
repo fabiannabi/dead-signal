@@ -304,9 +304,114 @@ function buildInstitutionalFooter() {
   footer.parentNode.insertBefore(inst, footer.nextSibling);
 }
 
+// ── Custom audio player ──────────────────────────────────────────
+function initAudioPlayers() {
+  function fmt(s) {
+    if (!isFinite(s) || isNaN(s)) return '--:--';
+    var m = Math.floor(s / 60);
+    var sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+
+  document.querySelectorAll('audio').forEach(function (audio) {
+    var wrapper = document.createElement('div');
+    wrapper.className = 'sm-player';
+    wrapper.dataset.state = 'paused';
+
+    var playBtn = document.createElement('button');
+    playBtn.className = 'sm-play-btn';
+    playBtn.setAttribute('aria-label', 'Play / Pause');
+    playBtn.textContent = '▶';
+
+    var track = document.createElement('div');
+    track.className = 'sm-track';
+
+    var bar = document.createElement('div');
+    bar.className = 'sm-bar';
+    var barFill = document.createElement('div');
+    barFill.className = 'sm-bar-fill';
+    var barCur = document.createElement('div');
+    barCur.className = 'sm-bar-cursor';
+    bar.appendChild(barFill);
+    bar.appendChild(barCur);
+
+    var timeRow = document.createElement('div');
+    timeRow.className = 'sm-time';
+    var timeCur = document.createElement('span');
+    timeCur.className = 'sm-time-cur';
+    timeCur.textContent = '0:00';
+    var timeSep = document.createElement('span');
+    timeSep.className = 'sm-time-sep';
+    timeSep.textContent = '/';
+    var timeDur = document.createElement('span');
+    timeDur.className = 'sm-time-dur';
+    timeDur.textContent = '--:--';
+    timeRow.appendChild(timeCur);
+    timeRow.appendChild(timeSep);
+    timeRow.appendChild(timeDur);
+
+    track.appendChild(bar);
+    track.appendChild(timeRow);
+
+    var signal = document.createElement('div');
+    signal.className = 'sm-signal';
+    for (var i = 0; i < 5; i++) signal.appendChild(document.createElement('span'));
+
+    wrapper.appendChild(playBtn);
+    wrapper.appendChild(track);
+    wrapper.appendChild(signal);
+
+    audio.parentNode.insertBefore(wrapper, audio);
+    wrapper.appendChild(audio);
+
+    audio.addEventListener('loadedmetadata', function () {
+      timeDur.textContent = fmt(audio.duration);
+    });
+
+    audio.addEventListener('timeupdate', function () {
+      var pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+      barFill.style.width = pct + '%';
+      barCur.style.left = pct + '%';
+      timeCur.textContent = fmt(audio.currentTime);
+    });
+
+    audio.addEventListener('ended', function () {
+      wrapper.dataset.state = 'paused';
+      playBtn.textContent = '▶';
+    });
+
+    playBtn.addEventListener('click', function () {
+      if (audio.paused) {
+        document.querySelectorAll('.sm-player').forEach(function (p) {
+          var a = p.querySelector('audio');
+          if (a && a !== audio) {
+            a.pause();
+            p.dataset.state = 'paused';
+            p.querySelector('.sm-play-btn').textContent = '▶';
+          }
+        });
+        audio.play();
+        wrapper.dataset.state = 'playing';
+        playBtn.textContent = '▌▌';
+      } else {
+        audio.pause();
+        wrapper.dataset.state = 'paused';
+        playBtn.textContent = '▶';
+      }
+    });
+
+    bar.addEventListener('click', function (e) {
+      if (!audio.duration) return;
+      var rect = bar.getBoundingClientRect();
+      audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+    });
+  });
+}
+
 // ── Init all ─────────────────────────────────────────────────────
 buildGlobalNav();
 buildBreadcrumb();
 initThreatOverlay();
 initTagFilter();
 buildInstitutionalFooter();
+initAudioPlayers();
