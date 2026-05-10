@@ -43,6 +43,25 @@
   height: 0%;
 }
 
+/* [F1] Day label alongside scroll bar */
+#scroll-day-label {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: 0.18em;
+  writing-mode: vertical-rl;
+  pointer-events: none;
+  z-index: 899;
+  opacity: 0;
+  transition: opacity 0.5s;
+  text-transform: uppercase;
+}
+#scroll-day-label.visible { opacity: 1; }
+
 /* ── Container override for timeline width ────────────── */
 .crono-container {
   max-width: 900px;
@@ -52,9 +71,7 @@
 }
 
 /* ── Page header ──────────────────────────────────────── */
-.crono-header {
-  margin-bottom: 40px;
-}
+.crono-header { margin-bottom: 40px; }
 
 .crono-title {
   font-family: var(--mono);
@@ -146,9 +163,7 @@
 }
 
 /* ── Phase blocks ─────────────────────────────────────── */
-.phase-block {
-  margin-bottom: 8px;
-}
+.phase-block { margin-bottom: 8px; }
 
 .phase-header {
   display: flex;
@@ -162,9 +177,7 @@
   background: var(--bg);
 }
 
-.phase-header:hover .phase-info {
-  opacity: 0.75;
-}
+.phase-header:hover .phase-info { opacity: 0.75; }
 
 .phase-info {
   flex-shrink: 0;
@@ -205,6 +218,24 @@
   background: var(--border);
 }
 
+/* [F4] Phase summary shown when collapsed */
+.phase-summary {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  transition: opacity 0.3s, max-width 0.4s;
+  flex-shrink: 0;
+}
+.phase-summary.visible {
+  max-width: 360px;
+  opacity: 1;
+}
+
 .phase-toggle {
   font-family: var(--mono);
   font-size: 16px;
@@ -221,10 +252,7 @@
   max-height: 9999px;
   transition: max-height 0.45s ease;
 }
-
-.phase-entries.collapsed {
-  max-height: 0;
-}
+.phase-entries.collapsed { max-height: 0; }
 
 /* ── Timeline entry ───────────────────────────────────── */
 .timeline-entry {
@@ -251,20 +279,37 @@
   border-radius: 50%;
   top: 20px;
   z-index: 3;
+  transition: box-shadow 0.3s;
 }
 
-.timeline-entry.left .entry-anchor {
-  right: -5px;
-}
+.timeline-entry.left .entry-anchor  { right: -5px; }
+.timeline-entry.right .entry-anchor { left: -5px; }
 
-.timeline-entry.right .entry-anchor {
-  left: -5px;
-}
-
-.tipo-sujeto .entry-anchor   { background: var(--accent);  border: 1px solid var(--accent2); }
-.tipo-fauna .entry-anchor    { background: var(--green);   border: 1px solid #2a4a1a; }
-.tipo-incidente .entry-anchor { background: var(--red);    border: 1px solid #6a1a1a; }
+.tipo-sujeto .entry-anchor    { background: var(--accent);  border: 1px solid var(--accent2); }
+.tipo-fauna .entry-anchor     { background: var(--green);   border: 1px solid #2a4a1a; }
+.tipo-incidente .entry-anchor { background: var(--red);     border: 1px solid #6a1a1a; }
 .tipo-redactado .entry-anchor { background: var(--border2); border: 1px solid var(--border); }
+
+/* [F2] Coincidence highlight */
+.timeline-entry.coincidence .entry-card {
+  border-color: var(--accent2);
+  background: var(--bg3);
+}
+.timeline-entry.coincidence .entry-anchor {
+  box-shadow: 0 0 0 3px rgba(200, 168, 74, 0.18), 0 0 8px rgba(200, 168, 74, 0.12);
+}
+.timeline-entry.coincidence::after {
+  content: 'MISMO DÍA';
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 8px;
+  color: var(--accent2);
+  letter-spacing: 0.18em;
+  top: -14px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
 
 /* Archivo entry — full width */
 .tipo-archivo {
@@ -287,9 +332,7 @@
   background: var(--bg3);
 }
 
-.entry-card.expanded {
-  border-color: var(--accent2);
-}
+.entry-card.expanded { border-color: var(--accent2); }
 
 .archivo-card {
   background: var(--bg);
@@ -384,9 +427,7 @@
   transition: max-height 0.3s ease;
 }
 
-.entry-card.expanded .entry-body {
-  max-height: 600px;
-}
+.entry-card.expanded .entry-body { max-height: 600px; }
 
 .entry-body p {
   font-family: var(--serif);
@@ -407,6 +448,7 @@
   border-bottom: 1px solid var(--border2);
   padding-bottom: 2px;
   transition: color 0.15s, border-color 0.15s;
+  position: relative;
 }
 
 .entry-link:hover {
@@ -425,9 +467,7 @@
   transition: transform 0.2s;
 }
 
-.entry-card.expanded .entry-expand-icon {
-  transform: rotate(45deg);
-}
+.entry-card.expanded .entry-expand-icon { transform: rotate(45deg); }
 
 /* ── Faded (filtered out) entries ─────────────────────── */
 .timeline-entry.faded {
@@ -436,8 +476,8 @@
 }
 
 /* ── Phase IV styling ─────────────────────────────────── */
-#phase-4 .phase-code  { color: var(--red); }
-#phase-4 .phase-title { color: var(--text3); }
+#phase-4 .phase-code   { color: var(--red); }
+#phase-4 .phase-title  { color: var(--text3); }
 #phase-4 .phase-toggle { color: var(--red); }
 
 .redactado-archive-card {
@@ -447,13 +487,8 @@
   opacity: 0.7;
 }
 
-.redactado-archive-card .archivo-tag {
-  color: var(--red);
-}
-
-.redactado-archive-card .entry-title {
-  color: var(--text3);
-}
+.redactado-archive-card .archivo-tag { color: var(--red); }
+.redactado-archive-card .entry-title { color: var(--text3); }
 
 .redactado-archive-card .archivo-content {
   color: var(--text3);
@@ -484,9 +519,7 @@
   transition: color 0.15s;
 }
 
-.crono-footer a:hover {
-  color: var(--text2);
-}
+.crono-footer a:hover { color: var(--text2); }
 
 .status-dot {
   display: inline-block;
@@ -503,6 +536,147 @@
   50%       { opacity: 0.3; }
 }
 
+/* ── [F3] Enviando widget ─────────────────────────────── */
+#enviando-widget {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  padding: 10px 14px;
+  z-index: 800;
+  max-width: 220px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s, transform 0.6s;
+  pointer-events: none;
+}
+
+#enviando-widget.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.enviando-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+
+.enviando-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+.enviando-name {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: 0.14em;
+}
+
+.enviando-msg {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--text2);
+  font-style: italic;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.enviando-status {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.enviando-clock {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--text3);
+  border-radius: 50%;
+  position: relative;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.enviando-clock::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 1px;
+  background: var(--text3);
+  transform-origin: 0 50%;
+  transform: translate(0, -50%);
+  animation: clock-spin 4s linear infinite;
+}
+
+@keyframes clock-spin { to { transform: translate(0, -50%) rotate(360deg); } }
+
+.enviando-ellipsis span {
+  animation: dot-blink 1.5s infinite;
+  opacity: 0;
+}
+.enviando-ellipsis span:nth-child(2) { animation-delay: 0.4s; }
+.enviando-ellipsis span:nth-child(3) { animation-delay: 0.8s; }
+
+@keyframes dot-blink {
+  0%, 100% { opacity: 0; }
+  30%, 70%  { opacity: 1; }
+}
+
+/* ── [F5] Bestiario tooltip ───────────────────────────── */
+#bestiario-tooltip {
+  position: fixed;
+  background: var(--bg3);
+  border: 1px solid var(--accent2);
+  padding: 10px 14px;
+  z-index: 1001;
+  max-width: 250px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+#bestiario-tooltip.visible { opacity: 1; }
+
+.bt-amenaza {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--accent2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.bt-nombre {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.bt-desc {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--text2);
+  font-style: italic;
+  line-height: 1.5;
+}
+
 /* ── Mobile ───────────────────────────────────────────── */
 @media (max-width: 680px) {
   .timeline-center-line { left: 16px; }
@@ -517,22 +691,45 @@
     padding-right: 0;
   }
 
-  .timeline-entry .entry-anchor {
-    left: -5px;
-    right: auto;
-  }
+  .timeline-entry .entry-anchor { left: -5px; right: auto; }
 
   .tipo-archivo {
     width: calc(100% - 32px);
     margin-left: 32px;
     margin-right: 0;
   }
+
+  #enviando-widget { display: none; }
+  #scroll-day-label { display: none; }
 }
 </style>
 </head>
 <body>
 
 <div id="scroll-progress"><div id="scroll-bar"></div></div>
+<div id="scroll-day-label"></div>
+
+<!-- [F3] Enviando widget -->
+<div id="enviando-widget">
+  <div class="enviando-header">
+    <span class="enviando-dot"></span>
+    <span class="enviando-name">GRUPO · 5 MIEMBROS</span>
+  </div>
+  <div class="enviando-msg">"¿están bien?"</div>
+  <div class="enviando-status">
+    <span class="enviando-clock"></span>
+    <span>Hace <span class="redacted-bar" style="font-size:8px">██</span> días</span>
+    <span>·</span>
+    <span>En enviando<span class="enviando-ellipsis"><span>.</span><span>.</span><span>.</span></span></span>
+  </div>
+</div>
+
+<!-- [F5] Bestiario tooltip -->
+<div id="bestiario-tooltip">
+  <div class="bt-amenaza" id="bt-amenaza"></div>
+  <div class="bt-nombre"  id="bt-nombre"></div>
+  <div class="bt-desc"    id="bt-desc"></div>
+</div>
 
 <header class="site-header">
   <div class="site-header-inner">
@@ -583,6 +780,7 @@
         </div>
         <div class="phase-divider"></div>
         <span class="phase-period">DÍA 0</span>
+        <span class="phase-summary"></span>
         <span class="phase-toggle">−</span>
       </div>
       <div class="phase-entries">
@@ -726,6 +924,7 @@
         </div>
         <div class="phase-divider"></div>
         <span class="phase-period">DÍAS 1–7</span>
+        <span class="phase-summary"></span>
         <span class="phase-toggle">−</span>
       </div>
       <div class="phase-entries">
@@ -890,6 +1089,7 @@
         </div>
         <div class="phase-divider"></div>
         <span class="phase-period">DÍAS 8–21</span>
+        <span class="phase-summary"></span>
         <span class="phase-toggle">−</span>
       </div>
       <div class="phase-entries">
@@ -1027,13 +1227,13 @@
           <div class="entry-anchor"></div>
           <div class="entry-card" onclick="toggleEntry(this)">
             <div class="entry-header">
-              <span class="entry-day">Día <span style="background:var(--text3);color:transparent;padding:0 2px">██</span></span>
+              <span class="entry-day">Día <span class="redacted-bar">██</span></span>
               <span class="entry-tag">Incidente</span>
             </div>
             <div class="entry-title">Primer incidente fatal — Araña Hidráulica</div>
             <div class="entry-preview">Dos bajas. La información existía. No había sido distribuida.</div>
             <div class="entry-body">
-              <p>Equipo de reconocimiento entra a estacionamiento subterráneo inundado sin protocolo de detección de cables. Dos bajas. Un sobreviviente. La información de F-02 sobre el comportamiento de la especie existía en el archivo antes del incidente. No había sido distribuida al personal operativo. "No vi el hilo. Nadie nos dijo que había hilos." Ver AH-INC-001.</p>
+              <p>Equipo de reconocimiento entra a estacionamiento subterráneo inundado sin protocolo de detección de cables. Dos bajas. Un sobreviviente. La información de F-02 sobre el comportamiento de la especie existía en el archivo antes del incidente. No había sido distribuida al personal operativo. "No vi el hilo. Nadie nos dijo que había hilos."</p>
               <a href="../bestiario/arana-hidraulica.html" class="entry-link">Ver entrada del bestiario →</a>
             </div>
             <div class="entry-expand-icon">+</div>
@@ -1053,7 +1253,8 @@
           <span class="phase-title">Período de adaptación</span>
         </div>
         <div class="phase-divider"></div>
-        <span class="phase-period">DÍAS 22–<span style="background:var(--text3);color:transparent;padding:0 2px;font-size:9px">██</span></span>
+        <span class="phase-period">DÍAS 22–<span class="redacted-bar" style="font-size:8px;vertical-align:middle">██</span></span>
+        <span class="phase-summary"></span>
         <span class="phase-toggle">−</span>
       </div>
       <div class="phase-entries">
@@ -1133,6 +1334,7 @@
         </div>
         <div class="phase-divider"></div>
         <span class="phase-period" style="color:var(--red)">CLASIFICADO</span>
+        <span class="phase-summary"></span>
         <span class="phase-toggle">+</span>
       </div>
       <div class="phase-entries collapsed">
@@ -1144,7 +1346,7 @@
               <span class="entry-day">Día <span class="redacted-bar">██</span></span>
             </div>
             <div class="entry-title redacted-bar">████████████████████████</div>
-            <div class="entry-preview" style="color:var(--text3);font-size:12px;font-family:var(--mono)">Clasificación A — sin acceso en nivel C</div>
+            <div class="entry-preview" style="color:var(--text3);font-size:11px;font-family:var(--mono)">Clasificación A — sin acceso en nivel C</div>
           </div>
         </div>
 
@@ -1155,7 +1357,7 @@
               <span class="entry-day">Día <span class="redacted-bar">██</span></span>
             </div>
             <div class="entry-title redacted-bar">████████████████████████████████</div>
-            <div class="entry-preview" style="color:var(--text3);font-size:12px;font-family:var(--mono)">Clasificación A — sin acceso en nivel C</div>
+            <div class="entry-preview" style="color:var(--text3);font-size:11px;font-family:var(--mono)">Clasificación A — sin acceso en nivel C</div>
           </div>
         </div>
 
@@ -1166,7 +1368,7 @@
               <span class="entry-day">Día <span class="redacted-bar">██</span></span>
             </div>
             <div class="entry-title redacted-bar">██████████████████</div>
-            <div class="entry-preview" style="color:var(--text3);font-size:12px;font-family:var(--mono)">Clasificación A — sin acceso en nivel C</div>
+            <div class="entry-preview" style="color:var(--text3);font-size:11px;font-family:var(--mono)">Clasificación A — sin acceso en nivel C</div>
           </div>
         </div>
 
@@ -1197,7 +1399,7 @@
 <script>
 (function () {
 
-  // ── Assign left/right alternating classes ──────────────────
+  // ── [F1+F2+F4] Assign left/right alternating classes ───────
   var sideIdx = 0;
   document.querySelectorAll('.timeline-entry').forEach(function (e) {
     if (e.classList.contains('tipo-archivo')) return;
@@ -1205,25 +1407,62 @@
     sideIdx++;
   });
 
-  // ── Toggle entry expansion (one at a time) ──────────────────
+  // ── [F2] Toggle entry + coincidence highlight ───────────────
   window.toggleEntry = function (card) {
     if (card.classList.contains('redactado-card') || card.classList.contains('redactado-archive-card')) return;
     var wasExpanded = card.classList.contains('expanded');
-    document.querySelectorAll('.entry-card.expanded').forEach(function (c) {
-      c.classList.remove('expanded');
-    });
-    if (!wasExpanded) card.classList.add('expanded');
+
+    document.querySelectorAll('.entry-card.expanded').forEach(function (c) { c.classList.remove('expanded'); });
+    document.querySelectorAll('.timeline-entry.coincidence').forEach(function (e) { e.classList.remove('coincidence'); });
+
+    if (!wasExpanded) {
+      card.classList.add('expanded');
+      var entry  = card.closest('.timeline-entry');
+      var dayEl  = entry && entry.querySelector('.entry-day');
+      var dayTxt = dayEl ? dayEl.textContent.trim() : '';
+      if (dayTxt && !dayTxt.includes('██')) {
+        document.querySelectorAll('.timeline-entry').forEach(function (e) {
+          if (e === entry) return;
+          var d = e.querySelector('.entry-day');
+          if (d && d.textContent.trim() === dayTxt) e.classList.add('coincidence');
+        });
+      }
+    }
   };
 
-  // ── Toggle phase collapse/expand ────────────────────────────
+  // ── [F4] Phase summary ──────────────────────────────────────
+  function buildPhaseSummary(block) {
+    var entries = block.querySelectorAll('.timeline-entry');
+    var sujetos = [];
+    entries.forEach(function (e) {
+      var s = (e.dataset.sujeto || '').toUpperCase();
+      if (s && sujetos.indexOf(s) === -1) sujetos.push(s);
+    });
+    var n = entries.length;
+    return n + (n === 1 ? ' entrada' : ' entradas') + (sujetos.length ? '  ·  ' + sujetos.join(' · ') : '');
+  }
+
   window.togglePhase = function (header) {
-    var entries = header.parentElement.querySelector('.phase-entries');
+    var block   = header.parentElement;
+    var entries = block.querySelector('.phase-entries');
     var icon    = header.querySelector('.phase-toggle');
+    var summary = header.querySelector('.phase-summary');
     if (!entries) return;
     var collapsing = !entries.classList.contains('collapsed');
     entries.classList.toggle('collapsed', collapsing);
     icon.textContent = collapsing ? '+' : '−';
+    if (summary) {
+      if (collapsing) { summary.textContent = buildPhaseSummary(block); summary.classList.add('visible'); }
+      else            { summary.classList.remove('visible'); }
+    }
   };
+
+  // Initialize Phase IV summary (starts collapsed)
+  (function () {
+    var ph4     = document.getElementById('phase-4');
+    var summary = ph4 && ph4.querySelector('.phase-summary');
+    if (summary) { summary.textContent = buildPhaseSummary(ph4); summary.classList.add('visible'); }
+  }());
 
   // ── Filters ─────────────────────────────────────────────────
   var activeTipo   = 'all';
@@ -1231,12 +1470,8 @@
 
   function applyFilter() {
     document.querySelectorAll('.timeline-entry').forEach(function (e) {
-      var tipo   = e.dataset.tipo   || '';
-      var sujeto = e.dataset.sujeto || '';
-
-      var tipoOk   = activeTipo === 'all' || tipo === activeTipo;
-      var sujetoOk = !activeSujeto || sujeto === activeSujeto;
-
+      var tipoOk   = activeTipo === 'all' || (e.dataset.tipo || '') === activeTipo;
+      var sujetoOk = !activeSujeto       || (e.dataset.sujeto || '') === activeSujeto;
       e.classList.toggle('faded', !(tipoOk && sujetoOk));
     });
   }
@@ -1253,25 +1488,95 @@
   document.getElementById('filter-sujeto').addEventListener('click', function (e) {
     var btn = e.target.closest('.filter-btn[data-sujeto]');
     if (!btn || btn.disabled) return;
-    var alreadyActive = btn.classList.contains('active');
+    var already = btn.classList.contains('active');
     document.querySelectorAll('#filter-sujeto .filter-btn').forEach(function (b) { b.classList.remove('active'); });
-    if (!alreadyActive) {
-      btn.classList.add('active');
-      activeSujeto = btn.dataset.sujeto;
-    } else {
-      activeSujeto = null;
-    }
+    if (!already) { btn.classList.add('active'); activeSujeto = btn.dataset.sujeto; }
+    else          { activeSujeto = null; }
     applyFilter();
   });
 
-  // ── Scroll indicator ────────────────────────────────────────
-  var scrollBar = document.getElementById('scroll-bar');
+  // ── [F1] Scroll indicator + day label ──────────────────────
+  var scrollBar  = document.getElementById('scroll-bar');
+  var dayLabel   = document.getElementById('scroll-day-label');
+  var allNonArch = Array.from(document.querySelectorAll('.timeline-entry:not(.tipo-archivo)'));
+  var scrolled   = false;
+
+  function getVisibleDay() {
+    var mid  = window.scrollY + window.innerHeight * 0.38;
+    var best = null;
+    allNonArch.forEach(function (e) {
+      if (e.getBoundingClientRect().top + window.scrollY <= mid) best = e;
+    });
+    if (!best) return '';
+    var d = best.querySelector('.entry-day');
+    return d ? d.textContent.trim() : '';
+  }
+
   function updateScroll() {
     var max = document.body.scrollHeight - window.innerHeight;
     scrollBar.style.height = max > 0 ? (window.scrollY / max * 100) + '%' : '0%';
+    if (!scrolled && window.scrollY > 60) { scrolled = true; dayLabel.classList.add('visible'); }
+    if (dayLabel) dayLabel.textContent = getVisibleDay();
   }
+
   window.addEventListener('scroll', updateScroll, { passive: true });
   updateScroll();
+
+  // ── [F3] Enviando widget ────────────────────────────────────
+  var widget = document.getElementById('enviando-widget');
+  if (widget) setTimeout(function () { widget.classList.add('visible'); }, 2000);
+
+  // ── [F5] Bestiario tooltip ──────────────────────────────────
+  var BESTIA = {
+    'la-catedral':          { amenaza: 'Amenaza IV — Extinción', nombre: 'La Catedral',           desc: 'Entidad de Clase Extinción. Sin registro documentado de encuentro cercano superviviente.' },
+    'cervato-de-concreto':  { amenaza: 'Amenaza I',              nombre: 'Cervato de Concreto',    desc: 'Cuadrúpedo herbívoro de gran tamaño. Placas de pigmentación con textura inorgánica.' },
+    'roca':                 { amenaza: 'Amenaza I',              nombre: 'Roca',                   desc: 'Artrópodo fotofóbico. Mimetismo con concreto y cascajo urbano. Respuesta defensiva.' },
+    'hormiga-coordinadora': { amenaza: 'Amenaza II',             nombre: 'Hormiga Coordinadora',   desc: 'Colonia con gestión logística activa. Los soldados coordinan movimiento, no defienden.' },
+    'arana-de-casa':        { amenaza: 'Amenaza II',             nombre: 'Araña de Casa',          desc: 'Arácnido de emboscada. Cápsulas de eclosión en zonas de sombra máxima.' },
+    'mosca-forunculo':      { amenaza: 'Amenaza II',             nombre: 'Mosca Forúnculo',        desc: 'Parásito. Inoculación en huésped vivo. Ciclo documentado por F-02 sin ver al adulto.' },
+    'arana-hidraulica':     { amenaza: 'Amenaza II',             nombre: 'Araña Hidráulica',       desc: 'Carnívoro de emboscada en espacios subterráneos inundados. Cables trampa.' },
+    'gusano-de-asfalto':    { amenaza: 'Amenaza I',              nombre: 'Gusano de Asfalto',      desc: 'Descomponedor subterráneo. Túneles residuales de hasta cuatro cuadras de extensión.' },
+  };
+
+  var tooltip   = document.getElementById('bestiario-tooltip');
+  var btAmenaza = document.getElementById('bt-amenaza');
+  var btNombre  = document.getElementById('bt-nombre');
+  var btDesc    = document.getElementById('bt-desc');
+  var ttTimer   = null;
+
+  function positionTooltip(e) {
+    var x = e.clientX + 18, y = e.clientY - 16;
+    if (x + 270 > window.innerWidth)  x = e.clientX - 270;
+    if (y + 130 > window.innerHeight) y = e.clientY - 130;
+    tooltip.style.left = x + 'px';
+    tooltip.style.top  = y + 'px';
+  }
+
+  document.querySelectorAll('.entry-link').forEach(function (link) {
+    var href = link.getAttribute('href') || '';
+    if (!href.includes('bestiario')) return;
+    var slug = href.replace(/.*bestiario\//, '').replace('.html', '');
+    var data = BESTIA[slug];
+    if (!data) return;
+
+    link.addEventListener('mouseenter', function (e) {
+      clearTimeout(ttTimer);
+      ttTimer = setTimeout(function () {
+        btAmenaza.textContent = data.amenaza;
+        btNombre.textContent  = data.nombre;
+        btDesc.textContent    = data.desc;
+        positionTooltip(e);
+        tooltip.classList.add('visible');
+      }, 180);
+    });
+
+    link.addEventListener('mousemove', positionTooltip);
+
+    link.addEventListener('mouseleave', function () {
+      clearTimeout(ttTimer);
+      tooltip.classList.remove('visible');
+    });
+  });
 
 }());
 </script>
