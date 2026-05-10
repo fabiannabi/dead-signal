@@ -536,107 +536,6 @@
   50%       { opacity: 0.3; }
 }
 
-/* ── [F3] Enviando widget ─────────────────────────────── */
-#enviando-widget {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  background: var(--bg2);
-  border: 1px solid var(--border2);
-  padding: 10px 14px;
-  z-index: 800;
-  max-width: 220px;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.6s, transform 0.6s;
-  pointer-events: none;
-}
-
-#enviando-widget.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.enviando-header {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 5px;
-}
-
-.enviando-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--green);
-  display: inline-block;
-  animation: pulse 2s infinite;
-}
-
-.enviando-name {
-  font-family: var(--mono);
-  font-size: 9px;
-  color: var(--text3);
-  letter-spacing: 0.14em;
-}
-
-.enviando-msg {
-  font-family: var(--serif);
-  font-size: 14px;
-  color: var(--text2);
-  font-style: italic;
-  margin-bottom: 6px;
-  line-height: 1.4;
-}
-
-.enviando-status {
-  font-family: var(--mono);
-  font-size: 9px;
-  color: var(--text3);
-  letter-spacing: 0.1em;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-
-.enviando-clock {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border: 1px solid var(--text3);
-  border-radius: 50%;
-  position: relative;
-  opacity: 0.6;
-  flex-shrink: 0;
-}
-
-.enviando-clock::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 4px;
-  height: 1px;
-  background: var(--text3);
-  transform-origin: 0 50%;
-  transform: translate(0, -50%);
-  animation: clock-spin 4s linear infinite;
-}
-
-@keyframes clock-spin { to { transform: translate(0, -50%) rotate(360deg); } }
-
-.enviando-ellipsis span {
-  animation: dot-blink 1.5s infinite;
-  opacity: 0;
-}
-.enviando-ellipsis span:nth-child(2) { animation-delay: 0.4s; }
-.enviando-ellipsis span:nth-child(3) { animation-delay: 0.8s; }
-
-@keyframes dot-blink {
-  0%, 100% { opacity: 0; }
-  30%, 70%  { opacity: 1; }
-}
 
 /* ── [F5] Bestiario tooltip ───────────────────────────── */
 #bestiario-tooltip {
@@ -699,8 +598,7 @@
     margin-right: 0;
   }
 
-  #enviando-widget { display: none; }
-  #scroll-day-label { display: none; }
+#scroll-day-label { display: none; }
 }
 </style>
 </head>
@@ -709,20 +607,6 @@
 <div id="scroll-progress"><div id="scroll-bar"></div></div>
 <div id="scroll-day-label"></div>
 
-<!-- [F3] Enviando widget -->
-<div id="enviando-widget">
-  <div class="enviando-header">
-    <span class="enviando-dot"></span>
-    <span class="enviando-name">GRUPO · 5 MIEMBROS</span>
-  </div>
-  <div class="enviando-msg">"¿están bien?"</div>
-  <div class="enviando-status">
-    <span class="enviando-clock"></span>
-    <span>Hace <span class="redacted-bar" style="font-size:8px">██</span> días</span>
-    <span>·</span>
-    <span>En enviando<span class="enviando-ellipsis"><span>.</span><span>.</span><span>.</span></span></span>
-  </div>
-</div>
 
 <!-- [F5] Bestiario tooltip -->
 <div id="bestiario-tooltip">
@@ -1521,10 +1405,6 @@
 
   window.addEventListener('scroll', updateScroll, { passive: true });
   updateScroll();
-
-  // ── [F3] Enviando widget ────────────────────────────────────
-  var widget = document.getElementById('enviando-widget');
-  if (widget) setTimeout(function () { widget.classList.add('visible'); }, 2000);
 
   // ── [F5] Bestiario tooltip ──────────────────────────────────
   var BESTIA = {
