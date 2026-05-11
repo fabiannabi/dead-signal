@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENVAC — Operaciones</title>
+<link rel="stylesheet" href="./css/operaciones.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+<header class="op-header">
+  <a href="../index.html" class="op-logo">SEÑAL MUERTA</a>
+  <span class="op-freq" style="color:var(--text3)">›</span>
+  <span class="op-freq">DESPLIEGUE DE UNIDADES</span>
+  <span class="op-spacer"></span>
+  <span id="op-clock" class="op-time"></span>
+</header>
+
+<div id="map-wrap">
+  <div id="map"></div>
+
+  <div class="map-overlay" id="map-overlay" style="display:none">
+    <div class="map-overlay-eyebrow">Evento activo — click para detalle</div>
+    <h2 id="ov-id"></h2>
+    <p id="ov-zona"></p>
+    <p id="ov-desc"></p>
+    <span class="tag warn" id="ov-nivel"></span>
+    <br><br>
+    <button class="btn-op primary" id="btn-briefing">→ INICIAR BRIEFING</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script type="module" src="./js/ui-map.js"></script>
+</body>
+</html>

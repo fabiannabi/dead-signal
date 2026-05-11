@@ -1,0 +1,28 @@
+[
+  {
+    "id": "EVT-AGS-2026-0117",
+    "lat": 21.9048,
+    "lng": -102.3076,
+    "ubicacion_descrita": "Zona Industrial Norte — Bodega de distribución en abandono, Calle Circuito Aguascalientes Norte, colonia Industrial",
+    "fecha_reporte": "2026-05-09",
+    "hora_reporte": "06:14",
+    "criatura_sospechada": "arana_hidraulica",
+    "clasificacion_confirmar": false,
+    "nivel_amenaza_estimado": "II",
+    "estado": "activo",
+    "mision_asociada": "arana-hidraulica-extraccion",
+    "fuente_alerta": "Equipo de monitoreo de vibración — sensor estacionario VS-04, Avenida Convención Norte",
+    "descripcion_alerta": "Lecturas de vibración anómala sostenida en cámara de drenaje pluvial bajo bodega de distribución. Patrón rítmico con intervalos de 2.3–3.1 segundos, consistente con desplazamiento de espécimen adulto de Aranea hydraulica según perfil VS-catalogado en base AH-SIG-002. Duración del evento: 4 horas continuas antes del reporte. No se descarta espécimen anidado.",
+    "coordenadas_foco": {
+      "lat": 21.9051,
+      "lng": -102.3079,
+      "descripcion": "Cámara de drenaje secundaria bajo sector este de bodega — acceso por escalera de mantenimiento interior"
+    },
+    "notas_operativas": "La bodega estuvo en uso hasta semana 3 post-Emergencia. Abandono documentado tras incidente de personal no registrado oficialmente. Hay agua acumulada en nivel subterráneo por falla del sistema de bombeo. Civiles en zona: no confirmados. Acceso recomendado: entrada lateral este (llave de emergencia retirada en reconocimiento previo el 2026-05-08).",
+    "icono_mapa": {
+      "color": "ambar",
+      "forma": "hexagono",
+      "etiqueta": "AH-ACTIVO"
+    }
+  }
+]

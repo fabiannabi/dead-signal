@@ -1,0 +1,138 @@
+[
+  {
+    "id": "reconocimiento",
+    "nombre_rol": "Especialista en Reconocimiento",
+    "descripcion_breve": "Primer elemento en avanzar. Recopila inteligencia antes de comprometer al equipo. Opera en silencio sostenido.",
+    "stats_base": {
+      "físico": 4,
+      "técnico": 6,
+      "biológico": 5,
+      "sigilo": 9,
+      "mental": 7,
+      "liderazgo": 3
+    },
+    "rasgos_compatibles": ["hipervigilancia", "ex_cazador", "daltonismo", "hipoacusia_derecha", "conoce_red_drenaje", "mecanico_aficionado"],
+    "equipo_estándar": ["binoculares térmicos compactos", "radio cifrada canal 3", "linterna roja ajustable 200 lux", "kit de detección de cables (anzuelo de monofilamento + luz lateral)"],
+    "voz": "parco, susurrado, reportes telegráficos sin adornos emocionales",
+    "patron_radio": "uso frecuente de códigos numéricos, omite pronombres, reporta solo lo esencial y corta la transmisión sin fórmulas de cierre"
+  },
+  {
+    "id": "sanitario",
+    "nombre_rol": "Sanitario de Campo",
+    "descripcion_breve": "Médico operativo. Mantiene al equipo funcional bajo fuego. La frialdad es su recurso más valioso.",
+    "stats_base": {
+      "físico": 5,
+      "técnico": 5,
+      "biológico": 9,
+      "sigilo": 5,
+      "mental": 8,
+      "liderazgo": 5
+    },
+    "rasgos_compatibles": ["frialdad_clinica", "primeros_auxilios_avanzados", "medico_civil", "migrania_cronica", "tept_leve", "sobreviviente_incidente_AH"],
+    "equipo_estándar": ["kit médico de campo avanzado (trauma, quemaduras, exposición biológica)", "contenedor de muestra clase B certificado", "jeringa de extracción reforzada 5 ml", "radio estándar CENVAC"],
+    "voz": "preciso, clínico, no dramatiza situaciones. Reporta estado fisiológico en términos técnicos",
+    "patron_radio": "usa terminología médica sin glosarla, da estimados de tiempo y porcentaje, nunca dice 'está bien' — dice 'estable' o 'funcional'"
+  },
+  {
+    "id": "tecnico",
+    "nombre_rol": "Operador Técnico",
+    "descripcion_breve": "Electrónica, comunicaciones y drones. Mantiene los ojos que el equipo no puede poner en el campo.",
+    "stats_base": {
+      "físico": 4,
+      "técnico": 9,
+      "biológico": 4,
+      "sigilo": 5,
+      "mental": 6,
+      "liderazgo": 4
+    },
+    "rasgos_compatibles": ["ingeniero_campo", "mecanico_aficionado", "poliglota", "hipoacusia_derecha", "conoce_red_drenaje", "daltonismo"],
+    "equipo_estándar": ["escáner de infraestructura portátil modelo T-7", "drone de reconocimiento K-2 (batería 18 min)", "kit de reparación de radio de campo", "linterna de alta potencia 800 lux con batería de respaldo"],
+    "voz": "técnico, eficiente, interrumpe para dar datos relevantes sin que se los pidan",
+    "patron_radio": "da coordenadas, lecturas de sensor, números de versión. Habla en capas: confirma la situación y agrega contexto técnico en la misma transmisión"
+  },
+  {
+    "id": "asalto",
+    "nombre_rol": "Agente de Asalto",
+    "descripcion_breve": "Contención directa. Entra cuando el equipo no puede evitar el contacto. Frontal pero no imprudente.",
+    "stats_base": {
+      "físico": 9,
+      "técnico": 4,
+      "biológico": 4,
+      "sigilo": 6,
+      "mental": 5,
+      "liderazgo": 5
+    },
+    "rasgos_compatibles": ["ex_militar", "resistencia_excepcional", "impulsividad", "cicatriz_rodilla", "calma_bajo_fuego", "perdio_familia_emergencia"],
+    "equipo_estándar": ["equipo de protección reforzado nivel III", "linterna táctica de 600 lux (manos libres)", "sistema de contención de distancia (gancho y cable reforzado)", "radio táctica CENVAC"],
+    "voz": "directo, economía de palabras, nunca explica antes de actuar — ejecuta y reporta",
+    "patron_radio": "frases cortas de verbo-objeto. Confirma con acciones tomadas, no con intenciones"
+  },
+  {
+    "id": "cazador",
+    "nombre_rol": "Rastreador de Campo",
+    "descripcion_breve": "Fondo rural. Conoce fauna mutada mejor que cualquier manual. Lee rastros donde otros ven piso mojado.",
+    "stats_base": {
+      "físico": 7,
+      "técnico": 4,
+      "biológico": 7,
+      "sigilo": 7,
+      "mental": 5,
+      "liderazgo": 4
+    },
+    "rasgos_compatibles": ["ex_cazador", "entrenador_perros", "optimismo_terco", "asma_leve", "perdio_familia_emergencia", "manos_grandes"],
+    "equipo_estándar": ["equipo de rastreo de campo (huellas, vibraciones, olfato)", "contenedor de muestra estándar", "linterna roja larga duración 180 lux", "radio de campo robusta"],
+    "voz": "informal pero preciso cuando importa, usa vocabulario de campo y referencias de fauna sin jerga militar",
+    "patron_radio": "usa referencias de orientación naturales ('a la derecha del pilar grande', 'donde se junta el agua'), llama a las criaturas por nombre coloquial antes de corregirse al técnico"
+  },
+  {
+    "id": "analista",
+    "nombre_rol": "Analista de Campo",
+    "descripcion_breve": "Científico desplegado. Frágil físicamente. Indispensable para identificar lo que el equipo no puede clasificar.",
+    "stats_base": {
+      "físico": 3,
+      "técnico": 7,
+      "biológico": 8,
+      "sigilo": 4,
+      "mental": 8,
+      "liderazgo": 3
+    },
+    "rasgos_compatibles": ["frialdad_clinica", "sobreviviente_incidente_AH", "miopia_severa", "manos_grandes", "primeros_auxilios_avanzados", "poliglota"],
+    "equipo_estándar": ["contenedor de muestra clase A con monitoreo de integridad", "microscopio de campo plegable", "kit de análisis químico rápido (pH, proteínas, compuestos anómalos)", "radio estándar CENVAC"],
+    "voz": "prolijo en observaciones, insiste en matices, se olvida de que está en campo activo",
+    "patron_radio": "da contexto antes del punto principal, puede irse largo, necesita que Control lo interrumpa para recibir la conclusión"
+  },
+  {
+    "id": "veterano",
+    "nombre_rol": "Agente Veterano",
+    "descripcion_breve": "Ha visto operaciones antes y después de la Emergencia. Stats medios, pero su presencia estabiliza al equipo completo.",
+    "stats_base": {
+      "físico": 6,
+      "técnico": 5,
+      "biológico": 5,
+      "sigilo": 6,
+      "mental": 7,
+      "liderazgo": 8
+    },
+    "rasgos_compatibles": ["instructor_evacuacion", "ex_militar", "calma_bajo_fuego", "hipoacusia_derecha", "perdio_familia_emergencia", "cicatriz_rodilla"],
+    "equipo_estándar": ["equipo estándar completo actualizado", "radio de respaldo cifrada", "kit médico básico de campo", "manual de campo CENVAC edición actual con anotaciones propias"],
+    "voz": "calmado incluso cuando no debería estarlo, da órdenes como si fueran sugerencias",
+    "patron_radio": "usa el 'nosotros', llama a los agentes por apellido, siempre confirma que escuchó a Control antes de responder al contenido"
+  },
+  {
+    "id": "recluta",
+    "nombre_rol": "Recluta",
+    "descripcion_breve": "Sin experiencia de campo. Alto potencial, cero historial. Una operación puede hacer o destruir a este agente.",
+    "stats_base": {
+      "físico": 5,
+      "técnico": 5,
+      "biológico": 4,
+      "sigilo": 5,
+      "mental": 4,
+      "liderazgo": 2
+    },
+    "rasgos_compatibles": ["optimismo_terco", "impulsividad", "tept_leve", "fobia_agua", "mecanico_aficionado", "escalada"],
+    "equipo_estándar": ["equipo básico de campo CENVAC (sin especialización)", "radio estándar"],
+    "voz": "nervioso pero intenta disimularlo, habla más de lo necesario en momentos de tensión, se disculpa antes de reportar malas noticias",
+    "patron_radio": "usa 'ehm' y 'o sea', repite el nombre de Control al inicio de cada transmisión, da más información de la necesaria y luego pide confirmación de que lo escucharon"
+  }
+]

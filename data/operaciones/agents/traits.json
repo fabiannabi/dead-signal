@@ -1,0 +1,381 @@
+[
+  {
+    "id": "asma_leve",
+    "nombre": "Asma leve",
+    "categoria": "físico",
+    "modificadores_stat": { "físico": -1 },
+    "modificadores_estado": { "estamina_max": -10 },
+    "narrativa_inserts": [
+      "{nombre} saca el inhalador sin hacer ruido. Lo guarda antes de que alguien lo note.",
+      "— Control, dame veinte segundos.",
+      "{nombre} aprieta los dientes. El aire aquí abajo está cargado de humedad."
+    ],
+    "incompatible_con": ["resistencia_excepcional"]
+  },
+  {
+    "id": "cicatriz_rodilla",
+    "nombre": "Cicatriz de rodilla (lesión vieja)",
+    "categoria": "físico",
+    "modificadores_stat": { "físico": -1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} baja los escalones con el peso en la pierna buena.",
+      "La rodilla de {nombre} cruje una vez. Se congela. Espera. Nada.",
+      "{nombre} no dice nada sobre la rodilla. Sigue."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "daltonismo",
+    "nombre": "Daltonismo (rojo-verde)",
+    "categoria": "físico",
+    "modificadores_stat": { "técnico": -1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "— El abdomen ese... ¿de qué color les aparece a ustedes? — dice {nombre}. Nadie responde de inmediato.",
+      "{nombre} ajusta el filtro de la linterna a ojo. Sabe que su criterio de color no es confiable."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "miopia_severa",
+    "nombre": "Miopía severa",
+    "categoria": "físico",
+    "modificadores_stat": { "sigilo": -1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} ajusta los lentes con un dedo. El entorno cercano está bien — es el fondo lo que se difumina.",
+      "— Hay algo al fondo del corredor — dice {nombre}. — No puedo decirte qué."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "hipoacusia_derecha",
+    "nombre": "Hipoacusia unilateral (oído derecho)",
+    "categoria": "físico",
+    "modificadores_stat": { "técnico": -1, "sigilo": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "— Repite, Control. El lado derecho no te recibió bien — dice {nombre}.",
+      "{nombre} inclina la cabeza hacia la izquierda. Escucha. Hay algo, pero no puede ubicar la dirección."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "migrania_cronica",
+    "nombre": "Migraña crónica",
+    "categoria": "físico",
+    "modificadores_stat": { "mental": -1, "físico": -1 },
+    "modificadores_estado": { "cordura_max": -10 },
+    "narrativa_inserts": [
+      "{nombre} presiona el puente de la nariz. Los dedos en cruz sobre los ojos, unos segundos.",
+      "— Control, dame un segundo. La luz está... intensa.",
+      "La migraña de {nombre} lleva horas instalada. Funciona igual. Solo que todo duele un poco más."
+    ],
+    "incompatible_con": ["resistencia_excepcional"]
+  },
+  {
+    "id": "resistencia_excepcional",
+    "nombre": "Resistencia física excepcional",
+    "categoria": "físico",
+    "modificadores_stat": { "físico": 1 },
+    "modificadores_estado": { "estamina_max": 20 },
+    "narrativa_inserts": [
+      "{nombre} carga con la parte más pesada del equipo sin que nadie se lo pida.",
+      "El ritmo de {nombre} no cambia. Lleva así tres horas."
+    ],
+    "incompatible_con": ["asma_leve", "migrania_cronica"]
+  },
+  {
+    "id": "manos_grandes",
+    "nombre": "Manos grandes (coordinación fina limitada)",
+    "categoria": "físico",
+    "modificadores_stat": { "técnico": -1, "físico": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} sujeta el contenedor de muestra con cuidado exagerado. Las manos no son lo suyo para esto.",
+      "— La jeringa... — dice {nombre}. Pausa. — Ya está."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "tept_leve",
+    "nombre": "TEPT leve (no incapacitante)",
+    "categoria": "psicológico",
+    "modificadores_stat": { "mental": -1 },
+    "modificadores_estado": { "cordura_max": -10 },
+    "narrativa_inserts": [
+      "{nombre} se detiene un momento. Respira. Continúa sin explicación.",
+      "Hay algo en el olor de este lugar que {nombre} reconoce. No lo dice.",
+      "El primer encuentro cercano afecta a {nombre} más de lo que debería. Se recupera."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "claustrofobia",
+    "nombre": "Claustrofobia (desencadenada por espacios subterráneos)",
+    "categoria": "psicológico",
+    "modificadores_stat": { "mental": -2 },
+    "modificadores_estado": { "cordura_max": -15 },
+    "narrativa_inserts": [
+      "En el drenaje el techo baja otros veinte centímetros y {nombre} para. Tres respiraciones. Sigue.",
+      "— Control, ¿cuánto falta para salir? — La voz de {nombre} es plana. Demasiado plana.",
+      "{nombre} mantiene la mano en la pared todo el tiempo. Necesita saber dónde está el límite."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "optimismo_terco",
+    "nombre": "Optimismo terco",
+    "categoria": "psicológico",
+    "modificadores_stat": { "liderazgo": 1, "mental": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "— Podría estar peor — dice {nombre}. Nadie responde, pero nadie discute tampoco.",
+      "{nombre} encuentra algo positivo en la situación. El equipo sabe que es exagerado. Ayuda igual.",
+      "— Seguimos adentro, seguimos vivos — dice {nombre}. — Cuenten eso como una victoria."
+    ],
+    "incompatible_con": ["frialdad_clinica"]
+  },
+  {
+    "id": "frialdad_clinica",
+    "nombre": "Frialdad clínica",
+    "categoria": "psicológico",
+    "modificadores_stat": { "mental": 2, "liderazgo": -1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} evalúa la situación con la misma expresión que evaluaría un formulario de inventario.",
+      "— No es relevante emocionalmente — dice {nombre}. — Lo que es relevante es esto.",
+      "La frialdad de {nombre} incomoda al equipo. En este contexto, es una ventaja operativa."
+    ],
+    "incompatible_con": ["optimismo_terco"]
+  },
+  {
+    "id": "hipervigilancia",
+    "nombre": "Hipervigilancia",
+    "categoria": "psicológico",
+    "modificadores_stat": { "sigilo": 1, "mental": -1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} escucha algo. Espera. No era nada. Pero esperó.",
+      "— Hay movimiento — dice {nombre}. Pausa larga. — No. Era el equipo.",
+      "{nombre} no duerme bien desde la Emergencia. Aquí, al menos, eso sirve de algo."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "impulsividad",
+    "nombre": "Impulsividad bajo presión",
+    "categoria": "psicológico",
+    "modificadores_stat": { "físico": 1, "sigilo": -2 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} se mueve antes de que Control termine la instrucción.",
+      "La decisión de {nombre} fue rápida. Demasiado rápida. Funcionó, esta vez.",
+      "— Ya lo hice — dice {nombre}. — Lo siento. Funcionó."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "fobia_agua",
+    "nombre": "Fobia al agua estancada (post-Emergencia)",
+    "categoria": "psicológico",
+    "modificadores_stat": { "mental": -2 },
+    "modificadores_estado": { "cordura_max": -15 },
+    "narrativa_inserts": [
+      "{nombre} se detiene en el borde del charco. Un segundo más largo de lo necesario.",
+      "— Son treinta centímetros — dice alguien. {nombre} lo sabe. Lo cruza. No mira hacia abajo.",
+      "Desde el incidente de {nombre} con el agua, nadie en el equipo hace comentarios. Solo esperan."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "calma_bajo_fuego",
+    "nombre": "Calma bajo presión extrema",
+    "categoria": "psicológico",
+    "modificadores_stat": { "mental": 2 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "La cordura del equipo empieza a agrietarse. {nombre} se vuelve más quieto, más claro.",
+      "— Escúchenme — dice {nombre} cuando el equipo empieza a desorganizarse. El tono funciona.",
+      "En los peores momentos, {nombre} habla más despacio. El equipo, sin entender por qué, también."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "ex_militar",
+    "nombre": "Ex-militar (Ejército Mexicano, pre-Emergencia)",
+    "categoria": "biográfico",
+    "modificadores_stat": { "físico": 1, "liderazgo": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} evalúa el espacio con ojos que aprendieron a contar salidas antes de entrar.",
+      "— Esto recuerda al drenaje del Río Verde — dice {nombre}. — Ahí al menos sabíamos a qué le teníamos miedo.",
+      "El entrenamiento de {nombre} no contempló esto. Pero la disciplina sí sirve."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "ex_cazador",
+    "nombre": "Ex-cazador de campo (Jalisco / Zacatecas)",
+    "categoria": "biográfico",
+    "modificadores_stat": { "biológico": 1, "sigilo": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "— Los rastros son frescos — dice {nombre}. — Horas, no días.",
+      "{nombre} agachado, mirando algo en el piso que el resto del equipo no puede ver.",
+      "— En el monte aprendes a quedarte quieto hasta que el animal se olvide de ti — dice {nombre}. — Aquí aplica."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "perdio_familia_emergencia",
+    "nombre": "Perdió familia en la Emergencia",
+    "categoria": "biográfico",
+    "modificadores_stat": { "mental": -1, "liderazgo": 2 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} trabaja como si cada operación fuera la última oportunidad de hacer algo útil.",
+      "No hay foto en el equipo de {nombre}. Solo la operación.",
+      "El equipo no sabe la historia de {nombre}. {nombre} prefiere que así sea."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "medico_civil",
+    "nombre": "Médico civil integrado a CENVAC",
+    "categoria": "biográfico",
+    "modificadores_stat": { "biológico": 1, "técnico": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "— Esto no es un hospital — se dice {nombre} en voz baja, como recordatorio.",
+      "{nombre} no espera a que le pidan revisar la herida. Ya está haciéndolo.",
+      "El diagnóstico de {nombre} llega antes de que alguien termine de describir el síntoma."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "ingeniero_campo",
+    "nombre": "Ingeniero de infraestructura (campo)",
+    "categoria": "biográfico",
+    "modificadores_stat": { "técnico": 2 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "— Este drenaje tiene un colector a unos 40 metros al norte — dice {nombre}. — Lo dice el ángulo del piso.",
+      "{nombre} mira la tubería con la misma expresión que un lector mira un libro familiar.",
+      "— Si algo salió mal aquí, lo construyeron mal — dice {nombre}. — Y lo construyeron muy mal."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "sobreviviente_incidente_AH",
+    "nombre": "Sobreviviente de incidente con Aranea hydraulica",
+    "categoria": "biográfico",
+    "modificadores_stat": { "biológico": 2, "mental": -2 },
+    "modificadores_estado": { "cordura_max": -20 },
+    "narrativa_inserts": [
+      "{nombre} conoce el clic articular antes de que el equipo lo escuche. Y se detiene primero.",
+      "— La primera vez que la vi — empieza {nombre}. Luego cierra la boca. Sigue caminando.",
+      "La experiencia de {nombre} con la especie es un activo. El costo de esa experiencia, también."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "instructor_evacuacion",
+    "nombre": "Ex-instructor de evacuación civil (CENVAC pre-despliegue)",
+    "categoria": "biográfico",
+    "modificadores_stat": { "liderazgo": 1, "mental": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} da instrucciones como si estuviera entrenando. Funciona de todas formas.",
+      "— El equipo necesita un punto de reunión — dice {nombre}. Nadie lo había dicho. Todos lo agradecen.",
+      "{nombre} sabe cómo mantener a un grupo organizado cuando el grupo quiere dejar de ser un grupo."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "conoce_red_drenaje",
+    "nombre": "Conoce la red de drenaje de Aguascalientes",
+    "categoria": "biográfico",
+    "modificadores_stat": { "técnico": 2 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "— Aquí el drenaje baja al sureste — dice {nombre}. — Lo conozco desde antes.",
+      "{nombre} no necesita el escáner para saber dónde están. Sabe dónde están.",
+      "— Ese olor es el colector que conecta con Avenida Alameda — dice {nombre}. — Estamos bien orientados."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "poliglota",
+    "nombre": "Políglota (español, inglés, portugués)",
+    "categoria": "habilidad",
+    "modificadores_stat": { "liderazgo": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} descifra el manual técnico en inglés sin perder el ritmo.",
+      "El manual del equipo importado tiene instrucciones en portugués. {nombre} lo resuelve en treinta segundos."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "mecanico_aficionado",
+    "nombre": "Mecánico aficionado (vehículos y electrónica básica)",
+    "categoria": "habilidad",
+    "modificadores_stat": { "técnico": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} abre el panel del escáner con un destornillador de bolsillo. — Dale cinco minutos.",
+      "— No es una reparación oficial — dice {nombre}. — Pero funciona."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "primeros_auxilios_avanzados",
+    "nombre": "Primeros auxilios avanzados (certificado CENVAC)",
+    "categoria": "habilidad",
+    "modificadores_stat": { "biológico": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} revisa la herida, aplica, cubre. Cuatro movimientos. Sin preguntar.",
+      "— Ya está controlado — dice {nombre}. No es el sanitario, pero sabe lo que hace."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "tiradora_competitiva",
+    "nombre": "Tiradora de precisión (competencia civil, pre-Emergencia)",
+    "categoria": "habilidad",
+    "modificadores_stat": { "físico": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} ajusta el pulso. Respira. Espera. Actúa.",
+      "La precisión de {nombre} no es militar. Es algo más quieto y más exacto."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "entrenador_perros",
+    "nombre": "Entrenador de perros de trabajo (pre-Emergencia)",
+    "categoria": "habilidad",
+    "modificadores_stat": { "biológico": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} nota el cambio de comportamiento de la fauna antes de que el equipo lo registre.",
+      "— El animal está evaluando si somos amenaza — dice {nombre}. — No se muevan todavía."
+    ],
+    "incompatible_con": []
+  },
+  {
+    "id": "escalada",
+    "nombre": "Escalada y movilidad vertical",
+    "categoria": "habilidad",
+    "modificadores_stat": { "físico": 1 },
+    "modificadores_estado": {},
+    "narrativa_inserts": [
+      "{nombre} sube la tubería vertical sin necesitar que nadie le dé un empuje.",
+      "— El ventilador de salida está alto — dice alguien. — {nombre} ya está a mitad de camino."
+    ],
+    "incompatible_con": []
+  }
+]

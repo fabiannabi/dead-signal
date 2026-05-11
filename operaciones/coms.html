@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENVAC — Comunicaciones</title>
+<link rel="stylesheet" href="./css/operaciones.css">
+</head>
+<body>
+
+<header class="op-header">
+  <a href="./index.html" class="op-logo">APE — <span>SEÑAL MUERTA</span></a>
+  <div class="op-divider"></div>
+  <span class="op-freq" id="ev-id">FREC 7</span>
+  <div class="op-divider"></div>
+  <span class="op-freq" id="ev-mision" style="color:var(--text3)"></span>
+  <span class="op-spacer"></span>
+  <span class="op-signal" id="sig-indicator" title="Calidad de señal">▇▇▇▇</span>
+  <div class="op-divider"></div>
+  <span class="op-time" id="op-tiempo">07:00</span>
+</header>
+
+<div class="coms-layout">
+
+  <aside class="status-panel" id="status-panel">
+    <div class="mission-strip">
+      <span>EVT: <b id="strip-ev">—</b></span>
+      <span>MISIÓN: <b id="strip-mis">—</b></span>
+    </div>
+    <div class="section-label" style="margin-bottom:10px">Estado del equipo</div>
+    <!-- agent cards injected by JS -->
+    <div class="tiempo-strip">Tiempo op: <b id="tiempo-display">07:00</b></div>
+  </aside>
+
+  <main class="coms-panel">
+    <div class="coms-log" id="coms-log"></div>
+    <div class="decision-zone" id="decision-zone"></div>
+  </main>
+
+</div>
+
+<script type="module" src="./js/ui-coms.js"></script>
+</body>
+</html>

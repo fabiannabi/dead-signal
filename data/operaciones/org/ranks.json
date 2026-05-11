@@ -1,0 +1,44 @@
+[
+  {
+    "id": "recluta",
+    "nombre": "Recluta",
+    "abreviatura": "RCL",
+    "nivel": 1,
+    "descripcion": "Personal en período de prueba. Sin operaciones previas documentadas. Asignado bajo supervisión directa de agente de campo. Autorizado únicamente en zonas de amenaza I con acompañamiento."
+  },
+  {
+    "id": "agente_campo",
+    "nombre": "Agente de Campo",
+    "abreviatura": "AGT",
+    "nivel": 2,
+    "descripcion": "Personal operativo básico. Mínimo dos operaciones completadas. Autorizado para zonas de amenaza I y II con supervisión de rango superior."
+  },
+  {
+    "id": "agente_especialista",
+    "nombre": "Agente Especialista",
+    "abreviatura": "AGT-E",
+    "nivel": 3,
+    "descripcion": "Personal con especialización técnica, biológica o táctica certificada por CENVAC. Autorizado para operaciones de amenaza II sin supervisión directa. Puede actuar como segundo al mando."
+  },
+  {
+    "id": "suboficial_operaciones",
+    "nombre": "Suboficial de Operaciones",
+    "abreviatura": "SUBOF",
+    "nivel": 4,
+    "descripcion": "Personal con mando de equipo certificado. Mínimo ocho operaciones completadas. Responsable del equipo en campo ante Control. Informe post-operación obligatorio en 24 horas."
+  },
+  {
+    "id": "oficial_operaciones",
+    "nombre": "Oficial de Operaciones",
+    "abreviatura": "OFIC",
+    "nivel": 5,
+    "descripcion": "Oficial de campo con autoridad de decisión sobre modificación o aborto de misión en campo. Autorizado para zonas de amenaza III con permiso previo de Coordinación de Distrito. Reporta directamente a Coordinación."
+  },
+  {
+    "id": "coordinador_distrito",
+    "nombre": "Coordinador de Distrito",
+    "abreviatura": "CORD",
+    "nivel": 6,
+    "descripcion": "Autoridad máxima operativa para el distrito asignado. No desplegable en campo activo salvo emergencia declarada de nivel IV. Coordina desde posición de mando avanzada o CENVAC-Central."
+  }
+]

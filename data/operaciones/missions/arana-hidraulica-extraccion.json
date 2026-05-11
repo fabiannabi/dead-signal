@@ -1,0 +1,1016 @@
+{
+  "id": "arana-hidraulica-extraccion",
+  "nombre": "Extracción de muestra — Aranea hydraulica",
+  "descripcion": "Obtención de fluido articular de espécimen de Araña Hidráulica activa en red de drenaje industrial norte, Aguascalientes. Protocolo 4-A.",
+  "tipo_mision": "extraccion_biologica",
+  "criatura": "arana_hidraulica",
+  "nivel_amenaza": "II",
+  "objetivo_primario": "Obtener muestra viable de fluido articular (mínimo 2 ml en contenedor clase B certificado). Extraíble de articulación distal recuperada o residuo concentrado en superficie de cable de tensión.",
+  "objetivo_secundario": "Documentar condiciones del foco: tamaño del espécimen, presencia de cables de tensión activos, evidencia de hábitat permanente o de tránsito.",
+  "muestra_objetivo": "fluido_articular",
+  "muestra_descripcion": "Fluido con leve iridiscencia extraíble de articulación distal. Produce el clic característico cuando está presurizado in vivo. Sin las propiedades corrosivas del ácido digestivo. Requiere contenedor clase B.",
+  "nodo_inicial": "nodo_insercion",
+  "nodos": [
+    {
+      "id": "nodo_insercion",
+      "tipo": "narrativo",
+      "ambiente": "CENVAC-Central, consola de Control — frecuencia 7 activa",
+      "texto_control": "Frecuencia 7-CENVAC operativa. El evento EVT-AGS-2026-0117 fue registrado a las 06:14 por el sensor VS-04 en Avenida Convención Norte: vibración rítmica sostenida en cámara de drenaje pluvial bajo bodega industrial — patrón compatible con Aranea hydraulica adulta. El equipo está en punto de inserción. Objetivo: muestra de fluido articular, Protocolo 4-A. Confirme recepción y autorice avance.",
+      "texto_agente": "Estamos en el punto de inserción, entrada lateral este de la bodega. Perímetro despejado, sin civiles visibles. Equipo completo. Protocolo 8-A activo desde entrada. Esperando autorización.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Autorizado. Avancen por entrada lateral. Protocolo 8-A activo en todo tramo con agua. Protocolo 6 al detectar espécimen. Suerte.",
+          "siguiente": "nodo_aprox_01",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_aprox_01",
+      "tipo": "decision",
+      "ambiente": "planta baja bodega industrial — oscuridad, olor a humedad y aceite, charcos dispersos",
+      "texto_control": "El equipo entra. La bodega tiene 80 metros de largo: estructura metálica, racks volcados, piso de concreto. El acceso a la escalera de mantenimiento está al extremo este. Entre la entrada y la escalera hay tres charcos de agua acumulada por filtración. La ruta más rápida los atraviesa. La ruta por la pared norte los evita con cuatro minutos extra.",
+      "texto_agente": "Hay agua en el piso, son charcos aislados, no una lámina continua. Podemos ir pegados a la pared norte y evitarlos o cruzar directo. Directo nos ahorra cuatro minutos pero pisamos agua. Diga.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Ruta norte. Eviten el agua. Prioridad: llegar al punto de descenso sin anunciar presencia.",
+          "siguiente": "nodo_aprox_02",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Ruta directa. Barrido Protocolo 8-A en cada charco antes de pisar. Más rápido.",
+          "siguiente": "nodo_aprox_02",
+          "requiere": null,
+          "efectos_inmediatos": [
+            {
+              "tipo": "estamina",
+              "delta": -5,
+              "alcance": "todos"
+            }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_aprox_02",
+      "tipo": "check",
+      "ambiente": "travesía interior bodega — racks metálicos, piso irregular, oscuridad parcial",
+      "texto_control": "El equipo se mueve hacia la escalera de mantenimiento. El piso de la bodega tiene secciones de concreto suelto, racks desplazados que crujen al rozarlos. El nivel de ruido ambiental es bajo: cualquier sonido inesperado se propaga. El sensor VS-04 indica actividad en el subsuelo.",
+      "texto_agente": "Avanzando. Hay material suelto en el piso, hay que esquivarlo. {agente.nombre} — punto de descenso a quince metros.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_aprox_03",
+          "éxito": "nodo_aprox_03",
+          "fallo": "nodo_aprox_02_fallo",
+          "crítico_fallo": "nodo_aprox_02_fallo"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_aprox_02_fallo",
+      "tipo": "narrativo",
+      "ambiente": "bodega, racks metálicos — un rack se desestabiliza por contacto",
+      "texto_control": "Un rack metálico roza el brazo de uno de los agentes y produce un golpe seco que resuena en el techo de la bodega. El sensor VS-04 registra un cambio en el patrón de vibración subterráneo durante cuatro segundos, luego se normaliza. El espécimen detectó algo. No está claro qué hizo con esa información.",
+      "texto_agente": "Hicimos ruido. El rack. Quedamos quietos treinta segundos, el sensor volvió a normalizar. Continuamos.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Entendido. Sigan con precaución. El espécimen posiblemente está alerta.",
+          "siguiente": "nodo_aprox_03",
+          "requiere": null,
+          "efectos_inmediatos": [
+            {
+              "tipo": "cordura",
+              "delta": -5,
+              "alcance": "todos"
+            }
+          ]
+        }
+      ],
+      "efectos": [
+        {
+          "tipo": "flag",
+          "nombre": "espécimen_alerta",
+          "valor": true
+        }
+      ],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_aprox_03",
+      "tipo": "narrativo",
+      "ambiente": "escalera de mantenimiento — descenso a cámara de drenaje, peldaños corroídos",
+      "texto_control": "La escalera de mantenimiento baja 4.5 metros a la cámara de drenaje pluvial. Las paredes son concreto húmedo, hay una columna de agua estancada en el fondo que el equipo puede ver desde arriba. El olor es distinto aquí: más pesado, con algo que no es fácil de identificar. El sensor VS-04 coloca el foco de vibración a unos 60 metros al oeste de la escalera.",
+      "texto_agente": "Estamos en la cabeza de la escalera. Hay agua abajo, no puedo estimar profundidad desde aquí. El olor es... diferente. Procedemos con descenso. Protocolo 8-A al tocar fondo.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmen profundidad del agua antes de desembarcar. Protocolo 8-A obligatorio en la base.",
+          "siguiente": "nodo_aprox_04",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [
+        {
+          "tipo": "estamina",
+          "delta": -5,
+          "alcance": "todos"
+        }
+      ],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_aprox_04",
+      "tipo": "check",
+      "ambiente": "base de la escalera — cámara de drenaje, agua a 22 cm de profundidad",
+      "texto_control": "El equipo llega al fondo. Agua a 22 centímetros, turbia por sedimento. El escáner T-7 puede intentar mapear la red de drenaje desde aquí — la información sería crítica para elegir ruta de extracción más adelante. El operador técnico o cualquier agente con conocimiento de infraestructura puede intentarlo. La señal es débil pero funcional.",
+      "texto_agente": "Agua a 22 centímetros. Fondo limpio bajo los pies, sin sensación de cable. Puedo intentar mapear con el T-7 desde aquí. El procesador necesita un minuto. ¿Autoriza?",
+      "agente_voz": "tecnico",
+      "check": {
+        "stat": "técnico",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_aprox_05",
+          "éxito": "nodo_aprox_05",
+          "fallo": "nodo_aprox_05",
+          "crítico_fallo": "nodo_aprox_05"
+        },
+        "efectos_por_resultado": {
+          "crítico_éxito": [
+            {
+              "tipo": "flag",
+              "nombre": "mapa_tecnico",
+              "valor": true
+            }
+          ],
+          "éxito": [
+            {
+              "tipo": "flag",
+              "nombre": "mapa_tecnico",
+              "valor": true
+            }
+          ]
+        }
+      },
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_aprox_05",
+      "tipo": "narrativo",
+      "ambiente": "cámara de drenaje — primer tramo, túnel de 1.8 m de alto, agua a 22 cm",
+      "texto_control": "El equipo completó el mapeo o intentó realizarlo. Si el T-7 funcionó correctamente, tienen un mapa parcial de las bifurcaciones del drenaje — la salida alternativa por el colector norte queda registrada. Si falló, operan sin él. El foco de vibración está a unos 55 metros al oeste. El equipo avanza.",
+      "texto_agente": "Avanzamos. El techo baja un poco en este tramo. Las lámparas en rojo, el agua delante. Aquí el sonido... el drenaje amplifica. Voy a reducir transmisiones.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Recibido. Protocolo 6 parcial — transmitan solo si hay novedad. Sigan al foco.",
+          "siguiente": "nodo_aprox_06_senal",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_aprox_06_senal",
+      "tipo": "narrativo",
+      "ambiente": "drenaje profundo — señal de radio comenzando a degradarse por interferencia estructural",
+      "texto_control": "La señal de radio empieza a perder calidad. El equipo se adentra en el tramo más estrecho del drenaje — el concreto aquí tiene más de un metro de espesor. Las lecturas del VS-04 muestran el foco de vibración a unos 30 metros. La señal cae al 60%. Las transmisiones de voz llegan fragmentadas.",
+      "texto_agente": "C█ntrol... {equipo.lider.nombre}. Seguimos. Hay algo... el clic. Lo escuchamos. Está delante. A treinta metros, quizás. Sin contacto visual. Prot█colo 6 activo.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Código 2. Confirmado. Mantengan Protocolo 6. Busquen el foco.",
+          "siguiente": "nodo_busqueda_01",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [
+        {
+          "tipo": "recurso",
+          "recurso": "batería",
+          "delta": -1
+        }
+      ],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_busqueda_01",
+      "tipo": "decision",
+      "ambiente": "bifurcación del drenaje — tramo con agua más profunda y lámina continua",
+      "texto_control": "El equipo llega a una bifurcación. El tramo izquierdo tiene agua continua a 18 cm — lámina extensa. El tramo derecho está más seco pero su dirección no coincide con el foco de vibración. El camino correcto es el izquierdo. Antes de avanzar, el agente de mayor competencia biológica puede pedir un barrido de luz roja para detectar cables en la superficie del agua.",
+      "texto_agente": "...a Control. Bifurcación. Agua continua en el tramo izquierdo, el foco está por ahí. {agente.nombre} pide autorización para barrido lumínico antes de avanzar. Toma tiempo, pero puede ser la diferencia.",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Autorizado. Barrido Protocolo 8-A completo antes de avanzar. Tómense el tiempo.",
+          "siguiente": "nodo_busqueda_02",
+          "requiere": null,
+          "efectos_inmediatos": [
+            {
+              "tipo": "flag",
+              "nombre": "barrido_realizado",
+              "valor": true
+            }
+          ]
+        },
+        {
+          "texto": "Sin barrido. Avancen despacio. Pasos cortos, sin levantar agua.",
+          "siguiente": "nodo_busqueda_02",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_busqueda_02",
+      "tipo": "check",
+      "ambiente": "tramo inundado — lámina de agua de 18 cm, oscuridad casi total, clic articular audible",
+      "texto_control": "El equipo avanza por el tramo inundado. El clic articular del espécimen es audible ahora — rítmico, húmedo, procedente del fondo hacia adelante. El agente con mayor competencia biológica evalúa el entorno: cables, residuos en superficie, comportamiento del agua. Una identificación correcta de la posición del espécimen y sus trampas puede marcar el resultado de la extracción.",
+      "texto_agente": "Analizando. El clic está ahí. Hay algo en la sup█rficie del agua que no es sedimento. Necesito un segundo.",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_busqueda_03_info",
+          "éxito": "nodo_busqueda_03_info",
+          "fallo": "nodo_busqueda_03_sin_info",
+          "crítico_fallo": "nodo_busqueda_03_alerta"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_busqueda_03_info",
+      "tipo": "narrativo",
+      "ambiente": "tramo inundado — posición del espécimen identificada",
+      "texto_control": "El agente biológico identifica los cables de tensión: dos hilos horizontales a unos 12 centímetros de la superficie, uno a 20 metros y otro a 35. El tapetum del espécimen refleja un punto verde en la oscuridad al fondo del corredor — el animal está inmóvil bajo la lámina de agua. La posición es clara. El equipo sabe dónde está y dónde no puede pisar.",
+      "texto_agente": "Confirmado. Dos cables en el agua, los veo con el lateral de la linterna roja. El bicho está al fondo — veo el reflejo verde, abdomen a contraluz, a unos veinte metros. No se ha movido. Tenemos la posición. Repito: tenemos la posición.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmo. Protocolo 15 activo — no se acerquen más. Avancen al punto de encuentro con el equipo completo y esperen instrucción.",
+          "siguiente": "nodo_busqueda_04_senal",
+          "requiere": null,
+          "efectos_inmediatos": [
+            {
+              "tipo": "flag",
+              "nombre": "posicion_confirmada",
+              "valor": true
+            }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_busqueda_03_sin_info",
+      "tipo": "narrativo",
+      "ambiente": "tramo inundado — espécimen no localizado",
+      "texto_control": "El agente biológico no pudo identificar cables en la superficie ni localizar al espécimen con certeza. El clic articular continúa, pero su dirección en el túnel es difícil de precisar. El equipo sabe que el animal está en la zona, no dónde exactamente. Avanzan sin ese dato.",
+      "texto_agente": "No pude confirmar posición. El clic está en algún lugar adelante. Sin cables identificados, sin reflejo visual. Avanzamos a ciegas en este tramo.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Entendido. Avancen despacio. Pasos cortos, sin levantar agua. Protocolo 6 hasta nuevo aviso.",
+          "siguiente": "nodo_busqueda_04_senal",
+          "requiere": null,
+          "efectos_inmediatos": [
+            {
+              "tipo": "cordura",
+              "delta": -5,
+              "alcance": "todos"
+            }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_busqueda_03_alerta",
+      "tipo": "narrativo",
+      "ambiente": "tramo inundado — hilo activado, espécimen en movimiento",
+      "texto_control": "Un pie roza algo en el agua. Durante una fracción de segundo el clic articular cesa. Luego vuelve — más rápido, más cercano. El espécimen detectó la vibración del hilo. Se mueve pero no ataca: quizás procesando si el estímulo es presa o interferencia. El equipo quedó completamente quieto. Los segundos que siguen son críticos.",
+      "texto_agente": "— Quietos — susurra alguien. El clic viene de adelante. Cerca. Muy cerca. {equipo.lider.rango} {equipo.lider.nombre}: — Control, activamos un cable. Está en movimiento. No ha cargado. Equipo inmóvil. Esperando.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "No se muevan. Cero vibración en el agua. Si carga, Protocolo 8-B inmediato. Esperen al espécimen.",
+          "siguiente": "nodo_busqueda_04_senal",
+          "requiere": null,
+          "efectos_inmediatos": [
+            {
+              "tipo": "cordura",
+              "delta": -15,
+              "alcance": "todos"
+            },
+            {
+              "tipo": "estamina",
+              "delta": -5,
+              "alcance": "todos"
+            },
+            {
+              "tipo": "flag",
+              "nombre": "espécimen_alerta",
+              "valor": true
+            }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_busqueda_04_senal",
+      "tipo": "decision",
+      "ambiente": "punto de encuentro — señal de radio crítica, 20% de funcionalidad",
+      "texto_control": "La señal cae drásticamente. El equipo está a escasos metros del espécimen. Las transmisiones llegan con interferencia severa. Control recibe fragmentos. Es el momento de decidir el método de extracción — la instrucción debe ser clara aunque llegue distorsionada.",
+      "texto_agente": "C█ntrol... {equipo.lider.nombre}. Esta█os... el bich█ está aquí. V█mos el abdomen. Pulsa. E█pera instruc█ión. No... no sé si me █scuchan. Decidan.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "PROTOCOLO 8-B. Luz blanca máxima al espécimen. Ahora. Tienen la ventana.",
+          "siguiente": "nodo_encuentro",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "EVASIÓN SIGILO. Rodeen. Eviten los cables. Objetivo: muestra de cable o residuo, sin despertar al animal.",
+          "siguiente": "nodo_encuentro",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "OBSERVACIÓN. Protocolo 15. No se muevan. Esperen a que el espécimen se desplace.",
+          "siguiente": "nodo_encuentro",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_alta"
+    },
+    {
+      "id": "nodo_encuentro",
+      "tipo": "decision",
+      "ambiente": "cámara de drenaje ampliada — agua a 20 cm, el espécimen visible a 15 metros",
+      "texto_control": "El equipo transmite lo mínimo. El espécimen está visible: 1.4 metros de envergadura, extremidades translúcidas apoyadas en el fondo, abdomen semitransparente con el saco digestivo de coloración verde pulsando con el ritmo metabólico. Dos cables de tensión atraviesan la lámina de agua entre el equipo y el animal. El clic articular es constante: el espécimen está en reposo activo. Aún no los ha detectado. Control debe elegir ahora.",
+      "texto_agente": "...Control. Ahí está. Abdomen verde, pulsa. Ocho patas en el fondo. El agua... el agua está entre nosotros y él. Hay cables. Dos, creo. Decidan. No duren.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Protocolo 8-B. Linterna táctica máxima al espécimen. Retracción garantizada. Tienen 2-4 minutos.",
+          "siguiente": "nodo_ext_luz_01",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Evasión. Bordeen los cables. Busquen residuo articular en el hilo o fragmento en el perímetro. Sin tocar al animal.",
+          "siguiente": "nodo_ext_sigilo_01",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Protocolo 15. Observación pasiva. Esperen a que el espécimen se mueva por el drenaje.",
+          "siguiente": "nodo_ext_espera_01",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_ext_luz_01",
+      "tipo": "narrativo",
+      "ambiente": "cámara de drenaje — luz blanca táctica de 600 lux activada",
+      "texto_control": "La linterna táctica impacta al espécimen de frente. Los ocho ojos en arco frontal reciben el estímulo completo. El animal colapsa las extremidades anteriores con una velocidad anormal — retracción total en menos de un segundo — y se lanza hacia una rejilla lateral a 4 metros de distancia. El tapetum produce un destello verde al girar. Luego desaparece por la rejilla con el clic articular resonando en el túnel. El tramo delante del equipo está despejado. Tienen la ventana.",
+      "texto_agente": "Retrajo. Se fue por la rejilla. El tramo está despejado. Hay algo en el piso donde estaba — veo un fragmento, punta de extremidad, lo dejó al colapsar. {agente.nombre} va a recuperarlo. Cronometrando la ventana ahora.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmo ventana activa. Protocolo 4-A, ejecuten extracción. Cronómetro: 3 minutos.",
+          "siguiente": "nodo_ext_luz_02",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [
+        {
+          "tipo": "cordura",
+          "delta": -10,
+          "alcance": "todos"
+        },
+        {
+          "tipo": "recurso",
+          "recurso": "batería",
+          "delta": -1
+        }
+      ],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_ext_luz_02",
+      "tipo": "check",
+      "ambiente": "zona de extracción — punta de extremidad del espécimen en el agua, cronómetro activo",
+      "texto_control": "El fragmento de extremidad está parcialmente sumergido. La articulación distal todavía retiene fluido articular — el agente puede verlo iridiscente a la luz de la linterna. El sanitario o analista tiene que extraerlo correctamente con la jeringa reforzada y transferirlo al contenedor clase B. El contenedor tiene un monitoreo de integridad. El tiempo corre.",
+      "texto_agente": "Tengo el fragmento. La articulación está intacta. Voy a intentar la extracción. El fluido es... es el que queremos. Dame espacio.",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_muestra_asegurada",
+          "éxito": "nodo_muestra_asegurada",
+          "fallo": "nodo_muestra_comprometida",
+          "crítico_fallo": "nodo_contacto_acido"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_ext_sigilo_01",
+      "tipo": "check",
+      "ambiente": "tramo inundado — espécimen activo a 15 metros, cables entre el equipo y el objetivo",
+      "texto_control": "El agente de mayor sigilo lidera el movimiento. El objetivo no es el espécimen sino los cables de tensión y el residuo de fluido articular que deja en ellos. Los cables son translúcidos pero hay residuo seco iridiscente concentrado en los puntos de anclaje. Llegar sin activar los hilos requiere movimiento extremadamente lento, pasos cortos, sin levantar la superficie del agua.",
+      "texto_agente": "Voy. Pasos de diez centímetros. El hilo está a unos cuarenta centímetros de mi pie derecho. No respiren.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 13,
+        "modificadores_ambiente": -2,
+        "resultados": {
+          "crítico_éxito": "nodo_ext_sigilo_02",
+          "éxito": "nodo_ext_sigilo_02",
+          "fallo": "nodo_encuentro_forzado",
+          "crítico_fallo": "final_fracaso_catastrofico"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_ext_sigilo_02",
+      "tipo": "check",
+      "ambiente": "punto de anclaje del cable — residuo articular visible en el hilo y en el muro",
+      "texto_control": "El agente llega al cable de tensión. El residuo de fluido articular está concentrado en el punto de anclaje con la pared — iridiscente, semi-sólido. Hay suficiente para una muestra si el procedimiento es correcto. La jeringa debe raspar sin romper el hilo ni hacer vibrar el cable. El espécimen sigue activo detrás.",
+      "texto_agente": "Estoy en el cable. Hay residuo, sí. Suficiente, creo. Voy a raspar con la jeringa. Muy despacio. No hagan ruido.",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_muestra_asegurada",
+          "éxito": "nodo_muestra_asegurada",
+          "fallo": "nodo_muestra_comprometida",
+          "crítico_fallo": "nodo_muestra_perdida"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_ext_espera_01",
+      "tipo": "check",
+      "ambiente": "cámara de drenaje — equipo completamente inmóvil, espécimen activo a 15 metros",
+      "texto_control": "El equipo elige no actuar. Quedarse completamente quieto en agua fría, con el espécimen a 15 metros, durante el tiempo necesario para que el animal decida moverse por el drenaje. Es la opción más lenta y la que más exige mentalmente. Cualquier movimiento involuntario puede ser el último. El agente de mayor fortaleza mental mantiene al equipo alineado.",
+      "texto_agente": "...Control. Quietos. El bicho está ahí. No se mueve. Nosotros tampoco. Esperamos. No sé cuánto tiempo tenemos para esto.",
+      "agente_voz": "veterano",
+      "check": {
+        "stat": "mental",
+        "agente": "lider",
+        "dificultad": 11,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_ext_sigilo_01",
+          "éxito": "nodo_ext_sigilo_01",
+          "fallo": "nodo_encuentro_forzado",
+          "crítico_fallo": "nodo_encuentro_forzado"
+        }
+      },
+      "efectos": [
+        {
+          "tipo": "estamina",
+          "delta": -10,
+          "alcance": "todos"
+        },
+        {
+          "tipo": "cordura",
+          "delta": -10,
+          "alcance": "todos"
+        }
+      ],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_encuentro_forzado",
+      "tipo": "check",
+      "ambiente": "cámara de drenaje — espécimen en modo de caza activo, a metros del equipo",
+      "texto_control": "El espécimen carga. Emerge desde la lámina de agua con velocidad anormal — los observadores siempre lo describen igual, imposible de procesar en tiempo real. El agente más físico del equipo enfrenta el primer contacto. El objetivo es dar tiempo al resto para activar la luz blanca. No hay escapatoria en espacio confinado sin ese segundo o dos.",
+      "texto_agente": "— CARGA — alguien grita. El agua se abre. El clic deja de ser clic y se convierte en otra cosa. {agente.nombre} — LUZ, LUZ, LUZ —",
+      "agente_voz": "asalto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 14,
+        "modificadores_ambiente": -2,
+        "resultados": {
+          "crítico_éxito": "nodo_ext_luz_01",
+          "éxito": "nodo_ext_luz_01",
+          "fallo": "nodo_muestra_comprometida",
+          "crítico_fallo": "final_fracaso_catastrofico"
+        }
+      },
+      "efectos": [
+        {
+          "tipo": "herida",
+          "valor": {
+            "tipo": "laceración",
+            "severidad": 2,
+            "parte_cuerpo": "brazo",
+            "efecto_stat": {
+              "físico": -1
+            }
+          },
+          "alcance": "aleatorio"
+        },
+        {
+          "tipo": "estamina",
+          "delta": -20,
+          "alcance": "lider"
+        },
+        {
+          "tipo": "cordura",
+          "delta": -20,
+          "alcance": "todos"
+        }
+      ],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_contacto_acido",
+      "tipo": "check",
+      "ambiente": "zona de extracción — contenedor roto, exposición a ácido digestivo residual en el fragmento",
+      "texto_control": "El fragmento de extremidad todavía tenía ácido digestivo en la cavidad interior. Al perforar la articulación con el ángulo incorrecto, el agente expuso el saco parcial. El ácido es activo a temperatura ambiente — el equipo de protección estándar no es suficiente. El sanitario aplica el protocolo de emergencia mientras el contenedor trata de ser salvado.",
+      "texto_agente": "El fragmento tenía ácido. Hay exposición, mano izquierda. {nombre_sanitario} está aplicando protocolo. El contenedor... vemos si algo quedó.",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "físico",
+        "agente": "aleatorio",
+        "dificultad": 14,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_muestra_comprometida",
+          "éxito": "nodo_muestra_comprometida",
+          "fallo": "final_exito_pirrico",
+          "crítico_fallo": "final_fracaso_catastrofico"
+        }
+      },
+      "efectos": [
+        {
+          "tipo": "herida",
+          "valor": {
+            "tipo": "quemadura_química",
+            "severidad": 3,
+            "parte_cuerpo": "mano",
+            "efecto_stat": {
+              "técnico": -2,
+              "biológico": -1
+            }
+          },
+          "alcance": "aleatorio"
+        },
+        {
+          "tipo": "recurso",
+          "recurso": "kit_médico",
+          "delta": -1
+        },
+        {
+          "tipo": "cordura",
+          "delta": -15,
+          "alcance": "todos"
+        }
+      ],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_muestra_asegurada",
+      "tipo": "narrativo",
+      "ambiente": "zona de extracción — contenedor clase B sellado y verificado",
+      "texto_control": "La muestra quedó en el contenedor. El monitoreo de integridad muestra verde. Fluido articular visible — iridiscente, sin mezcla de contaminantes. El agente biológico verifica el cierre. El equipo tiene lo que vino a buscar. Ahora tienen que salir.",
+      "texto_agente": "Muestra asegurada. Contenedor íntegro. Fluido articular confirmado — es el que buscaban. Listo para extracción del equipo. Aguardando instrucción de ruta.",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Excelente. Protocolo 4-A completado. Inicien extracción del equipo. Elijan ruta.",
+          "siguiente": "nodo_extrac_equipo_01",
+          "requiere": null,
+          "efectos_inmediatos": [
+            {
+              "tipo": "muestra_obtenida",
+              "valor": "fluido_articular"
+            }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_muestra_comprometida",
+      "tipo": "narrativo",
+      "ambiente": "zona de extracción — muestra parcial o integridad en riesgo",
+      "texto_control": "La muestra está en el contenedor pero el procedimiento tuvo complicaciones. El volumen es inferior al objetivo o el sellado no es perfecto. El Protocolo 19 indica que si la muestra es viable por encima del 50% continúa bajo 4-A con nota de incidencia. El agente biológico hace la evaluación. La decisión es transportar con nota o descartar.",
+      "texto_agente": "Muestra en el contenedor. No es perfecta — hay contaminación parcial o el volumen es bajo. {nombre_bio} dice que es viable sobre el cincuenta por ciento. Protocolo 19 en curso. Continuamos con ella.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmo Protocolo 19. Transportan con nota de incidencia. Inicien extracción del equipo.",
+          "siguiente": "nodo_extrac_equipo_01",
+          "requiere": null,
+          "efectos_inmediatos": [
+            {
+              "tipo": "muestra_obtenida",
+              "valor": "fluido_articular_parcial"
+            }
+          ]
+        }
+      ],
+      "efectos": [
+        {
+          "tipo": "cordura",
+          "delta": -5,
+          "alcance": "lider"
+        }
+      ],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_muestra_perdida",
+      "tipo": "narrativo",
+      "ambiente": "zona de extracción — sin muestra recuperable",
+      "texto_control": "La muestra no pudo obtenerse. El residuo era insuficiente, el procedimiento falló o el contenedor no selló correctamente. El equipo no tiene nada que mostrar del objetivo primario. El objetivo secundario — documentar el foco — sigue activo. El equipo debe salir.",
+      "texto_agente": "No hay muestra. El residuo era insuficiente o el procedimiento no funcionó. No tenemos nada que llevar. Iniciamos extracción.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Entendido. Protocolo 11 no aplica — salgan en orden. Elijan ruta de extracción.",
+          "siguiente": "nodo_extrac_equipo_01",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [
+        {
+          "tipo": "cordura",
+          "delta": -10,
+          "alcance": "lider"
+        }
+      ],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_extrac_equipo_01",
+      "tipo": "decision",
+      "ambiente": "punto de extracción — equipo listo para salir, señal parcialmente recuperada",
+      "texto_control": "El equipo necesita salir. Hay dos opciones: la ruta original por la que entraron, que conocen pero que pasa por el tramo donde estaba el espécimen. O la ruta alternativa por el colector norte, más directa pero solo si tienen el mapa técnico del T-7 — sin mapa, en esa bifurcación es fácil perderse.",
+      "texto_agente": "Listos para mover. Dos opciones: la ruta que conocemos, o el colector norte si tenemos el mapa. Digan.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Ruta original. Conócida, controlada. Crucen el tramo con agua usando Protocolo 8-A.",
+          "siguiente": "nodo_extrac_equipo_02a",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Colector norte. Más rápido. Usen el mapa del T-7 para orientarse.",
+          "siguiente": "nodo_extrac_equipo_02b",
+          "requiere": {
+            "flag": "mapa_tecnico",
+            "valor": true
+          },
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_extrac_equipo_02a",
+      "tipo": "check",
+      "ambiente": "tramo inundado de retorno — agua a 18 cm, señal mejorada, espécimen en paradero desconocido",
+      "texto_control": "El equipo cruza el tramo inundado de retorno. El espécimen no está donde estaba, pero el drenaje lo conecta con toda la red bajo el edificio. El cruce físico requiere estamina — llevan más de una hora en campo, el equipo está cansado, el agua dificulta el movimiento.",
+      "texto_agente": "Cruzando el tramo de retorno. Sin señal del bicho. Pero tampoco sabemos dónde está. Avanzando.",
+      "agente_voz": "auto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_extrac_equipo_03",
+          "éxito": "nodo_extrac_equipo_03",
+          "fallo": "nodo_extrac_equipo_03",
+          "crítico_fallo": "nodo_extrac_equipo_03"
+        }
+      },
+      "efectos": [
+        {
+          "tipo": "estamina",
+          "delta": -10,
+          "alcance": "todos"
+        }
+      ],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_extrac_equipo_02b",
+      "tipo": "check",
+      "ambiente": "bifurcación del colector norte — drenaje más angosto, mapa del T-7 activo",
+      "texto_control": "El colector norte es más angosto pero sale directamente bajo el patio trasero del edificio — 25 metros menos de exposición. El T-7 tiene el mapa cargado. El agente técnico navega con él mientras el equipo avanza. Si el mapa es correcto, llegan antes y con menos riesgo.",
+      "texto_agente": "Siguiendo el mapa del T-7. Colector norte — aquí el techo baja a metro y medio. Avanzando. El mapa dice que la salida está a veinte metros.",
+      "agente_voz": "tecnico",
+      "check": {
+        "stat": "técnico",
+        "agente": "mejor_stat",
+        "dificultad": 10,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_extrac_equipo_04",
+          "éxito": "nodo_extrac_equipo_04",
+          "fallo": "nodo_extrac_equipo_02a",
+          "crítico_fallo": "nodo_emergencia_final"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_extrac_equipo_03",
+      "tipo": "check",
+      "ambiente": "tramo final antes de la escalera — el sonido de superficie llega desde arriba",
+      "texto_control": "El equipo está a metros de la escalera de retorno. El tramo final requiere cruzar silenciosamente bajo una rejilla de ventilación. El sensor registra una anomalía de vibración en el tramo adyacente — puede ser el espécimen moviéndose por la red. O puede no ser nada. El equipo no puede correr sin levantar el agua.",
+      "texto_agente": "Casi en la escalera. Hay vibración en el tramo lateral. No sé si es el bicho o eco. Cruzamos quietos.",
+      "agente_voz": "auto",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_extrac_equipo_04",
+          "éxito": "nodo_extrac_equipo_04",
+          "fallo": "nodo_emergencia_final",
+          "crítico_fallo": "nodo_emergencia_final"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_emergencia_final",
+      "tipo": "check",
+      "ambiente": "base de la escalera — segundo espécimen emerge del lateral del drenaje",
+      "texto_control": "Una segunda Araña Hidráulica emerge del tramo lateral. Más pequeña que el espécimen principal — probablemente un adulto joven. Emerge sin activar un hilo: estaba fuera del agua, en la pared. Los cálculos operativos anteriores asumían un solo espécimen. Error. El equipo tiene segundos para reaccionar antes de que el animal evalúe si son presa.",
+      "texto_agente": "— SEGUNDO ESPÉCIMEN — alguien. — EN LA PARED. ARRIBA. {equipo.lider.nombre}: PROTOCOLO 8-B. TODOS. AHORA.",
+      "agente_voz": "auto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 14,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_extrac_equipo_04",
+          "éxito": "nodo_extrac_equipo_04",
+          "fallo": "nodo_extrac_equipo_04",
+          "crítico_fallo": "final_fracaso_catastrofico"
+        }
+      },
+      "efectos": [
+        {
+          "tipo": "herida",
+          "valor": {
+            "tipo": "laceración",
+            "severidad": 2,
+            "parte_cuerpo": "torso",
+            "efecto_stat": {
+              "físico": -1
+            }
+          },
+          "alcance": "aleatorio"
+        },
+        {
+          "tipo": "estamina",
+          "delta": -25,
+          "alcance": "todos"
+        },
+        {
+          "tipo": "cordura",
+          "delta": -25,
+          "alcance": "todos"
+        },
+        {
+          "tipo": "recurso",
+          "recurso": "kit_médico",
+          "delta": -1
+        }
+      ],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_extrac_equipo_04",
+      "tipo": "narrativo",
+      "ambiente": "exterior bodega — superficie, señal de radio recuperada al 100%",
+      "texto_control": "El equipo emerge por la escalera de mantenimiento. Luz exterior. La señal de radio vuelve a 100%. Los pies en concreto seco. El drenaje queda bajo ellos. Silencio, comparativamente. El equipo reporta estado y aguarda instrucción de regreso al punto de mando.",
+      "texto_agente": "Estamos en superficie. Todos presentes. Estado del equipo: {estado_equipo}. La muestra: {estado_muestra}. Listos para retorno al punto de mando. Esperando confirmación.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmado. Regresen al punto de mando. Operación EVT-AGS-2026-0117 concluida. Se les espera.",
+          "siguiente": "nodo_resolucion",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_resolucion",
+      "tipo": "resolucion",
+      "texto_control": "La operación está cerrada. CENVAC-Central procesa el resultado. El archivo del evento EVT-AGS-2026-0117 será actualizado.",
+      "logica_resolucion": [
+        {
+          "condicion": {
+            "muestra_obtenida": true,
+            "muestra_tipo": "fluido_articular",
+            "bajas_count": 0,
+            "heridas_graves_count": 0
+          },
+          "siguiente": "final_exito_limpio"
+        },
+        {
+          "condicion": {
+            "muestra_obtenida": true,
+            "bajas_count": 0,
+            "heridas_graves_count_gte": 1
+          },
+          "siguiente": "final_exito_parcial"
+        },
+        {
+          "condicion": {
+            "muestra_obtenida": true,
+            "bajas_count_gte": 1
+          },
+          "siguiente": "final_exito_pirrico"
+        },
+        {
+          "condicion": {
+            "muestra_obtenida": false,
+            "bajas_count": 0
+          },
+          "siguiente": "final_fracaso_extraccion"
+        },
+        {
+          "condicion": {
+            "muestra_obtenida": false,
+            "bajas_count_gte": 1
+          },
+          "siguiente": "final_fracaso_catastrofico"
+        }
+      ],
+      "efectos": []
+    },
+    {
+      "id": "final_exito_limpio",
+      "tipo": "final",
+      "resultado": "exito_limpio",
+      "titulo": "Extracción completada — muestra viable — sin bajas",
+      "texto_control": "Operación EVT-AGS-2026-0117 cerrada con resultado óptimo. Muestra de fluido articular de Aranea hydraulica obtenida en condiciones de campo conformes al Protocolo 4-A. El equipo regresó completo y sin heridas graves. Esta es la primera muestra de fluido articular obtenida con éxito en campo abierto. El archivo del bestiario será actualizado.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo de operaciones completó la inserción, aproximación y extracción sin bajas ni heridas incapacitantes. La muestra fue obtenida mediante Protocolo 4-A en el tiempo estimado. El espécimen principal fue desplazado mediante Protocolo 8-B sin contacto directo. El equipo operó con eficiencia que merece documentarse como referencia para futuras operaciones en zonas de actividad de Aranea hydraulica.",
+        "hallazgos": "Muestra de fluido articular de Aranea hydraulica obtenida en estado óptimo. Volumen suficiente para análisis completo. El foco confirmado como espacio de hábitat temporal — el espécimen usa el colector como corredor, no como nido permanente. Se identificaron dos cables de tensión activos en el tramo evaluado. Primer registro visual de tapetum en condiciones de campo nocturnas: reflejo verde visible a más de 15 metros.",
+        "notas_analista": "Esta operación establece un protocolo viable para extracción de fluido articular en campo activo de Aranea hydraulica. La combinación de Protocolo 8-B para desplazar al espécimen y la recuperación inmediata de material autotomizado resultó efectiva. La muestra llega al laboratorio en condiciones documentadas. Distribución a Dpto. de Análisis Biológico autorizada."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_exito_parcial",
+      "tipo": "final",
+      "resultado": "exito_parcial",
+      "titulo": "Extracción completada — muestra viable — heridos leves",
+      "texto_control": "Operación EVT-AGS-2026-0117 cerrada con resultado aceptable. Muestra obtenida. El equipo regresó completo pero con heridas leves que requieren atención en el punto de mando. El objetivo primario se cumplió. Las lesiones son consistentes con el nivel de riesgo documentado de la especie.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación cumplió el objetivo primario con complicaciones menores. La muestra fue asegurada y transportada según Protocolo 4-A. El equipo enfrentó un incidente en el tramo de extracción o en la salida que resultó en heridas leves sin comprometer el objetivo ni la capacidad operativa del equipo.",
+        "hallazgos": "Muestra de fluido articular viable obtenida y transportada al punto de mando. Las heridas registradas son consistentes con el nivel de riesgo documentado de Aranea hydraulica en espacio confinado. No se registraron bajas. El foco queda activo — el espécimen no fue eliminado.",
+        "notas_analista": "La operación confirma que la extracción en campo de material biológico de Aranea hydraulica es viable con el equipo y protocolos actuales. Las heridas registradas son el costo operativo esperado en contacto de clase II en espacio cerrado. Se recomienda reforzar el equipo de protección en extremidades superiores para futuras operaciones similares."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_exito_pirrico",
+      "tipo": "final",
+      "resultado": "exito_pirrico",
+      "titulo": "Extracción completada — muestra viable — baja crítica",
+      "texto_control": "Operación EVT-AGS-2026-0117 cerrada. Muestra obtenida. Un agente del equipo sufrió heridas críticas o fue dado de baja. El objetivo primario se cumplió. El costo humano de esta operación excede lo aceptable para una misión de extracción clase II. Protocolo 11 activado retroactivamente.",
+      "clasificacion_doc": "Nivel 3 — Acceso restringido — Revisión de Coordinación requerida",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación cumplió el objetivo primario a un costo que requiere revisión de los protocolos empleados. La muestra fue asegurada pero el equipo sufrió una baja crítica durante la extracción o la retirada. Las circunstancias exactas están documentadas en los logs de comunicaciones.",
+        "hallazgos": "Muestra viable obtenida. Baja crítica registrada. Las condiciones del foco eran más complejas de lo estimado en el briefing previo. Se recomienda actualizar los parámetros de riesgo para operaciones en zonas con actividad confirmada de Aranea hydraulica en espacio subterráneo.",
+        "notas_analista": "Esta operación arroja un resultado ambiguo que debe ser analizado por Coordinación antes de usar como referencia. La muestra tiene valor científico. El costo operativo no debería haberse asumido sin autorización de nivel superior. Se recomienda revisión del proceso de evaluación de riesgo previo al despliegue."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": [
+        {
+          "tipo": "baja_garantizada",
+          "valor": {
+            "tipo": "trauma_de_especimen",
+            "parte_cuerpo": "torso",
+            "severidad": 4
+          },
+          "alcance": "aleatorio"
+        }
+      ]
+    },
+    {
+      "id": "final_fracaso_extraccion",
+      "tipo": "final",
+      "resultado": "fracaso_extraccion",
+      "titulo": "Objetivo primario no cumplido — equipo extraído sin bajas",
+      "texto_control": "Operación EVT-AGS-2026-0117 cerrada sin muestra. El equipo regresó completo. El objetivo primario no se cumplió. La información del foco fue documentada durante la aproximación y puede tener valor para futuras operaciones. El espécimen sigue activo en la zona.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo completó la inserción y aproximación pero no pudo asegurar muestra viable. La extracción del equipo se realizó sin bajas. Las condiciones del foco — el estado del espécimen, la distribución de cables de tensión, la profundidad del agua — fueron documentadas durante la operación.",
+        "hallazgos": "Sin muestra biológica recuperada. El foco fue confirmado como zona de actividad de Aranea hydraulica: un espécimen adulto, cables de tensión activos en el tramo evaluado, agua a 18-22 cm de profundidad. Esta información es transferible al archivo del bestiario como documentación de campo.",
+        "notas_analista": "El fracaso en la extracción de muestra no implica que la operación fue inútil. La documentación del foco aporta al archivo. Se recomienda una segunda operación con ajustes de protocolo basados en la información obtenida. El equipo operó dentro de los parámetros de seguridad."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_fracaso_catastrofico",
+      "tipo": "final",
+      "resultado": "fracaso_catastrofico",
+      "titulo": "Operación abortada — bajas confirmadas — sin muestra",
+      "texto_control": "Operación EVT-AGS-2026-0117 cerrada. Sin muestra. Bajas confirmadas. El Protocolo 11 fue activado. CENVAC-Central ha sido notificado. Revisión de Coordinación en proceso. El foco EVT-AGS-2026-0117 será reclasificado a nivel III pendiente de nueva evaluación.",
+      "clasificacion_doc": "Nivel 4 — Acceso restringido — Revisión obligatoria de Coordinación y Comité de Seguridad",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación resultó en bajas y fracaso del objetivo. Las circunstancias exactas están en los logs de comunicaciones. El contacto con el espécimen produjo consecuencias que exceden los parámetros de riesgo evaluados para clase II. El equipo no pudo recuperar muestra ni completar extracción en condiciones seguras.",
+        "hallazgos": "Sin muestra recuperada. Bajas documentadas. El espécimen de Aranea hydraulica demostró comportamiento que no estaba completamente cubierto en los protocolos actuales. El foco EVT-AGS-2026-0117 requiere re-evaluación de clase de amenaza antes de cualquier nueva operación.",
+        "notas_analista": "Este resultado requiere revisión completa de los protocolos de operación en zonas de actividad de Aranea hydraulica. Las bajas sufridas por el equipo no son consistentes con la clasificación actual de Amenaza II para esta especie en espacio confinado. Se recomienda iniciar proceso de reclasificación y suspender operaciones similares hasta completar la revisión. Este archivo permanece clasificado nivel 4 hasta nueva orden de Coordinación."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": [
+        {
+          "tipo": "baja_garantizada",
+          "valor": {
+            "tipo": "trauma_de_especimen",
+            "parte_cuerpo": "torso",
+            "severidad": 4
+          },
+          "alcance": "aleatorio"
+        }
+      ]
+    }
+  ]
+}

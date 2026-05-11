@@ -1,0 +1,86 @@
+[
+  {
+    "id": "protocolo_4a",
+    "codigo": "4-A",
+    "nombre": "Extracción de muestra — fauna anómala clase II o inferior",
+    "descripcion": "Procedimiento estándar para obtención y contención de material biológico de espécimen activo, reciente o residual de amenaza clasificada II o inferior. Requiere contenedor certificado grado B y al menos un agente con competencia biológica. La muestra debe ser documentada en el campo antes de traslado al punto de mando.",
+    "aplicacion": "Operaciones de extracción biológica en amenaza II. Misión tipo: obtención de fluido articular, fragmento de quelícero, tejido integumentario."
+  },
+  {
+    "id": "protocolo_4b",
+    "codigo": "4-B",
+    "nombre": "Extracción de muestra — fauna anómala clase III o superior",
+    "descripcion": "Como el 4-A con restricciones adicionales: equipo de protección nivel superior certificado, dos agentes con competencia biológica y autorización previa de Coordinación de Distrito. La muestra viaja en custodia doble al laboratorio.",
+    "aplicacion": "Operaciones de extracción en amenaza III o superior."
+  },
+  {
+    "id": "protocolo_6",
+    "codigo": "6",
+    "nombre": "Silencio de radio — zona de escucha activa",
+    "descripcion": "Restricción de transmisiones de radio no críticas al detectar espécimen activo sensible a vibración o sonido. Las comunicaciones se reducen a códigos de estado numéricos. El log de actividad continúa por escrito en campo. Control puede levantar el protocolo.",
+    "aplicacion": "Proximidad confirmada a Aranea hydraulica u otro espécimen con sensor vibración primario."
+  },
+  {
+    "id": "protocolo_7b",
+    "codigo": "7-B",
+    "nombre": "Cuarentena de campo tras exposición biológica",
+    "descripcion": "Aislamiento in situ de agente expuesto a fluidos, tejido o secreciones de espécimen anómalo. Duración mínima 24 horas. Requiere evaluación de sanitario de campo antes de levantar. Ningún agente en cuarentena puede ser evacuado al punto de mando sin aprobación médica explícita.",
+    "aplicacion": "Exposición a fluido articular, ácido digestivo u otro material biológico de Aranea hydraulica."
+  },
+  {
+    "id": "protocolo_8a",
+    "codigo": "8-A",
+    "nombre": "Iluminación de precaución en zona inundada — espectro rojo",
+    "descripcion": "Uso de fuente lumínica en espectro rojo (620–750 nm) para barrido de superficie de agua antes de avance. Obligatorio en zonas con presencia confirmada o sospechada de Aranea hydraulica. El barrido detecta cables de tensión horizontales por reflejo en el pelo de agua. Prohibido cruzar sin completar el barrido.",
+    "aplicacion": "Cualquier zona inundada en operaciones con espécimen clase II acuático o semi-acuático."
+  },
+  {
+    "id": "protocolo_8b",
+    "codigo": "8-B",
+    "nombre": "Neutralización lumínica defensiva — espécimen fotosensible",
+    "descripcion": "Uso de fuente de luz blanca de alta intensidad (mínimo 400 lux) dirigida directamente al espécimen. Produce retracción inmediata y período refractario estimado de 2 a 4 minutos según condiciones. No garantiza inactividad total. El equipo debe completar la acción objetivo dentro del período refractario. El espectro rojo no activa este reflejo — solo el blanco o de mayor temperatura de color.",
+    "aplicacion": "Respuesta defensiva ante Aranea hydraulica activa o en postura de caza."
+  },
+  {
+    "id": "protocolo_9",
+    "codigo": "9",
+    "nombre": "Comunicación mínima — señal degradada",
+    "descripcion": "Ante pérdida parcial de señal de radio, el equipo reduce transmisiones a códigos de estado: Código 1 sin novedad, Código 2 novedad menor, Código 3 novedad mayor, Código 0 emergencia. Control confirma recepción repitiendo el código. Las transmisiones de voz se intentan solo para información crítica.",
+    "aplicacion": "Zonas subterráneas, blindadas, con interferencia estructural activa o daño de equipo de comunicaciones."
+  },
+  {
+    "id": "protocolo_11",
+    "codigo": "11",
+    "nombre": "Abandono de operación con baja crítica",
+    "descripcion": "Procedimiento de aborto inmediato ante baja crítica incapacitante o mortal en el equipo. La recuperación del objetivo queda subordinada a la extracción del equipo. Control puede suspender el protocolo únicamente bajo autorización de Oficial de Operaciones o superior. La muestra obtenida se preserva si es posible transportarla sin riesgo para el equipo restante.",
+    "aplicacion": "Baja crítica confirmada en campo durante operación activa."
+  },
+  {
+    "id": "protocolo_12",
+    "codigo": "12",
+    "nombre": "Triage de campo en zona activa",
+    "descripcion": "Clasificación rápida de heridos sin evacuar la zona. Prioridad de atención: crítico rescatable, grave estable, leve funcional, fallecido. El sanitario de campo es la única autoridad médica operativa en campo. Control no puede anular decisiones de triage. Si no hay sanitario disponible, el agente con mayor competencia biológica asume la función.",
+    "aplicacion": "Heridos múltiples en campo activo sin posibilidad de evacuación inmediata."
+  },
+  {
+    "id": "protocolo_14c",
+    "codigo": "14-C",
+    "nombre": "Contención de civiles en zona caliente",
+    "descripcion": "Procedimiento de restricción y registro de civiles detectados en zona de operaciones activas. Los civiles no son evacuados por equipo CENVAC salvo orden directa de Coordinación. Se les instruye verbalmente sobre zona de riesgo y se documenta el contacto con nombre, descripción y coordenadas. El equipo no puede abandonar a civiles que hayan presenciado actividad de espécimen clase III o superior.",
+    "aplicacion": "Detección inesperada de civiles en zona de operación activa."
+  },
+  {
+    "id": "protocolo_15",
+    "codigo": "15",
+    "nombre": "Observación de espécimen activo — protocolo de registro pasivo",
+    "descripcion": "Procedimiento para documentar comportamiento de espécimen sin intervención directa. Requiere distancia mínima de 8 metros, Protocolo 6 activo, y al menos un agente con competencia biológica tomando notas estructuradas. Duración máxima 15 minutos antes de iniciar acción o aborto. Los datos recolectados alimentan el archivo del bestiario.",
+    "aplicacion": "Oportunidad de observación de espécimen vivo no agresivo en su entorno."
+  },
+  {
+    "id": "protocolo_19",
+    "codigo": "19",
+    "nombre": "Gestión de muestra comprometida en campo",
+    "descripcion": "Procedimiento ante daño, contaminación o exposición accidental de contenedor de muestra. El agente con competencia biológica evalúa viabilidad. Muestra viable por encima del 50% continúa bajo Protocolo 4-A con nota de incidencia. Muestra inviable se descarta en zona segura con registro de coordenadas. Prohibido transportar muestra inviable al punto de mando sin autorización de sanitario.",
+    "aplicacion": "Contenedor de muestra dañado, expuesto a agente externo o contaminado durante operación."
+  }
+]
