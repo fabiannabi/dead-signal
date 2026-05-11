@@ -1,0 +1,642 @@
+{
+  "id": "mision-zafra-de-concreto",
+  "nombre": "Zafra de Concreto",
+  "descripcion": "Contención activa de manada de Cervato de Concreto establecida en el antiguo ingenio azucarero. Neutralización selectiva del macho dominante para forzar dispersión. Solo el macho dominante puede ser neutralizado — cualquier baja secundaria es exceso operativo.",
+  "tipo_mision": "contencion_activa",
+  "criatura": "cervato_de_concreto",
+  "nivel_amenaza": "III",
+  "objetivo_primario": "Neutralizar al macho dominante de la manada para forzar la dispersión del grupo. Tres trabajadores de reciclaje desaparecidos en dos semanas hacen la operación urgente.",
+  "objetivo_secundario": "Extraer muestra de tejido del macho neutralizado. Secundariamente: polvo de cuerno fragmentado si la herida lo permite.",
+  "muestra_objetivo": "tejido_macho_dominante",
+  "muestra_descripcion": "Tejido muscular o dérmico del macho dominante de Cervato de Concreto. La dermis calcificada del Cervato presenta estructura mineral única. El tejido debe ser extraído dentro de los 20 minutos posteriores a la neutralización antes de que el proceso de petrificación post-mortem selle las capas superficiales.",
+  "nodo_inicial": "nodo_insercion",
+  "nodos": [
+    {
+      "id": "nodo_insercion",
+      "tipo": "narrativo",
+      "ambiente": "CENVAC-Central — frecuencia 3, las 09:15",
+      "texto_control": "Frecuencia 3-CENVAC operativa. El evento EVT-AGS-2026-0291 fue escalado tras la tercera desaparición de trabajadores de reciclaje en la zona del ingenio azucarero sur. Sensor de vibración VS-07 confirma manada activa de 3 a 5 individuos establecida en las estructuras de molienda. CENVAC autoriza neutralización selectiva del macho dominante bajo Protocolo 8-A de contención selectiva. Restricción crítica: solo el macho dominante puede ser objetivo. Cualquier baja secundaria de la manada se considera exceso operativo y activa revisión interna. El equipo está en el límite de propiedad. Autorice entrada y confirme comprensión de restricción.",
+      "texto_agente": "Estamos en el límite de propiedad, zona este del ingenio. Las estructuras principales están a unos 200 metros. Sensor VS-07 activo en nuestra posición — hay vibración. Restricción de objetivo único comprendida. Listos.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Autorizado. Entren por zona este. Protocolo 8-A activo. La restricción es absoluta. Identifiquen antes de neutralizar.",
+          "siguiente": "nodo_perimetro",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_perimetro",
+      "tipo": "decision",
+      "ambiente": "perímetro del ingenio — barda deteriorada, polvo de concreto flotando en el aire, visibilidad reducida",
+      "texto_control": "El equipo llega al límite de las estructuras. El polvo de concreto que producen los Cervatos al moverse es visible en el aire — una neblina pálida de partículas minerales. Hay dos rutas de entrada: por el galpón norte (acceso cubierto, mejor para observación inicial sin ser visto) o por la nave de molienda sur (acceso más directo, mayor exposición pero mejor ángulo para ID del macho dominante).",
+      "texto_agente": "Estamos en el perímetro. El polvo está en el aire — los Cervatos se mueven dentro. Hay dos rutas de entrada. El galpón norte da cobertura. La nave sur da mejor ángulo. ¿Cómo entramos?",
+      "agente_voz": "reconocimiento",
+      "opciones": [
+        {
+          "texto": "Galpón norte. Cobertura primero. Establézcan posición de observación antes de comprometerse.",
+          "siguiente": "nodo_observacion_manada",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Nave sur. Directo al ángulo de ID. Riesgo calculado por mejor información.",
+          "siguiente": "nodo_observacion_manada",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "flag", "nombre": "entrada_directa", "valor": true }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_observacion_manada",
+      "tipo": "check",
+      "ambiente": "interior del ingenio — estructuras de molienda, escombros de concreto, tres Cervatos visibles",
+      "texto_control": "El equipo tiene vista parcial de la manada. Hay tres individuos confirmados, posiblemente más detrás de los silos colapsados. Los Cervatos de Concreto presentan dimorfismo sexual marcado: el macho dominante tiene el cuerno frontal más desarrollado y una placa dorsal con coloración más gris-pálida que las hembras. El agente biológico intenta identificar al macho dominante antes de que el polvo reduzca la visibilidad.",
+      "texto_agente": "Veo tres. Dos son más pequeños — hembras, creo. El tercero está detrás del silo norte, no tengo ángulo limpio. El analista está evaluando. Dame un segundo.",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_id_confirmado",
+          "éxito": "nodo_id_confirmado",
+          "fallo": "nodo_id_fallido",
+          "crítico_fallo": "nodo_id_fallido"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_id_confirmado",
+      "tipo": "narrativo",
+      "ambiente": "posición de observación — macho dominante identificado al borde del silo norte",
+      "texto_control": "El agente biológico tiene ID confirmada. El macho dominante está al borde del silo norte — 1.8 metros de altura en los cuartos traseros, cuerno frontal con tres ramificaciones visibles, placa dorsal gris-pálida con desgaste en el borde superior izquierdo que sugiere combate territorial reciente. Está marcando territorio en el borde del silo con el cuerno. El equipo sabe exactamente cuál es el objetivo.",
+      "texto_agente": "ID confirmada. El macho está junto al silo norte — el cuerno tiene tres ramas, la placa tiene desgaste en el borde superior. Lo tenemos. Esperando instrucción de aproximación.",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Confirmado. Procedan a posición de neutralización. Restricción absoluta: solo ese individuo.",
+          "siguiente": "nodo_polvo_senal",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "flag", "nombre": "macho_id", "valor": true }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_id_fallido",
+      "tipo": "narrativo",
+      "ambiente": "posición de observación — polvo denso, individuos no claramente distinguibles",
+      "texto_control": "El polvo de concreto aumentó mientras el equipo observaba. Los tres individuos visibles se movieron detrás de los silos y la visibilidad cayó al mínimo. El agente biológico no pudo confirmar ID del macho dominante con certeza. El equipo tendrá que tomar una decisión con esa incertidumbre.",
+      "texto_agente": "No pude confirmar. El polvo tapó antes de que pudiera hacer la distinción. Sé que hay un macho — el más grande — pero no tengo ID definitiva. Avanzamos sin ella.",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Entendido. Procedan con precaución extrema. Sin ID confirmada, evalúen en el momento. La restricción sigue activa.",
+          "siguiente": "nodo_polvo_senal",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_polvo_senal",
+      "tipo": "narrativo",
+      "ambiente": "nave de molienda — polvo de concreto como neblina, señal de radio degradándose",
+      "texto_control": "El equipo avanza hacia la posición de neutralización. El polvo de concreto es más denso aquí — los Cervatos producen polvo mineral al moverse sobre superficies de concreto y al frotar el cuerno en las paredes. El polvo interfiere con la señal de radio: las partículas cargadas electroestáticamente crean interferencia en las frecuencias bajas. Las transmisiones llegan con ruido.",
+      "texto_agente": "Con█rol... avanzando hacia la nave principal. El polvo es denso aquí. Huele a concreto viejo y algo más orgánico. La señal está... hay interferencia. Los Cervatos est█n cerca — escucho el ras█uño del cuerno en la pared.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Recibido con interferencia. Continúen. Avancen a posición de tiro.",
+          "siguiente": "nodo_posicion_tiro",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_posicion_tiro",
+      "tipo": "decision",
+      "ambiente": "nave principal — ruinas industriales, Cervatos a 30–50 metros, polvo en el aire",
+      "texto_control": "El equipo tiene posición parcial. Los Cervatos están en la nave principal — al menos cuatro individuos ahora visibles. El macho dominante está entre ellos. Hay tres aproximaciones tácticas posibles: acercamiento directo por los escombros del centro (rápido, mayor riesgo de ser detectados), distracción con señal acústica para separar al macho (técnico, da tiempo para aproximación limpia), o flanqueo por el corredor lateral oeste (más lento, mejor ángulo sin exposición).",
+      "texto_agente": "Posición conseguida. Cuatro individuos visibles en la nave. El macho está entre ellos. Tres opciones de aproximación. Digan.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Acercamiento directo. Por los escombros del centro. Rápido y decidido.",
+          "siguiente": "nodo_aprox_directa",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Distracción acústica. Separar al macho del grupo antes de neutralizar.",
+          "siguiente": "nodo_distraccion_acustica",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Flanqueo corredor oeste. Más lento, mejor ángulo limpio.",
+          "siguiente": "nodo_flanqueo_oeste",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_aprox_directa",
+      "tipo": "check",
+      "ambiente": "nave principal — escombros de concreto como cobertura, Cervatos a 25 metros",
+      "texto_control": "El equipo se mueve entre los escombros hacia el macho dominante. Los Cervatos tienen visión periférica amplia — el movimiento entre escombros tiene que ser detrás de la cobertura, sin levantarse en línea de vista directa. El agente de mayor sigilo lidera.",
+      "texto_agente": "Avanzando entre escombros. El polvo ayuda a cubrir. El macho está a unos veinticinco metros. Lento. Lento.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_ventana_neutralizacion",
+          "éxito": "nodo_ventana_neutralizacion",
+          "fallo": "nodo_manada_alerta",
+          "crítico_fallo": "nodo_manada_alerta"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_distraccion_acustica",
+      "tipo": "check",
+      "ambiente": "posición cubierta — dispositivo de señal acústica activado",
+      "texto_control": "El operador técnico activa el dispositivo de señal acústica: una frecuencia ultrasónica calibrada para producir respuesta de aislamiento territorial en ungulados mutados. Si funciona, el macho dominante se separará del grupo para investigar la fuente — lo que da al equipo una ventana de aproximación limpia con el resto de la manada fuera de línea de tiro.",
+      "texto_agente": "Dispositivo activo. La frecuencia está en 14.3 kHz. El macho... se está moviendo. Se está separando del grupo. Funciona.",
+      "agente_voz": "tecnico",
+      "check": {
+        "stat": "técnico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_ventana_neutralizacion",
+          "éxito": "nodo_ventana_neutralizacion",
+          "fallo": "nodo_manada_alerta",
+          "crítico_fallo": "nodo_manada_alerta"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_flanqueo_oeste",
+      "tipo": "check",
+      "ambiente": "corredor lateral oeste — techo parcialmente colapsado, visibilidad hacia el macho sin exposición",
+      "texto_control": "El equipo se mueve por el corredor lateral oeste, paralelo a la nave principal. Desde ahí tienen ángulo sobre el macho dominante sin estar en línea de vista de las hembras. El corredor es estrecho y el techo está colapsado en secciones — hay que moverse con cuidado para no hacer ruido. El silencio en ese espacio de concreto se amplifica.",
+      "texto_agente": "En el corredor oeste. El techo está caído en partes — hay que esquivar. El ángulo hacia el macho es bueno desde aquí. Moviéndonos despacio.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 13,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_ventana_neutralizacion",
+          "éxito": "nodo_ventana_neutralizacion",
+          "fallo": "nodo_manada_alerta",
+          "crítico_fallo": "nodo_manada_alerta"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_ventana_neutralizacion",
+      "tipo": "decision",
+      "ambiente": "posición de tiro — macho dominante a 12–15 metros, sin obstáculos entre el equipo y el objetivo",
+      "texto_control": "El equipo tiene la ventana. El macho dominante está a 12–15 metros, expuesto. El agente más físico tiene el sistema de contención de distancia listo. La pregunta ahora es: ¿el equipo tiene ID confirmada del macho, o proceden sin ella?",
+      "texto_agente": "Tenemos ventana. El macho —o el individuo más grande— está expuesto a quince metros. Equipo listo. ¿Procedemos?",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Procedan. Objetivo confirmado — neutralicen al macho identificado.",
+          "siguiente": "nodo_neutralizacion_limpia",
+          "requiere": { "flag": "macho_id", "valor": true }
+        },
+        {
+          "texto": "Procedan bajo evaluación en campo. Sin ID confirmada, confíen en criterio del equipo.",
+          "siguiente": "nodo_neutralizacion_sin_id",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_neutralizacion_limpia",
+      "tipo": "check",
+      "ambiente": "nave principal — macho dominante en línea de tiro limpia",
+      "texto_control": "El agente físico activa el sistema de contención de distancia apuntando al macho dominante identificado. El Cervato de Concreto tiene la dermis calcificada como protección natural — el sistema requiere impacto en zona de articulación o zona cervical para ser efectivo. La velocidad de reacción del animal es alta una vez que detecta el impacto.",
+      "texto_agente": "Línea de tiro limpia. Objetivo confirmado. Apuntando a la articulación del cuello... ejecutando.",
+      "agente_voz": "asalto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_macho_caido",
+          "éxito": "nodo_macho_caido",
+          "fallo": "nodo_confrontacion_manada",
+          "crítico_fallo": "nodo_confrontacion_manada"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_neutralizacion_sin_id",
+      "tipo": "check",
+      "ambiente": "nave principal — individuo grande en línea de tiro, identidad sin confirmar",
+      "texto_control": "El equipo procede sobre evaluación en campo. El individuo es el más grande del grupo visible — el más probable para ser el macho dominante — pero sin ID confirmada hay riesgo de error. El sistema de contención se activa sobre el objetivo elegido. Si es el macho correcto, la neutralización es limpia. Si no, activan el protocolo de revisión interna.",
+      "texto_agente": "Objetivo elegido por criterio de campo — el individuo más grande. Sin confirmación previa. Ejecutando.",
+      "agente_voz": "asalto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 13,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_macho_caido",
+          "éxito": "nodo_macho_caido",
+          "fallo": "nodo_confrontacion_manada",
+          "crítico_fallo": "nodo_confrontacion_manada"
+        }
+      },
+      "efectos": [
+        {
+          "tipo": "herida",
+          "valor": { "tipo": "impacto_casco", "severidad": 2, "parte_cuerpo": "brazo", "efecto_stat": { "físico": -1 } },
+          "alcance": "aleatorio"
+        }
+      ],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_manada_alerta",
+      "tipo": "check",
+      "ambiente": "nave principal — manada en estado de alerta, vocalizaciones de advertencia",
+      "texto_control": "La manada detectó al equipo. Los cuatro individuos están en posición de alerta — cabezas levantadas, cuernos orientados hacia el equipo, pies golpeando el suelo de concreto. El ruido resuena en la nave. El agente más mental tiene que mantener al equipo quieto y disciplinado para evaluar si la manada carga o solo advierte. El movimiento o el ruido ahora puede detonar la carga.",
+      "texto_agente": "Nos detectaron. Cuatro individuos alerta, mirando hacia aquí. El macho golpea el suelo. — quietos, nadie se mueve —",
+      "agente_voz": "veterano",
+      "check": {
+        "stat": "mental",
+        "agente": "lider",
+        "dificultad": 11,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_ventana_neutralizacion",
+          "éxito": "nodo_ventana_neutralizacion",
+          "fallo": "nodo_confrontacion_manada",
+          "crítico_fallo": "nodo_confrontacion_manada"
+        }
+      },
+      "efectos": [
+        { "tipo": "cordura", "delta": -10, "alcance": "todos" }
+      ],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_confrontacion_manada",
+      "tipo": "check",
+      "ambiente": "nave principal — el macho carga seguido de al menos una hembra, ruido de cascos en concreto",
+      "texto_control": "El macho cargó. Los pies de concreto sobre el suelo hacen un ruido que llena toda la nave. El equipo no puede correr — la única salida está al frente de la carga. El agente más físico tiene que interponer al animal, dar tiempo a que el resto active el sistema de contención. El impacto de un Cervato adulto en plena carga puede romper una costilla o un brazo.",
+      "texto_agente": "— CARGA — El macho viene. Dos toneladas de concreto directo. — activen el sistema —",
+      "agente_voz": "asalto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 14,
+        "modificadores_ambiente": -2,
+        "resultados": {
+          "crítico_éxito": "nodo_macho_caido",
+          "éxito": "nodo_macho_caido",
+          "fallo": "final_fracaso_catastrofico",
+          "crítico_fallo": "final_fracaso_catastrofico"
+        }
+      },
+      "efectos": [
+        {
+          "tipo": "herida",
+          "valor": { "tipo": "impacto_cervato", "severidad": 3, "parte_cuerpo": "torso", "efecto_stat": { "físico": -2, "sigilo": -1 } },
+          "alcance": "aleatorio"
+        },
+        { "tipo": "estamina", "delta": -25, "alcance": "todos" },
+        { "tipo": "cordura", "delta": -20, "alcance": "todos" }
+      ],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_macho_caido",
+      "tipo": "narrativo",
+      "ambiente": "nave principal — macho dominante neutralizado, manada comenzando a dispersarse",
+      "texto_control": "El macho dominante cayó. Las hembras reaccionaron como CENVAC predijo: sin el macho activo, el comportamiento de grupo se desorganiza. Dos individuos se alejaron hacia el fondo del ingenio. Un tercero permaneció un momento junto al macho antes de retroceder. La nave está más tranquila. El equipo tiene una ventana para la extracción de muestra — la petrificación post-mortem comienza rápido en Cervatos adultos.",
+      "texto_agente": "El macho está abajo. Las hembras están retrocediendo — dos ya se fueron al fondo. Tenemos quizás veinte minutos antes de que el tejido se endurezca. El analista va a la muestra ahora.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmo objetivo neutralizado. Extraigan muestra. Reloj en marcha — veinte minutos.",
+          "siguiente": "nodo_extraccion_muestra",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_extraccion_muestra",
+      "tipo": "check",
+      "ambiente": "junto al macho neutralizado — dermis calcificada, articulaciones accesibles",
+      "texto_control": "El agente biológico trabaja sobre el macho caído. La dermis exterior del Cervato ya está endureciendo al contacto con el aire — la mineralización post-mortem es rápida. Hay que encontrar la zona de articulación donde el tejido todavía es accesible. Un corte correcto en la articulación del cuello da muestra viable. Si hay fragmentos de cuerno sueltos de la caída, son bono de alto valor.",
+      "texto_agente": "Trabajando en la articulación del cuello. El exterior ya está endureciendo. Hay que ir entre las placas... aquí hay tejido accesible. Intentando la extracción.",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_muestra_completa",
+          "éxito": "nodo_muestra_tejido",
+          "fallo": "nodo_muestra_tejido",
+          "crítico_fallo": "nodo_muestra_minima"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_muestra_completa",
+      "tipo": "narrativo",
+      "ambiente": "junto al macho — tejido y fragmento de cuerno asegurados",
+      "texto_control": "Extracción exitosa. El agente biológico obtuvo tejido articular viable y un fragmento de cuerno suelto que se desprendió en la caída — la combinación tiene el máximo valor científico posible de esta operación. Ambas muestras en contenedor.",
+      "texto_agente": "Tenemos tejido articular más un fragmento de cuerno. El cuerno se desprendió limpio en la caída. Dos muestras en contenedor. Excelente resultado.",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Excelente. Muestras aseguradas. Inicien retirada.",
+          "siguiente": "nodo_retirada",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "tejido_y_cuerno_cervato" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_muestra_tejido",
+      "tipo": "narrativo",
+      "ambiente": "junto al macho — tejido articular asegurado",
+      "texto_control": "Extracción de tejido articular completada. La muestra es viable para análisis de estructura mineral. No hubo fragmentos de cuerno disponibles — la caída no produjo desprendimiento. Muestra en contenedor.",
+      "texto_agente": "Tejido articular en contenedor. Sin fragmentos de cuerno disponibles. Muestra lista. Iniciando retirada.",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Confirmo. Muestra asegurada. Inicien retirada.",
+          "siguiente": "nodo_retirada",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "tejido_macho_dominante" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_muestra_minima",
+      "tipo": "narrativo",
+      "ambiente": "junto al macho — tejido mayoritariamente petrificado ya",
+      "texto_control": "La petrificación avanzó más rápido de lo esperado — el tejido exterior ya endurecido impide el acceso a zonas viables. El agente biológico rescata una muestra mínima de la zona peri-articular. No es ideal, pero es algo.",
+      "texto_agente": "El tejido se endureció antes. Solo pude rescatar la zona peri-articular. Es una muestra mínima. Hacemos lo que podemos.",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Entendido. Lleven lo que tienen. Inicien retirada.",
+          "siguiente": "nodo_retirada",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "tejido_macho_minimo" }
+          ]
+        }
+      ],
+      "efectos": [
+        { "tipo": "cordura", "delta": -5, "alcance": "lider" }
+      ],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_retirada",
+      "tipo": "check",
+      "ambiente": "ingenio azucarero — ruta de retirada hacia el perímetro, hembras en posición desconocida",
+      "texto_control": "El equipo inicia la retirada. Las hembras no están visibles — retrocedieron al fondo del ingenio pero su posición exacta es desconocida. La ruta de retirada pasa por la nave principal y el galpón norte. La manada sin macho es impredecible: puede ignorar al equipo o puede responder al estrés reciente con agresión.",
+      "texto_agente": "Iniciando retirada por el galpón norte. Las hembras no están visibles. No sé si eso es bueno o malo. Avanzando con precaución.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_exterior",
+          "éxito": "nodo_exterior",
+          "fallo": "nodo_emboscada_retirada",
+          "crítico_fallo": "nodo_emboscada_retirada"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_emboscada_retirada",
+      "tipo": "check",
+      "ambiente": "galpón norte — una hembra emergió del lateral, bloqueando la ruta de salida",
+      "texto_control": "Una hembra emergió del lateral del galpón — estaba ahí, quieta, y el equipo no la vio. Está entre el equipo y la salida. No está cargando todavía, pero está en posición de bloqueo. El agente más físico puede intentar crear una apertura de paso. La alternativa es retroceder y buscar otra salida.",
+      "texto_agente": "Hay una hembra en la salida. Quieta por ahora pero está ahí. Tenemos que pasar o retroceder. ¿Cómo procedemos?",
+      "agente_voz": "asalto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 13,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_exterior",
+          "éxito": "nodo_exterior",
+          "fallo": "final_fracaso_catastrofico",
+          "crítico_fallo": "final_fracaso_catastrofico"
+        }
+      },
+      "efectos": [
+        { "tipo": "estamina", "delta": -15, "alcance": "todos" },
+        { "tipo": "cordura", "delta": -10, "alcance": "todos" }
+      ],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_exterior",
+      "tipo": "narrativo",
+      "ambiente": "límite este del ingenio — exterior, señal de radio recuperada al 100%",
+      "texto_control": "El equipo está afuera. El polvo de concreto queda en el interior. La señal de radio vuelve a 100%. El equipo reporta estado y aguarda instrucción de retorno al punto de mando.",
+      "texto_agente": "Estamos en el exterior. Todos presentes. La muestra está asegurada. Listo para retorno al punto de mando. Esperando confirmación.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmado. Regresen al punto de mando. Operación EVT-AGS-2026-0291 concluida. Buen trabajo.",
+          "siguiente": "nodo_resolucion",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_resolucion",
+      "tipo": "resolucion",
+      "texto_control": "La operación está cerrada. CENVAC-Central procesa el resultado. El archivo del evento EVT-AGS-2026-0291 será actualizado.",
+      "logica_resolucion": [
+        {
+          "condicion": { "muestra_obtenida": true, "bajas_count": 0, "heridas_graves_count": 0 },
+          "siguiente": "final_exito_limpio"
+        },
+        {
+          "condicion": { "muestra_obtenida": true, "bajas_count": 0, "heridas_graves_count_gte": 1 },
+          "siguiente": "final_exito_parcial"
+        },
+        {
+          "condicion": { "muestra_obtenida": true, "bajas_count_gte": 1 },
+          "siguiente": "final_exito_pirrico"
+        },
+        {
+          "condicion": { "muestra_obtenida": false, "bajas_count": 0 },
+          "siguiente": "final_fracaso_extraccion"
+        },
+        {
+          "condicion": { "muestra_obtenida": false, "bajas_count_gte": 1 },
+          "siguiente": "final_fracaso_catastrofico"
+        }
+      ],
+      "efectos": []
+    },
+    {
+      "id": "final_exito_limpio",
+      "tipo": "final",
+      "resultado": "exito_limpio",
+      "titulo": "Macho dominante neutralizado — muestra asegurada — manada dispersa",
+      "texto_control": "Operación EVT-AGS-2026-0291 cerrada con resultado óptimo. El macho dominante fue neutralizado con identificación previa confirmada. La manada inició dispersión inmediata. El equipo regresó completo y sin heridas graves. La muestra de tejido está en el laboratorio.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo completó la inserción, identificación del macho dominante y neutralización dentro del protocolo establecido. La manada dispersó como proyectado. La extracción de muestra se realizó dentro de la ventana de viabilidad post-mortem. El equipo regresó sin bajas ni heridas graves.",
+        "hallazgos": "Neutralización selectiva efectiva: solo el macho dominante fue afectado. La dispersión de la manada fue inmediata y completa dentro de las siguientes dos horas. La zona del ingenio azucarero queda libre de actividad territorial documentada. La muestra de tejido permite análisis completo de estructura mineral.",
+        "notas_analista": "Esta operación establece que la neutralización selectiva del macho dominante en manadas de Cervato de Concreto es un método viable de dispersión sin escalada a contención mayor. Se recomienda monitoreo de la zona en los próximos 30 días para confirmar que la manada no retornó."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_exito_parcial",
+      "tipo": "final",
+      "resultado": "exito_parcial",
+      "titulo": "Macho neutralizado — muestra asegurada — heridos en equipo",
+      "texto_control": "Operación EVT-AGS-2026-0291 cerrada con resultado aceptable. El objetivo primario se cumplió. El equipo regresó completo pero con heridas que requieren atención. Las lesiones son consistentes con el nivel de riesgo documentado de Cervato de Concreto en confrontación directa. Se activa revisión de protocolo si se confirmó baja secundaria de manada.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC — Nota de incidencia adjunta",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación cumplió el objetivo primario con complicaciones. El equipo enfrentó una confrontación con la manada durante la aproximación o la retirada, resultando en heridas sin baja crítica. La muestra fue asegurada.",
+        "hallazgos": "Macho dominante neutralizado. Muestra obtenida. Las heridas registradas son consistentes con el nivel de riesgo para contención activa de Cervato de Concreto clase III. Si se confirma baja secundaria de manada (individuo no objetivo), se requiere revisión interna.",
+        "notas_analista": "Se recomienda revisión del procedimiento de identificación previa — la baja de individuos no objetivo en operaciones de neutralización selectiva representa falla de protocolo. El equipo debe ser atendido antes de próxima asignación."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_exito_pirrico",
+      "tipo": "final",
+      "resultado": "exito_pirrico",
+      "titulo": "Objetivo neutralizado — muestra obtenida — baja crítica",
+      "texto_control": "Operación EVT-AGS-2026-0291 cerrada. Objetivo neutralizado. Muestra obtenida. Un agente fue dado de baja o sufrió heridas críticas. El objetivo primario se cumplió a un costo inaceptable para esta clasificación de operación. Protocolo 11 activado retroactivamente.",
+      "clasificacion_doc": "Nivel 3 — Acceso restringido — Revisión de Coordinación requerida",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación cumplió el objetivo primario pero el equipo sufrió una baja crítica durante la confrontación con la manada. Las circunstancias exactas están en los logs de comunicaciones.",
+        "hallazgos": "Macho dominante neutralizado. Muestra válida. La baja crítica indica que el nivel de riesgo real de la operación excedió la evaluación previa. La confrontación directa con Cervato de Concreto adulto en espacios cerrados produce fuerzas de impacto que exceden los parámetros del equipo de protección estándar.",
+        "notas_analista": "Esta operación requiere revisión de la clasificación de riesgo para contención activa de Cervato de Concreto en espacios industriales cerrados. El nivel actual (III) puede ser insuficiente. Se recomienda actualizar los parámetros de equipo de protección antes de operaciones similares."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": [
+        {
+          "tipo": "baja_garantizada",
+          "valor": { "tipo": "impacto_cervato_critico", "parte_cuerpo": "torso", "severidad": 4 },
+          "alcance": "aleatorio"
+        }
+      ]
+    },
+    {
+      "id": "final_fracaso_extraccion",
+      "tipo": "final",
+      "resultado": "fracaso_extraccion",
+      "titulo": "Objetivo no localizado — equipo extraído sin bajas",
+      "texto_control": "Operación EVT-AGS-2026-0291 cerrada sin neutralización. El equipo regresó completo. El macho dominante no pudo ser localizado o el equipo no logró posición de neutralización. La zona del ingenio sigue activa. La amenaza a los trabajadores de la zona persiste.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo completó la inserción y reconocimiento pero no logró posición de neutralización sobre el macho dominante. La extracción del equipo se realizó sin bajas.",
+        "hallazgos": "Sin neutralización. La manada sigue activa en el ingenio azucarero. Se confirmó presencia de al menos cuatro individuos con un macho dominante activo. Esta información es transferible a una segunda operación.",
+        "notas_analista": "Se recomienda segunda operación con ajustes tácticos. El acceso por el galpón norte con mayor tiempo de observación previa puede mejorar la probabilidad de identificación del macho dominante antes de comprometerse a la aproximación."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_fracaso_catastrofico",
+      "tipo": "final",
+      "resultado": "fracaso_catastrofico",
+      "titulo": "Confrontación de manada — bajas confirmadas — sin objetivo neutralizado",
+      "texto_control": "Operación EVT-AGS-2026-0291 cerrada. Sin neutralización. Bajas confirmadas. El Protocolo 11 fue activado. La zona del ingenio azucarero será reclasificada a nivel IV pendiente de nueva evaluación.",
+      "clasificacion_doc": "Nivel 4 — Acceso restringido — Revisión obligatoria de Coordinación",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación resultó en bajas sin cumplir el objetivo primario. La manada reaccionó con carga coordinada que excedió la capacidad de contención del equipo en el espacio industrial cerrado.",
+        "hallazgos": "Sin neutralización. Bajas documentadas. La manada de Cervato de Concreto en el ingenio azucarero demostró comportamiento de respuesta coordinada que no estaba completamente documentado en el bestiario. El espacio industrial cerrado amplificó la peligrosidad de la confrontación.",
+        "notas_analista": "Este resultado requiere revisión completa de los protocolos de contención activa de Cervato de Concreto en espacios interiores. La clasificación de nivel III puede ser insuficiente para manadas establecidas con conducta territorial documentada. Se recomienda suspender operaciones similares hasta completar la revisión."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": [
+        {
+          "tipo": "baja_garantizada",
+          "valor": { "tipo": "impacto_cervato_critico", "parte_cuerpo": "torso", "severidad": 4 },
+          "alcance": "aleatorio"
+        }
+      ]
+    }
+  ]
+}

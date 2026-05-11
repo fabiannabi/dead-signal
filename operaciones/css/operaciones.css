@@ -400,6 +400,19 @@ body::before {
   padding-top: 8px;
 }
 
+.agent-card.nombrado { border-color: var(--accent2); }
+.agent-named-badge {
+  display: inline-block;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  border: 1px solid var(--accent2);
+  padding: 1px 5px;
+  margin-left: 6px;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
 .briefing-actions { display: flex; gap: 10px; align-items: center; }
 
 .briefing-actions-hint {

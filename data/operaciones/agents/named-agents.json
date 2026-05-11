@@ -1,0 +1,397 @@
+[
+  {
+    "id": "agente_esther_valverde",
+    "seed": null,
+    "es_nombrado": true,
+    "nombre_completo": "Esther Valverde Cruz",
+    "genero": "f",
+    "archetype_id": "veterano",
+    "nombre_rol": "Coordinadora de Distrito",
+    "rango": "coordinadora_distrito",
+    "rango_abreviatura": "CORD",
+    "rango_nivel": 6,
+    "stats": {
+      "físico": 6,
+      "técnico": 5,
+      "biológico": 5,
+      "sigilo": 5,
+      "mental": 8,
+      "liderazgo": 9
+    },
+    "rasgos": [
+      {
+        "id": "perdida_bien_procesada",
+        "nombre": "Pérdida bien procesada",
+        "categoria": "mental",
+        "modificadores_stat": {},
+        "modificadores_estado": { "cordura_equipo_en_encuentro": 2 },
+        "narrativa_inserts": [
+          "Su presencia tranquiliza al equipo incluso en situaciones extremas. El equipo sabe que el dolor existe — también sabe que se puede trabajar con él.",
+          "Esther no habla de su esposo. El equipo lo sabe y no pregunta. Eso también es una forma de apoyo."
+        ],
+        "incompatible_con": []
+      },
+      {
+        "id": "veterana_primera_ola",
+        "nombre": "Veterana de la Primera Ola",
+        "categoria": "experiencia",
+        "modificadores_stat": { "técnico_contra_arana_hidraulica": -1 },
+        "modificadores_estado": {},
+        "narrativa_inserts": [
+          "Esther reconoce la seda antes de ver la araña. Cuatro años no son suficientes para olvidar el primer encuentro.",
+          "— Esto ya lo vi. — Pausa. — No salimos igual entonces."
+        ],
+        "incompatible_con": []
+      }
+    ],
+    "equipo": ["radio_comando_prioritaria", "equipo_proteccion_estandar", "botiquin_campo_ampliado", "arma_corta"],
+    "voz": "imperativo corto, tono plano, autoridad sin volumen",
+    "patron_radio": "Ordenes directas en imperativo. Usa 'compañeros' como tratamiento colectivo invariablemente. Cierra cada orden con '¿estamos?'. Nunca usa signos de interrogación en tono — las preguntas suenan a confirmación.",
+    "estado": {
+      "estamina": 100,
+      "estamina_max": 100,
+      "cordura": 100,
+      "cordura_max": 100,
+      "heridas": [],
+      "vivo": true,
+      "operativo": true
+    },
+    "recursos": {
+      "munición": 12,
+      "batería": 3,
+      "agua": 2,
+      "kit_médico": 2,
+      "contenedor_muestra": 1
+    },
+    "es_lider": true,
+    "operaciones_completadas": 47,
+    "historia": "Ex-comandante de policía estatal de Aguascalientes. 51 años, toda su carrera en seguridad pública. Reclutada por CENVAC en los primeros tres meses post-Emergencia por su capacidad de mantener orden operativo bajo presión extrema — fue la responsable de coordinar el desalojo del Centro Histórico en la Primera Ola, con 2,400 civiles y fauna activa en el mismo espacio. Perdió a su esposo Rodrigo en operación CENVAC temprana — caída de Araña Hidráulica en Sector Norte, día 38. Lleva cuatro años en CENVAC y tiene la tasa de supervivencia de equipo más alta del distrito: 91% de sus agentes desplegados regresaron. El 9% restante es el único tema sobre el que no da informes detallados.",
+    "tics_radio": "Cierra cada orden con '¿estamos?' — no es pregunta, es confirmación de recepción. Nunca eleva la voz. Habla en primera persona del plural: 'vamos', 'tenemos', 'entramos'. El equipo interpreta el plural como autoridad compartida, no como falsedad. Cuando algo sale mal, el primer reporte siempre es en presente y sin carga emocional: 'Tenemos una baja. Continuamos.'",
+    "relaciones_internas": {
+      "con_marco_tellez": "Lo considera brillante con el equipo técnico. Tolera sus explicaciones largas. Una vez le dijo 'Marco, el diagnóstico cuando salgamos' y él lo recordó.",
+      "con_lucia_herrera": "Respeto mutuo sin socialización. Esther confía en Lucía a ciegas en campo. Lucía no ha tenido problema con esa confianza todavía.",
+      "con_joaquin_ramirez": "Apreciación genuina. Joaquín le trajo un informalmente al punto de reunión hace seis meses. Nadie más lo habría notado.",
+      "con_daniela_gomez": "La observa con más atención que a otros. No lo admite."
+    },
+    "estado_persistente": {
+      "operacion_con_arana": false,
+      "insert_araña_disparado": false
+    }
+  },
+  {
+    "id": "agente_marco_tellez",
+    "seed": null,
+    "es_nombrado": true,
+    "nombre_completo": "Marco Téllez Romo",
+    "genero": "m",
+    "archetype_id": "tecnico",
+    "nombre_rol": "Operador Técnico Especialista",
+    "rango": "agente_especialista",
+    "rango_abreviatura": "AGT-E",
+    "rango_nivel": 3,
+    "stats": {
+      "físico": 4,
+      "técnico": 9,
+      "biológico": 5,
+      "sigilo": 5,
+      "mental": 7,
+      "liderazgo": 4
+    },
+    "rasgos": [
+      {
+        "id": "improvisacion_con_basura",
+        "nombre": "Improvisación con basura",
+        "categoria": "técnico",
+        "modificadores_stat": { "técnico": 2 },
+        "modificadores_estado": {},
+        "narrativa_inserts": [
+          "Con los materiales disponibles en campo, Marco construyó algo que no debería funcionar. Está funcionando.",
+          "— ¿Eso es una trampa? — Técnicamente es un oscilador de frecuencia variable con repropósito de componentes de microondas. Pero sí, básicamente una trampa."
+        ],
+        "incompatible_con": []
+      },
+      {
+        "id": "tartamudez_bajo_estres",
+        "nombre": "Tartamudez bajo estrés",
+        "categoria": "mental",
+        "modificadores_stat": {},
+        "modificadores_estado": { "narrativa_check_fallido": "insert de tartamudeo" },
+        "narrativa_inserts": [
+          "— C-con el equipo B... sí, ya lo tengo. Disculpen.",
+          "— El... el sensor está... perdón. El sensor está activo. Ya está.",
+          "— No... no es lo que parece. Es... déjenme un momento."
+        ],
+        "incompatible_con": []
+      }
+    ],
+    "equipo": ["kit_técnico_avanzado", "detector_vibración_campo", "herramientas_multiuso", "arma_corta"],
+    "voz": "técnico preciso, sobreexplica procedimientos, tartamudeo en momentos de crisis",
+    "patron_radio": "Pide 'confirmación de canal' antes de reportes importantes. Explica el procedimiento técnico completo antes de ejecutarlo. Bajo estrés extremo o en checks fallidos, tartamudea brevemente antes de recuperar el hilo. El equipo ya sabe esperar.",
+    "estado": {
+      "estamina": 90,
+      "estamina_max": 90,
+      "cordura": 95,
+      "cordura_max": 95,
+      "heridas": [],
+      "vivo": true,
+      "operativo": true
+    },
+    "recursos": {
+      "munición": 8,
+      "batería": 5,
+      "agua": 2,
+      "kit_médico": 1,
+      "contenedor_muestra": 2
+    },
+    "es_lider": false,
+    "operaciones_completadas": 12,
+    "historia": "Ingeniero electrónico autodidacta de Calvillo, 28 años. Antes de la Emergencia reparaba radios, televisores y electrodomésticos en el mercado local. Sin título formal pero con comprensión práctica de electrónica de señal que supera a ingenieros con carrera. CENVAC lo reclutó tras un incidente documentado donde improvisó un detector de vibración de Araña Hidráulica con piezas de un microondas desarmado — el dispositivo funcionó y alertó a tres civiles antes de la emergencia. En campo es brillante y lento para moverse. Su Físico 4 no es cobertura narrativa: en operaciones que requieren velocidad de desplazamiento, Marco es el cuello de botella. El equipo lo sabe y lo acepta porque nadie más puede arreglar lo que él arregla.",
+    "tics_radio": "Pide confirmación de canal antes de transmitir información técnica importante ('Control, confirmación de canal 7, ¿recibo?'). Explica el procedimiento antes de ejecutarlo aunque nadie lo haya pedido. En checks de Técnico fallidos: tartamudeo breve en la primera palabra de la siguiente transmisión, luego recupera normalidad. El equipo ya aprendió a no completarle las frases.",
+    "relaciones_internas": {
+      "con_esther_valverde": "Respeto absoluto. Una vez intentó explicarle un circuito durante una operación activa. Ella dijo 'Marco' en un tono específico y él nunca volvió a hacerlo en momentos críticos.",
+      "con_lucia_herrera": "Incómodo con el silencio de Lucía. No sabe si es desaprobación o simplemente su forma de ser. Es su forma de ser.",
+      "con_daniela_gomez": "La única que le pide que explique las cosas. Eso le agrada más de lo que admite."
+    },
+    "estado_persistente": {
+      "dispositivos_improvisados_en_campo": 0,
+      "insert_tartamudeo_disparado": false
+    }
+  },
+  {
+    "id": "agente_lucia_herrera",
+    "seed": null,
+    "es_nombrado": true,
+    "nombre_completo": "Lucía Herrera Vega",
+    "genero": "f",
+    "archetype_id": "reconocimiento",
+    "nombre_rol": "Especialista de Reconocimiento",
+    "rango": "agente_especialista",
+    "rango_abreviatura": "AGT-E",
+    "rango_nivel": 3,
+    "stats": {
+      "físico": 7,
+      "técnico": 5,
+      "biológico": 8,
+      "sigilo": 10,
+      "mental": 5,
+      "liderazgo": 4
+    },
+    "rasgos": [
+      {
+        "id": "silencio_del_campo",
+        "nombre": "Silencio del campo",
+        "categoria": "campo",
+        "modificadores_stat": { "sigilo": 2 },
+        "modificadores_estado": {},
+        "narrativa_inserts": [
+          "Lucía lleva veinte minutos en posición y el equipo no sabe exactamente dónde está. Eso es exactamente como debe ser.",
+          "El silencio de Lucía es técnico, no social. El campo no hace ruido. Ella tampoco."
+        ],
+        "incompatible_con": []
+      },
+      {
+        "id": "no_reporta_lo_trivial",
+        "nombre": "No reporta lo trivial",
+        "categoria": "comunicación",
+        "modificadores_stat": {},
+        "modificadores_estado": { "narrativa_presencia": "ausencia percibida hasta que importa" },
+        "narrativa_inserts": [
+          "— Aquí Lucía. Tres especímenes al norte, cuarenta metros. — Silencio previo: dieciséis minutos.",
+          "— Presente. — Eso es todo. El equipo entiende que está bien.",
+          "Su radio puede estar en silencio la mayor parte de la misión. Cuando habla, el equipo deja de hacer lo que sea que esté haciendo."
+        ],
+        "incompatible_con": []
+      }
+    ],
+    "equipo": ["rifle_campo_ligero", "equipo_sigilo_avanzado", "kit_rastreo_biológico", "cámara_campo"],
+    "voz": "lacónica, frases cortas, silencios prolongados deliberados",
+    "patron_radio": "Transmite solo lo que el equipo necesita saber. Las frases son de cuatro palabras o menos cuando puede. El equipo aprende rápido a no preguntar '¿dónde estás?' — ella responderá cuando tenga algo que decir que valga la pena escuchar.",
+    "estado": {
+      "estamina": 100,
+      "estamina_max": 100,
+      "cordura": 90,
+      "cordura_max": 90,
+      "heridas": [],
+      "vivo": true,
+      "operativo": true
+    },
+    "recursos": {
+      "munición": 15,
+      "batería": 2,
+      "agua": 3,
+      "kit_médico": 1,
+      "contenedor_muestra": 1
+    },
+    "es_lider": false,
+    "operaciones_completadas": 23,
+    "historia": "Cazadora de zorra y mapache en Asientos desde los quince años. 34 años, sin educación formal más allá de la preparatoria. Reclutada por CENVAC tras encuentros documentados con Cervatos de Concreto en la periferia de su comunidad — Lucía no los atacó ni huyó, los observó durante seis horas y documentó su patrón de pastoreo en un cuaderno de campo que CENVAC todavía usa como referencia. Su Sigilo 10 es el único máximo registrado en el distrito. En coordinación de equipo, su Mental 5 significa que no lee bien las dinámicas sociales — sabe dónde está la criatura, no siempre sabe dónde está el miedo del equipo. Eso a veces es un problema.",
+    "tics_radio": "Silencio de hasta veinte minutos entre transmisiones sin que nadie lo solicite. Cuando rompe el silencio, la información que trae siempre justifica la espera. Sus reportes son cortos al punto de parecer poesía de campo: 'Uno al este. Duerme. Sigo.' El equipo aprende a no pedirle más detalle del que ella decide dar.",
+    "relaciones_internas": {
+      "con_esther_valverde": "Respeto sin fricción. Esther no le pide que cambie su forma de comunicarse. Eso es lo máximo que Lucía puede pedir.",
+      "con_marco_tellez": "Marco le tiene algo de incomodidad. Lucía no lo ha notado o no le importa. Probablemente lo segundo.",
+      "con_joaquin_ramirez": "Los dos vienen del campo. Se entienden sin hablar. Una vez estuvieron dos horas en posición de observación sin intercambiar una sola palabra y ambos consideraron que fue una buena operación."
+    },
+    "estado_persistente": {
+      "operaciones_en_zona_rural": 0
+    }
+  },
+  {
+    "id": "agente_joaquin_ramirez",
+    "seed": null,
+    "es_nombrado": true,
+    "nombre_completo": "Joaquín Ramírez Solís",
+    "genero": "m",
+    "archetype_id": "cazador",
+    "nombre_rol": "Especialista de Campo — Fauna",
+    "rango": "agente_especialista",
+    "rango_abreviatura": "AGT-E",
+    "rango_nivel": 3,
+    "stats": {
+      "físico": 8,
+      "técnico": 4,
+      "biológico": 9,
+      "sigilo": 7,
+      "mental": 8,
+      "liderazgo": 5
+    },
+    "rasgos": [
+      {
+        "id": "voz_del_campo",
+        "nombre": "Voz del campo",
+        "categoria": "campo",
+        "modificadores_stat": { "biológico": 1 },
+        "modificadores_estado": {},
+        "narrativa_inserts": [
+          "— Fíjese que ese chacal está comiendo. Come de izquierda a derecha, siempre. Eso significa que tiene flanco ciego del ojo derecho. Por si les sirve.",
+          "La información de Joaquín siempre tiene un detalle de más. El detalle de más siempre resulta útil."
+        ],
+        "incompatible_con": []
+      },
+      {
+        "id": "la_familia_perdida",
+        "nombre": "La familia perdida",
+        "categoria": "mental",
+        "modificadores_stat": {},
+        "modificadores_estado": { "narrativa_momento_calma": "insert gentil sobre recuerdo familiar" },
+        "narrativa_inserts": [
+          "— Mi hijo mayor tenía una bicicleta azul. Se la robaron dos días antes. Me alegra que no estuviera ahí cuando pasó. — Pausa. — Sigo.",
+          "— Este arroyo seco me recuerda al rancho. Mis papás tenían uno igual atrás. Ya no, supongo.",
+          "— Perdone el comentario. Ya pasó. Vamos."
+        ],
+        "incompatible_con": []
+      }
+    ],
+    "equipo": ["rifle_caza_largo", "kit_rastreo_biológico", "cuerda_campo", "cuchillo_caza"],
+    "voz": "pausado, modismos rurales aguascalentenses, narra en lugar de reportar",
+    "patron_radio": "Empieza transmisiones con 'fíjese que...' invariablemente. Describe las observaciones como si contara una anécdota. Modismos sin filtrar: 'ái nomás', 'éntrale', 'ahorita'. Una vez por misión, en un momento tranquilo, hace una referencia gentil a algo que le recuerda a su familia.",
+    "estado": {
+      "estamina": 95,
+      "estamina_max": 95,
+      "cordura": 95,
+      "cordura_max": 95,
+      "heridas": [],
+      "vivo": true,
+      "operativo": true
+    },
+    "recursos": {
+      "munición": 14,
+      "batería": 2,
+      "agua": 3,
+      "kit_médico": 1,
+      "contenedor_muestra": 2
+    },
+    "es_lider": false,
+    "operaciones_completadas": 31,
+    "historia": "Vaquero y cazador de Tepezalá toda su vida. 45 años. Su familia — esposa, tres hijos, sus padres — desapareció en la Emergencia. No desaparecida en el sentido burocrático: él sabe lo que pasó, solo no lo dice. CENVAC es la única estructura que tiene ahora y eso le genera una lealtad funcional que no confunde con afecto. Sabe mecánica rural básica, rastreo de fauna en terreno árido y semiárido, y tiene el conocimiento geográfico de los municipios del norte del estado que ningún agente urbano puede replicar. Su Biológico 9 viene de treinta años observando fauna antes de que existiera el concepto de Emergencia. Cuando CENVAC tiene operaciones en zona rural del norte, Joaquín siempre está en la lista corta.",
+    "tics_radio": "Siempre empieza con 'fíjese que...' incluso en situaciones de urgencia. Sus reportes incluyen detalles que parecen irrelevantes y resultan no serlo. Una vez por misión, en un momento de pausa real entre nodos, menciona algo que le recuerda a su familia — brevemente, sin drama, y luego continúa como si nada. El equipo aprendió a no comentarlo.",
+    "relaciones_internas": {
+      "con_esther_valverde": "Respeto recíproco. Esther lo consulta en terreno rural antes de ordenar cualquier cosa. Joaquín obedece las órdenes de Esther sin cuestionamiento visible.",
+      "con_lucia_herrera": "Entendimiento silencioso. Los dos vienen del campo. Una vez terminaron un turno de vigilancia de cuatro horas sin hablar y ambos lo consideraron satisfactorio.",
+      "con_daniela_gomez": "Paciencia de maestro sin serlo. Le explicó una vez cómo leer huellas en sedimento y ella tomó notas. Él guardó eso."
+    },
+    "estado_persistente": {
+      "insert_familia_disparado_esta_mision": false
+    }
+  },
+  {
+    "id": "agente_daniela_gomez",
+    "seed": null,
+    "es_nombrado": true,
+    "nombre_completo": "Daniela Gómez Ortiz",
+    "genero": "f",
+    "archetype_id": "recluta",
+    "nombre_rol": "Recluta",
+    "rango": "recluta",
+    "rango_abreviatura": "RCL",
+    "rango_nivel": 1,
+    "stats": {
+      "físico": 5,
+      "técnico": 4,
+      "biológico": 5,
+      "sigilo": 4,
+      "mental": 5,
+      "liderazgo": 3
+    },
+    "rasgos": [
+      {
+        "id": "aprendizaje_acelerado",
+        "nombre": "Aprendizaje acelerado",
+        "categoria": "progresión",
+        "modificadores_stat": {},
+        "modificadores_estado": { "ganancia_por_mision": "+1 stat aleatorio por misión completada" },
+        "narrativa_inserts": [
+          "La segunda vez que vio ese patrón, Daniela lo reconoció antes de que alguien más lo nombrara.",
+          "Lo que el manual no tiene, Daniela lo está anotando. El manual va a quedarse atrás.",
+          "— Ya sé cuál es. La forma del caparazón. Eso es Roca Negra. — Primera vez sin el bestiario de referencia."
+        ],
+        "incompatible_con": []
+      },
+      {
+        "id": "protegida_por_el_equipo",
+        "nombre": "Protegida por el equipo",
+        "categoria": "social",
+        "modificadores_stat": {},
+        "modificadores_estado": { "bono_de_lider_6plus": "+1 a checks de Daniela si el líder tiene Liderazgo 6+" },
+        "narrativa_inserts": [
+          "Sin coordinación previa, el agente de mayor liderazgo se colocó entre Daniela y la zona de riesgo.",
+          "El equipo tiene la costumbre de saber dónde está Daniela. Ella no siempre lo nota."
+        ],
+        "incompatible_con": []
+      }
+    ],
+    "equipo": ["pistola_campo_estandar", "equipo_proteccion_basico", "botiquin_personal"],
+    "voz": "educada, suave, ligeramente tensa en crisis, formal con superiores",
+    "patron_radio": "Usa 'señor' o 'señora' con superiores invariablemente. Cuando repite una orden para confirmarla, cierra con '¿correcto?'. Su primera transmisión de cada misión tiende a ser demasiado formal para el contexto táctico. Con el tiempo está aprendiendo a calibrar.",
+    "estado": {
+      "estamina": 85,
+      "estamina_max": 85,
+      "cordura": 100,
+      "cordura_max": 100,
+      "heridas": [],
+      "vivo": true,
+      "operativo": true
+    },
+    "recursos": {
+      "munición": 10,
+      "batería": 2,
+      "agua": 2,
+      "kit_médico": 1,
+      "contenedor_muestra": 1
+    },
+    "es_lider": false,
+    "operaciones_completadas": 1,
+    "historia": "Estudiante de tercer año de Biología en la UAA cuando ocurrió la Emergencia. 19 años, de Cosío. Sobreviviente sin entrenamiento previo — fue encontrada en operación de rescate CENVAC en el mercado de Cosío, tres semanas post-Emergencia, viva y con notas de campo sobre especímenes observados en las paredes del local donde se refugió. CENVAC la reclutó por sus notas, no por su condición física. Su Biológico 5 es académico, no de campo: sabe lo que aprendió en la carrera pero no tiene el instinto de aplicación que viene de los años. Tiene todo para desarrollarlo. Sus stats son los más bajos del roster activo pero su Cordura máxima de 100 es la más alta — la juventud no ha procesado suficiente todavía para desgastarla. Si muere en operación, el equipo lo siente de manera desproporcionada. Eso el equipo lo sabe. Daniela no.",
+    "tics_radio": "Tratamiento formal invariable: 'señor' o 'señora' en toda comunicación directa. Repite órdenes para confirmarlas y cierra con '¿correcto?'. Primera transmisión de cada misión demasiado extensa y formal — después se regula. Cuando algo sale muy mal, hay dos segundos de silencio antes de que reporte. El equipo ya sabe esperar esos dos segundos.",
+    "relaciones_internas": {
+      "con_esther_valverde": "Algo de reverencia que Esther no fomenta ni desalienta. Daniela está aprendiendo a distinguir respeto de miedo.",
+      "con_marco_tellez": "Le pide explicaciones técnicas y él las da completas. Es el único que lo hace. Los dos lo valoran.",
+      "con_lucia_herrera": "Daniela preguntó una vez si Lucía estaba bien cuando llevaba mucho rato en silencio. Lucía respondió 'sí' y siguió en silencio. Daniela todavía no sabe si interpretó bien la respuesta.",
+      "con_joaquin_ramirez": "Él le explicó rastreo en sedimento. Ella tomó notas. Eso estableció una dinámica de aprendizaje informal que ninguno de los dos nombró."
+    },
+    "estado_persistente": {
+      "misiones_completadas": 1,
+      "stat_bonus_acumulado": {},
+      "rasgo_veterana_desbloqueado": false
+    }
+  }
+]

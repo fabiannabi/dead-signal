@@ -8,14 +8,15 @@ export async function fetchJSON(path) {
 
 export async function cargarDatos() {
   const b = DATA_BASE;
-  const [archetypes, traits, names, ranks, eventos] = await Promise.all([
+  const [archetypes, traits, names, ranks, eventos, named] = await Promise.all([
     fetchJSON(`${b}/agents/archetypes.json`),
     fetchJSON(`${b}/agents/traits.json`),
     fetchJSON(`${b}/agents/names.json`),
     fetchJSON(`${b}/org/ranks.json`),
     fetchJSON(`${b}/events/active-events.json`),
+    fetchJSON(`${b}/agents/named-agents.json`),
   ]);
-  return { archetypes, traits, names, ranks, eventos };
+  return { archetypes, traits, names, ranks, eventos, named };
 }
 
 export async function cargarMisionData(id) {

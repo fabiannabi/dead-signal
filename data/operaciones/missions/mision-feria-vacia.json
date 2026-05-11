@@ -1,0 +1,586 @@
+{
+  "id": "mision-feria-vacia",
+  "nombre": "Feria Vacía",
+  "descripcion": "Reconocimiento de manada de Chacal de Feria en formación de centinela. Objetivo secundario: muestra de saliva con feromonas de comunicación si viable. Sigilo absoluto — cualquier detección implica aborto inmediato.",
+  "tipo_mision": "reconocimiento",
+  "criatura": "chacal_de_feria",
+  "nivel_amenaza": "II",
+  "objetivo_primario": "Documentar el patrón de relevos de centinela de la manada: tiempos de rotación, posiciones, comunicación entre individuos.",
+  "objetivo_secundario": "Obtener muestra de saliva fresca de individuo en descanso (medio valor) o pelo de muda reciente (bajo valor, alto éxito) si la posición lo permite.",
+  "muestra_objetivo": "saliva_fresca",
+  "muestra_descripcion": "Saliva fresca de Chacal de Feria. La saliva actúa como vector de feromonas de comunicación entre individuos — su análisis permite reconstruir el sistema de señalización de la manada. Se requiere extracción directa de individuo en descanso usando hisopo de campo clase B. Alta dificultad de aproximación.",
+  "nodo_inicial": "nodo_insercion",
+  "nodos": [
+    {
+      "id": "nodo_insercion",
+      "tipo": "narrativo",
+      "ambiente": "CENVAC-Central — frecuencia 2, las 06:30",
+      "texto_control": "Frecuencia 2-CENVAC operativa. El evento EVT-AGS-2026-0318 documenta manada de 6 a 8 Chacales de Feria establecida en los terrenos de la Feria Nacional abandonada. Comportamiento de centinela confirmado por observación previa: dos individuos siempre en vigilancia mientras el resto descansa. CENVAC requiere documentación del patrón de relevos y, si viable, muestra de saliva con feromonas de comunicación para análisis de señalización intraespecie. Restricción operacional: sigilo absoluto en todo momento. Si se detecta a un centinela, abortar inmediatamente. Protocolo 3 + 4-A activos. El equipo está en entrada sur de los terrenos. Autorice entrada.",
+      "texto_agente": "Posición en entrada sur. La feria está en silencio desde aquí. La estructura de los puestos da buena cobertura visual. Protocolo 3 activo — comunicaciones mínimas desde ya. Listos.",
+      "agente_voz": "reconocimiento",
+      "opciones": [
+        {
+          "texto": "Autorizado. Entren. Protocolo 3 activo en todo momento. Ningún ruido. Ningún movimiento brusco. Suerte.",
+          "siguiente": "nodo_entrada_recinto",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_entrada_recinto",
+      "tipo": "check",
+      "ambiente": "entrada sur de la feria — callejones entre puestos derruidos, visibilidad parcial",
+      "texto_control": "El equipo entra a los terrenos. Los puestos colapsados forman callejones irregulares — hay cobertura visual abundante pero la acústica es muy pobre: los materiales metálicos oxidados retienen y amplifican el sonido. Los Chacales de Feria escuchan cambios de 2 dB en ambientes conocidos. El agente de mayor sigilo abre la marcha hacia la primera posición de observación sin anunciar presencia.",
+      "texto_agente": "Entrando. Los callejones dan buena cobertura. El problema es el sonido — cualquier roce con el metal va a resonar. Avanzando con pasos muy cortos.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_posicion_obs_ideal",
+          "éxito": "nodo_posicion_obs",
+          "fallo": "nodo_centinela_mira",
+          "crítico_fallo": "nodo_centinela_mira"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_posicion_obs_ideal",
+      "tipo": "narrativo",
+      "ambiente": "posición detrás de un puesto derruido — vista completa hacia el área central de la feria",
+      "texto_control": "El equipo llegó a una posición ideal sin ser detectado. Desde detrás del puesto colapsado tienen vista completa hacia el área central donde la manada está instalada. Se distinguen claramente los dos centinelas — uno en lo alto de una estructura de juego mecánico oxidado, otro en el extremo opuesto del área. El resto de la manada descansa en el centro. El equipo tiene la mejor posición posible para observación.",
+      "texto_agente": "Posición ideal. Vista completa. Dos centinelas visibles — uno en lo alto del carrusel, otro en el extremo norte. El resto está descansando. El analista empieza la documentación.",
+      "agente_voz": "reconocimiento",
+      "opciones": [
+        {
+          "texto": "Perfecto. Inicien documentación del patrón de relevos. Protocolo 3 sostenido.",
+          "siguiente": "nodo_estudio_relevos",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "flag", "nombre": "posicion_ideal", "valor": true }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_posicion_obs",
+      "tipo": "narrativo",
+      "ambiente": "posición parcial detrás de estructura metálica — vista parcial hacia el área central",
+      "texto_control": "El equipo llegó a una posición de observación parcial — tienen vista hacia el área central pero el ángulo está limitado por una estructura metálica entre ellos y la manada. Los centinelas no son completamente visibles desde aquí. La documentación será más incompleta pero el equipo está en posición sin ser detectado.",
+      "texto_agente": "Posición conseguida pero el ángulo no es perfecto. Veo parte de la manada. Los centinelas están... uno es visible, el otro está detrás de esa estructura. El analista documenta lo que puede ver.",
+      "agente_voz": "reconocimiento",
+      "opciones": [
+        {
+          "texto": "Entendido. Documenten lo que tengan desde esa posición. No cambien de posición por ahora.",
+          "siguiente": "nodo_estudio_relevos",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_centinela_mira",
+      "tipo": "decision",
+      "ambiente": "callejón entre puestos — uno de los centinelas giró en dirección al equipo",
+      "texto_control": "Uno de los centinelas giró. Está mirando hacia el callejón donde está el equipo — no directamente, pero el ángulo de la cabeza indica alerta auditiva. El Chacal está procesando si lo que escuchó es amenaza o eco del entorno. El equipo tiene que decidir ahora: quedarse completamente quieto durante 30–60 segundos hasta que el centinela pierda el interés, o iniciar retirada preventiva.",
+      "texto_agente": "El centinela giró. Nos mira... o mira hacia acá. Quietos. No se mueve nadie.",
+      "agente_voz": "reconocimiento",
+      "opciones": [
+        {
+          "texto": "Quietos absoluto. Treinta segundos. Si el centinela no avanza, continúen con precaución.",
+          "siguiente": "nodo_posicion_obs",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "cordura", "delta": -10, "alcance": "todos" }
+          ]
+        },
+        {
+          "texto": "Retirada preventiva. Abortar antes de que el centinela confirme.",
+          "siguiente": "final_fracaso_extraccion",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_estudio_relevos",
+      "tipo": "check",
+      "ambiente": "posición de observación — manada estable, centinelas en rotación",
+      "texto_control": "El equipo observa en silencio. Los Chacales de Feria tienen un sistema de relevos que CENVAC ha documentado en otras manadas como altamente regular — cada 18 a 22 minutos en promedio. El agente biológico analiza los movimientos, las posiciones y las vocalizaciones subaudibles entre individuos. Una identificación correcta del patrón permite anticipar la próxima ventana de cambio de guardia.",
+      "texto_agente": "Observando. El relevo se acerca... uno de los centinelas se mueve hacia el otro. Hay intercambio de señal — no vocal, algo con la postura corporal. El analista está tomando nota de todo.",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_patron_completo",
+          "éxito": "nodo_patron_confirmado",
+          "fallo": "nodo_patron_parcial",
+          "crítico_fallo": "nodo_patron_parcial"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_patron_completo",
+      "tipo": "narrativo",
+      "ambiente": "posición de observación — patrón de relevos completamente documentado",
+      "texto_control": "El agente biológico logró documentación completa del patrón: los relevos ocurren cada 21 minutos, hay tres posiciones fijas de centinela (no dos como se creía), y el intercambio incluye una señal de postura corporal que parece transferir información sobre amenazas detectadas. Es más que lo que CENVAC tenía. El objetivo primario está cumplido. El equipo ahora puede elegir intentar muestra adicional.",
+      "texto_agente": "Patrón documentado completamente. Tres posiciones, no dos. Relevos cada 21 minutos. El intercambio lleva información — hay una señal de postura. Esto es más de lo que esperábamos. Objetivo primario cumplido. ¿Intentamos muestra adicional?",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Excelente. Procedan a intentar muestra adicional si la posición lo permite.",
+          "siguiente": "nodo_senal_feria",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "flag", "nombre": "patron_documentado", "valor": true },
+            { "tipo": "muestra_obtenida", "valor": "datos_patron_centinela" }
+          ]
+        },
+        {
+          "texto": "Suficiente. No arriesguen más. Inicien retirada con lo que tienen.",
+          "siguiente": "nodo_retirada",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "flag", "nombre": "patron_documentado", "valor": true },
+            { "tipo": "muestra_obtenida", "valor": "datos_patron_centinela" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_patron_confirmado",
+      "tipo": "narrativo",
+      "ambiente": "posición de observación — patrón parcialmente documentado",
+      "texto_control": "El agente biológico documentó el patrón básico: relevos aproximadamente cada 20 minutos, dos posiciones de centinela confirmadas. Los datos son suficientes para el objetivo primario aunque no completos. El equipo puede intentar muestra adicional si la posición lo permite.",
+      "texto_agente": "Patrón documentado — básico pero completo. Dos centinelas, relevos a los veinte minutos. El objetivo primario está. ¿Intentamos muestra adicional?",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Procedan a intentar muestra adicional si la posición lo permite.",
+          "siguiente": "nodo_senal_feria",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "flag", "nombre": "patron_documentado", "valor": true },
+            { "tipo": "muestra_obtenida", "valor": "datos_patron_centinela" }
+          ]
+        },
+        {
+          "texto": "No arriesguen más. Inicien retirada con lo que tienen.",
+          "siguiente": "nodo_retirada",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "flag", "nombre": "patron_documentado", "valor": true },
+            { "tipo": "muestra_obtenida", "valor": "datos_patron_centinela" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_patron_parcial",
+      "tipo": "narrativo",
+      "ambiente": "posición de observación — documentación incompleta, movimientos difíciles de analizar",
+      "texto_control": "La documentación no pudo completarse con certeza. El equipo observó algunos relevos pero el ángulo y la distancia no permitieron analizar el patrón con rigor. Hay datos, pero insuficientes para conclusiones definitivas sobre el sistema de centinela. El equipo puede intentar muestra adicional para compensar parcialmente.",
+      "texto_agente": "Documentación parcial. Los relevos son irregulares desde este ángulo o el patrón es más complejo de lo esperado. No tengo datos definitivos. ¿Intentamos muestra adicional?",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Intenten muestra adicional. Necesitamos algo concreto de esta operación.",
+          "siguiente": "nodo_senal_feria",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "No. Salgan con lo que tienen. La muestra parcial puede tener valor.",
+          "siguiente": "nodo_retirada",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [
+        { "tipo": "cordura", "delta": -5, "alcance": "lider" }
+      ],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_senal_feria",
+      "tipo": "narrativo",
+      "ambiente": "posición de observación — señal de radio degradada por estructuras metálicas oxidadas",
+      "texto_control": "La señal de radio pierde calidad al intentar transmitir desde la posición interior. Las estructuras metálicas oxidadas de los juegos mecánicos crean interferencia electromagnética en las frecuencias de campo. Las transmisiones llegan fragmentadas. El equipo elige método de muestra adicional.",
+      "texto_agente": "C█ntrol... posición interio█. La señal pierde por el metal de los juegos. Elegimos mét█do de muestra. Esperando instruc█ión.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Método A: saliva fresca. Aproximación a individuo en descanso durante el relevo. Máximo riesgo, máximo valor.",
+          "siguiente": "nodo_aprox_durmiente",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Método B: pelo de muda reciente. Buscar en zonas de descanso sin aproximar individuo activo. Bajo riesgo.",
+          "siguiente": "nodo_rastreo_pelo",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_aprox_durmiente",
+      "tipo": "check",
+      "ambiente": "durante el relevo de centinela — individuo en descanso a 8 metros, centinelas cambiando posición",
+      "texto_control": "El relevo de centinela es la única ventana viable: mientras los dos centinelas se intercambian posición, ambos están en movimiento y su atención está dividida. El individuo en descanso más cercano está a 8 metros. El agente de mayor sigilo tiene que llegar, aplicar el hisopo en la comisura de la boca del animal dormido, y retirarse antes de que el relevo se complete. La ventana es de aproximadamente 40 segundos.",
+      "texto_agente": "Empezó el relevo. Los centinelas se mueven. El durmiente está a ocho metros. Voy. Cuenten los segundos.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 14,
+        "modificadores_ambiente": -2,
+        "resultados": {
+          "crítico_éxito": "nodo_muestra_saliva",
+          "éxito": "nodo_muestra_saliva",
+          "fallo": "nodo_centinela_detecta",
+          "crítico_fallo": "nodo_centinela_detecta"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_muestra_saliva",
+      "tipo": "narrativo",
+      "ambiente": "posición de extracción — hisopo aplicado, regreso a posición de cobertura",
+      "texto_control": "El agente llegó, aplicó el hisopo en la comisura del animal dormido y regresó a posición de cobertura antes de que el relevo terminara. El animal no se movió. La saliva está en el contenedor. El equipo no fue detectado.",
+      "texto_agente": "Hisopo aplicado y de regreso. El animal no se movió. El relevo terminó sin que notaran nada. Muestra de saliva en contenedor. Listos para retirada.",
+      "agente_voz": "reconocimiento",
+      "opciones": [
+        {
+          "texto": "Perfecto. Muestra asegurada. Inicien retirada inmediata.",
+          "siguiente": "nodo_retirada",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "saliva_fresca_chacal" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_centinela_detecta",
+      "tipo": "decision",
+      "ambiente": "área central de la feria — centinela nuevo en posición, mirando en dirección del agente en movimiento",
+      "texto_control": "El nuevo centinela tomó posición y detectó movimiento. No ha vocalizado todavía — está procesando el estímulo. El equipo tiene tres segundos antes de que el chacal decida si lo que vio es amenaza. Congelar ahora puede ser suficiente si el movimiento fue mínimo. Si el centinela vocaliza, toda la manada se activa.",
+      "texto_agente": "El centinela nuevo nos vio. Está procesando. — congelamos —",
+      "agente_voz": "reconocimiento",
+      "opciones": [
+        {
+          "texto": "Congelen. Absoluto. Si el centinela vocaliza, retirada inmediata.",
+          "siguiente": "nodo_freeze_check",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "cordura", "delta": -15, "alcance": "todos" }
+          ]
+        },
+        {
+          "texto": "Retirada inmediata. No esperen al centinela. Protocolo de aborto.",
+          "siguiente": "nodo_retirada_urgente",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_freeze_check",
+      "tipo": "check",
+      "ambiente": "posición congelada — centinela evaluando estímulo, manada en alerta media",
+      "texto_control": "El equipo está quieto. El centinela sigue mirando. Diez segundos. Quince. El animal mueve la cabeza levemente — procesando. Si el equipo mantuvo la inmovilidad completa, el centinela puede concluir que lo que vio fue un error de percepción. Si alguien se movió, el centinela vocaliza.",
+      "texto_agente": "Congelados. El centinela nos mira. No respiren.",
+      "agente_voz": "veterano",
+      "check": {
+        "stat": "mental",
+        "agente": "lider",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_retirada",
+          "éxito": "nodo_retirada",
+          "fallo": "nodo_cascada_alerta",
+          "crítico_fallo": "nodo_cascada_alerta"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_rastreo_pelo",
+      "tipo": "check",
+      "ambiente": "zona de descanso periférica — pelo de muda en superficies de los puestos",
+      "texto_control": "El agente biológico busca pelo de muda reciente en las zonas de descanso periféricas de la manada — las superficies de los puestos derruidos donde los individuos se han restregado. El pelo de muda tiene valor menor que la saliva pero permite análisis de fenotipo y parásitos externos. La zona periférica está fuera de la vista directa de los centinelas.",
+      "texto_agente": "Buscando pelo de muda en la zona periférica. Hay algo aquí en el borde del puesto... varios mechones. El analista evalúa la calidad.",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 10,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_muestra_pelo",
+          "éxito": "nodo_muestra_pelo",
+          "fallo": "nodo_muestra_pelo",
+          "crítico_fallo": "nodo_retirada"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_muestra_pelo",
+      "tipo": "narrativo",
+      "ambiente": "zona periférica — mechones de pelo de muda en contenedor estándar",
+      "texto_control": "El agente biológico recolectó pelo de muda. La muestra tiene valor para análisis de fenotipo, parásitos externos y posiblemente ADN mitocondrial si las muestras son suficientemente frescas. No tiene el valor de la saliva, pero es segura y está en el contenedor.",
+      "texto_agente": "Pelo de muda recolectado. Varios mechones de distintos individuos. Muestra en contenedor. Iniciando retirada.",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Confirmo. Muestra asegurada. Inicien retirada.",
+          "siguiente": "nodo_retirada",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "pelo_muda_chacal" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_retirada",
+      "tipo": "check",
+      "ambiente": "callejones de retirada — entre los puestos derruidos hacia la salida sur",
+      "texto_control": "El equipo inicia la retirada por los mismos callejones de entrada. Los centinelas están en sus posiciones habituales. El equipo conoce el camino, pero el regreso es igual de delicado que la entrada — el metal oxidado sigue amplificando el sonido. El agente de mayor sigilo lidera la retirada.",
+      "texto_agente": "Iniciando retirada por la ruta de entrada. Pasos cortos. El metal sigue siendo el problema.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_exterior",
+          "éxito": "nodo_exterior",
+          "fallo": "nodo_retirada_urgente",
+          "crítico_fallo": "nodo_cascada_alerta"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_retirada_urgente",
+      "tipo": "check",
+      "ambiente": "terrenos de la feria — centinela en alerta alta, posible detección inminente",
+      "texto_control": "El equipo fue parcialmente detectado. El centinela está en posición de alerta, mirando hacia la dirección del equipo. No ha vocalizado todavía — la vocalizacion de alerta activa a la manada completa. El equipo tiene que salir de la zona visual del centinela antes de que eso ocurra. Correr activa la cascada. Caminar rápido, sin correr.",
+      "texto_agente": "El centinela está encima. Nos vio o nos va a ver. Sin correr — caminar rápido hacia la salida. Ahora.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_exterior",
+          "éxito": "nodo_exterior",
+          "fallo": "nodo_cascada_alerta",
+          "crítico_fallo": "nodo_cascada_alerta"
+        }
+      },
+      "efectos": [
+        { "tipo": "estamina", "delta": -10, "alcance": "todos" }
+      ],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_cascada_alerta",
+      "tipo": "check",
+      "ambiente": "terrenos de la feria — vocalización de centinela, manada completa en activación",
+      "texto_control": "El centinela vocalizó. El ladrido corto y específico del Chacal de Feria en cascada de alerta resuena en toda la zona. La manada completa se levantó en segundos — seis individuos en posición de caza coordinada. Los Chacales de Feria en persecución coordinada son más rápidos que un humano en terreno abierto. En los callejones estrechos de la feria, la ventaja del equipo es la cobertura. El agente más físico tiene que mantener la distancia mientras el resto llega a la salida.",
+      "texto_agente": "— CASCADA — vocalizó. La manada está arriba. Seis individuos. Corriendo hacia la salida.",
+      "agente_voz": "asalto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 14,
+        "modificadores_ambiente": -2,
+        "resultados": {
+          "crítico_éxito": "nodo_exterior",
+          "éxito": "nodo_exterior",
+          "fallo": "final_fracaso_catastrofico",
+          "crítico_fallo": "final_fracaso_catastrofico"
+        }
+      },
+      "efectos": [
+        {
+          "tipo": "herida",
+          "valor": { "tipo": "mordedura_chacal", "severidad": 2, "parte_cuerpo": "pierna", "efecto_stat": { "físico": -1, "sigilo": -2 } },
+          "alcance": "aleatorio"
+        },
+        { "tipo": "cordura", "delta": -20, "alcance": "todos" },
+        { "tipo": "estamina", "delta": -20, "alcance": "todos" }
+      ],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_exterior",
+      "tipo": "narrativo",
+      "ambiente": "exterior de los terrenos — calle abierta, señal de radio recuperada",
+      "texto_control": "El equipo está afuera de los terrenos de la feria. La señal de radio vuelve a 100%. El último callejón queda atrás. El equipo reporta estado y aguarda instrucción de retorno al punto de mando.",
+      "texto_agente": "Estamos afuera. Todos presentes. Señal recuperada. Listo para retorno al punto de mando.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmado. Regresen al punto de mando. Operación EVT-AGS-2026-0318 concluida.",
+          "siguiente": "nodo_resolucion",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_resolucion",
+      "tipo": "resolucion",
+      "texto_control": "La operación está cerrada. CENVAC-Central procesa el resultado. El archivo del evento EVT-AGS-2026-0318 será actualizado.",
+      "logica_resolucion": [
+        {
+          "condicion": { "muestra_obtenida": true, "muestra_tipo": "saliva_fresca_chacal", "bajas_count": 0, "heridas_graves_count": 0 },
+          "siguiente": "final_exito_limpio"
+        },
+        {
+          "condicion": { "muestra_obtenida": true, "bajas_count": 0, "heridas_graves_count": 0 },
+          "siguiente": "final_exito_parcial"
+        },
+        {
+          "condicion": { "muestra_obtenida": true, "bajas_count": 0, "heridas_graves_count_gte": 1 },
+          "siguiente": "final_exito_pirrico"
+        },
+        {
+          "condicion": { "muestra_obtenida": false, "bajas_count": 0 },
+          "siguiente": "final_fracaso_extraccion"
+        },
+        {
+          "condicion": { "muestra_obtenida": false, "bajas_count_gte": 1 },
+          "siguiente": "final_fracaso_catastrofico"
+        }
+      ],
+      "efectos": []
+    },
+    {
+      "id": "final_exito_limpio",
+      "tipo": "final",
+      "resultado": "exito_limpio",
+      "titulo": "Documentación completa — saliva asegurada — equipo nunca detectado",
+      "texto_control": "Operación EVT-AGS-2026-0318 cerrada con resultado óptimo. El patrón de relevos fue documentado y la muestra de saliva fue obtenida sin que la manada detectara al equipo en ningún momento. Esta es la primera muestra de saliva fresca de Chacal de Feria obtenida en campo activo. El archivo del bestiario será actualizado.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo completó la inserción, establecimiento de posición de observación, documentación del patrón de relevos y extracción de muestra de saliva durante el relevo de centinela. La manada no detectó al equipo en ningún momento de la operación.",
+        "hallazgos": "Primera muestra de saliva fresca de Chacal de Feria obtenida en campo. El patrón de relevos documentado revela mayor complejidad que la estimación previa: tres posiciones de centinela (no dos), relevos cada 21 minutos con señal de postura que transfiere información entre individuos. Datos de alto valor para actualización del archivo del bestiario.",
+        "notas_analista": "La operación establece protocolo viable para documentación y extracción de muestra de Chacal de Feria en formación de centinela: observación extendida previa, aproximación durante ventana de relevo, retirada por ruta de entrada. La muestra de saliva está en contenedor clase B. Distribución a Dpto. de Análisis Biológico autorizada."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_exito_parcial",
+      "tipo": "final",
+      "resultado": "exito_parcial",
+      "titulo": "Documentación lograda — muestra alternativa — sin detección",
+      "texto_control": "Operación EVT-AGS-2026-0318 cerrada con resultado aceptable. El patrón de relevos fue documentado y el equipo regresó con muestra alternativa (pelo de muda o solo datos de comportamiento). Sin detección confirmada.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación cumplió el objetivo primario de documentación del patrón de centinela. La muestra obtenida es alternativa al objetivo principal de saliva fresca, pero tiene valor científico documentable. El equipo regresó sin bajas ni heridas graves y sin haber sido detectado.",
+        "hallazgos": "Patrón de relevos documentado. Muestra alternativa (pelo de muda o datos de comportamiento) obtenida. La zona de la Feria Nacional confirma presencia establecida de manada con formación de centinela funcional.",
+        "notas_analista": "La operación aporta datos de comportamiento de alto valor. Se recomienda segunda operación específicamente para obtención de muestra de saliva, aprovechando el conocimiento del patrón de relevos ahora documentado."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_exito_pirrico",
+      "tipo": "final",
+      "resultado": "exito_pirrico",
+      "titulo": "Muestra obtenida — encuentro con centinela — herido grave",
+      "texto_control": "Operación EVT-AGS-2026-0318 cerrada. Muestra obtenida. Un agente sufrió heridas graves durante el encuentro con la manada en la retirada. El objetivo de muestra se cumplió a un costo significativo.",
+      "clasificacion_doc": "Nivel 3 — Acceso restringido — Revisión de Coordinación requerida",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación obtuvo muestra pero el equipo fue detectado durante la retirada. El encuentro con la manada resultó en heridas graves sin baja crítica. Las circunstancias del encuentro están documentadas en los logs.",
+        "hallazgos": "Muestra obtenida. Las heridas registradas son consistentes con mordedura de Chacal de Feria en persecución coordinada en espacio semiabierto.",
+        "notas_analista": "La detección durante la retirada sugiere que el protocolo de salida necesita revisión. Se recomienda planificar dos rutas de retirada alternativas en futuras operaciones en terrenos con fauna en formación de centinela."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_fracaso_extraccion",
+      "tipo": "final",
+      "resultado": "fracaso_extraccion",
+      "titulo": "Retirada preventiva — sin muestra — equipo intacto",
+      "texto_control": "Operación EVT-AGS-2026-0318 cerrada sin muestra. El equipo regresó completo. La retirada fue preventiva antes de que el centinela confirmara detección. Los datos de observación previos al aborto tienen valor parcial.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo completó la inserción y observación parcial pero abortó la operación antes de la fase de extracción de muestra. La retirada fue oportuna y sin bajas.",
+        "hallazgos": "Sin muestra biológica. Los datos de observación parcial confirman presencia activa de la manada y formación de centinela funcional. La información es suficiente para planificar una segunda operación con mejor posición inicial.",
+        "notas_analista": "La decisión de abortar preventivamente fue correcta según el protocolo. Se recomienda segunda operación con acceso por el flanco norte para mejor ángulo de posición de observación sin exposición a los centinelas."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_fracaso_catastrofico",
+      "tipo": "final",
+      "resultado": "fracaso_catastrofico",
+      "titulo": "Cascada de alerta — persecución coordinada — bajas confirmadas",
+      "texto_control": "Operación EVT-AGS-2026-0318 cerrada. Sin muestra. Bajas confirmadas. El Protocolo 11 fue activado. La manada activó cascada de alerta completa. La zona de la Feria Nacional será reclasificada a nivel III.",
+      "clasificacion_doc": "Nivel 4 — Acceso restringido — Revisión obligatoria de Coordinación",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación resultó en bajas durante la persecución coordinada de la manada tras la activación de la cascada de alerta. Las circunstancias exactas están en los logs de comunicaciones.",
+        "hallazgos": "Sin muestra recuperada. Bajas documentadas. La capacidad de persecución coordinada del Chacal de Feria en terreno semiabierto es mayor de lo documentado en el bestiario actual para esta formación de manada.",
+        "notas_analista": "Este resultado requiere revisión de los protocolos de operación en zonas con manada de Chacal de Feria en formación de centinela. La cascada de alerta activa una respuesta de persecución coordinada que excede los parámetros actuales de contención para clase II. Se recomienda reclasificación de esta formación específica."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": [
+        {
+          "tipo": "baja_garantizada",
+          "valor": { "tipo": "mordedura_multiple_chacal", "parte_cuerpo": "torso_y_piernas", "severidad": 4 },
+          "alcance": "aleatorio"
+        }
+      ]
+    }
+  ]
+}

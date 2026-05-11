@@ -24,5 +24,135 @@
       "forma": "hexagono",
       "etiqueta": "AH-ACTIVO"
     }
+  },
+  {
+    "id": "EVT-AGS-2026-0203",
+    "lat": 21.882,
+    "lng": -102.297,
+    "ubicacion_descrita": "Parque hundido del Barrio de San Marcos — kiosco semi-colapsado, zona de fuente seca y arbolado caído",
+    "fecha_reporte": "2026-05-10",
+    "hora_reporte": "17:51",
+    "criatura_sospechada": "mosca_forunculo",
+    "clasificacion_confirmar": false,
+    "nivel_amenaza_estimado": "II",
+    "estado": "activo",
+    "mision_asociada": "mision-crepusculo-san-marcos",
+    "fuente_alerta": "Tres reportes civiles independientes — vecinos del Barrio de San Marcos, período 2026-05-08 a 2026-05-10",
+    "descripcion_alerta": "Tres avistamientos en 48 horas cerca del kiosco abandonado. Los reportes describen 'zumbido grueso al atardecer' con inicio consistente entre las 18:00 y las 18:30. Un testigo refirió insecto de 'tres o cuatro centímetros, café oscuro, abdomen abultado'. Descripción compatible con hembra adulta de Mosca Forúnculo en fase de actividad crepuscular. CENVAC sospecha colonia incipiente establecida en el kiosco colapsado. Actividad diurna no reportada.",
+    "coordenadas_foco": {
+      "lat": 21.8822,
+      "lng": -102.2971,
+      "descripcion": "Interior del kiosco colapsado del Parque San Marcos — concentración de adultas bajo el techo caído, según análisis de reportes civiles"
+    },
+    "notas_operativas": "La zona del parque está sin mantenimiento desde semana 2 post-Emergencia. Vegetación creció sobre los caminos principales. La fuente central está seca. Acceso peatonal posible desde Calle Madero (norte) o Av. Héroe de Nacozari (sur). Civiles en zona: ninguno confirmado después de las 17:30. La ventana de operación es estricta — 18:00 a 20:30. Protocolo 4-A aplicable.",
+    "icono_mapa": {
+      "color": "ambar",
+      "forma": "circulo",
+      "etiqueta": "MF-CREPÚSCULO"
+    }
+  },
+  {
+    "id": "EVT-AGS-2026-0215",
+    "lat": 21.808,
+    "lng": -102.262,
+    "ubicacion_descrita": "Antiguo ingenio azucarero — periferia sur de Aguascalientes, estructuras de molienda semiderruidas",
+    "fecha_reporte": "2026-05-08",
+    "hora_reporte": "09:22",
+    "criatura_sospechada": "cervato_de_concreto",
+    "clasificacion_confirmar": false,
+    "nivel_amenaza_estimado": "III",
+    "estado": "activo",
+    "mision_asociada": "mision-zafra-de-concreto",
+    "fuente_alerta": "Informante local — operario de reciclaje, denuncia anónima por canal CENVAC-7",
+    "descripcion_alerta": "Manada establecida en estructuras de molienda del antiguo ingenio. Comportamiento territorial creciente desde hace tres semanas. Tres trabajadores de reciclaje desaparecidos en el período 2026-04-24 a 2026-05-07. La fuente describe 'animales del tamaño de un toro, grises, que suenan como cuando se rompe concreto'. Compatible con Cervato de Concreto en manada establecida (3–5 individuos estimados). El macho dominante fue observado en marcado territorial activo en la primera semana del mes.",
+    "coordenadas_foco": {
+      "lat": 21.8083,
+      "lng": -102.2618,
+      "descripcion": "Sala de molienda principal del ingenio — múltiples niveles de estructura semiderruida, acceso por pasillo de servicio este"
+    },
+    "notas_operativas": "El polvo de concreto persistente reduce visibilidad y deja huellas en el suelo — rastro del equipo visible para seguimiento posterior. Estructuras con varios niveles, cobertura de escombros abundante. Protocolo 8-A (contención selectiva) activo: solo el macho dominante puede ser neutralizado. Cualquier baja secundaria de la manada es exceso operativo.",
+    "icono_mapa": {
+      "color": "rojo",
+      "forma": "hexagono",
+      "etiqueta": "CC-MANADA"
+    }
+  },
+  {
+    "id": "EVT-AGS-2026-0228",
+    "lat": 21.882,
+    "lng": -102.2978,
+    "ubicacion_descrita": "Terrenos de la Feria Nacional de San Marcos — zona de puestos colapsados y juegos mecánicos oxidados",
+    "fecha_reporte": "2026-05-09",
+    "hora_reporte": "14:05",
+    "criatura_sospechada": "chacal_de_feria",
+    "clasificacion_confirmar": false,
+    "nivel_amenaza_estimado": "II",
+    "estado": "activo",
+    "mision_asociada": "mision-feria-vacia",
+    "fuente_alerta": "Dron de reconocimiento CENVAC — sobrevuelo rutinario D-14, 2026-05-09",
+    "descripcion_alerta": "El dron D-14 registró termografía de 6 a 8 firmas térmicas de tamaño consistente con Chacal de Feria en zona de puestos colapsados de la feria. El análisis de comportamiento en el video de treinta minutos muestra formación de centinela documentada: dos individuos en posición periférica con movimiento de vigilancia mientras los demás permanecen estáticos. Formación de centinela solo reportada previamente en Chacal de Feria por F-02 en semana 2 de archivo. CENVAC requiere documentación del patrón de relevos y muestra de saliva con feromonas de comunicación si viable.",
+    "coordenadas_foco": {
+      "lat": 21.8818,
+      "lng": -102.2975,
+      "descripcion": "Zona interior de puestos colapsados — manada en posición de descanso con formación de centinela activa, callejón central de la feria"
+    },
+    "notas_operativas": "Cobertura visual abundante entre estructuras colapsadas. Acústica muy pobre — los chacales detectan movimiento y respiración elevada. Protocolo 3 + 4-A activo. Sigilo absoluto en aproximación. Si un centinela detecta al equipo, abortar sin excepción.",
+    "icono_mapa": {
+      "color": "ambar",
+      "forma": "triangulo",
+      "etiqueta": "CF-CENTINELA"
+    }
+  },
+  {
+    "id": "EVT-SIE-001",
+    "lat": 22.043,
+    "lng": -102.51,
+    "ubicacion_descrita": "Sierra Fría, vertiente sureste — posición de observación designada a cota 2,340 m",
+    "fecha_reporte": "2026-05-10",
+    "hora_reporte": "08:33",
+    "criatura_sospechada": "la_catedral",
+    "clasificacion_confirmar": false,
+    "nivel_amenaza_estimado": "IV",
+    "estado": "activo",
+    "mision_asociada": "mision-catedral-no",
+    "fuente_alerta": "Confirmación satelital — imagen de banda infrarroja procesada por CENVAC-Análisis Estratégico",
+    "descripcion_alerta": "Confirmación por satélite de movimiento en vertiente sureste de Sierra Fría. La firma infrarroja es consistente con espécimen clase IV — La Catedral — en desplazamiento al suroeste a velocidad estimada de 1.2 km/hora. Esta es la tercera confirmación satelital en 60 días. El espécimen no había sido observado en este sector en los doce meses previos. Protocolo 13 (Observación de Clase Extinción) activo desde la confirmación.",
+    "coordenadas_foco": {
+      "lat": 22.043,
+      "lng": -102.51,
+      "descripcion": "Posición de observación designada en cota 2,340 m — distancia mínima operacional 8 km desde la firma de La Catedral en el momento del reporte"
+    },
+    "notas_operativas": "DISTANCIA MÍNIMA DE 8 KM NO NEGOCIABLE. Protocolo 13 activo. Operación de observación pura — ninguna muestra biológica posible ni autorizada. El éxito se mide en datos de telemetría. Si el espécimen se aproxima a la línea de 8 km, retirada inmediata sin excepción. La interferencia de comunicación en proximidad del espécimen está documentada.",
+    "icono_mapa": {
+      "color": "rojo",
+      "forma": "estrella",
+      "etiqueta": "CAT-IV"
+    }
+  },
+  {
+    "id": "EVT-RIO-001",
+    "lat": 21.954,
+    "lng": -102.293,
+    "ubicacion_descrita": "Lecho seco del Río San Pedro — tramo norte, kilómetro 12 desde el cruce con periférico norte",
+    "fecha_reporte": "2026-05-10",
+    "hora_reporte": "11:45",
+    "criatura_sospechada": "gusano_de_asfalto",
+    "clasificacion_confirmar": false,
+    "nivel_amenaza_estimado": "II",
+    "estado": "activo",
+    "mision_asociada": "mision-rio-de-fierro",
+    "fuente_alerta": "Estación de monitoreo CENVAC — sensor sísmico estacionario SS-RIO-01, ribera este del Río San Pedro",
+    "descripcion_alerta": "El sensor SS-RIO-01 registra vibración subterránea consistente con migración de Gusano de Asfalto desde hace cuatro días. Los patrones de vibración son continuos en horario diurno con reducción nocturna — patrón de migración estacional documentado. La densidad estimada por volumen de vibración sugiere una colonia de 20 o más especímenes adultos en el tramo de 400 metros. Es la migración más grande registrada en este sector. CENVAC-Central requiere mapeo de ruta completa y estimación de población.",
+    "coordenadas_foco": {
+      "lat": 21.9542,
+      "lng": -102.2928,
+      "descripcion": "Lecho seco en tramo norte — zona de mayor densidad de vibración, acceso por ribera norte desde camino de terracería"
+    },
+    "notas_operativas": "Sensores de vibración portátiles obligatorios para todos los agentes. Protocolo de movimiento: pasos lentos y planos, sin correr ni saltar. Radio afectada por vibración del substrato — interferencia variable durante la operación. La estación de monitoreo SS-RIO-01 en ribera este puede usarse como punto de coordinación pasivo.",
+    "icono_mapa": {
+      "color": "verde",
+      "forma": "circulo",
+      "etiqueta": "GA-MIGRACIÓN"
+    }
   }
 ]

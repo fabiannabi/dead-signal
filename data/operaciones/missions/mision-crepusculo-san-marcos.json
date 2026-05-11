@@ -1,0 +1,615 @@
+{
+  "id": "mision-crepusculo-san-marcos",
+  "nombre": "Crepúsculo en San Marcos",
+  "descripcion": "Extracción de muestra de Mosca Forúnculo en Parque San Marcos. Ventana operacional estricta: 18:00–20:30. Fuera de esa ventana el enjambre nocturno hace la zona inviable.",
+  "tipo_mision": "extraccion_biologica",
+  "criatura": "mosca_forunculo",
+  "nivel_amenaza": "II",
+  "objetivo_primario": "Obtener muestra de hembra adulta viva (máximo valor taxonómico) o larva extraída de huésped reciente antes de las 20:30.",
+  "objetivo_secundario": "Documentar patrones de concentración crepuscular: zonas de actividad, estimación de densidad, conducta de enjambre.",
+  "muestra_objetivo": "hembra_adulta_viva",
+  "muestra_descripcion": "Hembra adulta de Mosca Forúnculo. 3–4 cm, cuerpo marrón-rojizo, abdomen dilatado por óvulos visibles. Muy frágil: muere en contenedor estándar en menos de 2 horas. Requiere contenedor clase A con humedad controlada. Alternativa aceptable: larva en estadio 2 extraída de tejido de huésped reciente.",
+  "nodo_inicial": "nodo_insercion",
+  "nodos": [
+    {
+      "id": "nodo_insercion",
+      "tipo": "narrativo",
+      "ambiente": "CENVAC-Central — frecuencia 5, las 17:51",
+      "texto_control": "Frecuencia 5-CENVAC operativa. El evento EVT-AGS-2026-0203 fue reportado tras tres avistamientos en 48 horas en el Parque San Marcos: 'zumbido grueso al atardecer' según fuentes locales. CENVAC sospecha colonia incipiente. El objetivo es una hembra adulta viva para análisis taxonómico completo y confirmación del ciclo reproductivo en zona urbana. La ventana operacional es estricta: 18:00 a 20:30. Después de ese límite, el enjambre nocturno hace la zona inviable. El equipo está en perímetro norte. Confirme recepción y autorice entrada.",
+      "texto_agente": "Posición en perímetro norte, junto a la barda de la calle Madero. Sin civiles en zona inmediata. El parque está en silencio todavía. El sol lleva unos veinte minutos de caída visible. Listos.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Autorizado. Entren por perímetro norte. Protocolo 4-A activo. Tienen dos horas y media. Empiecen.",
+          "siguiente": "nodo_reconocimiento",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_reconocimiento",
+      "tipo": "check",
+      "ambiente": "interior del parque — vegetación crecida, fuente seca, kiosco semi-colapsado al centro",
+      "texto_control": "El equipo entra al parque. La vegetación ha crecido sobre los caminos. La fuente central está seca. El kiosco, donde se han concentrado los avistamientos, está a unos 80 metros al interior. Un zumbido bajo y difuso está presente. El agente con mayor competencia biológica puede hacer un barrido del entorno para identificar zonas de concentración antes de que la luz cambie.",
+      "texto_agente": "Entrando. Vegetación alta, visibilidad media. El kiosco está al frente. Hay un zumbido muy bajo todavía. El analista hace el barrido.",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_zona_confirmada",
+          "éxito": "nodo_zona_confirmada",
+          "fallo": "nodo_zona_sin_info",
+          "crítico_fallo": "nodo_zona_sin_info"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_zona_confirmada",
+      "tipo": "narrativo",
+      "ambiente": "kiosco del parque — concentración de adultas bajo el techo colapsado, visible desde treinta metros",
+      "texto_control": "El agente biológico localiza el foco principal: el interior del kiosco colapsado concentra la mayor densidad de ejemplares. El techo caído ha creado una cavidad sombreada donde las hembras adultas se congregan antes de la dispersión nocturna. Hay actividad secundaria en la copa de un fresno muerto a la derecha del kiosco. La información es útil para elegir el método de extracción con ventaja.",
+      "texto_agente": "Localizado. El foco está bajo el techo caído del kiosco — hay hembras, se distinguen por el abdomen. El fresno muerto también tiene algo. Tenemos buena información para decidir.",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Excelente. Procedan. Elijan método de extracción.",
+          "siguiente": "nodo_luz_cambia",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "flag", "nombre": "zona_identificada", "valor": true }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_zona_sin_info",
+      "tipo": "narrativo",
+      "ambiente": "parque — zumbido difuso sin fuente clara identificable",
+      "texto_control": "El barrido no dio resultados precisos. El zumbido está presente pero difuso — distribuido entre el kiosco, los árboles y la fuente seca sin un foco claro. El equipo no tiene información ventajosa. Tendrán que buscar a ciegas o ir al método más directo.",
+      "texto_agente": "Sin localización precisa. El zumbido está en todas partes. Sin foco claro por ahora. Continuamos.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Entendido. Procedan sin esa información. Elijan método de extracción.",
+          "siguiente": "nodo_luz_cambia",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_luz_cambia",
+      "tipo": "decision",
+      "ambiente": "parque — la luz naranja del crepúsculo llena el espacio entre árboles, 18:22",
+      "texto_control": "Son las 18:22. La luz cambia rápido: en cuarenta minutos ya no habrá visibilidad útil. El zumbido ha subido de tono — las moscas están más activas. La señal de radio capta interferencia por el volumen de individuos en vuelo. Tienen tiempo, pero el tiempo tiene forma aquí. Elijan el método de extracción.",
+      "texto_agente": "La luz está cambiando. Las moscas se activaron con el crepúsculo, hay más vuelo visible. El zumbido empieza a interferir con la señal. Esperando instrucción de método.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Método A: trampa de captura viva en el kiosco. Alta complejidad, alto valor de muestra.",
+          "siguiente": "nodo_trampa_prep",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Método B: buscar huésped infectado en el perímetro. Larva de estadio 2 como alternativa viable.",
+          "siguiente": "nodo_huesped_busqueda",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Método C: recolección de adultos muertos o fragmentos en la base de los árboles. Fácil, valor bajo.",
+          "siguiente": "nodo_fragmentos",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_trampa_prep",
+      "tipo": "check",
+      "ambiente": "interior del kiosco colapsado — temperatura alta, olor orgánico, moscas a 1–2 metros",
+      "texto_control": "El operador técnico prepara la trampa de captura viva: cámara de luz ultravioleta baja más malla de contención clase A. El dispositivo atrae a las hembras por espectro pero requiere calibración correcta para atraparlas sin dañarlas. El kiosco es un espacio estrecho con el techo colapsado en ángulo — trabajar en esas condiciones requiere precisión.",
+      "texto_agente": "Entrando al kiosco. El olor es fuerte — tejido orgánico en el armazón de madera. Las moscas no reaccionaron a la entrada. Preparando el dispositivo de captura.",
+      "agente_voz": "tecnico",
+      "check": {
+        "stat": "técnico",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_trampa_espera",
+          "éxito": "nodo_trampa_espera",
+          "fallo": "nodo_trampa_fallo",
+          "crítico_fallo": "nodo_trampa_fallo"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_trampa_espera",
+      "tipo": "narrativo",
+      "ambiente": "kiosco — trampa activa, hembras orbitando el espectro UV, 18:41",
+      "texto_control": "La trampa está activa. El espectro UV bajo atrae a las adultas sin ahuyentarlas. El equipo espera quieto — cualquier movimiento puede romper el patrón de aproximación. El dispositivo necesita que al menos una hembra entre sola al compartimento de malla antes de activar el cierre.",
+      "texto_agente": "Trampa activa y funcionando. Hay una... dos hembras que están orbitando el espectro. No entraron todavía. Quietos. Esperando.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Mantengan la posición. Esperen a que entre sola. No activen el cierre prematuramente.",
+          "siguiente": "nodo_trampa_captura",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_trampa_captura",
+      "tipo": "check",
+      "ambiente": "kiosco — hembra dentro del perímetro de la trampa, oportunidad de cierre",
+      "texto_control": "Una hembra adulta está dentro del perímetro de la trampa. El agente biológico tiene que activar el cierre en el momento justo — demasiado pronto y la mosca escapa por el borde, demasiado tarde y se va sola. El contenedor de malla tiene que cerrarse sobre el cuerpo sin aplastarlo. El abdomen con óvulos es lo más frágil.",
+      "texto_agente": "Está dentro. El abdomen se ve claro. Voy a cerrar en tres... dos...",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_muestra_viva",
+          "éxito": "nodo_muestra_viva",
+          "fallo": "nodo_muestra_fragmento",
+          "crítico_fallo": "nodo_muestra_fragmento"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_trampa_fallo",
+      "tipo": "narrativo",
+      "ambiente": "kiosco — dispositivo mal calibrado, moscas no aproximan al compartimento",
+      "texto_control": "El dispositivo no está calibrado correctamente para el espacio interior. Las hembras se acercan al espectro UV pero no entran al compartimento de malla — el ángulo de instalación no crea el camino de aproximación esperado. Son las 19:05 cuando el equipo acepta que la trampa no va a funcionar aquí. Han perdido cuarenta y cuatro minutos.",
+      "texto_agente": "La trampa no funcionó. Las moscas orbitan pero no entran. Perdimos tiempo. Son casi las 19. Necesitamos cambiar de método.",
+      "agente_voz": "tecnico",
+      "opciones": [
+        {
+          "texto": "Abandonen la trampa. Con el tiempo que queda, salgan cuanto antes. Protocolo de retirada.",
+          "siguiente": "nodo_oscurece",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "estamina", "delta": -10, "alcance": "todos" },
+            { "tipo": "cordura", "delta": -5, "alcance": "lider" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_huesped_busqueda",
+      "tipo": "check",
+      "ambiente": "parque — zona de maleza alta cerca del muro perimetral este",
+      "texto_control": "La Mosca Forúnculo usa a los Chacales de Feria como huéspedes primarios en Aguascalientes. Un individuo infectado puede tener larvas de estadio 2 visibles en la piel. El agente biológico busca rastros de un chacal con signos de parasitismo en la zona perimetral del parque.",
+      "texto_agente": "Buscando huésped potencial en la zona este. El malezal cubre bastante. Hay rastros de un animal grande — huellas, pelo en el alambre de la barda. Buscando.",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_huesped_aprox",
+          "éxito": "nodo_huesped_aprox",
+          "fallo": "nodo_fragmentos",
+          "crítico_fallo": "nodo_fragmentos"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_huesped_aprox",
+      "tipo": "check",
+      "ambiente": "zona de maleza — chacal de feria descansando contra el muro, parasitismo visible en flanco izquierdo",
+      "texto_control": "El equipo localiza al chacal. Está descansando en el rincón del muro perimetral este, hocico sobre las patas. Los flancos presentan nódulos sub-dérmicos típicos de estadio 2 — al menos cuatro larvas viables visibles. El problema: el chacal está despierto y en reposo activo. Acercarse a distancia de extracción sin despertarlo requiere sigilo extremo.",
+      "texto_agente": "Hay un chacal a veinte metros contra el muro. Descansando pero no dormido — lo veo parpadear. Cuatro nódulos en el flanco izquierdo. La cuestión es llegar.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_huesped_extraccion",
+          "éxito": "nodo_huesped_extraccion",
+          "fallo": "nodo_huesped_alerta",
+          "crítico_fallo": "nodo_huesped_alerta"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_huesped_extraccion",
+      "tipo": "check",
+      "ambiente": "junto al muro — chacal a 80 cm, extracción de larva de estadio 2",
+      "texto_control": "El agente está a 80 centímetros del chacal. El animal sigue en reposo. Los nódulos del flanco izquierdo son del tamaño de un dedo. El procedimiento requiere punción suave con jeringa de campo y presión lateral — si el chacal siente la punción, puede reaccionar con violencia. La ventana es la inmovilidad actual.",
+      "texto_agente": "Estoy junto al flanco. El chacal no se ha movido. Aplicando la punción... ahora.",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_muestra_larva",
+          "éxito": "nodo_muestra_larva",
+          "fallo": "nodo_muestra_fragmento",
+          "crítico_fallo": "nodo_huesped_alerta"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_huesped_alerta",
+      "tipo": "check",
+      "ambiente": "zona de maleza — chacal despertó, en posición defensiva, vocalizando",
+      "texto_control": "El chacal reaccionó. Se levantó en menos de un segundo — movimiento de cero a alerta sin transición visible. Está vocalizando: el ladrido corto de advertencia. El equipo está a menos de diez metros. Si el chacal decide que son amenaza, cargará. El agente más físico puede interponerse para dar tiempo al resto.",
+      "texto_agente": "El chacal está arriba. Alerta, vocaliza. Nos está evaluando. — quietos, no corran —",
+      "agente_voz": "asalto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 13,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_muestra_fragmento",
+          "éxito": "nodo_muestra_fragmento",
+          "fallo": "final_fracaso_catastrofico",
+          "crítico_fallo": "final_fracaso_catastrofico"
+        }
+      },
+      "efectos": [
+        { "tipo": "cordura", "delta": -15, "alcance": "todos" },
+        { "tipo": "estamina", "delta": -10, "alcance": "aleatorio" }
+      ],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_fragmentos",
+      "tipo": "check",
+      "ambiente": "base de los árboles del parque — cadáveres de adultos, fragmentos de quitina en el suelo",
+      "texto_control": "El suelo bajo los árboles tiene adultos muertos en distintas fases — las moscas que agotaron su ciclo caen ahí. También hay fragmentos de quitina y alas. Valor menor para análisis morfológico, pero válido como muestra de emergencia. El agente con mayor competencia técnica hace la recolección con pinzas y contenedor estándar.",
+      "texto_agente": "Recolectando en la base de los árboles. Hay adultos muertos, sí. Algunos fragmentos. Lo que podamos llevar.",
+      "agente_voz": "tecnico",
+      "check": {
+        "stat": "técnico",
+        "agente": "mejor_stat",
+        "dificultad": 10,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_muestra_fragmento",
+          "éxito": "nodo_muestra_fragmento",
+          "fallo": "nodo_muestra_fragmento",
+          "crítico_fallo": "nodo_oscurece"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_muestra_viva",
+      "tipo": "narrativo",
+      "ambiente": "kiosco del parque — contenedor clase A sellado, hembra adulta viva en interior",
+      "texto_control": "La hembra adulta está en el contenedor clase A. Abdomen con óvulos visible a través del polímero transparente. Viva, movimiento activo. La muestra tiene el máximo valor taxonómico posible en campo. El contenedor tiene dos horas de vida útil antes de que la mosca entre en declive. El equipo tiene que salir.",
+      "texto_agente": "Muestra viva en contenedor. Hembra adulta confirmada, el abdomen es claro. El contenedor está sellado, monitoreo en verde. Listos para salir. Pero la luz está muy baja ya.",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Excelente. Protocolo 4-A completado. Salgan antes de que oscurezca.",
+          "siguiente": "nodo_oscurece",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "hembra_adulta_viva" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_muestra_larva",
+      "tipo": "narrativo",
+      "ambiente": "zona del muro este — larva de estadio 2 en contenedor estándar",
+      "texto_control": "La larva de estadio 2 está en el contenedor. Viable para análisis de ciclo reproductivo en entorno urbano — parte del objetivo primario de la operación. No es la hembra adulta, pero tiene valor científico confirmado. El equipo tiene que salir. La luz sigue bajando.",
+      "texto_agente": "Muestra de larva asegurada. Estadio 2, contenedor sellado. No es lo ideal pero es lo que pudimos obtener. La luz está muy baja ya.",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Protocolo 4-A con muestra alternativa. Confirmo. Salgan antes de que oscurezca.",
+          "siguiente": "nodo_oscurece",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "larva_estadio_2" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_muestra_fragmento",
+      "tipo": "narrativo",
+      "ambiente": "parque — fragmentos recolectados, contenedor estándar",
+      "texto_control": "El equipo tiene fragmentos y adultos muertos en el contenedor. Valor bajo para análisis reproductivo, pero útil para morfología comparativa. El objetivo primario no se cumplió en su forma ideal. Hay que salir con lo que hay. La ventana de tiempo está apretada.",
+      "texto_agente": "Muestra de fragmentos en contenedor. Adultos muertos, algo de quitina. No es lo que queríamos pero algo llevamos. Saliendo.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmo. Salgan. Protocolo 19 en curso con nota de incidencia de muestra.",
+          "siguiente": "nodo_oscurece",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "fragmentos_adulto" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_oscurece",
+      "tipo": "decision",
+      "ambiente": "parque San Marcos — luz residual mínima, zumbido crecido a nivel de enjambre incipiente",
+      "texto_control": "Son aproximadamente las 20:00. La luz quedó. El zumbido del parque subió de tono y volumen — la actividad nocturna comienza. La señal de radio está degradada por interferencia de vuelo masivo. El equipo tiene que salir ya. Dos opciones: correr hacia la salida norte (más corta, más ruido y movimiento) o avanzar lento contra la barda este (más larga, menor estimulación del enjambre).",
+      "texto_agente": "La luz se fue. El zumbido es otra cosa ahora — mucho más volumen. Aquí hay que salir pronto. Digan cómo.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Salida norte, ritmo rápido. Menor tiempo de exposición aunque más ruido. Salgan ya.",
+          "siguiente": "nodo_salida_rapida",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Barda este, movimiento lento y controlado. Más tiempo, menos estímulo para el enjambre.",
+          "siguiente": "nodo_salida_sigilo",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_alta"
+    },
+    {
+      "id": "nodo_salida_rapida",
+      "tipo": "check",
+      "ambiente": "parque — carrera hacia salida norte, enjambre en activación plena",
+      "texto_control": "El equipo corre hacia la salida norte. El movimiento y el ruido estimulan al enjambre — los individuos en vuelo se orientan hacia calor corporal y vibración. La velocidad es la única ventaja. Tienen menos de 200 metros hasta la barda.",
+      "texto_agente": "Corriendo. El enjambre está activo, los escucho detrás. Vamos.",
+      "agente_voz": "asalto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_exterior",
+          "éxito": "nodo_exterior",
+          "fallo": "nodo_enjambre_nocturno",
+          "crítico_fallo": "nodo_enjambre_nocturno"
+        }
+      },
+      "efectos": [{ "tipo": "estamina", "delta": -10, "alcance": "todos" }],
+      "audio_hint": "estatica_alta"
+    },
+    {
+      "id": "nodo_salida_sigilo",
+      "tipo": "check",
+      "ambiente": "parque — avance lento contra barda este, enjambre activo pero no orientado",
+      "texto_control": "El equipo se mueve lento contra la barda, sin levantar ruido, sin correr. Los individuos en vuelo no están orientados hacia ellos si minimizan el estímulo. El riesgo: el tiempo. Cada minuto en el parque es un minuto más de exposición. El agente de mayor sigilo marca el ritmo.",
+      "texto_agente": "Moviéndonos contra la barda. Lento. El zumbido está en todas partes pero no viene hacia nosotros. Todavía.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_exterior",
+          "éxito": "nodo_exterior",
+          "fallo": "nodo_enjambre_nocturno",
+          "crítico_fallo": "nodo_enjambre_nocturno"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "estatica_alta"
+    },
+    {
+      "id": "nodo_enjambre_nocturno",
+      "tipo": "check",
+      "ambiente": "parque — enjambre orientado, nube de individuos en vuelo denso",
+      "texto_control": "El enjambre se orientó hacia el equipo. La presión de picadura de múltiples individuos simultáneos en piel expuesta puede causar parasitismo múltiple en 24 horas. El equipo de protección estándar no está diseñado para densidad máxima. El agente más físico guía al equipo hacia la salida más cercana.",
+      "texto_agente": "El enjambre está encima. Hay presión de picadura en cuello y manos. La barda está a cincuenta metros.",
+      "agente_voz": "asalto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 14,
+        "modificadores_ambiente": -2,
+        "resultados": {
+          "crítico_éxito": "nodo_exterior",
+          "éxito": "nodo_exterior",
+          "fallo": "final_fracaso_catastrofico",
+          "crítico_fallo": "final_fracaso_catastrofico"
+        }
+      },
+      "efectos": [
+        {
+          "tipo": "herida",
+          "valor": {
+            "tipo": "picaduras_múltiples",
+            "severidad": 2,
+            "parte_cuerpo": "cuello_y_manos",
+            "efecto_stat": { "físico": -1 }
+          },
+          "alcance": "aleatorio"
+        },
+        { "tipo": "cordura", "delta": -20, "alcance": "todos" },
+        { "tipo": "estamina", "delta": -15, "alcance": "todos" }
+      ],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_exterior",
+      "tipo": "narrativo",
+      "ambiente": "calle Madero — fuera del perímetro del parque, señal recuperada",
+      "texto_control": "El equipo está afuera. La barda del parque queda detrás. La señal de radio vuelve a funcionar. El zumbido se atenuó con la distancia. El equipo reporta estado y aguarda instrucción de retorno al punto de mando.",
+      "texto_agente": "Estamos afuera. Todos presentes. Listo para retorno al punto de mando.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmado. Regresen al punto de mando. Operación EVT-AGS-2026-0203 concluida.",
+          "siguiente": "nodo_resolucion",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_resolucion",
+      "tipo": "resolucion",
+      "texto_control": "La operación está cerrada. CENVAC-Central procesa el resultado. El archivo del evento EVT-AGS-2026-0203 será actualizado.",
+      "logica_resolucion": [
+        {
+          "condicion": { "muestra_obtenida": true, "muestra_tipo": "hembra_adulta_viva", "bajas_count": 0, "heridas_graves_count": 0 },
+          "siguiente": "final_exito_limpio"
+        },
+        {
+          "condicion": { "muestra_obtenida": true, "bajas_count": 0 },
+          "siguiente": "final_exito_parcial"
+        },
+        {
+          "condicion": { "muestra_obtenida": true, "bajas_count_gte": 1 },
+          "siguiente": "final_exito_pirrico"
+        },
+        {
+          "condicion": { "muestra_obtenida": false, "bajas_count": 0 },
+          "siguiente": "final_fracaso_tiempo"
+        },
+        {
+          "condicion": { "muestra_obtenida": false, "bajas_count_gte": 1 },
+          "siguiente": "final_fracaso_catastrofico"
+        }
+      ],
+      "efectos": []
+    },
+    {
+      "id": "final_exito_limpio",
+      "tipo": "final",
+      "resultado": "exito_limpio",
+      "titulo": "Hembra adulta capturada — muestra viable — equipo intacto",
+      "texto_control": "Operación EVT-AGS-2026-0203 cerrada con resultado óptimo. Hembra adulta de Mosca Forúnculo capturada viva en condiciones conformes al Protocolo 4-A. El equipo regresó completo y sin heridas antes del límite de ventana operacional. Primera captura en vivo de hembra adulta en entorno urbano documentada por CENVAC. El archivo del bestiario será actualizado.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo completó la inserción y reconocimiento dentro de los primeros veinte minutos de la ventana operacional. La identificación de zona de concentración en el kiosco colapsado fue decisiva para la elección del método de captura. La hembra adulta fue capturada en contenedor clase A antes de las 19:30. El equipo salió del perímetro con margen antes del enjambre nocturno.",
+        "hallazgos": "Primera captura en vivo documentada de hembra adulta de Mosca Forúnculo en entorno urbano post-Emergencia. El kiosco colapsado funciona como zona de congregación crepuscular — temperatura interior más alta y humedad constante por madera en descomposición son factores atractivos. El enjambre nocturno se activa consistentemente después de las 20:00.",
+        "notas_analista": "La muestra llega al laboratorio en contenedor clase A con monitoreo de integridad verde. La hembra está viva al momento del reporte. Se recomienda procesamiento inmediato para máximo valor de datos de ciclo reproductivo. La operación establece protocolo viable para captura en entorno urbano: ventana crepuscular, trampa UV en espacio confinado con temperatura elevada."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_exito_parcial",
+      "tipo": "final",
+      "resultado": "exito_parcial",
+      "titulo": "Muestra alternativa asegurada — equipo intacto",
+      "texto_control": "Operación EVT-AGS-2026-0203 cerrada con resultado aceptable. El objetivo primario (hembra adulta viva) no fue obtenido en su forma ideal, pero el equipo regresó con muestra alternativa válida y sin bajas.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación no logró el objetivo primario pero obtuvo muestra alternativa de valor científico documentable. El equipo operó dentro de la ventana establecida y regresó sin bajas ni heridas graves.",
+        "hallazgos": "La muestra alternativa (larva de estadio 2 o fragmentos de adulto) permite análisis morfológico parcial. La zona del Parque San Marcos confirma presencia de colonia establecida con actividad crepuscular documentada.",
+        "notas_analista": "La operación aporta datos sobre la colonia aunque no cumplió el objetivo primario. Se recomienda segunda operación con ajustes de método para obtener hembra adulta viva."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_exito_pirrico",
+      "tipo": "final",
+      "resultado": "exito_pirrico",
+      "titulo": "Muestra obtenida — baja crítica por exposición",
+      "texto_control": "Operación EVT-AGS-2026-0203 cerrada. Muestra obtenida. Un agente sufrió heridas críticas o fue dado de baja durante el procedimiento. El objetivo primario se cumplió a un costo que excede lo aceptable para una misión de extracción clase II. Protocolo 11 activado retroactivamente.",
+      "clasificacion_doc": "Nivel 3 — Acceso restringido — Revisión de Coordinación requerida",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación cumplió el objetivo de extracción pero el equipo sufrió una baja crítica durante el proceso — probablemente durante el encuentro con el enjambre nocturno o con el huésped chacal.",
+        "hallazgos": "Muestra biológica obtenida y transportada. La baja crítica es consistente con exposición a picadura masiva de Mosca Forúnculo o con ataque de Chacal de Feria en zona perimetral.",
+        "notas_analista": "La picadura masiva del enjambre nocturno implica riesgo de parasitismo confirmado. El agente afectado requiere cuarentena de 14–21 días bajo Protocolo 7-B. Se recomienda revisión de los protocolos de evaluación de riesgo para operaciones crepusculares con esta especie."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": [
+        {
+          "tipo": "baja_garantizada",
+          "valor": { "tipo": "picaduras_masivas", "parte_cuerpo": "cuello_y_torso", "severidad": 4 },
+          "alcance": "aleatorio"
+        }
+      ]
+    },
+    {
+      "id": "final_fracaso_tiempo",
+      "tipo": "final",
+      "resultado": "fracaso_extraccion",
+      "titulo": "Ventana operacional agotada — sin muestra — equipo extraído",
+      "texto_control": "Operación EVT-AGS-2026-0203 cerrada sin muestra. El equipo regresó completo. La ventana operacional se agotó antes de poder asegurar muestra viable. La actividad de la colonia fue documentada durante la aproximación. El enjambre sigue activo en la zona.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo completó inserción y reconocimiento pero no pudo asegurar muestra viable dentro de la ventana de 18:00–20:30. La extracción del equipo se realizó sin bajas.",
+        "hallazgos": "Sin muestra biológica recuperada. La colonia del Parque San Marcos fue confirmada visualmente: concentración principal en el kiosco colapsado, actividad crepuscular consistente, enjambre nocturno que se activa después de las 20:00.",
+        "notas_analista": "El fracaso está relacionado con la restricción de ventana operacional. Se recomienda segunda operación priorizando método C (recolección de fragmentos) si el tiempo es una restricción crítica. La zona sigue activa y es candidata para nueva operación."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_fracaso_catastrofico",
+      "tipo": "final",
+      "resultado": "fracaso_catastrofico",
+      "titulo": "Enjambre nocturno — bajas confirmadas — sin muestra",
+      "texto_control": "Operación EVT-AGS-2026-0203 cerrada. Sin muestra. Bajas confirmadas. El Protocolo 11 fue activado. CENVAC-Central ha sido notificado. La zona del Parque San Marcos será reclasificada a nivel III durante el período nocturno.",
+      "clasificacion_doc": "Nivel 4 — Acceso restringido — Revisión obligatoria de Coordinación",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación resultó en bajas y fracaso del objetivo. El enjambre nocturno de Mosca Forúnculo alcanzó al equipo dentro del perímetro del parque o un encuentro con Chacal de Feria en zona perimetral se salió de control.",
+        "hallazgos": "Sin muestra recuperada. Bajas documentadas. La densidad de individuos en la zona documentada excede los parámetros evaluados en el briefing para clase II en entorno abierto.",
+        "notas_analista": "Los agentes expuestos a picadura masiva requieren cuarentena inmediata de 21 días bajo Protocolo 7-B. El ciclo de parasitismo de estadio 2 puede haberse iniciado. Se recomienda suspender operaciones nocturnas en la zona hasta revisión completa de protocolos."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": [
+        {
+          "tipo": "baja_garantizada",
+          "valor": { "tipo": "picaduras_masivas", "parte_cuerpo": "cuello_y_torso", "severidad": 4 },
+          "alcance": "aleatorio"
+        }
+      ]
+    }
+  ]
+}

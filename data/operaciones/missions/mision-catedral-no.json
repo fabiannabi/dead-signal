@@ -1,0 +1,727 @@
+{
+  "id": "mision-catedral-no",
+  "nombre": "Catedral No",
+  "descripcion": "Observación de clase extinción de La Catedral desde Sierra Fría. Distancia mínima 8 km no negociable. Protocolo 13 activo. El éxito se mide en telemetría, no en contacto.",
+  "tipo_mision": "observacion_pasiva",
+  "criatura": "la_catedral",
+  "nivel_amenaza": "IV",
+  "objetivo_primario": "Recolectar datos de telemetría completa: patrón de movimiento, firma acústica, datos térmicos. Distancia mínima 8 km en todo momento.",
+  "objetivo_secundario": "Mantener cohesión psicológica del equipo. Cualquier agente en quiebre activo es evacuado. Protocolo 13 no admite excepciones.",
+  "muestra_objetivo": "datos_telemetria",
+  "muestra_descripcion": "Datos de telemetría de La Catedral: patrón de desplazamiento, firma acústica de baja frecuencia y lectura térmica diferencial a distancia mínima de 8 km. No existe muestra biológica posible ni autorizada. El valor de esta información es estratégico y documental. CENVAC-Central los clasifica como Nivel 1 de prioridad.",
+  "nodo_inicial": "nodo_insercion",
+  "nodos": [
+    {
+      "id": "nodo_insercion",
+      "tipo": "narrativo",
+      "ambiente": "CENVAC-Central — frecuencia 13, sierra Fría — base de acceso sur",
+      "texto_control": "Frecuencia 13-CENVAC operativa. El evento EVT-SIE-001 se activó por confirmación satelital hace seis horas. La Catedral presenta movimiento en vertiente sureste de Sierra Fría, rumbo suroeste, velocidad estimada 1.2 km por hora. La ventana de observación es de cuatro a seis horas antes de que salga del rango útil o cambie de ruta. El equipo procede a punto de observación designado en cota 2,340 m. La distancia mínima de operación es ocho kilómetros. No negociable. Protocolo 13 activo: esta operación es de observación pura. No hay muestra biológica posible ni autorizada. El éxito se mide en datos. Confirme posición y autorice ascenso.",
+      "texto_agente": "Frecuencia 13 recibida. Posición en base de acceso sur, cota 1,890 m. Tenemos equipo completo: cuatro sensores sísmicos portátiles, dos telescopios térmicos, grabador acústico de baja frecuencia. Todo en verde. El ascenso al punto de observación son cuarenta minutos en condiciones normales. El aire está quieto. ¿Autorizan inicio de ascenso?",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Autorizado. Asciendan al punto designado. Protocolo 13 activo desde este momento. No se acerquen más de ocho kilómetros. Empiecen.",
+          "siguiente": "nodo_ascenso_sierra",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_ascenso_sierra",
+      "tipo": "check",
+      "ambiente": "Sierra Fría — sendero de acceso, cota 1,890–2,340 m, equipo técnico completo a cuestas",
+      "texto_control": "El ascenso a la cota de observación son 450 metros de desnivel con equipo técnico completo — sensores, telescopios, el grabador acústico de treinta kilos. La piedra suelta y el aire delgado hacen el recorrido más duro de lo esperado. El agente con mejor condición física lidera el paso.",
+      "texto_agente": "Ascendiendo. El equipo es pesado. El sendero está bien pero hay tramos de roca suelta. Vamos a ritmo sostenido.",
+      "agente_voz": "auto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_posicion_optima",
+          "éxito": "nodo_posicion_optima",
+          "fallo": "nodo_posicion_fatigada",
+          "crítico_fallo": "nodo_posicion_fatigada"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_posicion_optima",
+      "tipo": "narrativo",
+      "ambiente": "cota 2,340 m — punto de observación designado, horizonte despejado hacia sureste",
+      "texto_control": "El equipo llegó en buen estado. La cota de observación ofrece línea de visión despejada hacia el sureste — el horizonte cae limpio hasta el valle. A simple vista no hay nada fuera de lo ordinario, pero el horizonte tiene una escala que no se procesa del todo de golpe. El equipo instala equipo rápido. Todo en orden.",
+      "texto_agente": "En posición. Cota 2,340 confirmada. Horizonte despejado. El equipo en buen estado, sin incidentes en el ascenso. Instalando equipo ahora.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Bien. Instalen el equipo y calibren antes de que cambie la luz.",
+          "siguiente": "nodo_calibracion",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_posicion_fatigada",
+      "tipo": "narrativo",
+      "ambiente": "cota 2,340 m — punto de observación designado, equipo fatigado por el ascenso",
+      "texto_control": "El ascenso con el equipo técnico completo cobró su precio. Tardaron doce minutos más de lo calculado. El equipo llega con la respiración cortada y los músculos gastados. La posición es correcta pero el estado físico del equipo no es óptimo para lo que viene. Instalación del equipo lenta.",
+      "texto_agente": "En posición. Llegamos pero el ascenso nos pasó factura. El equipo está fatigado — especialmente quien cargó el grabador. Instalando equipo ahora. Más lento de lo ideal.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Entendido. Tómense dos minutos y luego calibren. No podemos perder más tiempo.",
+          "siguiente": "nodo_calibracion",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [{ "tipo": "estamina", "delta": -15, "alcance": "todos" }],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_calibracion",
+      "tipo": "check",
+      "ambiente": "punto de observación — telescopios y sensores desplegados, horizonte sureste",
+      "texto_control": "El operador técnico calibra los instrumentos: ajuste de ganancia en el grabador acústico, alineación de los telescopios térmicos, colocación de los sensores sísmicos en la roca. La calibración precisa determinará la calidad de los datos que puedan recolectar. El aire delgado y la temperatura baja complican el ajuste fino.",
+      "texto_agente": "Calibrando. Los telescopios térmicos necesitan ajuste fino por la temperatura. El grabador acústico está en modo escucha pasiva. Los sensores sísmicos en posición.",
+      "agente_voz": "tecnico",
+      "check": {
+        "stat": "técnico",
+        "agente": "mejor_stat",
+        "dificultad": 10,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_calibracion_completa",
+          "éxito": "nodo_calibracion_completa",
+          "fallo": "nodo_calibracion_basica",
+          "crítico_fallo": "nodo_calibracion_basica"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_calibracion_completa",
+      "tipo": "narrativo",
+      "ambiente": "punto de observación — instrumentos en verde, todo listo",
+      "texto_control": "Calibración completa y en parámetros óptimos. Los telescopios térmicos tienen resolución máxima para la distancia esperada. El grabador acústico está configurado para capturar frecuencias entre 0.5 y 200 Hz — el rango documentado de emisiones de clase IV. Los sensores sísmicos registran línea base del terreno. El equipo está listo para observación.",
+      "texto_agente": "Todo calibrado en óptimos. Los telescopios térmicos tienen resolución máxima. El grabador en escucha activa. Línea base sísmica establecida. Listos para primer contacto visual.",
+      "agente_voz": "tecnico",
+      "opciones": [
+        {
+          "texto": "Excelente. Estén listos. Busquen el espécimen en el horizonte sureste.",
+          "siguiente": "nodo_contacto_visual",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "flag", "nombre": "calibracion_optima", "valor": true }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_calibracion_basica",
+      "tipo": "narrativo",
+      "ambiente": "punto de observación — instrumentos en verde parcial, ajustes pendientes",
+      "texto_control": "La calibración no alcanzó parámetros óptimos. El telescopio térmico derecho tiene ganancia reducida por el frío — operará al 70% de resolución. El grabador acústico está configurado pero sin línea base perfecta. Los sensores sísmicos funcionan. El equipo puede trabajar, pero con menor margen de calidad en los datos.",
+      "texto_agente": "Calibración básica completada. El telescopio térmico derecho no alcanzó óptimos — temperatura del aire. El grabador en escucha activa, parámetros aceptables. Podemos proceder.",
+      "agente_voz": "tecnico",
+      "opciones": [
+        {
+          "texto": "Aceptable. Procedan con lo que tienen. Busquen el espécimen en el horizonte sureste.",
+          "siguiente": "nodo_contacto_visual",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [{ "tipo": "cordura", "delta": -5, "alcance": "lider" }],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_contacto_visual",
+      "tipo": "narrativo",
+      "ambiente": "horizonte sureste — Sierra Fría, 14:22",
+      "texto_control": "El agente con el telescopio térmico lo encuentra primero. No dice nada durante varios segundos. Cuando habla, la voz tiene una textura distinta. En el horizonte, a una distancia que los instrumentos van a confirmar en 12.4 kilómetros, hay algo que se mueve. La firma térmica es enorme. Tan enorme que el telescopio no la encuadra completa aunque está en zoom mínimo. El grabador acústico ya está registrando — las frecuencias bajas están llegando, físicamente, como vibración en el pecho. Los sensores sísmicos acusan movimiento rítmico. La Catedral está ahí.",
+      "texto_agente": "La... tenemos contacto visual. Doce punto cuatro kilómetros confirmados. La firma térmica no cabe en el campo del telescopio. El grabador está registrando — las frecuencias bajas son audibles sin amplificar. Los sensores marcan vibración rítmica. Confirmado. Es la Catedral.",
+      "agente_voz": "analista",
+      "opciones": [
+        {
+          "texto": "Entendido. Distancia 12.4 km, margen seguro. Procedan con el primer check psicológico de equipo. Todos reportan estado.",
+          "siguiente": "nodo_efecto_escala_01",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [
+        { "tipo": "cordura", "delta": -10, "alcance": "todos" }
+      ],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_efecto_escala_01",
+      "tipo": "check",
+      "ambiente": "punto de observación — primer impacto de escala",
+      "texto_control": "La Catedral se mueve. Su paso deja una nube de polvo visible a 12 kilómetros. Cada ciclo de sus articulaciones principales — lo que en el expediente llaman 'paso' — sacude los sensores sísmicos. El agente más entrenado mentalmente lidera el proceso de abstracción cognitiva: tratar lo que ven como datos, no como presencia. El cerebro no colabora del todo.",
+      "texto_agente": "El equipo reporta: presente, presente, presente. Estamos operativos. La escala... hay que procesar la escala. El agente de análisis está tomando lecturas. Damos el estado como estable.",
+      "agente_voz": "auto",
+      "check": {
+        "stat": "mental",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_decision_observacion",
+          "éxito": "nodo_decision_observacion",
+          "fallo": "nodo_decision_bajo_presion",
+          "crítico_fallo": "nodo_decision_bajo_presion"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_decision_bajo_presion",
+      "tipo": "decision",
+      "ambiente": "punto de observación — agente en límite, equipo en tensión alta",
+      "texto_control": "Uno de los agentes no está procesando la escala. No es pánico — es algo más lento, más profundo. Lleva noventa segundos sin hablar, mirando hacia el horizonte. El equipo lo nota. La operación puede continuar, pero hay que decidir: asumir el riesgo psicológico y seguir, o retirar al equipo antes de que el daño sea mayor.",
+      "texto_agente": "Control, tenemos un problema. Un agente no responde a comunicación verbal directa. Ojos abiertos, funcional físicamente, pero... ausente. El resto del equipo está conteniendo. Esperando instrucción.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Absorban. El agente se estabiliza o rota a retaguardia. Continúen la observación — los datos justifican el riesgo.",
+          "siguiente": "nodo_decision_observacion",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "cordura", "delta": -10, "alcance": "todos" }
+          ]
+        },
+        {
+          "texto": "Negativo. Si hay un agente que no procesa, abortar la observación. La seguridad del equipo es prioritaria. Protocolo de retirada.",
+          "siguiente": "nodo_retirada_sin_datos",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "cordura", "delta": -5, "alcance": "todos" }
+          ]
+        }
+      ],
+      "efectos": [{ "tipo": "cordura", "delta": -10, "alcance": "peor" }],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_retirada_sin_datos",
+      "tipo": "narrativo",
+      "ambiente": "punto de observación — equipo empacando, inicio de descenso",
+      "texto_control": "La decisión es correcta y todos lo saben. El agente afectado fue retirado del telescopio. El equipo empaca el equipo con rapidez. Los datos registrados hasta el momento — vibración sísmica, fragmentos de audio de baja frecuencia — están en los dispositivos, pero no son suficientes para un informe útil. El espécimen sigue visible en el horizonte mientras bajan.",
+      "texto_agente": "Equipo empacado. Iniciando descenso. El agente recupera contacto verbal en el primer kilómetro de bajada. Los datos parciales están guardados pero sabemos que no son suficientes. Reportando retirada temprana.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmado. Retirada bien ejecutada. La seguridad del equipo primero. Procedan al punto de recogida.",
+          "siguiente": "nodo_punto_recogida",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_decision_observacion",
+      "tipo": "decision",
+      "ambiente": "punto de observación — equipo estabilizado, instrumentos en verde, La Catedral a 12+ km",
+      "texto_control": "El equipo está operativo. La Catedral continúa su desplazamiento en el horizonte. Hay tres tipos de datos que el informe de CENVAC-Central necesita. El tiempo es el límite — el espécimen puede cambiar de ruta en cualquier momento. Elijan qué priorizar primero.",
+      "texto_agente": "Listos para fase de recolección. Tres vectores disponibles: movimiento, acústica, térmica. ¿Cuál priorizamos primero?",
+      "agente_voz": "analista",
+      "opciones": [
+        {
+          "texto": "Prioridad: patrón de movimiento. Documenten ciclo de paso, dirección, velocidad estimada.",
+          "siguiente": "nodo_patron_movimiento",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Prioridad: firma acústica. El grabador en máxima sensibilidad, documenten frecuencias, periodicidad, rango.",
+          "siguiente": "nodo_firma_acustica",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Prioridad: datos térmicos. El telescopio térmico mapea la distribución de calor en la estructura.",
+          "siguiente": "nodo_termica",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_patron_movimiento",
+      "tipo": "check",
+      "ambiente": "punto de observación — observación óptica y sísmica del desplazamiento",
+      "texto_control": "El agente biológico observa el patrón de movimiento: el número de 'pasos' por ciclo, el ángulo de desplazamiento respecto al horizonte, la consistencia del ritmo. Los datos sísmicos confirman la periodicidad pero leer el patrón en algo de esa escala requiere abstracción cognitiva sostenida. La escala sigue presionando al cerebro.",
+      "texto_agente": "Analizando patrón de movimiento. Hay algo rítmico y regular — el ciclo se repite. Intentando documentar la estructura completa del paso. La escala dificulta la percepción completa.",
+      "agente_voz": "analista",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_fase1_datos",
+          "éxito": "nodo_fase1_datos",
+          "fallo": "nodo_fase1_datos",
+          "crítico_fallo": "nodo_fase1_datos"
+        }
+      },
+      "efectos": [{ "tipo": "cordura", "delta": -5, "alcance": "todos" }],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_firma_acustica",
+      "tipo": "check",
+      "ambiente": "punto de observación — grabador en máxima sensibilidad, frecuencias físicamente perceptibles",
+      "texto_control": "El operador técnico ajusta el grabador al máximo de sensibilidad. Las frecuencias bajas — entre 4 y 18 Hz según la primera lectura — son físicamente perceptibles como vibración en la caja torácica sin necesitar amplificador. Documentar la firma acústica requiere mantener el equipo absolutamente quieto y resistir la presión física de las ondas. Los cascos de monitoreo captan algo que el oído humano no debería poder registrar.",
+      "texto_agente": "El grabador está capturando. Las frecuencias son... el equipo las siente en el pecho sin necesitar auriculares. Estamos registrando activamente. El análisis espectral va a llevar tiempo pero los datos están entrando.",
+      "agente_voz": "tecnico",
+      "check": {
+        "stat": "técnico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_fase1_datos",
+          "éxito": "nodo_fase1_datos",
+          "fallo": "nodo_fase1_datos",
+          "crítico_fallo": "nodo_fase1_datos"
+        }
+      },
+      "efectos": [{ "tipo": "cordura", "delta": -5, "alcance": "todos" }],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_termica",
+      "tipo": "check",
+      "ambiente": "punto de observación — telescopio térmico enfocado en la firma de La Catedral",
+      "texto_control": "El operador ajusta el telescopio térmico hacia la firma en el horizonte. La imagen térmica es perturbadora por razones que son difíciles de articular: la distribución de calor no sigue ningún patrón biológico conocido. Hay zonas de temperatura que el sensor registra en rojo de saturación y zonas que el sensor no lee — ni frías ni calientes, simplemente fuera de rango. Documentar esto requiere concentración técnica sostenida.",
+      "texto_agente": "El telescopio térmico tiene imagen. La distribución de calor es... no corresponde a ningún patrón que hayamos visto. Hay zonas de saturación y zonas de lectura cero. Estamos documentando.",
+      "agente_voz": "tecnico",
+      "check": {
+        "stat": "técnico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_fase1_datos",
+          "éxito": "nodo_fase1_datos",
+          "fallo": "nodo_fase1_datos",
+          "crítico_fallo": "nodo_fase1_datos"
+        }
+      },
+      "efectos": [{ "tipo": "cordura", "delta": -5, "alcance": "todos" }],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_fase1_datos",
+      "tipo": "narrativo",
+      "ambiente": "punto de observación — primera fase de recolección completa",
+      "texto_control": "La primera fase de datos está en los dispositivos. Los registros son parciales — La Catedral sigue moviéndose y hay más que documentar — pero hay material suficiente para un informe básico. La hora es 15:48. El espécimen sigue a más de 11 kilómetros. La señal de radio empieza a comportarse de manera extraña: pequeñas pérdidas de portadora, estática que no existía hace veinte minutos.",
+      "texto_agente": "Primera fase de datos consolidada. Tenemos patrón de movimiento parcial, firma acústica activa, lectura térmica en proceso. Son casi las 16:00. La señal está degradándose — hay algo en el aire que está afectando la portadora. Reportamos estado: operativos pero en alerta por interferencia.",
+      "agente_voz": "tecnico",
+      "opciones": [
+        {
+          "texto": "Confirmado. Los datos de primera fase están registrados. CENVAC-Central los tiene. Ahora evalúen si continúan con segunda fase o inician retirada.",
+          "siguiente": "nodo_senal_degradada",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "datos_telemetria" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_senal_degradada",
+      "tipo": "narrativo",
+      "ambiente": "punto de observación — interferencia de señal en aumento, La Catedral a 10.8 km",
+      "texto_control": "La interferencia está creciendo. No es falla de equipo: los sistemas de diagnóstico están en verde pero la portadora de radio se está fragmentando. El patrón de interferencia es consistente con la presencia de La Catedral — algo en su biología o en su masa genera un campo que afecta las comunicaciones en el rango de kilómetros. CENVAC-Central sigue recibiendo en fragmentos. La decisión de continuar con segunda fase es suya.",
+      "texto_agente": "La señal está fragmentada. No es el equipo — es ella. La Catedral está a 10.8 km y bajando. La interferencia creció desde que empezamos a observar. Si continúan, la señal va a degradar más. Control, ¿autorizan segunda fase de recolección?",
+      "agente_voz": "tecnico",
+      "opciones": [
+        {
+          "texto": "Autorizan segunda fase. Los datos justifican el riesgo de señal degradada. Procedan.",
+          "siguiente": "nodo_observacion_avanzada",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Negativo. Con los datos de primera fase es suficiente. Inicien retirada ordenada ahora.",
+          "siguiente": "nodo_retirada_temprana",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_alta"
+    },
+    {
+      "id": "nodo_observacion_avanzada",
+      "tipo": "check",
+      "ambiente": "punto de observación — segunda fase, La Catedral a 10.2 km y aproximando, señal crítica",
+      "texto_control": "La segunda fase requiere mantener los instrumentos calibrados mientras la distancia cae y la interferencia sube. El operador técnico trabaja contra dos variables simultáneas: el deterioro de señal que afecta los instrumentos de transmisión y la presión cognitiva creciente del equipo. Los datos de segunda fase son cualitativamente más valiosos — la cercanía permite lecturas de mayor resolución — pero el costo en estabilidad del equipo es real.",
+      "texto_agente": "Ejecutando segunda fase. Los instrumentos están en modo autónomo — la señal de transmisión ya no es confiable pero los datos se guardan en local. El agente de análisis está trabajando. Estamos conteniendo.",
+      "agente_voz": "tecnico",
+      "check": {
+        "stat": "técnico",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -2,
+        "resultados": {
+          "crítico_éxito": "nodo_datos_completos",
+          "éxito": "nodo_datos_completos",
+          "fallo": "nodo_efecto_escala_02",
+          "crítico_fallo": "nodo_efecto_escala_02"
+        }
+      },
+      "efectos": [{ "tipo": "cordura", "delta": -10, "alcance": "todos" }],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_datos_completos",
+      "tipo": "narrativo",
+      "ambiente": "punto de observación — segunda fase completa, datos en dispositivos locales",
+      "texto_control": "La segunda fase está completa. Los instrumentos capturaron un ciclo completo de movimiento, la firma acústica en rango extendido y la distribución térmica diferencial con la mayor resolución posible a esta distancia. CENVAC-Central no está recibiendo en tiempo real — la señal está fragmentada — pero los datos están guardados en los dispositivos. Cuando el equipo salga del campo de interferencia, la transmisión se completará. La Catedral está a 9.8 km y sigue moviéndose.",
+      "texto_agente": "Segunda fase completa. Datos en dispositivos locales. No estamos transmitiendo en tiempo real pero todo está guardado. La Catedral está a menos de diez kilómetros. La distancia baja. Necesitamos evaluar cuándo iniciar la retirada.",
+      "agente_voz": "tecnico",
+      "opciones": [
+        {
+          "texto": "Excelente trabajo. Ahora prepárense para retirada. Procedan al check psicológico antes de iniciar el descenso.",
+          "siguiente": "nodo_efecto_escala_02",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "datos_telemetria_completa" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_retirada_temprana",
+      "tipo": "narrativo",
+      "ambiente": "punto de observación — inicio de empaque, La Catedral a 10.8 km",
+      "texto_control": "La retirada temprana es la decisión cautelosa. El equipo empaca los instrumentos con ritmo metódico. Los datos de primera fase están en los dispositivos. La señal se recupera parcialmente mientras empiezan a alejarse de la posición de observación. La Catedral sigue visible en el horizonte durante el descenso inicial — treinta y cuatro minutos de visibilidad prolongada sin equipo activo.",
+      "texto_agente": "Empacando. Retirada temprana ejecutada en orden. Los datos de primera fase están seguros. Iniciando descenso. La señal mejora con la distancia. En camino al punto de recogida.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmado. Retirada bien ejecutada. Procedan al punto de recogida.",
+          "siguiente": "nodo_punto_recogida",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_efecto_escala_02",
+      "tipo": "check",
+      "ambiente": "punto de observación — presión psicológica máxima, La Catedral bajo 10 km",
+      "texto_control": "La distancia está en 9.6 kilómetros. La Catedral sigue siendo margen seguro — la línea de protocolo es a 8 km — pero la diferencia entre 12 km y 9.6 km es perceptiblemente distinta. Las frecuencias bajas del grabador se escuchan sin auriculares. Los sensores sísmicos acusan vibración continua. El equipo lleva cuarenta minutos mirando algo para lo que el cerebro humano no tiene categoría. El agente más entrenado mentalmente intenta mantener la estructura cognitiva del equipo.",
+      "texto_agente": "El equipo está bajo presión. No es pánico — es acumulación. Cuarenta minutos de exposición a esta escala tienen un costo. Estamos haciendo el check psicológico de protocolo antes de iniciar retirada.",
+      "agente_voz": "auto",
+      "check": {
+        "stat": "mental",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_movimiento_catedral",
+          "éxito": "nodo_movimiento_catedral",
+          "fallo": "nodo_quiebre_psicologico",
+          "crítico_fallo": "nodo_quiebre_psicologico"
+        }
+      },
+      "efectos": [{ "tipo": "cordura", "delta": -15, "alcance": "todos" }],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_quiebre_psicologico",
+      "tipo": "narrativo",
+      "ambiente": "punto de observación — disociación aguda en un agente",
+      "texto_control": "Uno de los agentes quiebra. No es abrupto — es un colapso gradual que el equipo observa en tiempo real: primero el silencio, luego la inmovilidad, luego las palabras que no corresponden al contexto. El agente no está en pánico, está disociado. El umbral cognitivo para procesar lo que están viendo fue superado. El resto del equipo lo sujeta físicamente. La operación puede continuar pero hay un peso nuevo en cada decisión que sigue.",
+      "texto_agente": "Control. Tenemos un quiebre. Un agente está disociado — no responde, no es funcional. El equipo lo está conteniendo. Los otros siguen operativos. Necesitamos evacuar pronto. Estado del equipo: comprometido.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Entendido. Quiebre confirmado. Evacúen inmediatamente. El agente va a recuperarse, pero necesitan salir de aquí.",
+          "siguiente": "nodo_movimiento_catedral",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [
+        {
+          "tipo": "herida",
+          "valor": {
+            "tipo": "quiebre_psicologico",
+            "severidad": 3,
+            "parte_cuerpo": "sistema_nervioso",
+            "efecto_stat": { "mental": -2 }
+          },
+          "alcance": "peor"
+        },
+        { "tipo": "cordura", "delta": -20, "alcance": "todos" }
+      ],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_movimiento_catedral",
+      "tipo": "narrativo",
+      "ambiente": "punto de observación — 16:41, La Catedral cambia de dirección",
+      "texto_control": "Los sensores sísmicos registran un cambio en el patrón. El operador técnico lo confirma por el telescopio térmico: La Catedral está girando. El vector de desplazamiento que antes apuntaba al suroeste ha rotado. El nuevo vector apunta aproximadamente al noroeste. Si mantiene ese rumbo, la distancia mínima podría caer por debajo del límite de protocolo en dos horas. No es una amenaza inmediata, pero el margen se ha reducido. La retirada tiene que ser ahora.",
+      "texto_agente": "La Catedral cambió de rumbo. El nuevo vector está aproximadamente al noroeste. Si mantiene ese rumbo, en dos horas estaría a menos de ocho kilómetros de nuestra posición. No es emergencia inmediata pero el protocolo 13 dice que la retirada es obligatoria ante cualquier reducción de margen. Esperando instrucción de método de evacuación.",
+      "agente_voz": "tecnico",
+      "opciones": [
+        {
+          "texto": "Protocolo 13 confirmado. Evacuación obligatoria. Elijan método según estado del equipo.",
+          "siguiente": "nodo_decision_evacuacion",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_decision_evacuacion",
+      "tipo": "decision",
+      "ambiente": "punto de observación — evacuación requerida, La Catedral en nuevo rumbo",
+      "texto_control": "Dos opciones de evacuación. Ordenada: empaque metódico, descenso al ritmo del agente más lento, máxima protección del equipo. Tarda más. Urgente: abandono de equipo no vital, descenso rápido, mayor esfuerzo físico. Si el cálculo de ruta de La Catedral está bien, hay tiempo para la evacuación ordenada. Pero el cálculo puede estar mal.",
+      "texto_agente": "¿Evacuación ordenada o urgente? Con un agente en quiebre y el equipo técnico para cargar, la ordenada tiene sentido si el cálculo es correcto. Si no lo es, la urgente es la única opción con margen real. Esperando orden.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Evacuación ordenada. Empaquen el equipo, desciendan al ritmo del equipo completo. Metódico.",
+          "siguiente": "nodo_evacuacion_ordenada",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Evacuación urgente. Abandonen el equipo no vital. Descenso rápido. Saquen al equipo primero.",
+          "siguiente": "nodo_evacuacion_urgente",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_evacuacion_ordenada",
+      "tipo": "check",
+      "ambiente": "sendero de descenso — equipo empacado, ritmo metódico, La Catedral en flanco",
+      "texto_control": "La evacuación ordenada requiere que el equipo se mueva en silencio y sin apresurar al agente más lento. El agente de reconocimiento marca el paso y la ruta. El problema: si el cálculo de trayectoria de La Catedral tiene margen de error del 15%, el tiempo ya no alcanza para el descenso metódico. El equipo tiene que moverse con precisión y sin errores.",
+      "texto_agente": "Bajando en orden. Equipo empacado, agente recuperándose en el flanco. El paso es lento por el equipo pero controlado. La Catedral no es visible desde el sendero ahora. Continuamos.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_punto_recogida",
+          "éxito": "nodo_punto_recogida",
+          "fallo": "nodo_evacuacion_dificil",
+          "crítico_fallo": "nodo_evacuacion_dificil"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_evacuacion_urgente",
+      "tipo": "check",
+      "ambiente": "sendero de descenso — descenso rápido, equipo abandonado, La Catedral en nuevo rumbo",
+      "texto_control": "La evacuación urgente abandona los telescopios y los sensores sísmicos — solo los dispositivos de datos personales van consigo. El agente físicamente más fuerte carga al compañero en quiebre. El descenso rápido en terreno suelto con carga es extremadamente exigente físicamente. No hay margen para un resbalón.",
+      "texto_agente": "Evacuación urgente en curso. Equipo técnico pesado abandonado — solo datos portátiles. El agente físico más fuerte carga al compañero. Descendiendo a ritmo máximo. El sendero está complicado en este tramo.",
+      "agente_voz": "asalto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_punto_recogida",
+          "éxito": "nodo_punto_recogida",
+          "fallo": "final_catastrofico",
+          "crítico_fallo": "final_catastrofico"
+        }
+      },
+      "efectos": [
+        { "tipo": "estamina", "delta": -20, "alcance": "todos" }
+      ],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_evacuacion_dificil",
+      "tipo": "narrativo",
+      "ambiente": "sendero de descenso — incidente menor, equipo retrasado",
+      "texto_control": "El descenso tuvo un incidente: caída en tramo de roca suelta, torcedura de tobillo en uno de los agentes, el equipo técnico casi rodó por el barranco. El equipo llegó a la base de la sierra treinta y cinco minutos después de lo calculado y con el nivel físico al límite. Los datos están a salvo. El equipo está completo.",
+      "texto_agente": "Llegamos a la base. Hubo un incidente en la bajada — un agente con tobillo dañado, manejable. El equipo técnico sobrevivió. Estamos muy cansados. Pero estamos todos.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmado. Bien que estén todos. Procedan al punto de recogida.",
+          "siguiente": "nodo_punto_recogida",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [
+        { "tipo": "estamina", "delta": -20, "alcance": "todos" },
+        { "tipo": "cordura", "delta": -10, "alcance": "todos" }
+      ],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_punto_recogida",
+      "tipo": "narrativo",
+      "ambiente": "base de acceso sur — vehículo CENVAC, señal recuperada, 17:18",
+      "texto_control": "El equipo llega al punto de recogida. La señal de radio se recupera completamente en cuanto salen del campo de interferencia de la sierra. Los datos guardados en los dispositivos locales se transfieren automáticamente a CENVAC-Central — el sistema confirma recepción en el primer intercambio. La Catedral sigue visible como una forma vaga en el horizonte de la sierra, moviéndose al noroeste. Desde aquí parece casi irrealmente pequeña. El equipo sabe que eso es una ilusión óptica.",
+      "texto_agente": "En el punto de recogida. La señal está en verde. Los datos están transfiriéndose a Central. El equipo está... se nota el peso de la jornada. Todos presentes. Reportando fin de operación en campo.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Recibido. Transferencia confirmada en Central. Operación EVT-SIE-001 cerrada en campo. Vuelvan a base.",
+          "siguiente": "nodo_resolucion",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_resolucion",
+      "tipo": "resolucion",
+      "texto_control": "CENVAC-Central procesa los datos recibidos. La clasificación del informe se determina en función del volumen y calidad de telemetría recolectada y el estado del equipo al cierre.",
+      "logica_resolucion": [
+        {
+          "condicion": { "muestra_obtenida": true, "muestra_tipo": "datos_telemetria_completa", "bajas_count": 0, "heridas_graves_count": 0 },
+          "siguiente": "final_exito_limpio"
+        },
+        {
+          "condicion": { "muestra_obtenida": true, "bajas_count": 0, "heridas_graves_count": 0 },
+          "siguiente": "final_exito_parcial"
+        },
+        {
+          "condicion": { "muestra_obtenida": true, "bajas_count": 0, "heridas_graves_count_gte": 1 },
+          "siguiente": "final_exito_pirrico"
+        },
+        {
+          "condicion": { "muestra_obtenida": false, "bajas_count": 0 },
+          "siguiente": "final_fracaso_datos"
+        },
+        {
+          "condicion": { "bajas_count_gte": 1 },
+          "siguiente": "final_catastrofico"
+        }
+      ],
+      "efectos": []
+    },
+    {
+      "id": "final_exito_limpio",
+      "tipo": "final",
+      "resultado": "exito_limpio",
+      "titulo": "Telemetría completa — equipo intacto — Protocolo 13 cumplido",
+      "texto_control": "Operación EVT-SIE-001 cerrada con resultado óptimo. Telemetría completa de La Catedral recolectada: patrón de movimiento documentado en ciclo completo, firma acústica en rango extendido, distribución térmica diferencial. El equipo regresó completo y sin heridas graves. La distancia mínima de 8 km fue respetada en todo momento. Los datos representan el conjunto de observación más completo registrado hasta la fecha sobre un espécimen clase IV.",
+      "clasificacion_doc": "Nivel 1 — Acceso restringido — Coordinación de Distrito",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo estableció posición en cota 2,340 m y completó calibración en parámetros aceptables. El primer contacto visual de La Catedral ocurrió a 12.4 km. La primera fase de recolección se completó con observación del patrón de movimiento, firma acústica y datos térmicos. La segunda fase, ejecutada bajo señal degradada, completó el conjunto de datos. El equipo procesó el check psicológico sin quiebres y evacuó al detectar el cambio de ruta del espécimen.",
+        "hallazgos": "Los datos confirman desplazamiento de La Catedral por vertiente sureste en ciclo rítmico de 47 segundos por paso mayor. La firma acústica registrada incluye frecuencias entre 3.2 Hz y 22 Hz con periodicidad variable. La distribución térmica diferencial muestra zonas fuera de rango del sensor en el tercio superior del espécimen. La migración aparente sigue el patrón de las líneas de falla geológica.",
+        "notas_analista": "Conjunto de datos clase IV más completo en el archivo de CENVAC-Aguascalientes. Se recomienda procesamiento prioritario por el equipo de análisis estratégico. El patrón de movimiento sugiere una ruta recurrente que podría ser monitoreada pasivamente."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_exito_parcial",
+      "tipo": "final",
+      "resultado": "exito_parcial",
+      "titulo": "Telemetría de primera fase — equipo intacto — datos útiles",
+      "texto_control": "Operación EVT-SIE-001 cerrada con resultado aceptable. La primera fase de recolección fue completada antes de la decisión de retirada anticipada o antes de que la segunda fase pudiera ejecutarse. Los datos de primera fase son científicamente útiles aunque incompletos. El equipo regresó sin bajas ni heridas graves.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo completó la primera fase de observación de La Catedral. La segunda fase no fue ejecutada por decisión operativa o por condiciones técnicas. La retirada fue ordenada y el equipo llegó al punto de recogida en estado operativo.",
+        "hallazgos": "Los datos de primera fase incluyen fragmentos de patrón de movimiento, firma acústica en rango básico y lectura térmica parcial. La información es suficiente para actualización básica del expediente de La Catedral pero no para el análisis predictivo de ruta que CENVAC-Central requería.",
+        "notas_analista": "Se recomienda segunda operación de observación para completar el conjunto de datos. La operación actual establece el protocolo viable para observación de clase IV en Sierra Fría."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_exito_pirrico",
+      "tipo": "final",
+      "resultado": "exito_pirrico",
+      "titulo": "Telemetría obtenida — quiebre psicológico confirmado — revisión requerida",
+      "texto_control": "Operación EVT-SIE-001 cerrada. Los datos de telemetría están en el sistema — primer o segunda fase, según la trayectoria seguida. Un agente sufrió quiebre psicológico durante la operación. El quiebre está clasificado como herida grave de tipo cognitivo. El agente está vivo y en condición de evacuación pero requiere evaluación médica especializada antes de volver al servicio activo. Los datos tienen valor. El costo también.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna — Revisión de Coordinación por incidente psicológico",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación completó su objetivo de recolección de datos pero un agente superó el umbral cognitivo de tolerancia a la exposición prolongada a un espécimen clase IV. El quiebre se registró durante o después de la segunda fase de observación.",
+        "hallazgos": "Los datos de telemetría tienen valor científico documentado. El incidente psicológico confirma que la exposición prolongada a La Catedral — incluso a distancias seguras — supera los parámetros de tolerancia de los protocolos de preparación psicológica actuales.",
+        "notas_analista": "El incidente justifica la revisión del protocolo 13 en lo que respecta a tiempo máximo de exposición por operación. El límite actual de seis horas puede ser excesivo. Se recomienda revisar a cuatro horas máximo con rotación de agentes en posición de observación directa."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_fracaso_datos",
+      "tipo": "final",
+      "resultado": "fracaso_extraccion",
+      "titulo": "Retirada sin datos — equipo completo — operación abortada",
+      "texto_control": "Operación EVT-SIE-001 cerrada sin datos utilizables. El equipo tomó la decisión de abortar la observación antes de completar la primera fase de recolección. El equipo regresó completo. La decisión de retirada anticipada puede haber sido la correcta dado el estado psicológico del equipo en el momento de la decisión. La Catedral siguió su ruta sin incidente.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo estableció posición y tuvo primer contacto visual de La Catedral. La presión psicológica derivada de la escala del espécimen generó un estado de alerta en uno o más agentes que determinó la decisión de abortar antes de completar la fase de recolección.",
+        "hallazgos": "No se recolectaron datos de telemetría utilizables. El intento confirma la viabilidad del acceso a la cota de observación pero documenta los límites psicológicos de la operación en su configuración actual.",
+        "notas_analista": "Se recomienda segunda operación con equipo diferente o con preparación psicológica reforzada específica para exposición a clase IV. La operación abortada tiene valor de documentación de protocolo aunque no de datos de campo."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_catastrofico",
+      "tipo": "final",
+      "resultado": "catastrofico",
+      "titulo": "La Catedral redujo distancia — baja en evacuación — Protocolo 13 roto",
+      "texto_control": "Operación EVT-SIE-001 cerrada con pérdidas. La evacuación urgente resultó en baja durante el descenso. El Protocolo 13 fue roto — no por aproximación intencional sino por la combinación de evacuación de emergencia y cambio de ruta del espécimen. Los datos recolectados están en los dispositivos portátiles de los sobrevivientes. CENVAC-Central clasifica el evento como incidente crítico clase A.",
+      "clasificacion_doc": "Nivel 1 — Acceso restringido — Revisión de Coordinación obligatoria",
+      "narrativa_fragmentos": {
+        "cronologia": "La Catedral cambió de ruta hacia el noroeste mientras el equipo ejecutaba evacuación urgente. El descenso de emergencia en terreno difícil con un agente en quiebre resultó en accidente fatal durante el descenso. Los sobrevivientes alcanzaron el punto de recogida con los datos portátiles.",
+        "hallazgos": "El incidente confirma que la combinación de cambio de ruta del espécimen y evacuación de emergencia en terreno de sierra crea una ventana de riesgo crítico que el Protocolo 13 actual no mitiga adecuadamente.",
+        "notas_analista": "Revisión obligatoria del Protocolo 13. La distancia mínima de 8 km puede ser insuficiente si el espécimen cambia de ruta durante la ventana de evacuación. Se propone zona de seguridad de 12 km con punto de evacuación pre-establecido y señalizado."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": [
+        {
+          "tipo": "baja_garantizada",
+          "valor": { "tipo": "trauma_descenso_emergencia", "parte_cuerpo": "multiple", "severidad": 4 },
+          "alcance": "aleatorio"
+        }
+      ]
+    }
+  ]
+}

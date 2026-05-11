@@ -26,7 +26,8 @@ async function init() {
   document.getElementById('mc-nivel').textContent = `AMENAZA ${evento.nivel_amenaza_estimado}`;
 
   const datos = await cargarDatos();
-  agentes = SEEDS.map(s => generarAgente(s, datos));
+  const procedurales = SEEDS.map(s => generarAgente(s, datos));
+  agentes = [...datos.named, ...procedurales];
 
   renderRoster();
 }
@@ -42,8 +43,9 @@ function renderRoster() {
 
     const isSelected = seleccionados.includes(a.id);
     const isLider = a.id === liderId;
-    if (isSelected) card.classList.add('selected');
-    if (isLider)    card.classList.add('leader');
+    if (isSelected)  card.classList.add('selected');
+    if (isLider)     card.classList.add('leader');
+    if (a.es_nombrado) card.classList.add('nombrado');
 
     const maxStat = Math.max(...Object.values(a.stats));
     const minStat = Math.min(...Object.values(a.stats));
@@ -51,7 +53,7 @@ function renderRoster() {
     card.innerHTML = `
       <div class="agent-card-header">
         <span class="agent-rank">${a.rango_abreviatura}</span>
-        <span class="agent-name">${a.nombre_completo}</span>
+        <span class="agent-name">${a.nombre_completo}${a.es_nombrado ? '<span class="agent-named-badge">IDENT</span>' : ''}</span>
       </div>
       <div class="agent-rol">${a.nombre_rol} — ${a.operaciones_completadas} op${a.operaciones_completadas !== 1 ? 's' : ''}</div>
       <div class="agent-stats">

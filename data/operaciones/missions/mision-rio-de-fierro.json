@@ -1,0 +1,760 @@
+{
+  "id": "mision-rio-de-fierro",
+  "nombre": "Río de Fierro",
+  "descripcion": "Mapeo de migración estacional de Gusano de Asfalto en el lecho seco del Río San Pedro. Los sensores de vibración son obligatorios. Cualquier vibración fuerte atrae a los especímenes desde el substrato.",
+  "tipo_mision": "mapeo_biologico",
+  "criatura": "gusano_de_asfalto",
+  "nivel_amenaza": "II",
+  "objetivo_primario": "Mapear la ruta de migración estacional y estimar la población activa mediante sensores de vibración y observación directa.",
+  "objetivo_secundario": "Recolectar muestra de excreción o capturar espécimen vivo si la condición táctica lo permite. No provocar emergencia de especímenes.",
+  "muestra_objetivo": "datos_migracion",
+  "muestra_descripcion": "Datos de migración del Gusano de Asfalto: ruta documentada, estimación de población por densidad de vibración, velocidad de desplazamiento. Alternativa de mayor valor: excreción recolectada del lecho (composición química única). Máximo valor: espécimen vivo capturado. La captura exige contención inmediata — el gusano adulto alcanza 3.5 metros y su piel segrega ácido débil.",
+  "nodo_inicial": "nodo_insercion",
+  "nodos": [
+    {
+      "id": "nodo_insercion",
+      "tipo": "narrativo",
+      "ambiente": "CENVAC-Central — frecuencia 7, lecho del Río San Pedro — base de aproximación norte",
+      "texto_control": "Frecuencia 7-CENVAC operativa. El evento EVT-RIO-001 fue activado por reportes consistentes de movimiento subterráneo a lo largo del lecho seco del Río San Pedro durante los últimos cuatro días. CENVAC-Central sospecha migración estacional anual de Gusano de Asfalto siguiendo el curso original del río — los gusanos siguen la humedad residual del substrato a 0.5–1.5 metros de profundidad. El equipo tiene tres objetivos en orden de prioridad: uno, mapear la ruta; dos, estimar la población; tres, recolectar muestra si el terreno lo permite. Los sensores de vibración portátiles van activos en todo momento. Instrucción crítica: ningún miembro del equipo corre, salta ni golpea el suelo. Los gusanos detectan vibración superficial en radio de quince metros. Confirme posición.",
+      "texto_agente": "Posición en base de aproximación norte, lecho visible a doscientos metros. Tres sensores de vibración portátiles en verde. El terreno es sedimento suelto — el lecho tiene la consistencia de arena compactada en la superficie. Sin civiles en la zona. El sol está alto. ¿Autorizan aproximación?",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Autorizado. Aproximación lenta. Pasos cortos, sin carrera. Sensores activos desde ya. Procedan.",
+          "siguiente": "nodo_aproximacion_lecho",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_aproximacion_lecho",
+      "tipo": "check",
+      "ambiente": "ribera norte — sedimento suelto, vegetación de ribera crecida, lecho visible",
+      "texto_control": "La aproximación a los doscientos metros del lecho exige pasos cortos y medidos en terreno de sedimento variable. El agente de mayor sigilo marca el ritmo: seis segundos entre pasos en el tramo crítico, pies planos, sin tacón. Los sensores portátiles ya están dando lecturas de línea base — hay vibración bajo el suelo, continua, en frecuencia baja. Algo se está moviendo allá abajo.",
+      "texto_agente": "Aproximando. Pasos medidos. Los sensores ya registran vibración de fondo — no es ambiente, es movimiento subterráneo activo. Confirmo: los gusanos están en migración. El lecho está activo.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 10,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_lecho_alcanzado",
+          "éxito": "nodo_lecho_alcanzado",
+          "fallo": "nodo_lecho_vibración",
+          "crítico_fallo": "nodo_lecho_vibración"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_lecho_alcanzado",
+      "tipo": "narrativo",
+      "ambiente": "lecho seco del Río San Pedro — sedimento beige, huellas de paso subterráneo visibles en la superficie",
+      "texto_control": "El equipo llega al borde del lecho sin incidentes. En la superficie del sedimento son visibles marcas lineales — fracturas finas paralelas que indican el paso de algo grande bajo la capa superficial. Los sensores de vibración confirman: la migración está activa y en zona central del lecho. El equipo tiene posición. Es el momento de instalar el primer sensor fijo.",
+      "texto_agente": "En el lecho. Las marcas en el sedimento son claras — hay varios especímenes pasando bajo nosotros ahora mismo. Los sensores portátiles dan lectura activa en todo el campo. Listos para instalar el primer sensor fijo.",
+      "agente_voz": "reconocimiento",
+      "opciones": [
+        {
+          "texto": "Bien. Instalen el primer sensor con máximo cuidado. Recuerden: sin vibración fuerte. El sensor va al sedimento, no clavado.",
+          "siguiente": "nodo_primer_sensor",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_lecho_vibración",
+      "tipo": "narrativo",
+      "ambiente": "ribera — uno de los agentes pisó mal, vibración breve",
+      "texto_control": "Uno de los agentes pisó en un tramo de roca bajo el sedimento — el sonido fue breve y seco, pero los sensores portátiles acusaron un pico de vibración. Durante cuatro segundos el lecho registró actividad aumentada antes de volver a línea base. No emergió nada. Pero los gusanos saben que hay algo en la superficie.",
+      "texto_agente": "Hubo un paso en falso. Los sensores acusaron pico durante cuatro segundos. El lecho volvió a línea base. Nada emergió, pero la zona está sensibilizada. Estamos en el borde. ¿Procedemos?",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Procedan. El lecho se re-estabilizó. Instalen el primer sensor con máximo cuidado. Pasos aún más lentos.",
+          "siguiente": "nodo_primer_sensor",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "cordura", "delta": -5, "alcance": "todos" }
+          ]
+        },
+        {
+          "texto": "Negativo. Si la zona está sensibilizada, el riesgo es demasiado alto. Inicien retirada. La misión se reprogramará.",
+          "siguiente": "nodo_retirada_prematura",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_retirada_prematura",
+      "tipo": "narrativo",
+      "ambiente": "ribera — equipo retrocediendo, lecho sin data",
+      "texto_control": "El equipo se retira con la misma lentitud con que llegó. No hubo emergencia, no hubo muestra. Los sensores portátiles siguen registrando la migración activa mientras se alejan. La decisión fue defensiva y correcta. El informe documentará el avistamiento confirmado de migración activa pero sin datos de mapeo.",
+      "texto_agente": "Retirando. Sin incidente. Los sensores siguen registrando migración activa en el lecho. Los datos básicos de presencia están en el sistema. Llegando a base de aproximación.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmado. Retirada bien ejecutada. Procedan al punto de recogida.",
+          "siguiente": "nodo_punto_recogida",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_primer_sensor",
+      "tipo": "check",
+      "ambiente": "lecho seco — instalación de sensor fijo en sedimento, equipo arrodillado",
+      "texto_control": "El operador técnico instala el primer sensor fijo de vibración: el proceso requiere hundir la varilla de anclaje en el sedimento a mano, centímetro a centímetro, sin usar el martillo de campo. Solo presión manual sostenida. El sedimento aquí es fino y cede bien, pero la profundidad de anclaje tiene que alcanzar los doce centímetros para lectura limpia. Todo el equipo está arrodillado e inmóvil mientras el operador trabaja.",
+      "texto_agente": "Instalando el primer sensor. Varilla a mano, sin herramienta. El sedimento cede bien. Estoy en los diez centímetros. Doce... activo. El sensor está leyendo. Primer punto de referencia establecido.",
+      "agente_voz": "tecnico",
+      "check": {
+        "stat": "técnico",
+        "agente": "mejor_stat",
+        "dificultad": 10,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_sensor1_optimo",
+          "éxito": "nodo_sensor1_optimo",
+          "fallo": "nodo_sensor1_basico",
+          "crítico_fallo": "nodo_sensor1_basico"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_sensor1_optimo",
+      "tipo": "narrativo",
+      "ambiente": "lecho — sensor en posición óptima, lectura en verde",
+      "texto_control": "El primer sensor está en posición óptima: doce centímetros de profundidad, lectura estable, transmisión en verde. Ya están llegando datos estructurados: la migración sigue un eje ligeramente diagonal respecto al cauce original. Los gusanos están entre ochenta centímetros y un metro cuarenta de profundidad en este tramo. El sistema empieza a construir el mapa de ruta.",
+      "texto_agente": "Primer sensor en óptimos. La migración está a entre ochenta y ciento cuarenta centímetros bajo nosotros. El eje de desplazamiento es diagonal al cauce. Los datos están entrando. Listos para siguiente fase.",
+      "agente_voz": "tecnico",
+      "opciones": [
+        {
+          "texto": "Excelente. Primer punto de referencia establecido. Esperen la primera detección de actividad y procedan.",
+          "siguiente": "nodo_primera_deteccion",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "flag", "nombre": "sensor1_calidad", "valor": "optima" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_sensor1_basico",
+      "tipo": "narrativo",
+      "ambiente": "lecho — sensor instalado con profundidad mínima, lectura aceptable",
+      "texto_control": "El sensor quedó a nueve centímetros en lugar de doce — el sedimento se compactó en ese tramo. La lectura es aceptable pero con más ruido de fondo de lo ideal. Los datos de dirección llegarán con menor precisión. El mapa de ruta resultante va a tener márgenes de error más amplios. La misión puede continuar.",
+      "texto_agente": "Sensor instalado. Profundidad de nueve centímetros — sedimento duro en ese tramo. Lectura con algo de ruido. Los datos van a tener menor resolución pero están llegando. Listos para continuar.",
+      "agente_voz": "tecnico",
+      "opciones": [
+        {
+          "texto": "Aceptable. Primer punto registrado con calidad reducida. Sigan con la siguiente fase.",
+          "siguiente": "nodo_primera_deteccion",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_primera_deteccion",
+      "tipo": "narrativo",
+      "ambiente": "lecho — sensor activo, primeros datos estructurados, silencio total del equipo",
+      "texto_control": "El sensor empieza a dar lecturas estructuradas. A cuatro metros al noroeste, un pico de vibración limpio — un espécimen adulto pasando. Luego otro, a distancia mayor. El agente de análisis biológico ya está contando: en los primeros ocho minutos, seis señales distintas identificables. Esto es una migración mayor de lo estimado. El equipo está en silencio absoluto — hasta la respiración se oye. La señal de radio empieza a acusar interferencia por la vibración constante del substrato.",
+      "texto_agente": "Los sensores están confirmando migración activa. Seis especímenes detectados en los primeros ocho minutos. Esto es una colonia grande. El lecho completo está activo. Estamos en silencio. La señal tiene ruido por la vibración del substrato.",
+      "agente_voz": "analista",
+      "opciones": [
+        {
+          "texto": "Confirmado. Mantengan el silencio absoluto. El equipo no se mueve hasta nueva orden. Esperamos el siguiente paso de migración.",
+          "siguiente": "nodo_silencio_obligatorio",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_silencio_obligatorio",
+      "tipo": "check",
+      "ambiente": "lecho — espécimen detectado a tres metros bajo la superficie, equipo en posición de espera",
+      "texto_control": "El sensor acusa un espécimen adulto a tres metros de profundidad y desplazándose directamente bajo la posición del equipo. El agente más entrenado mentalmente lidera el protocolo de inmovilidad: control de respiración, sin gestos, sin reajuste de posición. Treinta segundos de inmovilidad total mientras el gusano pasa bajo sus pies.",
+      "texto_agente": "Uno bajo nosotros. Tres metros. Pasa directo. Treinta segundos de inmovilidad total. El equipo... quieto. Perfectamente quieto.",
+      "agente_voz": "auto",
+      "check": {
+        "stat": "mental",
+        "agente": "mejor_stat",
+        "dificultad": 10,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_paso_silencioso",
+          "éxito": "nodo_paso_silencioso",
+          "fallo": "nodo_vibración_accidental",
+          "crítico_fallo": "nodo_vibración_accidental"
+        }
+      },
+      "efectos": [{ "tipo": "cordura", "delta": -5, "alcance": "todos" }],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_paso_silencioso",
+      "tipo": "narrativo",
+      "ambiente": "lecho — espécimen pasó, vibración de fondo normalizada",
+      "texto_control": "El espécimen pasó. El suelo vibró ligeramente durante cuatro segundos — perceptible en las plantas de los pies — y luego la señal del sensor volvió a patrón de fondo. El equipo aguantó. El agente de análisis biológico puede proceder con el mapeo ahora que tiene la confirmación de paso directo.",
+      "texto_agente": "Pasó. El suelo vibró durante cuatro segundos — todos lo sentimos en los pies. El sensor confirma que se alejó al sur. Equipo en estado estable. Listos para análisis.",
+      "agente_voz": "analista",
+      "opciones": [
+        {
+          "texto": "Bien hecho. Ahora el agente biológico analiza el patrón con lo que tienen. Datos del sensor más observación directa.",
+          "siguiente": "nodo_analisis_patron",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_vibración_accidental",
+      "tipo": "narrativo",
+      "ambiente": "lecho — pico de vibración por movimiento del equipo, alerta activa",
+      "texto_control": "Alguien del equipo se movió — reajuste de postura, un pie que cedió, no importa ya la causa. El sensor acusa un pico de vibración en la superficie. Inmediatamente dos lecturas de respuesta emergen en el sensor: especímenes que cambian de eje, se orientan hacia arriba. Cuatro segundos de emergencia potencial antes de que se determine si la vibración fue suficiente para atraerlos a la superficie.",
+      "texto_agente": "Hubo un movimiento. El sensor marca dos especímenes que reorientaron hacia arriba. Cuatro segundos. Nadie se mueve. Esperando.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Nadie se mueve. Respiración mínima. Esperen a que el sensor vuelva a línea base.",
+          "siguiente": "nodo_emergencia_temprana",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "cordura", "delta": -10, "alcance": "todos" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_emergencia_temprana",
+      "tipo": "check",
+      "ambiente": "lecho — especímenes orientados a la superficie, equipo en inmovilidad forzada",
+      "texto_control": "Los especímenes detectados permanecen orientados hacia arriba durante nueve segundos. El sensor los tiene a ochenta centímetros de la superficie. El agente físicamente más fuerte está listo para intervenir si emerge algo, pero moverse ahora sería contraproducente. El agente mental más entrenado absorbe la tensión del equipo y evita que alguien quiebre el silencio.",
+      "texto_agente": "Ochenta centímetros bajo la superficie. Nueve segundos. Once. El sensor empieza a marcar alejamiento. Trece segundos... quince... vuelven a patrón de migración. Despejado. El equipo sigue operativo.",
+      "agente_voz": "auto",
+      "check": {
+        "stat": "mental",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_analisis_patron",
+          "éxito": "nodo_analisis_patron",
+          "fallo": "final_catastrofico",
+          "crítico_fallo": "final_catastrofico"
+        }
+      },
+      "efectos": [{ "tipo": "cordura", "delta": -10, "alcance": "todos" }],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_analisis_patron",
+      "tipo": "check",
+      "ambiente": "lecho — datos del sensor en análisis, equipo en silencio",
+      "texto_control": "El agente de análisis biológico trabaja con los datos del sensor y la observación directa de las marcas en el sedimento. El patrón de migración tiene una lógica: los gusanos siguen el eje de menor resistencia del sedimento, que coincide con el curso original del río. La estimación de población requiere cruzar la densidad de señales con el tiempo de observación.",
+      "texto_agente": "Analizando. El patrón de migración es claro: eje noroeste-sureste, sigue el cauce original del río. La densidad de señales en los últimos veinte minutos sugiere entre veintidós y treinta especímenes adultos en el tramo. Es una migración grande.",
+      "agente_voz": "analista",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_patron_claro",
+          "éxito": "nodo_patron_claro",
+          "fallo": "nodo_patron_estimado",
+          "crítico_fallo": "nodo_patron_estimado"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_patron_claro",
+      "tipo": "narrativo",
+      "ambiente": "lecho — análisis completado, datos de migración precisos",
+      "texto_control": "El patrón de migración está documentado con precisión. El mapa de ruta muestra tres vías activas paralelas en el lecho, separadas entre doce y quince metros. La estimación de población es 26 (+/-2) especímenes adultos en el tramo de 400 metros. La velocidad de migración es constante: aproximadamente 0.9 km/hora. CENVAC-Central recibe los datos en fragmentos por la interferencia del substrato.",
+      "texto_agente": "Patrón documentado. Tres vías paralelas activas. Veintiseis especímenes estimados, velocidad 0.9 km por hora. Es una migración completa. El análisis está en los dispositivos. ¿Procedan con recolección de muestra o retirada?",
+      "agente_voz": "analista",
+      "opciones": [
+        {
+          "texto": "Con esos datos ya tenemos misión completable. Elijan el siguiente paso con la información disponible.",
+          "siguiente": "nodo_decision_muestra",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "flag", "nombre": "patron_completo", "valor": true }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_patron_estimado",
+      "tipo": "narrativo",
+      "ambiente": "lecho — análisis con mayor incertidumbre, datos parciales pero útiles",
+      "texto_control": "El análisis es menos preciso de lo ideal: se identificaron dos vías activas pero la tercera quedó fuera del rango de lectura del sensor único. La estimación de población tiene margen de error mayor — entre 18 y 35 especímenes adultos. La ruta está documentada pero con menos resolución de la que CENVAC-Central esperaba. Aún así, es un mapa de migración funcional.",
+      "texto_agente": "Análisis con incertidumbre. Dos vías documentadas, la tercera fuera del sensor. Estimación de veinte a treinta y cinco especímenes. El mapa tiene mayor margen de error. Los datos están guardados. ¿Qué sigue?",
+      "agente_voz": "analista",
+      "opciones": [
+        {
+          "texto": "Los datos son útiles aunque imprecisos. Elijan el siguiente paso.",
+          "siguiente": "nodo_decision_muestra",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_decision_muestra",
+      "tipo": "decision",
+      "ambiente": "lecho — primera fase completada, decisión de siguiente paso",
+      "texto_control": "Los datos de migración están registrados. Ahora el equipo tiene tres opciones. La misión de mapeo está técnicamente cumplida con lo que tienen. Pero si el terreno lo permite, una muestra biológica tiene valor adicional. El riesgo crece con cada opción más ambiciosa.",
+      "texto_agente": "Tenemos los datos de mapeo. Tres opciones disponibles según el nivel de riesgo que Control autorice. El lecho sigue activo — hay migración constante bajo nosotros.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Opción A: instalen el segundo sensor para confirmar la tercera vía. Mayor resolución de datos.",
+          "siguiente": "nodo_segundo_sensor",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Opción B: recolecten muestra de excreción del lecho. Valor bioquímico alto, riesgo moderado.",
+          "siguiente": "nodo_recoleccion_excrecion",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Opción C: los datos de mapeo son suficientes. Inicien retirada ahora.",
+          "siguiente": "nodo_datos_mapeo_confirmados",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_segundo_sensor",
+      "tipo": "check",
+      "ambiente": "lecho — desplazamiento de doce metros al oeste, terreno activo",
+      "texto_control": "Instalar el segundo sensor requiere que el agente de reconocimiento se desplace doce metros al oeste — cruzando zona de migración activa. Pasos de cuatro segundos cada uno, pies planos, peso distribuido. El sensor de vibración portátil va al frente, marcando el paso seguro en tiempo real. Si hay espécimen activo en la vía, el sensor lo detecta antes de que el agente llegue.",
+      "texto_agente": "Procediendo al segundo punto. Pasos de cuatro segundos. El sensor portátil marca el camino. El lecho está activo pero los especímenes se mueven al sur de mi posición. Avanzando.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_sensor2_instalado",
+          "éxito": "nodo_sensor2_instalado",
+          "fallo": "nodo_emergencia_vibratoria",
+          "crítico_fallo": "nodo_emergencia_vibratoria"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_sensor2_instalado",
+      "tipo": "narrativo",
+      "ambiente": "lecho — segundo sensor activo, tercera vía confirmada",
+      "texto_control": "El segundo sensor está en posición. La tercera vía de migración queda confirmada: cuatro metros al este del eje original, con densidad menor. El mapa de ruta actualizado muestra la extensión completa de la migración en el tramo. Los datos son ahora de alta resolución. El agente de reconocimiento inicia el regreso al punto de reunión del equipo con los mismos pasos medidos.",
+      "texto_agente": "Segundo sensor instalado. La tercera vía está confirmada. El mapa de migración es completo. Regresando a posición del equipo. Pasos medidos. Todo en orden.",
+      "agente_voz": "reconocimiento",
+      "opciones": [
+        {
+          "texto": "Excelente. Mapa completo. ¿Intentan captura de espécimen o inician retirada con lo que tienen?",
+          "siguiente": "nodo_decision_captura",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "datos_migracion" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_recoleccion_excrecion",
+      "tipo": "check",
+      "ambiente": "lecho — marcas de excreción visibles en sedimento, recolección de muestra química",
+      "texto_control": "Las marcas de paso en el sedimento incluyen zonas de decoloración azulada — excreción ácida de los gusanos, que deja traza química en el substrato. El agente biológico usa el kit de recolección: espátula de campo, contenedor sellado, guantes de barrera química. El ácido es débil pero suficiente para quemar piel expuesta en contacto prolongado. La recolección tiene que ser limpia.",
+      "texto_agente": "Identificadas zonas de excreción en el sedimento. Procediendo con el kit de recolección. Guantes de barrera puestos. El color azulado es característico — esto es excreción fresca, de hoy.",
+      "agente_voz": "sanitario",
+      "check": {
+        "stat": "biológico",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_excrecion_asegurada",
+          "éxito": "nodo_excrecion_asegurada",
+          "fallo": "nodo_excrecion_contaminada",
+          "crítico_fallo": "nodo_excrecion_contaminada"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_excrecion_asegurada",
+      "tipo": "narrativo",
+      "ambiente": "lecho — muestra de excreción en contenedor sellado",
+      "texto_control": "La muestra está asegurada en el contenedor sellado. Excreción fresca de Gusano de Asfalto, sin contaminación por sedimento. El análisis bioquímico en laboratorio va a revelar la composición ácida completa. Es la primera muestra de excreción fresca documentada por CENVAC. El agente biológico ya está registrando el contexto de recolección.",
+      "texto_agente": "Muestra en contenedor. Excreción fresca, sin contaminación. Primera muestra de este tipo en campo. El contenedor está sellado y en la mochila. ¿Intentamos captura o iniciamos retirada?",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Con la excreción ya tienen muestra biológica. Evalúen si intentan captura o salen con lo que tienen.",
+          "siguiente": "nodo_decision_captura",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "datos_migracion" },
+            { "tipo": "flag", "nombre": "excrecion_obtenida", "valor": true }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_excrecion_contaminada",
+      "tipo": "narrativo",
+      "ambiente": "lecho — muestra con sedimento mezclado, contaminación de muestra",
+      "texto_control": "La recolección no fue limpia — el sedimento se mezcló con la excreción durante el proceso. La muestra tiene valor reducido para análisis bioquímico pero el componente ácido sigue presente. No es ideal, pero sigue siendo una muestra de campo válida. El agente biológico registra la contaminación en el protocolo.",
+      "texto_agente": "Muestra contaminada con sedimento. El ácido está en el contenedor pero mezclado con tierra. Valor reducido. La tenemos igualmente — algo es algo. ¿Procedemos con captura o retirada?",
+      "agente_voz": "sanitario",
+      "opciones": [
+        {
+          "texto": "Muestra contaminada registrada. Evalúen: captura o retirada.",
+          "siguiente": "nodo_decision_captura",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "datos_migracion" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_datos_mapeo_confirmados",
+      "tipo": "narrativo",
+      "ambiente": "lecho — equipo listo para retirada con datos de mapeo",
+      "texto_control": "El equipo confirma los datos de mapeo en los dispositivos locales. El mapa de migración — incompleto o completo según el análisis — está guardado. CENVAC-Central lo tiene en fragmentos. El equipo está listo para retirada. El lecho sigue activo bajo sus pies.",
+      "texto_agente": "Datos confirmados en dispositivos. El mapa de migración está guardado. Listos para retirada. El lecho sigue activo — los sensores marcan paso continuo.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmado. Inicien retirada silenciosa. Mismos protocolos que en la entrada.",
+          "siguiente": "nodo_retirada_silenciosa",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "datos_migracion" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_decision_captura",
+      "tipo": "decision",
+      "ambiente": "lecho — datos asegurados, decisión de captura",
+      "texto_control": "Los datos de migración están asegurados. Hay una opción de alto riesgo disponible: capturar un espécimen adulto vivo. Un gusano adulto de Gusano de Asfalto mide entre 2.8 y 3.5 metros, segrega ácido débil por la piel y responde a vibración con movimiento de emergencia brusco. La captura requiere equipo de contención de campo, fuerza física y precisión técnica simultáneas. Si algo sale mal, el gusano emerge completo.",
+      "texto_agente": "Tenemos los datos de mapeo asegurados. Hay opción de captura disponible si Control la autoriza. Es el mayor riesgo de la operación. O podemos salir con lo que tenemos. ¿Qué autorizan?",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Autorizado intento de captura. Alto riesgo, alto valor. El equipo sabe lo que hace.",
+          "siguiente": "nodo_captura_especimen",
+          "requiere": null,
+          "efectos_inmediatos": []
+        },
+        {
+          "texto": "Negativo. Los datos son suficientes. Inicien retirada ahora. No arriesguen al equipo.",
+          "siguiente": "nodo_retirada_silenciosa",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_captura_especimen",
+      "tipo": "check",
+      "ambiente": "lecho — sensor marca espécimen menor a sesenta centímetros de la superficie, oportunidad de captura",
+      "texto_control": "El sensor identifica un espécimen de señal más débil — probablemente juvenil, menor de dos metros. Está a sesenta centímetros de la superficie en zona de sedimento blando. El operador técnico prepara la trampa de contención: red de campo clase B más contenedor sellado de 180 cm. El agente físicamente más fuerte va a sujetar el extremo posterior si emerge completo. La coordinación tiene que ser perfecta.",
+      "texto_agente": "Espécimen juvenil a sesenta centímetros. Preparando trampa de contención. El operador técnico en posición. El agente físico listo en el extremo. Procediendo en tres... dos...",
+      "agente_voz": "auto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 13,
+        "modificadores_ambiente": -1,
+        "resultados": {
+          "crítico_éxito": "nodo_especimen_asegurado",
+          "éxito": "nodo_especimen_asegurado",
+          "fallo": "nodo_emergencia_vibratoria",
+          "crítico_fallo": "nodo_emergencia_vibratoria"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "estatica_media"
+    },
+    {
+      "id": "nodo_especimen_asegurado",
+      "tipo": "narrativo",
+      "ambiente": "lecho — espécimen en contención, equipo con muestra viva",
+      "texto_control": "El espécimen emergió y fue contenido en la red de campo en un movimiento coordinado. El juvenil mide ciento ochenta centímetros — más de lo estimado. El ácido dérmico dejó marcas en los guantes de barrera del operador pero la piel está intacta. El espécimen está en el contenedor sellado, vivo. Es la primera captura en vivo documentada por CENVAC de Gusano de Asfalto. El lecho respondió con actividad aumentada — hay que salir ahora.",
+      "texto_agente": "Espécimen en contención. Ciento ochenta centímetros, juvenil. El ácido marcó los guantes pero el operador está bien. El lecho está más activo — la captura activó respuesta de la colonia. Necesitamos salir ya.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Excelente. Primera captura viva documentada. Salgan ahora. El espécimen en el contenedor y el equipo en movimiento.",
+          "siguiente": "nodo_retirada_silenciosa",
+          "requiere": null,
+          "efectos_inmediatos": [
+            { "tipo": "muestra_obtenida", "valor": "especimen_vivo" }
+          ]
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_alta"
+    },
+    {
+      "id": "nodo_retirada_silenciosa",
+      "tipo": "check",
+      "ambiente": "lecho — equipo en retirada, posible actividad aumentada en substrato",
+      "texto_control": "La retirada sigue el mismo protocolo que la entrada. El agente de reconocimiento marca el paso, seis segundos entre apoyos, pies planos. Si el equipo completó la captura, el lecho está algo más activo y el margen de error es menor. Llegar a la ribera son ciento veinte metros de recorrido medido.",
+      "texto_agente": "En retirada. Pasos medidos. El sensor portátil marca el camino. El lecho tiene actividad de fondo. Avanzando hacia ribera. Ciento veinte metros.",
+      "agente_voz": "reconocimiento",
+      "check": {
+        "stat": "sigilo",
+        "agente": "mejor_stat",
+        "dificultad": 11,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_exterior",
+          "éxito": "nodo_exterior",
+          "fallo": "nodo_emergencia_vibratoria",
+          "crítico_fallo": "nodo_emergencia_vibratoria"
+        }
+      },
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_emergencia_vibratoria",
+      "tipo": "check",
+      "ambiente": "lecho — emergencia de espécimen, equipo en contacto directo",
+      "texto_control": "El sedimento explota a dos metros del agente más cercano. Un espécimen adulto emerge completo — tres metros de longitud, color negro-asfáltico, movimiento lateral brusco. El ácido dérmico alcanza al agente más próximo en el brazo y el hombro. El equipo tiene que alcanzar la ribera antes de que emerja otro. Correr ahora — el silencio ya no sirve.",
+      "texto_agente": "¡Emergencia! Espécimen adulto en superficie. El ácido alcanzó al agente A en brazo y hombro. Corriendo a ribera. Todo el equipo en movimiento.",
+      "agente_voz": "asalto",
+      "check": {
+        "stat": "físico",
+        "agente": "mejor_stat",
+        "dificultad": 12,
+        "modificadores_ambiente": 0,
+        "resultados": {
+          "crítico_éxito": "nodo_exterior",
+          "éxito": "nodo_exterior",
+          "fallo": "final_catastrofico",
+          "crítico_fallo": "final_catastrofico"
+        }
+      },
+      "efectos": [
+        {
+          "tipo": "herida",
+          "valor": {
+            "tipo": "quemadura_acida",
+            "severidad": 2,
+            "parte_cuerpo": "brazo_y_hombro",
+            "efecto_stat": { "físico": -1 }
+          },
+          "alcance": "aleatorio"
+        },
+        { "tipo": "estamina", "delta": -15, "alcance": "todos" },
+        { "tipo": "cordura", "delta": -15, "alcance": "todos" }
+      ],
+      "audio_hint": "alerta_critica"
+    },
+    {
+      "id": "nodo_exterior",
+      "tipo": "narrativo",
+      "ambiente": "ribera norte — fuera del lecho, señal recuperada",
+      "texto_control": "El equipo está en la ribera. El lecho queda atrás. La señal de radio se recupera inmediatamente fuera del campo de interferencia del substrato. Los datos en los dispositivos locales se transfieren a CENVAC-Central en el primer intercambio. El lecho sigue activo — desde la ribera se escucha la vibración de fondo, más audible ahora que saben qué es.",
+      "texto_agente": "En ribera. Equipo completo. La señal está en verde. Los datos se están transfiriendo a Central. El lecho sigue sonando desde aquí — lo escuchamos en el suelo bajo los pies. Reportando fin de operación en campo.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Confirmado. Datos recibidos en Central. Operación EVT-RIO-001 cerrada en campo. Procedan al punto de recogida.",
+          "siguiente": "nodo_punto_recogida",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "estatica_baja"
+    },
+    {
+      "id": "nodo_punto_recogida",
+      "tipo": "narrativo",
+      "ambiente": "base de aproximación norte — vehículo CENVAC, operación cerrada",
+      "texto_control": "El equipo llega al punto de recogida. La transferencia de datos se completó. CENVAC-Central confirma recepción del mapa de migración. Si el equipo lleva espécimen o muestra biológica, el protocolo de contención se activa inmediatamente al subir al vehículo.",
+      "texto_agente": "En el punto de recogida. Todos presentes. La transferencia de datos confirmada. El equipo está bien — o bien con la situación que tenemos. Reportando cierre de operación.",
+      "agente_voz": "auto",
+      "opciones": [
+        {
+          "texto": "Operación EVT-RIO-001 cerrada. Vuelvan a base para clasificación de resultados.",
+          "siguiente": "nodo_resolucion",
+          "requiere": null,
+          "efectos_inmediatos": []
+        }
+      ],
+      "efectos": [],
+      "audio_hint": "silencio"
+    },
+    {
+      "id": "nodo_resolucion",
+      "tipo": "resolucion",
+      "texto_control": "CENVAC-Central procesa los datos recibidos y clasifica el resultado de la operación EVT-RIO-001.",
+      "logica_resolucion": [
+        {
+          "condicion": { "muestra_obtenida": true, "muestra_tipo": "especimen_vivo", "bajas_count": 0, "heridas_graves_count": 0 },
+          "siguiente": "final_exito_limpio"
+        },
+        {
+          "condicion": { "muestra_obtenida": true, "bajas_count": 0, "heridas_graves_count": 0 },
+          "siguiente": "final_exito_parcial"
+        },
+        {
+          "condicion": { "muestra_obtenida": true, "bajas_count": 0, "heridas_graves_count_gte": 1 },
+          "siguiente": "final_exito_pirrico"
+        },
+        {
+          "condicion": { "muestra_obtenida": false, "bajas_count": 0 },
+          "siguiente": "final_fracaso_mapeo"
+        },
+        {
+          "condicion": { "bajas_count_gte": 1 },
+          "siguiente": "final_catastrofico"
+        }
+      ],
+      "efectos": []
+    },
+    {
+      "id": "final_exito_limpio",
+      "tipo": "final",
+      "resultado": "exito_limpio",
+      "titulo": "Espécimen vivo capturado — mapa completo — equipo intacto",
+      "texto_control": "Operación EVT-RIO-001 cerrada con resultado óptimo. Primera captura en vivo documentada de Gusano de Asfalto: espécimen juvenil de 180 cm en contenedor clase B. Mapa de migración completo con ruta, velocidad y estimación de población. El equipo regresó completo y sin heridas graves.",
+      "clasificacion_doc": "Nivel 1 — Acceso restringido — Análisis prioritario",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo completó la inserción en el lecho seco sin activar emergencia de especímenes. La instalación del primer sensor estableció las primeras lecturas estructuradas de migración. El análisis biológico documentó tres vías activas y una población estimada de 26 especímenes adultos. La captura de espécimen juvenil se ejecutó en ventana de oportunidad sin pérdidas de personal.",
+        "hallazgos": "La migración sigue el eje del cauce original del Río San Pedro con precisión de ±2 metros. Los especímenes detectados se desplazan a 0.9 km/hora en promedio. El espécimen capturado (juvenil, 180 cm) es el primero en contención viva documentado. La excreción ácida démica tiene pH estimado entre 4.2 y 4.8.",
+        "notas_analista": "El espécimen vivo representa oportunidad excepcional para análisis de bioquímica dérmica, comportamiento en cautiverio y estructura corporal. Se recomienda procesamiento inmediato en laboratorio de contención clase III. El mapa de migración permite prever la ruta anual con 85% de confianza."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_exito_parcial",
+      "tipo": "final",
+      "resultado": "exito_parcial",
+      "titulo": "Datos de migración documentados — equipo intacto",
+      "texto_control": "Operación EVT-RIO-001 cerrada con resultado aceptable. El mapa de migración del Gusano de Asfalto fue documentado con los datos disponibles. El equipo regresó completo y sin heridas graves. Si se obtuvo muestra de excreción, el laboratorio tendrá material bioquímico adicional.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo completó la inserción y recolección de datos de migración. El mapa resultante documenta la ruta principal y la estimación poblacional. La retirada fue ejecutada sin incidentes mayores.",
+        "hallazgos": "La migración estacional del Gusano de Asfalto sigue el eje del Río San Pedro como CENVAC-Central sospechaba. La densidad de la migración actual supera las estimaciones previas. Los datos son suficientes para actualizar el protocolo de rutas de patrullaje en la zona.",
+        "notas_analista": "El mapa de migración establece la ruta como un vector predecible. Se recomienda zona de exclusión temporal durante el período de migración (estimado: 3-4 semanas). Si se recolectó excreción, priorizar análisis bioquímico."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_exito_pirrico",
+      "tipo": "final",
+      "resultado": "exito_pirrico",
+      "titulo": "Datos obtenidos — herida por contacto ácido — revisión requerida",
+      "texto_control": "Operación EVT-RIO-001 cerrada. Los datos de migración están en el sistema — y el espécimen vivo si la captura fue exitosa. Un agente sufrió quemadura ácida por contacto directo con la dermis del Gusano de Asfalto durante un encuentro inesperado. La herida requiere tratamiento especializado. El equipo llegó al punto de recogida completo.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna — Revisión de protocolos de protección dérmica",
+      "narrativa_fragmentos": {
+        "cronologia": "La operación completó sus objetivos de recolección de datos. Un encuentro con espécimen emergente resultó en exposición al ácido dérmico para uno de los agentes. La retirada se completó bajo presión.",
+        "hallazgos": "El ácido dérmico del Gusano de Asfalto es efectivo en contacto directo y deja quemadura química en exposición superior a ocho segundos. Los guantes de barrera clase B son insuficientes para exposición prolongada. Se recomienda actualizar el equipo de protección para operaciones en zonas de migración activa.",
+        "notas_analista": "La herida por ácido dérmico confirma el riesgo de contacto directo con especímenes de Gusano de Asfalto fuera de condiciones de laboratorio. El protocolo de extracción de campo para exposición ácida debe ser revisado y distribuido antes de la próxima operación en la zona."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_fracaso_mapeo",
+      "tipo": "final",
+      "resultado": "fracaso_extraccion",
+      "titulo": "Retirada sin datos útiles — equipo completo",
+      "texto_control": "Operación EVT-RIO-001 cerrada sin datos de mapeo utilizables. El equipo tomó la decisión de retirada anticipada antes de completar la primera fase de recolección. El equipo regresó completo. La presencia de migración activa fue confirmada visualmente pero sin datos estructurados.",
+      "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+      "narrativa_fragmentos": {
+        "cronologia": "El equipo llegó a la zona del lecho pero la operación fue abortada antes de instalar sensores fijos o completar análisis biológico. La alerta por vibración accidental o la evaluación de riesgo del equipo determinó la retirada anticipada.",
+        "hallazgos": "La migración activa del Gusano de Asfalto en el lecho del Río San Pedro queda confirmada por observación directa y lectura de sensores portátiles durante la aproximación. Los datos son insuficientes para mapeo pero suficientes para confirmar presencia.",
+        "notas_analista": "Se recomienda segunda operación con preparación adicional de terreno — reconocimiento previo del perfil del sedimento y posibles puntos de rock bajo la capa blanda. El equipo debe repetir el protocolo de aproximación con tiempo de aclimatación al terreno más largo."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": []
+    },
+    {
+      "id": "final_catastrofico",
+      "tipo": "final",
+      "resultado": "catastrofico",
+      "titulo": "Emergencia masiva de especímenes — baja en campo — datos perdidos",
+      "texto_control": "Operación EVT-RIO-001 cerrada con pérdidas. La vibración generada durante la operación activó emergencia masiva coordinada. Múltiples especímenes emergieron simultáneamente del lecho. El equipo no logró alcanzar la ribera completo. CENVAC-Central clasifica el evento como incidente crítico clase A.",
+      "clasificacion_doc": "Nivel 1 — Acceso restringido — Revisión de Coordinación obligatoria",
+      "narrativa_fragmentos": {
+        "cronología": "La operación generó suficiente vibración superficial para activar la respuesta coordinada de la colonia en migración. La emergencia simultánea de múltiples especímenes adultos dejó al equipo sin ruta de retirada viable. El agente más próximo a la zona de emergencia no logró alcanzar la ribera.",
+        "hallazgos": "La respuesta coordinada de la colonia de Gusano de Asfalto ante vibración superficial sostenida es más rápida y más masiva de lo documentado previamente. El umbral de activación es menor a lo estimado en el protocolo actual. Se requiere revisión urgente.",
+        "notas_analista": "El umbral de vibración de activación del protocolo 4-A debe ser reducido para operaciones en zonas de migración activa de Gusano de Asfalto. La distancia de seguridad mínima entre agentes en este tipo de terreno debe ser de veinte metros — no diez. Revisión de protocolo prioritaria antes de siguiente operación."
+      },
+      "efectos": [],
+      "efectos_garantizados_al_entrar": [
+        {
+          "tipo": "baja_garantizada",
+          "valor": { "tipo": "trauma_acido_multiple", "parte_cuerpo": "tronco_y_extremidades", "severidad": 4 },
+          "alcance": "aleatorio"
+        }
+      ]
+    }
+  ]
+}
