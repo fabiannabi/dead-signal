@@ -59,7 +59,13 @@ title: "Bestiario"
   </div>
 </div>
 
-<div class="archive-stamp">Amenaza I — Prioridad baja</div>
+<div class="threat-header amenaza-i">
+  <div class="threat-h-badge">I</div>
+  <div class="threat-h-info">
+    <span class="threat-h-name">Amenaza I</span>
+    <span class="threat-h-desc">Presencia confirmada — riesgo indirecto o ambiental</span>
+  </div>
+</div>
 
 <div class="entry-grid">
 
@@ -95,7 +101,13 @@ title: "Bestiario"
 
 </div>
 
-<div class="archive-stamp">Amenaza II — Prioridad alta</div>
+<div class="threat-header amenaza-ii">
+  <div class="threat-h-badge">II</div>
+  <div class="threat-h-info">
+    <span class="threat-h-name">Amenaza II</span>
+    <span class="threat-h-desc">Contacto directo con riesgo de bajas — protocolo activo</span>
+  </div>
+</div>
 
 <div class="entry-grid">
 
@@ -181,7 +193,13 @@ title: "Bestiario"
 
 </div>
 
-<div class="archive-stamp">Amenaza III — Prioridad crítica</div>
+<div class="threat-header amenaza-iii">
+  <div class="threat-h-badge">III</div>
+  <div class="threat-h-info">
+    <span class="threat-h-name">Amenaza III</span>
+    <span class="threat-h-desc">Prioridad crítica — evacuación inmediata, sin confrontación</span>
+  </div>
+</div>
 
 <div class="entry-grid">
 
@@ -197,7 +215,13 @@ title: "Bestiario"
 
 </div>
 
-<div class="archive-stamp">Amenaza IV — Clase Extinción</div>
+<div class="threat-header amenaza-iv">
+  <div class="threat-h-badge">IV</div>
+  <div class="threat-h-info">
+    <span class="threat-h-name">Amenaza IV — Clase Extinción</span>
+    <span class="threat-h-desc">Investigación no autorizada — datos insuficientes</span>
+  </div>
+</div>
 
 <div class="entry-grid">
 
