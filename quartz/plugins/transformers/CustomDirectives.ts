@@ -14,11 +14,19 @@ export const CustomDirectives: QuartzTransformerPlugin = () => {
             const name = node.name as string
             const attrs = (node.attributes ?? {}) as Record<string, string>
 
-            // Inline directive: :redactado[texto] → <span class="redacted">████</span>
-            if (node.type === "textDirective" && name === "redactado") {
-              node.data = {
-                hName: "span",
-                hProperties: { class: "redacted" },
+            // Inline directives
+            if (node.type === "textDirective") {
+              if (name === "redactado") {
+                node.data = {
+                  hName: "span",
+                  hProperties: { class: "redacted" },
+                }
+              } else {
+                // Unknown inline directive — render as inline span to avoid breaking paragraph flow
+                node.data = {
+                  hName: "span",
+                  hProperties: {},
+                }
               }
               return
             }

@@ -44,15 +44,26 @@ export const defaultContentPageLayout: PageLayout = {
           personajes: "Expedientes de Sujeto",
           documentos: "Documentos Originales",
           bestiario: "Registro de Amenazas",
+          fabian: "Fabián — F-01",
+          felipe: "Felipe — F-02",
+          gaby: "Gaby — F-03",
+          aaron: "Aarón — F-04",
+          carlos: "Carlos — F-05",
         }
         if (node.isFolder && node.slugSegment && names[node.slugSegment]) {
           node.displayName = names[node.slugSegment]
         }
         if (!node.isFolder && node.displayName) {
+          // "F-01 / Entrada 01 — Título"  →  "Entrada 01 — Título"
+          node.displayName = node.displayName.replace(/^F-\d+\s*[/\/]\s*/, "")
+          // "F-01 — Fabián" (fichas de personaje)  →  "↳ Ficha"
+          node.displayName = node.displayName.replace(/^F-\d+\s*[—–]\s*(.+)$/, "↳ Ficha — $1")
+          // legacy: Cap. XX → Entrada XX
           node.displayName = node.displayName.replace(/Cap\.\s*0*(\d+)/g, "Entrada $1")
         }
       },
     }),
+    Component.PaletteSwitcher(),
   ],
   right: [],
 }
@@ -79,15 +90,26 @@ export const defaultListPageLayout: PageLayout = {
           personajes: "Expedientes de Sujeto",
           documentos: "Documentos Originales",
           bestiario: "Registro de Amenazas",
+          fabian: "Fabián — F-01",
+          felipe: "Felipe — F-02",
+          gaby: "Gaby — F-03",
+          aaron: "Aarón — F-04",
+          carlos: "Carlos — F-05",
         }
         if (node.isFolder && node.slugSegment && names[node.slugSegment]) {
           node.displayName = names[node.slugSegment]
         }
         if (!node.isFolder && node.displayName) {
+          // "F-01 / Entrada 01 — Título"  →  "Entrada 01 — Título"
+          node.displayName = node.displayName.replace(/^F-\d+\s*[/\/]\s*/, "")
+          // "F-01 — Fabián" (fichas de personaje)  →  "↳ Ficha"
+          node.displayName = node.displayName.replace(/^F-\d+\s*[—–]\s*(.+)$/, "↳ Ficha — $1")
+          // legacy: Cap. XX → Entrada XX
           node.displayName = node.displayName.replace(/Cap\.\s*0*(\d+)/g, "Entrada $1")
         }
       },
     }),
+    Component.PaletteSwitcher(),
   ],
   right: [],
 }

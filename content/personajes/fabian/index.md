@@ -6,7 +6,6 @@ profesion: Ing. Bioquímica / Programador
 origen: Col. San Marcos, Aguascalientes
 clasificacion: Testimonial / Clase C
 capitulos: 4
-tags: [personaje, f-01]
 ---
 
 :::archivist
@@ -26,7 +25,7 @@ F-01 era programador e ingeniero en bioquímica y alimentos al momento de la Eme
 
 ## Documentos recuperados
 
-- [[fabian-cap-01|Entrada 01 — Día normal]]
-- [[fabian-cap-02|Entrada 02 — Primera salida]]
-- [[fabian-cap-03|Entrada 03 — Perímetro]]
-- [[fabian-cap-04|Entrada 04 — Radio de acción]]
+- [[fabian/cap-01|Entrada 01 — Día normal]]
+- [[fabian/cap-02|Entrada 02 — Primera salida]]
+- [[fabian/cap-03|Entrada 03 — Perímetro]]
+- [[fabian/cap-04|Entrada 04 — Radio de acción]]

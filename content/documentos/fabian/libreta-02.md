@@ -3,13 +3,12 @@ title: "Libreta de campo — F-01 / Día 4"
 tipo: documento
 personaje: fabian
 formato: field
-capitulo-relacionado: "[[fabian-cap-02]]"
-tags: [fabian, libreta-de-campo, semana-1]
+capitulo-relacionado: "[[fabian/cap-02]]"
 ---
 
 *Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 2 — Primera salida*
 
-**Archivo reconstruido:** [[fabian-cap-02|F-01 / Entrada 02 — Primera salida]]
+**Archivo reconstruido:** [[fabian/cap-02|F-01 / Entrada 02 — Primera salida]]
 
 ---
 

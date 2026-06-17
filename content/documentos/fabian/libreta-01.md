@@ -3,13 +3,12 @@ title: "Libreta de campo — F-01 / Días 1–3"
 tipo: documento
 personaje: fabian
 formato: field
-capitulo-relacionado: "[[fabian-cap-01]]"
-tags: [fabian, libreta-de-campo, semana-1]
+capitulo-relacionado: "[[fabian/cap-01]]"
 ---
 
 *Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 1 — Día normal*
 
-**Archivo reconstructido:** [[fabian-cap-01|F-01 / Entrada 01 — Día normal]]
+**Archivo reconstructido:** [[fabian/cap-01|F-01 / Entrada 01 — Día normal]]
 
 ---
 

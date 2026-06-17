@@ -1,6 +1,84 @@
 @use "./base.scss";
 @use "./_theme-senal.scss" as *;
 
+// ─────────────────────────────────────────────
+// PALETAS DE PRUEBA — data-palette
+// ─────────────────────────────────────────────
+
+// Terminal fósforo — CRT verde
+html[data-palette="fosfor"] {
+  --light:     #040a04;
+  --lightgray: #081408;
+  --gray:      #152515;
+  --darkgray:  #2d4a2d;
+  --dark:      #7ab87a;
+  --secondary: #4dcc6a;
+  --tertiary:  #2a7a3a;
+  --highlight: rgba(77, 204, 106, 0.1);
+  --textHighlight: rgba(77, 204, 106, 0.2);
+}
+
+// Ámbar VHS — cassette degradado
+html[data-palette="ambar"] {
+  --light:     #080500;
+  --lightgray: #120c00;
+  --gray:      #2a1e00;
+  --darkgray:  #5a4010;
+  --dark:      #d4a843;
+  --secondary: #f0aa30;
+  --tertiary:  #8a5a10;
+  --highlight: rgba(240, 170, 48, 0.1);
+  --textHighlight: rgba(240, 170, 48, 0.2);
+}
+
+// Microfilm — archivo frío / xerox
+html[data-palette="microfilm"] {
+  --light:     #04040a;
+  --lightgray: #09091a;
+  --gray:      #18182a;
+  --darkgray:  #40405a;
+  --dark:      #b8c8d8;
+  --secondary: #5a9ab8;
+  --tertiary:  #2a6a8a;
+  --highlight: rgba(90, 154, 184, 0.1);
+  --textHighlight: rgba(90, 154, 184, 0.2);
+}
+
+// ─────────────────────────────────────────────
+// SWITCHER UI
+// ─────────────────────────────────────────────
+
+.palette-switcher {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.palette-btn {
+  font-family: var(--codeFont);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--gray);
+  background: transparent;
+  color: var(--darkgray);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+
+  &:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+  }
+
+  &.active {
+    border-color: var(--secondary);
+    color: var(--secondary);
+    background: var(--highlight);
+  }
+}
+
 // ─── Textura de ruido SVG ───
 $grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
 
@@ -651,10 +729,63 @@ footer { display: none; }
     }
   }
 
-  // Tipo: notas clínicas (Felipe, Gaby)
+  // Tipo: notas clínicas (Felipe, Gaby) — papel membretado de hospital
   &.clinical {
-    border-left-color: var(--gray);
-    &::before { content: 'notas clínicas'; }
+    font-family: 'Courier New', monospace;
+    font-style: normal;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: #1c1c14;
+
+    background-color: #f0ede3;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-top: 3px solid #4a6a78;
+    border-left: none;
+    padding: 0 1.5rem 1.4rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+
+    // Encabezado membretado
+    &::before {
+      content: 'Hospital General de Aguascalientes — Urgencias';
+      position: static;
+      display: block;
+      font-family: var(--codeFont);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #4a6a78;
+      background: none;
+      padding: 0.75rem 0 0.6rem;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(74, 106, 120, 0.25);
+    }
+
+    strong {
+      font-weight: 700;
+      font-style: normal;
+      color: #1c1c14;
+      display: block;
+      margin-top: 1rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+
+      &:first-child { margin-top: 0; }
+    }
+
+    p {
+      color: #2a2a1e;
+      font-size: 0.88rem;
+      margin: 0.1rem 0 0.5rem;
+    }
+
+    // El hr dentro del bloque actúa como separador de sección
+    hr {
+      border: none;
+      border-top: 1px dashed rgba(74, 106, 120, 0.3);
+      margin: 0.8rem 0;
+    }
   }
 
   // Tipo: diario personal
@@ -719,6 +850,28 @@ pre { border-color: var(--lightgray); border-radius: 2px; }
 // Sin overflow: hidden se salen del 1fr y el html los corta visualmente.
 .section-li > .section {
   overflow: hidden;
+
+  // Ampliar columna meta para que "Día 186 de ████" no rompa línea
+  grid-template-columns: fit-content(13em) 3fr 1fr !important;
+  align-items: start;
+  gap: 0.4rem 1rem;
+
+  & > .meta {
+    opacity: 1 !important;
+    color: var(--darkgray);
+    white-space: nowrap;
+    font-family: var(--codeFont);
+    font-size: 0.75rem;
+    padding-top: 0.15rem;
+  }
+
+  // Títulos en listado: sin uppercase, tamaño legible
+  & > .desc h3 {
+    text-transform: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
 }
 
 // ─────────────────────────────────────────────
@@ -744,6 +897,175 @@ table {
 
   .center {
     padding: 1.25rem 1.5rem;
+  }
+}
+
+// ─────────────────────────────────────────────
+// ÍNDICE DE EXPEDIENTES — /personajes
+// ─────────────────────────────────────────────
+
+.archivo-stamp {
+  font-family: var(--codeFont);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray);
+  border-bottom: 1px solid var(--lightgray);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.sujeto-tabla {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+  border: 1px solid var(--lightgray);
+
+  .sujeto-fila {
+    display: grid;
+    grid-template-columns: 3.5rem 7rem 1fr 10rem 2.5rem;
+    gap: 0.8rem;
+    align-items: center;
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--lightgray);
+    text-decoration: none;
+    color: var(--dark);
+    transition: background 0.12s;
+
+    &:last-child { border-bottom: none; }
+
+    &.encabezado {
+      background: var(--lightgray);
+      font-family: var(--codeFont);
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray);
+      pointer-events: none;
+    }
+
+    &:not(.encabezado):not(.disabled):hover {
+      background: var(--highlight);
+      cursor: pointer;
+    }
+
+    &.disabled {
+      opacity: 0.38;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  .sujeto-codigo {
+    font-family: var(--codeFont);
+    font-size: 0.72rem;
+    color: var(--secondary);
+    letter-spacing: 0.1em;
+  }
+
+  .sujeto-nombre {
+    font-family: var(--headerFont);
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+  }
+
+  .sujeto-rol {
+    font-size: 0.82rem;
+    color: var(--text2, var(--darkgray));
+  }
+
+  .sujeto-origen {
+    font-size: 0.78rem;
+    color: var(--gray);
+    font-family: var(--codeFont);
+  }
+
+  .sujeto-docs {
+    font-family: var(--codeFont);
+    font-size: 0.78rem;
+    color: var(--gray);
+    text-align: right;
+  }
+}
+
+.archivist-note-inline {
+  font-family: var(--codeFont);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+  margin-top: 1rem;
+  &::before { content: '// '; }
+}
+
+// ─────────────────────────────────────────────
+// ÍNDICE DE DOCUMENTOS — /documentos
+// ─────────────────────────────────────────────
+
+.doc-indice {
+  margin: 1.8rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.doc-seccion {
+  border-left: 2px solid var(--lightgray);
+  padding-left: 1.2rem;
+
+  &:hover { border-left-color: var(--secondary); }
+  transition: border-color 0.15s;
+}
+
+.doc-seccion-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.doc-codigo {
+  font-family: var(--codeFont);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: var(--secondary);
+}
+
+.doc-nombre {
+  font-family: var(--headerFont);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+.doc-formato {
+  font-family: var(--codeFont);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  border: 1px solid var(--gray);
+  padding: 0.1rem 0.4rem;
+}
+
+.doc-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  li {
+    font-size: 0.9rem;
+    color: var(--darkgray);
+    &::before { content: '→ '; color: var(--gray); font-family: var(--codeFont); }
+  }
+
+  a {
+    color: var(--dark);
+    text-decoration: none;
+    &:hover { color: var(--secondary); }
   }
 }
 

@@ -3,13 +3,12 @@ title: "Libreta de campo — F-01 / Día 5"
 tipo: documento
 personaje: fabian
 formato: field
-capitulo-relacionado: "[[fabian-cap-03]]"
-tags: [fabian, libreta-de-campo, semana-1]
+capitulo-relacionado: "[[fabian/cap-03]]"
 ---
 
 *Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 3 — Perímetro*
 
-**Archivo reconstruido:** [[fabian-cap-03|F-01 / Entrada 03 — Perímetro]]
+**Archivo reconstruido:** [[fabian/cap-03|F-01 / Entrada 03 — Perímetro]]
 
 ---
 
