@@ -533,56 +533,84 @@ footer { display: none; }
     font-family: 'Caveat', cursive;
     font-style: normal;
     font-size: 1.2rem;
-    line-height: 2.1rem;
-    color: #c8b87a;
+    line-height: 2.8rem; // aumentado para dar espacio a correcciones encima
+    color: #cdbf86;
 
-    // Papel oscuro envejecido
-    background-color: #111009;
+    // Papel oscuro envejecido — tono cálido/sepia
+    background-color: #17140a;
     background-image:
-      // Líneas renglón alineadas con line-height
+      // Línea al 78% del line-height de 2.8rem = 2.18rem
       repeating-linear-gradient(
         transparent,
-        transparent calc(2.1rem - 1px),
-        rgba(100, 85, 40, 0.25) calc(2.1rem - 1px),
-        rgba(100, 85, 40, 0.25) 2.1rem
+        transparent 2.18rem,
+        rgba(110, 90, 40, 0.28) 2.18rem,
+        rgba(110, 90, 40, 0.28) calc(2.18rem + 1px),
+        transparent calc(2.18rem + 1px),
+        transparent 2.8rem
       );
 
-    border: 1px solid rgba(100, 85, 40, 0.35);
-    border-left: 3px solid rgba(160, 50, 50, 0.45); // línea de margen roja
-    padding: 0.5rem 1.5rem 1.2rem 2rem;
+    border: 1px solid rgba(110, 90, 40, 0.3);
+    border-left: 3px solid rgba(160, 50, 50, 0.5);
+    padding: 0.5rem 1.5rem 1.4rem 2rem;
 
-    // Label — título del bloque, grande y legible
+    // Label
     &::before {
       content: 'Libreta de campo';
       position: static;
       display: block;
       font-family: 'Caveat', cursive;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 500;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.02em;
       text-transform: none;
-      color: rgba(200, 184, 120, 0.55);
+      color: rgba(205, 190, 130, 0.45);
       background: none;
-      padding: 0;
-      margin-bottom: 0.4rem;
-      border-bottom: 1px dashed rgba(100, 85, 40, 0.35);
-      padding-bottom: 0.3rem;
+      padding: 0 0 0.35rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px dashed rgba(110, 90, 40, 0.3);
+      line-height: 2.8rem;
     }
 
     p {
       margin: 0;
       font-size: 1.2rem;
-      line-height: 2.1rem;
+      line-height: 2.8rem;
     }
 
     .fn-comment {
       font-family: 'Caveat', cursive;
       font-size: 1.05rem;
-      color: rgba(140, 120, 60, 0.7);
+      color: rgba(150, 130, 65, 0.65);
       border: none;
       padding: 0;
-      line-height: 2.1rem;
+      line-height: 2.8rem;
       letter-spacing: 0;
+    }
+
+    // Tachones con corrección encima — como notas escritas a mano
+    .tachado-grupo {
+      position: relative;
+      display: inline-block;
+      // Espacio extra arriba para que la corrección no solape la línea anterior
+      padding-top: 1rem;
+      margin-top: -1rem; // compensar el padding para no romper el flujo
+      vertical-align: baseline;
+    }
+    .tachado {
+      text-decoration: line-through;
+      text-decoration-color: rgba(180, 80, 60, 0.85);
+      text-decoration-thickness: 2px;
+      opacity: 0.65;
+    }
+    .correccion {
+      position: absolute;
+      bottom: calc(100% - 1rem); // anclada sobre el texto tachado, dentro del padding
+      left: 0;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      line-height: 1;
+      color: #cdbf86;
+      pointer-events: none;
     }
   }
 

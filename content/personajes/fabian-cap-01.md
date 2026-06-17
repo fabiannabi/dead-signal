@@ -32,9 +32,9 @@ En el segundo día F-01 documentó el primer avistamiento de lo que el archivo c
 La entrada sobre la [[enredadera-acelerada|enredadera acelerada]] representa el primer registro escrito de flora mutada en el área de San Marcos. Muestras recuperadas posteriormente en el domicilio de F-01 confirmaron las propiedades de crecimiento documentadas y el brillo metálico característico de la especie.
 
 :::notas{tipo="field"}
-[Lanudo] cuadrúpedo. zona norte.
+[<span class="tachado-grupo"><span class="tachado">Cervato</span><span class="correccion">Lanudo</span></span>] cuadrúpedo. zona norte.
 avistamiento único — cruzó la calle y desapareció detrás de la barda del fondo.
-herbívoro probable. sin reacción a presencia humana.
+<span class="tachado-grupo"><span class="tachado">carnívoro</span><span class="correccion">herbívoro</span></span> probable. sin reacción a presencia humana.
 pendiente: ¿hay más?
 
 [Roca] escarabajo — puño de tamaño.
@@ -44,7 +44,7 @@ defensivo / no agresivo hasta ahora.
 pendiente: ¿qué come? ¿salen de noche?
 
 [Enredadera] grieta sur.
-crecimiento visible en 48hrs — eso no es normal.
+crecimiento visible en <span class="tachado-grupo"><span class="tachado">24hrs</span><span class="correccion">48hrs</span></span> — eso no es normal.
 brillo metálico en hoja bajo luz directa. muestra guardada, hoja 4.
 pendiente: ¿mutación de algo existente o especie nueva?
 
