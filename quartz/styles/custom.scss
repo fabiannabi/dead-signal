@@ -490,6 +490,10 @@ footer { display: none; }
   user-select: none;
   padding: 0 2px;
   border-radius: 1px;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  display: inline-block;
+  max-width: 100%;
 }
 
 // .section-break — divisor — — —
