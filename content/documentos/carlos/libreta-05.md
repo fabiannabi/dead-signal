@@ -78,7 +78,12 @@ Seis años de pagos. Pero eso era antes.
 
 Seguí.
 
-![Firma sin clasificar — acelerómetro portátil / en tránsito](acelerometro-gusano.svg)
+<div class="photo-center">
+  <figure class="photo-item">
+    <img src="acelerometro-gusano.svg" alt="Firma sin clasificar — acelerómetro portátil / en tránsito">
+    <figcaption>Firma sin clasificar — en tránsito</figcaption>
+  </figure>
+</div>
 
 <div class="audio-cassette">
   <div class="cassette-header">

@@ -911,6 +911,17 @@ footer { display: none; }
   }
 }
 
+.photo-center {
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem 0;
+
+  .photo-item {
+    max-width: 480px;
+    width: 100%;
+  }
+}
+
 .photo-item {
   position: relative;
   margin: 0;
