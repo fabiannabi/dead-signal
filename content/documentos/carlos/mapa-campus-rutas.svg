@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="490" viewBox="0 0 680 490" font-family="Caveat, cursive">
+
+  <rect width="680" height="490" fill="#e4edf8"/>
+  <g stroke="#a4bcd6" stroke-width="0.7" opacity="0.65">
+    <line x1="0" y1="24"  x2="680" y2="24"/><line x1="0" y1="48"  x2="680" y2="48"/>
+    <line x1="0" y1="72"  x2="680" y2="72"/><line x1="0" y1="96"  x2="680" y2="96"/>
+    <line x1="0" y1="120" x2="680" y2="120"/><line x1="0" y1="144" x2="680" y2="144"/>
+    <line x1="0" y1="168" x2="680" y2="168"/><line x1="0" y1="192" x2="680" y2="192"/>
+    <line x1="0" y1="216" x2="680" y2="216"/><line x1="0" y1="240" x2="680" y2="240"/>
+    <line x1="0" y1="264" x2="680" y2="264"/><line x1="0" y1="288" x2="680" y2="288"/>
+    <line x1="0" y1="312" x2="680" y2="312"/><line x1="0" y1="336" x2="680" y2="336"/>
+    <line x1="0" y1="360" x2="680" y2="360"/><line x1="0" y1="384" x2="680" y2="384"/>
+    <line x1="0" y1="408" x2="680" y2="408"/><line x1="0" y1="432" x2="680" y2="432"/>
+    <line x1="0" y1="456" x2="680" y2="456"/><line x1="0" y1="480" x2="680" y2="480"/>
+  </g>
+  <line x1="56" y1="0" x2="56" y2="490" stroke="#c89898" stroke-width="1" opacity="0.7"/>
+
+  <text x="68" y="34" font-size="18" fill="#1a2a3a" font-weight="500">mapa de rutas — evento nocturno / semana 4</text>
+  <text x="68" y="54" font-size="13" fill="#4a6080">campus sur UAA — esquemático / no a escala</text>
+
+  <!-- Flecha Norte -->
+  <line x1="610" y1="76" x2="610" y2="90" stroke="#2a4060" stroke-width="1.5"/>
+  <polygon points="610,70 606,78 614,78" fill="#2a4060"/>
+  <text x="618" y="82" font-size="13" fill="#2a4060">N</text>
+
+  <!-- ═══════════════════════ CAMPUS PERIMETER ═══════════════════════ -->
+  <!-- Barda — línea gruesa exterior. Algunos segmentos normales, uno cuarteado -->
+  <!-- Norte -->
+  <line x1="100" y1="80"  x2="560" y2="80"  stroke="#2a4060" stroke-width="2.5"/>
+  <!-- Oriente — superior (normal) -->
+  <line x1="560" y1="80"  x2="560" y2="210" stroke="#2a4060" stroke-width="2.5"/>
+  <!-- Oriente — sección cuarteada (~y=210–260) -->
+  <line x1="560" y1="210" x2="560" y2="260" stroke="#2a4060" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="566" y="240" font-size="11" fill="#8a3018">cuarteada</text>
+  <!-- Oriente — inferior (normal) -->
+  <line x1="560" y1="260" x2="560" y2="350" stroke="#2a4060" stroke-width="2.5"/>
+  <!-- Sur -->
+  <line x1="100" y1="350" x2="560" y2="350" stroke="#2a4060" stroke-width="2.5"/>
+  <!-- Poniente -->
+  <line x1="100" y1="80"  x2="100" y2="350" stroke="#2a4060" stroke-width="2.5"/>
+
+  <!-- Labels barda -->
+  <text x="320" y="75" font-size="11" fill="#4a6080" text-anchor="middle">barda norte</text>
+  <text x="320" y="362" font-size="11" fill="#4a6080" text-anchor="middle">barda sur</text>
+  <text x="90"  y="220" font-size="11" fill="#4a6080" text-anchor="end" transform="rotate(-90,90,220)">barda poniente</text>
+
+  <!-- ═══════════════════════ EDIFICIOS ═══════════════════════ -->
+  <!-- Administrativo (centro-norte) -->
+  <rect x="190" y="108" width="200" height="90" fill="white" fill-opacity="0.5" stroke="#2a4060" stroke-width="1.5"/>
+  <text x="290" y="148" font-size="12" fill="#1a2a3a" text-anchor="middle">administrativo</text>
+  <text x="290" y="163" font-size="10" fill="#4a6080" text-anchor="middle">sensores S1–S4</text>
+
+  <!-- Sensores en esquinas (puntos) -->
+  <circle cx="190" cy="108" r="4" fill="#2a4060"/><text x="178" y="106" font-size="10" fill="#2a4060" text-anchor="end">S2</text>
+  <circle cx="390" cy="108" r="4" fill="#2a4060"/><text x="396" y="106" font-size="10" fill="#2a4060">S1</text>
+  <circle cx="190" cy="198" r="4" fill="#8a3018"/><text x="178" y="196" font-size="10" fill="#8a3018" text-anchor="end">S4</text>
+  <circle cx="390" cy="198" r="4" fill="#2a4060"/><text x="396" y="196" font-size="10" fill="#2a4060">S3</text>
+
+  <!-- Ed. B (poniente) -->
+  <rect x="120" y="230" width="100" height="70" fill="white" fill-opacity="0.4" stroke="#4a6080" stroke-width="1"/>
+  <text x="170" y="270" font-size="11" fill="#4a6080" text-anchor="middle">Ed. B</text>
+
+  <!-- Ed. C (centro) -->
+  <rect x="240" y="240" width="120" height="65" fill="white" fill-opacity="0.4" stroke="#4a6080" stroke-width="1"/>
+  <text x="300" y="277" font-size="11" fill="#4a6080" text-anchor="middle">Ed. C</text>
+
+  <!-- Ed. D (oriente) -->
+  <rect x="400" y="220" width="110" height="80" fill="white" fill-opacity="0.4" stroke="#4a6080" stroke-width="1"/>
+  <text x="455" y="265" font-size="11" fill="#4a6080" text-anchor="middle">Ed. D</text>
+
+  <!-- Campo norte (área abierta entre admin y barda norte) -->
+  <text x="290" y="96" font-size="10" fill="#7a9ab8" text-anchor="middle">campo norte</text>
+
+  <!-- ═══════════════════════ RUTA COYOTES ═══════════════════════ -->
+  <!-- Vienen del sur exterior -->
+  <text x="310" y="385" font-size="12" fill="#4a6080">coyotes (7)</text>
+  <!-- Flecha aproximación sur -->
+  <path d="M 280,395 Q 260,375 240,360" fill="none" stroke="#4a6080" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arr-gray)"/>
+  <path d="M 340,395 Q 360,375 400,360" fill="none" stroke="#4a6080" stroke-width="1.8" stroke-dasharray="5,3"/>
+  <!-- Evaluaron la barda cuarteada oriente -->
+  <path d="M 400,360 Q 480,310 560,240" fill="none" stroke="#4a6080" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="490" y="295" font-size="10" fill="#4a6080" transform="rotate(-60,490,295)">evalúan</text>
+  <!-- Se fueron al sur -->
+  <path d="M 330,360 Q 330,390 300,420" fill="none" stroke="#4a6080" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="300,420 296,412 304,413" fill="#4a6080"/>
+  <text x="280" y="430" font-size="11" fill="#4a6080">retiran (sur)</text>
+
+  <!-- ═══════════════════════ ENTIDAD DESCONOCIDA ═══════════════════════ -->
+  <!-- Entrada desde norte — ?? -->
+  <text x="440" y="68" font-size="12" fill="#8a3018">??? 04:15h</text>
+  <!-- Flecha desde fuera hacia dentro del campus norte -->
+  <path d="M 450,74 Q 450,78 450,83" fill="none" stroke="#8a3018" stroke-width="1.5"/>
+  <polygon points="450,84 447,78 453,78" fill="#8a3018"/>
+
+  <!-- Punto de huella encontrada — campo norte 15m de barda -->
+  <circle cx="370" cy="105" r="7" fill="none" stroke="#8a3018" stroke-width="1.8"/>
+  <line x1="366" y1="101" x2="374" y2="109" stroke="#8a3018" stroke-width="1.8"/>
+  <line x1="374" y1="101" x2="366" y2="109" stroke="#8a3018" stroke-width="1.8"/>
+  <text x="380" y="102" font-size="12" fill="#8a3018">huella encontrada</text>
+  <text x="380" y="115" font-size="10" fill="#8a3018">~15 m de barda norte</text>
+
+  <!-- Barda norte intacta — anotación -->
+  <line x1="340" y1="80" x2="340" y2="70" stroke="#8a3018" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="340" y="67" font-size="10" fill="#8a3018" text-anchor="middle">intacta ←→</text>
+
+  <!-- ═══════════════════════ LEYENDA ═══════════════════════ -->
+  <line x1="68" y1="448" x2="632" y2="448" stroke="#a4bcd6" stroke-width="0.7" opacity="0.7"/>
+  <!-- Coyotes -->
+  <line x1="68" y1="462" x2="100" y2="462" stroke="#4a6080" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="106" y="466" font-size="12" fill="#4a6080">ruta coyotes (confirmada)</text>
+  <!-- Entidad -->
+  <line x1="290" y1="462" x2="322" y2="462" stroke="#8a3018" stroke-width="1.5"/>
+  <text x="328" y="466" font-size="12" fill="#8a3018">entidad desconocida (inferida)</text>
+  <!-- Huella -->
+  <circle cx="555" cy="462" r="5" fill="none" stroke="#8a3018" stroke-width="1.5"/>
+  <line x1="551" y1="458" x2="559" y2="466" stroke="#8a3018" stroke-width="1.5"/>
+  <line x1="559" y1="458" x2="551" y2="466" stroke="#8a3018" stroke-width="1.5"/>
+  <text x="564" y="466" font-size="12" fill="#8a3018">huella</text>
+
+  <!-- Nota final -->
+  <text x="68" y="484" font-size="12" fill="#8a3018">barda norte intacta en toda su extensión. lo que entró no la forzó.</text>
+
+  <polygon points="652,0 680,0 680,28" fill="#c0ccd8" opacity="0.45"/>
+  <text x="28" y="240" font-size="10" fill="#7a9ab8" text-anchor="middle" transform="rotate(-90,28,240)">MAPA / RUTAS NOCTURNAS</text>
+
+</svg>

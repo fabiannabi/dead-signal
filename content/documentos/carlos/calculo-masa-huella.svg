@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="520" viewBox="0 0 680 520" font-family="Caveat, cursive">
+
+  <rect width="680" height="520" fill="#e4edf8"/>
+  <g stroke="#a4bcd6" stroke-width="0.7" opacity="0.65">
+    <line x1="0" y1="24"  x2="680" y2="24"/><line x1="0" y1="48"  x2="680" y2="48"/>
+    <line x1="0" y1="72"  x2="680" y2="72"/><line x1="0" y1="96"  x2="680" y2="96"/>
+    <line x1="0" y1="120" x2="680" y2="120"/><line x1="0" y1="144" x2="680" y2="144"/>
+    <line x1="0" y1="168" x2="680" y2="168"/><line x1="0" y1="192" x2="680" y2="192"/>
+    <line x1="0" y1="216" x2="680" y2="216"/><line x1="0" y1="240" x2="680" y2="240"/>
+    <line x1="0" y1="264" x2="680" y2="264"/><line x1="0" y1="288" x2="680" y2="288"/>
+    <line x1="0" y1="312" x2="680" y2="312"/><line x1="0" y1="336" x2="680" y2="336"/>
+    <line x1="0" y1="360" x2="680" y2="360"/><line x1="0" y1="384" x2="680" y2="384"/>
+    <line x1="0" y1="408" x2="680" y2="408"/><line x1="0" y1="432" x2="680" y2="432"/>
+    <line x1="0" y1="456" x2="680" y2="456"/><line x1="0" y1="480" x2="680" y2="480"/>
+    <line x1="0" y1="504" x2="680" y2="504"/>
+  </g>
+  <line x1="56" y1="0" x2="56" y2="520" stroke="#c89898" stroke-width="1" opacity="0.7"/>
+
+  <!-- Título -->
+  <text x="68" y="34" font-size="18" fill="#1a2a3a" font-weight="500">estimación de masa — método de compactación</text>
+  <text x="68" y="54" font-size="13" fill="#4a6080">aprox. solo — ±30% de incertidumbre mínima</text>
+  <text x="560" y="54" font-size="11" fill="#8a3018" transform="rotate(-1,560,54)">metodología improvisada</text>
+
+  <!-- ═══════════════════════ REFERENCIA CALIBRACIÓN ═══════════════════════ -->
+  <text x="68" y="80" font-size="14" fill="#2a4060" font-weight="500">1 — calibración (mismo suelo, mismo terreno)</text>
+
+  <text x="68" y="100" font-size="13" fill="#1a2a3a">Referencia: Guerrero / bota militar / mismo campo norte</text>
+  <text x="68" y="118" font-size="13" fill="#1a2a3a">  masa conocida: 88 kg    prof. huella: 0.6 cm    área bota: ~260 cm²</text>
+
+  <!-- Fórmula calibración -->
+  <text x="68" y="140" font-size="13" fill="#4a6080">  P_ref = (88 kg × 9.8 m/s²) / 260 cm² = 3.32 N/cm²</text>
+  <text x="68" y="158" font-size="13" fill="#4a6080">  k_suelo = P_ref / d_ref = 3.32 / 0.6 = 5.5 N/cm³</text>
+
+  <!-- Separador -->
+  <line x1="68" y1="170" x2="440" y2="170" stroke="#a4bcd6" stroke-width="0.8" opacity="0.7"/>
+
+  <!-- ═══════════════════════ DATOS HUELLA CRIATURA ═══════════════════════ -->
+  <text x="68" y="190" font-size="14" fill="#2a4060" font-weight="500">2 — datos huella criatura N</text>
+
+  <text x="68" y="210" font-size="13" fill="#1a2a3a">  prof. promedio (palma + dedos): (3.2 + 4.1) / 2 = 3.65 cm</text>
+  <text x="68" y="228" font-size="13" fill="#1a2a3a">  área de contacto estimada: 138 cm²</text>
+  <text x="68" y="244" font-size="11" fill="#4a6080">    (palma ~108 + almohadilla dedos ~30 — excluyendo zonas sin contacto)</text>
+
+  <!-- Separador -->
+  <line x1="68" y1="256" x2="440" y2="256" stroke="#a4bcd6" stroke-width="0.8" opacity="0.7"/>
+
+  <!-- ═══════════════════════ CÁLCULO PRINCIPAL ═══════════════════════ -->
+  <text x="68" y="276" font-size="14" fill="#2a4060" font-weight="500">3 — estimación de fuerza y masa</text>
+
+  <text x="68" y="296" font-size="13" fill="#1a2a3a">  P_criatura = k × d = 5.5 × 3.65 = 20.1 N/cm²</text>
+  <text x="68" y="314" font-size="13" fill="#1a2a3a">  F_pata = 20.1 × 138 = 2 773 N</text>
+
+  <!-- Primera estimación TACHADA -->
+  <text x="68" y="338" font-size="13" fill="#4a6080">  masa = F / g = 2773 / 9.8 ≈</text>
+  <!-- Número tachado -->
+  <text x="276" y="338" font-size="14" fill="#4a6080">283 kg</text>
+  <line x1="275" y1="333" x2="336" y2="333" stroke="#8a3018" stroke-width="1.6"/>
+  <!-- Corrección con flecha -->
+  <text x="348" y="334" font-size="11" fill="#8a3018">← factor dinámico! (pata en movimiento ≠ peso estático)</text>
+
+  <!-- Corrección -->
+  <text x="68" y="360" font-size="13" fill="#1a2a3a">  en marcha: F_pata ≈ 1.35 × (masa × g)  →  masa = F / (1.35 × g)</text>
+  <text x="68" y="381" font-size="15" fill="#1a2a3a" font-weight="500">  masa estimada = 2773 / (1.35 × 9.8)  ≈  <tspan fill="#8a3018">210 kg</tspan></text>
+  <text x="68" y="397" font-size="11" fill="#4a6080">  rango con incertidumbre de suelo: 170 – 250 kg</text>
+
+  <!-- Separador -->
+  <line x1="68" y1="410" x2="560" y2="410" stroke="#a4bcd6" stroke-width="0.8" opacity="0.7"/>
+
+  <!-- ═══════════════════════ VELOCIDAD ═══════════════════════ -->
+  <text x="68" y="428" font-size="14" fill="#2a4060" font-weight="500">4 — velocidad por cadencia de zancada</text>
+
+  <text x="68" y="448" font-size="13" fill="#1a2a3a">  zancada: 1.81 m    cadencia estimada: ~0.8 Hz (marcha lenta)</text>
+  <text x="68" y="466" font-size="13" fill="#1a2a3a">  velocidad ≈ 1.81 × 0.8 = 1.45 m/s  ≈  5.2 km/h</text>
+  <text x="68" y="482" font-size="11" fill="#4a6080">  * cadencia no verificada — asume bípedo. si es cuadrúpedo el modelo cambia.</text>
+
+  <!-- ═══════════════════════ TABLA COMPARATIVA ═══════════════════════ -->
+  <line x1="68" y1="496" x2="632" y2="496" stroke="#a4bcd6" stroke-width="0.7" opacity="0.7"/>
+
+  <!-- Tabla inline -->
+  <text x="68"  y="514" font-size="11" fill="#4a6080">coyote mutado: ~45 kg / 95 cm zancada</text>
+  <text x="268" y="514" font-size="11" fill="#4a6080">humano: ~80 kg / 78 cm zancada</text>
+  <text x="468" y="514" font-size="13" fill="#8a3018" font-weight="500">criatura N: ~210 kg / 181 cm zancada</text>
+
+  <polygon points="652,0 680,0 680,28" fill="#c0ccd8" opacity="0.45"/>
+  <text x="28" y="255" font-size="10" fill="#7a9ab8" text-anchor="middle" transform="rotate(-90,28,255)">ESTIMACIÓN DE MASA</text>
+
+</svg>

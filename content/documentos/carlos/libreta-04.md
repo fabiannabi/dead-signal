@@ -98,8 +98,20 @@ Luego me quedé parado en el campo norte mirando la barda durante un buen rato.
     <figcaption>Registro — sensor array / 5:40h</figcaption>
   </figure>
   <figure class="photo-item">
-    <img src="calculos-tdoa.svg" alt="Análisis TDOA — posicionamiento">
+    <img src="calculos-tdoa.svg" alt="Análisis TDOA — posicionamiento coyotes">
     <figcaption>Análisis TDOA / posicionamiento</figcaption>
+  </figure>
+  <figure class="photo-item">
+    <img src="huella-morfologia.svg" alt="Huella — morfología y medidas">
+    <figcaption>Huella / morfología — campo norte</figcaption>
+  </figure>
+  <figure class="photo-item">
+    <img src="mapa-campus-rutas.svg" alt="Mapa de rutas nocturnas — evento semana 4">
+    <figcaption>Mapa rutas nocturnas / semana 4</figcaption>
+  </figure>
+  <figure class="photo-item">
+    <img src="calculo-masa-huella.svg" alt="Estimación de masa — método compactación">
+    <figcaption>Estimación masa / método compactación</figcaption>
   </figure>
 </div>
 
