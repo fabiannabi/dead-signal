@@ -2040,7 +2040,7 @@ table {
 .media-stamp {
   font-family: var(--codeFont);
   font-size: 0.69rem;
-  color: var(--gray);
+  color: var(--darkgray);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin: 1.75rem 0 1rem;
@@ -2107,7 +2107,7 @@ table {
 .media-ev-id {
   font-family: var(--codeFont);
   font-size: 0.625rem;
-  color: var(--gray);
+  color: var(--darkgray);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   flex: 1;
@@ -2121,7 +2121,7 @@ table {
   font-size: 0.625rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--tertiary);
+  color: var(--secondary);
   white-space: nowrap;
 }
 .media-evidence-footer {
@@ -2135,14 +2135,14 @@ table {
 .media-ev-caption {
   font-family: var(--codeFont);
   font-size: 0.75rem;
-  color: var(--darkgray);
+  color: var(--dark);
   letter-spacing: 0.03em;
   line-height: 1.5;
 }
 .media-ev-meta {
   font-family: var(--codeFont);
   font-size: 0.625rem;
-  color: var(--gray);
+  color: var(--darkgray);
   letter-spacing: 0.08em;
   white-space: nowrap;
   text-transform: uppercase;
@@ -2209,21 +2209,21 @@ table {
 .audio-ev-type {
   font-family: var(--codeFont);
   font-size: 0.625rem;
-  color: var(--gray);
+  color: var(--darkgray);
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 .audio-ev-id {
   font-family: var(--codeFont);
   font-size: 0.625rem;
-  color: var(--gray);
+  color: var(--darkgray);
   letter-spacing: 0.12em;
   text-align: right;
 }
 .audio-ev-clase {
   font-family: var(--codeFont);
   font-size: 0.625rem;
-  color: var(--tertiary);
+  color: var(--secondary);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-align: right;
@@ -2234,7 +2234,7 @@ table {
 .audio-ev-title {
   font-family: var(--codeFont);
   font-size: 0.94rem;
-  color: var(--darkgray);
+  color: var(--dark);
   letter-spacing: 0.03em;
   margin-bottom: 0.625rem;
 }
