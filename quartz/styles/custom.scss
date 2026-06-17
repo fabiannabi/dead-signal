@@ -1,0 +1,760 @@
+@use "./base.scss";
+@use "./_theme-senal.scss" as *;
+
+// ─── Textura de ruido SVG ───
+$grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+
+// ─────────────────────────────────────────────
+// BASE
+// ─────────────────────────────────────────────
+
+html, body {
+  background-color: var(--light);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: $grain;
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 1;
+}
+
+body {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--headerFont);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--secondary);
+  text-transform: uppercase;
+}
+
+h1 { font-size: 1.4rem; }
+h2 { font-size: 1.1rem; border-bottom: 1px solid var(--lightgray); padding-bottom: 0.3rem; margin-top: 2rem; }
+h3 { font-size: 0.95rem; color: var(--darkgray); }
+
+// Evitar que los overrides genéricos de h2 afecten elementos UI del sidebar
+.page-title,
+button.desktop-explorer h2,
+.explorer > button h2,
+.backlinks h3,
+.graph h3,
+.toc h3 {
+  border-bottom: none;
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+p { margin-bottom: 1.1rem; }
+
+::selection {
+  background: rgba(200, 168, 74, 0.2);
+  color: var(--dark);
+}
+
+// ─────────────────────────────────────────────
+// LINKS
+// ─────────────────────────────────────────────
+
+a {
+  color: var(--secondary);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 168, 74, 0.35);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+  font-weight: 400;
+
+  &:hover {
+    color: var(--dark);
+    text-decoration-color: var(--dark);
+  }
+
+  &.internal.broken {
+    color: var(--gray);
+    text-decoration-style: dashed;
+  }
+
+  // Wikilinks internos con tono dorado más suave
+  &.internal:not(.broken) {
+    color: var(--secondary);
+    &:hover { color: var(--tertiary); }
+  }
+}
+
+// ─────────────────────────────────────────────
+// LAYOUT: GRID Y SIDEBARS
+// ─────────────────────────────────────────────
+
+// Grid de 2 columnas — sin sidebar derecho (solo desktop)
+@media (min-width: 1200px) {
+  .page > #quartz-body {
+    grid-template-columns: 320px 1fr;
+    grid-template-areas:
+      "grid-sidebar-left grid-header"
+      "grid-sidebar-left grid-center"
+      "grid-sidebar-left grid-footer";
+  }
+}
+
+.sidebar.right {
+  display: none;
+}
+
+.sidebar.left {
+  border-right: 1px solid var(--lightgray);
+  background-color: var(--lightgray);
+  padding: 1rem 0.75rem;
+  align-items: stretch; // todos los hijos ocupan el ancho completo
+
+  // el flex-component (row con search + darkmode)
+  .flex-component {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.center {
+  background-color: var(--light);
+  padding: 2.5rem 4rem;
+}
+
+// Limitar ancho del contenido para legibilidad en pantallas muy anchas
+.center > article {
+  max-width: 820px;
+}
+
+// ─────────────────────────────────────────────
+// TÍTULO DEL SITIO
+// ─────────────────────────────────────────────
+
+.page-title {
+  font-family: var(--headerFont);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  border-bottom: 1px solid var(--border, #2a2a22);
+  padding-bottom: 0.6rem;
+  margin: 0 0 0.75rem 0;
+
+  a {
+    color: var(--secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    &:hover { color: var(--dark); }
+  }
+
+  // En mobile el título es un ítem del flex row — resetear border y margin
+  @media (max-width: 800px) {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin: 0;
+    a { line-height: 1; }
+  }
+}
+
+// ─────────────────────────────────────────────
+// EXPLORER
+// ─────────────────────────────────────────────
+
+button.desktop-explorer {
+  cursor: default;
+  pointer-events: none;
+  .fold { display: none; }
+}
+
+.explorer > button h2,
+button.desktop-explorer h2 {
+  font-family: var(--headerFont);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+.explorer-content ul li > a {
+  font-family: var(--headerFont);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--darkgray);
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover, &.active { color: var(--secondary); }
+}
+
+.folder-container div > a,
+.folder-container div > button span {
+  font-family: var(--headerFont);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--darkgray);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  &:hover { color: var(--secondary); }
+}
+
+.explorer-content .folder-outer > ul {
+  border-left: 1px solid var(--lightgray);
+}
+
+// ─────────────────────────────────────────────
+// BREADCRUMBS
+// ─────────────────────────────────────────────
+
+.breadcrumb-container {
+  font-family: var(--headerFont);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+
+  a { color: var(--gray); text-decoration: none; &:hover { color: var(--secondary); } }
+}
+
+// ─────────────────────────────────────────────
+// CONTENT META
+// ─────────────────────────────────────────────
+
+.content-meta {
+  font-family: var(--headerFont);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  border-bottom: 1px solid var(--lightgray);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+// ─────────────────────────────────────────────
+// BLOCKQUOTE
+// ─────────────────────────────────────────────
+
+blockquote {
+  border-left: 2px solid var(--secondary);
+  background-color: rgba(200, 168, 74, 0.04);
+  padding: 0.7rem 1.2rem;
+  margin: 1.5rem 0;
+  p { color: var(--darkgray); margin: 0; }
+}
+
+// ─────────────────────────────────────────────
+// HR: separador de sección
+// ─────────────────────────────────────────────
+
+hr {
+  border: none;
+  margin: 2.5rem auto;
+  text-align: center;
+  &::after {
+    content: '— — —';
+    display: block;
+    color: var(--gray);
+    font-family: var(--headerFont);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+  }
+}
+
+// ─────────────────────────────────────────────
+// BACKLINKS Y GRAPH
+// ─────────────────────────────────────────────
+
+.backlinks h3,
+.graph h3 {
+  font-family: var(--headerFont);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--gray);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--lightgray);
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.backlinks ul li a {
+  font-size: 0.85rem;
+  color: var(--darkgray);
+  &:hover { color: var(--secondary); }
+}
+
+.graph-outer {
+  border: 1px solid var(--lightgray);
+  background-color: var(--lightgray);
+}
+
+// ─────────────────────────────────────────────
+// TOC
+// ─────────────────────────────────────────────
+
+.toc {
+  h3 {
+    font-family: var(--headerFont);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  li a {
+    font-size: 0.82rem;
+    color: var(--darkgray);
+    &:hover { color: var(--secondary); }
+  }
+}
+
+// ─────────────────────────────────────────────
+// TAGS
+// ─────────────────────────────────────────────
+
+.tags ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+
+  li a {
+    font-family: var(--headerFont);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    border: 1px solid var(--lightgray);
+    padding: 0.15em 0.55em;
+    text-decoration: none;
+    &:hover { border-color: var(--secondary); color: var(--secondary); }
+  }
+}
+
+// ─────────────────────────────────────────────
+// BÚSQUEDA
+// ─────────────────────────────────────────────
+
+.search > .search-button {
+  border-color: var(--lightgray);
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: var(--headerFont);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  &:hover { border-color: var(--secondary); color: var(--secondary); }
+
+  // p { margin-bottom: 1.1rem } global empuja el texto del botón — resetear
+  p { margin: 0; line-height: 1; }
+}
+
+// ─────────────────────────────────────────────
+// FOOTER: oculto
+// ─────────────────────────────────────────────
+
+footer { display: none; }
+
+// ─────────────────────────────────────────────
+// SCROLLBAR
+// ─────────────────────────────────────────────
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--light); }
+::-webkit-scrollbar-thumb { background: var(--lightgray); border-radius: 0; &:hover { background: var(--gray); } }
+
+// ─────────────────────────────────────────────
+// ENTRADA HEADER (badge de tipo)
+// ─────────────────────────────────────────────
+
+.entrada-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-family: var(--headerFont);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gray);
+  border: 1px solid var(--lightgray);
+  padding: 0.22em 0.7em;
+  margin-bottom: 0.6rem;
+
+  &[data-tipo="personaje"]  { border-color: var(--secondary); color: var(--secondary); }
+  &[data-tipo="capitulo"]   { border-color: var(--tertiary);  color: var(--tertiary); }
+  &[data-tipo="documento"]  { border-color: var(--darkgray);  color: var(--darkgray); }
+  &[data-tipo="criatura"]   { border-color: #8a3a2a;         color: #8a3a2a; }
+  &[data-tipo="lugar"]      { border-color: var(--gray);      color: var(--gray); }
+  &[data-tipo="evento"]     { border-color: var(--gray);      color: var(--gray); }
+}
+
+.entrada-glyph { opacity: 0.6; }
+
+// ─────────────────────────────────────────────
+// COMPONENTES NARRATIVOS DE DEAD-SIGNAL
+// ─────────────────────────────────────────────
+
+// .redacted — texto censurado
+.redacted {
+  background-color: var(--dark);
+  color: transparent;
+  user-select: none;
+  padding: 0 2px;
+  border-radius: 1px;
+}
+
+// .section-break — divisor — — —
+.section-break {
+  text-align: center;
+  color: var(--gray);
+  font-family: var(--headerFont);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  margin: 2rem auto;
+}
+
+// .fn-comment — comentarios íntimos del personaje (//)
+.fn-comment {
+  font-family: var(--headerFont);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--gray);
+  border-left: 1px solid var(--lightgray);
+  padding-left: 0.75rem;
+  margin: 0.4rem 0;
+}
+
+// .dialogue — líneas de diálogo (—)
+.dialogue {
+  display: block;
+  color: var(--dark);
+  margin: 0.3rem 0;
+}
+
+// .archivist-note — nota del archivista
+.archivist-note {
+  border: 1px solid var(--lightgray);
+  border-left: 2px solid var(--secondary);
+  background-color: rgba(200, 168, 74, 0.04);
+  padding: 0.7rem 1rem;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--darkgray);
+  position: relative;
+
+  &::before {
+    content: '// Nota del archivista';
+    display: block;
+    font-family: var(--headerFont);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 0.4rem;
+    opacity: 0.8;
+  }
+}
+
+// :::notas{tipo="field|clinical|audio|personal"} — bloques de notas
+// Apariencia: hoja de papel físico, no componente UI
+.field-notes-block {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1.4rem 1.5rem 1.2rem 2rem;
+  background-color: rgba(255, 255, 255, 0.025);
+  border-left: 2px solid var(--lightgray);
+  font-family: var(--bodyFont);
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--dark);
+
+  // Label flotante — esquina superior izquierda, como un sello de clasificación
+  &::before {
+    content: 'transcripción';
+    position: absolute;
+    top: -0.6rem;
+    left: 1.5rem;
+    font-family: var(--headerFont);
+    font-style: normal;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray);
+    background-color: var(--light);
+    padding: 0 0.4rem;
+  }
+
+  // El strong dentro del bloque de notas = encabezado de entrada
+  // Se deja sin negrita visual — solo ligeramente más visible
+  strong {
+    font-weight: 400;
+    font-style: normal;
+    color: var(--dark);
+    display: block;
+    margin-top: 0.9rem;
+    font-family: var(--headerFont);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+
+    &:first-child { margin-top: 0; }
+  }
+
+  p {
+    margin: 0.15rem 0 0.6rem;
+    font-size: 0.97rem;
+    &:last-child { margin-bottom: 0; }
+  }
+
+  .fn-comment {
+    font-family: var(--headerFont);
+    font-style: normal;
+    font-size: 0.78rem;
+    color: var(--gray);
+    border: none;
+    padding: 0;
+    margin: 0.2rem 0;
+    letter-spacing: 0.02em;
+  }
+
+  // Tipo: libreta de campo (Fabián) — papel envejecido con escritura a mano
+  &.field {
+    font-family: 'Caveat', cursive;
+    font-style: normal;
+    font-size: 1.2rem;
+    line-height: 2.1rem;
+    color: #c8b87a;
+
+    // Papel oscuro envejecido
+    background-color: #111009;
+    background-image:
+      // Líneas renglón alineadas con line-height
+      repeating-linear-gradient(
+        transparent,
+        transparent calc(2.1rem - 1px),
+        rgba(100, 85, 40, 0.25) calc(2.1rem - 1px),
+        rgba(100, 85, 40, 0.25) 2.1rem
+      );
+
+    border: 1px solid rgba(100, 85, 40, 0.35);
+    border-left: 3px solid rgba(160, 50, 50, 0.45); // línea de margen roja
+    padding: 0.5rem 1.5rem 1.2rem 2rem;
+
+    // Label — título del bloque, grande y legible
+    &::before {
+      content: 'Libreta de campo';
+      position: static;
+      display: block;
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      color: rgba(200, 184, 120, 0.55);
+      background: none;
+      padding: 0;
+      margin-bottom: 0.4rem;
+      border-bottom: 1px dashed rgba(100, 85, 40, 0.35);
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 2.1rem;
+    }
+
+    .fn-comment {
+      font-family: 'Caveat', cursive;
+      font-size: 1.05rem;
+      color: rgba(140, 120, 60, 0.7);
+      border: none;
+      padding: 0;
+      line-height: 2.1rem;
+      letter-spacing: 0;
+    }
+  }
+
+  // Tipo: notas clínicas (Felipe, Gaby)
+  &.clinical {
+    border-left-color: var(--gray);
+    &::before { content: 'notas clínicas'; }
+  }
+
+  // Tipo: diario personal
+  &.personal {
+    &::before { content: 'libreta personal'; }
+  }
+
+  // Tipo: nota de voz (Carlos)
+  &.audio {
+    font-style: normal;
+    font-family: var(--headerFont);
+    font-size: 0.88rem;
+    &::before { content: 'nota de voz — transcripción'; }
+  }
+}
+
+// ─────────────────────────────────────────────
+// TABLAS
+// ─────────────────────────────────────────────
+
+th {
+  border-bottom-color: var(--secondary);
+  font-family: var(--headerFont);
+  font-weight: 400;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+tr { border-bottom-color: var(--lightgray); }
+
+// ─────────────────────────────────────────────
+// CODE
+// ─────────────────────────────────────────────
+
+code {
+  background-color: rgba(255,255,255,0.04);
+  color: var(--secondary);
+  border-radius: 2px;
+  font-size: 0.88em;
+}
+
+pre { border-color: var(--lightgray); border-radius: 2px; }
+
+// ─────────────────────────────────────────────
+// POPOVER
+// ─────────────────────────────────────────────
+
+.popover > .popover-inner {
+  background-color: var(--lightgray);
+  border: 1px solid var(--gray);
+  border-radius: 2px;
+  box-shadow: 4px 5px 20px rgba(0,0,0,0.5);
+}
+
+// ─────────────────────────────────────────────
+// FOLDER LIST — tags overflow fix
+// ─────────────────────────────────────────────
+
+// Los tags en el listado tienen white-space: nowrap y justify-content: flex-end.
+// Sin overflow: hidden se salen del 1fr y el html los corta visualmente.
+.section-li > .section {
+  overflow: hidden;
+}
+
+// ─────────────────────────────────────────────
+// TABLAS — scrollable en pantallas pequeñas
+// ─────────────────────────────────────────────
+
+table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+}
+
+// ─────────────────────────────────────────────
+// TABLET (800px – 1200px)
+// ─────────────────────────────────────────────
+
+@media (min-width: 800px) and (max-width: 1200px) {
+  .sidebar.left {
+    padding: 1rem 0.5rem;
+  }
+
+  .center {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+// ─────────────────────────────────────────────
+// MOBILE (< 800px)
+// ─────────────────────────────────────────────
+
+@media (max-width: 800px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  // En mobile el sidebar izquierdo es una barra horizontal — quitar background y borde
+  .sidebar.left {
+    background-color: transparent;
+    border-right: none;
+    border-bottom: 1px solid var(--lightgray);
+    padding: 0.5rem 1rem;
+  }
+
+  // El sidebar derecho en mobile va debajo del contenido — sin borde lateral
+  .sidebar.right {
+    background-color: transparent;
+    border-left: none;
+    border-top: 1px solid var(--lightgray);
+    padding: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    // Graph ocupa el ancho completo en mobile
+    .graph { flex: 1 1 100%; }
+
+    // Backlinks a un lado
+    .backlinks { flex: 1 1 100%; }
+  }
+
+  // Centro: padding reducido para aprovechar el espacio
+  .center {
+    padding: 1rem;
+  }
+
+  // Breadcrumbs más compactos
+  .breadcrumb-container {
+    font-size: 0.65rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // Títulos más pequeños
+  h1 { font-size: 1.15rem; }
+  h2 { font-size: 1rem; }
+
+  // Bloque de notas: padding reducido
+  .field-notes-block {
+    padding: 1.2rem 1rem 1rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  // Nota del archivista: padding reducido
+  .archivist-note {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  // Page title en el sidebar izquierdo: más compacto
+  .page-title {
+    font-size: 0.85rem;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  // Badge de tipo de entrada
+  .entrada-header {
+    font-size: 0.6rem;
+  }
+}

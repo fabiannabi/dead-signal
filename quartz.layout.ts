@@ -1,0 +1,93 @@
+import { PageLayout, SharedLayout } from "./quartz/cfg"
+import * as Component from "./quartz/components"
+
+export const sharedPageComponents: SharedLayout = {
+  head: Component.Head(),
+  header: [],
+  afterBody: [],
+  footer: Component.Footer({
+    links: {
+      "Archivo Principal": "/",
+      Operaciones: "/operaciones/",
+    },
+  }),
+}
+
+export const defaultContentPageLayout: PageLayout = {
+  beforeBody: [
+    Component.ConditionalRender({
+      component: Component.Breadcrumbs(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
+    Component.EntradaHeader(),
+    Component.ArticleTitle(),
+    Component.ContentMeta(),
+    Component.TagList(),
+  ],
+  left: [
+    Component.PageTitle(),
+    Component.MobileOnly(Component.Spacer()),
+    Component.Flex({
+      components: [
+        {
+          Component: Component.Search(),
+          grow: true,
+        },
+        { Component: Component.Darkmode() },
+      ],
+    }),
+    Component.Explorer({
+      folderDefaultState: "collapsed",
+      useSavedState: true,
+      mapFn: (node) => {
+        const names: Record<string, string> = {
+          personajes: "Expedientes de Sujeto",
+          documentos: "Documentos Originales",
+          bestiario: "Registro de Amenazas",
+        }
+        if (node.isFolder && node.slugSegment && names[node.slugSegment]) {
+          node.displayName = names[node.slugSegment]
+        }
+        if (!node.isFolder && node.displayName) {
+          node.displayName = node.displayName.replace(/Cap\.\s*0*(\d+)/g, "Entrada $1")
+        }
+      },
+    }),
+  ],
+  right: [],
+}
+
+export const defaultListPageLayout: PageLayout = {
+  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
+  left: [
+    Component.PageTitle(),
+    Component.MobileOnly(Component.Spacer()),
+    Component.Flex({
+      components: [
+        {
+          Component: Component.Search(),
+          grow: true,
+        },
+        { Component: Component.Darkmode() },
+      ],
+    }),
+    Component.Explorer({
+      folderDefaultState: "collapsed",
+      useSavedState: true,
+      mapFn: (node) => {
+        const names: Record<string, string> = {
+          personajes: "Expedientes de Sujeto",
+          documentos: "Documentos Originales",
+          bestiario: "Registro de Amenazas",
+        }
+        if (node.isFolder && node.slugSegment && names[node.slugSegment]) {
+          node.displayName = names[node.slugSegment]
+        }
+        if (!node.isFolder && node.displayName) {
+          node.displayName = node.displayName.replace(/Cap\.\s*0*(\d+)/g, "Entrada $1")
+        }
+      },
+    }),
+  ],
+  right: [],
+}

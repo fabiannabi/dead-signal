@@ -1,0 +1,22 @@
+// Paleta de Señal Muerta — dead-signal
+// Usada como overrides en custom.scss
+
+$bg:      #0a0a08;
+$bg2:     #0f0f0c;
+$bg3:     #141410;
+$border:  #2a2a22;
+$border2: #3a3a2a;
+$text:    #c8c4a8;
+$text2:   #8a8670;
+$text3:   #5a5648;
+$accent:  #c8a84a;
+$accent2: #8a6a2a;
+$red:     #8a3a2a;
+$green:   #4a6a3a;
+
+// Tipografía
+$font-mono:  "Share Tech Mono", "Courier New", monospace;
+$font-serif: "Crimson Pro", "Georgia", serif;
+
+// Transitions
+$trans-color: color 0.15s ease, background-color 0.15s ease;
