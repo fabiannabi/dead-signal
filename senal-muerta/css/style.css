@@ -1194,6 +1194,180 @@ a.chapter-tab.active { color: var(--accent); }
   font-style: italic;
 }
 
+/* ── Index cards — estado y conteo de documentos ── */
+.entry-item {
+  position: relative;
+  padding-bottom: 38px;
+}
+.entry-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+.entry-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.entry-status.documentado  { color: var(--green); }
+.entry-status.fragmentario { color: #9a7020; }
+.entry-status.sin-confirmar { color: var(--red); }
+.entry-status.en-clasificacion { color: var(--accent2); }
+.entry-status.documentado  .entry-status-dot { background: var(--green); }
+.entry-status.fragmentario .entry-status-dot { background: #9a7020; }
+.entry-status.sin-confirmar .entry-status-dot { background: var(--red); animation: pulse 2.2s infinite; }
+.entry-status.en-clasificacion .entry-status-dot { background: var(--accent2); animation: pulse 1.4s infinite; }
+.entry-doc-count {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  padding: 7px 0 12px;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.08em;
+}
+
+/* ── Evidencia multimedia — formato oficial procesado ── */
+.media-evidence-block {
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.media-evidence-block.wide { grid-column: span 2; }
+.media-evidence-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border);
+  padding: 5px 12px;
+  gap: 12px;
+}
+.media-ev-id {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.media-ev-clase {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  white-space: nowrap;
+}
+.media-evidence-block img {
+  width: 100%;
+  display: block;
+  filter: grayscale(18%) brightness(0.80) contrast(1.06) sepia(6%);
+  transition: filter 0.25s;
+}
+.media-evidence-block:hover img {
+  filter: grayscale(0%) brightness(0.92) contrast(1.04);
+}
+.media-evidence-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 12px 9px;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+}
+.media-ev-caption {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text2);
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+.media-ev-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/* ── Audio — formato oficial procesado ── */
+.audio-evidence-item {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  margin-bottom: 4px;
+  overflow: hidden;
+}
+.audio-evidence-item.featured {
+  border-color: var(--accent2);
+}
+.audio-evidence-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 14px;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border);
+}
+.audio-ev-type {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.audio-ev-id {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.12em;
+  text-align: right;
+}
+.audio-ev-clase {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: right;
+  white-space: nowrap;
+}
+.audio-evidence-item.featured .audio-ev-clase { color: var(--accent); }
+.audio-evidence-body {
+  padding: 12px 14px 10px;
+}
+.audio-ev-title {
+  font-family: var(--mono);
+  font-size: 15px;
+  color: var(--text2);
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+.audio-ev-damaged {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--red);
+  letter-spacing: 0.08em;
+  margin-top: 7px;
+  opacity: 0.8;
+}
+
 /* ── Institutional footer ── */
 .institutional-footer {
   font-family: var(--mono);
