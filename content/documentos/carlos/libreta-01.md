@@ -4,6 +4,18 @@ title: "Documento original 01"
 
 *Señal Muerta — Crónicas de la Emergencia* / *Carlos — Entrada 01*
 
+<div class="audio-cassette">
+  <div class="cassette-header">
+    <span class="cassette-rec">● REC</span>
+    <span class="cassette-title">NOTA DE CAMPO 01 — F-05</span>
+    <span class="cassette-sub">Para cuando aparezcan / carpeta de audio</span>
+  </div>
+  <div class="cassette-body">
+    <audio controls src="/audio/carlos/nota-campo-01.m4a" type="audio/mp4"></audio>
+    <div class="cassette-damage">// señal recuperada — interferencia parcial en segmentos 0:18–0:24</div>
+  </div>
+</div>
+
 ---
 
 Martes. Reunión de academia, 40 min de retraso como siempre. Doce personas en la sala de juntas. Yo al fondo con la libreta.
