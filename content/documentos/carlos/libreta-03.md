@@ -68,20 +68,27 @@ Esperé hasta pasada la medianoche. Cerré la libreta azul.
 
 ![Lectura acelerómetro — firma B1 / semana 3](acelerometro-b1.svg)
 
-:::notas{tipo="audio"}
-Nota de voz — Carlos / Semana 3, noche
-
-"Cinco días de datos. B1 tiene dos rutas documentadas, ninguna entra al campus, ambas bordean a distancia consistente. Bueno. Por ahora.
-
-Lo que me preocupa es lo que Daniela preguntó hoy sin saber que me estaba preguntando algo importante. La respuesta honesta es que el sistema sirve hasta que deja de servir. Hasta que el patrón cambia.
-
-Espero que no cambie pronto.
-
-Esta noche nada. No sé si B1 tomó una ruta que los sensores no cubren o simplemente no pasó. Cuatro sensores en un solo edificio tienen ángulos muertos. Necesito más cobertura. Problema para cuando tenga ayuda para instalarlo de noche. Que no es hoy.
-
-Intenté mandar audio al grupo. Al grupo de voz directo. Se quedó cargando. Lo intenté de todas formas porque días así dan ganas de escuchar a alguien conocido decir algo estúpido.
-
-Hubiera sido bueno.
-
-Buenas noches."
-:::
+<div class="audio-cassette">
+  <div class="cassette-header">
+    <span class="cassette-rec">● REC</span>
+    <span class="cassette-title">NOTA DE CAMPO 03 — F-05</span>
+    <span class="cassette-sub">Para cuando aparezcan / carpeta de audio</span>
+  </div>
+  <div class="cassette-body">
+    <audio controls src="/static/audio/carlos/nota-campo-03.mp4" type="audio/mp4"></audio>
+    <div class="cassette-damage">// señal recuperada — interferencia parcial</div>
+  </div>
+  <details class="transcript-toggle">
+    <summary>// ver transcripción</summary>
+    <div class="transcript-body">
+      <p>Nota de voz — Carlos / Semana 3, noche</p>
+      <p>"Cinco días de datos. B1 tiene dos rutas documentadas, ninguna entra al campus, ambas bordean a distancia consistente. Bueno. Por ahora.</p>
+      <p>Lo que me preocupa es lo que Daniela preguntó hoy sin saber que me estaba preguntando algo importante. La respuesta honesta es que el sistema sirve hasta que deja de servir. Hasta que el patrón cambia.</p>
+      <p>Espero que no cambie pronto.</p>
+      <p>Esta noche nada. No sé si B1 tomó una ruta que los sensores no cubren o simplemente no pasó. Cuatro sensores en un solo edificio tienen ángulos muertos. Necesito más cobertura. Problema para cuando tenga ayuda para instalarlo de noche. Que no es hoy.</p>
+      <p>Intenté mandar audio al grupo. Al grupo de voz directo. Se quedó cargando. Lo intenté de todas formas porque días así dan ganas de escuchar a alguien conocido decir algo estúpido.</p>
+      <p>Hubiera sido bueno.</p>
+      <p>Buenas noches."</p>
+    </div>
+  </details>
+</div>
