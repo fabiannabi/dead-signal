@@ -472,6 +472,9 @@ footer { display: none; }
   position: relative;
   margin: 2rem 0;
   padding: 1.4rem 1.5rem 1.2rem 2rem;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
   background-color: rgba(255, 255, 255, 0.025);
   border-left: 2px solid var(--lightgray);
   font-family: var(--bodyFont);
@@ -536,19 +539,20 @@ footer { display: none; }
     line-height: 2.8rem;
     color: #cdbf86;
 
-    background-color: #2c2514;
+    background-color: #ede5cf;
     background-image: repeating-linear-gradient(
       transparent,
       transparent 2.18rem,
-      rgba(110, 90, 40, 0.13) 2.18rem,
-      rgba(110, 90, 40, 0.13) calc(2.18rem + 1px),
+      rgba(80, 65, 30, 0.18) 2.18rem,
+      rgba(80, 65, 30, 0.18) calc(2.18rem + 1px),
       transparent calc(2.18rem + 1px),
       transparent 2.8rem
     );
     background-position: 0 0.95rem;
+    color: #1e1a10;
 
-    border: 1px solid rgba(110, 90, 40, 0.3);
-    border-left: 3px solid rgba(160, 50, 50, 0.5);
+    border: 1px solid rgba(80, 65, 30, 0.25);
+    border-left: 3px solid rgba(140, 40, 30, 0.55);
     padding: 0.5rem 1.5rem 1.4rem 2rem;
 
     &::before {
@@ -560,11 +564,11 @@ footer { display: none; }
       font-weight: 500;
       letter-spacing: 0.02em;
       text-transform: none;
-      color: rgba(205, 190, 130, 0.45);
+      color: rgba(40, 30, 10, 0.35);
       background: none;
       padding: 0 0 0.35rem;
       margin-bottom: 0.5rem;
-      border-bottom: 1px dashed rgba(110, 90, 40, 0.3);
+      border-bottom: 1px dashed rgba(80, 65, 30, 0.25);
       line-height: 2.8rem;
     }
 
@@ -577,7 +581,7 @@ footer { display: none; }
     .fn-comment {
       font-family: 'Caveat', cursive;
       font-size: 1.05rem;
-      color: rgba(150, 130, 65, 0.65);
+      color: rgba(30, 25, 10, 0.5);
       border: none;
       padding: 0;
       line-height: 2.8rem;
@@ -642,7 +646,7 @@ footer { display: none; }
       white-space: nowrap;
       font-size: 0.88rem;
       line-height: 1;
-      color: #cdbf86;
+      color: #1e1a10;
       pointer-events: none;
     }
   }
@@ -778,9 +782,10 @@ table {
     .backlinks { flex: 1 1 100%; }
   }
 
-  // Centro: padding reducido para aprovechar el espacio
+  // Centro: border-box evita que padding + min-width:100% cause overflow horizontal
   .center {
-    padding: 1rem;
+    box-sizing: border-box;
+    padding: 1.5rem 1rem 1rem 1rem;
   }
 
   // Breadcrumbs más compactos
@@ -795,10 +800,14 @@ table {
   h1 { font-size: 1.15rem; }
   h2 { font-size: 1rem; }
 
-  // Bloque de notas: padding reducido
+  // Bloque de notas: padding reducido en mobile
   .field-notes-block {
-    padding: 1.2rem 1rem 1rem 1.2rem;
+    padding: 1rem 0.9rem 1rem 1rem;
     font-size: 0.85rem;
+    &.field {
+      padding: 0.5rem 0.9rem 1.2rem 1rem;
+      font-size: 1rem;
+    }
   }
 
   // Nota del archivista: padding reducido
