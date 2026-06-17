@@ -902,21 +902,22 @@ footer { display: none; }
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem 1.8rem;
-  max-width: 640px;
-  margin: 2.5rem auto;
+  gap: 2.5rem 2rem;
+  margin: 2.5rem 0;
 
-  @media (max-width: 540px) {
+  @media (max-width: 560px) {
     grid-template-columns: 1fr;
+    gap: 2.5rem 0;
   }
 }
 
 .photo-item {
   position: relative;
   margin: 0;
-  padding-top: 0.9rem;
+  padding-top: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
 
-  // Cinta adhesiva — centrada en el borde superior
   &::before {
     content: '';
     position: absolute;
@@ -936,6 +937,7 @@ footer { display: none; }
     width: 100%;
     border: 1px solid #2a2a22;
     filter: brightness(0.92) contrast(1.05);
+    transition: filter 0.2s ease;
   }
 
   figcaption {
@@ -944,14 +946,58 @@ footer { display: none; }
     letter-spacing: 0.1em;
     color: #5a5648;
     text-align: center;
-    margin-top: 0.5rem;
+    margin-top: 0.55rem;
     text-transform: uppercase;
   }
 
-  // Rotaciones alternas
   &:nth-child(odd)  { transform: rotate(-1.4deg); }
   &:nth-child(even) { transform: rotate(1.2deg);  }
   &:nth-child(3n)   { transform: rotate(-0.7deg); }
+
+  &:hover {
+    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.5));
+    z-index: 2;
+
+    &:nth-child(odd)  { transform: rotate(-1.4deg) scale(1.05); }
+    &:nth-child(even) { transform: rotate(1.2deg)  scale(1.05); }
+    &:nth-child(3n)   { transform: rotate(-0.7deg) scale(1.05); }
+
+    img { filter: brightness(1) contrast(1.05); }
+  }
+}
+
+// Lightbox
+.photo-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 4, 0.94);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &.lb-open { display: flex; }
+
+  img {
+    max-width: 92vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border: 1px solid #2a2a22;
+    cursor: default;
+  }
+
+  .lb-hint {
+    position: absolute;
+    bottom: 1.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--codeFont);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: #3a3a30;
+    text-transform: uppercase;
+  }
 }
 
 // ─────────────────────────────────────────────

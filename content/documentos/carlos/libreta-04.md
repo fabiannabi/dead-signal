@@ -92,7 +92,7 @@ Fotografié las huellas desde todos los ángulos. Las medí. Las describí con m
 
 Luego me quedé parado en el campo norte mirando la barda durante un buen rato.
 
-<div class="photo-grid">
+<div class="photo-grid" id="pg-libreta04">
   <figure class="photo-item">
     <img src="acelerometro-coyotes.svg" alt="Registro sensor array — alerta 5:40h">
     <figcaption>Registro — sensor array / 5:40h</figcaption>
@@ -102,6 +102,25 @@ Luego me quedé parado en el campo norte mirando la barda durante un buen rato.
     <figcaption>Análisis TDOA / posicionamiento</figcaption>
   </figure>
 </div>
+
+<script>
+(function(){
+  var lb = document.createElement('div');
+  lb.className = 'photo-lightbox';
+  lb.innerHTML = '<img><span class="lb-hint">click / esc para cerrar</span>';
+  lb.addEventListener('click', function(){ lb.classList.remove('lb-open'); });
+  lb.querySelector('img').addEventListener('click', function(e){ e.stopPropagation(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') lb.classList.remove('lb-open'); });
+  document.body.appendChild(lb);
+  document.querySelectorAll('#pg-libreta04 .photo-item img').forEach(function(img){
+    img.addEventListener('click', function(){
+      lb.querySelector('img').src = img.src;
+      lb.querySelector('img').alt = img.alt;
+      lb.classList.add('lb-open');
+    });
+  });
+})();
+</script>
 
 <div class="audio-cassette">
   <div class="cassette-header">
