@@ -66,7 +66,7 @@ También: la enredadera de la grieta sur creció. Notablemente. Hojas más grues
 :::notas{tipo="field"}
 [<span class="tachado-grupo"><span class="tachado">Cervato</span><span class="correccion">Lanudo</span></span>] cuadrúpedo. zona norte.
 avistamiento único — cruzó la calle y desapareció detrás de la barda del fondo.
-<span class="tachado-grupo"><span class="tachado">carnívoro</span><span class="correccion">herbívoro</span></span> probable. sin reacción a presencia humana.
+<span class="tachado-grupo"><span class="tachado-b">carnívoro</span><span class="correccion">herbívoro</span></span> probable. sin reacción a presencia humana.
 pendiente: ¿hay más?
 
 [Roca] escarabajo — puño de tamaño.
@@ -76,7 +76,7 @@ defensivo / no agresivo hasta ahora.
 pendiente: ¿qué come? ¿salen de noche?
 
 [Enredadera] grieta sur.
-crecimiento visible en <span class="tachado-grupo"><span class="tachado">24hrs</span><span class="correccion">48hrs</span></span> — eso no es normal.
+crecimiento visible en <span class="tachado-grupo"><span class="tachado-c">24hrs</span><span class="correccion">48hrs</span></span> — eso no es normal.
 brillo metálico en hoja bajo luz directa. muestra guardada, hoja 4.
 pendiente: ¿mutación de algo existente o especie nueva?
 
