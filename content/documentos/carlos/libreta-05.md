@@ -78,18 +78,26 @@ Seis años de pagos. Pero eso era antes.
 
 Seguí.
 
-:::notas{tipo="audio"}
-Nota de voz — Carlos / En camino, tarde
-
-"Vi al [[gusano-de-asfalto|Gusano]]. De cerca. Más grande de lo que esperaba — tenía la firma registrada desde semanas atrás pero una cosa es el acelerómetro y otra cosa es verlo. Color exactamente como asfalto mojado. Segmentado. Más grueso de lo que la amplitud de la firma sugería.
-
-El túnel residual fue lo que me sacó del coche. No lo vi. Nadie lo ve hasta que ya cayó.
-
-Regla operativa: después de firma o avistamiento de Gusano, no continuar por la misma avenida. Rodear mínimo dos cuadras. Velocidad reducida en cualquier asfalto con deterioro visible.
-
-Demasiado tarde para mí.
-
-Estoy a unas cuadras del centro caminando. Mochila, acelerómetro, libreta azul. Lo esencial.
-
-Fabián — si escuchas esto antes que los demás, el sistema de detección funciona en movimiento. La firma del Gusano es inconfundible en el acelerómetro portátil, te lo explico cuando nos veamos. Trae algo para anotar."
-:::
+<div class="audio-cassette">
+  <div class="cassette-header">
+    <span class="cassette-rec">● REC</span>
+    <span class="cassette-title">NOTA DE CAMPO 05 — F-05</span>
+    <span class="cassette-sub">Para cuando aparezcan / carpeta de audio</span>
+  </div>
+  <div class="cassette-body">
+    <audio controls src="/static/audio/carlos/nota-campo-05.mp4" type="audio/mp4"></audio>
+    <div class="cassette-damage">// señal recuperada — interferencia parcial</div>
+  </div>
+  <details class="transcript-toggle">
+    <summary>// ver transcripción</summary>
+    <div class="transcript-body">
+      <p>Nota de voz — Carlos / En camino, tarde</p>
+      <p>"Vi al <a href="/bestiario/gusano-de-asfalto">Gusano</a>. De cerca. Más grande de lo que esperaba — tenía la firma registrada desde semanas atrás pero una cosa es el acelerómetro y otra cosa es verlo. Color exactamente como asfalto mojado. Segmentado. Más grueso de lo que la amplitud de la firma sugería.</p>
+      <p>El túnel residual fue lo que me sacó del coche. No lo vi. Nadie lo ve hasta que ya cayó.</p>
+      <p>Regla operativa: después de firma o avistamiento de Gusano, no continuar por la misma avenida. Rodear mínimo dos cuadras. Velocidad reducida en cualquier asfalto con deterioro visible.</p>
+      <p>Demasiado tarde para mí.</p>
+      <p>Estoy a unas cuadras del centro caminando. Mochila, acelerómetro, libreta azul. Lo esencial.</p>
+      <p>Fabián — si escuchas esto antes que los demás, el sistema de detección funciona en movimiento. La firma del Gusano es inconfundible en el acelerómetro portátil, te lo explico cuando nos veamos. Trae algo para anotar."</p>
+    </div>
+  </details>
+</div>
