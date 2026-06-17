@@ -29,3 +29,4 @@ F-05 era ingeniero biomédico y maestro en el campus sur de la UAA al momento de
 - [[carlos/cap-02|Entrada 02 — Cruzar el campo]]
 - [[carlos/cap-03|Entrada 03 — Firma]]
 - [[carlos/cap-04|Entrada 04 — Prueba de sistema]]
+- [[carlos/cap-05|Entrada 05 — Salida]]

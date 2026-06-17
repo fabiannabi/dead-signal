@@ -47,6 +47,7 @@ Documentos en primera persona. Transcritos sin corrección de ortografía, estil
       <li><a href="carlos/libreta-02" class="internal">Semana 2 — Cruzar el campo, sistema instalado</a></li>
       <li><a href="carlos/libreta-03" class="internal">Semana 3 — Firma B1, calibración, rutas</a></li>
       <li><a href="carlos/libreta-04" class="internal">Semana 3 — Prueba de sistema, huellas en campo norte</a></li>
+      <li><a href="carlos/libreta-05" class="internal">Semanas 5–6 — Salida, Gusano de Asfalto, a pie</a></li>
     </ul>
   </div>
 

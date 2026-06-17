@@ -45,7 +45,7 @@ title: "Expedientes de Sujeto"
     <span class="sujeto-nombre">Carlos</span>
     <span class="sujeto-rol">Ing. Biomédico / Maestro UAA</span>
     <span class="sujeto-origen">Campus Sur UAA, Ags.</span>
-    <span class="sujeto-docs">4</span>
+    <span class="sujeto-docs">5</span>
   </a>
 </div>
 
