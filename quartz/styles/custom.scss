@@ -999,9 +999,9 @@ tr { border-bottom-color: var(--lightgray); }
   audio {
     width: 100%;
     height: 28px;
-    filter: invert(1) sepia(1) hue-rotate(80deg) saturate(0.4) brightness(0.65);
-    opacity: 0.85;
+    opacity: 0.75;
     &:focus { outline: none; }
+    &:hover { opacity: 1; }
   }
 
   .cassette-damage {
