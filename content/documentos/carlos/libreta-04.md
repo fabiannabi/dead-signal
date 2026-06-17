@@ -92,28 +92,31 @@ Fotografié las huellas desde todos los ángulos. Las medí. Las describí con m
 
 Luego me quedé parado en el campo norte mirando la barda durante un buen rato.
 
-:::notas{tipo="audio"}
-Nota de voz — Carlos / Semana 3, tarde
-
-"El sistema funcionó esta mañana. Cuatro minutos de ventaja antes de que llegaran a la barda. Exactamente para lo que lo construí.
-
-Ahora la parte menos bien.
-
-Huellas en el campo norte. Adentro. De algo que no es coyote. Según el registro entró y salió entre las 4 y las 4:30 sin que los sensores lo detectaran bien — menos de un minuto aquí.
-
-Un minuto es suficiente para muchas cosas.
-
-No sé qué es. No sé cómo entró. No sé si ya había entrado antes y simplemente no teníamos los sensores para saberlo. Esa última es la posibilidad que menos me gusta.
-
-La barda norte está intacta. No la forzó.
-
-Saltó, o encontró una manera que no identifiqué todavía. Cualquiera de las dos es peor que la otra dependiendo del día.
-
-Cuando encontré las huellas lo primero que pensé fue que ojalá estuviera Aarón aquí. Él hubiera sabido leerlas mejor — mecánica, proporciones, distribución de peso. Yo veo una huella y anoto lo que veo. Él vería cómo funciona lo que la hizo.
-
-En fin.
-
-Esta noche no le cuento a Guerrero. Ya tuvo suficiente. Los dos tuvimos suficiente.
-
-Buenas noches, supongo."
-:::
+<div class="audio-cassette">
+  <div class="cassette-header">
+    <span class="cassette-rec">● REC</span>
+    <span class="cassette-title">NOTA DE CAMPO 04 — F-05</span>
+    <span class="cassette-sub">Para cuando aparezcan / carpeta de audio</span>
+  </div>
+  <div class="cassette-body">
+    <audio controls src="/static/audio/carlos/nota-campo-04.mp4" type="audio/mp4"></audio>
+    <div class="cassette-damage">// señal recuperada — interferencia parcial</div>
+  </div>
+  <details class="transcript-toggle">
+    <summary>// ver transcripción</summary>
+    <div class="transcript-body">
+      <p>Nota de voz — Carlos / Semana 3, tarde</p>
+      <p>"El sistema funcionó esta mañana. Cuatro minutos de ventaja antes de que llegaran a la barda. Exactamente para lo que lo construí.</p>
+      <p>Ahora la parte menos bien.</p>
+      <p>Huellas en el campo norte. Adentro. De algo que no es coyote. Según el registro entró y salió entre las 4 y las 4:30 sin que los sensores lo detectaran bien — menos de un minuto aquí.</p>
+      <p>Un minuto es suficiente para muchas cosas.</p>
+      <p>No sé qué es. No sé cómo entró. No sé si ya había entrado antes y simplemente no teníamos los sensores para saberlo. Esa última es la posibilidad que menos me gusta.</p>
+      <p>La barda norte está intacta. No la forzó.</p>
+      <p>Saltó, o encontró una manera que no identifiqué todavía. Cualquiera de las dos es peor que la otra dependiendo del día.</p>
+      <p>Cuando encontré las huellas lo primero que pensé fue que ojalá estuviera Aarón aquí. Él hubiera sabido leerlas mejor — mecánica, proporciones, distribución de peso. Yo veo una huella y anoto lo que veo. Él vería cómo funciona lo que la hizo.</p>
+      <p>En fin.</p>
+      <p>Esta noche no le cuento a Guerrero. Ya tuvo suficiente. Los dos tuvimos suficiente.</p>
+      <p>Buenas noches, supongo."</p>
+    </div>
+  </details>
+</div>
