@@ -26,6 +26,7 @@ import ConditionalRender from "./ConditionalRender"
 import EntradaHeader from "./custom/EntradaHeader"
 import PaletteSwitcher from "./PaletteSwitcher"
 import LightboxScript from "./LightboxScript"
+import BestiarioScript from "./BestiarioScript"
 
 export {
   ArticleTitle,
@@ -56,4 +57,5 @@ export {
   EntradaHeader,
   PaletteSwitcher,
   LightboxScript,
+  BestiarioScript,
 }

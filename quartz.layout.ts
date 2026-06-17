@@ -4,7 +4,7 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [Component.LightboxScript()],
+  afterBody: [Component.LightboxScript(), Component.BestiarioScript()],
   footer: Component.Footer({
     links: {
       "Archivo Principal": "/",
