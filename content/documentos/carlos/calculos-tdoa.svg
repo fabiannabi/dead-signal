@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="530" viewBox="0 0 680 530" font-family="Caveat, cursive">
+
+  <rect width="680" height="530" fill="#e4edf8"/>
+
+  <g stroke="#a4bcd6" stroke-width="0.7" opacity="0.65">
+    <line x1="0" y1="24"  x2="680" y2="24"/>
+    <line x1="0" y1="48"  x2="680" y2="48"/>
+    <line x1="0" y1="72"  x2="680" y2="72"/>
+    <line x1="0" y1="96"  x2="680" y2="96"/>
+    <line x1="0" y1="120" x2="680" y2="120"/>
+    <line x1="0" y1="144" x2="680" y2="144"/>
+    <line x1="0" y1="168" x2="680" y2="168"/>
+    <line x1="0" y1="192" x2="680" y2="192"/>
+    <line x1="0" y1="216" x2="680" y2="216"/>
+    <line x1="0" y1="240" x2="680" y2="240"/>
+    <line x1="0" y1="264" x2="680" y2="264"/>
+    <line x1="0" y1="288" x2="680" y2="288"/>
+    <line x1="0" y1="312" x2="680" y2="312"/>
+    <line x1="0" y1="336" x2="680" y2="336"/>
+    <line x1="0" y1="360" x2="680" y2="360"/>
+    <line x1="0" y1="384" x2="680" y2="384"/>
+    <line x1="0" y1="408" x2="680" y2="408"/>
+    <line x1="0" y1="432" x2="680" y2="432"/>
+    <line x1="0" y1="456" x2="680" y2="456"/>
+    <line x1="0" y1="480" x2="680" y2="480"/>
+    <line x1="0" y1="504" x2="680" y2="504"/>
+  </g>
+
+  <line x1="56" y1="0" x2="56" y2="530" stroke="#c89898" stroke-width="1" opacity="0.7"/>
+
+  <!-- TÍTULO -->
+  <text x="68" y="34" font-size="18" fill="#1a2a3a" font-weight="500">análisis TDOA — evento 5:40h / semana 4</text>
+  <text x="68" y="54" font-size="13" fill="#4a6080">sensor array: 4 nodos / ed. administrativo — v_p = 240 m/s (estimado)</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- COLUMNA IZQUIERDA: diagrama planta -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- Edificio administrativo (planta esquemática) -->
+  <rect x="80" y="74" width="152" height="104" fill="white" fill-opacity="0.5" stroke="#2a4060" stroke-width="2"/>
+  <text x="156" y="131" font-size="11" fill="#4a6080" text-anchor="middle">ed. administrativo</text>
+  <text x="156" y="145" font-size="10" fill="#7a9ab8" text-anchor="middle">~38m × 26m</text>
+
+  <!-- Sensores en esquinas -->
+  <!-- S2 NO -->
+  <circle cx="80" cy="74" r="5" fill="#2a4060"/>
+  <text x="60" y="70" font-size="12" fill="#1a2a3a" text-anchor="end">S2</text>
+  <text x="60" y="83" font-size="10" fill="#4a6080" text-anchor="end">NO</text>
+  <!-- S1 NE -->
+  <circle cx="232" cy="74" r="5" fill="#2a4060"/>
+  <text x="244" y="70" font-size="12" fill="#1a2a3a">S1</text>
+  <text x="244" y="83" font-size="10" fill="#4a6080">NE</text>
+  <!-- S4 SO -->
+  <circle cx="80" cy="178" r="5" fill="#8a3018"/>
+  <text x="60" y="174" font-size="12" fill="#8a3018" text-anchor="end">S4</text>
+  <text x="60" y="186" font-size="10" fill="#8a3018" text-anchor="end">SO ← ref</text>
+  <!-- S3 SE -->
+  <circle cx="232" cy="178" r="5" fill="#2a4060"/>
+  <text x="244" y="174" font-size="12" fill="#1a2a3a">S3</text>
+  <text x="244" y="186" font-size="10" fill="#4a6080">SE</text>
+
+  <!-- Flecha norte -->
+  <line x1="156" y1="68" x2="156" y2="78" stroke="#2a4060" stroke-width="1"/>
+  <polygon points="156,64 153,70 159,70" fill="#2a4060"/>
+  <text x="165" y="69" font-size="11" fill="#2a4060">N</text>
+
+  <!-- Barda sur -->
+  <line x1="68" y1="210" x2="260" y2="210" stroke="#4a6080" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="68" y="222" font-size="11" fill="#4a6080">— barda sur</text>
+
+  <!-- Fuente estimada (coyotes) — SW del centro -->
+  <text x="78" y="252" font-size="11" fill="#8a3018">× fuente est.</text>
+  <circle cx="106" cy="248" r="4" fill="none" stroke="#8a3018" stroke-width="1.5"/>
+  <!-- 7 puntos representando coyotes -->
+  <g fill="none" stroke="#8a3018" stroke-width="1">
+    <circle cx="92"  cy="246" r="2.5"/>
+    <circle cx="100" cy="256" r="2.5"/>
+    <circle cx="112" cy="243" r="2.5"/>
+    <circle cx="120" cy="252" r="2.5"/>
+    <circle cx="128" cy="244" r="2.5"/>
+    <circle cx="136" cy="255" r="2.5"/>
+    <circle cx="144" cy="247" r="2.5"/>
+  </g>
+  <text x="158" y="253" font-size="10" fill="#8a3018">7 ind.</text>
+
+  <!-- Distancia estimada S4 a fuente -->
+  <line x1="80" y1="178" x2="106" y2="246" stroke="#8a3018" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="64" y="216" font-size="11" fill="#8a3018" transform="rotate(-63,64,216)">~52.6m</text>
+
+  <!-- Escala aproximada -->
+  <line x1="68" y1="275" x2="128" y2="275" stroke="#4a6080" stroke-width="1"/>
+  <line x1="68" y1="272" x2="68" y2="278" stroke="#4a6080" stroke-width="1"/>
+  <line x1="128" y1="272" x2="128" y2="278" stroke="#4a6080" stroke-width="1"/>
+  <text x="98" y="288" font-size="10" fill="#4a6080" text-anchor="middle">≈ 30 m</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- COLUMNA DERECHA: tabla TDOA -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <text x="290" y="76" font-size="14" fill="#1a2a3a" font-weight="500">Tabla TDOA — 5:40:03h</text>
+
+  <!-- Líneas de tabla -->
+  <line x1="290" y1="82" x2="625" y2="82" stroke="#2a4060" stroke-width="1.2"/>
+  <!-- Header -->
+  <text x="295" y="95"  font-size="12" fill="#2a4060">Sensor</text>
+  <text x="358" y="95"  font-size="12" fill="#2a4060">Pos.</text>
+  <text x="408" y="95"  font-size="12" fill="#2a4060">Δt (ms)</text>
+  <text x="480" y="95"  font-size="12" fill="#2a4060">Δd (m)</text>
+  <text x="543" y="95"  font-size="12" fill="#2a4060">amp (g)</text>
+  <line x1="290" y1="99" x2="625" y2="99" stroke="#2a4060" stroke-width="1.2"/>
+
+  <!-- S4 fila -->
+  <text x="295" y="115" font-size="13" fill="#8a3018">S4</text>
+  <text x="358" y="115" font-size="13" fill="#8a3018">SO</text>
+  <text x="408" y="115" font-size="13" fill="#8a3018">0 (ref)</text>
+  <text x="480" y="115" font-size="13" fill="#8a3018">0</text>
+  <text x="543" y="115" font-size="13" fill="#8a3018">0.0038</text>
+  <line x1="290" y1="120" x2="625" y2="120" stroke="#a4bcd6" stroke-width="0.7"/>
+
+  <!-- S3 fila -->
+  <text x="295" y="136" font-size="13" fill="#1a2a3a">S3</text>
+  <text x="358" y="136" font-size="13" fill="#1a2a3a">SE</text>
+  <text x="408" y="136" font-size="13" fill="#1a2a3a">+31</text>
+  <text x="480" y="136" font-size="13" fill="#1a2a3a">+7.4</text>
+  <text x="543" y="136" font-size="13" fill="#1a2a3a">0.0041</text>
+  <line x1="290" y1="141" x2="625" y2="141" stroke="#a4bcd6" stroke-width="0.7"/>
+
+  <!-- S2 fila -->
+  <text x="295" y="157" font-size="13" fill="#1a2a3a">S2</text>
+  <text x="358" y="157" font-size="13" fill="#1a2a3a">NO</text>
+  <text x="408" y="157" font-size="13" fill="#1a2a3a">+108</text>
+  <text x="480" y="157" font-size="13" fill="#1a2a3a">+25.9</text>
+  <text x="543" y="157" font-size="13" fill="#1a2a3a">0.0029</text>
+  <line x1="290" y1="162" x2="625" y2="162" stroke="#a4bcd6" stroke-width="0.7"/>
+
+  <!-- S1 fila -->
+  <text x="295" y="178" font-size="13" fill="#1a2a3a">S1</text>
+  <text x="358" y="178" font-size="13" fill="#1a2a3a">NE</text>
+  <text x="408" y="178" font-size="13" fill="#1a2a3a">+129</text>
+  <text x="480" y="178" font-size="13" fill="#1a2a3a">+31.0</text>
+  <text x="543" y="178" font-size="13" fill="#1a2a3a">0.0026</text>
+  <line x1="290" y1="183" x2="625" y2="183" stroke="#2a4060" stroke-width="1.2"/>
+
+  <!-- Nota: amplitud menor en sensores lejanos = consistente con distancia -->
+  <text x="290" y="197" font-size="11" fill="#4a6080">↑ amp. decrece con distancia — consistente ✓</text>
+
+  <!-- Columnas verticales tabla -->
+  <line x1="350" y1="82" x2="350" y2="183" stroke="#a4bcd6" stroke-width="0.6"/>
+  <line x1="400" y1="82" x2="400" y2="183" stroke="#a4bcd6" stroke-width="0.6"/>
+  <line x1="470" y1="82" x2="470" y2="183" stroke="#a4bcd6" stroke-width="0.6"/>
+  <line x1="536" y1="82" x2="536" y2="183" stroke="#a4bcd6" stroke-width="0.6"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- CÁLCULOS — sección central -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <line x1="68" y1="303" x2="632" y2="303" stroke="#a4bcd6" stroke-width="0.7" opacity="0.7"/>
+  <text x="68" y="320" font-size="13" fill="#2a4060" font-weight="500">Cálculos de posición (TDOA hiperbólico simplificado):</text>
+
+  <!-- Formula v_p -->
+  <text x="68" y="340" font-size="13" fill="#1a2a3a">  Δd = Δt · v_p       →   Δd(S2−S4) = 0.108 s × 240 m/s = 25.9 m</text>
+  <text x="68" y="358" font-size="13" fill="#1a2a3a">                         Δd(S1−S4) = 0.129 s × 240 m/s = 31.0 m</text>
+
+  <!-- Estimación distancia fuente -->
+  <text x="68" y="378" font-size="13" fill="#1a2a3a">  d_S4 estimado:</text>
+  <!-- Cálculo tachado con corrección -->
+  <text x="68" y="396" font-size="13" fill="#7a9ab8">     (Δd_NO + Δd_NE) / 2 = (25.9 + 31.0) / 2 = 28.45 m sobre d_S4</text>
+  <text x="68" y="414" font-size="13" fill="#1a2a3a">     d_S4 ≈ 52.6 m  →  fuente a ~52.6 m del sensor SO</text>
+  <text x="68" y="432" font-size="13" fill="#1a2a3a">     posición est.: SW del centro, ~46 m de barda sur  ✓</text>
+
+  <!-- Velocidad -->
+  <line x1="68" y1="445" x2="350" y2="445" stroke="#a4bcd6" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <text x="68" y="460" font-size="13" fill="#1a2a3a">  vel. individual: desplaz. ≈ 30 m / 70 s = <tspan font-weight="500">0.43 m/s</tspan>  (~1.5 km/h, paso lento)</text>
+  <text x="68" y="477" font-size="13" fill="#1a2a3a">  amplitud vs. B1: 0.0038 g vs. 0.0085 g — coyote &lt; B1 por individuo  ✓</text>
+  <text x="68" y="494" font-size="13" fill="#1a2a3a">  7 ind × 0.004 g ≈ 0.028 g equivalente aditivo (superposición)</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- PULSO MISTERIOSO 04:15h -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <line x1="68" y1="507" x2="632" y2="507" stroke="#2a4060" stroke-width="1"/>
+  <text x="68" y="522" font-size="13" fill="#8a3018" font-weight="500">04:15h — S1 único / dur: 0.8 s / frec: 2.1 Hz / amp: 0.0021 g — S2,S3,S4: sin registro</text>
+
+  <!-- Esquina doblada -->
+  <polygon points="652,0 680,0 680,28" fill="#c0ccd8" opacity="0.45"/>
+
+  <text x="28" y="260" font-size="10" fill="#7a9ab8" text-anchor="middle" transform="rotate(-90,28,260)">TDOA / POSICIONAMIENTO</text>
+
+</svg>

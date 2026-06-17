@@ -94,6 +94,8 @@ Luego me quedé parado en el campo norte mirando la barda durante un buen rato.
 
 ![Registro de alerta — sensor array / semana 4](acelerometro-coyotes.svg)
 
+![Análisis TDOA — posicionamiento de fuentes / 5:40h](calculos-tdoa.svg)
+
 <div class="audio-cassette">
   <div class="cassette-header">
     <span class="cassette-rec">● REC</span>
