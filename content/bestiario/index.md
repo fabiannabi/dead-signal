@@ -14,6 +14,26 @@ title: "Bestiario"
   Catálogo de fauna mutada documentada por los sujetos del grupo durante el período post-Emergencia. Los niveles de amenaza son provisionales y sujetos a revisión. El estado de documentación refleja el volumen de material verificado disponible — no la totalidad de lo observado en campo.
 </div>
 
+<div class="entry-section-title" style="margin: 1.75rem 0 0.5rem;">Sistema de clasificación de evidencia</div>
+
+<div class="clasificacion-legend">
+  <div class="clase-item">
+    <span class="clase-badge">Clase A</span>
+    <span class="clase-desc">Procesado en laboratorio APE</span>
+    <span class="clase-sub">Fuente verificada — acceso restringido</span>
+  </div>
+  <div class="clase-item">
+    <span class="clase-badge">Clase B</span>
+    <span class="clase-desc">Documentación de campo analizada</span>
+    <span class="clase-sub">Distribución controlada</span>
+  </div>
+  <div class="clase-item">
+    <span class="clase-badge">Clase C</span>
+    <span class="clase-desc">Evidencia primaria — sin procesar</span>
+    <span class="clase-sub">Fuente directa / archivo general</span>
+  </div>
+</div>
+
 <div class="tag-filter" id="bestiario-tag-filter">
   <span class="tag-filter-label">Filtrar por —</span>
   <div class="tag-filter-row">

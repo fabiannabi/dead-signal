@@ -107,6 +107,24 @@ title: "Cervato de Concreto"
 
 <div class="entry-section-title">Evidencia multimedia</div>
 
+<div class="clasificacion-legend">
+  <div class="clase-item">
+    <span class="clase-badge">Clase A</span>
+    <span class="clase-desc">Procesado en laboratorio APE</span>
+    <span class="clase-sub">Fuente verificada — acceso restringido</span>
+  </div>
+  <div class="clase-item">
+    <span class="clase-badge">Clase B</span>
+    <span class="clase-desc">Documentación de campo analizada</span>
+    <span class="clase-sub">Distribución controlada</span>
+  </div>
+  <div class="clase-item">
+    <span class="clase-badge">Clase C</span>
+    <span class="clase-desc">Evidencia primaria — sin procesar</span>
+    <span class="clase-sub">Fuente directa / archivo general</span>
+  </div>
+</div>
+
 <div class="media-stamp">Registro visual — procesado por Lab. Análisis APE</div>
 
 <div class="media-gallery">
