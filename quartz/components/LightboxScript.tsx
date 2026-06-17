@@ -20,7 +20,9 @@ const LightboxScript: QuartzComponent = () => {
     return lb;
   }
   document.addEventListener('click', function(e){
-    var img = e.target.closest && e.target.closest('.photo-item img');
+    var t = e.target;
+    if(!t || t.tagName !== 'IMG') return;
+    var img = (t.closest('.photo-item') || t.closest('.media-evidence-block')) ? t : null;
     if(!img) return;
     var box = getLb();
     box.querySelector('img').src = img.src;

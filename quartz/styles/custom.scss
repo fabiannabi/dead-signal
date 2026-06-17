@@ -2086,14 +2086,18 @@ table {
   background: #{$bg2};
   margin-bottom: 1.25rem;
   overflow: hidden;
+  cursor: pointer;
   &.wide { grid-column: span 2; }
   img {
     width: 100%;
     display: block;
     filter: grayscale(18%) brightness(0.80) contrast(1.06) sepia(6%);
-    transition: filter 0.25s;
+    transition: filter 0.3s ease, transform 0.3s ease;
   }
-  &:hover img { filter: grayscale(0%) brightness(0.92) contrast(1.04); }
+  &:hover img {
+    filter: grayscale(0%) brightness(0.95) contrast(1.04);
+    transform: scale(1.04);
+  }
 }
 .media-evidence-header {
   display: flex;
