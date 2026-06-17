@@ -66,6 +66,8 @@ B2 al sur, breve. Algo al poniente, firma tan pequeña que podría haber sido an
 
 Esperé hasta pasada la medianoche. Cerré la libreta azul.
 
+![Lectura acelerómetro — firma B1 / semana 3](acelerometro-b1.svg)
+
 :::notas{tipo="audio"}
 Nota de voz — Carlos / Semana 3, noche
 

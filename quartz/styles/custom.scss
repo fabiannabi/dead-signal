@@ -846,12 +846,52 @@ footer { display: none; }
     }
   }
 
-  // Tipo: nota de voz (Carlos)
+  // Tipo: nota de voz (Carlos) — transcript de grabadora de campo
   &.audio {
+    font-family: var(--codeFont);
     font-style: normal;
-    font-family: var(--headerFont);
-    font-size: 0.88rem;
-    &::before { content: 'nota de voz — transcripción'; }
+    font-size: 0.82rem;
+    line-height: 1.8;
+    color: #b8c8a0;
+
+    background-color: #131510;
+    border: 1px solid #2a3020;
+    border-left: 3px solid #8a2010;
+    padding: 0 1.5rem 1.4rem 1.8rem;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.3);
+
+    &::before {
+      content: '● REC — NOTA DE VOZ / TRANSCRIPCIÓN';
+      position: static;
+      display: block;
+      font-family: var(--codeFont);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      color: #8a2010;
+      background: none;
+      padding: 0.7rem 0 0.55rem;
+      margin-bottom: 0.7rem;
+      border-bottom: 1px solid #2a3020;
+    }
+
+    strong {
+      font-weight: 400;
+      font-style: normal;
+      color: #c8d4b0;
+      display: block;
+      margin-top: 0.9rem;
+      font-family: var(--codeFont);
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+
+      &:first-child { margin-top: 0; }
+    }
+
+    p {
+      color: #a8b890;
+      font-size: 0.82rem;
+      margin: 0.1rem 0 0.5rem;
+    }
   }
 }
 
