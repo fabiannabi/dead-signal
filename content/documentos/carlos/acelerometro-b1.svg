@@ -36,7 +36,6 @@
 
   <!-- Grid interno (tenue) -->
   <g stroke="#b8cce0" stroke-width="0.5">
-    <!-- verticales cada ~56px -->
     <line x1="124" y1="68"  x2="124" y2="240"/>
     <line x1="180" y1="68"  x2="180" y2="240"/>
     <line x1="236" y1="68"  x2="236" y2="240"/>
@@ -46,13 +45,12 @@
     <line x1="460" y1="68"  x2="460" y2="240"/>
     <line x1="516" y1="68"  x2="516" y2="240"/>
     <line x1="572" y1="68"  x2="572" y2="240"/>
-    <!-- horizontales -->
     <line x1="68" y1="111" x2="632" y2="111"/>
     <line x1="68" y1="154" x2="632" y2="154"/>
     <line x1="68" y1="197" x2="632" y2="197"/>
   </g>
 
-  <!-- Etiquetas eje Y (en el margen) -->
+  <!-- Etiquetas eje Y -->
   <text x="54" y="115" font-size="11" fill="#4a6080" text-anchor="end">+</text>
   <text x="54" y="158" font-size="11" fill="#4a6080" text-anchor="end">0</text>
   <text x="54" y="201" font-size="11" fill="#4a6080" text-anchor="end">−</text>
@@ -60,82 +58,74 @@
   <!-- Etiqueta eje X -->
   <text x="630" y="253" font-size="12" fill="#4a6080" text-anchor="end">tiempo →</text>
 
-  <!-- SEÑAL: ruido de base (izquierda) x=68 a x=115 -->
+  <!-- SEÑAL: ruido de base (izquierda) -->
   <polyline fill="none" stroke="#1a3a5a" stroke-width="1.8" stroke-linejoin="round"
     points="68,154 73,153 77,155 81,153 85,156 89,153 93,155 97,153 101,155 105,154 109,153 113,155 115,154"/>
 
-  <!-- PULSOS B1: 9 pulsos regulares, cada 38px, empezando en x=115 -->
-  <!-- Forma de cada pulso: sube rápido, pico, baja gradual -->
-  <!-- Pulso 1: x=115 -->
+  <!-- PULSOS B1 -->
   <polyline fill="none" stroke="#1a3a5a" stroke-width="1.8" stroke-linejoin="round"
     points="115,154 118,152 121,138 124,118 127,96 130,84 133,96 136,116 139,138 142,151 145,154"/>
-  <!-- Pulso 2: x=153 -->
   <polyline fill="none" stroke="#1a3a5a" stroke-width="1.8" stroke-linejoin="round"
     points="145,154 148,153 151,154 153,154 156,151 159,136 162,116 165,94 168,83 171,94 174,115 177,137 180,151 183,154"/>
-  <!-- Pulso 3: x=191 -->
   <polyline fill="none" stroke="#1a3a5a" stroke-width="1.8" stroke-linejoin="round"
     points="183,154 186,153 188,155 191,154 194,150 197,134 200,112 203,92 206,82 209,94 212,113 215,135 218,150 221,154"/>
-  <!-- Pulso 4: x=229 -->
   <polyline fill="none" stroke="#1a3a5a" stroke-width="1.8" stroke-linejoin="round"
     points="221,154 224,153 227,155 229,154 232,150 235,133 238,111 241,91 244,81 247,93 250,113 253,134 256,151 259,154"/>
-  <!-- Pulso 5: x=267 — ligeramente más alto (más cerca del sensor) -->
+  <!-- Pulso 5: más alto -->
   <polyline fill="none" stroke="#1a3a5a" stroke-width="1.8" stroke-linejoin="round"
     points="259,154 262,152 265,155 267,154 270,149 273,131 276,107 279,87 282,76 285,88 288,108 291,131 294,150 297,154"/>
-  <!-- Pulso 6: x=305 -->
   <polyline fill="none" stroke="#1a3a5a" stroke-width="1.8" stroke-linejoin="round"
     points="297,154 300,153 303,155 305,154 308,151 311,136 314,114 317,93 320,82 323,94 326,115 329,136 332,151 335,154"/>
-  <!-- Pulso 7: x=343 -->
   <polyline fill="none" stroke="#1a3a5a" stroke-width="1.8" stroke-linejoin="round"
     points="335,154 338,153 341,155 343,154 346,151 349,135 352,113 355,93 358,83 361,95 364,116 367,136 370,151 373,154"/>
-  <!-- Pulso 8: x=381 -->
   <polyline fill="none" stroke="#1a3a5a" stroke-width="1.8" stroke-linejoin="round"
     points="373,154 376,153 379,155 381,154 384,151 387,136 390,114 393,93 396,83 399,95 402,115 405,137 408,151 411,154"/>
-  <!-- Pulso 9: x=419 (último pulso claro antes del fin) -->
   <polyline fill="none" stroke="#1a3a5a" stroke-width="1.8" stroke-linejoin="round"
     points="411,154 414,153 417,155 419,154 422,151 425,137 428,115 431,94 434,84 437,96 440,116 443,137 446,151 449,154"/>
 
-  <!-- Ruido de cola (derecha) x=449 a x=632 -->
+  <!-- Ruido de cola (derecha) -->
   <polyline fill="none" stroke="#1a3a5a" stroke-width="1.8" stroke-linejoin="round"
     points="449,154 453,153 457,155 461,153 465,155 469,154 473,152 477,155 481,153 485,155 489,154 493,153 497,155 501,154 505,153 509,155 513,153 517,154 521,155 525,153 529,154 533,153 537,155 541,154 545,153 549,155 553,154 557,153 561,155 565,154 569,153 573,155 577,154 581,153 585,155 589,154 593,153 597,154 601,155 605,153 609,154 613,155 617,153 621,154 625,155 629,154 632,154"/>
 
-  <!-- ANOTACIÓN 1: flecha al pico del pulso 5 (más alto) -->
-  <line x1="282" y1="72" x2="282" y2="78" stroke="#8a3018" stroke-width="1.3"/>
-  <line x1="282" y1="72" x2="360" y2="62" stroke="#8a3018" stroke-width="1.3"/>
-  <text x="363" y="60" font-size="14" fill="#8a3018">B1 — 4.2 Hz aprox.</text>
-  <text x="363" y="76" font-size="12" fill="#8a3018">amplitud alta / masa considerable</text>
+  <!-- ANOTACIÓN 1: L desde pulso 5 → label en zona derecha sin señal -->
+  <line x1="282" y1="76" x2="282" y2="62" stroke="#8a3018" stroke-width="1.3"/>
+  <line x1="282" y1="62" x2="456" y2="62" stroke="#8a3018" stroke-width="1.3"/>
+  <circle cx="282" cy="76" r="2.5" fill="#8a3018"/>
+  <text x="458" y="67" font-size="13" fill="#8a3018">B1 — 4.2 Hz aprox.</text>
+  <text x="458" y="82" font-size="11" fill="#8a3018">amp. alta / masa considerable</text>
 
-  <!-- ANOTACIÓN 2: corchete de intervalo entre pulsos 3 y 4 -->
+  <!-- ANOTACIÓN 2: corchete intervalo -->
   <line x1="206" y1="232" x2="206" y2="226" stroke="#2a4060" stroke-width="1.1"/>
   <line x1="206" y1="229" x2="259" y2="229" stroke="#2a4060" stroke-width="1.1"/>
   <line x1="259" y1="226" x2="259" y2="232" stroke="#2a4060" stroke-width="1.1"/>
   <text x="232" y="245" font-size="12" fill="#2a4060" text-anchor="middle">~0.24 s</text>
   <text x="232" y="258" font-size="11" fill="#4a6080" text-anchor="middle">intervalo consistente</text>
 
-  <!-- ANOTACIÓN 3: zona de ruido base (izquierda) -->
+  <!-- ANOTACIÓN 3: zona ruido base -->
   <text x="68" y="276" font-size="12" fill="#4a6080">← ruido base (sin firma)</text>
   <line x1="68" y1="271" x2="100" y2="156" stroke="#4a6080" stroke-width="0.8" stroke-dasharray="3,2"/>
 
-  <!-- ANOTACIÓN 4: zona de cola sin firma -->
+  <!-- ANOTACIÓN 4: zona cola -->
   <text x="456" y="276" font-size="12" fill="#4a6080">sin firma →</text>
   <line x1="490" y1="271" x2="530" y2="156" stroke="#4a6080" stroke-width="0.8" stroke-dasharray="3,2"/>
 
-  <!-- SEPARADOR (renglón de línea) -->
+  <!-- SEPARADOR -->
   <line x1="68" y1="297" x2="632" y2="297" stroke="#a4bcd6" stroke-width="0.7" opacity="0.65"/>
 
-  <!-- NOTAS AL PIE (escritas en renglones) -->
+  <!-- NOTAS AL PIE -->
   <text x="68" y="317" font-size="14" fill="#1a2a3a">→ locomoción cuadrúpeda — paso regular, sin variación en intervalo</text>
   <text x="68" y="341" font-size="14" fill="#1a2a3a">→ amplitud: 2.8× referencia herbívoro grande (días 1–3). diferencia significativa.</text>
   <text x="68" y="365" font-size="14" fill="#1a2a3a">→ ruta bordeando norte del campus, ~30 m de barda. no entró.</text>
   <text x="68" y="389" font-size="14" fill="#8a3018" font-weight="500">→ dos rutas documentadas — semanas distintas, horarios distintos.</text>
   <text x="68" y="413" font-size="15" fill="#8a3018" font-weight="600">    B1 está aprendiendo el campus?</text>
 
-  <!-- Subrayado de la pregunta -->
+  <!-- Subrayado -->
   <line x1="84" y1="417" x2="358" y2="417" stroke="#8a3018" stroke-width="0.9"/>
 
-  <!-- Esquina doblada (efecto papel) -->
+  <!-- Esquina doblada -->
   <polygon points="652,0 680,0 680,28" fill="#c0ccd8" opacity="0.45"/>
 
-  <!-- Label de orientación en el margen izquierdo -->
+  <!-- Label orientación -->
   <text x="28" y="170" font-size="10" fill="#7a9ab8" text-anchor="middle" transform="rotate(-90,28,170)">SENSOR N / NOCHE</text>
 
 </svg>

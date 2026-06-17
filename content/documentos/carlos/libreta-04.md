@@ -92,6 +92,8 @@ Fotografié las huellas desde todos los ángulos. Las medí. Las describí con m
 
 Luego me quedé parado en el campo norte mirando la barda durante un buen rato.
 
+![Registro de alerta — sensor array / semana 4](acelerometro-coyotes.svg)
+
 <div class="audio-cassette">
   <div class="cassette-header">
     <span class="cassette-rec">● REC</span>

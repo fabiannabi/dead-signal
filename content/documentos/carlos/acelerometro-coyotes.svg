@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="480" viewBox="0 0 680 480" font-family="Caveat, cursive">
+
+  <rect width="680" height="480" fill="#e4edf8"/>
+
+  <g stroke="#a4bcd6" stroke-width="0.7" opacity="0.65">
+    <line x1="0" y1="24"  x2="680" y2="24"/>
+    <line x1="0" y1="48"  x2="680" y2="48"/>
+    <line x1="0" y1="72"  x2="680" y2="72"/>
+    <line x1="0" y1="96"  x2="680" y2="96"/>
+    <line x1="0" y1="120" x2="680" y2="120"/>
+    <line x1="0" y1="144" x2="680" y2="144"/>
+    <line x1="0" y1="168" x2="680" y2="168"/>
+    <line x1="0" y1="192" x2="680" y2="192"/>
+    <line x1="0" y1="216" x2="680" y2="216"/>
+    <line x1="0" y1="240" x2="680" y2="240"/>
+    <line x1="0" y1="264" x2="680" y2="264"/>
+    <line x1="0" y1="288" x2="680" y2="288"/>
+    <line x1="0" y1="312" x2="680" y2="312"/>
+    <line x1="0" y1="336" x2="680" y2="336"/>
+    <line x1="0" y1="360" x2="680" y2="360"/>
+    <line x1="0" y1="384" x2="680" y2="384"/>
+    <line x1="0" y1="408" x2="680" y2="408"/>
+    <line x1="0" y1="432" x2="680" y2="432"/>
+    <line x1="0" y1="456" x2="680" y2="456"/>
+  </g>
+
+  <line x1="56" y1="0" x2="56" y2="480" stroke="#c89898" stroke-width="1" opacity="0.7"/>
+
+  <!-- Título -->
+  <text x="68" y="34" font-size="18" fill="#1a2a3a" font-weight="500">alerta — sensor array / 5:40h, semana 4</text>
+  <text x="68" y="55" font-size="13" fill="#4a6080">cuatro sensores — firma simultánea / múltiple fuente</text>
+
+  <!-- GRÁFICO PRINCIPAL: firma coyotes -->
+  <rect x="68" y="68" width="564" height="148" fill="white" fill-opacity="0.45" stroke="#2a4060" stroke-width="1.5"/>
+
+  <g stroke="#b8cce0" stroke-width="0.5">
+    <line x1="68"  y1="103" x2="632" y2="103"/>
+    <line x1="68"  y1="142" x2="632" y2="142"/>
+    <line x1="68"  y1="181" x2="632" y2="181"/>
+    <line x1="180" y1="68"  x2="180" y2="216"/>
+    <line x1="292" y1="68"  x2="292" y2="216"/>
+    <line x1="404" y1="68"  x2="404" y2="216"/>
+    <line x1="516" y1="68"  x2="516" y2="216"/>
+  </g>
+
+  <text x="54" y="107" font-size="11" fill="#4a6080" text-anchor="end">+</text>
+  <text x="54" y="146" font-size="11" fill="#4a6080" text-anchor="end">0</text>
+  <text x="54" y="185" font-size="11" fill="#4a6080" text-anchor="end">−</text>
+  <text x="630" y="228" font-size="12" fill="#4a6080" text-anchor="end">tiempo →</text>
+
+  <!-- Ruido base izquierda -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.6" stroke-linejoin="round"
+    points="68,142 72,141 76,143 80,142 84,141 88,143 92,142 96,141 100,143 104,142 108,141 112,143 116,142 120,141"/>
+
+  <!-- RÁFAGA COYOTES: irregular, múltiple fuente, x=120-360 -->
+  <!-- Source 1 - llega primero -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.6" stroke-linejoin="round"
+    points="120,141 123,138 126,128 129,108 132,90 135,78 138,90 141,110 144,130 147,140 150,142"/>
+  <!-- Source 2 - casi simultáneo, amplitud media -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.6" stroke-linejoin="round"
+    points="148,142 151,138 154,124 157,106 160,92 163,84 166,92 169,108 172,124 175,138 178,142"/>
+  <!-- Overlap + source 3 -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.6" stroke-linejoin="round"
+    points="176,142 179,136 182,118 185,98 188,82 191,74 194,82 197,100 200,120 203,136 206,142"/>
+  <!-- Source 4 - diferente timing -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.6" stroke-linejoin="round"
+    points="204,142 207,137 210,122 213,104 216,90 218,96 220,112 222,128 224,138 226,142"/>
+  <!-- Overlap irregular -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.6" stroke-linejoin="round"
+    points="224,142 227,136 230,116 233,94 236,78 239,72 242,80 245,96 248,116 251,134 254,141"/>
+  <!-- Source 5,6 (dos juntos) -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.6" stroke-linejoin="round"
+    points="252,141 255,134 258,114 261,92 264,78 267,88 269,102 271,88 274,76 277,88 280,106 283,124 286,138 289,142"/>
+  <!-- Source 7 + eco -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.6" stroke-linejoin="round"
+    points="287,142 290,136 293,120 296,104 299,94 302,104 305,120 308,136 311,142"/>
+  <!-- Decayendo -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.6" stroke-linejoin="round"
+    points="309,142 312,138 315,128 318,118 321,128 324,138 327,142 330,141 333,138 336,130 339,138 342,141 345,142"/>
+
+  <!-- Cola derecha quieta -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.6" stroke-linejoin="round"
+    points="345,142 350,141 360,143 370,142 380,141 390,143 400,142 410,141 420,143 430,142 440,141 450,143 460,142 470,141 480,143 490,142 500,141 510,143 520,142 530,141 540,143 550,142 560,141 570,142 580,143 590,142 600,141 610,143 620,142 630,141 632,142"/>
+
+  <!-- ANOTACIONES gráfico principal -->
+  <line x1="239" y1="72" x2="239" y2="66" stroke="#8a3018" stroke-width="1.2"/>
+  <line x1="239" y1="66" x2="340" y2="66" stroke="#8a3018" stroke-width="1.2"/>
+  <text x="343" y="70" font-size="12" fill="#8a3018">7 fuentes simultáneas</text>
+  <text x="343" y="84" font-size="11" fill="#8a3018">coordinación inusual</text>
+
+  <line x1="120" y1="155" x2="120" y2="230" stroke="#4a6080" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="68" y="228" font-size="11" fill="#4a6080">← llegada</text>
+
+  <line x1="350" y1="155" x2="350" y2="230" stroke="#4a6080" stroke-width="0.9" stroke-dasharray="3,2"/>
+  <text x="353" y="228" font-size="11" fill="#4a6080">dispersión →</text>
+
+  <!-- Corchete duración -->
+  <line x1="120" y1="223" x2="350" y2="223" stroke="#2a4060" stroke-width="1"/>
+  <line x1="120" y1="219" x2="120" y2="227" stroke="#2a4060" stroke-width="1"/>
+  <line x1="350" y1="219" x2="350" y2="227" stroke="#2a4060" stroke-width="1"/>
+  <text x="235" y="238" font-size="12" fill="#2a4060" text-anchor="middle">~4 min 10 seg</text>
+
+  <!-- SEPARADOR entre gráficos -->
+  <line x1="68" y1="252" x2="632" y2="252" stroke="#a4bcd6" stroke-width="0.7" opacity="0.5"/>
+  <text x="68" y="268" font-size="12" fill="#4a6080">sensor N — registro aislado / 04:15h (noche previa)</text>
+
+  <!-- GRÁFICO SECUNDARIO: pulso misterioso 4:15h -->
+  <rect x="68" y="274" width="564" height="72" fill="white" fill-opacity="0.3" stroke="#2a4060" stroke-width="1" stroke-dasharray="4,2"/>
+
+  <line x1="68" y1="310" x2="632" y2="310" stroke="#b8cce0" stroke-width="0.5"/>
+  <text x="54" y="313" font-size="10" fill="#4a6080" text-anchor="end">0</text>
+
+  <!-- Línea plana -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.5" stroke-linejoin="round"
+    points="68,310 120,309 180,310 240,311 280,310 290,309 295,310"/>
+  <!-- Pulso único limpio -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.5" stroke-linejoin="round"
+    points="295,310 298,307 301,296 304,282 307,278 310,282 313,296 316,307 319,310"/>
+  <!-- Continúa plano -->
+  <polyline fill="none" stroke="#1a3a5a" stroke-width="1.5" stroke-linejoin="round"
+    points="319,310 360,311 420,310 480,309 540,310 600,311 632,310"/>
+
+  <!-- Anotación pulso misterioso -->
+  <line x1="307" y1="278" x2="307" y2="272" stroke="#8a3018" stroke-width="1.2"/>
+  <line x1="307" y1="272" x2="390" y2="272" stroke="#8a3018" stroke-width="1.2"/>
+  <text x="393" y="277" font-size="12" fill="#8a3018">firma única — sin continuidad</text>
+  <text x="393" y="291" font-size="11" fill="#8a3018">origen sin clasificar   ?</text>
+
+  <!-- SEPARADOR notas -->
+  <line x1="68" y1="360" x2="632" y2="360" stroke="#a4bcd6" stroke-width="0.7" opacity="0.65"/>
+
+  <!-- NOTAS -->
+  <text x="68" y="379" font-size="14" fill="#1a2a3a">→ coyotes mutados: 7 ind. / formación semicírculo / barda sur resistió</text>
+  <text x="68" y="401" font-size="14" fill="#1a2a3a">→ vel. estimada alta, masa media — distintos a B1 en frec. y patrón</text>
+  <text x="68" y="423" font-size="14" fill="#8a3018" font-weight="500">→ 04:15h sensor N: registro único. no fue piedra. algo se detuvo.</text>
+  <text x="68" y="447" font-size="14" fill="#8a3018" font-weight="500">→ barda norte intacta. lo que entró no la necesitó.</text>
+
+  <!-- Esquina doblada -->
+  <polygon points="652,0 680,0 680,28" fill="#c0ccd8" opacity="0.45"/>
+
+  <text x="28" y="175" font-size="10" fill="#7a9ab8" text-anchor="middle" transform="rotate(-90,28,175)">SENSOR ARRAY / ALERTA</text>
+
+</svg>

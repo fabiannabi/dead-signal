@@ -78,6 +78,8 @@ Seis años de pagos. Pero eso era antes.
 
 Seguí.
 
+![Firma sin clasificar — acelerómetro portátil / en tránsito](acelerometro-gusano.svg)
+
 <div class="audio-cassette">
   <div class="cassette-header">
     <span class="cassette-rec">● REC</span>
