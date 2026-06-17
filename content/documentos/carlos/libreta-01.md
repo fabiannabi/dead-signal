@@ -83,7 +83,7 @@ Eso es suficiente para empezar.
     <span class="cassette-sub">Para cuando aparezcan / carpeta de audio</span>
   </div>
   <div class="cassette-body">
-    <audio controls src="/audio/carlos/nota-campo-01.m4a" type="audio/mp4"></audio>
+    <audio controls src="/audio/carlos/nota-campo-01.mp4" type="audio/mp4"></audio>
     <div class="cassette-damage">// señal recuperada — interferencia parcial en segmentos 0:18–0:24</div>
   </div>
   <details class="transcript-toggle">
