@@ -25,6 +25,7 @@ import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import EntradaHeader from "./custom/EntradaHeader"
 import PaletteSwitcher from "./PaletteSwitcher"
+import LightboxScript from "./LightboxScript"
 
 export {
   ArticleTitle,
@@ -54,4 +55,5 @@ export {
   ConditionalRender,
   EntradaHeader,
   PaletteSwitcher,
+  LightboxScript,
 }
