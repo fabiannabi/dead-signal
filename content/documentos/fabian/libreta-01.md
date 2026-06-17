@@ -1,5 +1,5 @@
 ---
-title: "Libreta de campo — F-01 / Días 1–3"
+title: "Documento original 01"
 tipo: documento
 personaje: fabian
 formato: field

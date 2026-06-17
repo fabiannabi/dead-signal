@@ -30,6 +30,9 @@ Documentos en primera persona. Transcritos sin corrección de ortografía, estil
     </div>
     <ul class="doc-lista">
       <li><a href="felipe/libreta-01" class="internal">Semana 1 — Hospital General, período de colapso</a></li>
+      <li><a href="felipe/libreta-02" class="internal">Semanas 2–3 — Base, reconocimiento nocturno, Chacales de Feria</a></li>
+      <li><a href="felipe/libreta-03" class="internal">Semana 3 — El centinela y la Mosca Forúnculo</a></li>
+      <li><a href="felipe/libreta-04" class="internal">Semanas 4–5 — Mudas, ciclo completo, el adulto</a></li>
     </ul>
   </div>
 

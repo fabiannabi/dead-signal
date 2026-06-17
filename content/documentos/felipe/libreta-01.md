@@ -1,5 +1,5 @@
 ---
-title: "F-02 / Notas clínicas — Semana 1"
+title: "Documento original 01"
 ---
 
 *Señal Muerta — Crónicas de la Emergencia* / *Felipe — Entrada 01*

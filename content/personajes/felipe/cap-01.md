@@ -4,7 +4,7 @@ title: "Entrada 01 — Código rojo sin protocolo"
 
 *ARCHIVO DE RECUPERACIÓN POST-EMERGENCIA — SECCIÓN DOCUMENTAL* / *Expediente F-02 / Documento 01 de :redactado[██]*
 
-**Fuente primaria:** [[felipe/libreta-01|Notas clínicas y libreta personal — F-02 / Semana 1]]
+**Fuente primaria:** [[felipe/libreta-01|Documento original 01]]
 
 :::archivist{label="Fuentes"}
 Notas clínicas en papel membretado recuperadas en domicilio de F-02 / testimonio de personal médico :redactado[████████████████████████] / registros de admisión parciales del Hospital General de Aguascalientes
@@ -19,18 +19,6 @@ El hospital funcionó como tal durante tres días. Testimonios del personal que 
 La salida del hospital en el cuarto día marca el inicio del período de base independiente. El incidente en la farmacia — documentado en las notas clínicas como presencia de arácnido en el pasillo del fondo, sensible al movimiento — es el primer avistamiento directo de [[arana-hidraulica|fauna arácnida mutada]] registrado por F-02. La brevedad de la nota sugiere que F-02 no tuvo tiempo o disposición para mayor documentación en ese momento.
 
 El inventario tomado ese día — antibióticos de amplio espectro, antifúngicos, tramadol, parches de buprenorfina, material de sutura, y una cantidad notable de atomoxetina — refleja criterio de triaje de largo plazo. No tomó analgésicos comunes, no tomó antigripales. Tomó lo que permitiría operar sin infraestructura hospitalaria durante meses, y lo que necesitaba para funcionar. La atomoxetina en particular — medicamento para el TDAH, no relacionado con trauma físico — sugiere que F-02 ya estaba pensando en términos de semanas, no de días.
-
-:::notas{tipo="clinical"}
-**Notas clínicas — F-02 / Semana 1**
-
-Patrón tipo A — aplastamiento distribuido. Sup. ~60-80cm, borde no filo. Pacientes con este patrón no vieron al agresor antes del impacto.
-
-Patrón tipo B — laceración paralela múltiple. Sep. 8-11cm. Prof. 4-7cm. Filo curvo un lado, superficie roma el otro. Ningún paciente con patrón B en torso sobrevivió.
-
-Hipótesis: dos criaturas distintas. Tamaños muy diferentes.
-
-Farmacia — arácnido probable. Sensible al movimiento. No salgan por ese lado.
-:::
 
 :::archivist{label="Estado del archivo"}
 F-02, período inicial: completo con lagunas. Lagunas documentales: horas 0–96 sin registro escrito. Actividad reconstruida a partir de notas clínicas y testimonios de personal médico.

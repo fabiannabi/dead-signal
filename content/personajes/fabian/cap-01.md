@@ -10,7 +10,7 @@ total-capitulos: 4
 *ARCHIVO DE RECUPERACIÓN POST-EMERGENCIA — SECCIÓN DOCUMENTAL*  
 *Expediente F-01 / Documento 01 de :redactado[██] — Período: Días 1–3 post-Emergencia*
 
-Fuente primaria: [[fabian/libreta-01|Libreta de campo — F-01 / Días 1–3]]
+Fuente primaria: [[fabian/libreta-01|Documento original 01]]
 
 ---
 
