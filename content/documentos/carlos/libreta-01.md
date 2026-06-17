@@ -4,18 +4,6 @@ title: "Documento original 01"
 
 *Señal Muerta — Crónicas de la Emergencia* / *Carlos — Entrada 01*
 
-<div class="audio-cassette">
-  <div class="cassette-header">
-    <span class="cassette-rec">● REC</span>
-    <span class="cassette-title">NOTA DE CAMPO 01 — F-05</span>
-    <span class="cassette-sub">Para cuando aparezcan / carpeta de audio</span>
-  </div>
-  <div class="cassette-body">
-    <audio controls src="/audio/carlos/nota-campo-01.m4a" type="audio/mp4"></audio>
-    <div class="cassette-damage">// señal recuperada — interferencia parcial en segmentos 0:18–0:24</div>
-  </div>
-</div>
-
 ---
 
 Martes. Reunión de academia, 40 min de retraso como siempre. Doce personas en la sala de juntas. Yo al fondo con la libreta.
@@ -86,20 +74,29 @@ Algo pesado moviéndose cerca. No lo vi. Pero tenía la firma.
 
 Eso es suficiente para empezar.
 
-:::notas{tipo="audio"}
-Nota de voz — Carlos / Semana 2, sin fecha
+---
 
-"El acelerómetro funciona mejor de lo que esperaba. No fue diseñado para esto. Me gusta cuando pasa eso.
-
-Firma B1 — tres registros esta semana, siempre entre 10 y 14 hrs. 4.2 Hz aproximado. Intervalo entre pulsos consistente. Locomoción cuadrúpeda, paso regular. Masa considerable, sin calibración exacta todavía.
-
-Idea: más sensores, triangulación, mapeo de rutas sin observación visual. Necesito tres acelerómetros más del laboratorio de instrumentación en el D. El problema es cruzar el campo dos veces.
-
-Pendiente para cuando tenga a alguien que venga conmigo. No voy solo.
-
-Los coyotes siguen sin aparecer. Seis años, nunca más de tres días sin verlos. Lo que sea afuera los desplazó o los absorbió. Ninguna de las dos es buena.
-
-Grabé tres audios hoy. Lo del acelerómetro, lo de los coyotes, lo de la barda sur sin material. Eventualmente alguien escucha esto y tiene contexto.
-
-O eso espero."
-:::
+<div class="audio-cassette">
+  <div class="cassette-header">
+    <span class="cassette-rec">● REC</span>
+    <span class="cassette-title">NOTA DE CAMPO 01 — F-05</span>
+    <span class="cassette-sub">Para cuando aparezcan / carpeta de audio</span>
+  </div>
+  <div class="cassette-body">
+    <audio controls src="/audio/carlos/nota-campo-01.m4a" type="audio/mp4"></audio>
+    <div class="cassette-damage">// señal recuperada — interferencia parcial en segmentos 0:18–0:24</div>
+  </div>
+  <details class="transcript-toggle">
+    <summary>// ver transcripción</summary>
+    <div class="transcript-body">
+      <p>Nota de voz — Carlos / Semana 2, sin fecha</p>
+      <p>"El acelerómetro funciona mejor de lo que esperaba. No fue diseñado para esto. Me gusta cuando pasa eso.</p>
+      <p>Firma B1 — tres registros esta semana, siempre entre 10 y 14 hrs. 4.2 Hz aproximado. Intervalo entre pulsos consistente. Locomoción cuadrúpeda, paso regular. Masa considerable, sin calibración exacta todavía.</p>
+      <p>Idea: más sensores, triangulación, mapeo de rutas sin observación visual. Necesito tres acelerómetros más del laboratorio de instrumentación en el D. El problema es cruzar el campo dos veces.</p>
+      <p>Pendiente para cuando tenga a alguien que venga conmigo. No voy solo.</p>
+      <p>Los coyotes siguen sin aparecer. Seis años, nunca más de tres días sin verlos. Lo que sea afuera los desplazó o los absorbió. Ninguna de las dos es buena.</p>
+      <p>Grabé tres audios hoy. Lo del acelerómetro, lo de los coyotes, lo de la barda sur sin material. Eventualmente alguien escucha esto y tiene contexto.</p>
+      <p>O eso espero."</p>
+    </div>
+  </details>
+</div>

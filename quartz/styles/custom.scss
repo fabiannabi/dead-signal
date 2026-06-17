@@ -1032,6 +1032,47 @@ tr { border-bottom-color: var(--lightgray); }
     color: #4a3020;
     padding-top: 0.1rem;
   }
+
+  .transcript-toggle {
+    border-top: 1px solid #1e2018;
+    margin-top: 0.1rem;
+
+    summary {
+      font-family: var(--codeFont);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      color: #3a4830;
+      padding: 0.55rem 1.2rem;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+      transition: color 0.15s;
+
+      &::-webkit-details-marker { display: none; }
+      &::before { content: '▶  '; font-size: 0.5rem; vertical-align: middle; }
+      &:hover { color: #6a8060; }
+    }
+
+    &[open] summary {
+      color: #6a8060;
+      &::before { content: '▼  '; }
+    }
+
+    .transcript-body {
+      padding: 0.8rem 1.2rem 1rem;
+      border-top: 1px solid #1a1e14;
+      font-family: var(--codeFont);
+      font-size: 0.8rem;
+      line-height: 1.75;
+      color: #7a8870;
+
+      p {
+        margin: 0 0 0.5rem;
+        &:last-child { margin-bottom: 0; }
+        &:first-child { color: #4a5840; margin-bottom: 0.7rem; }
+      }
+    }
+  }
 }
 
 // ─────────────────────────────────────────────
