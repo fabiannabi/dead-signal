@@ -36,4 +36,18 @@ Documentos en primera persona. Transcritos sin corrección de ortografía, estil
     </ul>
   </div>
 
+  <div class="doc-seccion">
+    <div class="doc-seccion-header">
+      <span class="doc-codigo">F-05</span>
+      <span class="doc-nombre">Carlos</span>
+      <span class="doc-formato">Libreta azul de campo + notas de voz</span>
+    </div>
+    <ul class="doc-lista">
+      <li><a href="carlos/libreta-01" class="internal">Semanas 1–2 — Campus sur, primer avistamiento, acelerómetro</a></li>
+      <li><a href="carlos/libreta-02" class="internal">Semana 2 — Cruzar el campo, sistema instalado</a></li>
+      <li><a href="carlos/libreta-03" class="internal">Semana 3 — Firma B1, calibración, rutas</a></li>
+      <li><a href="carlos/libreta-04" class="internal">Semana 3 — Prueba de sistema, huellas en campo norte</a></li>
+    </ul>
+  </div>
+
 </div>

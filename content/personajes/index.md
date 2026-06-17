@@ -40,7 +40,7 @@ title: "Expedientes de Sujeto"
     <span class="sujeto-origen"><span class="redacted">████████</span></span>
     <span class="sujeto-docs">0</span>
   </a>
-  <a class="sujeto-fila disabled" href="#">
+  <a class="sujeto-fila" href="carlos/">
     <span class="sujeto-codigo">F-05</span>
     <span class="sujeto-nombre">Carlos</span>
     <span class="sujeto-rol">Ing. Biomédico / Maestro UAA</span>
@@ -49,4 +49,4 @@ title: "Expedientes de Sujeto"
   </a>
 </div>
 
-<div class="archivist-note-inline">Estado del inventario — 2 sujetos con expediente completo / 1 incompleto / 2 pendientes de clasificación.</div>
+<div class="archivist-note-inline">Estado del inventario — 3 sujetos con expediente completo / 1 incompleto / 1 pendiente de clasificación.</div>
