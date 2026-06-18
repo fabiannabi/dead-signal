@@ -2003,12 +2003,14 @@ table {
   font-size: 0.69rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.5rem;
 }
 .conf-desc {
+  font-family: var(--bodyFont);
+  font-size: 1.1rem;
   color: var(--darkgray);
   margin-bottom: 0.5rem;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 .conf-access {
   font-size: 0.69rem;
