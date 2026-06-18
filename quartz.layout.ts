@@ -7,8 +7,8 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [Component.LightboxScript(), Component.BestiarioScript()],
   footer: Component.Footer({
     links: {
-      "Archivo Principal": "/",
-      Operaciones: "/operaciones/",
+      "Archivo Principal": "/dead-signal/",
+      Operaciones: "/dead-signal/operaciones/",
     },
   }),
 }
