@@ -89,7 +89,7 @@ title: "Cervato de Concreto"
     <span class="conf-code">Expediente APE/BST-I/01 — Nivel <span class="redacted">██</span></span>
   </div>
   <div class="conf-item">
-    <div class="conf-id"><a href="/bestiario/cervato-de-concreto-exp-001" class="conf-doc-link">CC-EXP-001 / Experimento — Protocolo de acercamiento territorial</a></div>
+    <div class="conf-id"><a href="/bestiario/cervato-de-concreto/cervato-de-concreto-exp-001" class="conf-doc-link">CC-EXP-001 / Experimento — Protocolo de acercamiento territorial</a></div>
     <div class="conf-desc">Protocolo de acercamiento directo en cuatro fases — 15, 10 y 5 metros, más contacto. Reacción del espécimen a presencia humana en condiciones de campo. El investigador principal fue reasignado a <span class="redacted">████████████</span> tras la conclusión. Las fases 3 y 4 permanecen clasificadas en Clase A.</div>
     <div class="conf-access">Clase B — Fases 1 y 2 accesibles / Fases 3 y 4 nivel superior</div>
   </div>
