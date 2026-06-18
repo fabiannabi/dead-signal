@@ -58,6 +58,39 @@ title: "Bestiario"
   </div>
 </div>
 
+<div class="entry-section-title" style="margin: 0.75rem 0 0.5rem;">Estado de documentación</div>
+
+<div class="status-legend">
+  <div class="status-legend-item">
+    <span class="sl-dot documentado"></span>
+    <div class="sl-info">
+      <span class="sl-name">Documentado</span>
+      <span class="sl-desc">Expediente activo — documentación básica completa</span>
+    </div>
+  </div>
+  <div class="status-legend-item">
+    <span class="sl-dot fragmentario"></span>
+    <div class="sl-info">
+      <span class="sl-name">Fragmentario</span>
+      <span class="sl-desc">Evidencia parcial — datos insuficientes para clasificación completa</span>
+    </div>
+  </div>
+  <div class="status-legend-item">
+    <span class="sl-dot sin-confirmar"></span>
+    <div class="sl-info">
+      <span class="sl-name">Sin confirmar</span>
+      <span class="sl-desc">Sin avistamiento verificado — evidencia indirecta únicamente</span>
+    </div>
+  </div>
+  <div class="status-legend-item">
+    <span class="sl-dot en-clasificacion"></span>
+    <div class="sl-info">
+      <span class="sl-name">En clasificación</span>
+      <span class="sl-desc">Análisis en proceso — taxonomía y nivel de amenaza pendientes</span>
+    </div>
+  </div>
+</div>
+
 <div class="tag-filter" id="bestiario-tag-filter">
   <div class="tag-filter-header">
     <span class="tag-filter-label">Filtrar entradas</span>
