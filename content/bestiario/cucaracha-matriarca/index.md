@@ -206,8 +206,9 @@ title: "Cucaracha Matriarca"
       <span class="audio-ev-clase">Clase C</span>
     </div>
     <div class="audio-evidence-body">
-      <div class="audio-ev-title">Sonido de desplazamiento — colonia en actividad</div>
-      <div class="audio-ev-damaged">// sin registro sonoro recuperado — pendiente de documentación</div>
+      <div class="audio-ev-title">Sonido de desplazamiento — colonia en actividad / perímetro de nido</div>
+      <audio controls src="./vocal-normal-01.mp3"></audio>
+      <div class="audio-ev-damaged">// grabación de campo — calidad reducida</div>
     </div>
   </div>
 
@@ -218,8 +219,22 @@ title: "Cucaracha Matriarca"
       <span class="audio-ev-clase">Clase B</span>
     </div>
     <div class="audio-evidence-body">
-      <div class="audio-ev-title">Respuesta centinela — inmolación perimetral</div>
-      <div class="audio-ev-damaged">// sin registro sonoro recuperado — pendiente de documentación</div>
+      <div class="audio-ev-title">Respuesta centinela — inmolación / muestra 01</div>
+      <audio controls src="./vocal-agresivo-01.mp3"></audio>
+      <div class="audio-ev-damaged">// grabación recuperada de equipo dañado — inicio corrompido</div>
+    </div>
+  </div>
+
+  <div class="audio-evidence-item">
+    <div class="audio-evidence-header">
+      <span class="audio-ev-type">Evento defensivo</span>
+      <span class="audio-ev-id">APE/AUDIO — BST-II/CM-AUD-003</span>
+      <span class="audio-ev-clase">Clase B</span>
+    </div>
+    <div class="audio-evidence-body">
+      <div class="audio-ev-title">Respuesta centinela — inmolación / muestra 02</div>
+      <audio controls src="./vocal-agresivo-02.mp3"></audio>
+      <div class="audio-ev-damaged">// grabación recuperada de equipo dañado — archivo parcial</div>
     </div>
   </div>
 
