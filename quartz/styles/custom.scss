@@ -102,7 +102,7 @@ body::before {
 }
 
 body {
-  font-size: 1.05rem;
+  font-size: 1.45rem;
   line-height: 1.8;
   color: var(--dark);
 }
@@ -171,6 +171,10 @@ a {
 // LAYOUT: GRID Y SIDEBARS
 // ─────────────────────────────────────────────
 
+.page {
+  max-width: 100%;
+}
+
 // Grid de 2 columnas — sin sidebar derecho (solo desktop)
 @media (min-width: 1200px) {
   .page > #quartz-body {
@@ -190,6 +194,7 @@ a {
   border-right: 1px solid var(--lightgray);
   background-color: var(--lightgray);
   padding: 1rem 0.75rem;
+  font-size: 1.5rem;
   align-items: stretch; // todos los hijos ocupan el ancho completo
 
   // el flex-component (row con search + darkmode)
@@ -201,13 +206,9 @@ a {
 
 .center {
   background-color: var(--light);
-  padding: 2.5rem 4rem;
+  padding: 1.5rem 2rem;
 }
 
-// Limitar ancho del contenido para legibilidad en pantallas muy anchas
-.center > article {
-  max-width: 820px;
-}
 
 // ─────────────────────────────────────────────
 // TÍTULO DEL SITIO
@@ -215,7 +216,7 @@ a {
 
 .page-title {
   font-family: var(--headerFont);
-  font-size: 0.9rem;
+  font-size: 2rem;
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -2937,4 +2938,90 @@ table {
   .threat-overlay h2 { font-size: 0.94rem; }
   .threat-overlay p { font-size: 0.8rem; }
   .threat-access-btn { font-size: 0.75rem; padding: 0.5rem 1rem; width: 100%; }
+}
+
+// ─────────────────────────────────────────────
+// INDEX — SUJETOS DEL ARCHIVO
+// ─────────────────────────────────────────────
+
+.index-subject-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+
+  @media (max-width: 600px) { grid-template-columns: 1fr; }
+}
+
+.index-subject-card {
+  display: block;
+  border: 1px solid var(--lightgray);
+  padding: 1.2rem 1.4rem;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+
+  &:not(.disabled):hover {
+    border-color: var(--secondary);
+    background: var(--highlight);
+  }
+
+  &.disabled {
+    opacity: 0.45;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.isc-code {
+  font-family: var(--codeFont);
+  font-size: 0.65em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.3rem;
+}
+
+.isc-name {
+  font-family: var(--headerFont);
+  font-size: 1.2em;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 0.2rem;
+}
+
+.isc-role {
+  font-size: 0.8em;
+  color: var(--darkgray);
+  margin-bottom: 0.8rem;
+}
+
+.isc-status {
+  font-family: var(--codeFont);
+  font-size: 0.65em;
+  letter-spacing: 0.06em;
+
+  &.active {
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  &.error {
+    color: var(--gray);
+  }
+}
+
+.index-section-link {
+  display: block;
+  font-family: var(--codeFont);
+  font-size: 0.85em;
+  color: var(--darkgray);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+
+  &:hover { color: var(--secondary); }
 }
