@@ -102,6 +102,11 @@ title: "Cucaracha Matriarca"
     <div class="conf-desc">Mapeo parcial de nido documentado. Zona de engorda identificada — coordenadas <span class="redacted">████████</span>. Número de reinas: sin confirmar. Estimación de tamaño de colonia: <span class="redacted">████████████████████████████████</span>. El documento original incluye esquema de distribución interna redactado parcialmente.</div>
     <div class="conf-access">Clase B — Acceso restringido</div>
   </div>
+  <div class="conf-item">
+    <div class="conf-id"><a href="/bestiario/cucaracha-matriarca/cucaracha-matriarca-inc-001" class="conf-doc-link">CM-INC-001 / Incidente — Inmolación múltiple en acceso de alcantarilla bloque 7</a></div>
+    <div class="conf-desc">Equipo de recuperación expuesto a inmolación coordinada de la casta centinela en espacio confinado. <span class="redacted">██</span> bajas confirmadas. El incidente derivó en la reclasificación de la centinela como amenaza primaria y la integración de las notas de F-01 al material de entrenamiento obligatorio.</div>
+    <div class="conf-access">Clase B — Parcialmente desclasificado</div>
+  </div>
 </div>
 
 <div class="entry-section-title">Evidencia multimedia</div>
