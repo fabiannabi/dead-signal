@@ -85,46 +85,6 @@ title: "Cucaracha Matriarca"
 
 <p>La regla operativa provisional del archivo es no perturbar acumulaciones de residuos en zonas cerradas sin verificar presencia de colonia primero. El sonido de las Obreras en movimiento — un roce seco y continuo, similar a papel arrugado — puede servir como indicador a distancia antes de que sea visible actividad en superficie.</p>
 
-<div class="field-notes-block field">
-
-// observación — semana 3 / zona residuos sur, acceso alcantarilla bloque 7
-ESPECIE: cucaracha_desconocida_col_01 [renombrar cuando haya más datos]
-CASTAS_VISIBLES: obrera (~40), guardia (~6), tipo_mixto_abombado (~8)
-REINAS: no confirmadas — inferidas por comportamiento de custodia de las guardias
-
-// las guardias son problema serio
-// intenté con la bota — nada
-// tuve que usar la varilla del carrito de supermercado
-// ruido seco al impacto, se movió y siguió
-// NOTA: llevar siempre algo con punta o filo
-
-COMPORTAMIENTO_GRANJA: confirmado
-  - vi cucarachas ordinarias sin patas, vivas
-  - están agrupadas en zona específica del nido
-  - las obreras las alimentan con residuos
-  - no intentan escapar — no pueden
-
-INCIDENTE_CENTINELA:
-  trigger: colonia_HC intentó entrada por lateral
-  respuesta: 3 centinelas avanzaron al perímetro sin retroceder
-  resultado: inmolación / charco aprox 28–30 cm diámetro
-  olor: muy fuerte — vinagre mezclado con algo orgánico, persistente
-  estado_HC_post: fragmentadas, quitina visiblemente degradada
-
-// recolecté muestra en frasco de vidrio — trapo en la boca, bien apretado
-// huele a través del vidrio — guardé en bolsillo exterior de la mochila
-// NO tocar con piel — quemó el trapo de sello en menos de 2 horas
-// el vidrio parece aguantarlo
-
-TODO: analizar composición formal si hay forma
-TODO: probar efecto sobre cuero / plástico / metal
-TODO: ver si sirve como repelente o como arma contra otras plagas
-TODO: localizar la reina — o las reinas
-
-STATUS: abierto
-
-</div>
-
 <div class="entry-section-title">Archivos confidenciales — Acceso restringido</div>
 
 <div class="confidential-section">
