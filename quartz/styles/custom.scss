@@ -532,7 +532,7 @@ footer { display: none; }
   background-color: rgba(200, 168, 74, 0.04);
   padding: 0.7rem 1rem;
   margin: 1.5rem 0;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--darkgray);
   position: relative;
 
@@ -1493,7 +1493,7 @@ table {
   // Nota del archivista: padding reducido
   .archivist-note {
     padding: 0.6rem 0.8rem;
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   // Page title en el sidebar izquierdo: más compacto
@@ -2228,7 +2228,6 @@ table {
   }
   &:hover img {
     filter: grayscale(0%) brightness(0.95) contrast(1.04);
-    transform: scale(1.04);
   }
 }
 .media-evidence-header {
@@ -2708,12 +2707,12 @@ table {
 
 // ── Archivist label (overrides .archivist-note::before for explicit labels) ──
 .archivist-label {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--secondary);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   display: block;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.5rem;
 }
 
 // ── Status legend ──

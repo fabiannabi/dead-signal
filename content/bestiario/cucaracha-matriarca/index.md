@@ -199,7 +199,11 @@ title: "Cucaracha Matriarca"
 
 <div class="archivist-note">
   <span class="archivist-label">// Nota del archivista — análisis comparativo</span>
-  El documento CM-VIS-004 proviene de una fuente externa al archivo APE. El autor utiliza la designación taxonómica provisional <em>Blaberomatriarchidae</em> y documenta cinco castas frente a las cuatro identificadas en los registros de F-01. Las discrepancias morfológicas están siendo evaluadas: ¿variación ambiental?, ¿subespecie regional?, ¿error de clasificación de uno de los observadores? Ninguna hipótesis ha sido descartada. El documento está siendo tratado como fuente primaria independiente hasta resolución del análisis cruzado.
+  El documento CM-VIS-004 fue recuperado de <span class="redacted">████████████████</span> sin identificación de autor. La caligrafía y el uso de nomenclatura taxonómica formal — <em>Blaberomatriarchidae</em>, con etimología parcialmente coherente — sugieren formación académica en ciencias biológicas o afín. La fecha interna es 12/05: anterior, coincidente o posterior a los registros de F-01 según el sistema de datación que se adopte, que aún no ha sido unificado entre fuentes.
+  <br><br>
+  El documento describe cinco castas. Los registros APE actuales documentan cuatro. La casta adicional — denominada "cucarachas normales (ganado)" — implicaría que la colonia no solo consume, sino que <em>produce</em> biomasa de forma controlada. No existe evidencia corroborante en los registros de F-01, aunque sus observaciones sobre las obreras son compatibles con esta hipótesis si la cría de ganado ocurre en niveles del nido que F-01 no alcanzó.
+  <br><br>
+  Las tres hipótesis en evaluación: (A) misma especie, clasificaciones independientes con distintos criterios de separación de castas; (B) subespecie o variante regional con morfología adaptada a condiciones locales; (C) error de observación en uno o ambos documentos. La hipótesis B gana peso si se confirma que el cuaderno proviene de una zona geográficamente distinta. Ninguna ha sido descartada. El documento está siendo tratado como fuente primaria independiente hasta resolución del análisis cruzado.
 </div>
 
 <div class="media-gallery">
@@ -257,7 +261,7 @@ title: "Cucaracha Matriarca"
       </tr>
     </tbody>
   </table>
-  <div class="fn-comment">// La discrepancia en número de reinas es la más relevante operacionalmente. Si la fuente externa es correcta, la destrucción de una reina no neutraliza la colonia. Requiere revisión urgente del protocolo de neutralización.</div>
+  <div class="fn-comment">// La discrepancia más crítica es el número de reinas. Los protocolos actuales de neutralización de colonia asumen una reina única: localizar, aislar, extraer. Si la fuente externa es correcta y las colonias tienen entre 3 y 8 reinas activas simultáneas, ese protocolo no neutraliza — dispersa. Una colonia fragmentada con múltiples reinas fértiles podría producir nidos satélite en lugar de colapsar. La revisión del protocolo está pendiente de autorización del Comité <span class="redacted">███</span>-C. Mientras tanto, ninguna operación de neutralización ha sido suspendida.</div>
 </div>
 
 <div class="media-stamp">Registro sonoro — procesado por Lab. Análisis APE</div>
