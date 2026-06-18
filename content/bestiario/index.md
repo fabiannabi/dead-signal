@@ -17,45 +17,78 @@ title: "Bestiario"
 <div class="entry-section-title" style="margin: 1.75rem 0 0.5rem;">Sistema de clasificación de evidencia</div>
 
 <div class="clasificacion-legend">
-  <div class="clase-item">
-    <span class="clase-badge">Clase A</span>
-    <span class="clase-desc">Procesado en laboratorio APE</span>
-    <span class="clase-sub">Fuente verificada — acceso restringido</span>
+  <div class="clase-item clase-a">
+    <div class="clase-header">
+      <span class="clase-badge">Clase A</span>
+      <span class="clase-level">Nivel superior</span>
+    </div>
+    <span class="clase-desc">Procesado en laboratorio APE — fuente verificada y autenticada</span>
+    <span class="clase-sub">Acceso restringido — requiere autorización de investigador principal</span>
+    <div class="clase-examples">
+      <span>Análisis forense</span>
+      <span>Lab. análisis</span>
+      <span>Narraciones verificadas</span>
+    </div>
   </div>
-  <div class="clase-item">
-    <span class="clase-badge">Clase B</span>
-    <span class="clase-desc">Documentación de campo analizada</span>
-    <span class="clase-sub">Distribución controlada</span>
+  <div class="clase-item clase-b">
+    <div class="clase-header">
+      <span class="clase-badge">Clase B</span>
+      <span class="clase-level">Distribución controlada</span>
+    </div>
+    <span class="clase-desc">Documentación de campo analizada — fuente procesada por el archivo</span>
+    <span class="clase-sub">Acceso restringido — personal autorizado de campo</span>
+    <div class="clase-examples">
+      <span>Bocetos procesados</span>
+      <span>Experimentos</span>
+      <span>Reportes de incidente</span>
+    </div>
   </div>
-  <div class="clase-item">
-    <span class="clase-badge">Clase C</span>
-    <span class="clase-desc">Evidencia primaria — sin procesar</span>
-    <span class="clase-sub">Fuente directa / archivo general</span>
+  <div class="clase-item clase-c">
+    <div class="clase-header">
+      <span class="clase-badge">Clase C</span>
+      <span class="clase-level">Archivo general</span>
+    </div>
+    <span class="clase-desc">Evidencia primaria sin procesar — fuente directa de campo</span>
+    <span class="clase-sub">Distribución general — sin restricciones de acceso</span>
+    <div class="clase-examples">
+      <span>Bocetos originales</span>
+      <span>Grabaciones crudas</span>
+      <span>Documentos de sujeto</span>
+    </div>
   </div>
 </div>
 
 <div class="tag-filter" id="bestiario-tag-filter">
-  <span class="tag-filter-label">Filtrar por —</span>
-  <div class="tag-filter-row">
-    <button class="tag-btn reset active" data-filter="all">Todas</button>
+  <div class="tag-filter-header">
+    <span class="tag-filter-label">Filtrar entradas</span>
+    <button class="tag-btn reset active" data-filter="all">Mostrar todas</button>
   </div>
-  <div class="tag-filter-row">
-    <button class="tag-btn" data-filter="amenaza-i">Amenaza I</button>
-    <button class="tag-btn" data-filter="amenaza-ii">Amenaza II</button>
-    <button class="tag-btn" data-filter="amenaza-iii">Amenaza III</button>
-    <button class="tag-btn" data-filter="amenaza-iv">Amenaza IV</button>
+  <div class="tag-filter-group">
+    <span class="tag-group-label">Nivel de amenaza</span>
+    <div class="tag-filter-row">
+      <button class="tag-btn" data-filter="amenaza-i">I — Baja</button>
+      <button class="tag-btn" data-filter="amenaza-ii">II — Alta</button>
+      <button class="tag-btn" data-filter="amenaza-iii">III — Crítica</button>
+      <button class="tag-btn" data-filter="amenaza-iv">IV — Extinción</button>
+    </div>
   </div>
-  <div class="tag-filter-row">
-    <button class="tag-btn" data-filter="herbivoro">Herbívoro</button>
-    <button class="tag-btn" data-filter="carnivoro">Carnívoro</button>
-    <button class="tag-btn" data-filter="parasito">Parásito</button>
-    <button class="tag-btn" data-filter="descomponedor">Descomponedor</button>
+  <div class="tag-filter-group">
+    <span class="tag-group-label">Tipo</span>
+    <div class="tag-filter-row">
+      <button class="tag-btn" data-filter="herbivoro">Herbívoro</button>
+      <button class="tag-btn" data-filter="carnivoro">Carnívoro</button>
+      <button class="tag-btn" data-filter="parasito">Parásito</button>
+      <button class="tag-btn" data-filter="descomponedor">Descomponedor</button>
+    </div>
   </div>
-  <div class="tag-filter-row">
-    <button class="tag-btn" data-filter="f-01">F-01 Fabián</button>
-    <button class="tag-btn" data-filter="f-02">F-02 Felipe</button>
-    <button class="tag-btn" data-filter="f-03">F-03 Gaby</button>
-    <button class="tag-btn" data-filter="f-05">F-05 Carlos</button>
+  <div class="tag-filter-group">
+    <span class="tag-group-label">Documentado por</span>
+    <div class="tag-filter-row">
+      <button class="tag-btn" data-filter="f-01">F-01 Fabián</button>
+      <button class="tag-btn" data-filter="f-02">F-02 Felipe</button>
+      <button class="tag-btn" data-filter="f-03">F-03 Gaby</button>
+      <button class="tag-btn" data-filter="f-05">F-05 Carlos</button>
+    </div>
   </div>
 </div>
 

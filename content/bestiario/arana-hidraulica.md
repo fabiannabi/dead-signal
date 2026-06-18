@@ -106,20 +106,44 @@ title: "Araña Hidráulica"
 <div class="entry-section-title">Evidencia multimedia</div>
 
 <div class="clasificacion-legend">
-  <div class="clase-item">
-    <span class="clase-badge">Clase A</span>
-    <span class="clase-desc">Procesado en laboratorio APE</span>
-    <span class="clase-sub">Fuente verificada — acceso restringido</span>
+  <div class="clase-item clase-a">
+    <div class="clase-header">
+      <span class="clase-badge">Clase A</span>
+      <span class="clase-level">Nivel superior</span>
+    </div>
+    <span class="clase-desc">Procesado en laboratorio APE — fuente verificada y autenticada</span>
+    <span class="clase-sub">Acceso restringido — requiere autorización de investigador principal</span>
+    <div class="clase-examples">
+      <span>Análisis forense</span>
+      <span>Lab. análisis</span>
+      <span>Narraciones verificadas</span>
+    </div>
   </div>
-  <div class="clase-item">
-    <span class="clase-badge">Clase B</span>
-    <span class="clase-desc">Documentación de campo analizada</span>
-    <span class="clase-sub">Distribución controlada</span>
+  <div class="clase-item clase-b">
+    <div class="clase-header">
+      <span class="clase-badge">Clase B</span>
+      <span class="clase-level">Distribución controlada</span>
+    </div>
+    <span class="clase-desc">Documentación de campo analizada — fuente procesada por el archivo</span>
+    <span class="clase-sub">Acceso restringido — personal autorizado de campo</span>
+    <div class="clase-examples">
+      <span>Bocetos procesados</span>
+      <span>Experimentos</span>
+      <span>Reportes de incidente</span>
+    </div>
   </div>
-  <div class="clase-item">
-    <span class="clase-badge">Clase C</span>
-    <span class="clase-desc">Evidencia primaria — sin procesar</span>
-    <span class="clase-sub">Fuente directa / archivo general</span>
+  <div class="clase-item clase-c">
+    <div class="clase-header">
+      <span class="clase-badge">Clase C</span>
+      <span class="clase-level">Archivo general</span>
+    </div>
+    <span class="clase-desc">Evidencia primaria sin procesar — fuente directa de campo</span>
+    <span class="clase-sub">Distribución general — sin restricciones de acceso</span>
+    <div class="clase-examples">
+      <span>Bocetos originales</span>
+      <span>Grabaciones crudas</span>
+      <span>Documentos de sujeto</span>
+    </div>
   </div>
 </div>
 

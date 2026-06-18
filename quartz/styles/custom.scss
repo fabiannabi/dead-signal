@@ -1854,41 +1854,75 @@ table {
 
 // ── Tag filter ──
 .tag-filter {
-  padding: 1rem;
-  background: #{$bg2};
   border: 1px solid var(--lightgray);
+  background: #{$bg2};
   margin-bottom: 1.75rem;
+  overflow: hidden;
+}
+.tag-filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 1rem;
+  background: #{$bg3};
+  border-bottom: 1px solid var(--lightgray);
 }
 .tag-filter-label {
   font-family: var(--codeFont);
-  font-size: 0.69rem;
+  font-size: 0.625rem;
+  color: var(--gray);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.tag-filter-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.625rem 1rem;
+  border-bottom: 1px solid var(--lightgray);
+  &:last-child { border-bottom: none; }
+}
+.tag-group-label {
+  font-family: var(--codeFont);
+  font-size: 0.575rem;
   color: var(--gray);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  display: block;
-  margin-bottom: 0.625rem;
+  min-width: 7.5rem;
+  flex-shrink: 0;
+  padding-top: 0.3rem;
 }
 .tag-filter-row {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  margin-bottom: 4px;
-  &:last-child { margin-bottom: 0; }
 }
 .tag-btn {
   font-family: var(--codeFont);
-  font-size: 0.69rem;
-  padding: 0.25rem 0.625rem;
-  background: #{$bg3};
+  font-size: 0.65rem;
+  padding: 0.25rem 0.75rem;
+  background: transparent;
   border: 1px solid var(--lightgray);
-  color: var(--gray);
+  color: var(--darkgray);
   cursor: pointer;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: all 0.15s;
-  &:hover { color: var(--darkgray); border-color: #{$border2}; }
-  &.active { color: var(--secondary); border-color: var(--tertiary); }
-  &.reset.active { color: var(--darkgray); border-color: #{$border2}; }
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  &:hover { background: #{$bg3}; color: var(--dark); border-color: var(--darkgray); }
+  &.active { background: rgba(200,168,74,0.1); color: var(--secondary); border-color: var(--tertiary); }
+  &.reset {
+    border: none;
+    background: transparent;
+    color: var(--gray);
+    font-size: 0.6rem;
+    padding: 0.25rem 0;
+    &.active { color: var(--dark); }
+    &:hover { background: transparent; color: var(--darkgray); }
+  }
+  &[data-filter="amenaza-i"].active   { color: #{$green};  border-color: #{$green};  background: rgba(74,106,58,0.1); }
+  &[data-filter="amenaza-ii"].active  { color: #9a7020;    border-color: #9a7020;    background: rgba(154,112,32,0.1); }
+  &[data-filter="amenaza-iii"].active { color: #{$red};    border-color: #{$red};    background: rgba(138,58,42,0.1); }
+  &[data-filter="amenaza-iv"].active  { color: #5a1a10;    border-color: #5a1a10;    background: rgba(90,26,16,0.1); }
 }
 
 // ── Confidential section ──
@@ -2515,35 +2549,65 @@ table {
   flex-wrap: wrap;
   gap: 1px;
   background: var(--lightgray);
+  border: 1px solid var(--lightgray);
   margin: 1.75rem 0;
 }
 .clase-item {
   background: #{$bg2};
-  padding: 0.625rem 1rem;
+  padding: 1.25rem 1.375rem;
   flex: 1;
-  min-width: 160px;
+  min-width: 200px;
   font-family: var(--codeFont);
+  border-top: 2px solid var(--lightgray);
+  &.clase-a { border-top-color: var(--secondary); }
+  &.clase-b { border-top-color: var(--tertiary); }
+  &.clase-c { border-top-color: var(--gray); }
+}
+.clase-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
 }
 .clase-badge {
-  display: inline-block;
-  font-size: 0.625rem;
+  font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--secondary);
-  margin-bottom: 0.35rem;
+}
+.clase-level {
+  font-size: 0.55rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 .clase-desc {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--dark);
   line-height: 1.5;
   display: block;
+  margin-bottom: 0.375rem;
 }
 .clase-sub {
-  font-size: 0.625rem;
-  color: var(--gray);
-  letter-spacing: 0.06em;
+  font-size: 0.6rem;
+  color: var(--darkgray);
+  letter-spacing: 0.04em;
   display: block;
-  margin-top: 0.2rem;
+  margin-bottom: 0.875rem;
+  line-height: 1.5;
+}
+.clase-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  span {
+    font-size: 0.525rem;
+    padding: 0.125rem 0.4rem;
+    border: 1px solid var(--lightgray);
+    color: var(--gray);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
 }
 
 // ── Bestiario — responsive mobile ──────────────────────────────
@@ -2599,12 +2663,10 @@ table {
   .conf-stamp { font-size: 0.6rem; }
   .conf-code { font-size: 0.6rem; }
 
-  // Tag filter: botones más grandes para touch
-  .tag-btn {
-    padding: 0.375rem 0.75rem;
-    font-size: 0.7rem;
-    min-height: 36px;
-  }
+  // Tag filter: grupos apilados en mobile
+  .tag-filter-group { flex-direction: column; gap: 0.375rem; }
+  .tag-group-label { min-width: unset; padding-top: 0; }
+  .tag-btn { padding: 0.375rem 0.75rem; font-size: 0.7rem; min-height: 36px; }
 
   // Capítulo tabs
   .chapter-tab { padding: 0.5rem 0.75rem; font-size: 0.75rem; }
@@ -2640,9 +2702,8 @@ table {
 
   // Clasificación legend: apilado
   .clasificacion-legend { flex-direction: column; gap: 1px; }
-  .clase-item { min-width: unset; padding: 0.5rem 0.75rem; }
-  .clase-desc { font-size: 0.75rem; }
-  .clase-sub { font-size: 0.6rem; }
+  .clase-item { min-width: unset; padding: 1rem; }
+  .clase-sub { margin-bottom: 0.625rem; }
 
   // Entry doc count visible
   .entry-doc-count { font-size: 0.6rem; }
