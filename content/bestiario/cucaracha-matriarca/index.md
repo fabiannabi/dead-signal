@@ -162,7 +162,7 @@ title: "Cucaracha Matriarca"
       <span class="media-ev-id">APE/VISUAL — BST-II/CM-VIS-001</span>
       <span class="media-ev-clase">Clase B</span>
     </div>
-    <img src="/img/bestiario/cucaracha-matriarca/morfologia-diagrama.png" alt="Diagrama morfológico — castas Blatta tyranna">
+    <img src="./morfologia-diagrama.png" alt="Diagrama morfológico — castas Blatta tyranna">
     <div class="media-evidence-footer">
       <span class="media-ev-caption">Diagrama morfológico — distribución de castas / reconstrucción de campo</span>
       <span class="media-ev-meta">Fuente: F-01 — libreta recuperada</span>
@@ -174,7 +174,7 @@ title: "Cucaracha Matriarca"
       <span class="media-ev-id">APE/VISUAL — BST-II/CM-VIS-002</span>
       <span class="media-ev-clase">Clase C</span>
     </div>
-    <img src="/img/bestiario/cucaracha-matriarca/boceto-01.png" alt="Boceto de campo — Blatta tyranna">
+    <img src="./boceto-01.png" alt="Boceto de campo — Blatta tyranna">
     <div class="media-evidence-footer">
       <span class="media-ev-caption">Boceto de campo — espécimen obrera con cría / zona de residuos sur</span>
       <span class="media-ev-meta">Fuente: F-01 — libreta recuperada</span>
@@ -186,7 +186,7 @@ title: "Cucaracha Matriarca"
       <span class="media-ev-id">APE/VISUAL — BST-II/CM-VIS-003</span>
       <span class="media-ev-clase">Clase C</span>
     </div>
-    <img src="/img/bestiario/cucaracha-matriarca/closeup-01.png" alt="Charco de secreción centinela — post-inmolación">
+    <img src="./closeup-01.png" alt="Charco de secreción centinela — post-inmolación">
     <div class="media-evidence-footer">
       <span class="media-ev-caption">Charco de secreción centinela — post-inmolación / muestra recuperada</span>
       <span class="media-ev-meta">Fuente: F-01 — libreta recuperada</span>
