@@ -162,10 +162,10 @@ title: "Cucaracha Matriarca"
       <span class="media-ev-id">APE/VISUAL — BST-II/CM-VIS-001</span>
       <span class="media-ev-clase">Clase B</span>
     </div>
-    <div class="audio-ev-damaged">// sin evidencia visual recuperada — diagrama morfológico pendiente de elaboración</div>
+    <img src="/img/bestiario/cucaracha-matriarca/morfologia-diagrama.png" alt="Diagrama morfológico — castas Blatta tyranna">
     <div class="media-evidence-footer">
-      <span class="media-ev-caption">Diagrama morfológico — castas / pendiente</span>
-      <span class="media-ev-meta">Sin procesar</span>
+      <span class="media-ev-caption">Diagrama morfológico — distribución de castas / reconstrucción de campo</span>
+      <span class="media-ev-meta">Fuente: F-01 — libreta recuperada</span>
     </div>
   </div>
 
@@ -174,10 +174,10 @@ title: "Cucaracha Matriarca"
       <span class="media-ev-id">APE/VISUAL — BST-II/CM-VIS-002</span>
       <span class="media-ev-clase">Clase C</span>
     </div>
-    <div class="audio-ev-damaged">// boceto de campo no recuperado — F-01 describe haber realizado croquis en libreta</div>
+    <img src="/img/bestiario/cucaracha-matriarca/boceto-01.png" alt="Boceto de campo — Blatta tyranna">
     <div class="media-evidence-footer">
-      <span class="media-ev-caption">Boceto de campo — disposición de nido / sin recuperar</span>
-      <span class="media-ev-meta">Fuente: F-01 (pendiente)</span>
+      <span class="media-ev-caption">Boceto de campo — espécimen obrera con cría / zona de residuos sur</span>
+      <span class="media-ev-meta">Fuente: F-01 — libreta recuperada</span>
     </div>
   </div>
 
@@ -186,10 +186,10 @@ title: "Cucaracha Matriarca"
       <span class="media-ev-id">APE/VISUAL — BST-II/CM-VIS-003</span>
       <span class="media-ev-clase">Clase C</span>
     </div>
-    <div class="audio-ev-damaged">// sin evidencia visual — charco de secreción centinela no documentado fotográficamente</div>
+    <img src="/img/bestiario/cucaracha-matriarca/closeup-01.png" alt="Charco de secreción centinela — post-inmolación">
     <div class="media-evidence-footer">
-      <span class="media-ev-caption">Charco de secreción — post-inmolación / sin recuperar</span>
-      <span class="media-ev-meta">Fuente: F-01 (pendiente)</span>
+      <span class="media-ev-caption">Charco de secreción centinela — post-inmolación / muestra recuperada</span>
+      <span class="media-ev-meta">Fuente: F-01 — libreta recuperada</span>
     </div>
   </div>
 
