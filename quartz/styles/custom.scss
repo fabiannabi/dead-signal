@@ -3025,3 +3025,187 @@ table {
 
   &:hover { color: var(--secondary); }
 }
+
+// ─────────────────────────────────────────────
+// ACCESS GATE — pantalla de autenticación
+// ─────────────────────────────────────────────
+
+#access-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.access-gate-inner {
+  max-width: 420px;
+  width: 90%;
+  border: 1px solid var(--lightgray);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.access-gate-stamp {
+  font-family: var(--codeFont);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--gray);
+}
+
+.access-gate-title {
+  font-family: var(--headerFont);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+.access-gate-desc {
+  font-size: 0.85rem;
+  color: var(--darkgray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.access-gate-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.access-gate-label {
+  font-family: var(--codeFont);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+}
+
+.access-gate-input {
+  font-family: var(--codeFont);
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--lightgray);
+  color: var(--dark);
+  padding: 0.6rem 0.8rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+
+  &:focus { border-color: var(--secondary); }
+  &::placeholder { color: var(--gray); letter-spacing: 0.1em; }
+}
+
+.access-gate-error {
+  font-family: var(--codeFont);
+  font-size: 0.7rem;
+  color: #8a3a2a;
+  letter-spacing: 0.06em;
+}
+
+.access-gate-btn {
+  font-family: var(--codeFont);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    background: var(--secondary);
+    color: var(--light);
+  }
+}
+
+.access-gate-footer {
+  font-family: var(--codeFont);
+  font-size: 0.6rem;
+  color: var(--gray);
+  letter-spacing: 0.06em;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--lightgray);
+  padding-top: 0.8rem;
+}
+
+.access-denied-block {
+  border: 1px solid var(--lightgray);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.access-denied-stamp {
+  font-family: var(--codeFont);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+}
+
+.access-denied-code {
+  font-family: var(--headerFont);
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a3a2a;
+  margin-bottom: 1rem;
+}
+
+.access-denied-msg {
+  color: var(--darkgray);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.access-denied-footer {
+  font-family: var(--codeFont);
+  font-size: 0.65rem;
+  color: var(--gray);
+  letter-spacing: 0.06em;
+}
+
+// ── Sidebar: ocultar carpetas de otros personajes ──
+
+html[data-access="F01"] li:has([data-folderpath="personajes/felipe"]),
+html[data-access="F01"] li:has([data-folderpath="personajes/gaby"]),
+html[data-access="F01"] li:has([data-folderpath="personajes/aaron"]),
+html[data-access="F01"] li:has([data-folderpath="personajes/carlos"]) { display: none !important; }
+
+html[data-access="F02"] li:has([data-folderpath="personajes/fabian"]),
+html[data-access="F02"] li:has([data-folderpath="personajes/gaby"]),
+html[data-access="F02"] li:has([data-folderpath="personajes/aaron"]),
+html[data-access="F02"] li:has([data-folderpath="personajes/carlos"]) { display: none !important; }
+
+html[data-access="F03"] li:has([data-folderpath="personajes/fabian"]),
+html[data-access="F03"] li:has([data-folderpath="personajes/felipe"]),
+html[data-access="F03"] li:has([data-folderpath="personajes/aaron"]),
+html[data-access="F03"] li:has([data-folderpath="personajes/carlos"]) { display: none !important; }
+
+html[data-access="F04"] li:has([data-folderpath="personajes/fabian"]),
+html[data-access="F04"] li:has([data-folderpath="personajes/felipe"]),
+html[data-access="F04"] li:has([data-folderpath="personajes/gaby"]),
+html[data-access="F04"] li:has([data-folderpath="personajes/carlos"]) { display: none !important; }
+
+html[data-access="F05"] li:has([data-folderpath="personajes/fabian"]),
+html[data-access="F05"] li:has([data-folderpath="personajes/felipe"]),
+html[data-access="F05"] li:has([data-folderpath="personajes/gaby"]),
+html[data-access="F05"] li:has([data-folderpath="personajes/aaron"]) { display: none !important; }
+
+// ── Index cards: ocultar tarjetas de otros personajes ──
+
+html[data-access="F01"] .index-subject-card:not(.char-f01) { display: none !important; }
+html[data-access="F02"] .index-subject-card:not(.char-f02) { display: none !important; }
+html[data-access="F03"] .index-subject-card:not(.char-f03) { display: none !important; }
+html[data-access="F04"] .index-subject-card:not(.char-f04) { display: none !important; }
+html[data-access="F05"] .index-subject-card:not(.char-f05) { display: none !important; }
