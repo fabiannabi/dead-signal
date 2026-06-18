@@ -103,33 +103,48 @@ title: "Bestiario"
 <div class="entry-grid">
 
 <a href="/bestiario/cervato-de-concreto" class="entry-item" data-tags="amenaza-i,herbivoro,f-01,f-03">
-  <div class="entry-status documentado">
-    <span class="entry-status-dot"></span>documentado
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza I — Herbívoro</span>
+    <div class="entry-status documentado"><span class="entry-status-dot"></span>documentado</div>
   </div>
-  <div class="entry-threat">Amenaza I — Herbívoro</div>
-  <div class="entry-name">Cervato de Concreto</div>
-  <div class="entry-type">F-01 día 1 / F-03 km 91</div>
-  <div class="entry-doc-count">3 experimentos · 1 incidente</div>
+  <div class="entry-body">
+    <div class="entry-name">Cervato de Concreto</div>
+    <div class="entry-type">Herbívoro · F-01 día 1 / F-03 km 91</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-I/CC</span>
+    <span class="entry-doc-count">3 exp · 1 inc</span>
+  </div>
 </a>
 
 <a href="/bestiario/gusano-de-asfalto" class="entry-item" data-tags="amenaza-i,descomponedor,f-01">
-  <div class="entry-status documentado">
-    <span class="entry-status-dot"></span>documentado
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza I — Descomponedor</span>
+    <div class="entry-status documentado"><span class="entry-status-dot"></span>documentado</div>
   </div>
-  <div class="entry-threat">Amenaza I — Descomponedor</div>
-  <div class="entry-name">Gusano de Asfalto</div>
-  <div class="entry-type">F-01 sonido día 1</div>
-  <div class="entry-doc-count">2 experimentos · 1 incidente</div>
+  <div class="entry-body">
+    <div class="entry-name">Gusano de Asfalto</div>
+    <div class="entry-type">Descomponedor · F-01 sonido día 1</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-I/GA</span>
+    <span class="entry-doc-count">2 exp · 1 inc</span>
+  </div>
 </a>
 
 <a href="/bestiario/roca" class="entry-item" data-tags="amenaza-i,herbivoro,descomponedor,f-01">
-  <div class="entry-status fragmentario">
-    <span class="entry-status-dot"></span>fragmentario
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza I — Herbívoro</span>
+    <div class="entry-status fragmentario"><span class="entry-status-dot"></span>fragmentario</div>
   </div>
-  <div class="entry-threat">Amenaza I — Herbívoro / Descomponedor</div>
-  <div class="entry-name">Roca</div>
-  <div class="entry-type">F-01 día 2</div>
-  <div class="entry-doc-count">sin documentos formales</div>
+  <div class="entry-body">
+    <div class="entry-name">Roca</div>
+    <div class="entry-type">Herbívoro / Descomponedor · F-01 día 2</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-I/RC</span>
+    <span class="entry-doc-count">sin docs formales</span>
+  </div>
 </a>
 
 </div>
@@ -145,83 +160,123 @@ title: "Bestiario"
 <div class="entry-grid">
 
 <a href="/bestiario/chacal-de-feria" class="entry-item" data-tags="amenaza-ii,carnivoro,f-02">
-  <div class="entry-status fragmentario">
-    <span class="entry-status-dot"></span>fragmentario
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza II — Carnívoro</span>
+    <div class="entry-status fragmentario"><span class="entry-status-dot"></span>fragmentario</div>
   </div>
-  <div class="entry-threat">Amenaza II — Carnívoro / Manada</div>
-  <div class="entry-name">Chacal de Feria</div>
-  <div class="entry-type">F-02 semana 2</div>
-  <div class="entry-doc-count">sin documentos formales</div>
+  <div class="entry-body">
+    <div class="entry-name">Chacal de Feria</div>
+    <div class="entry-type">Manada · F-02 semana 2</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-II/CF</span>
+    <span class="entry-doc-count">sin docs formales</span>
+  </div>
 </a>
 
 <a href="/bestiario/arana-hidraulica" class="entry-item" data-tags="amenaza-ii,carnivoro,f-02">
-  <div class="entry-status documentado">
-    <span class="entry-status-dot"></span>documentado
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza II — Carnívoro</span>
+    <div class="entry-status documentado"><span class="entry-status-dot"></span>documentado</div>
   </div>
-  <div class="entry-threat">Amenaza II — Carnívoro / Emboscada</div>
-  <div class="entry-name">Araña Hidráulica</div>
-  <div class="entry-type">F-02 farmacia día 4</div>
-  <div class="entry-doc-count">2 experimentos · 1 incidente</div>
+  <div class="entry-body">
+    <div class="entry-name">Araña Hidráulica</div>
+    <div class="entry-type">Emboscada acuática · F-02 farmacia día 4</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-II/AH</span>
+    <span class="entry-doc-count">2 exp · 1 inc</span>
+  </div>
 </a>
 
 <a href="/bestiario/arana-de-casa" class="entry-item" data-tags="amenaza-ii,carnivoro,f-01">
-  <div class="entry-status fragmentario">
-    <span class="entry-status-dot"></span>fragmentario
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza II — Carnívoro</span>
+    <div class="entry-status fragmentario"><span class="entry-status-dot"></span>fragmentario</div>
   </div>
-  <div class="entry-threat">Amenaza II — Carnívoro / Emboscada</div>
-  <div class="entry-name">Araña de Casa</div>
-  <div class="entry-type">F-01 supermercado semana 3</div>
-  <div class="entry-doc-count">sin documentos formales</div>
+  <div class="entry-body">
+    <div class="entry-name">Araña de Casa</div>
+    <div class="entry-type">Emboscada · F-01 supermercado semana 3</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-II/AC</span>
+    <span class="entry-doc-count">sin docs formales</span>
+  </div>
 </a>
 
 <a href="/bestiario/mosca-forunculo" class="entry-item" data-tags="amenaza-ii,parasito,f-02">
-  <div class="entry-status fragmentario">
-    <span class="entry-status-dot"></span>fragmentario
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza II — Parásito</span>
+    <div class="entry-status fragmentario"><span class="entry-status-dot"></span>fragmentario</div>
   </div>
-  <div class="entry-threat">Amenaza II — Parásito</div>
-  <div class="entry-name">Mosca Forúnculo</div>
-  <div class="entry-type">F-02 ciclo semana 3–5</div>
-  <div class="entry-doc-count">sin documentos formales</div>
+  <div class="entry-body">
+    <div class="entry-name">Mosca Forúnculo</div>
+    <div class="entry-type">Parásito · F-02 ciclo semana 3–5</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-II/MF</span>
+    <span class="entry-doc-count">sin docs formales</span>
+  </div>
 </a>
 
 <a href="/bestiario/roca-negra" class="entry-item" data-tags="amenaza-ii,carnivoro,f-01">
-  <div class="entry-status fragmentario">
-    <span class="entry-status-dot"></span>fragmentario
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza II — Carnívoro</span>
+    <div class="entry-status fragmentario"><span class="entry-status-dot"></span>fragmentario</div>
   </div>
-  <div class="entry-threat">Amenaza II — Carnívoro / Oportunista</div>
-  <div class="entry-name">Roca Negra</div>
-  <div class="entry-type">F-01 día 3</div>
-  <div class="entry-doc-count">sin documentos formales</div>
+  <div class="entry-body">
+    <div class="entry-name">Roca Negra</div>
+    <div class="entry-type">Oportunista · F-01 día 3</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-II/RN</span>
+    <span class="entry-doc-count">sin docs formales</span>
+  </div>
 </a>
 
 <a href="/bestiario/hormiga-coordinadora" class="entry-item" data-tags="amenaza-ii,herbivoro,f-01">
-  <div class="entry-status fragmentario">
-    <span class="entry-status-dot"></span>fragmentario
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza II — Herbívoro</span>
+    <div class="entry-status fragmentario"><span class="entry-status-dot"></span>fragmentario</div>
   </div>
-  <div class="entry-threat">Amenaza II — Herbívoro / Colonia</div>
-  <div class="entry-name">Hormiga Coordinadora</div>
-  <div class="entry-type">F-01 día 5</div>
-  <div class="entry-doc-count">sin documentos formales</div>
+  <div class="entry-body">
+    <div class="entry-name">Hormiga Coordinadora</div>
+    <div class="entry-type">Colonia · F-01 día 5</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-II/HC</span>
+    <span class="entry-doc-count">sin docs formales</span>
+  </div>
 </a>
 
 <a href="/bestiario/coyote-mutado" class="entry-item" data-tags="amenaza-ii,carnivoro,f-05">
-  <div class="entry-status fragmentario">
-    <span class="entry-status-dot"></span>fragmentario
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza II — Carnívoro</span>
+    <div class="entry-status fragmentario"><span class="entry-status-dot"></span>fragmentario</div>
   </div>
-  <div class="entry-threat">Amenaza II — Carnívoro / Manada</div>
-  <div class="entry-name">Coyote Mutado</div>
-  <div class="entry-type">F-05 semana 2</div>
-  <div class="entry-doc-count">sin documentos formales</div>
+  <div class="entry-body">
+    <div class="entry-name">Coyote Mutado</div>
+    <div class="entry-type">Manada · F-05 semana 2</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-II/CM</span>
+    <span class="entry-doc-count">sin docs formales</span>
+  </div>
 </a>
 
 <a href="/bestiario/criatura-n" class="entry-item" data-tags="amenaza-ii,f-05">
-  <div class="entry-status en-clasificacion">
-    <span class="entry-status-dot"></span>en clasificación
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza II provisional</span>
+    <div class="entry-status en-clasificacion"><span class="entry-status-dot"></span>en clasificación</div>
   </div>
-  <div class="entry-threat">Amenaza II provisional — Sin clasificar</div>
-  <div class="entry-name">Sin designación — F-05 / semana 4</div>
-  <div class="entry-type">F-05 sensor S1 / 04:15h campo norte</div>
-  <div class="entry-doc-count">1 incidente · evidencia primaria</div>
+  <div class="entry-body">
+    <div class="entry-name">Sin designación</div>
+    <div class="entry-type">F-05 / sensor S1 · 04:15h campo norte, semana 4</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-II/NI-01</span>
+    <span class="entry-doc-count">1 inc · ev. primaria</span>
+  </div>
 </a>
 
 </div>
@@ -237,13 +292,18 @@ title: "Bestiario"
 <div class="entry-grid">
 
 <a href="/bestiario/toro-de-calicanto" class="entry-item" data-tags="amenaza-iii,carnivoro,f-02">
-  <div class="entry-status sin-confirmar">
-    <span class="entry-status-dot"></span>sin confirmar
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza III — Carnívoro</span>
+    <div class="entry-status sin-confirmar"><span class="entry-status-dot"></span>sin confirmar</div>
   </div>
-  <div class="entry-threat">Amenaza III — Carnívoro / Territorial</div>
-  <div class="entry-name">Toro de Calicanto</div>
-  <div class="entry-type">Sin avistamiento directo documentado</div>
-  <div class="entry-doc-count">evidencia indirecta únicamente</div>
+  <div class="entry-body">
+    <div class="entry-name">Toro de Calicanto</div>
+    <div class="entry-type">Territorial · sin avistamiento directo</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-III/TC</span>
+    <span class="entry-doc-count">ev. indirecta</span>
+  </div>
 </a>
 
 </div>
@@ -258,14 +318,19 @@ title: "Bestiario"
 
 <div class="entry-grid">
 
-<a href="/bestiario/la-catedral" class="entry-item" data-tags="amenaza-iv,f-03" style="border-left: 2px solid #8a3a2a; background: #0c0b09;">
-  <div class="entry-status sin-confirmar">
-    <span class="entry-status-dot"></span>datos mínimos
+<a href="/bestiario/la-catedral" class="entry-item catedral" data-tags="amenaza-iv,f-03">
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza IV — Clase Extinción</span>
+    <div class="entry-status sin-confirmar"><span class="entry-status-dot"></span>datos mínimos</div>
   </div>
-  <div class="entry-threat" style="color: #8a3a2a;">Amenaza IV — Clase Extinción / Desconocido</div>
-  <div class="entry-name" style="font-size: 1.06rem; letter-spacing: 0.08em;">La Catedral</div>
-  <div class="entry-type">F-03 km 87 horizonte — día 1</div>
-  <div class="entry-doc-count" style="color: #8a3a2a; border-color: #8a3a2a; opacity: 0.7;">investigación no recomendada</div>
+  <div class="entry-body">
+    <div class="entry-name">La Catedral</div>
+    <div class="entry-type">Desconocido · F-03 km 87 horizonte, día 1</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-IV/CT</span>
+    <span class="entry-doc-count">inv. no recomendada</span>
+  </div>
 </a>
 
 </div>
