@@ -195,6 +195,71 @@ title: "Cucaracha Matriarca"
 
 </div>
 
+<div class="media-stamp">Evidencia externa — fuente no verificada / análisis comparativo en curso</div>
+
+<div class="archivist-note">
+  <span class="archivist-label">// Nota del archivista — análisis comparativo</span>
+  El documento CM-VIS-004 proviene de una fuente externa al archivo APE. El autor utiliza la designación taxonómica provisional <em>Blaberomatriarchidae</em> y documenta cinco castas frente a las cuatro identificadas en los registros de F-01. Las discrepancias morfológicas están siendo evaluadas: ¿variación ambiental?, ¿subespecie regional?, ¿error de clasificación de uno de los observadores? Ninguna hipótesis ha sido descartada. El documento está siendo tratado como fuente primaria independiente hasta resolución del análisis cruzado.
+</div>
+
+<div class="media-gallery">
+
+  <div class="media-evidence-block wide">
+    <div class="media-evidence-header">
+      <span class="media-ev-id">APE/VISUAL — BST-II/CM-VIS-004</span>
+      <span class="media-ev-clase">Fuente externa — sin verificar</span>
+    </div>
+    <img src="./boceto-02.jpeg" alt="Cuaderno de supervivencia — página 47 — Blaberomatriarchidae">
+    <div class="media-evidence-footer">
+      <span class="media-ev-caption">Cuaderno de supervivencia pág. 47 — fecha interna 12/05 — designación provisional <em>Blaberomatriarchidae</em></span>
+      <span class="media-ev-meta">Fuente: desconocida — recuperado en <span class="redacted">████████████</span></span>
+    </div>
+  </div>
+
+</div>
+
+<div class="archivist-note">
+  <span class="archivist-label">Discrepancias morfológicas registradas — pendiente de resolución</span>
+  <table class="comparison-table">
+    <thead>
+      <tr><th>Casta</th><th>Designación APE (F-01)</th><th>Fuente externa</th><th>Estado</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Reproductora</td>
+        <td>Reina — única por colonia documentada</td>
+        <td>Reinas / Matriarcas — múltiples (3–8 por colonia)</td>
+        <td class="comp-conflict"><span class="redacted">██</span> Discrepancia mayor</td>
+      </tr>
+      <tr>
+        <td>Obrera</td>
+        <td>Obrera — recolección y cría</td>
+        <td>Obrera — idéntica función, añade cría de "ganado"</td>
+        <td class="comp-match">Consistente</td>
+      </tr>
+      <tr>
+        <td>Combate directo</td>
+        <td>Guardia — blindaje reforzado, mandíbulas</td>
+        <td>Soldado — blindaje "muy grueso", mandíbulas capaces de romper hueso</td>
+        <td class="comp-partial">Parcialmente consistente</td>
+      </tr>
+      <tr>
+        <td>Defensa química</td>
+        <td>Centinela — abdomen abombado, inmolación</td>
+        <td>Casta mixta / sacrificial — abdomen grotesco hinchado de líquido, ruptura controlada</td>
+        <td class="comp-match">Consistente — denominación distinta</td>
+      </tr>
+      <tr>
+        <td>Sin equivalente</td>
+        <td>— no documentada —</td>
+        <td>Cucarachas normales (ganado) — cría controlada como alimento</td>
+        <td class="comp-new">Nueva — sin referencia en F-01</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="fn-comment">// La discrepancia en número de reinas es la más relevante operacionalmente. Si la fuente externa es correcta, la destrucción de una reina no neutraliza la colonia. Requiere revisión urgente del protocolo de neutralización.</div>
+</div>
+
 <div class="media-stamp">Registro sonoro — procesado por Lab. Análisis APE</div>
 
 <div class="audio-list">

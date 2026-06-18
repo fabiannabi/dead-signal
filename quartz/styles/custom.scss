@@ -3026,3 +3026,38 @@ table {
   &:hover { color: var(--secondary); }
 }
 
+
+// Comparison table — análisis comparativo bestiario
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--codeFont);
+  font-size: 0.78rem;
+  margin: 1rem 0 0.5rem;
+
+  th {
+    text-align: left;
+    padding: 0.4rem 0.6rem;
+    background: var(--bg3);
+    color: var(--text3);
+    border: 1px solid var(--border);
+    letter-spacing: 0.05em;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+  }
+
+  td {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--border);
+    color: var(--text2);
+    vertical-align: top;
+    line-height: 1.4;
+  }
+
+  tr:nth-child(even) td { background: var(--bg2); }
+
+  .comp-conflict { color: var(--red); font-weight: 600; }
+  .comp-match    { color: var(--green); }
+  .comp-partial  { color: var(--accent2); }
+  .comp-new      { color: var(--accent); font-style: italic; }
+}
