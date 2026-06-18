@@ -89,6 +89,11 @@ title: "Cervato de Concreto"
     <span class="conf-code">Expediente APE/BST-I/01 — Nivel <span class="redacted">██</span></span>
   </div>
   <div class="conf-item">
+    <div class="conf-id"><a href="/bestiario/cc-exp-001" class="conf-doc-link">CC-EXP-001 / Experimento — Protocolo de acercamiento territorial</a></div>
+    <div class="conf-desc">Protocolo de acercamiento directo en cuatro fases — 15, 10 y 5 metros, más contacto. Reacción del espécimen a presencia humana en condiciones de campo. El investigador principal fue reasignado a <span class="redacted">████████████</span> tras la conclusión. Las fases 3 y 4 permanecen clasificadas en Clase A.</div>
+    <div class="conf-access">Clase B — Fases 1 y 2 accesibles / Fases 3 y 4 nivel superior</div>
+  </div>
+  <div class="conf-item">
     <div class="conf-id">EXP-<span class="redacted">██</span> / Autopsia — Espécimen muerto km 91</div>
     <div class="conf-desc">Informe de análisis post-mortem del espécimen documentado por <span class="redacted">███████</span> en kilómetro 91. Incluye análisis histológico de placas calcáreas, sección transversal de tejido mineral activo y estimación de masa ósea total. <span class="redacted">████████████████████████████████████████████████████████████████</span></div>
     <div class="conf-access">Acceso: Autorización Nivel <span class="redacted">██</span> — Comité de Preservación</div>

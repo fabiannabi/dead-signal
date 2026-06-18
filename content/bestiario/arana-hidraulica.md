@@ -97,7 +97,7 @@ title: "Araña Hidráulica"
     <div class="conf-access">Clase A — Nivel superior requerido</div>
   </div>
   <div class="conf-item">
-    <div class="conf-id">AH-INC-001 / Reporte de incidente — Contacto no autorizado, zona de drenaje sur</div>
+    <div class="conf-id"><a href="/bestiario/ah-inc-001" class="conf-doc-link">AH-INC-001 / Reporte de incidente — Contacto no autorizado, zona de drenaje sur</a></div>
     <div class="conf-desc">Primer incidente con bajas atribuidas a la especie. Cronología del contacto, testimonio parcial del sobreviviente y análisis post-incidente. La información de F-02 que habría prevenido el incidente existía previamente. No fue distribuida a tiempo.</div>
     <div class="conf-access">Clase B — Acceso restringido</div>
   </div>

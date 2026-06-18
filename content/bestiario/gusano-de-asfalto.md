@@ -99,7 +99,7 @@ title: "Gusano de Asfalto"
     <div class="conf-access">Clase A — Nivel superior requerido</div>
   </div>
   <div class="conf-item">
-    <div class="conf-id">GA-INC-001 / Reporte de incidente — Colapso de vía, tres bajas</div>
+    <div class="conf-id"><a href="/bestiario/ga-inc-001" class="conf-doc-link">GA-INC-001 / Reporte de incidente — Colapso de vía, tres bajas</a></div>
     <div class="conf-desc">Colapso de asfalto sobre túnel residual. El espécimen había abandonado la zona entre cuarenta minutos y dos horas antes. Los datos de GA-EXP-002 que hubieran prevenido el incidente existían — no habían sido integrados al protocolo a tiempo. El crujido previo al colapso es ahora señal de evacuación estándar.</div>
     <div class="conf-access">Clase B — Acceso restringido</div>
   </div>
