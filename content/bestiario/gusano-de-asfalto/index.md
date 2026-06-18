@@ -81,6 +81,22 @@ title: "Gusano de Asfalto"
 
 <p>No hay registro de avistamiento visual directo en los primeros días — solo evidencia acústica y estructural. F-01 identificó el patrón de grietas radiales en calle Galeana como consistente con actividad subterránea antes de confirmar la fuente. El nombre provisional fue asignado por F-01 en semana 2 tras el primer avistamiento visual durante una emergencia superficial al mediodía.</p>
 
+<div class="entry-section-title">Lecturas sísmicas — Red de sensores F-05</div>
+
+<div class="archivist-note">
+  <span class="archivist-label">Contexto del registro — GA-EXP-001</span>
+  Las lecturas corresponden a la red de sensores de vibración instalada por F-05 (Carlos) usando geófonos recuperados del taller de robótica del campus sur UAA y un microcontrolador con ADC de 12 bits a 100 Hz de muestreo. Cuatro nodos: Norte, Sur, Este, Oeste, separados aproximadamente 80–120 m entre sí en calle Galeana y perpendiculares. Los datos aquí presentados son una ventana de 30 segundos del registro del día <span class="redacted">██</span>, seleccionada por contener tres eventos identificados. El resto del registro de 72 horas está clasificado como GA-EXP-001.
+  <br><br>
+  La firma espectral del <em>Vermis bituminosus</em> se distingue del ruido vehicular por su pico dominante entre 3.5 y 4.5 Hz — rango incompatible con vibración de motor o impacto de llanta sobre pavimento, que concentra energía por encima de 8 Hz. Esta diferencia espectral permite detección pasiva sin contacto visual.
+</div>
+
+<div id="seismic-panel" class="seismic-panel-container"></div>
+
+<div class="archivist-note">
+  <span class="archivist-label">// Nota de F-05 — transcripción de voz</span>
+  "Los tres eventos de esta ventana no son el mismo gusano. Los tiempos de llegada entre Norte y Oeste difieren en el tercer evento — el ángulo cambió. O son dos especímenes distintos, o uno que cambió de dirección. El primero y el segundo podrían ser el mismo si la velocidad que calculé es correcta, pero el tercero es diferente. No me gusta no saber cuántos son."
+</div>
+
 <div class="entry-section-title">Archivos confidenciales — Acceso restringido</div>
 
 <div class="confidential-section">
