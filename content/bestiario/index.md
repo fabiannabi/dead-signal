@@ -312,6 +312,21 @@ title: "Bestiario"
   </div>
 </a>
 
+<a href="/bestiario/rata-coendu" class="entry-item" data-tags="amenaza-ii,carnivoro">
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza II — Omnívoro</span>
+    <div class="entry-status documentado"><span class="entry-status-dot"></span>documentado</div>
+  </div>
+  <div class="entry-body">
+    <div class="entry-name">Rata Coendú</div>
+    <div class="entry-type">Manada gregaria · avistamiento colectivo</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-II/RAC</span>
+    <span class="entry-doc-count">campo detallado · atrib. pendiente</span>
+  </div>
+</a>
+
 <a href="/bestiario/criatura-n" class="entry-item" data-tags="amenaza-ii,f-05">
   <div class="entry-header">
     <span class="entry-threat">Amenaza II provisional</span>
@@ -385,6 +400,6 @@ title: "Bestiario"
 
 <div class="page-footer">
   <span><span class="status-dot"></span>Archivo activo</span>
-  <span>Bestiario — 12 entradas registradas</span>
+  <span>Bestiario — 13 entradas registradas</span>
   <span><a href="/">← Volver al archivo</a></span>
 </div>
