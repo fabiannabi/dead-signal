@@ -27,7 +27,6 @@ import EntradaHeader from "./custom/EntradaHeader"
 import PaletteSwitcher from "./PaletteSwitcher"
 import LightboxScript from "./LightboxScript"
 import BestiarioScript from "./BestiarioScript"
-import AccessGate from "./AccessGate"
 
 export {
   ArticleTitle,
@@ -59,5 +58,4 @@ export {
   PaletteSwitcher,
   LightboxScript,
   BestiarioScript,
-  AccessGate,
 }

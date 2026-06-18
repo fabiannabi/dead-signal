@@ -31,35 +31,35 @@ title: Señal Muerta — Archivo Post-Emergencia
 
 <div class="index-subject-grid">
 
-  <a href="/personajes/fabian" class="index-subject-card char-f01">
+  <a href="/personajes/fabian" class="index-subject-card">
     <div class="isc-code">F-01 — Sujeto</div>
     <div class="isc-name">Fabián</div>
     <div class="isc-role">Ing. Bioquímica / Programador</div>
     <div class="isc-status active"><span class="status-dot"></span>Archivo activo — 4 entradas</div>
   </a>
 
-  <a href="/personajes/felipe" class="index-subject-card char-f02">
+  <a href="/personajes/felipe" class="index-subject-card">
     <div class="isc-code">F-02 — Sujeto</div>
     <div class="isc-name">Felipe</div>
     <div class="isc-role">Médico Urgenciólogo</div>
     <div class="isc-status active"><span class="status-dot"></span>Archivo activo — 4 entradas</div>
   </a>
 
-  <div class="index-subject-card disabled char-f03">
+  <div class="index-subject-card disabled">
     <div class="isc-code">F-03 — Sujeto</div>
     <div class="isc-name">Gaby</div>
     <div class="isc-role">Médico Anestesiólogo</div>
     <div class="isc-status error">// datos insuficientes — acceso restringido</div>
   </div>
 
-  <div class="index-subject-card disabled char-f04">
+  <div class="index-subject-card disabled">
     <div class="isc-code">F-04 — Sujeto</div>
     <div class="isc-name">Aarón</div>
     <div class="isc-role">Ing. Químico</div>
     <div class="isc-status error">// datos insuficientes — acceso restringido</div>
   </div>
 
-  <a href="/personajes/carlos" class="index-subject-card char-f05">
+  <a href="/personajes/carlos" class="index-subject-card">
     <div class="isc-code">F-05 — Sujeto</div>
     <div class="isc-name">Carlos</div>
     <div class="isc-role">Ing. Biomédico / Maestro UAA</div>
