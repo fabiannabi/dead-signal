@@ -62,7 +62,7 @@ title: "GA-INC-001 — Colapso de vía, tres bajas"
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time"><span class="redacted">██</span>:23–38</span>
-      <span class="subdoc-event">Intento de extracción por el cuarto miembro. Colapso secundario de borde sur. <span class="redacted">████████████████████████████████████████</span></span>
+      <span class="subdoc-event">Intento de extracción por el cuarto miembro. Colapso secundario de borde sur. El cuarto miembro <span class="redacted">████████████████████████████████████████████████████</span>. Zona inaccesible para recuperación.</span>
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time"><span class="redacted">██</span>:51</span>

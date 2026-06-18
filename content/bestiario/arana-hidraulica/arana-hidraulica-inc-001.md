@@ -62,7 +62,7 @@ title: "AH-INC-001 — Contacto no autorizado, zona de drenaje sur"
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time">04:31–04:34</span>
-      <span class="subdoc-event"><span class="redacted">████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████</span></span>
+      <span class="subdoc-event">Tres miembros del equipo <span class="redacted">████████████████████████████████████████████████</span>. El cuarto intentó <span class="redacted">████████████████████████████████████████</span> desde la entrada del drenaje. El espécimen <span class="redacted">████████████████████████████</span> antes de retornar a la rejilla de origen.</span>
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time">04:38</span>
@@ -80,7 +80,7 @@ title: "AH-INC-001 — Contacto no autorizado, zona de drenaje sur"
   <div class="subdoc-body">
     <p>"El clic lo escuché yo. Lo dije. <span class="redacted">████</span> dijo que eran las tuberías. No sabíamos que significaba algo. Nadie nos dijo que significaba algo."</p>
     <p>"No vi de dónde salió. Estaba en la rejilla y de repente no estaba, y luego sí estaba. Eso es todo lo que puedo decirles de los primeros dos segundos."</p>
-    <p>"<span class="redacted">████████████████████████████████████████████████████████████████████</span>"</p>
+    <p>"<span class="redacted">████████████████████████████████████████████</span>. Sí vi a <span class="redacted">████████████</span>. No debería haberlo <span class="redacted">████████████████████████████████████████</span>."</p>
   </div>
 
   <div class="subdoc-note">

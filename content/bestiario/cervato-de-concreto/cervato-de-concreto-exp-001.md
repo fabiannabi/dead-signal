@@ -66,11 +66,11 @@ title: "CC-EXP-001 — Protocolo de acercamiento"
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time">5 m</span>
-      <span class="subdoc-event"><span class="redacted">██████████████████████████████████████████████████</span></span>
+      <span class="subdoc-event">Pausa completa del espécimen. El investigador <span class="redacted">████████████████████████████████████████</span>. El equipo de observación registró <span class="redacted">████████████████████████████████</span> antes de que el investigador iniciara la siguiente fase.</span>
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time">Contacto</span>
-      <span class="subdoc-event"><span class="redacted">████████████████████████████████████████████████████████████████████████████████████████████████████████████</span></span>
+      <span class="subdoc-event">El espécimen <span class="redacted">████████████████████████████████████████████████████</span>. El investigador fue extraído de la zona en el minuto <span class="redacted">██</span>. Estado al término de la fase: <span class="redacted">████████████████████████████████████████████████</span>.</span>
     </div>
   </div>
 
