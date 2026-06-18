@@ -192,6 +192,21 @@ title: "Bestiario"
 
 <div class="entry-grid">
 
+<a href="/bestiario/cucaracha-matriarca" class="entry-item" data-tags="amenaza-ii,colonia,f-01">
+  <div class="entry-header">
+    <span class="entry-threat">Amenaza II — Colonia</span>
+    <div class="entry-status fragmentario"><span class="entry-status-dot"></span>fragmentario</div>
+  </div>
+  <div class="entry-body">
+    <div class="entry-name">Cucaracha Matriarca</div>
+    <div class="entry-type">Gregaria · castas · ganadería activa</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-II/CM</span>
+    <span class="entry-doc-count">1 exp en clasificación</span>
+  </div>
+</a>
+
 <a href="/bestiario/chacal-de-feria" class="entry-item" data-tags="amenaza-ii,carnivoro,f-02">
   <div class="entry-header">
     <span class="entry-threat">Amenaza II — Carnívoro</span>
