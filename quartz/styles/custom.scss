@@ -1390,8 +1390,8 @@ table {
 }
 
 .doc-nombre {
-  font-family: var(--headerFont);
-  font-size: 1rem;
+  font-family: var(--codeFont);
+  font-size: 0.85rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--dark);
@@ -1416,12 +1416,14 @@ table {
   gap: 0.25rem;
 
   li {
-    font-size: 0.9rem;
+    font-family: var(--codeFont);
+    font-size: 0.88rem;
     color: var(--darkgray);
-    &::before { content: '→ '; color: var(--gray); font-family: var(--codeFont); }
+    &::before { content: '→ '; color: var(--gray); }
   }
 
   a {
+    font-size: 1.5rem;
     color: var(--dark);
     text-decoration: none;
     &:hover { color: var(--secondary); }
