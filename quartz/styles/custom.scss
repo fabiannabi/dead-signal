@@ -1655,8 +1655,8 @@ table {
   border-left-style: solid;
   &.amenaza-i   { border-left-color: #{$green}; }
   &.amenaza-ii  { border-left-color: #9a7020; }
-  &.amenaza-iii { border-left-color: #{$red}; }
-  &.amenaza-iv  { border-left-color: #5a1a10; }
+  &.amenaza-iii { border-left-color: #c05040; }
+  &.amenaza-iv  { border-left-color: #8a3020; }
 }
 .threat-h-badge {
   font-size: 1.5rem;
@@ -1714,8 +1714,8 @@ table {
 }
 .entry-item[data-tags*="amenaza-i"]   .entry-header { background: rgba(74,106,58,0.18); }
 .entry-item[data-tags*="amenaza-ii"]  .entry-header { background: rgba(154,112,32,0.18); }
-.entry-item[data-tags*="amenaza-iii"] .entry-header { background: rgba(138,58,42,0.18); }
-.entry-item[data-tags*="amenaza-iv"]  .entry-header { background: rgba(90,26,16,0.14); }
+.entry-item[data-tags*="amenaza-iii"] .entry-header { background: rgba(192,80,64,0.18); }
+.entry-item[data-tags*="amenaza-iv"]  .entry-header { background: rgba(138,48,32,0.16); }
 
 .entry-threat {
   font-family: var(--codeFont);
@@ -1725,8 +1725,8 @@ table {
 }
 .entry-item[data-tags*="amenaza-i"]   .entry-threat { color: #{$green}; }
 .entry-item[data-tags*="amenaza-ii"]  .entry-threat { color: #9a7020; }
-.entry-item[data-tags*="amenaza-iii"] .entry-threat { color: #{$red}; }
-.entry-item[data-tags*="amenaza-iv"]  .entry-threat { color: #6a2010; }
+.entry-item[data-tags*="amenaza-iii"] .entry-threat { color: #c05040; }
+.entry-item[data-tags*="amenaza-iv"]  .entry-threat { color: #a04030; }
 
 // ── Entry card body ──
 .entry-body {
@@ -1795,8 +1795,8 @@ table {
   .entry-status-dot { background: #9a7020; }
 }
 .entry-status.sin-confirmar {
-  color: #{$red};
-  .entry-status-dot { background: #{$red}; animation: pulse 2.2s infinite; }
+  color: #c05040;
+  .entry-status-dot { background: #c05040; animation: pulse 2.2s infinite; }
 }
 .entry-status.en-clasificacion {
   color: var(--tertiary);
@@ -1806,7 +1806,7 @@ table {
 // ── La Catedral — special Amenaza IV entry ──
 .entry-item.catedral {
   .entry-header { background: rgba(90,26,16,0.1); border-bottom-color: #3a1008; }
-  .entry-threat { color: #6a2010; letter-spacing: 0.2em; }
+  .entry-threat { color: #a04030; letter-spacing: 0.2em; }
   .entry-name   { letter-spacing: 0.04em; color: #a08070; }
   .entry-footer { background: rgba(90,26,16,0.07); border-top-color: #3a1008; }
   .entry-code   { color: #5a2010; }
@@ -1949,8 +1949,8 @@ table {
   }
   &[data-filter="amenaza-i"].active   { color: #{$green};  border-color: #{$green};  background: rgba(74,106,58,0.1); }
   &[data-filter="amenaza-ii"].active  { color: #9a7020;    border-color: #9a7020;    background: rgba(154,112,32,0.1); }
-  &[data-filter="amenaza-iii"].active { color: #{$red};    border-color: #{$red};    background: rgba(138,58,42,0.1); }
-  &[data-filter="amenaza-iv"].active  { color: #5a1a10;    border-color: #5a1a10;    background: rgba(90,26,16,0.1); }
+  &[data-filter="amenaza-iii"].active { color: #c05040; border-color: #c05040; background: rgba(192,80,64,0.1); }
+  &[data-filter="amenaza-iv"].active  { color: #a04030; border-color: #a04030; background: rgba(160,64,48,0.1); }
 }
 
 // ── Confidential section ──
@@ -2597,7 +2597,7 @@ table {
   margin-top: 3px;
   &.documentado      { background: #{$green}; }
   &.fragmentario     { background: #9a7020; }
-  &.sin-confirmar    { background: #{$red}; animation: pulse 2.2s infinite; }
+  &.sin-confirmar    { background: #c05040; animation: pulse 2.2s infinite; }
   &.en-clasificacion { background: var(--tertiary); animation: pulse 1.4s infinite; }
 }
 .sl-info { display: flex; flex-direction: column; gap: 0.2rem; }
