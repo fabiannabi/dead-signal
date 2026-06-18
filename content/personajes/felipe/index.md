@@ -21,7 +21,7 @@ F-02 era médico urgenciólogo en activo al momento de la Emergencia. Sus docume
 
 ## Documentos recuperados
 
-- [[felipe/cap-01|Entrada 01 — Código rojo sin protocolo]]
-- [[felipe/cap-02|Entrada 02 — Taxonomía del fin del mundo]]
-- [[felipe/cap-03|Entrada 03 — Territorio y anomalía]]
-- [[felipe/cap-04|Entrada 04 — Mudas]]
+- [[personajes/felipe/cap-01|Entrada 01 — Código rojo sin protocolo]]
+- [[personajes/felipe/cap-02|Entrada 02 — Taxonomía del fin del mundo]]
+- [[personajes/felipe/cap-03|Entrada 03 — Territorio y anomalía]]
+- [[personajes/felipe/cap-04|Entrada 04 — Mudas]]

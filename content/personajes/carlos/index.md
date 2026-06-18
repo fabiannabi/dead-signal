@@ -25,8 +25,8 @@ F-05 era ingeniero biomédico y maestro en el campus sur de la UAA al momento de
 
 ## Documentos recuperados
 
-- [[carlos/cap-01|Entrada 01 — Inventario de lo que queda]]
-- [[carlos/cap-02|Entrada 02 — Cruzar el campo]]
-- [[carlos/cap-03|Entrada 03 — Firma]]
-- [[carlos/cap-04|Entrada 04 — Prueba de sistema]]
-- [[carlos/cap-05|Entrada 05 — Salida]]
+- [[personajes/carlos/cap-01|Entrada 01 — Inventario de lo que queda]]
+- [[personajes/carlos/cap-02|Entrada 02 — Cruzar el campo]]
+- [[personajes/carlos/cap-03|Entrada 03 — Firma]]
+- [[personajes/carlos/cap-04|Entrada 04 — Prueba de sistema]]
+- [[personajes/carlos/cap-05|Entrada 05 — Salida]]

@@ -25,7 +25,7 @@ F-01 era programador e ingeniero en bioquímica y alimentos al momento de la Eme
 
 ## Documentos recuperados
 
-- [[fabian/cap-01|Entrada 01 — Día normal]]
-- [[fabian/cap-02|Entrada 02 — Primera salida]]
-- [[fabian/cap-03|Entrada 03 — Perímetro]]
-- [[fabian/cap-04|Entrada 04 — Radio de acción]]
+- [[personajes/fabian/cap-01|Entrada 01 — Día normal]]
+- [[personajes/fabian/cap-02|Entrada 02 — Primera salida]]
+- [[personajes/fabian/cap-03|Entrada 03 — Perímetro]]
+- [[personajes/fabian/cap-04|Entrada 04 — Radio de acción]]
