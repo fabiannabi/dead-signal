@@ -532,8 +532,9 @@ footer { display: none; }
   background-color: rgba(200, 168, 74, 0.04);
   padding: 0.7rem 1rem;
   margin: 1.5rem 0;
+  font-family: "Crimson Pro", Georgia, serif;
   font-size: 1.1rem;
-  color: var(--darkgray);
+  color: #8a8670;
   position: relative;
 
   &::before {
@@ -2006,9 +2007,9 @@ table {
   margin-bottom: 0.5rem;
 }
 .conf-desc {
-  font-family: var(--bodyFont);
+  font-family: "Crimson Pro", Georgia, serif;
   font-size: 1.1rem;
-  color: var(--darkgray);
+  color: #8a8670;
   margin-bottom: 0.5rem;
   line-height: 1.75;
 }

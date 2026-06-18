@@ -337,6 +337,7 @@ title: "Cucaracha Matriarca"
   <div class="sidebar-block">
     <span class="sidebar-label">Documentado por</span>
     <span class="sidebar-tag sujeto">F-01 Fabián</span>
+    <span class="sidebar-tag sujeto">F-02 Felipe</span>
   </div>
   <div class="sidebar-block">
     <span class="sidebar-label">Referencias cruzadas</span>
