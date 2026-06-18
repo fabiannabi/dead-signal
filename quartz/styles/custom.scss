@@ -1656,7 +1656,7 @@ table {
   &.amenaza-i   { border-left-color: #{$green}; }
   &.amenaza-ii  { border-left-color: #9a7020; }
   &.amenaza-iii { border-left-color: #c05040; }
-  &.amenaza-iv  { border-left-color: #8a3020; }
+  &.amenaza-iv  { border-left-color: #c05040; }
 }
 .threat-h-badge {
   font-size: 1.5rem;
@@ -1715,7 +1715,7 @@ table {
 .entry-item[data-tags*="amenaza-i"]   .entry-header { background: rgba(74,106,58,0.18); }
 .entry-item[data-tags*="amenaza-ii"]  .entry-header { background: rgba(154,112,32,0.18); }
 .entry-item[data-tags*="amenaza-iii"] .entry-header { background: rgba(192,80,64,0.18); }
-.entry-item[data-tags*="amenaza-iv"]  .entry-header { background: rgba(138,48,32,0.16); }
+.entry-item[data-tags*="amenaza-iv"]  .entry-header { background: rgba(192,80,60,0.2); }
 
 .entry-threat {
   font-family: var(--codeFont);
@@ -1726,7 +1726,7 @@ table {
 .entry-item[data-tags*="amenaza-i"]   .entry-threat { color: #{$green}; }
 .entry-item[data-tags*="amenaza-ii"]  .entry-threat { color: #9a7020; }
 .entry-item[data-tags*="amenaza-iii"] .entry-threat { color: #c05040; }
-.entry-item[data-tags*="amenaza-iv"]  .entry-threat { color: #a04030; }
+.entry-item[data-tags*="amenaza-iv"]  .entry-threat { color: #c85040; }
 
 // ── Entry card body ──
 .entry-body {
@@ -1805,12 +1805,12 @@ table {
 
 // ── La Catedral — special Amenaza IV entry ──
 .entry-item.catedral {
-  .entry-header { background: rgba(90,26,16,0.1); border-bottom-color: #3a1008; }
-  .entry-threat { color: #a04030; letter-spacing: 0.2em; }
-  .entry-name   { letter-spacing: 0.04em; color: #a08070; }
-  .entry-footer { background: rgba(90,26,16,0.07); border-top-color: #3a1008; }
-  .entry-code   { color: #5a2010; }
-  .entry-doc-count { color: #5a2010; }
+  .entry-header { border-bottom-color: #6a3020; }
+  .entry-threat { letter-spacing: 0.2em; }
+  .entry-name   { letter-spacing: 0.04em; }
+  .entry-footer { border-top-color: #6a3020; }
+  .entry-code   { color: #8a5040; }
+  .entry-doc-count { color: #8a5040; }
 }
 
 // ── Entry layout with sidebar ──
@@ -1950,7 +1950,7 @@ table {
   &[data-filter="amenaza-i"].active   { color: #{$green};  border-color: #{$green};  background: rgba(74,106,58,0.1); }
   &[data-filter="amenaza-ii"].active  { color: #9a7020;    border-color: #9a7020;    background: rgba(154,112,32,0.1); }
   &[data-filter="amenaza-iii"].active { color: #c05040; border-color: #c05040; background: rgba(192,80,64,0.1); }
-  &[data-filter="amenaza-iv"].active  { color: #a04030; border-color: #a04030; background: rgba(160,64,48,0.1); }
+  &[data-filter="amenaza-iv"].active  { color: #c85040; border-color: #c85040; background: rgba(200,80,64,0.1); }
 }
 
 // ── Confidential section ──
