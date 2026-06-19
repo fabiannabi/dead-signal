@@ -1618,6 +1618,11 @@ table {
   .entrada-header {
     font-size: 0.6rem;
   }
+
+  // Links de documentos originales: más pequeños en mobile
+  .doc-lista a {
+    font-size: 1rem;
+  }
 }
 
 // ═══════════════════════════════════════════════════════
