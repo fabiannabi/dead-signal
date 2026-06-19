@@ -153,11 +153,8 @@ html[data-palette="fosfor"] {
 // ── Tipo 4: Deriva cromática — shift de color suave (solo filter)
 
 @keyframes crt-glitch-body {
-  /* Tipo 2 — Temblor (85-86%) */
-  0%, 84%, 87%, 91%, 96%, 100% { transform: none; filter: none; }
-  85% { transform: translateX(-1.5px); }
-  86% { transform: translateX(1px); }
   /* Tipo 3 — Parpadeo (92-93%) */
+  0%, 91%, 94%, 96%, 100% { filter: none; }
   92% { filter: brightness(1.18); }
   93% { filter: brightness(0.93); }
   /* Tipo 4 — Deriva cromática (97-98%) */
