@@ -38,11 +38,11 @@ F-05 era ingeniero biomédico y maestro en el campus sur de la UAA al momento de
 <div class="expediente-col">
 <div class="expediente-col-title">Documentos Reconstruidos</div>
 <ul>
-<li><a href="/personajes/carlos/cap-01">Entrada 01 — Inventario de lo que queda</a></li>
-<li><a href="/personajes/carlos/cap-02">Entrada 02 — Cruzar el campo</a></li>
-<li><a href="/personajes/carlos/cap-03">Entrada 03 — Firma</a></li>
-<li><a href="/personajes/carlos/cap-04">Entrada 04 — Prueba de sistema</a></li>
-<li><a href="/personajes/carlos/cap-05">Entrada 05 — Salida</a></li>
+<li><a href="/personajes/carlos/cap-01">F-05 / Documento 001</a></li>
+<li><a href="/personajes/carlos/cap-02">F-05 / Documento 002</a></li>
+<li><a href="/personajes/carlos/cap-03">F-05 / Documento 003</a></li>
+<li><a href="/personajes/carlos/cap-04">F-05 / Documento 004</a></li>
+<li><a href="/personajes/carlos/cap-05">F-05 / Documento 005</a></li>
 </ul>
 </div>
 </div>

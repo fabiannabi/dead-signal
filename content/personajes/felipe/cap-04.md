@@ -1,5 +1,5 @@
 ---
-title: "Entrada 04 — Mudas"
+title: "F-02 / Documento 004"
 ---
 
 *ARCHIVO DE RECUPERACIÓN POST-EMERGENCIA — SECCIÓN DOCUMENTAL* / *Expediente F-02 / Documento 04 de :redactado[██]*

@@ -1,5 +1,5 @@
 ---
-title: "Entrada 04 — Radio de acción"
+title: "F-01 / Documento 004"
 tipo: capitulo
 personaje: fabian
 codigo-personaje: F-01

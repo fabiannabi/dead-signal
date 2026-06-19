@@ -1,5 +1,5 @@
 ---
-title: "Entrada 01 — Código rojo sin protocolo"
+title: "F-02 / Documento 001"
 ---
 
 *ARCHIVO DE RECUPERACIÓN POST-EMERGENCIA — SECCIÓN DOCUMENTAL* / *Expediente F-02 / Documento 01 de :redactado[██]*

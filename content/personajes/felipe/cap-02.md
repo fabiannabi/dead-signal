@@ -1,5 +1,5 @@
 ---
-title: "Entrada 02 — Taxonomía del fin del mundo"
+title: "F-02 / Documento 002"
 ---
 
 *ARCHIVO DE RECUPERACIÓN POST-EMERGENCIA — SECCIÓN DOCUMENTAL* / *Expediente F-02 / Documento 02 de :redactado[██]*

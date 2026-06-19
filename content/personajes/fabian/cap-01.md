@@ -1,5 +1,5 @@
 ---
-title: "Entrada 01 — Día normal"
+title: "F-01 / Documento 001"
 tipo: capitulo
 personaje: fabian
 codigo-personaje: F-01

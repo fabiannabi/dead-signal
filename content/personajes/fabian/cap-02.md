@@ -1,5 +1,5 @@
 ---
-title: "Entrada 02 — Primera salida"
+title: "F-01 / Documento 002"
 tipo: capitulo
 personaje: fabian
 codigo-personaje: F-01

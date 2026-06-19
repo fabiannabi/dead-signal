@@ -1,5 +1,5 @@
 ---
-title: "Entrada 01 — Inventario de lo que queda"
+title: "F-05 / Documento 001"
 ---
 
 *ARCHIVO DE RECUPERACIÓN POST-EMERGENCIA — SECCIÓN DOCUMENTAL* / *Expediente F-05 / Documento 01 de :redactado[██]*
