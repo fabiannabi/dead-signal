@@ -342,30 +342,75 @@ function initNarratorRadioEffect(){
       try {
         var ctx = new AudioCtx();
         var src = ctx.createMediaElementSource(audio);
-        // Highpass: cut below 320 Hz (remove bass/body)
+
+        // 1. Highpass — cut below 480 Hz (kill body/warmth)
         var hp = ctx.createBiquadFilter();
         hp.type = 'highpass';
-        hp.frequency.value = 320;
-        hp.Q.value = 0.8;
-        // Presence boost: radio mid character ~1.2 kHz
+        hp.frequency.value = 480;
+        hp.Q.value = 1.2;
+
+        // 2. Tape-saturation distortion (soft-knee waveshaper)
+        var dist = ctx.createWaveShaper();
+        var curve = new Float32Array(512);
+        for(var i=0;i<512;i++){
+          var x = (i*2)/512 - 1;
+          curve[i] = (Math.PI + 180) * x / (Math.PI + 180 * Math.abs(x));
+        }
+        dist.curve = curve;
+        dist.oversample = '4x';
+
+        // 3. Mid-range presence boost ~1.4 kHz (nasal radio character)
         var peak = ctx.createBiquadFilter();
         peak.type = 'peaking';
-        peak.frequency.value = 1200;
-        peak.gain.value = 6;
-        peak.Q.value = 1.8;
-        // Lowpass: cut above 3400 Hz (narrow telephone band)
+        peak.frequency.value = 1400;
+        peak.gain.value = 9;
+        peak.Q.value = 2.2;
+
+        // 4. Lowpass — cut above 3000 Hz (narrow the band further)
         var lp = ctx.createBiquadFilter();
         lp.type = 'lowpass';
-        lp.frequency.value = 3400;
-        lp.Q.value = 0.8;
-        // Gain compensation for lost volume after filtering
+        lp.frequency.value = 3000;
+        lp.Q.value = 1.0;
+
+        // 5. Output gain
         var gain = ctx.createGain();
-        gain.gain.value = 1.5;
+        gain.gain.value = 1.4;
+
+        // Main signal chain
         src.connect(hp);
-        hp.connect(peak);
+        hp.connect(dist);
+        dist.connect(peak);
         peak.connect(lp);
         lp.connect(gain);
         gain.connect(ctx.destination);
+
+        // 6. Static noise layer — filtered white noise mixed in
+        var bufLen = ctx.sampleRate * 3;
+        var noiseBuf = ctx.createBuffer(1, bufLen, ctx.sampleRate);
+        var nd = noiseBuf.getChannelData(0);
+        for(var j=0;j<bufLen;j++) nd[j] = Math.random()*2 - 1;
+        var noiseNode = ctx.createBufferSource();
+        noiseNode.buffer = noiseBuf;
+        noiseNode.loop = true;
+        // Band-pass the noise to radio range so it blends, not just hisses
+        var nbp = ctx.createBiquadFilter();
+        nbp.type = 'bandpass';
+        nbp.frequency.value = 2200;
+        nbp.Q.value = 0.6;
+        var noiseGain = ctx.createGain();
+        noiseGain.gain.value = 0.055;
+        noiseNode.connect(nbp);
+        nbp.connect(noiseGain);
+        noiseGain.connect(ctx.destination);
+
+        // Start noise only while audio is playing
+        audio.addEventListener('play', function(){
+          if(ctx.state === 'suspended') ctx.resume();
+          try{ noiseNode.start(); } catch(e){}
+        }, {once: true});
+        audio.addEventListener('pause', function(){ noiseGain.gain.value = 0; });
+        audio.addEventListener('play',  function(){ noiseGain.gain.value = 0.055; });
+
         if(ctx.state === 'suspended') ctx.resume();
       } catch(e){}
     }
