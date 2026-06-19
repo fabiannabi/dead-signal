@@ -32,7 +32,7 @@ title: "AH-INC-001 — Contacto no autorizado, zona de drenaje sur"
   </div>
 </div>
 
-<div class="telemetria-widget">
+<div class="telemetria-widget" id="ah-telemetria">
   <div class="tw-header">
     <span class="tw-id">AH-INC-001 // TELEMETRÍA DEL CONTACTO</span>
     <span class="tw-range">Señal acústica + signos vitales del equipo · 04:12 → 04:38</span>
@@ -67,10 +67,13 @@ title: "AH-INC-001 — Contacto no autorizado, zona de drenaje sur"
     <span class="tw-tick" style="left:100%">04:38</span>
   </div>
 
-  <div class="tw-legend">
-    <span class="tw-leg tw-leg-warn">▲ 04:23 — clic no reconocido</span>
-    <span class="tw-leg tw-leg-crit">| 04:31 — emergencia del espécimen</span>
-    <span class="tw-leg tw-leg-loss">— 04:31–04:34 — pérdida de 3 señales vitales</span>
+  <div class="tw-bottom">
+    <div class="tw-legend">
+      <span class="tw-leg tw-leg-warn">▲ 04:23 — clic no reconocido</span>
+      <span class="tw-leg tw-leg-crit">| 04:31 — emergencia del espécimen</span>
+      <span class="tw-leg tw-leg-loss">— 04:31–04:34 — pérdida de 3 señales vitales</span>
+    </div>
+    <button class="tw-replay-btn" onclick="(function(){var w=document.getElementById('ah-telemetria');if(!w)return;w.querySelectorAll('.tw-path,.tw-ev-warn,.tw-ev-crit').forEach(function(e){e.style.animation='none';void e.offsetHeight;e.style.animation=''})})()">⟳ replay</button>
   </div>
 </div>
 
