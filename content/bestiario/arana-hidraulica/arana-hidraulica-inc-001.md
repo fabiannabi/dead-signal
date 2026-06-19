@@ -73,9 +73,28 @@ title: "AH-INC-001 — Contacto no autorizado, zona de drenaje sur"
       <span class="tw-leg tw-leg-crit">| 04:31 — emergencia del espécimen</span>
       <span class="tw-leg tw-leg-loss">— 04:31–04:34 — pérdida de 3 señales vitales</span>
     </div>
-    <button class="tw-replay-btn" onclick="(function(){var w=document.getElementById('ah-telemetria');if(!w)return;w.querySelectorAll('.tw-path,.tw-ev-warn,.tw-ev-crit').forEach(function(e){e.style.animation='none';void e.offsetHeight;e.style.animation=''})})()">⟳ replay</button>
+    <button class="tw-replay-btn" id="ah-replay-btn">⟳ replay</button>
   </div>
 </div>
+
+<script>
+(function () {
+  function replay() {
+    var w = document.getElementById('ah-telemetria')
+    if (!w) return
+    w.querySelectorAll('.tw-path, .tw-ev-warn, .tw-ev-crit').forEach(function (el) {
+      var clone = el.cloneNode(true)
+      el.parentNode.replaceChild(clone, el)
+    })
+  }
+  function init() {
+    var btn = document.getElementById('ah-replay-btn')
+    if (btn) btn.onclick = replay
+  }
+  document.addEventListener('nav', init)
+  init()
+})()
+</script>
 
 <div class="subdoc-section">
   <div class="subdoc-section-title">Cronología del contacto</div>
