@@ -3093,22 +3093,19 @@ table {
     margin-top: 0.25rem;
 
     .sm-play-btn {
-      border-color: #4a3020;
-      color: #8a6020;
-      &:hover { background: #1a1208; border-color: #6a4020; }
+      border-color: #6a4a20;
+      color: #c8882a;
+      &:hover { background: #1e1508; border-color: #9a6828; }
     }
-    .sm-bar        { background: #2a1e10; }
-    .sm-bar-fill   { background: #6a3e10; }
-    .sm-bar-cursor { background: #c8882a; }
-    .sm-signal span { background: #5a3818; }
-    .sm-time     { color: #4a3020; }
-    .sm-time-cur { color: #7a5030; }
+    .sm-bar        { background: #2e2010; }
+    .sm-bar-fill   { background: #8a5418; }
+    .sm-bar-cursor { background: #e8a030; }
+    .sm-signal span { background: #6a4818; }
+    .sm-time     { color: #7a5828; }
+    .sm-time-cur { color: #b07830; }
   }
 
-  &[data-state="playing"] .sm-signal span,
-  .sm-player[data-state="playing"] .sm-signal span {
-    opacity: 1;
-  }
+  .sm-player[data-state="playing"] .sm-signal span { opacity: 1; }
 }
 
 // ── Custom audio player ──
