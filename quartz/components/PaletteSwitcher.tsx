@@ -11,6 +11,10 @@ const palettes = [
 
 export default (() => {
   function PaletteSwitcher() {
+    // UI oculta — el script aplica fosfor como tema fijo
+    // Descomentar los botones cuando se reactive el selector
+    return <></>
+    /*
     return (
       <div class="palette-switcher" aria-label="Cambiar paleta de color">
         {palettes.map((p) => (
@@ -25,6 +29,7 @@ export default (() => {
         ))}
       </div>
     )
+    */
   }
 
   PaletteSwitcher.afterDOMLoaded = script
