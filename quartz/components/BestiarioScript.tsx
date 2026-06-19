@@ -332,9 +332,9 @@ function initSeismicPanel(){
 
 // ── Narrator radio effect (Web Audio API) ──────────────────────
 function initNarratorRadioEffect(){
-  var AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+  var AudioCtx = window.AudioContext || window.webkitAudioContext;
   if(!AudioCtx) return;
-  document.querySelectorAll('.audio-evidence-item.featured audio').forEach(function(audio: any){
+  document.querySelectorAll('.audio-evidence-item.featured audio').forEach(function(audio){
     var hooked = false;
     function buildChain(){
       if(hooked) return;
