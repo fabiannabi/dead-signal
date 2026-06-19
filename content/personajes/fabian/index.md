@@ -26,21 +26,21 @@ F-01 era programador e ingeniero en bioquímica y alimentos al momento de la Eme
 
 <div class="expediente-docs-grid">
 <div class="expediente-col">
-<div class="expediente-col-title">Documentos Reconstruidos</div>
-<ul>
-<li><a href="/personajes/fabian/cap-01">Entrada 01 — Día normal</a></li>
-<li><a href="/personajes/fabian/cap-02">Entrada 02 — Primera salida</a></li>
-<li><a href="/personajes/fabian/cap-03">Entrada 03 — Perímetro</a></li>
-<li><a href="/personajes/fabian/cap-04">Entrada 04 — Radio de acción</a></li>
-</ul>
-</div>
-<div class="expediente-col">
 <div class="expediente-col-title">Documentos Originales</div>
 <ul>
 <li><a href="/documentos/fabian/libreta-01">Documento original 01</a></li>
 <li><a href="/documentos/fabian/libreta-02">Documento original 02</a></li>
 <li><a href="/documentos/fabian/libreta-03">Documento original 03</a></li>
 <li><a href="/documentos/fabian/libreta-04">Documento original 04</a></li>
+</ul>
+</div>
+<div class="expediente-col">
+<div class="expediente-col-title">Documentos Reconstruidos</div>
+<ul>
+<li><a href="/personajes/fabian/cap-01">Entrada 01 — Día normal</a></li>
+<li><a href="/personajes/fabian/cap-02">Entrada 02 — Primera salida</a></li>
+<li><a href="/personajes/fabian/cap-03">Entrada 03 — Perímetro</a></li>
+<li><a href="/personajes/fabian/cap-04">Entrada 04 — Radio de acción</a></li>
 </ul>
 </div>
 </div>

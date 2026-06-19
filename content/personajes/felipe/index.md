@@ -28,21 +28,21 @@ F-02 era médico urgenciólogo en activo al momento de la Emergencia. Sus docume
 
 <div class="expediente-docs-grid">
 <div class="expediente-col">
-<div class="expediente-col-title">Documentos Reconstruidos</div>
-<ul>
-<li><a href="/personajes/felipe/cap-01">Entrada 01 — Código rojo sin protocolo</a></li>
-<li><a href="/personajes/felipe/cap-02">Entrada 02 — Taxonomía del fin del mundo</a></li>
-<li><a href="/personajes/felipe/cap-03">Entrada 03 — Territorio y anomalía</a></li>
-<li><a href="/personajes/felipe/cap-04">Entrada 04 — Mudas</a></li>
-</ul>
-</div>
-<div class="expediente-col">
 <div class="expediente-col-title">Documentos Originales</div>
 <ul>
 <li><a href="/documentos/felipe/libreta-01">Documento original 01</a></li>
 <li><a href="/documentos/felipe/libreta-02">Documento original 02</a></li>
 <li><a href="/documentos/felipe/libreta-03">Documento original 03</a></li>
 <li><a href="/documentos/felipe/libreta-04">Documento original 04</a></li>
+</ul>
+</div>
+<div class="expediente-col">
+<div class="expediente-col-title">Documentos Reconstruidos</div>
+<ul>
+<li><a href="/personajes/felipe/cap-01">Entrada 01 — Código rojo sin protocolo</a></li>
+<li><a href="/personajes/felipe/cap-02">Entrada 02 — Taxonomía del fin del mundo</a></li>
+<li><a href="/personajes/felipe/cap-03">Entrada 03 — Territorio y anomalía</a></li>
+<li><a href="/personajes/felipe/cap-04">Entrada 04 — Mudas</a></li>
 </ul>
 </div>
 </div>

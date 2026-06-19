@@ -4049,42 +4049,78 @@ html[data-palette="fosfor"] {
   font-size: 1.05rem !important;
 }
 
-// Expediente de sujeto — 2 columnas: reconstruido | original
+// Expediente de sujeto — 2 columnas: original | reconstruido
 .expediente-docs-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0 2rem;
-  margin: 1.5rem 0 0;
+  gap: 0;
+  margin: 2rem 0 0;
+  border: 1px solid var(--lightgray);
+}
+
+.expediente-col {
+  padding: 1.4rem 1.6rem 1.6rem;
+
+  &:first-child {
+    border-right: 1px solid var(--lightgray);
+  }
 }
 
 .expediente-col-title {
   font-family: var(--headerFont);
   font-size: 0.6rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--secondary);
-  margin-bottom: 0.6rem;
-  padding-bottom: 0.35rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--lightgray);
+  opacity: 0.8;
 }
 
 .expediente-col ul {
   margin: 0;
-  padding-left: 1rem;
+  padding: 0;
   list-style: none;
+  counter-reset: doc-counter;
 }
 
 .expediente-col ul li {
-  margin: 0.3rem 0;
-  font-family: var(--headerFont);
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
+  counter-increment: doc-counter;
+  margin: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+
+  &:last-child { border-bottom: none; }
 }
 
 .expediente-col ul li a {
-  color: var(--secondary);
-  text-decoration: none;
-  &:hover { color: var(--dark); }
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  padding: 0.6rem 0.3rem;
+  color: var(--dark);
+  text-decoration: none !important;
+  font-family: var(--headerFont);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  transition: background 0.15s, color 0.15s;
+
+  &::before {
+    content: counter(doc-counter, decimal-leading-zero);
+    font-size: 0.55rem;
+    color: var(--gray);
+    flex-shrink: 0;
+    letter-spacing: 0.08em;
+    padding-top: 0.1em;
+  }
+
+  &:hover {
+    color: var(--secondary);
+    background: rgba(51,255,102,0.04);
+    padding-left: 0.6rem;
+
+    &::before { color: var(--secondary); }
+  }
 }
 
 // Ocultar el listado auto-generado de Quartz en páginas de expediente
