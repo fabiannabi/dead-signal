@@ -6,6 +6,7 @@ profesion: Ing. Bioquímica / Programador
 origen: Col. San Marcos, Aguascalientes
 clasificacion: Testimonial / Clase C
 capitulos: 4
+cssclasses: [expediente-sujeto]
 ---
 
 :::archivist
@@ -23,9 +24,23 @@ F-01 era programador e ingeniero en bioquímica y alimentos al momento de la Eme
 
 *Los documentos de F-01 incluyen libreta de campo y registros digitales parcialmente recuperados. El sistema de nomenclatura provisional del sujeto ha sido conservado sin corrección. Los mensajes enviados al grupo de comunicación :redactado[███████████████] fueron recuperados del dispositivo móvil en estado de caché local.*
 
-## Documentos recuperados
-
-- [[personajes/fabian/cap-01|Entrada 01 — Día normal]]
-- [[personajes/fabian/cap-02|Entrada 02 — Primera salida]]
-- [[personajes/fabian/cap-03|Entrada 03 — Perímetro]]
-- [[personajes/fabian/cap-04|Entrada 04 — Radio de acción]]
+<div class="expediente-docs-grid">
+<div class="expediente-col">
+<div class="expediente-col-title">Documentos Reconstruidos</div>
+<ul>
+<li><a href="/personajes/fabian/cap-01">Entrada 01 — Día normal</a></li>
+<li><a href="/personajes/fabian/cap-02">Entrada 02 — Primera salida</a></li>
+<li><a href="/personajes/fabian/cap-03">Entrada 03 — Perímetro</a></li>
+<li><a href="/personajes/fabian/cap-04">Entrada 04 — Radio de acción</a></li>
+</ul>
+</div>
+<div class="expediente-col">
+<div class="expediente-col-title">Documentos Originales</div>
+<ul>
+<li><a href="/documentos/fabian/libreta-01">Documento original 01</a></li>
+<li><a href="/documentos/fabian/libreta-02">Documento original 02</a></li>
+<li><a href="/documentos/fabian/libreta-03">Documento original 03</a></li>
+<li><a href="/documentos/fabian/libreta-04">Documento original 04</a></li>
+</ul>
+</div>
+</div>

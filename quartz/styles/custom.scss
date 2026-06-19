@@ -3860,3 +3860,46 @@ html[data-palette="fosfor"] {
   0%, 82.4% { stroke: var(--ekg-alive); }
   82.5%, 100% { stroke: var(--ekg-dead); }
 }
+
+// Expediente de sujeto — 2 columnas: reconstruido | original
+.expediente-docs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2rem;
+  margin: 1.5rem 0 0;
+}
+
+.expediente-col-title {
+  font-family: var(--headerFont);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+.expediente-col ul {
+  margin: 0;
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.expediente-col ul li {
+  margin: 0.3rem 0;
+  font-family: var(--headerFont);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+.expediente-col ul li a {
+  color: var(--secondary);
+  text-decoration: none;
+  &:hover { color: var(--dark); }
+}
+
+// Ocultar el listado auto-generado de Quartz en páginas de expediente
+article.expediente-sujeto ~ .page-listing {
+  display: none;
+}

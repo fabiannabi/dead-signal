@@ -5,7 +5,8 @@ codigo: F-05
 profesion: Ing. Biomédico / Maestro UAA
 origen: Campus Sur UAA, Aguascalientes
 clasificacion: Testimonial / Clase C
-capitulos: 4
+capitulos: 5
+cssclasses: [expediente-sujeto]
 ---
 
 :::archivist
@@ -23,10 +24,25 @@ F-05 era ingeniero biomédico y maestro en el campus sur de la UAA al momento de
 
 *Los documentos de F-05 incluyen libreta azul de campo, registros del sistema de acelerómetros y notas de voz recuperadas del dispositivo móvil. Las notas de voz fueron grabadas por el sujeto para transmisión al grupo de comunicación :redactado[███████████████] — ninguna completó la transmisión. Recuperadas del almacenamiento local del dispositivo.*
 
-## Documentos recuperados
-
-- [[personajes/carlos/cap-01|Entrada 01 — Inventario de lo que queda]]
-- [[personajes/carlos/cap-02|Entrada 02 — Cruzar el campo]]
-- [[personajes/carlos/cap-03|Entrada 03 — Firma]]
-- [[personajes/carlos/cap-04|Entrada 04 — Prueba de sistema]]
-- [[personajes/carlos/cap-05|Entrada 05 — Salida]]
+<div class="expediente-docs-grid">
+<div class="expediente-col">
+<div class="expediente-col-title">Documentos Reconstruidos</div>
+<ul>
+<li><a href="/personajes/carlos/cap-01">Entrada 01 — Inventario de lo que queda</a></li>
+<li><a href="/personajes/carlos/cap-02">Entrada 02 — Cruzar el campo</a></li>
+<li><a href="/personajes/carlos/cap-03">Entrada 03 — Firma</a></li>
+<li><a href="/personajes/carlos/cap-04">Entrada 04 — Prueba de sistema</a></li>
+<li><a href="/personajes/carlos/cap-05">Entrada 05 — Salida</a></li>
+</ul>
+</div>
+<div class="expediente-col">
+<div class="expediente-col-title">Documentos Originales</div>
+<ul>
+<li><a href="/documentos/carlos/libreta-01">Documento original 01</a></li>
+<li><a href="/documentos/carlos/libreta-02">Documento original 02</a></li>
+<li><a href="/documentos/carlos/libreta-03">Documento original 03</a></li>
+<li><a href="/documentos/carlos/libreta-04">Documento original 04</a></li>
+<li><a href="/documentos/carlos/libreta-05">Documento original 05</a></li>
+</ul>
+</div>
+</div>

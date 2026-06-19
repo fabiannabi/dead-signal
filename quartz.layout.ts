@@ -31,6 +31,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer({
       folderDefaultState: "collapsed",
       useSavedState: true,
+      filterFn: (node) => node.slugSegment !== "documentos",
       mapFn: (node) => {
         const names: Record<string, string> = {
           personajes: "Expedientes de Sujeto",
@@ -69,6 +70,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.Explorer({
       folderDefaultState: "collapsed",
       useSavedState: true,
+      filterFn: (node) => node.slugSegment !== "documentos",
       mapFn: (node) => {
         const names: Record<string, string> = {
           personajes: "Expedientes de Sujeto",
