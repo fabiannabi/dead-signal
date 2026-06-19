@@ -8,7 +8,7 @@ capitulo-relacionado: "[[personajes/fabian/cap-03]]"
 
 *Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 3 — Perímetro*
 
-**Archivo reconstruido:** [[personajes/fabian/cap-03|F-01 / Entrada 03 — Perímetro]]
+**Archivo reconstruido:** [[personajes/fabian/cap-03|F-01 / Documento 003]]
 
 ---
 

@@ -8,7 +8,7 @@ capitulo-relacionado: "[[personajes/fabian/cap-02]]"
 
 *Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 2 — Primera salida*
 
-**Archivo reconstruido:** [[personajes/fabian/cap-02|F-01 / Entrada 02 — Primera salida]]
+**Archivo reconstruido:** [[personajes/fabian/cap-02|F-01 / Documento 002]]
 
 ---
 

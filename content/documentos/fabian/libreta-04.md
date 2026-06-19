@@ -8,7 +8,7 @@ capitulo-relacionado: "[[personajes/fabian/cap-04]]"
 
 *Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 4 — Radio de acción*
 
-**Archivo reconstruido:** [[personajes/fabian/cap-04|F-01 / Entrada 04 — Radio de acción]]
+**Archivo reconstruido:** [[personajes/fabian/cap-04|F-01 / Documento 004]]
 
 ---
 
