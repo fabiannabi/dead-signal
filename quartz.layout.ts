@@ -31,7 +31,11 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer({
       folderDefaultState: "collapsed",
       useSavedState: true,
-      filterFn: (node) => node.slugSegment !== "documentos",
+      filterFn: (node) => {
+        if (node.slugSegment === "documentos") return false
+        if (!node.isFolder && (node.file?.slug ?? "").startsWith("personajes/")) return false
+        return true
+      },
       mapFn: (node) => {
         const names: Record<string, string> = {
           personajes: "Expedientes de Sujeto",
@@ -70,7 +74,11 @@ export const defaultListPageLayout: PageLayout = {
     Component.Explorer({
       folderDefaultState: "collapsed",
       useSavedState: true,
-      filterFn: (node) => node.slugSegment !== "documentos",
+      filterFn: (node) => {
+        if (node.slugSegment === "documentos") return false
+        if (!node.isFolder && (node.file?.slug ?? "").startsWith("personajes/")) return false
+        return true
+      },
       mapFn: (node) => {
         const names: Record<string, string> = {
           personajes: "Expedientes de Sujeto",
