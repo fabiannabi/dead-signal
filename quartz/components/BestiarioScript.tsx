@@ -121,7 +121,9 @@ function initAudioPlayers(){
     audio.parentNode.insertBefore(wrapper, audio);
     wrapper.appendChild(audio);
     audio.volume = 0.45;
-    volSlider.addEventListener('input',function(){ audio.volume=parseFloat(volSlider.value); });
+    function syncVolTrack(){ volSlider.style.setProperty('--vp', (parseFloat(volSlider.value)*100)+'%'); }
+    volSlider.addEventListener('input',function(){ audio.volume=parseFloat(volSlider.value); syncVolTrack(); });
+    syncVolTrack();
     audio.addEventListener('loadedmetadata',function(){ timeDur.textContent=fmt(audio.duration); });
     audio.addEventListener('timeupdate',function(){
       var pct=audio.duration?(audio.currentTime/audio.duration)*100:0;
@@ -379,9 +381,9 @@ function initNarratorRadioEffect(){
         lp.frequency.value = 3300;
         lp.Q.value = 0.8;
 
-        // 5. Output gain
+        // 5. Output gain — keep below unity, filters already cut volume
         var gain = ctx.createGain();
-        gain.gain.value = 1.4;
+        gain.gain.value = 0.55;
 
         // Main signal chain
         src.connect(hp);

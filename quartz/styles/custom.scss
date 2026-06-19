@@ -3103,12 +3103,12 @@ table {
     .sm-signal span { background: #6a4818; }
     .sm-time     { color: #7a5828; }
     .sm-time-cur { color: #b07830; }
-    .sm-vol-label { color: #5a3e18; }
+    .sm-vol-label { color: #5a3e18; opacity: 1; }
     .sm-vol-slider {
-      background: #2e2010;
-      &::-webkit-slider-thumb { background: #c8882a; }
-      &::-moz-range-thumb     { background: #c8882a; }
-      &::-webkit-slider-runnable-track { background: #2e2010; }
+      background: linear-gradient(to right, #8a5418 var(--vp, 45%), #2e2010 var(--vp, 45%));
+      &::-webkit-slider-thumb { background: #e8a030; }
+      &::-moz-range-thumb     { background: #e8a030; }
+      &::-webkit-slider-runnable-track { background: transparent; }
       &::-moz-range-track              { background: #2e2010; }
       &::-moz-range-progress           { background: #8a5418; }
     }
@@ -3196,42 +3196,51 @@ table {
 .sm-vol {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   flex-shrink: 0;
 }
 .sm-vol-label {
   font-family: var(--codeFont);
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
   color: var(--gray);
+  opacity: 0.6;
   user-select: none;
 }
 .sm-vol-slider {
   -webkit-appearance: none;
   appearance: none;
-  width: 56px;
+  width: 54px;
   height: 2px;
-  background: #{$border2};
+  // --vp set by JS to show fill; fallback to 45%
+  background: linear-gradient(to right, var(--tertiary) var(--vp, 45%), #{$border2} var(--vp, 45%));
   outline: none;
   cursor: pointer;
   border-radius: 0;
+  padding: 0;
+  margin: 0;
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 9px; height: 9px;
+    width: 2px;
+    height: 10px;
     background: var(--secondary);
-    border-radius: 50%;
+    border-radius: 0;
     cursor: pointer;
+    margin-top: -4px;
+  }
+  &::-webkit-slider-runnable-track {
+    height: 2px;
+    background: transparent;
   }
   &::-moz-range-thumb {
-    width: 9px; height: 9px;
+    width: 2px; height: 10px;
     background: var(--secondary);
     border: none;
-    border-radius: 50%;
+    border-radius: 0;
     cursor: pointer;
   }
-  &::-webkit-slider-runnable-track { background: #{$border2}; height: 2px; }
-  &::-moz-range-track { background: #{$border2}; height: 2px; }
-  &::-moz-range-progress { background: var(--tertiary); }
+  &::-moz-range-track    { background: #{$border2}; height: 2px; border: none; }
+  &::-moz-range-progress { background: var(--tertiary); height: 2px; }
 }
 @keyframes smvu1 { 0%,100% { height:  4px; } 50% { height: 14px; } }
 @keyframes smvu2 { 0%,100% { height: 10px; } 50% { height:  4px; } }
