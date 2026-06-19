@@ -12,35 +12,40 @@ title: "Expedientes de Sujeto"
     <span>Origen</span>
     <span>Docs.</span>
   </div>
-  <a class="sujeto-fila" href="/personajes/fabian/">
+  <a class="sujeto-fila signal-good" href="/personajes/fabian/">
+    <span class="sujeto-avatar"></span>
     <span class="sujeto-codigo">F-01</span>
     <span class="sujeto-nombre">Fabián</span>
     <span class="sujeto-rol">Ing. Bioquímica / Programador</span>
     <span class="sujeto-origen">Col. San Marcos, Ags.</span>
     <span class="sujeto-docs">4</span>
   </a>
-  <a class="sujeto-fila" href="/personajes/felipe/">
+  <a class="sujeto-fila signal-good" href="/personajes/felipe/">
+    <span class="sujeto-avatar"></span>
     <span class="sujeto-codigo">F-02</span>
     <span class="sujeto-nombre">Felipe</span>
     <span class="sujeto-rol">Médico Urgenciólogo</span>
     <span class="sujeto-origen">Hospital General, Ags.</span>
     <span class="sujeto-docs">4</span>
   </a>
-  <a class="sujeto-fila disabled" href="#">
+  <a class="sujeto-fila disabled signal-weak" href="#">
+    <span class="sujeto-avatar"></span>
     <span class="sujeto-codigo">F-03</span>
     <span class="sujeto-nombre">Gaby</span>
     <span class="sujeto-rol">Médico Anestesiólogo</span>
     <span class="sujeto-origen">Carretera km 87</span>
     <span class="sujeto-docs">1</span>
   </a>
-  <a class="sujeto-fila disabled" href="#">
+  <a class="sujeto-fila disabled signal-denied" href="#">
+    <span class="sujeto-avatar"></span>
     <span class="sujeto-codigo">F-04</span>
     <span class="sujeto-nombre">Aarón</span>
     <span class="sujeto-rol">Ing. Químico</span>
     <span class="sujeto-origen"><span class="redacted">████████</span></span>
     <span class="sujeto-docs">0</span>
   </a>
-  <a class="sujeto-fila" href="/personajes/carlos/">
+  <a class="sujeto-fila signal-good" href="/personajes/carlos/">
+    <span class="sujeto-avatar"></span>
     <span class="sujeto-codigo">F-05</span>
     <span class="sujeto-nombre">Carlos</span>
     <span class="sujeto-rol">Ing. Biomédico / Maestro UAA</span>
