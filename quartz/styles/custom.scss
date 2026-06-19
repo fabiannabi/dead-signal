@@ -2876,7 +2876,7 @@ table {
 .media-caption {
   font-family: var(--codeFont);
   font-size: 1rem;
-  color: var(--gray);
+  color: var(--darkgray);
   padding: 0.625rem 0.875rem;
   border-top: 1px solid var(--lightgray);
   letter-spacing: 0.04em;
@@ -2911,7 +2911,7 @@ table {
 }
 .media-ev-id {
   font-family: var(--codeFont);
-  font-size: 0.625rem;
+  font-size: 0.78rem;
   color: var(--darkgray);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2923,7 +2923,7 @@ table {
 }
 .media-ev-clase {
   font-family: var(--codeFont);
-  font-size: 0.625rem;
+  font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--secondary);
@@ -2939,14 +2939,14 @@ table {
 }
 .media-ev-caption {
   font-family: var(--codeFont);
-  font-size: 0.75rem;
+  font-size: 0.92rem;
   color: var(--dark);
   letter-spacing: 0.03em;
   line-height: 1.5;
 }
 .media-ev-meta {
   font-family: var(--codeFont);
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   color: var(--darkgray);
   letter-spacing: 0.08em;
   white-space: nowrap;
