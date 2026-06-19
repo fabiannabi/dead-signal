@@ -55,7 +55,7 @@ export const defaultContentPageLayout: PageLayout = {
         }
       },
     }),
-    Component.PaletteSwitcher(),
+    // Component.PaletteSwitcher(),
   ],
   right: [],
 }
@@ -93,7 +93,7 @@ export const defaultListPageLayout: PageLayout = {
         }
       },
     }),
-    Component.PaletteSwitcher(),
+    // Component.PaletteSwitcher(),
   ],
   right: [],
 }
