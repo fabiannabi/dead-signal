@@ -8,7 +8,7 @@ capitulo-relacionado: "[[personajes/fabian/cap-04]]"
 
 
 > [!doc-ref] Archivo reconstruido
-> [[personajes/fabian/cap-04|F-01 / Documento 004]]
+> [[personajes/fabian/cap-04|F-01 — Documento 004]]
 
 ---
 

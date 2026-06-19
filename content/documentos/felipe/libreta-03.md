@@ -3,7 +3,7 @@ title: "Documento original 03"
 ---
 
 > [!doc-ref] Archivo reconstruido
-> [[personajes/felipe/cap-03|F-02 / Documento 003]]
+> [[personajes/felipe/cap-03|F-02 — Documento 003]]
 
 
 ---

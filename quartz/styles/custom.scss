@@ -4130,11 +4130,11 @@ article.expediente-sujeto ~ .page-listing {
 
 // ── Callout: referencia a documento reconstruido ──
 .callout[data-callout="doc-ref"] {
-  background: rgba(51, 255, 102, 0.03);
+  background: rgba(51, 255, 102, 0.06);
   border: none;
   border-left: 2px solid var(--secondary);
   border-radius: 0;
-  padding: 0.75rem 0 0.75rem 1.1rem;
+  padding: 1rem 1.2rem 1rem 1.2rem;
   margin: 0 0 1.8rem;
 
   .callout-icon { display: none; }
@@ -4144,18 +4144,18 @@ article.expediente-sujeto ~ .page-listing {
     padding: 0;
     background: transparent;
     gap: 0;
-    margin-bottom: 0.55rem;
+    margin-bottom: 0.6rem;
 
     .callout-title-inner {
-      font-size: 0; // reemplazado por ::before
+      font-size: 0;
       &::before {
         content: 'Documento reconstruido — Archivo APE / Comité de Recuperación';
         font-family: var(--codeFont);
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: var(--secondary);
-        opacity: 0.7;
+        opacity: 1;
       }
     }
   }
@@ -4167,11 +4167,11 @@ article.expediente-sujeto ~ .page-listing {
       content: 'Este documento fue procesado y reconstruido a partir de la fuente primaria por el Comité de Recuperación Post-Emergencia. El registro está disponible dentro del archivo APE.';
       display: block;
       font-family: var(--codeFont);
-      font-size: 0.85rem;
-      color: var(--gray);
-      line-height: 1.65;
-      margin-bottom: 0.85rem;
-      opacity: 0.75;
+      font-size: 0.88rem;
+      color: var(--dark);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      opacity: 1;
     }
 
     p {
@@ -4179,22 +4179,21 @@ article.expediente-sujeto ~ .page-listing {
 
       a {
         font-family: var(--codeFont);
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         letter-spacing: 0.06em;
-        color: var(--dark);
-        text-decoration: none;
-        transition: color 0.15s;
+        color: var(--secondary);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-color: rgba(51, 255, 102, 0.4);
+        transition: text-decoration-color 0.15s;
 
         &::after {
           content: ' →';
-          color: var(--secondary);
-          opacity: 0.6;
-          transition: opacity 0.15s;
+          text-decoration: none;
         }
 
         &:hover {
-          color: var(--secondary);
-          &::after { opacity: 1; }
+          text-decoration-color: var(--secondary);
         }
       }
     }

@@ -3,7 +3,7 @@ title: "Documento original 02"
 ---
 
 > [!doc-ref] Archivo reconstruido
-> [[personajes/carlos/cap-02|F-05 / Documento 002]]
+> [[personajes/carlos/cap-02|F-05 — Documento 002]]
 
 
 ---
