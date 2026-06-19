@@ -383,7 +383,7 @@ function initNarratorRadioEffect(){
 
         // 5. Output gain — keep below unity, filters already cut volume
         var gain = ctx.createGain();
-        gain.gain.value = 0.38;
+        gain.gain.value = 0.26;
 
         // Main signal chain
         src.connect(hp);
