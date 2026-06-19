@@ -3640,3 +3640,191 @@ table {
     th:last-child { display: none; }
   }
 }
+
+// ── Telemetría widget — AH-INC-001 ──────────────────────────────────────────
+
+:root {
+  --ekg-alive: #2a6a35;
+  --ekg-dead:  #5a1a1a;
+}
+
+html[data-palette="fosfor"] {
+  --ekg-alive: var(--secondary);
+  --ekg-dead:  #c83a2a;
+}
+
+.telemetria-widget {
+  font-family: var(--codeFont);
+  background: #030806;
+  border: 1px solid #1a3a20;
+  border-radius: 2px;
+  padding: 1rem 1.2rem 0.8rem;
+  margin: 1.5rem 0 2rem;
+  color: #3a6a40;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+
+  .tw-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.3rem;
+    padding-bottom: 0.55rem;
+    margin-bottom: 0.6rem;
+    border-bottom: 1px solid #1a3a20;
+  }
+
+  .tw-id {
+    color: #4aaa55;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+
+  .tw-range {
+    color: #2a5a30;
+    font-size: 0.58rem;
+  }
+
+  .tw-channel { margin-bottom: 0.25rem; }
+
+  .tw-ch-label {
+    display: block;
+    font-size: 0.54rem;
+    letter-spacing: 0.14em;
+    color: #2a5a30;
+    margin-bottom: 0.1rem;
+  }
+
+  .tw-svg {
+    display: block;
+    width: 100%;
+    height: 70px;
+    overflow: visible;
+  }
+
+  .tw-ekg-svg { height: 110px; }
+
+  .tw-path {
+    fill: none;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation-fill-mode: both;
+  }
+
+  .tw-acoustic-calm {
+    stroke: #2a6a35;
+    stroke-width: 1.5;
+    animation: tw-draw 10.95s linear forwards;
+  }
+
+  .tw-acoustic-chaos {
+    stroke: #3aaa55;
+    stroke-width: 1.8;
+    animation: tw-draw 4.05s linear 10.95s both;
+  }
+
+  .tw-ekg {
+    stroke: var(--ekg-alive);
+    stroke-width: 1.2;
+    animation: tw-draw 15s linear forwards;
+  }
+
+  .tw-ekg-1 { animation: tw-draw 15s linear forwards, tw-ekg-1-color 15s linear forwards; }
+  .tw-ekg-2 { animation: tw-draw 15s linear forwards, tw-ekg-2-color 15s linear forwards; }
+  .tw-ekg-3 { animation: tw-draw 15s linear forwards, tw-ekg-3-color 15s linear forwards; }
+
+  .tw-ev-warn {
+    stroke: #7a6a20;
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+    opacity: 0;
+    animation: tw-appear 0.15s linear 6.56s forwards;
+  }
+
+  .tw-ev-crit {
+    stroke: #7a2a20;
+    stroke-width: 1;
+    stroke-dasharray: 2 2;
+    opacity: 0;
+    animation: tw-appear 0.15s linear 10.95s forwards;
+  }
+
+  .tw-timeline {
+    position: relative;
+    height: 1.4rem;
+    margin: 0.15rem 0 0.1rem;
+    border-top: 1px solid #1a3a20;
+  }
+
+  .tw-tick {
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: 0.54rem;
+    color: #2a5a30;
+    padding-top: 0.15rem;
+    white-space: nowrap;
+    &:first-child { transform: none; }
+    &:last-child  { transform: translateX(-100%); }
+  }
+
+  .tw-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    margin-top: 0.25rem;
+    padding-top: 0.35rem;
+    border-top: 1px solid #1a3a20;
+  }
+
+  .tw-leg      { font-size: 0.56rem; }
+  .tw-leg-warn { color: #7a6a20; }
+  .tw-leg-crit { color: #7a2a20; }
+  .tw-leg-loss { color: #8a2020; }
+
+  html[data-palette="fosfor"] & {
+    background: rgba(0, 3, 0, 0.75);
+    border-color: rgba(51, 255, 102, 0.15);
+    color: #4aaa55;
+
+    .tw-header { border-color: rgba(51, 255, 102, 0.15); }
+    .tw-id     { color: var(--secondary); text-shadow: 0 0 6px rgba(51,255,102,0.35); }
+    .tw-range, .tw-ch-label { color: var(--gray); }
+
+    .tw-acoustic-calm  { stroke: var(--secondary); }
+    .tw-acoustic-chaos { stroke: var(--secondary); filter: drop-shadow(0 0 2px #33ff66); }
+    .tw-ev-warn  { stroke: #c8a84a; }
+    .tw-ev-crit  { stroke: #c83a2a; }
+
+    .tw-timeline { border-color: rgba(51,255,102,0.15); }
+    .tw-tick     { color: var(--gray); }
+    .tw-legend   { border-color: rgba(51,255,102,0.15); }
+    .tw-leg-warn { color: #c8a84a; }
+    .tw-leg-crit { color: #c83a2a; }
+    .tw-leg-loss { color: #c82020; }
+  }
+}
+
+@keyframes tw-draw {
+  from { stroke-dashoffset: 1; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes tw-appear {
+  to { opacity: 1; }
+}
+
+@keyframes tw-ekg-1-color {
+  0%, 72.9% { stroke: var(--ekg-alive); }
+  73%, 100%  { stroke: var(--ekg-dead); }
+}
+
+@keyframes tw-ekg-2-color {
+  0%, 77.4% { stroke: var(--ekg-alive); }
+  77.5%, 100% { stroke: var(--ekg-dead); }
+}
+
+@keyframes tw-ekg-3-color {
+  0%, 82.4% { stroke: var(--ekg-alive); }
+  82.5%, 100% { stroke: var(--ekg-dead); }
+}
