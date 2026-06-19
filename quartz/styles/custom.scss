@@ -2676,15 +2676,15 @@ table {
 .conf-desc {
   font-family: "Crimson Pro", Georgia, serif;
   font-size: 1.1rem;
-  color: #8a8670;
+  color: var(--darkgray);
   margin-bottom: 0.5rem;
   line-height: 1.75;
 }
 .conf-access {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: #{$red};
-  letter-spacing: 0.06em;
-  opacity: 0.85;
+  letter-spacing: 0.08em;
+  opacity: 1;
 }
 .conf-doc-link {
   color: var(--darkgray);
