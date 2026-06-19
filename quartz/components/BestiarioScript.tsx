@@ -330,11 +330,61 @@ function initSeismicPanel(){
   document.addEventListener('nav', render);
 }
 
+// ── Narrator radio effect (Web Audio API) ──────────────────────
+function initNarratorRadioEffect(){
+  var AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+  if(!AudioCtx) return;
+  document.querySelectorAll('.audio-evidence-item.featured audio').forEach(function(audio: any){
+    var hooked = false;
+    function buildChain(){
+      if(hooked) return;
+      hooked = true;
+      try {
+        var ctx = new AudioCtx();
+        var src = ctx.createMediaElementSource(audio);
+        // Highpass: cut below 320 Hz (remove bass/body)
+        var hp = ctx.createBiquadFilter();
+        hp.type = 'highpass';
+        hp.frequency.value = 320;
+        hp.Q.value = 0.8;
+        // Presence boost: radio mid character ~1.2 kHz
+        var peak = ctx.createBiquadFilter();
+        peak.type = 'peaking';
+        peak.frequency.value = 1200;
+        peak.gain.value = 6;
+        peak.Q.value = 1.8;
+        // Lowpass: cut above 3400 Hz (narrow telephone band)
+        var lp = ctx.createBiquadFilter();
+        lp.type = 'lowpass';
+        lp.frequency.value = 3400;
+        lp.Q.value = 0.8;
+        // Gain compensation for lost volume after filtering
+        var gain = ctx.createGain();
+        gain.gain.value = 1.5;
+        src.connect(hp);
+        hp.connect(peak);
+        peak.connect(lp);
+        lp.connect(gain);
+        gain.connect(ctx.destination);
+        if(ctx.state === 'suspended') ctx.resume();
+      } catch(e){}
+    }
+    // Hook on first play interaction (bypass browser autoplay policy)
+    var wrapper = audio.closest('.sm-player');
+    if(!wrapper) return;
+    var btn = wrapper.querySelector('.sm-play-btn');
+    var bar = wrapper.querySelector('.sm-bar');
+    if(btn) btn.addEventListener('click', buildChain);
+    if(bar) bar.addEventListener('click', buildChain);
+  });
+}
+
 // ── Init on load and SPA navigation ────────────────────────────
 function init(){
   initTagFilter();
   initThreatOverlay();
   initAudioPlayers();
+  initNarratorRadioEffect();
   buildInstitutionalFooter();
   initSeismicPanel();
 }
