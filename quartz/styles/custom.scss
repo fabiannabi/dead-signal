@@ -4151,8 +4151,8 @@ article.expediente-sujeto ~ .page-listing {
       &::before {
         content: 'Documento reconstruido — Archivo APE / Comité de Recuperación';
         font-family: var(--codeFont);
-        font-size: 0.62rem;
-        letter-spacing: 0.18em;
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
         color: var(--secondary);
         opacity: 0.7;
@@ -4167,11 +4167,11 @@ article.expediente-sujeto ~ .page-listing {
       content: 'Este documento fue procesado y reconstruido a partir de la fuente primaria por el Comité de Recuperación Post-Emergencia. El registro está disponible dentro del archivo APE.';
       display: block;
       font-family: var(--codeFont);
-      font-size: 0.68rem;
+      font-size: 0.85rem;
       color: var(--gray);
       line-height: 1.65;
-      margin-bottom: 0.75rem;
-      opacity: 0.7;
+      margin-bottom: 0.85rem;
+      opacity: 0.75;
     }
 
     p {
@@ -4179,7 +4179,7 @@ article.expediente-sujeto ~ .page-listing {
 
       a {
         font-family: var(--codeFont);
-        font-size: 1rem;
+        font-size: 1.1rem;
         letter-spacing: 0.06em;
         color: var(--dark);
         text-decoration: none;
