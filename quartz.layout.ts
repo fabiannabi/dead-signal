@@ -33,7 +33,7 @@ export const defaultContentPageLayout: PageLayout = {
       useSavedState: true,
       filterFn: (node) => {
         if (node.slugSegment === "documentos") return false
-        const slug = node.file?.slug ?? ""
+        const slug = node.slug
         if (slug.startsWith("personajes/") && slug !== "personajes/index") return false
         return true
       },
@@ -77,7 +77,7 @@ export const defaultListPageLayout: PageLayout = {
       useSavedState: true,
       filterFn: (node) => {
         if (node.slugSegment === "documentos") return false
-        const slug = node.file?.slug ?? ""
+        const slug = node.slug
         if (slug.startsWith("personajes/") && slug !== "personajes/index") return false
         return true
       },
