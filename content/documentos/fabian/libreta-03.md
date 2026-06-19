@@ -1,4 +1,4 @@
----
+﻿---
 title: "Documento original 03"
 tipo: documento
 personaje: fabian
@@ -6,9 +6,9 @@ formato: field
 capitulo-relacionado: "[[personajes/fabian/cap-03]]"
 ---
 
-*Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 3 — Perímetro*
 
-**Archivo reconstruido:** [[personajes/fabian/cap-03|F-01 / Documento 003]]
+> [!doc-ref] Archivo reconstruido
+> [[personajes/fabian/cap-03|F-01 / Documento 003]]
 
 ---
 

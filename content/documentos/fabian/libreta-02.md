@@ -1,4 +1,4 @@
----
+﻿---
 title: "Documento original 02"
 tipo: documento
 personaje: fabian
@@ -6,9 +6,9 @@ formato: field
 capitulo-relacionado: "[[personajes/fabian/cap-02]]"
 ---
 
-*Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 2 — Primera salida*
 
-**Archivo reconstruido:** [[personajes/fabian/cap-02|F-01 / Documento 002]]
+> [!doc-ref] Archivo reconstruido
+> [[personajes/fabian/cap-02|F-01 / Documento 002]]
 
 ---
 

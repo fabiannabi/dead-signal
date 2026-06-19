@@ -2,8 +2,8 @@
 title: "Documento original 05"
 ---
 
-*Señal Muerta — Crónicas de la Emergencia* / *Carlos — Entrada 05*
-**Archivo reconstruido:** [[personajes/carlos/cap-05|F-05 / Documento 005]]
+> [!doc-ref] Archivo reconstruido
+> [[personajes/carlos/cap-05|F-05 / Documento 005]]
 
 
 ---

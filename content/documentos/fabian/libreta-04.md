@@ -1,4 +1,4 @@
----
+﻿---
 title: "Documento original 04"
 tipo: documento
 personaje: fabian
@@ -6,9 +6,9 @@ formato: field
 capitulo-relacionado: "[[personajes/fabian/cap-04]]"
 ---
 
-*Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 4 — Radio de acción*
 
-**Archivo reconstruido:** [[personajes/fabian/cap-04|F-01 / Documento 004]]
+> [!doc-ref] Archivo reconstruido
+> [[personajes/fabian/cap-04|F-01 / Documento 004]]
 
 ---
 

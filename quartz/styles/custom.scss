@@ -4127,3 +4127,51 @@ html[data-palette="fosfor"] {
 article.expediente-sujeto ~ .page-listing {
   display: none;
 }
+
+// ── Callout: referencia a documento reconstruido ──
+.callout[data-callout="doc-ref"] {
+  background: rgba(51, 255, 102, 0.03);
+  border: none;
+  border-left: 2px solid var(--secondary);
+  border-radius: 0;
+  padding: 0.55rem 0 0.55rem 1rem;
+  margin: 0 0 1.6rem;
+
+  .callout-icon { display: none; }
+  .fold-callout-icon { display: none; }
+
+  .callout-title {
+    padding: 0;
+    background: transparent;
+    gap: 0;
+    margin-bottom: 0.35rem;
+
+    .callout-title-inner {
+      font-family: var(--codeFont);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      opacity: 0.65;
+    }
+  }
+
+  .callout-content {
+    padding: 0;
+
+    p {
+      margin: 0;
+
+      a {
+        font-family: var(--codeFont);
+        font-size: 0.88rem;
+        letter-spacing: 0.06em;
+        color: var(--dark);
+        text-decoration: none;
+        transition: color 0.15s;
+
+        &:hover { color: var(--secondary); }
+      }
+    }
+  }
+}

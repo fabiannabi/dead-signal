@@ -2,8 +2,8 @@
 title: "Documento original 03"
 ---
 
-*Señal Muerta — Crónicas de la Emergencia* / *Carlos — Entrada 03*
-**Archivo reconstruido:** [[personajes/carlos/cap-03|F-05 / Documento 003]]
+> [!doc-ref] Archivo reconstruido
+> [[personajes/carlos/cap-03|F-05 / Documento 003]]
 
 
 ---

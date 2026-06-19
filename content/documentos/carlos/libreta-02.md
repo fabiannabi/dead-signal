@@ -2,8 +2,8 @@
 title: "Documento original 02"
 ---
 
-*Señal Muerta — Crónicas de la Emergencia* / *Carlos — Entrada 02*
-**Archivo reconstruido:** [[personajes/carlos/cap-02|F-05 / Documento 002]]
+> [!doc-ref] Archivo reconstruido
+> [[personajes/carlos/cap-02|F-05 / Documento 002]]
 
 
 ---
