@@ -112,9 +112,16 @@ function initAudioPlayers(){
     track.appendChild(bar); track.appendChild(timeRow);
     var signal=document.createElement('div'); signal.className='sm-signal';
     for(var i=0;i<5;i++) signal.appendChild(document.createElement('span'));
-    wrapper.appendChild(playBtn); wrapper.appendChild(track); wrapper.appendChild(signal);
+    var volRow=document.createElement('div'); volRow.className='sm-vol';
+    var volLabel=document.createElement('span'); volLabel.className='sm-vol-label'; volLabel.textContent='VOL';
+    var volSlider=document.createElement('input'); volSlider.type='range'; volSlider.className='sm-vol-slider';
+    volSlider.min='0'; volSlider.max='1'; volSlider.step='0.05'; volSlider.value='0.45';
+    volRow.appendChild(volLabel); volRow.appendChild(volSlider);
+    wrapper.appendChild(playBtn); wrapper.appendChild(track); wrapper.appendChild(signal); wrapper.appendChild(volRow);
     audio.parentNode.insertBefore(wrapper, audio);
     wrapper.appendChild(audio);
+    audio.volume = 0.45;
+    volSlider.addEventListener('input',function(){ audio.volume=parseFloat(volSlider.value); });
     audio.addEventListener('loadedmetadata',function(){ timeDur.textContent=fmt(audio.duration); });
     audio.addEventListener('timeupdate',function(){
       var pct=audio.duration?(audio.currentTime/audio.duration)*100:0;

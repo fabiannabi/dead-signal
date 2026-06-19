@@ -3103,6 +3103,15 @@ table {
     .sm-signal span { background: #6a4818; }
     .sm-time     { color: #7a5828; }
     .sm-time-cur { color: #b07830; }
+    .sm-vol-label { color: #5a3e18; }
+    .sm-vol-slider {
+      background: #2e2010;
+      &::-webkit-slider-thumb { background: #c8882a; }
+      &::-moz-range-thumb     { background: #c8882a; }
+      &::-webkit-slider-runnable-track { background: #2e2010; }
+      &::-moz-range-track              { background: #2e2010; }
+      &::-moz-range-progress           { background: #8a5418; }
+    }
   }
 
   .sm-player[data-state="playing"] .sm-signal span { opacity: 1; }
@@ -3184,6 +3193,46 @@ table {
   &:nth-child(5) { animation: smvu3 1.00s ease-in-out infinite; }
 }
 .sm-player audio { display: none; }
+.sm-vol {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+.sm-vol-label {
+  font-family: var(--codeFont);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  user-select: none;
+}
+.sm-vol-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 56px;
+  height: 2px;
+  background: #{$border2};
+  outline: none;
+  cursor: pointer;
+  border-radius: 0;
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 9px; height: 9px;
+    background: var(--secondary);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  &::-moz-range-thumb {
+    width: 9px; height: 9px;
+    background: var(--secondary);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  &::-webkit-slider-runnable-track { background: #{$border2}; height: 2px; }
+  &::-moz-range-track { background: #{$border2}; height: 2px; }
+  &::-moz-range-progress { background: var(--tertiary); }
+}
 @keyframes smvu1 { 0%,100% { height:  4px; } 50% { height: 14px; } }
 @keyframes smvu2 { 0%,100% { height: 10px; } 50% { height:  4px; } }
 @keyframes smvu3 { 0%,100% { height:  7px; } 50% { height: 16px; } }
