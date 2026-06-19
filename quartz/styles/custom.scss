@@ -3861,6 +3861,21 @@ html[data-palette="fosfor"] {
   82.5%, 100% { stroke: var(--ekg-dead); }
 }
 
+// Explorer sidebar — sin flecha en folders sin hijos, texto más grande
+li:has(> .folder-outer > ul:not(:has(> li))) > .folder-container > svg.folder-icon {
+  display: none !important;
+}
+
+.folder-container div > a,
+.folder-container div > button span.folder-title {
+  font-size: 1.1rem !important;
+  letter-spacing: 0.06em;
+}
+
+.explorer-content .explorer-ul > li > a {
+  font-size: 1.05rem !important;
+}
+
 // Expediente de sujeto — 2 columnas: reconstruido | original
 .expediente-docs-grid {
   display: grid;
