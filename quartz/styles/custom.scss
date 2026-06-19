@@ -4134,8 +4134,8 @@ article.expediente-sujeto ~ .page-listing {
   border: none;
   border-left: 2px solid var(--secondary);
   border-radius: 0;
-  padding: 0.55rem 0 0.55rem 1rem;
-  margin: 0 0 1.6rem;
+  padding: 0.75rem 0 0.75rem 1.1rem;
+  margin: 0 0 1.8rem;
 
   .callout-icon { display: none; }
   .fold-callout-icon { display: none; }
@@ -4144,33 +4144,58 @@ article.expediente-sujeto ~ .page-listing {
     padding: 0;
     background: transparent;
     gap: 0;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.55rem;
 
     .callout-title-inner {
-      font-family: var(--codeFont);
-      font-size: 0.58rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--secondary);
-      opacity: 0.65;
+      font-size: 0; // reemplazado por ::before
+      &::before {
+        content: 'Documento reconstruido — Archivo APE / Comité de Recuperación';
+        font-family: var(--codeFont);
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--secondary);
+        opacity: 0.7;
+      }
     }
   }
 
   .callout-content {
     padding: 0;
 
+    &::before {
+      content: 'Este documento fue procesado y reconstruido a partir de la fuente primaria por el Comité de Recuperación Post-Emergencia. El registro está disponible dentro del archivo APE.';
+      display: block;
+      font-family: var(--codeFont);
+      font-size: 0.68rem;
+      color: var(--gray);
+      line-height: 1.65;
+      margin-bottom: 0.75rem;
+      opacity: 0.7;
+    }
+
     p {
       margin: 0;
 
       a {
         font-family: var(--codeFont);
-        font-size: 0.88rem;
+        font-size: 1rem;
         letter-spacing: 0.06em;
         color: var(--dark);
         text-decoration: none;
         transition: color 0.15s;
 
-        &:hover { color: var(--secondary); }
+        &::after {
+          content: ' →';
+          color: var(--secondary);
+          opacity: 0.6;
+          transition: opacity 0.15s;
+        }
+
+        &:hover {
+          color: var(--secondary);
+          &::after { opacity: 1; }
+        }
       }
     }
   }
