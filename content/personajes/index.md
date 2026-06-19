@@ -1,57 +1,85 @@
 ---
 title: "Expedientes de Sujeto"
+cssclasses: [expediente-index]
 ---
 
 <div class="archivo-stamp">Archivo de Recuperación Post-Emergencia — Inventario de Sujetos Documentados</div>
 
-<div class="sujeto-tabla">
-  <div class="sujeto-fila encabezado">
-    <span>Código</span>
-    <span>Sujeto</span>
-    <span>Rol</span>
-    <span>Origen</span>
-    <span>Docs.</span>
+<div class="expediente-grid">
+
+  <a class="exp-card signal-good" href="/personajes/fabian/">
+    <div class="exp-card-header">
+      <span class="exp-codigo">F-01</span>
+      <span class="exp-signal"></span>
+    </div>
+    <div class="exp-avatar"></div>
+    <div class="exp-nombre">Fabián</div>
+    <div class="exp-rol">Ing. Bioquímica / Programador</div>
+    <div class="exp-origen">Col. San Marcos, Aguascalientes</div>
+    <div class="exp-footer">
+      <span class="exp-docs">4 documentos recuperados</span>
+      <span class="exp-cta"></span>
+    </div>
+  </a>
+
+  <a class="exp-card signal-good" href="/personajes/felipe/">
+    <div class="exp-card-header">
+      <span class="exp-codigo">F-02</span>
+      <span class="exp-signal"></span>
+    </div>
+    <div class="exp-avatar"></div>
+    <div class="exp-nombre">Felipe</div>
+    <div class="exp-rol">Médico Urgenciólogo</div>
+    <div class="exp-origen">Hospital General, Aguascalientes</div>
+    <div class="exp-footer">
+      <span class="exp-docs">4 documentos recuperados</span>
+      <span class="exp-cta"></span>
+    </div>
+  </a>
+
+  <a class="exp-card signal-good" href="/personajes/carlos/">
+    <div class="exp-card-header">
+      <span class="exp-codigo">F-05</span>
+      <span class="exp-signal"></span>
+    </div>
+    <div class="exp-avatar"></div>
+    <div class="exp-nombre">Carlos</div>
+    <div class="exp-rol">Ing. Biomédico / Maestro UAA</div>
+    <div class="exp-origen">Campus Sur UAA, Aguascalientes</div>
+    <div class="exp-footer">
+      <span class="exp-docs">5 documentos recuperados</span>
+      <span class="exp-cta"></span>
+    </div>
+  </a>
+
+  <div class="exp-card signal-weak disabled">
+    <div class="exp-card-header">
+      <span class="exp-codigo">F-03</span>
+      <span class="exp-signal"></span>
+    </div>
+    <div class="exp-avatar"></div>
+    <div class="exp-nombre">Gaby</div>
+    <div class="exp-rol">Médico Anestesiólogo</div>
+    <div class="exp-origen">Carretera km 87</div>
+    <div class="exp-footer">
+      <span class="exp-docs">datos insuficientes</span>
+    </div>
   </div>
-  <a class="sujeto-fila signal-good" href="/personajes/fabian/">
-    <span class="sujeto-avatar"></span>
-    <span class="sujeto-codigo">F-01</span>
-    <span class="sujeto-nombre">Fabián</span>
-    <span class="sujeto-rol">Ing. Bioquímica / Programador</span>
-    <span class="sujeto-origen">Col. San Marcos, Ags.</span>
-    <span class="sujeto-docs">4</span>
-  </a>
-  <a class="sujeto-fila signal-good" href="/personajes/felipe/">
-    <span class="sujeto-avatar"></span>
-    <span class="sujeto-codigo">F-02</span>
-    <span class="sujeto-nombre">Felipe</span>
-    <span class="sujeto-rol">Médico Urgenciólogo</span>
-    <span class="sujeto-origen">Hospital General, Ags.</span>
-    <span class="sujeto-docs">4</span>
-  </a>
-  <a class="sujeto-fila disabled signal-weak" href="#">
-    <span class="sujeto-avatar"></span>
-    <span class="sujeto-codigo">F-03</span>
-    <span class="sujeto-nombre">Gaby</span>
-    <span class="sujeto-rol">Médico Anestesiólogo</span>
-    <span class="sujeto-origen">Carretera km 87</span>
-    <span class="sujeto-docs">1</span>
-  </a>
-  <a class="sujeto-fila disabled signal-denied" href="#">
-    <span class="sujeto-avatar"></span>
-    <span class="sujeto-codigo">F-04</span>
-    <span class="sujeto-nombre">Aarón</span>
-    <span class="sujeto-rol">Ing. Químico</span>
-    <span class="sujeto-origen"><span class="redacted">████████</span></span>
-    <span class="sujeto-docs">0</span>
-  </a>
-  <a class="sujeto-fila signal-good" href="/personajes/carlos/">
-    <span class="sujeto-avatar"></span>
-    <span class="sujeto-codigo">F-05</span>
-    <span class="sujeto-nombre">Carlos</span>
-    <span class="sujeto-rol">Ing. Biomédico / Maestro UAA</span>
-    <span class="sujeto-origen">Campus Sur UAA, Ags.</span>
-    <span class="sujeto-docs">5</span>
-  </a>
+
+  <div class="exp-card signal-denied disabled">
+    <div class="exp-card-header">
+      <span class="exp-codigo">F-04</span>
+      <span class="exp-signal"></span>
+    </div>
+    <div class="exp-avatar"></div>
+    <div class="exp-nombre">Aarón</div>
+    <div class="exp-rol">Ing. Químico</div>
+    <div class="exp-origen"><span class="redacted">████████████</span></div>
+    <div class="exp-footer">
+      <span class="exp-docs">acceso denegado</span>
+    </div>
+  </div>
+
 </div>
 
-<div class="archivist-note-inline">Estado del inventario — 3 sujetos con expediente completo / 1 incompleto / 1 pendiente de clasificación.</div>
+<div class="archivist-note-inline">// Estado del inventario — 3 sujetos con expediente activo / 1 incompleto / 1 pendiente de clasificación.</div>
