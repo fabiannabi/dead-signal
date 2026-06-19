@@ -383,7 +383,7 @@ function initNarratorRadioEffect(){
 
         // 5. Output gain — keep below unity, filters already cut volume
         var gain = ctx.createGain();
-        gain.gain.value = 0.55;
+        gain.gain.value = 0.38;
 
         // Main signal chain
         src.connect(hp);
@@ -407,7 +407,7 @@ function initNarratorRadioEffect(){
         nbp.frequency.value = 2200;
         nbp.Q.value = 0.6;
         var noiseGain = ctx.createGain();
-        noiseGain.gain.value = 0.022;
+        noiseGain.gain.value = 0.010;
         noiseNode.connect(nbp);
         nbp.connect(noiseGain);
         noiseGain.connect(ctx.destination);
@@ -418,7 +418,7 @@ function initNarratorRadioEffect(){
           try{ noiseNode.start(); } catch(e){}
         }, {once: true});
         audio.addEventListener('pause', function(){ noiseGain.gain.value = 0; });
-        audio.addEventListener('play',  function(){ noiseGain.gain.value = 0.022; });
+        audio.addEventListener('play',  function(){ noiseGain.gain.value = 0.010; });
 
         if(ctx.state === 'suspended') ctx.resume();
       } catch(e){}
