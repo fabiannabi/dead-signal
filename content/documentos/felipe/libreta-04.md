@@ -55,7 +55,7 @@ Se fue en menos de un minuto.
 Bajé. Salí. Caminé de regreso sin tomar la ruta alternativa de siempre porque la cabeza estaba en otro lugar y lo sabía y no pude evitarlo. Ese tipo de descuido me preocupa más que cualquier criatura — la impulsividad que no veo venir es el riesgo que no puedo calcular.
 
 :::notas{tipo="clinical"}
-**[[mosca-forunculo|Mosca Forúnculo]] — nombre provisional, pendiente confirmar**
+**[[bestiario/mosca-forunculo|Mosca Forúnculo]] — nombre provisional, pendiente confirmar**
 
 Ciclo documentado hasta ahora:
 

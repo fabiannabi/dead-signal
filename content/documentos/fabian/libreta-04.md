@@ -3,12 +3,12 @@ title: "Documento original 04"
 tipo: documento
 personaje: fabian
 formato: field
-capitulo-relacionado: "[[fabian/cap-04]]"
+capitulo-relacionado: "[[personajes/fabian/cap-04]]"
 ---
 
 *Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 4 — Radio de acción*
 
-**Archivo reconstruido:** [[fabian/cap-04|F-01 / Entrada 04 — Radio de acción]]
+**Archivo reconstruido:** [[personajes/fabian/cap-04|F-01 / Entrada 04 — Radio de acción]]
 
 ---
 
@@ -52,7 +52,7 @@ cantidad: <span class="tachado-grupo"><span class="tachado-c">7</span><span clas
 8-15cm / membrana semirrígida / abertura natural en un extremo.
 hipótesis: <span class="tachado-grupo"><span class="tachado">refugio</span><span class="correccion">zona de eclosión o cría</span></span>.
 
-[[arana-de-casa|Araña de Casa]] [nuevo — sin clasificar]
+[[bestiario/arana-de-casa|Araña de Casa]] [nuevo — sin clasificar]
 cuerpo: ~<span class="tachado-grupo"><span class="tachado-b">20cm</span><span class="correccion">25-30cm</span></span> / envergadura ~60-70cm.
 pelos rígidos café-amarillo / tapetum verde.
 sin ataque ante retroceso lento — protocolo funciona.

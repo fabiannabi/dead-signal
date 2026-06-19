@@ -3,12 +3,12 @@ title: "Documento original 01"
 tipo: documento
 personaje: fabian
 formato: field
-capitulo-relacionado: "[[fabian/cap-01]]"
+capitulo-relacionado: "[[personajes/fabian/cap-01]]"
 ---
 
 *Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 1 — Día normal*
 
-**Archivo reconstructido:** [[fabian/cap-01|F-01 / Entrada 01 — Día normal]]
+**Archivo reconstructido:** [[personajes/fabian/cap-01|F-01 / Entrada 01 — Día normal]]
 
 ---
 

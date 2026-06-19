@@ -3,12 +3,12 @@ title: "Documento original 02"
 tipo: documento
 personaje: fabian
 formato: field
-capitulo-relacionado: "[[fabian/cap-02]]"
+capitulo-relacionado: "[[personajes/fabian/cap-02]]"
 ---
 
 *Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 2 — Primera salida*
 
-**Archivo reconstruido:** [[fabian/cap-02|F-01 / Entrada 02 — Primera salida]]
+**Archivo reconstruido:** [[personajes/fabian/cap-02|F-01 / Entrada 02 — Primera salida]]
 
 ---
 
@@ -40,12 +40,12 @@ Regresé en veintidós minutos.
 ---
 
 :::notas{tipo="field"}
-[[roca-negra|Roca Negra]] — nuevo espécimen. banqueta norte, cuadra 1.
+[[bestiario/roca-negra|Roca Negra]] — nuevo espécimen. banqueta norte, cuadra 1.
 activo en plena luz. sin reacción a presencia humana. comportamiento distinto al del patio.
 el del patio norte desapareció entre salidas — sin rastro.
 pendiente: ¿son el mismo individuo? ¿rango de movimiento mayor de lo estimado?
 
-[[hongo-de-cemento|Hongo de cemento]] — callejón norte de la tienda.
+[[bestiario/hongo-de-cemento|Hongo de cemento]] — callejón norte de la tienda.
 crece directo en block de cemento, no en tierra. sombrero plano, oscuro.
 no lo toqué. pendiente.
 

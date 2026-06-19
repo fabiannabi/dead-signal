@@ -10,7 +10,7 @@ total-capitulos: 4
 *ARCHIVO DE RECUPERACIÓN POST-EMERGENCIA — SECCIÓN DOCUMENTAL*  
 *Expediente F-01 / Documento 02 de :redactado[██] — Período: Día 4 post-Emergencia*
 
-Fuente primaria: [[fabian/libreta-02|Documento original 02]]
+Fuente primaria: [[documentos/fabian/libreta-02|Documento original 02]]
 
 ---
 
@@ -24,5 +24,5 @@ A mitad de la primera cuadra se detuvo. Había algo en la banqueta de enfrente q
 
 
 :::archivist
-**Estado del archivo** — F-01, día 4: completo. La criatura avistada en banqueta corresponde en morfología con la especie clasificada como [[roca-negra|Roca Negra]]. Su desplazamiento diurno en esta fecha representa una anomalía respecto al comportamiento nocturno documentado en registros posteriores. No se registró contacto humano en ninguna de las dos salidas del día.
+**Estado del archivo** — F-01, día 4: completo. La criatura avistada en banqueta corresponde en morfología con la especie clasificada como [[bestiario/roca-negra|Roca Negra]]. Su desplazamiento diurno en esta fecha representa una anomalía respecto al comportamiento nocturno documentado en registros posteriores. No se registró contacto humano en ninguna de las dos salidas del día.
 :::

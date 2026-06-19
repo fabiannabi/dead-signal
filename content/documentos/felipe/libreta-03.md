@@ -63,7 +63,7 @@ Salió algo. Tamaño: ~3-4cm. Morfología larvaria. Fotofobia marcada — orient
 
 Lo que no sé: vector de inoculación. Cuándo ocurrió. Si el centinela fue elegido o fue oportunista.
 
-Lo que sí sé: algo usa a los [[chacal-de-feria|Chacales]] como huésped. Vuela o accede a superficies elevadas. Suficientemente sigiloso para inocular sin que el animal lo detecte.
+Lo que sí sé: algo usa a los [[bestiario/chacal-de-feria|Chacales]] como huésped. Vuela o accede a superficies elevadas. Suficientemente sigiloso para inocular sin que el animal lo detecte.
 
 El cuello-hombro como zona de inoculación tiene sentido si el vector llega por detrás desde arriba.
 

@@ -10,7 +10,7 @@ total-capitulos: 4
 *ARCHIVO DE RECUPERACIÓN POST-EMERGENCIA — SECCIÓN DOCUMENTAL*  
 *Expediente F-01 / Documento 04 de :redactado[██] — Período: Semana 3 post-Emergencia*
 
-Fuente primaria: [[fabian/libreta-04|Documento original 04]]
+Fuente primaria: [[documentos/fabian/libreta-04|Documento original 04]]
 
 ---
 
@@ -22,9 +22,9 @@ El inventario de la semana tres tenía números que no le gustaban. La tienda de
 
 En la bodega del supermercado encontró las cápsulas — estructuras adheridas a la parte inferior de los anaqueles, en los ángulos más oscuros. Ocho en total. Todas vacías. Todas en zonas de sombra máxima. Lo que había vivido aquí ya no estaba. Había salido.
 
-La [[arana-de-casa|Araña de Casa]] estaba en el pasillo central. No la vio primero — la sintió. Corpulenta, cuerpo del tamaño de un perro mediano, pelos rígidos café oscuro con bandas amarillas en las articulaciones. Ocho ojos, tapetum verde. Dio un paso atrás, lento. La araña bajó las patas delanteras. Siguió así hasta poder rodear hacia la salida.
+La [[bestiario/arana-de-casa|Araña de Casa]] estaba en el pasillo central. No la vio primero — la sintió. Corpulenta, cuerpo del tamaño de un perro mediano, pelos rígidos café oscuro con bandas amarillas en las articulaciones. Ocho ojos, tapetum verde. Dio un paso atrás, lento. La araña bajó las patas delanteras. Siguió así hasta poder rodear hacia la salida.
 
 
 :::archivist
-**Estado del archivo** — F-01, semana 3: completo. Las cápsulas descritas por F-01 son consistentes en morfología con estructuras de cría documentadas de la especie clasificada como [[arana-de-casa|Araña de Casa]]. El comportamiento registrado — sin ataque ante retroceso lento — fue utilizado como protocolo de evasión en registros posteriores del grupo. El supermercado norte aparece referenciado en documentos de otros sujetos del archivo como punto de abastecimiento en semanas siguientes.
+**Estado del archivo** — F-01, semana 3: completo. Las cápsulas descritas por F-01 son consistentes en morfología con estructuras de cría documentadas de la especie clasificada como [[bestiario/arana-de-casa|Araña de Casa]]. El comportamiento registrado — sin ataque ante retroceso lento — fue utilizado como protocolo de evasión en registros posteriores del grupo. El supermercado norte aparece referenciado en documentos de otros sujetos del archivo como punto de abastecimiento en semanas siguientes.
 :::

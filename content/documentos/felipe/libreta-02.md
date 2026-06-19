@@ -56,7 +56,7 @@ Demasiado consistente para ser casualidad. Es protocolo.
 Cuando hay algo concreto que observar todo funciona bien. El problema es el tiempo entre observaciones.
 
 :::notas{tipo="clinical"}
-**[[chacal-de-feria|Chacal de Feria]] — tres avistamientos, mismo corredor entre avenida y mercado**
+**[[bestiario/chacal-de-feria|Chacal de Feria]] — tres avistamientos, mismo corredor entre avenida y mercado**
 
 Grupo: 4-5 cazadores + 1 centinela en posición elevada
 

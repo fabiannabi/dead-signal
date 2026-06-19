@@ -3,12 +3,12 @@ title: "Documento original 03"
 tipo: documento
 personaje: fabian
 formato: field
-capitulo-relacionado: "[[fabian/cap-03]]"
+capitulo-relacionado: "[[personajes/fabian/cap-03]]"
 ---
 
 *Señal Muerta — Crónicas de la Emergencia / Fabián / Capítulo 3 — Perímetro*
 
-**Archivo reconstruido:** [[fabian/cap-03|F-01 / Entrada 03 — Perímetro]]
+**Archivo reconstruido:** [[personajes/fabian/cap-03|F-01 / Entrada 03 — Perímetro]]
 
 ---
 
@@ -27,7 +27,7 @@ Cuatro calles, ocho esquinas. Tiempo estimado: una hora. Tiempo real: dos.
 
 ---
 
-La [[roca-negra|Roca Negra]] estaba en la tercera calle, en la sombra de una barda de block. No sé si es la misma que desapareció del patio o si se movió más lejos de lo que estimé.
+La [[bestiario/roca-negra|Roca Negra]] estaba en la tercera calle, en la sombra de una barda de block. No sé si es la misma que desapareció del patio o si se movió más lejos de lo que estimé.
 
 La diferencia con las del patio no era solo el tamaño. La superficie tiene microestructuras. El reflejo cobrizo no es pigmento — es estructura. Eso tiene una función, no sé cuál todavía.
 
@@ -48,17 +48,17 @@ Me senté en el borde de la banqueta y documenté cada intercambio durante vario
 Usé el frasco.
 
 :::notas{tipo="field"}
-[[roca-negra|Roca Negra]] — <span class="tachado-grupo"><span class="tachado-b">agresiva</span><span class="correccion">cautelosa</span></span> por default.
+[[bestiario/roca-negra|Roca Negra]] — <span class="tachado-grupo"><span class="tachado-b">agresiva</span><span class="correccion">cautelosa</span></span> por default.
 umbral de reacción: ~1.5m. evalúa antes de actuar.
 actualizo entrada anterior: <span class="tachado-grupo"><span class="tachado">versión más grande</span><span class="correccion">subespecie distinta</span></span>.
 pendiente: ¿radio de movimiento? ¿la del patio y esta son la misma?
 
-[[hormiga-coordinadora|Hormiga Coordinadora]] [nuevo]
+[[bestiario/hormiga-coordinadora|Hormiga Coordinadora]] [nuevo]
 obreras 3-4cm / soldados <span class="tachado-grupo"><span class="tachado-c">~6cm</span><span class="correccion">~7cm</span></span>.
 soldados <span class="tachado-grupo"><span class="tachado">defienden perímetro</span><span class="correccion">coordinan</span></span>. comunicación antenal modifica trayectoria en tiempo real.
-forrajean [[enredadera-acelerada|enredadera acelerada]] — conecta dos observaciones.
+forrajean [[bestiario/enredadera-acelerada|enredadera acelerada]] — conecta dos observaciones.
 muestra de obrera en frasco: funcional, sin pánico. explora el frasco metódicamente.
 pendiente: ¿qué tan grande es la colonia? ¿dónde está el nido?
 
-<div class="fn-comment">// la columna cruzaba por encima de una grieta con actividad del [[gusano-de-asfalto|Gusano de Asfalto]]. las hormigas no dudaron. o no lo saben o no les importa.</div>
+<div class="fn-comment">// la columna cruzaba por encima de una grieta con actividad del [[bestiario/gusano-de-asfalto|Gusano de Asfalto]]. las hormigas no dudaron. o no lo saben o no les importa.</div>
 :::

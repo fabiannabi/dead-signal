@@ -4,13 +4,13 @@ title: "Entrada 04 — Prueba de sistema"
 
 *ARCHIVO DE RECUPERACIÓN POST-EMERGENCIA — SECCIÓN DOCUMENTAL* / *Expediente F-05 / Documento 04 de :redactado[██]*
 
-**Fuente primaria:** [[carlos/libreta-04|Documento original 04]]
+**Fuente primaria:** [[documentos/carlos/libreta-04|Documento original 04]]
 
 :::archivist{label="Fuentes"}
-Libreta azul de campo / registros del sistema de acelerómetros / notas de voz / Bestiario Unificado del Archivo, entradas: [[coyote-mutado|Coyote Mutado]], firma B1 sin clasificar
+Libreta azul de campo / registros del sistema de acelerómetros / notas de voz / Bestiario Unificado del Archivo, entradas: [[bestiario/coyote-mutado|Coyote Mutado]], firma B1 sin clasificar
 :::
 
-La secuencia documentada representa la primera validación operativa del sistema de detección de F-05. Los [[coyote-mutado|Coyotes Mutados]] fueron detectados cuatro minutos antes de llegar a la barda — margen suficiente para activar protocolo de contención sin despertar al campus completo. El comportamiento durante el reconocimiento de la barda es consistente con la descripción del Bestiario: evaluación prolongada, identificación del punto débil en la sección cuarteada del oriente, retirada ordenada tras intercambio de información entre individuos. El hecho de que encontraran específicamente la sección cuarteada sin intentar forzar ninguna otra parte de la barda sugiere capacidad de evaluación estructural que excede lo documentado para coyotes silvestres convencionales.
+La secuencia documentada representa la primera validación operativa del sistema de detección de F-05. Los [[bestiario/coyote-mutado|Coyotes Mutados]] fueron detectados cuatro minutos antes de llegar a la barda — margen suficiente para activar protocolo de contención sin despertar al campus completo. El comportamiento durante el reconocimiento de la barda es consistente con la descripción del Bestiario: evaluación prolongada, identificación del punto débil en la sección cuarteada del oriente, retirada ordenada tras intercambio de información entre individuos. El hecho de que encontraran específicamente la sección cuarteada sin intentar forzar ninguna otra parte de la barda sugiere capacidad de evaluación estructural que excede lo documentado para coyotes silvestres convencionales.
 
 Las huellas encontradas esa tarde en el campo norte constituyen el primer registro físico directo de B1. La morfología — tres dedos anteriores, uno posterior, zancada de metro ochenta — no corresponde a ninguna especie del Bestiario con documentación suficiente para establecer identificación. La capacidad de superar una barda de dos metros sin forzarla implica masa y fuerza considerables, inconsistente con las firmas de amplitud media registradas por los sensores. Esto sugiere que el sistema de calibración de F-05 subestimó significativamente la masa del individuo, o que B1 tiene una relación masa-fuerza inusual. El archivo no puede determinar cuál con los datos disponibles.
 
