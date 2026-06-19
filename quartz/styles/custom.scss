@@ -3862,7 +3862,7 @@ html[data-palette="fosfor"] {
 }
 
 // Explorer sidebar — sin flecha en folders sin hijos, texto más grande
-li:has(> .folder-outer > ul:not(:has(> li))) > .folder-container > svg.folder-icon {
+.folder-container[data-folderpath="personajes/index"] > svg.folder-icon {
   display: none !important;
 }
 
