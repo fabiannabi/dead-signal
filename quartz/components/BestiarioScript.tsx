@@ -343,34 +343,34 @@ function initNarratorRadioEffect(){
         var ctx = new AudioCtx();
         var src = ctx.createMediaElementSource(audio);
 
-        // 1. Highpass — cut below 480 Hz (kill body/warmth)
+        // 1. Highpass — cut below 360 Hz
         var hp = ctx.createBiquadFilter();
         hp.type = 'highpass';
-        hp.frequency.value = 480;
-        hp.Q.value = 1.2;
+        hp.frequency.value = 360;
+        hp.Q.value = 0.9;
 
-        // 2. Tape-saturation distortion (soft-knee waveshaper)
+        // 2. Light tape-saturation distortion
         var dist = ctx.createWaveShaper();
         var curve = new Float32Array(512);
         for(var i=0;i<512;i++){
           var x = (i*2)/512 - 1;
-          curve[i] = (Math.PI + 180) * x / (Math.PI + 180 * Math.abs(x));
+          curve[i] = (Math.PI + 40) * x / (Math.PI + 40 * Math.abs(x));
         }
         dist.curve = curve;
         dist.oversample = '4x';
 
-        // 3. Mid-range presence boost ~1.4 kHz (nasal radio character)
+        // 3. Subtle mid-range presence boost ~1.3 kHz
         var peak = ctx.createBiquadFilter();
         peak.type = 'peaking';
-        peak.frequency.value = 1400;
-        peak.gain.value = 9;
-        peak.Q.value = 2.2;
+        peak.frequency.value = 1300;
+        peak.gain.value = 4;
+        peak.Q.value = 1.8;
 
-        // 4. Lowpass — cut above 3000 Hz (narrow the band further)
+        // 4. Lowpass — cut above 3300 Hz
         var lp = ctx.createBiquadFilter();
         lp.type = 'lowpass';
-        lp.frequency.value = 3000;
-        lp.Q.value = 1.0;
+        lp.frequency.value = 3300;
+        lp.Q.value = 0.8;
 
         // 5. Output gain
         var gain = ctx.createGain();
@@ -398,7 +398,7 @@ function initNarratorRadioEffect(){
         nbp.frequency.value = 2200;
         nbp.Q.value = 0.6;
         var noiseGain = ctx.createGain();
-        noiseGain.gain.value = 0.055;
+        noiseGain.gain.value = 0.022;
         noiseNode.connect(nbp);
         nbp.connect(noiseGain);
         noiseGain.connect(ctx.destination);
@@ -409,7 +409,7 @@ function initNarratorRadioEffect(){
           try{ noiseNode.start(); } catch(e){}
         }, {once: true});
         audio.addEventListener('pause', function(){ noiseGain.gain.value = 0; });
-        audio.addEventListener('play',  function(){ noiseGain.gain.value = 0.055; });
+        audio.addEventListener('play',  function(){ noiseGain.gain.value = 0.022; });
 
         if(ctx.state === 'suspended') ctx.resume();
       } catch(e){}
