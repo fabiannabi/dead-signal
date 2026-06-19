@@ -1,8 +1,10 @@
----
+﻿---
 title: "Documento original 02"
 ---
 
 *Señal Muerta — Crónicas de la Emergencia* / *Felipe — Entrada 02*
+**Archivo reconstruido:** [[personajes/felipe/cap-02|F-02 / Documento 002]]
+
 
 ---
 

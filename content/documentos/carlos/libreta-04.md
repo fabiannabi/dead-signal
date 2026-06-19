@@ -1,8 +1,10 @@
----
+﻿---
 title: "Documento original 04"
 ---
 
 *Señal Muerta — Crónicas de la Emergencia* / *Carlos — Entrada 04*
+**Archivo reconstruido:** [[personajes/carlos/cap-04|F-05 / Documento 004]]
+
 
 ---
 

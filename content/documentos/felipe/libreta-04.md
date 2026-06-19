@@ -1,8 +1,10 @@
----
+﻿---
 title: "Documento original 04"
 ---
 
 *Señal Muerta — Crónicas de la Emergencia* / *Felipe — Entrada 04*
+**Archivo reconstruido:** [[personajes/felipe/cap-04|F-02 / Documento 004]]
+
 
 ---
 
