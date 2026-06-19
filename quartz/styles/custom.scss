@@ -90,6 +90,13 @@ html[data-palette="fosfor"] {
     color: #1a1510;
   }
 
+  // Links dentro de papel — verde oscuro legible sobre fondo crema
+  .field-notes-block a {
+    color: #2a6030;
+    text-shadow: none;
+    &:hover { color: #1a4020; }
+  }
+
   // Glitch periódico en el contenido
   #quartz-body {
     animation: crt-glitch-body 12s infinite;
