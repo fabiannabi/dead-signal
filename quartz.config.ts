@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
-      cdnCaching: false,
+      cdnCaching: true,
       typography: {
         header: "Share Tech Mono",
         body: "Crimson Pro",

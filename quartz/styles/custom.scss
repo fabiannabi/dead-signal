@@ -3707,8 +3707,8 @@ html[data-palette="fosfor"] {
 
   .tw-path {
     fill: none;
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
+    stroke-dasharray: var(--plen, 5000);
+    stroke-dashoffset: var(--plen, 5000);
     animation-fill-mode: both;
   }
 
@@ -3838,7 +3838,7 @@ html[data-palette="fosfor"] {
 }
 
 @keyframes tw-draw {
-  from { stroke-dashoffset: 1; }
+  from { stroke-dashoffset: var(--plen, 5000); }
   to   { stroke-dashoffset: 0; }
 }
 
