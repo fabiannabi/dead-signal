@@ -92,7 +92,7 @@ html[data-palette="fosfor"] {
 
   // Glitch periódico en el contenido
   #quartz-body {
-    animation: crt-glitch-body 8s infinite;
+    animation: crt-glitch-body 12s infinite;
   }
 
   // Overlay de artefactos horizontales
@@ -107,20 +107,20 @@ html[data-palette="fosfor"] {
       content: '';
       position: absolute;
       left: 0; right: 0;
-      background: rgba(51, 255, 102, 0.18);
+      background: rgba(51, 255, 102, 0.14);
       mix-blend-mode: screen;
       opacity: 0;
-      animation: crt-glitch-stripe1 8s infinite steps(1);
+      animation: crt-glitch-stripe1 12s infinite steps(1);
     }
 
     &::after {
       content: '';
       position: absolute;
       left: 0; right: 0;
-      background: rgba(51, 255, 102, 0.12);
+      background: rgba(51, 255, 102, 0.09);
       mix-blend-mode: screen;
       opacity: 0;
-      animation: crt-glitch-stripe2 8s 0.07s infinite steps(1);
+      animation: crt-glitch-stripe2 12s 0.07s infinite steps(1);
     }
   }
 
@@ -147,46 +147,38 @@ html[data-palette="fosfor"] {
   50% { opacity: 0.1; }
 }
 
-// Glitch: desplazamiento y distorsión del contenido
+// ── Tipo 1: Franja — bandas horizontales que se deslizan (solo overlay, sin body)
+// ── Tipo 2: Temblor — micro-vibración de contenido (solo body, sin overlay)
+// ── Tipo 3: Parpadeo — destello de brillo (solo filter)
+// ── Tipo 4: Deriva cromática — shift de color suave (solo filter)
+
 @keyframes crt-glitch-body {
-  0%,  84%, 93%, 100% { transform: none; filter: none; }
-  85% { transform: skewX(0.5deg) translateX(-3px);  filter: brightness(1.15); }
-  86% { transform: translateX(4px) skewX(-0.3deg);  filter: hue-rotate(25deg); }
-  87% { transform: none;                             filter: none; }
-  88% { transform: translateX(-5px);                filter: brightness(0.85); }
-  89% { transform: none;                             filter: none; }
-  90% { transform: skewX(0.3deg) translateX(2px);   filter: brightness(1.1); }
-  91% { transform: none;                             filter: none; }
-  96% { transform: translateX(-2px);                filter: brightness(1.05); }
-  97% { transform: none;                             filter: none; }
+  /* Tipo 2 — Temblor (85-86%) */
+  0%, 84%, 87%, 91%, 96%, 100% { transform: none; filter: none; }
+  85% { transform: translateX(-1.5px); }
+  86% { transform: translateX(1px); }
+  /* Tipo 3 — Parpadeo (92-93%) */
+  92% { filter: brightness(1.18); }
+  93% { filter: brightness(0.93); }
+  /* Tipo 4 — Deriva cromática (97-98%) */
+  97% { filter: hue-rotate(14deg) brightness(1.06); }
+  98% { filter: none; }
 }
 
-// Glitch: franjas verdes desplazadas (capa 1)
+// Tipo 1 — Franja capa A (76-78%)
 @keyframes crt-glitch-stripe1 {
-  0%,  84%, 93%, 100% { opacity: 0; height: 0; }
-  85% { opacity: 1; top: 30%; height: 8%;  transform: translateX(-8px); }
-  86% { opacity: 1; top: 65%; height: 4%;  transform: translateX(6px); }
-  87% { opacity: 1; top: 10%; height: 12%; transform: translateX(-3px); }
-  88% { opacity: 0; height: 0; }
-  89% { opacity: 1; top: 48%; height: 3%;  transform: translateX(7px); }
-  90% { opacity: 1; top: 78%; height: 6%;  transform: translateX(-5px); }
-  91% { opacity: 0; height: 0; }
-  96% { opacity: 1; top: 22%; height: 4%;  transform: translateX(3px); }
-  97% { opacity: 0; height: 0; }
+  0%, 75%, 79%, 100% { opacity: 0; height: 0; }
+  76% { opacity: 1; top: 38%; height: 4%;  transform: translateX(-6px); }
+  77% { opacity: 1; top: 63%; height: 2%;  transform: translateX(5px); }
+  78% { opacity: 0; height: 0; }
 }
 
-// Glitch: franjas verdes desplazadas (capa 2, ligeramente desfasada)
+// Tipo 1 — Franja capa B (76-78%, ligeramente desfasada)
 @keyframes crt-glitch-stripe2 {
-  0%,  84%, 93%, 100% { opacity: 0; height: 0; }
-  85% { opacity: 1; top: 60%; height: 5%;  transform: translateX(10px); }
-  86% { opacity: 0; height: 0; }
-  87% { opacity: 1; top: 25%; height: 8%;  transform: translateX(-7px); }
-  88% { opacity: 1; top: 85%; height: 3%;  transform: translateX(4px); }
-  89% { opacity: 0; height: 0; }
-  90% { opacity: 1; top: 15%; height: 6%;  transform: translateX(-6px); }
-  91% { opacity: 0; height: 0; }
-  96% { opacity: 1; top: 55%; height: 3%;  transform: translateX(5px); }
-  97% { opacity: 0; height: 0; }
+  0%, 75%, 79%, 100% { opacity: 0; height: 0; }
+  76% { opacity: 0; height: 0; }
+  77% { opacity: 1; top: 20%; height: 5%;  transform: translateX(8px); }
+  78% { opacity: 0; height: 0; }
 }
 
 // Ámbar VHS — cassette degradado
