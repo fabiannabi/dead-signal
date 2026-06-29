@@ -1,5 +1,5 @@
 ---
-title: "GA-INC-001 — Colapso de vía, tres bajas"
+title: "GA-INC-001 — Colapso progresivo de vía, columna de abasto"
 ---
 
 <div class="archive-stamp">Bestiario — Expediente Clasificado / Clase B</div>
@@ -20,7 +20,7 @@ title: "GA-INC-001 — Colapso de vía, tres bajas"
   </div>
   <div class="subdoc-meta-item">
     <span class="subdoc-meta-label">Resultado</span>
-    <span class="subdoc-meta-value">3 bajas — 1 herido grave recuperado</span>
+    <span class="subdoc-meta-value">Columna de 6 — 3 bajas / 3 sobrevivientes (uno con fractura)</span>
   </div>
   <div class="subdoc-meta-item">
     <span class="subdoc-meta-label">Zona</span>
@@ -28,7 +28,7 @@ title: "GA-INC-001 — Colapso de vía, tres bajas"
   </div>
   <div class="subdoc-meta-item span2">
     <span class="subdoc-meta-label">Causa</span>
-    <span class="subdoc-meta-value">Túnel residual activo — espécimen había abandonado la zona 40–110 min antes. El crujido de advertencia estaba documentado. No había sido integrado al protocolo de ruta del grupo.</span>
+    <span class="subdoc-meta-value">Túnel residual. El espécimen había abandonado la zona entre 40 y 110 min antes; no estuvo presente en ningún punto del incidente. La superficie no presentaba fractura visible. El crujido de advertencia estaba caracterizado en GA-EXP-002 pero no figuraba en el protocolo de ruta del grupo.</span>
   </div>
 </div>
 
@@ -38,35 +38,35 @@ title: "GA-INC-001 — Colapso de vía, tres bajas"
   <div class="subdoc-timeline">
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time"><span class="redacted">██</span>:14</span>
-      <span class="subdoc-event">Equipo de cuatro personas sale hacia punto de suministro norte.</span>
+      <span class="subdoc-event">Columna de abasto de seis personas avanza en fila por el carril norte. Separación entre el primero y el último de la fila: aprox. 25 m.</span>
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time"><span class="redacted">██</span>:22</span>
-      <span class="subdoc-event">Crujido seco registrado por el líder. No reconocido como señal. El equipo continúa.</span>
+      <span class="subdoc-event">Crujido seco bajo el tramo medio del carril. El segundo en la fila lo señala como "tubería". No reconocido como señal. La columna no se detiene.</span>
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time"><span class="redacted">██</span>:23</span>
-      <span class="subdoc-event">Colapso de superficie — aprox. 4 m². Dos miembros caen a 1.8 m de profundidad.</span>
+      <span class="subdoc-event">Hundimiento inicial — aprox. 4 m², bajo los dos punteros de la fila. Caen a 1.8 m. La superficie no había mostrado fractura previa al colapso.</span>
     </div>
     <div class="subdoc-timeline-entry">
-      <span class="subdoc-time"><span class="redacted">██</span>:23–38</span>
-      <span class="subdoc-event">Intento de extracción. Colapso secundario de borde sur. El cuarto miembro <span class="redacted">████████████████████████████████████████████████████</span>. Zona inaccesible para recuperación.</span>
+      <span class="subdoc-time"><span class="redacted">██</span>:24–41</span>
+      <span class="subdoc-event">Intento de extracción desde el borde norte. El hundimiento no se estabiliza: el túnel residual era considerablemente más ancho que el hueco visible en superficie. El borde cede en dos ocasiones más durante la maniobra. Un tercer integrante, que asistía desde arriba, desciende con el último desprendimiento. Los tres caídos quedan bajo sustrato en movimiento continuo. No hay recuperación posible.</span>
     </div>
     <div class="subdoc-timeline-entry">
-      <span class="subdoc-time"><span class="redacted">██</span>:51</span>
-      <span class="subdoc-event">Un sobreviviente alcanza base. Tres bajas confirmadas.</span>
+      <span class="subdoc-time"><span class="redacted">██</span>:55</span>
+      <span class="subdoc-event">Los tres integrantes restantes regresan a base por ruta alterna. Tres bajas confirmadas. En ningún momento se observó al espécimen.</span>
     </div>
   </div>
 
   <div class="subdoc-note">
-    "El crujido que escuchó es exactamente el que estaba descrito. Estaba escrito. Si hubiera llegado al equipo antes, habrían sabido qué significaba ese sonido."
+    "El dato que describía ese crujido ya existía en el archivo. No estaba en la hoja de ruta que llevaba el equipo. La distancia entre saber algo y que ese algo llegue a quien camina sobre el asfalto fue, esta vez, de tres páginas y una semana."
     <span class="subdoc-note-author">— Nota recuperada entre registros del período — autoría sin confirmar</span>
   </div>
 </div>
 
 <div class="archivist-note">
   <span class="archivist-label">Nota del archivista</span>
-  Los nombres de los cuatro miembros no han sido incluidos en este expediente. Expediente reconstruido a partir de fuentes fragmentarias — el estado de los sobrevivientes del grupo es desconocido.
+  Los nombres de los seis integrantes de la columna no han sido incluidos en este expediente. A raíz de este incidente, el crujido seco previo al colapso fue incorporado al protocolo de campo como señal de evacuación inmediata; la caracterización que lo hacía reconocible ya existía en GA-EXP-002 desde la semana anterior. El estado de los tres sobrevivientes es desconocido.
 </div>
 
 <div class="subdoc-footer">

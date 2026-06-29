@@ -16,7 +16,7 @@ title: "CC-EXP-001 — Protocolo de acercamiento"
   </div>
   <div class="subdoc-meta-item">
     <span class="subdoc-meta-label">Tipo</span>
-    <span class="subdoc-meta-value">Experimento — comportamiento territorial</span>
+    <span class="subdoc-meta-value">Experimento — respuesta de evaluación a aproximación dirigida</span>
   </div>
   <div class="subdoc-meta-item">
     <span class="subdoc-meta-label">Espécimen</span>
@@ -46,15 +46,15 @@ title: "CC-EXP-001 — Protocolo de acercamiento"
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time">10 m</span>
-      <span class="subdoc-event">Pausa completa. Giro de cabeza 90°. Evaluación visual directa — 4.2 segundos. Sin cambio de postura. El espécimen reanudó desplazamiento.</span>
+      <span class="subdoc-event">Pausa completa. Giro de cabeza 90°. Evaluación visual directa — 4.2 segundos. El equipo de observación no pudo determinar qué evaluaba el espécimen: la orientación de los ojos no coincidía con la posición del investigador. Sin cambio de postura. El espécimen reanudó desplazamiento.</span>
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time">5 m</span>
-      <span class="subdoc-event">Pausa completa del espécimen. El investigador <span class="redacted">████████████████████████████████████████</span>. El equipo de observación registró <span class="redacted">████████████████████████████████</span> antes de que el investigador iniciara la siguiente fase.</span>
+      <span class="subdoc-event">Pausa completa del espécimen. El investigador permaneció inmóvil, manos visibles, sin reducir la distancia. El equipo de observación registró un cambio en la postura del espécimen — peso desplazado hacia los cuartos traseros, cabeza orientada de frente, sin parpadeo registrado — antes de que el investigador iniciara la siguiente fase.</span>
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time">Contacto</span>
-      <span class="subdoc-event">El espécimen <span class="redacted">████████████████████████████████████████████████████</span>. El investigador fue extraído de la zona en el minuto <span class="redacted">██</span>. Estado al término: <span class="redacted">████████████████████████████████████████████████</span>.</span>
+      <span class="subdoc-event">El investigador cerró la distancia restante y estableció contacto con el flanco del espécimen. El espécimen no se retiró ni modificó su orientación. El registro a partir de ese punto corresponde a Fase 3 y permanece clasificado bajo Clase A. El investigador fue extraído de la zona en el minuto <span class="redacted">██</span>.</span>
     </div>
   </div>
 
@@ -66,7 +66,7 @@ title: "CC-EXP-001 — Protocolo de acercamiento"
 
 <div class="archivist-note">
   <span class="archivist-label">Nota del archivista</span>
-  Fases 3 y 4 clasificadas bajo Clase A. La nota del investigador fue incluida por solicitud expresa antes de su reasignación a <span class="redacted">████████████</span>. La reasignación no está documentada en este expediente.
+  Fases 3 y 4 clasificadas bajo Clase A. La nota del investigador fue incluida por solicitud expresa antes de su reasignación a <span class="redacted">████████████</span>. La reasignación no está documentada en este expediente. Los protocolos equivalentes aplicados a otros especímenes (CC-EXP-002, CC-EXP-003) registran decisiones distintas a distancias distintas, sin correlación establecida con la distancia, la postura del investigador ni la velocidad de acercamiento. El criterio de evaluación de la especie permanece sin determinar.
 </div>
 
 <div class="subdoc-footer">
