@@ -105,6 +105,18 @@ title: "AH-INC-001 — Contacto no autorizado, zona de drenaje sur"
 })()
 </script>
 
+<div class="audio-evidence-item featured">
+  <div class="audio-evidence-header">
+    <span class="audio-ev-type">Representación auditiva — Telemetría INC-001</span>
+    <span class="audio-ev-id">APE/AUDIO — BST-II/AH-INC-001-TEL</span>
+    <span class="audio-ev-clase">Clase B</span>
+  </div>
+  <div class="audio-evidence-body">
+    <div class="audio-ev-title">Traducción acústica de telemetría — 4 personas · 04:12–04:38</div>
+    <audio controls src="/static/audio/bestiario/arana-hidraulica/narrador-muestra-01.mp3"></audio>
+  </div>
+</div>
+
 <div class="subdoc-section">
   <div class="subdoc-section-title">Cronología del contacto</div>
 
@@ -123,7 +135,7 @@ title: "AH-INC-001 — Contacto no autorizado, zona de drenaje sur"
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time">04:31–04:34</span>
-      <span class="subdoc-event">Tres miembros del equipo <span class="redacted">████████████████████████████████████████████████</span>. El cuarto intentó <span class="redacted">████████████████████████████████████████</span> desde la entrada del drenaje. El espécimen <span class="redacted">████████████████████████████</span> antes de retornar a la rejilla.</span>
+      <span class="subdoc-event">Tres miembros del equipo quedaron dentro del radio de alcance del espécimen; la pérdida de sus tres señales vitales está registrada en la telemetría adjunta (04:31–04:34). El cuarto miembro retrocedió hacia la entrada del drenaje. El espécimen interrumpió el contacto y retornó a la rejilla sin perseguir al sobreviviente.</span>
     </div>
     <div class="subdoc-timeline-entry">
       <span class="subdoc-time">04:38</span>
@@ -136,7 +148,7 @@ title: "AH-INC-001 — Contacto no autorizado, zona de drenaje sur"
   <div class="subdoc-section-title">Testimonio del sobreviviente</div>
   <div class="subdoc-body">
     <p>"El clic lo escuché yo. Lo dije. <span class="redacted">████</span> dijo que eran las tuberías. No sabíamos que significaba algo. Nadie nos dijo que significaba algo."</p>
-    <p>"<span class="redacted">████████████████████████████████████████████</span>. Sí vi a <span class="redacted">████████████</span>. No debería haberlo <span class="redacted">████████████████████████████████████████</span>."</p>
+    <p>"<span class="redacted">████████████████████████</span>. Sí vi a <span class="redacted">████████</span> — todavía lo veo. No debería haber <span class="redacted">████████████</span>. Pero si no lo hago, no estaría aquí diciendo esto."</p>
   </div>
 
   <div class="subdoc-note">
@@ -147,7 +159,7 @@ title: "AH-INC-001 — Contacto no autorizado, zona de drenaje sur"
 
 <div class="archivist-note">
   <span class="archivist-label">Nota del archivista</span>
-  Los nombres de los cuatro miembros no han sido incluidos. La segunda cita del testimonio ha sido redactada parcialmente — el sobreviviente no autorizó su reproducción completa. Estado actual de los involucrados: desconocido.
+  Los nombres de los cuatro miembros no han sido incluidos. La segunda cita del testimonio ha sido redactada parcialmente — el sobreviviente no autorizó su reproducción completa. La telemetría indica que el espécimen se encontraba dentro de su radio de alcance respecto al cuarto miembro cuando interrumpió el contacto y se retiró hacia la rejilla; el motivo de la interrupción no ha podido establecerse. El sobreviviente atribuye su salida a una acción propia. El registro no lo confirma ni lo descarta. Estado actual de los involucrados: desconocido.
 </div>
 
 <div class="subdoc-footer">

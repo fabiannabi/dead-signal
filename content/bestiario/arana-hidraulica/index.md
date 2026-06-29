@@ -87,8 +87,8 @@ title: "Araña Hidráulica"
     <span class="conf-code">Expediente APE/BST-II/AH — Nivel variable</span>
   </div>
   <div class="conf-item">
-    <div class="conf-id">AH-EXP-001 / Experimento — Respuesta a estímulos lumínicos</div>
-    <div class="conf-desc">Protocolo de exposición lumínica en espécimen capturado. Fases 1–4. Incluye observaciones sobre respuesta fotosensible, reflejo del <em>tapetum lucidum</em> y período refractario. Parcialmente desclasificado. <span class="redacted">███</span> miembros del equipo afectados durante el procedimiento.</div>
+    <div class="conf-id"><a href="/bestiario/arana-hidraulica/arana-hidraulica-exp-001" class="conf-doc-link">AH-EXP-001 / Experimento — Caracterización acústica del clic articular</a></div>
+    <div class="conf-desc">Prueba de reproducción del clic articular en tramo de drenaje aislado. Fases 1 y 2 accesibles: el espécimen converge hacia la fuente de sonido, no hacia el equipo — el clic es señal, no subproducto mecánico. La fase de término está clasificada bajo Clase A. Base de la prohibición de todo protocolo acústico sobre la especie.</div>
     <div class="conf-access">Clase B — Acceso restringido</div>
   </div>
   <div class="conf-item">
@@ -97,8 +97,18 @@ title: "Araña Hidráulica"
     <div class="conf-access">Clase A — Nivel superior requerido</div>
   </div>
   <div class="conf-item">
+    <div class="conf-id">AH-EXP-003 / Experimento — Respuesta a estímulos lumínicos</div>
+    <div class="conf-desc">Protocolo de exposición lumínica en espécimen capturado. Fases 1–4. Incluye observaciones sobre respuesta fotosensible, reflejo del <em>tapetum lucidum</em> y período refractario. Parcialmente desclasificado. <span class="redacted">███</span> miembros del equipo afectados durante el procedimiento.</div>
+    <div class="conf-access">Clase B — Acceso restringido</div>
+  </div>
+  <div class="conf-item">
     <div class="conf-id"><a href="/bestiario/arana-hidraulica/arana-hidraulica-inc-001" class="conf-doc-link">AH-INC-001 / Reporte de incidente — Contacto no autorizado, zona de drenaje sur</a></div>
     <div class="conf-desc">Primer incidente con bajas atribuidas a la especie. Cronología del contacto, testimonio parcial del sobreviviente y análisis post-incidente. La información de F-02 que habría prevenido el incidente existía previamente. No fue distribuida a tiempo.</div>
+    <div class="conf-access">Clase B — Acceso restringido</div>
+  </div>
+  <div class="conf-item">
+    <div class="conf-id"><a href="/bestiario/arana-hidraulica/arana-hidraulica-inc-002" class="conf-doc-link">AH-INC-002 / Reporte de incidente — Paso inundado, regla de inmovilidad</a></div>
+    <div class="conf-desc">Reconstrucción de un encuentro del período Emergencia a partir de un cuaderno personal dañado por inmersión. Primera caracterización de la sensibilidad al movimiento: el espécimen no localiza a quien permanece inmóvil y responde de inmediato al primer desplazamiento. Una baja, un sobreviviente.</div>
     <div class="conf-access">Clase B — Acceso restringido</div>
   </div>
 </div>
