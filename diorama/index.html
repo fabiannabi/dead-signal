@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>CENVAC — Diorama de archivo</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./diorama.css">
+</head>
+<body>
+
+<div class="bezel">
+  <div class="feed">
+    <canvas id="gl"></canvas>
+    <div class="crt"></div>
+
+    <div class="osd">
+      <span class="rec"><i></i> REC</span>
+      <span class="meta">CENVAC · CAM 07 &nbsp;·&nbsp; <span id="ts">--:--:--</span></span>
+    </div>
+
+    <div class="frame">
+      <div class="tl">
+        <span class="eyebrow">captura de archivo</span>
+        <span class="code" id="d-id">AGS-7</span>
+        <span class="name" id="d-name">Perímetro Ferroviario</span>
+      </div>
+      <div class="br">
+        <span class="grade">interpolación 2.5D · profundidad recuperada</span>
+      </div>
+      <div class="hint" id="hint">mové el cursor — toca y arrastra en móvil</div>
+    </div>
+  </div>
+</div>
+
+<div class="errbox" id="err" hidden></div>
+
+<script src="./diorama.js"></script>
+</body>
+</html>
