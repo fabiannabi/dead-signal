@@ -58,6 +58,9 @@ export const defaultContentPageLayout: PageLayout = {
           node.displayName = node.displayName.replace(/^F-\d+\s*[—–]\s*(.+)$/, "↳ Ficha — $1")
           // legacy: Cap. XX → Entrada XX
           node.displayName = node.displayName.replace(/Cap\.\s*0*(\d+)/g, "Entrada $1")
+          // bestiario sub-expedientes: "AH-EXP-003 — …"  →  "EXP-003 — …"
+          // (el prefijo de criatura es redundante dentro de su carpeta)
+          node.displayName = node.displayName.replace(/^[A-Z]{2,3}-(?=[A-Z]{2,4}-\d)/, "")
         }
       },
     }),
@@ -102,6 +105,9 @@ export const defaultListPageLayout: PageLayout = {
           node.displayName = node.displayName.replace(/^F-\d+\s*[—–]\s*(.+)$/, "↳ Ficha — $1")
           // legacy: Cap. XX → Entrada XX
           node.displayName = node.displayName.replace(/Cap\.\s*0*(\d+)/g, "Entrada $1")
+          // bestiario sub-expedientes: "AH-EXP-003 — …"  →  "EXP-003 — …"
+          // (el prefijo de criatura es redundante dentro de su carpeta)
+          node.displayName = node.displayName.replace(/^[A-Z]{2,3}-(?=[A-Z]{2,4}-\d)/, "")
         }
       },
     }),

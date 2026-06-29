@@ -926,6 +926,12 @@ button.desktop-explorer h2 {
   text-decoration: none;
   text-transform: uppercase;
 
+  // una sola línea con ellipsis — los sub-expedientes largos no hacen wrap
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   &:hover, &.active { color: var(--secondary); }
 }
 
@@ -2280,13 +2286,23 @@ table {
 // ── Entry section title ──
 .entry-section-title {
   font-family: var(--codeFont);
-  font-size: 0.875rem;
-  color: var(--darkgray);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #c8c4a8;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin: 2.25rem 0 0.875rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--lightgray);
+  letter-spacing: 0.22em;
+  margin: 3.5rem 0 1.25rem;
+  padding: 0.75rem 1.2rem 0.75rem 1rem;
+  background-color: rgba(200, 168, 74, 0.04);
+  border: 1px solid #2a2a22;
+  border-left: 3px solid #c8a84a;
+  position: relative;
+
+  &::before {
+    content: '//';
+    color: #8a6a2a;
+    margin-right: 0.7em;
+  }
 }
 
 // ── Bestiario ref links ──
