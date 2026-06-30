@@ -1,0 +1,112 @@
+{
+  "_meta": {
+    "descripcion": "Plantillas de tipo de sitio para el despacho CENVAC. Alimentan el esquemático del despacho (zonas reveladas por escaneo) y los modificadores de ambiente de los checks de misión. Canon declarado en tarea-misiones-procedurales-y-despacho §3.2.",
+    "revela_por_nivel": "Cada zona declara nivel_revela (1..3). Al escanear a nivel N se revelan las zonas con nivel_revela <= N. Nivel 0 = nada del esquemático, solo la alerta del sensor.",
+    "modificadores_ambiente": "delta aplicado al stat correspondiente en los checks de misión que ocurren en este sitio (consumido por mission-generator en Fase 3)."
+  },
+  "drenaje": {
+    "nombre": "Cámara de drenaje pluvial",
+    "acustica": "reverberante — el sonido viaja lejos y se distorsiona contra el concreto",
+    "visibilidad": "muy baja — sin luz natural, dependencia total de iluminación propia",
+    "peligros_ambientales": ["agua_acumulada", "superficie_resbaladiza", "espacio_confinado"],
+    "modificadores_ambiente": { "sigilo": -1, "fisico": -1, "biologico": -1 },
+    "zonas": [
+      { "id": "acceso", "etiqueta": "Escalera de mantenimiento — acceso interior este", "nivel_revela": 1, "es_foco": false },
+      { "id": "foco", "etiqueta": "Cámara secundaria — foco de actividad confirmado", "nivel_revela": 1, "es_foco": true },
+      { "id": "galeria", "etiqueta": "Galería principal — nivel de agua variable", "nivel_revela": 2, "es_foco": false },
+      { "id": "ramal", "etiqueta": "Ramal lateral colapsado — paso estrecho", "nivel_revela": 2, "es_foco": false },
+      { "id": "rejilla", "etiqueta": "Rejilla de salida — punto de retirada del espécimen", "nivel_revela": 3, "es_foco": false }
+    ],
+    "pista_comportamiento": "La telemetría de vibración rítmica confirma desplazamiento por el ramal. El espécimen converge a fuentes acústicas, no al equipo."
+  },
+  "bodega": {
+    "nombre": "Bodega de distribución",
+    "acustica": "seca y amplia — los pasos resuenan en el vacío",
+    "visibilidad": "baja — claraboyas parciales, sombras profundas entre estanterías",
+    "peligros_ambientales": ["estructura_inestable", "visibilidad_parcial"],
+    "modificadores_ambiente": { "sigilo": 0, "fisico": 0, "biologico": -1 },
+    "zonas": [
+      { "id": "acceso", "etiqueta": "Entrada lateral este — llave de emergencia retirada", "nivel_revela": 1, "es_foco": false },
+      { "id": "foco", "etiqueta": "Sector este — bocas de acceso al subterráneo", "nivel_revela": 1, "es_foco": true },
+      { "id": "naves", "etiqueta": "Naves de estanterías — cobertura abundante", "nivel_revela": 2, "es_foco": false },
+      { "id": "oficinas", "etiqueta": "Oficinas administrativas — segundo nivel", "nivel_revela": 2, "es_foco": false },
+      { "id": "muelle", "etiqueta": "Muelle de carga — salida secundaria", "nivel_revela": 3, "es_foco": false }
+    ],
+    "pista_comportamiento": "Rastros de humedad y sedimento marcan la ruta entre el subterráneo y las naves."
+  },
+  "parque": {
+    "nombre": "Parque urbano abandonado",
+    "acustica": "abierta y absorbente — la vegetación amortigua el sonido",
+    "visibilidad": "media de día, nula al anochecer — ventana de operación estrecha",
+    "peligros_ambientales": ["vegetacion_densa", "terreno_irregular", "ventana_crepuscular"],
+    "modificadores_ambiente": { "sigilo": 1, "fisico": 0, "biologico": -1 },
+    "zonas": [
+      { "id": "acceso", "etiqueta": "Acceso peatonal norte — Calle Madero", "nivel_revela": 1, "es_foco": false },
+      { "id": "foco", "etiqueta": "Kiosco colapsado — concentración crepuscular", "nivel_revela": 1, "es_foco": true },
+      { "id": "fuente", "etiqueta": "Fuente seca central — espacio abierto", "nivel_revela": 2, "es_foco": false },
+      { "id": "arbolado", "etiqueta": "Arbolado caído — cobertura y enredo", "nivel_revela": 2, "es_foco": false },
+      { "id": "salida_sur", "etiqueta": "Salida sur — Av. Héroe de Nacozari", "nivel_revela": 3, "es_foco": false }
+    ],
+    "pista_comportamiento": "La actividad arranca de forma consistente entre 18:00 y 18:30. Fuera de esa ventana, el foco está inactivo."
+  },
+  "ingenio": {
+    "nombre": "Ingenio azucarero en ruina",
+    "acustica": "metálica y hueca — ecos largos en las estructuras de molienda",
+    "visibilidad": "reducida — polvo de concreto persistente en suspensión",
+    "peligros_ambientales": ["polvo_persistente", "estructura_multinivel", "escombro_suelto"],
+    "modificadores_ambiente": { "sigilo": 1, "fisico": -1, "biologico": -1 },
+    "zonas": [
+      { "id": "acceso", "etiqueta": "Pasillo de servicio este — acceso a molienda", "nivel_revela": 1, "es_foco": false },
+      { "id": "foco", "etiqueta": "Sala de molienda principal — manada establecida", "nivel_revela": 1, "es_foco": true },
+      { "id": "niveles", "etiqueta": "Niveles superiores semiderruidos — posiciones elevadas", "nivel_revela": 2, "es_foco": false },
+      { "id": "tolvas", "etiqueta": "Tolvas y fosas — riesgo de caída", "nivel_revela": 2, "es_foco": false },
+      { "id": "patio", "etiqueta": "Patio de maniobras — zona de marcado del macho dominante", "nivel_revela": 3, "es_foco": false }
+    ],
+    "pista_comportamiento": "El rastro del equipo queda visible en el polvo. El macho dominante patrulla el perímetro del patio."
+  },
+  "feria": {
+    "nombre": "Terrenos de feria abandonados",
+    "acustica": "muy pobre — superficies metálicas amplifican cualquier ruido o respiración elevada",
+    "visibilidad": "fragmentada — cobertura visual abundante entre estructuras colapsadas",
+    "peligros_ambientales": ["metal_oxidado", "deteccion_acustica_alta", "laberinto_estructural"],
+    "modificadores_ambiente": { "sigilo": -1, "fisico": 0, "mental": -1 },
+    "zonas": [
+      { "id": "acceso", "etiqueta": "Perímetro de puestos — línea de aproximación", "nivel_revela": 1, "es_foco": false },
+      { "id": "foco", "etiqueta": "Callejón central — manada en formación de centinela", "nivel_revela": 1, "es_foco": true },
+      { "id": "juegos", "etiqueta": "Juegos mecánicos oxidados — cobertura elevada", "nivel_revela": 2, "es_foco": false },
+      { "id": "centinelas", "etiqueta": "Posiciones periféricas de centinela — relevos", "nivel_revela": 2, "es_foco": false },
+      { "id": "retirada", "etiqueta": "Ruta de retirada sin línea de vista del callejón", "nivel_revela": 3, "es_foco": false }
+    ],
+    "pista_comportamiento": "Dos centinelas en vigilancia con relevos; si uno detecta movimiento o respiración elevada, la manada entera reacciona."
+  },
+  "lecho_rio": {
+    "nombre": "Lecho de río seco",
+    "acustica": "abierta — domina la vibración del sustrato sobre el sonido aéreo",
+    "visibilidad": "alta — terreno expuesto sin cobertura",
+    "peligros_ambientales": ["vibracion_sustrato", "interferencia_radio", "exposicion_total"],
+    "modificadores_ambiente": { "sigilo": -1, "tecnico": -1, "biologico": 0 },
+    "zonas": [
+      { "id": "acceso", "etiqueta": "Ribera norte — acceso por camino de terracería", "nivel_revela": 1, "es_foco": false },
+      { "id": "foco", "etiqueta": "Tramo de mayor densidad de vibración — colonia", "nivel_revela": 1, "es_foco": true },
+      { "id": "cauce", "etiqueta": "Cauce central — sustrato suelto, paso lento obligado", "nivel_revela": 2, "es_foco": false },
+      { "id": "sensor", "etiqueta": "Estación SS-RIO-01 — punto de coordinación pasivo", "nivel_revela": 2, "es_foco": false },
+      { "id": "margen", "etiqueta": "Margen elevado — fuera del frente de migración", "nivel_revela": 3, "es_foco": false }
+    ],
+    "pista_comportamiento": "La vibración es continua de día y baja de noche. Correr o saltar dispara la respuesta de la colonia."
+  },
+  "sierra": {
+    "nombre": "Vertiente de sierra — observación a distancia",
+    "acustica": "irrelevante a distancia operacional — viento dominante",
+    "visibilidad": "alta a larga distancia — sin cobertura, exposición completa",
+    "peligros_ambientales": ["exposicion_alpina", "interferencia_comunicacion", "distancia_no_negociable"],
+    "modificadores_ambiente": { "mental": -1, "tecnico": -1, "fisico": -1 },
+    "zonas": [
+      { "id": "acceso", "etiqueta": "Ruta de ascenso a cota 2,340 m", "nivel_revela": 1, "es_foco": false },
+      { "id": "foco", "etiqueta": "Posición de observación designada — distancia mínima 8 km", "nivel_revela": 1, "es_foco": true },
+      { "id": "telemetria", "etiqueta": "Línea de telemetría hacia la firma infrarroja", "nivel_revela": 2, "es_foco": false },
+      { "id": "linea_8km", "etiqueta": "Línea de 8 km — umbral de retirada inmediata", "nivel_revela": 2, "es_foco": false },
+      { "id": "repliegue", "etiqueta": "Ruta de repliegue rápido sierra abajo", "nivel_revela": 3, "es_foco": false }
+    ],
+    "pista_comportamiento": "Desplazamiento al suroeste a 1.2 km/h. La interferencia de comunicación aumenta al acercarse a la firma."
+  }
+}

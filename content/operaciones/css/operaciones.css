@@ -245,12 +245,152 @@ body::before {
   margin-bottom: 4px;
 }
 
+.map-overlay {
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+}
+
 .map-overlay p {
   font-size: 10px;
   color: var(--text2);
   line-height: 1.6;
   margin-bottom: 12px;
 }
+
+.overlay-tags { display: flex; gap: 6px; margin: 6px 0 10px; flex-wrap: wrap; }
+
+/* ── Header: indicador de señal + tiempo de despacho ── */
+
+.op-signal-wrap, .op-time-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: 18px;
+}
+.op-signal-label, .op-time-label {
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  color: var(--text3);
+  text-transform: uppercase;
+}
+.op-signal-bar {
+  width: 64px;
+  height: 4px;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  position: relative;
+  overflow: hidden;
+}
+.op-signal-fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--green-hi);
+  transition: width 0.35s ease, background 0.35s ease;
+}
+.op-signal-fill.low  { background: var(--accent); }
+.op-signal-fill.crit { background: var(--red-hi); }
+
+/* ── Marcadores por icono_mapa ── */
+
+.ev-marker {
+  width: 16px;
+  height: 16px;
+  background: var(--red-hi);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+.ev-marker.color-ambar { background: var(--accent); box-shadow: 0 0 8px rgba(200,168,74,0.7); }
+.ev-marker.color-rojo  { background: var(--red-hi); box-shadow: 0 0 8px rgba(192,72,56,0.7); }
+.ev-marker.color-verde { background: var(--green-hi); box-shadow: 0 0 8px rgba(122,176,106,0.7); }
+.ev-marker.shape-circulo  { border-radius: 50%; }
+.ev-marker.shape-hexagono { clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%); }
+.ev-marker.shape-triangulo{ clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.ev-marker.shape-estrella { clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+
+.popup-etq { font-size: 9px; letter-spacing: 0.18em; color: var(--text3); margin-bottom: 5px; text-transform: uppercase; }
+.popup-criatura { font-size: 12px; color: var(--accent); margin-bottom: 3px; letter-spacing: 0.1em; }
+.popup-ubic { font-size: 10px; color: var(--text2); line-height: 1.5; }
+
+/* ── Esquemático del sitio ── */
+
+.esquematico {
+  margin: 6px 0 14px;
+  padding: 12px 0 4px;
+  border-top: 1px solid var(--border);
+}
+.esquematico-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.esquematico-title {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--text3);
+  text-transform: uppercase;
+}
+.esquematico-sitio { font-size: 10px; color: var(--text2); text-align: right; }
+
+.zona-list { list-style: none; margin: 0; padding: 0; }
+.zona {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  line-height: 1.5;
+  padding: 3px 0;
+  color: var(--text2);
+}
+.zona-dot {
+  width: 5px; height: 5px;
+  flex: 0 0 5px;
+  border-radius: 50%;
+  background: var(--border3);
+}
+.zona.revelada { color: var(--text); }
+.zona.revelada .zona-dot { background: var(--green); }
+.zona.oculta { color: var(--text3); }
+.zona.foco.revelada { color: var(--accent); }
+.zona.foco.revelada .zona-dot { background: var(--accent); box-shadow: 0 0 6px rgba(200,168,74,0.6); }
+.zona-foco-tag {
+  font-size: 7px;
+  letter-spacing: 0.14em;
+  border: 1px solid var(--accent2);
+  color: var(--accent);
+  padding: 1px 4px;
+  margin-left: 6px;
+}
+.zona-redacted {
+  font-family: var(--mono);
+  color: var(--border3);
+  letter-spacing: -1px;
+  user-select: none;
+}
+.esquematico-pista {
+  font-size: 9.5px;
+  color: var(--green-hi);
+  line-height: 1.5;
+  margin: 8px 0 0;
+  font-style: italic;
+}
+
+/* ── Acciones del overlay + mensaje de escaneo ── */
+
+.overlay-actions { display: flex; flex-direction: column; gap: 8px; }
+.scan-msg {
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  margin-top: 10px;
+  padding: 6px 9px;
+  border-left: 2px solid var(--border3);
+  color: var(--text2);
+}
+.scan-msg.ok   { border-left-color: var(--green); color: var(--green-hi); }
+.scan-msg.warn { border-left-color: var(--accent2); color: var(--accent); }
+.scan-msg.err  { border-left-color: var(--red); color: var(--red-hi); }
 
 /* ═══════════════════════════════════════════════════
    BRIEFING PAGE

@@ -23,6 +23,11 @@ export async function cargarMisionData(id) {
   return fetchJSON(`${DATA_BASE}/missions/${id}.json`);
 }
 
+// Gramática procedural (site-templates por ahora; beats/tags/objetivos en fases posteriores)
+export async function cargarSiteTemplates() {
+  return fetchJSON(`${DATA_BASE}/missions/grammar/site-templates.json`);
+}
+
 export function getSession(key) {
   try { return JSON.parse(sessionStorage.getItem(key)); } catch { return null; }
 }
