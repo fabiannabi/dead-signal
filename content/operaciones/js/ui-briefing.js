@@ -175,4 +175,8 @@ function desplegar(destino) {
 document.getElementById('btn-iniciar').addEventListener('click', () => desplegar('./coms.html'));
 document.getElementById('btn-movil').addEventListener('click', () => desplegar('./movil.html'));
 
-init().catch(err => console.error('[CENVAC briefing]', err));
+init().catch(err => {
+  console.error('[CENVAC briefing]', err);
+  const grid = document.getElementById('roster-grid');
+  if (grid) grid.innerHTML = `<div style="color:var(--red-hi);font-size:11px;padding:16px;line-height:1.6">No se pudo cargar el roster: ${err.message}<br><a href="./index.html" style="color:var(--accent)">← Volver al mapa</a></div>`;
+});
