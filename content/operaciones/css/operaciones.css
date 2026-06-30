@@ -1317,3 +1317,76 @@ body::after {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border2); }
 ::-webkit-scrollbar-thumb:hover { background: var(--border3); }
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE — móvil (≤760px)
+   ════════════════════════════════════════════════════ */
+@media (max-width: 760px) {
+  /* Header: que envuelva y no se desborde */
+  .op-header {
+    height: auto;
+    min-height: 48px;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    padding: 8px 12px;
+    row-gap: 2px;
+  }
+  .op-logo { font-size: 12px; }
+  .op-divider { display: none; }
+  .op-freq { font-size: 9px; }
+  .op-signal-wrap, .op-time-wrap { margin-left: 10px; }
+  .op-signal-bar { width: 44px; }
+  /* Ocultar lo no esencial en pantallas muy chicas */
+  #ev-mision, #strip-mis { display: none; }
+
+  /* Consola: una sola columna, apilada y con scroll de página */
+  .coms-layout {
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
+  .status-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border2);
+    max-height: 40vh;
+    overflow-y: auto;
+  }
+  .rendimiento-panel { display: none; }
+  .coms-log { max-height: none; }
+  .coms-panel { min-height: 50vh; }
+
+  /* Tablero: overlay como hoja inferior a todo el ancho */
+  #map-wrap { height: calc(100vh - 96px); }
+  .map-overlay {
+    left: 8px; right: 8px; bottom: 8px;
+    min-width: 0; max-width: none;
+    max-height: 58vh;
+  }
+  .mapa-leyenda { top: 8px; left: 8px; padding: 8px 10px; }
+  .cuartel-panel { left: 8px; right: 8px; bottom: 8px; min-width: 0; }
+  .sitio-schematic { grid-template-columns: 1fr; }
+
+  /* Cierre */
+  .cierre-tiles { grid-template-columns: 1fr; }
+  .cierre-veredicto { font-size: 2.4rem; }
+  .reporte-actions { flex-wrap: wrap; }
+
+  /* Briefing */
+  .briefing-wrap, .cuartel-wrap, .exp-wrap, .reporte-wrap { padding-left: 14px; padding-right: 14px; }
+  .briefing-actions { flex-wrap: wrap; }
+  .briefing-yield { flex-basis: 100%; }
+
+  /* Cuartel: filas que envuelven */
+  .roster-row { flex-wrap: wrap; }
+  .roster-estado { align-self: center; }
+  .roster-main .bar-row { max-width: none; }
+
+  /* Expediente: stats que envuelven cómodos */
+  .exp-stat { width: 42px; }
+  .exp-stat-meta { margin-left: 0; flex-basis: 100%; margin-top: 8px; }
+
+  /* Móvil (Diseño 7): marco a todo el ancho */
+  .mr-frame { width: 100%; height: calc(100dvh - 40px); border-radius: 0; box-shadow: none; }
+  .movil-body { padding: 0; }
+  .mr-salir { top: 8px; right: 12px; left: auto; }
+}
