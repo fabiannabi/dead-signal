@@ -57,34 +57,34 @@ function construirMapa() {
   if (!el) return;
   if (!displayZonas.length) { el.innerHTML = '<div class="tac-vacio">sin esquemático del sitio</div>'; return; }
   const N = displayZonas.length;
-  // Una sola columna de cuartos anchos → nombres completos legibles, sin cruces.
-  const W = 320, padX = 8, padY = 10, bw = W - padX * 2, bh = 56, gapY = 16;
-  const H = padY * 2 + N * bh + (N - 1) * gapY;
+  // Plano de planta: cuartos que comparten paredes (footprint de edificio).
+  // displayZonas = [acceso, ...mids, foco]. Slots normalizados 0..100.
+  const SLOTS = {
+    4: [ {x:0,y:50,w:46,h:50}, {x:0,y:0,w:46,h:46}, {x:50,y:0,w:50,h:46}, {x:50,y:50,w:50,h:50} ],
+    5: [ {x:0,y:48,w:42,h:52}, {x:0,y:0,w:42,h:44}, {x:46,y:0,w:54,h:44}, {x:46,y:48,w:26,h:52}, {x:76,y:48,w:24,h:52} ],
+    6: [ {x:0,y:50,w:32,h:50}, {x:0,y:0,w:32,h:46}, {x:36,y:0,w:30,h:46}, {x:70,y:0,w:30,h:46}, {x:36,y:50,w:30,h:50}, {x:70,y:50,w:30,h:50} ],
+  };
+  const slots = SLOTS[N] || SLOTS[5];
+  const VW = 320, VH = 248, pad = 6;
+  const sx = (VW - pad * 2) / 100, sy = (VH - pad * 2) / 100, wall = 2.5;
   roomPos = {};
-  const pts = displayZonas.map((z, i) => {
-    const x = padX + bw / 2;
-    const y = padY + i * (bh + gapY) + bh / 2;
-    roomPos[z.id] = { x: x + bw / 2 - 30, y };   // dots a la derecha, no tapan el nombre
-    return { x, y, z };
-  });
-  let corr = '', rooms = '', labels = '';
-  // corredor vertical corto entre cuartos consecutivos (en el hueco, sin cruzar texto)
-  for (let i = 0; i < pts.length - 1; i++) {
-    corr += `<line class="tac-corr" x1="${pts[i].x}" y1="${pts[i].y + bh / 2}" x2="${pts[i].x}" y2="${pts[i + 1].y - bh / 2}"/>`;
-  }
-  pts.forEach(({ x, y, z }) => {
-    rooms += `<rect class="tac-svg-room${z.es_foco ? ' foco' : ''}" data-zid="${z.id}" x="${x - bw / 2}" y="${y - bh / 2}" width="${bw}" height="${bh}" rx="2"/>`;
+  let rooms = '', labels = '';
+  displayZonas.forEach((z, i) => {
+    const s = slots[i] || slots[slots.length - 1];
+    const rx = pad + s.x * sx + wall, ry = pad + s.y * sy + wall;
+    const rw = s.w * sx - wall * 2, rh = s.h * sy - wall * 2;
+    roomPos[z.id] = { x: rx + rw * 0.72, y: ry + rh * 0.66 };   // dots dentro del cuarto, abajo-der
+    rooms += `<rect class="tac-svg-room${z.es_foco ? ' foco' : ''}" data-zid="${z.id}" x="${rx}" y="${ry}" width="${rw}" height="${rh}" rx="2"/>`;
     const tag = z.es_foco ? '◉ FOCO' : 'ZONA';
-    const nombre = (z.etiqueta || z.id).split(' — ')[0];
-    const lx = x - bw / 2 + 12;
-    labels += `<text class="tac-svg-tag${z.es_foco ? ' foco' : ''}" data-zid="${z.id}" x="${lx}" y="${y - bh / 2 + 19}">${tag}</text>`;
-    labels += `<text class="tac-svg-name" data-zid="${z.id}" x="${lx}" y="${y - bh / 2 + 40}">${nombre}</text>`;
+    const corto = (z.etiqueta || z.id).split(/[ —]/)[0].slice(0, 12);
+    labels += `<text class="tac-svg-tag${z.es_foco ? ' foco' : ''}" data-zid="${z.id}" x="${rx + 8}" y="${ry + 17}">${tag}</text>`;
+    labels += `<text class="tac-svg-name" data-zid="${z.id}" x="${rx + 8}" y="${ry + 35}">${corto}</text>`;
   });
   const s0 = roomPos[displayZonas[0].id];
   const squad = `<g class="tac-squad" id="tac-squad" transform="translate(${s0.x},${s0.y})">
     <circle class="tac-ping" cx="0" cy="0" r="6"/>
-    <circle class="tac-dot" cx="-7" cy="6" r="3.4"/><circle class="tac-dot" cx="7" cy="5" r="3.4"/><circle class="tac-dot" cx="0" cy="-7" r="3.4"/></g>`;
-  el.innerHTML = `<svg class="tac-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${corr}${rooms}${labels}${squad}</svg><div class="tac-caption" id="tac-caption">— en inserción —</div>`;
+    <circle class="tac-dot" cx="-6" cy="5" r="3.2"/><circle class="tac-dot" cx="6" cy="4" r="3.2"/><circle class="tac-dot" cx="0" cy="-6" r="3.2"/></g>`;
+  el.innerHTML = `<svg class="tac-svg" viewBox="0 0 ${VW} ${VH}">${rooms}${labels}${squad}</svg><div class="tac-caption" id="tac-caption">— en inserción —</div>`;
   mapaBuilt = true;
 }
 
