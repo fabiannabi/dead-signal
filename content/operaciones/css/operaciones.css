@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 :root {
-  /* paleta CRT fósforo — igualada a la página principal (data-palette="fosfor") */
-  --bg:  #040a04;
-  --bg2: #081408;
-  --bg3: #0c1e0e;
-  --border:  #103016;
-  --border2: #1c5028;
-  --border3: #1c8c3a;
-  --text:  #bdf5cc;
-  --text2: #9fdcb0;
-  --text3: #4f8a5f;
-  --accent:  #33ff66;
-  --accent2: #1c8c3a;
-  --green:   #1c8c3a;
-  --green-hi:#5effa0;
-  --red:     #8a2a2a;
-  --red-hi:  #d24a3a;
-  --amber:   #d9c84a;
-  --purple:  #4a8aff;
+  /* Tokens del rediseño — fuente de verdad: operaciones-spec-visual.md §1 (ámbar) */
+  --bg:  #070705;
+  --bg2: #0b0b09;
+  --bg3: #0f0f0d;
+  --border:  #1a1a14;
+  --border2: #242418;
+  --border3: #30302a;
+  --text:  #b4b09c;
+  --text2: #72705e;
+  --text3: #464438;
+  --accent:  #c8a84a;   /* ámbar — acción / amenaza media */
+  --accent2: #7a6228;
+  --green:   #4a7a3a;   /* operativo / éxito / amenaza baja */
+  --green-hi:#7ab06a;
+  --red:     #7a3020;   /* baja / crítico / amenaza alta */
+  --red-hi:  #c04838;
+  --amber:   #c8a84a;   /* aviso (= acento en esta paleta) */
+  --purple:  #6a6ab0;   /* vínculos */
   --mono: 'Share Tech Mono', monospace;
 }
 
@@ -34,46 +34,16 @@ body {
   overflow-x: hidden;
 }
 
-/* CRT fósforo — scanlines (igual que data-palette="fosfor" del sitio) */
+/* Textura de grano sutil (limpia, como los mockups) */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: repeating-linear-gradient(
-    0deg,
-    rgba(0,0,0,0)    0px,
-    rgba(0,0,0,0)    2px,
-    rgba(0,0,0,0.10) 3px,
-    rgba(0,0,0,0)    4px
-  );
-  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none;
-  z-index: 9000;
+  z-index: 9999;
+  opacity: 0.22;
 }
-
-/* CRT fósforo — viñeta + parpadeo */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9001;
-  pointer-events: none;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.65) 100%);
-  animation: crt-flicker 5s infinite steps(60);
-}
-
-@keyframes crt-flicker {
-  0%, 100% { opacity: 0.92; }
-  50%       { opacity: 1;    }
-  73%       { opacity: 0.85; }
-}
-
-/* Glow fósforo en acentos */
-.op-logo span,
-.map-overlay h2,
-.briefing-page-title { text-shadow: 0 0 10px rgba(51, 255, 102, 0.4); }
-.op-logo:hover span { text-shadow: 0 0 14px rgba(51, 255, 102, 0.6); }
-.btn-op.primary { text-shadow: 0 0 8px rgba(51, 255, 102, 0.35); }
 
 /* ── Header ── */
 
@@ -336,7 +306,7 @@ body::after {
 }
 .ev-marker.color-ambar { background: var(--amber); box-shadow: 0 0 8px rgba(217,200,74,0.75); }
 .ev-marker.color-rojo  { background: var(--red-hi); box-shadow: 0 0 8px rgba(210,74,58,0.75); }
-.ev-marker.color-verde { background: var(--green-hi); box-shadow: 0 0 9px rgba(94,255,160,0.8); }
+.ev-marker.color-verde { background: var(--green-hi); box-shadow: 0 0 8px rgba(122,176,106,0.7); }
 .ev-marker.shape-circulo  { border-radius: 50%; }
 .ev-marker.shape-hexagono { clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%); }
 .ev-marker.shape-triangulo{ clip-path: polygon(50% 0, 100% 100%, 0 100%); }
