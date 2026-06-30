@@ -1,5 +1,6 @@
-import { getSession, setSession, cargarMisionData } from './main.js';
+import { getSession, setSession, cargarMisionData, cargarGramatica, hashSeed } from './main.js';
 import { cargarMision, obtenerNodo, procesarNodo, procesarOpcion, filtrarOpciones } from './mission-engine.js';
+import { generarMision } from './mission-generator.js';
 import { iniciarMision } from './state.js';
 
 const delay = ms => new Promise(r => setTimeout(r, ms));
@@ -26,7 +27,19 @@ async function init() {
     return;
   }
 
-  const misionRaw = await cargarMisionData(evento.mision_asociada);
+  // Misión generada para criaturas con soporte de gramática; si no, la hand-authored.
+  let misionRaw;
+  let grammar = null;
+  try { grammar = await cargarGramatica(); } catch { /* sin gramática → fallback */ }
+  if (grammar && grammar.creatureTags[evento.criatura_sospechada]) {
+    const seed = getSession('op_seed') ?? hashSeed(evento.id);
+    const scan = getSession('op_scan_estado') || { nivel: 0 };
+    misionRaw = generarMision(evento, seed, { grammar, scan_estado: scan });
+  } else {
+    misionRaw = await cargarMisionData(evento.mision_asociada);
+  }
+  setSession('op_mision_obj', misionRaw);
+
   mision = cargarMision(misionRaw);
   estado = iniciarMision(evento, misionRaw, equipo.map(a => JSON.parse(JSON.stringify(a))), liderId);
 

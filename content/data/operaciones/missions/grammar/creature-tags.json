@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "descripcion": "Comportamientos canónicos por criatura, expresados como tags que los beats consumen. Toda entrada debe corresponder a comportamiento ya establecido en el bestiario (tarea §3.2). Los descriptores se interpolan en el texto de los beats con {clave}.",
+    "fase2_soporte_completo": ["arana_hidraulica"]
+  },
+  "arana_hidraulica": {
+    "nombre": "Araña Hidráulica",
+    "binomial": "Aranea hydraulica",
+    "nivel_amenaza": "II",
+    "tags": [
+      "quietud_arquitectonica",
+      "sensibilidad_movimiento",
+      "clic_articular",
+      "mimetismo_acustico",
+      "cables_tension",
+      "descarga_hidraulica_unica",
+      "tapetum_lucidum",
+      "restraint"
+    ],
+    "protocolo_defensivo": "8-B",
+    "protocolos_aproximacion": ["6", "8-A"],
+    "protocolo_observacion": "15",
+    "stat_aproximacion": "sigilo",
+    "stat_busqueda": "biológico",
+    "stat_extraccion": "biológico",
+    "stat_retirada": "sigilo",
+    "descriptores": {
+      "criatura": "Araña Hidráulica",
+      "clic": "el clic articular — rítmico, húmedo — procedente del fondo del tramo",
+      "clic_corto": "el clic articular",
+      "tapetum": "el reflejo verde del tapetum a más de quince metros en la oscuridad",
+      "cables": "los cables de tensión translúcidos a doce centímetros de la superficie del agua",
+      "descarga": "la descarga hidráulica única que la especie reserva para una sola presa",
+      "señal_advertencia": "el clic acelera cuando el espécimen evalúa un estímulo como presa o interferencia",
+      "muestra": "fluido articular",
+      "muestra_desc": "fluido con leve iridiscencia extraíble de articulación distal; produce el clic cuando está presurizado in vivo"
+    },
+    "audio": {
+      "aproximacion": "silencio",
+      "busqueda": "estatica_baja",
+      "encuentro": "estatica_media",
+      "extraccion": "estatica_baja",
+      "critico": "alerta_critica"
+    }
+  },
+  "_stubs_fase3": {
+    "nota": "Tags base de las demás criaturas para extender en Fase 3 (sin soporte de beats todavía).",
+    "cervato_de_concreto": { "nombre": "Cervato de Concreto", "nivel_amenaza": "III", "tags": ["evaluacion_aproximacion", "marcado_territorial", "manada_jerarquica", "criterio_indeterminado"] },
+    "gusano_de_asfalto": { "nombre": "Gusano de Asfalto", "nivel_amenaza": "II", "tags": ["tunel_residual", "crujido_advertencia", "vibracion_sustrato", "migracion"] },
+    "chacal_de_feria": { "nombre": "Chacal de Feria", "nivel_amenaza": "II", "tags": ["formacion_centinela", "deteccion_acustica", "relevos", "manada"] },
+    "mosca_forunculo": { "nombre": "Mosca Forúnculo", "nivel_amenaza": "II", "tags": ["actividad_crepuscular", "colonia_incipiente", "parasitismo"] },
+    "la_catedral": { "nombre": "La Catedral", "nivel_amenaza": "IV", "tags": ["clase_extincion", "interferencia_comunicacion", "distancia_no_negociable", "observacion_pura"] }
+  }
+}

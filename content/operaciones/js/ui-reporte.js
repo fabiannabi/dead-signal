@@ -13,7 +13,9 @@ async function init() {
     return;
   }
 
-  const misionRaw = await cargarMisionData(misionId);
+  // Preferir la misión jugada (puede ser generada y no existir como archivo).
+  const stored   = getSession('op_mision_obj');
+  const misionRaw = (stored && stored.id === misionId) ? stored : await cargarMisionData(misionId);
   const mision    = cargarMision(misionRaw);
   const md        = generarReporte(estado, mision, evento);
   const idOp      = `OP-${evento.id.replace('EVT-', '')}`;

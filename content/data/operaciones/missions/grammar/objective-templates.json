@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "descripcion": "Plantillas de objetivo por tipo de misión. Definen tipo_mision, objetivos, protocolos, la espina de fases y la forma de los 5 finales diferenciados. Consumido por mission-generator.js (tarea §3.2 / §4).",
+    "placeholders": "{criatura} {muestra} {sitio} se interpolan en generación; {estado_equipo} {estado_muestra} {agente.nombre} los resuelve el motor en runtime.",
+    "fase2_soporte": ["extraccion_4a"]
+  },
+  "extraccion_4a": {
+    "nombre_plantilla": "Extracción de muestra — {binomial}",
+    "tipo_mision": "extraccion_biologica",
+    "protocolos": ["4-A"],
+    "fases": ["insercion", "aproximacion", "busqueda", "encuentro", "extraccion", "retirada"],
+    "objetivo_primario": "Obtener muestra viable de {muestra} (mínimo 2 ml en contenedor clase B certificado).",
+    "objetivo_secundario": "Documentar condiciones del foco: tamaño del espécimen, comportamiento observado y evidencia de hábitat permanente o de tránsito.",
+    "logica_resolucion": [
+      { "condicion": { "muestra_obtenida": true, "bajas_count": 0, "heridas_graves_count": 0 }, "siguiente": "final_exito_limpio" },
+      { "condicion": { "muestra_obtenida": true, "bajas_count": 0, "heridas_graves_count_gte": 1 }, "siguiente": "final_exito_parcial" },
+      { "condicion": { "muestra_obtenida": true, "bajas_count_gte": 1 }, "siguiente": "final_exito_pirrico" },
+      { "condicion": { "muestra_obtenida": false, "bajas_count": 0 }, "siguiente": "final_fracaso_extraccion" },
+      { "condicion": { "muestra_obtenida": false, "bajas_count_gte": 1 }, "siguiente": "final_fracaso_catastrofico" }
+    ],
+    "finales": [
+      {
+        "id": "final_exito_limpio",
+        "resultado": "exito_limpio",
+        "titulo": "Extracción completada — muestra viable — sin bajas",
+        "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+        "texto_control": "Operación cerrada con resultado óptimo. Muestra de {muestra} obtenida conforme al Protocolo 4-A. El equipo regresó completo y sin heridas graves.",
+        "narrativa_fragmentos": {
+          "cronologia": "El equipo completó inserción, aproximación y extracción sin bajas ni heridas incapacitantes. La muestra fue obtenida en el tiempo estimado. El espécimen fue gestionado sin contacto directo.",
+          "hallazgos": "Muestra de {muestra} de {binomial} obtenida en estado óptimo, volumen suficiente para análisis completo. El foco se documentó como espacio de tránsito, no nido permanente.",
+          "notas_analista": "Operación de referencia para futuras extracciones de {criatura}. La muestra llega al laboratorio en condiciones documentadas. Distribución a Análisis Biológico autorizada."
+        },
+        "efectos_garantizados_al_entrar": []
+      },
+      {
+        "id": "final_exito_parcial",
+        "resultado": "exito_parcial",
+        "titulo": "Extracción completada — muestra viable — heridos",
+        "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+        "texto_control": "Operación cerrada con resultado aceptable. Muestra obtenida. El equipo regresó completo pero con heridas que requieren atención.",
+        "narrativa_fragmentos": {
+          "cronologia": "La operación cumplió el objetivo primario con complicaciones. La muestra fue asegurada; el equipo enfrentó un incidente que resultó en heridas sin comprometer la capacidad operativa.",
+          "hallazgos": "Muestra de {muestra} viable obtenida y transportada. Las heridas son consistentes con el riesgo documentado de {criatura} en espacio confinado. El foco queda activo.",
+          "notas_analista": "La extracción en campo de {criatura} es viable con el equipo y protocolos actuales. Se recomienda reforzar protección en extremidades para operaciones similares."
+        },
+        "efectos_garantizados_al_entrar": []
+      },
+      {
+        "id": "final_exito_pirrico",
+        "resultado": "exito_pirrico",
+        "titulo": "Extracción completada — muestra viable — baja crítica",
+        "clasificacion_doc": "Nivel 3 — Acceso restringido — Revisión de Coordinación",
+        "texto_control": "Operación cerrada. Muestra obtenida. Un agente fue dado de baja. El costo humano excede lo aceptable para una misión clase {nivel_amenaza}. Protocolo 11 activado retroactivamente.",
+        "narrativa_fragmentos": {
+          "cronologia": "La operación cumplió el objetivo primario a un costo que requiere revisión. La muestra fue asegurada pero el equipo sufrió una baja crítica durante la operación.",
+          "hallazgos": "Muestra viable obtenida. Baja crítica registrada. Las condiciones del foco eran más complejas de lo estimado en el briefing.",
+          "notas_analista": "Resultado ambiguo que Coordinación debe analizar antes de usar como referencia. El costo operativo no debió asumirse sin autorización de nivel superior."
+        },
+        "efectos_garantizados_al_entrar": [
+          { "tipo": "baja_garantizada", "valor": { "tipo": "trauma_de_especimen", "parte_cuerpo": "torso", "severidad": 4 }, "alcance": "aleatorio" }
+        ]
+      },
+      {
+        "id": "final_fracaso_extraccion",
+        "resultado": "fracaso_extraccion",
+        "titulo": "Objetivo primario no cumplido — equipo extraído sin bajas",
+        "clasificacion_doc": "Nivel 2 — Distribución interna CENVAC",
+        "texto_control": "Operación cerrada sin muestra. El equipo regresó completo. El objetivo primario no se cumplió. La información del foco puede tener valor para futuras operaciones.",
+        "narrativa_fragmentos": {
+          "cronologia": "El equipo completó inserción y aproximación pero no aseguró muestra viable. La extracción del equipo se realizó sin bajas.",
+          "hallazgos": "Sin muestra recuperada. El foco fue confirmado como zona de actividad de {criatura}. La documentación es transferible al archivo del bestiario.",
+          "notas_analista": "El fracaso de muestra no implica operación inútil. Se recomienda una segunda operación con ajustes de protocolo. El equipo operó dentro de parámetros de seguridad."
+        },
+        "efectos_garantizados_al_entrar": []
+      },
+      {
+        "id": "final_fracaso_catastrofico",
+        "resultado": "fracaso_catastrofico",
+        "titulo": "Operación abortada — bajas confirmadas — sin muestra",
+        "clasificacion_doc": "Nivel 4 — Revisión obligatoria de Coordinación y Comité de Seguridad",
+        "texto_control": "Operación cerrada. Sin muestra. Bajas confirmadas. Protocolo 11 activado. El foco será reclasificado pendiente de nueva evaluación.",
+        "narrativa_fragmentos": {
+          "cronologia": "La operación resultó en bajas y fracaso del objetivo. El contacto con el espécimen produjo consecuencias que exceden los parámetros de riesgo evaluados.",
+          "hallazgos": "Sin muestra recuperada. Bajas documentadas. {criatura} demostró comportamiento no cubierto del todo por los protocolos actuales. El foco requiere re-evaluación de clase de amenaza.",
+          "notas_analista": "Requiere revisión completa de los protocolos de operación en zonas de actividad de {criatura}. Se recomienda reclasificación y suspensión de operaciones similares hasta completar la revisión."
+        },
+        "efectos_garantizados_al_entrar": [
+          { "tipo": "baja_garantizada", "valor": { "tipo": "trauma_de_especimen", "parte_cuerpo": "torso", "severidad": 4 }, "alcance": "aleatorio" }
+        ]
+      }
+    ]
+  }
+}

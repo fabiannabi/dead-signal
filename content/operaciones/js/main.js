@@ -28,6 +28,25 @@ export async function cargarSiteTemplates() {
   return fetchJSON(`${DATA_BASE}/missions/grammar/site-templates.json`);
 }
 
+// Gramática completa para el generador de misiones
+export async function cargarGramatica() {
+  const g = `${DATA_BASE}/missions/grammar`;
+  const [beats, creatureTags, objectiveTemplates, siteTemplates] = await Promise.all([
+    fetchJSON(`${g}/beats.json`),
+    fetchJSON(`${g}/creature-tags.json`),
+    fetchJSON(`${g}/objective-templates.json`),
+    fetchJSON(`${g}/site-templates.json`),
+  ]);
+  return { beats, creatureTags, objectiveTemplates, siteTemplates };
+}
+
+// Hash determinístico de string → entero (para seeds estables por evento)
+export function hashSeed(str) {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+
 export function getSession(key) {
   try { return JSON.parse(sessionStorage.getItem(key)); } catch { return null; }
 }
