@@ -16,6 +16,26 @@ const SIGNAL = {
 let estado = null;
 let mision = null;
 let procesando = false;
+let senalDespacho = 100;   // señal con la que se desplegó (gastada al escanear) — §5
+
+// Penalización de comunicación por tramo (audio_hint del nodo) sobre la señal de despacho.
+const PENAL_AUDIO = { silencio: 0, estatica_baja: 5, estatica_media: 20, estatica_alta: 40, alerta_critica: 10 };
+
+// Nivel de información disponible en un nodo: combina la señal de despacho con el tramo.
+function infoTier(audio_hint) {
+  const eff = Math.max(0, senalDespacho - (PENAL_AUDIO[audio_hint] ?? 0));
+  if (eff >= 60) return { tier: 'claro', eff, corrupt: 0 };
+  if (eff >= 35) return { tier: 'degradado', eff, corrupt: 0.07 };
+  return { tier: 'critico', eff, corrupt: 0.22 };
+}
+
+// Corrompe una fracción de caracteres con █ (no toca espacios ni saltos).
+function corromper(txt, prob) {
+  if (!prob) return txt;
+  let out = '';
+  for (const ch of txt) out += (ch === ' ' || ch === '\n') ? ch : (Math.random() < prob ? '█' : ch);
+  return out;
+}
 
 async function init() {
   const evento  = getSession('op_evento');
@@ -25,6 +45,16 @@ async function init() {
   if (!evento || !equipo?.length) {
     window.location.href = './briefing.html';
     return;
+  }
+
+  // Señal de despacho con la que se desplegó (la que se gastó al escanear) — §5
+  const despacho = getSession('op_despacho');
+  senalDespacho = (despacho && typeof despacho.senal_pct === 'number') ? despacho.senal_pct : 100;
+  const sigPct = document.getElementById('sig-pct');
+  if (sigPct) {
+    const cls = senalDespacho < 20 ? 'crit' : senalDespacho < 35 ? 'low' : '';
+    sigPct.textContent = `SEÑAL ${senalDespacho}%`;
+    sigPct.className = `op-freq op-signal ${cls}`;
   }
 
   // Misión generada para criaturas con soporte de gramática; si no, la hand-authored.
@@ -69,18 +99,24 @@ async function stepNode(nodo_id) {
   appendNodeSep(nodo.tipo, nodo_id);
   updateSignal(nodo.audio_hint);
 
+  // Nivel de información de este tramo según la señal de despacho (§5)
+  const info = infoTier(nodo.audio_hint);
+  if (info.tier !== 'claro') appendDegradado(info);
+
   // Process node — applies effects, records historial, advances time
   const resultado = procesarNodo(nodo, estado, mision, {});
 
   // Ambient line
-  if (nodo.ambiente) appendAmbiente(nodo.ambiente);
+  if (nodo.ambiente) appendAmbiente(corromper(nodo.ambiente, info.corrupt));
 
   // Messages (staggered)
   for (const msg of resultado.mensajes) {
     await delay(100);
-    appendMessage(msg);
+    appendMessage(msg, info.corrupt);
   }
 
+  // Resultado del check — su visibilidad es parte de la mecánica de señal (§5)
+  if (resultado.check_resultado) appendCheckResult(resultado.check_resultado, info);
 
   renderStatusPanel();
   scrollBottom();
@@ -97,7 +133,7 @@ async function stepNode(nodo_id) {
   }
 
   if (resultado.requiere_decision) {
-    showDecisionButtons(nodo, resultado.opciones_disponibles);
+    showDecisionButtons(nodo, resultado.opciones_disponibles, info);
     return;
   }
 
@@ -110,13 +146,15 @@ async function stepNode(nodo_id) {
 
 // ── Decision buttons ────────────────────────────────────────────────────────
 
-function showDecisionButtons(nodo, opciones) {
+function showDecisionButtons(nodo, opciones, info = { tier: 'claro', corrupt: 0 }) {
   const zone = document.getElementById('decision-zone');
   zone.innerHTML = '';
 
   const prompt = document.createElement('div');
   prompt.className = 'decision-prompt';
-  prompt.textContent = '— Esperando instrucción de Control —';
+  prompt.textContent = info.tier === 'critico'
+    ? '— Protocolo 9 — solo códigos de estado disponibles —'
+    : '— Esperando instrucción de Control —';
   zone.appendChild(prompt);
 
   const btns = document.createElement('div');
@@ -124,8 +162,15 @@ function showDecisionButtons(nodo, opciones) {
 
   opciones.forEach((op, idx) => {
     const btn = document.createElement('button');
-    btn.className = 'decision-btn';
-    btn.textContent = op.texto;
+    btn.className = `decision-btn${info.tier !== 'claro' ? ' degradada' : ''}`;
+    // Protocolo 9: con señal crítica solo llegan códigos; con señal media, texto corrompido.
+    if (info.tier === 'critico') {
+      btn.innerHTML = `<span class="op-codigo">CÓDIGO ${idx + 1}</span> ${corromper(op.texto, 0.5)}`;
+    } else if (info.tier === 'degradado') {
+      btn.textContent = corromper(op.texto, info.corrupt);
+    } else {
+      btn.textContent = op.texto;
+    }
     btn.addEventListener('click', async () => {
       btns.querySelectorAll('button').forEach(b => { b.disabled = true; });
       zone.innerHTML = '';
@@ -176,7 +221,7 @@ function appendAmbiente(texto) {
   document.getElementById('coms-log').appendChild(el);
 }
 
-function appendMessage(msg) {
+function appendMessage(msg, corrupt = 0) {
   const log = document.getElementById('coms-log');
   const row = document.createElement('div');
   row.className = 'coms-message';
@@ -192,18 +237,27 @@ function appendMessage(msg) {
 
   const textEl = document.createElement('div');
   textEl.className = `coms-text ${textCls}`;
-  textEl.textContent = msg.texto.replace(/█/g, '');
+  textEl.textContent = corromper(msg.texto, corrupt);
 
   row.appendChild(chanEl);
   row.appendChild(textEl);
   log.appendChild(row);
 }
 
-function appendCheckResult(cr) {
+function appendDegradado(info) {
   const log = document.getElementById('coms-log');
   const el = document.createElement('div');
-  const resCls = cr.resultado.replace('_', '').replace('í', 'i').replace('é', 'e');
-  el.className = `check-block ${cr.resultado.replace('ó', 'o').replace(/\_/g,'')}`;
+  el.className = `coms-degradado ${info.tier}`;
+  el.textContent = info.tier === 'critico'
+    ? `// SEÑAL CRÍTICA (${info.eff}%) — Protocolo 9 activo: solo códigos de estado`
+    : `// señal degradada (${info.eff}%) — transmisión parcial`;
+  log.appendChild(el);
+}
+
+function appendCheckResult(cr, info = { tier: 'claro' }) {
+  const log = document.getElementById('coms-log');
+  const el = document.createElement('div');
+  el.className = `check-block ${cr.resultado.replace('ó', 'o').replace(/\_/g, '')}`;
 
   const resultLabel = {
     'crítico_éxito': 'CRÍTICO ÉXITO',
@@ -216,10 +270,21 @@ function appendCheckResult(cr) {
     : cr.resultado === 'crítico_fallo' ? 'critico_fallo'
     : cr.resultado === 'éxito' ? 'exito' : 'fallo';
 
-  el.innerHTML = `<span class="check-label">CHECK ${cr.stat.toUpperCase()} · ${cr.agente}</span><br>` +
-    `<span class="check-dice">d10=${cr.tirada}</span> · ` +
-    `<span class="check-label">total=${cr.total} vs dif.${cr.dificultad}</span><br>` +
-    `<span class="check-result ${resultCls}">${resultLabel}</span>`;
+  if (info.tier === 'critico') {
+    // Señal crítica: el resultado no llega. El efecto mecánico ya se aplicó.
+    el.innerHTML = `<span class="check-label">CHECK ${cr.stat.toUpperCase()} · ███</span><br>` +
+      `<span class="check-result no-recibido">— RESULTADO NO RECIBIDO · SEÑAL DEGRADADA —</span>`;
+  } else if (info.tier === 'degradado') {
+    // Señal media: llega el veredicto, no los números.
+    el.innerHTML = `<span class="check-label">CHECK ${cr.stat.toUpperCase()} · ${cr.agente}</span><br>` +
+      `<span class="check-dice">d10=█ · total=██ vs dif.${cr.dificultad}</span><br>` +
+      `<span class="check-result ${resultCls}">${resultLabel}</span>`;
+  } else {
+    el.innerHTML = `<span class="check-label">CHECK ${cr.stat.toUpperCase()} · ${cr.agente}</span><br>` +
+      `<span class="check-dice">d10=${cr.tirada}</span> · ` +
+      `<span class="check-label">total=${cr.total} vs dif.${cr.dificultad}</span><br>` +
+      `<span class="check-result ${resultCls}">${resultLabel}</span>`;
+  }
 
   log.appendChild(el);
 }

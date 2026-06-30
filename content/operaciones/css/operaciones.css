@@ -427,6 +427,28 @@ body::after {
 .scan-msg.warn { border-left-color: var(--amber); color: var(--amber); }
 .scan-msg.err  { border-left-color: var(--red); color: var(--red-hi); }
 
+/* ── Señal degradada en misión (§5) ── */
+.coms-degradado {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  margin: 8px 0 4px;
+  color: var(--amber);
+  opacity: 0.9;
+}
+.coms-degradado.critico { color: var(--red-hi); animation: blink 1.4s step-end infinite; }
+.check-result.no-recibido { color: var(--red-hi); font-size: 10px; letter-spacing: 0.1em; }
+.decision-btn.degradada { border-style: dashed; }
+.decision-btn .op-codigo {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  border: 1px solid var(--accent2);
+  padding: 1px 5px;
+  margin-right: 8px;
+}
+
 /* ═══════════════════════════════════════════════════
    BRIEFING PAGE
 ═══════════════════════════════════════════════════ */
