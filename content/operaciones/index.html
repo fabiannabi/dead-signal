@@ -28,6 +28,14 @@
 <div id="map-wrap">
   <div id="map"></div>
 
+  <div class="mapa-leyenda">
+    <div class="leyenda-titulo">Eventos activos</div>
+    <div class="leyenda-row"><span class="ev-marker shape-circulo color-verde leyenda-glyph"></span>Amenaza I–II</div>
+    <div class="leyenda-row"><span class="ev-marker shape-hexagono color-ambar leyenda-glyph"></span>Amenaza II–III</div>
+    <div class="leyenda-row"><span class="ev-marker shape-estrella color-rojo leyenda-glyph"></span>Amenaza IV</div>
+    <div class="leyenda-nota">forma = tipo · color = severidad</div>
+  </div>
+
   <div class="map-overlay" id="map-overlay" style="display:none">
     <div class="map-overlay-eyebrow" id="ov-eyebrow">Evento activo</div>
     <h2 id="ov-id"></h2>
@@ -43,9 +51,11 @@
         <span class="esquematico-title">Esquemático del sitio</span>
         <span id="ov-sitio-nombre" class="esquematico-sitio"></span>
       </div>
-      <ul id="ov-zonas" class="zona-list"></ul>
+      <div id="ov-zonas" class="sitio-schematic"></div>
       <p id="ov-pista" class="esquematico-pista" style="display:none"></p>
     </div>
+
+    <p id="ov-recom" class="ov-recom"></p>
 
     <div class="overlay-actions">
       <button class="btn-op" id="btn-escanear">ESCANEAR</button>

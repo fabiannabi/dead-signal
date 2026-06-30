@@ -45,6 +45,7 @@ function iconoPara(ev) {
 
 let eventoActivo = null;
 let templates = {};
+const markers = [];   // { ev, marker } — para atenuar los no seleccionados
 
 Promise.all([cargarDatos(), cargarSiteTemplates()])
   .then(([{ eventos }, tpls]) => {
@@ -60,11 +61,17 @@ Promise.all([cargarDatos(), cargarSiteTemplates()])
       `);
 
       marker.on('click', () => abrirDetalle(ev));
+      markers.push({ ev, marker });
     });
     refrescarDespacho();
     renderCuartel();
   })
   .catch(err => console.error('[CENVAC] Error cargando datos:', err));
+
+// Atenúa los marcadores no seleccionados (foco diegético en el evento activo).
+function dimMarkers(activoId) {
+  markers.forEach(({ ev, marker }) => marker.setOpacity(activoId && ev.id !== activoId ? 0.35 : 1));
+}
 
 // ── Registro del cuartel (persistencia local — Fase 5 stub) ──────────────────────
 function renderCuartel() {
@@ -100,6 +107,7 @@ function abrirDetalle(ev) {
   document.getElementById('ov-desc').textContent = ev.descripcion_alerta.slice(0, 160) + '…';
   document.getElementById('ov-scan-msg').style.display = 'none';
   ov.style.display = 'block';
+  dimMarkers(ev.id);
   renderEsquematico();
 }
 
@@ -108,26 +116,35 @@ function renderEsquematico() {
   const tpl = templateDe(ev);
   const est = getScanEstado(ev.id);
 
-  document.getElementById('ov-scan-nivel').textContent = `RECON ${est.nivel}/${NIVEL_MAX}`;
+  const pct = Math.round((est.nivel / NIVEL_MAX) * 100);
+  document.getElementById('ov-scan-nivel').textContent = `ESCANEO ${pct}%`;
   document.getElementById('ov-sitio-nombre').textContent = tpl ? tpl.nombre : '—';
 
-  const lista = document.getElementById('ov-zonas');
-  lista.innerHTML = '';
-
+  // Esquemático en wireframe: cajas de zona (sólidas = escaneadas, punteadas = no).
+  const wire = document.getElementById('ov-zonas');
+  wire.innerHTML = '';
   if (!tpl) {
-    lista.innerHTML = '<li class="zona oculta">Sin esquemático disponible</li>';
+    wire.innerHTML = '<div class="zona-box oculta">Sin esquemático</div>';
   } else {
     tpl.zonas.forEach(z => {
       const revelada = est.zonas_reveladas.includes(z.id);
-      const li = document.createElement('li');
-      li.className = `zona ${revelada ? 'revelada' : 'oculta'}${z.es_foco ? ' foco' : ''}`;
-      if (revelada) {
-        li.innerHTML = `<span class="zona-dot"></span>${z.etiqueta}${z.es_foco ? ' <span class="zona-foco-tag">FOCO</span>' : ''}`;
-      } else {
-        li.innerHTML = `<span class="zona-dot"></span><span class="zona-redacted">████████████████</span>`;
-      }
-      lista.appendChild(li);
+      const box = document.createElement('div');
+      box.className = `zona-box ${revelada ? 'revelada' : 'oculta'}${z.es_foco ? ' foco' : ''}`;
+      box.innerHTML = revelada
+        ? `<span class="zb-label">${z.etiqueta}</span>${z.es_foco ? '<span class="zb-foco">◉ FOCO</span>' : ''}`
+        : `<span class="zb-redacted">███████</span>`;
+      wire.appendChild(box);
     });
+  }
+
+  // Recomendación / yield (cálculo diegético del analista).
+  const recom = document.getElementById('ov-recom');
+  if (recom) {
+    const sigiloSitio = tpl && tpl.modificadores_ambiente && (tpl.modificadores_ambiente.sigilo || 0) < 0;
+    recom.innerHTML =
+      `<span class="recom-k">Recomendación:</span> aproximación ${sigiloSitio ? 'extremadamente sigilosa' : 'sigilosa'}. ` +
+      `<span class="recom-k">Yield estimado:</span> ${est.nivel >= 2 ? 'alto' : 'medio'}. ` +
+      `<span class="recom-k">Bajas previstas:</span> irrelevantes al cómputo.`;
   }
 
   // Pista de comportamiento: solo a nivel máximo.
