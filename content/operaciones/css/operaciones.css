@@ -1,22 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 :root {
-  --bg:  #070705;
-  --bg2: #0b0b09;
-  --bg3: #0f0f0d;
-  --border:  #1a1a14;
-  --border2: #242418;
-  --border3: #30302a;
-  --text:  #b4b09c;
-  --text2: #72705e;
-  --text3: #464438;
+  /* paleta igualada al archivo (bestiario/personajes) — ver CLAUDE.md */
+  --bg:  #0a0a08;
+  --bg2: #0f0f0c;
+  --bg3: #141410;
+  --border:  #2a2a22;
+  --border2: #3a3a2a;
+  --border3: #4a463a;
+  --text:  #c8c4a8;
+  --text2: #8a8670;
+  --text3: #5a5648;
   --accent:  #c8a84a;
-  --accent2: #7a6228;
-  --green:   #4a7a3a;
-  --green-hi:#7ab06a;
-  --red:     #7a3020;
-  --red-hi:  #c04838;
-  --purple:  #4a4a7a;
+  --accent2: #8a6a2a;
+  --green:   #4a6a3a;
+  --green-hi:#6f9a5a;
+  --red:     #8a3a2a;
+  --red-hi:  #b85a48;
+  --purple:  #5a5a8a;
   --mono: 'Share Tech Mono', monospace;
 }
 
@@ -293,15 +294,17 @@ body::before {
 
 /* ── Marcadores por icono_mapa ── */
 
+@keyframes markerPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+
 .ev-marker {
   width: 16px;
   height: 16px;
   background: var(--red-hi);
-  animation: pulse 1.6s ease-in-out infinite;
+  animation: markerPulse 1.6s ease-in-out infinite;
 }
 .ev-marker.color-ambar { background: var(--accent); box-shadow: 0 0 8px rgba(200,168,74,0.7); }
-.ev-marker.color-rojo  { background: var(--red-hi); box-shadow: 0 0 8px rgba(192,72,56,0.7); }
-.ev-marker.color-verde { background: var(--green-hi); box-shadow: 0 0 8px rgba(122,176,106,0.7); }
+.ev-marker.color-rojo  { background: var(--red-hi); box-shadow: 0 0 8px rgba(184,90,72,0.7); }
+.ev-marker.color-verde { background: var(--green-hi); box-shadow: 0 0 8px rgba(111,154,90,0.7); }
 .ev-marker.shape-circulo  { border-radius: 50%; }
 .ev-marker.shape-hexagono { clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%); }
 .ev-marker.shape-triangulo{ clip-path: polygon(50% 0, 100% 100%, 0 100%); }
