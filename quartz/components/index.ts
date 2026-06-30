@@ -24,6 +24,7 @@ import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import EntradaHeader from "./custom/EntradaHeader"
+import OperacionesLink from "./custom/OperacionesLink"
 import PaletteSwitcher from "./PaletteSwitcher"
 import LightboxScript from "./LightboxScript"
 import BestiarioScript from "./BestiarioScript"
@@ -55,6 +56,7 @@ export {
   Flex,
   ConditionalRender,
   EntradaHeader,
+  OperacionesLink,
   PaletteSwitcher,
   LightboxScript,
   BestiarioScript,

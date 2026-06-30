@@ -64,6 +64,7 @@ export const defaultContentPageLayout: PageLayout = {
         }
       },
     }),
+    Component.OperacionesLink(),
     Component.PaletteSwitcher(),
   ],
   right: [],
@@ -111,6 +112,7 @@ export const defaultListPageLayout: PageLayout = {
         }
       },
     }),
+    Component.OperacionesLink(),
     Component.PaletteSwitcher(),
   ],
   right: [],

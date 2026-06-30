@@ -77,8 +77,6 @@ title: Señal Muerta — Archivo Post-Emergencia
 
 <a href="/bestiario" class="index-section-link">→ Registro de Amenazas — fauna documentada post-Emergencia</a>
 
-<!-- TODO: descomentar cuando operaciones esté lista para publicar
 ## Operaciones
 
-<a href="/operaciones" class="index-section-link">→ Sistema de misiones CENVAC — despliegue de unidades</a>
--->
+<a href="/operaciones/" class="index-section-link">→ Sistema de misiones CENVAC — despliegue de unidades</a>
