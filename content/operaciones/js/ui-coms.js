@@ -2,6 +2,7 @@ import { getSession, setSession, cargarMisionData, cargarGramatica, hashSeed } f
 import { cargarMision, obtenerNodo, procesarNodo, procesarOpcion, filtrarOpciones } from './mission-engine.js';
 import { generarMision } from './mission-generator.js';
 import { iniciarMision } from './state.js';
+import { consolidarOperacion } from './roster-store.js';
 
 const delay = ms => new Promise(r => setTimeout(r, ms));
 
@@ -128,6 +129,11 @@ async function stepNode(nodo_id) {
     appendFinalBlock(nodo);
     setSession('op_estado_final', estado);
     setSession('op_mision_id', mision.id);
+    // Consolidar en el cuartel — una sola vez por operación (recargar coms re-juega).
+    if (getSession('op_consolidada') !== mision.id) {
+      try { consolidarOperacion(estado, mision, getSession('op_evento')); setSession('op_consolidada', mision.id); }
+      catch (e) { console.warn('[CENVAC] cuartel no disponible', e); }
+    }
     showFinalActions();
     return;
   }

@@ -3,6 +3,7 @@ import {
   getDespacho, getScanEstado, costoProximoEscaneo, escanear,
   senalClass, NIVEL_MAX,
 } from './dispatch-store.js';
+import { getCuartel } from './roster-store.js';
 
 // ── Indicador de despacho (señal + tiempo) en el header ──────────────────────────
 
@@ -61,8 +62,27 @@ Promise.all([cargarDatos(), cargarSiteTemplates()])
       marker.on('click', () => abrirDetalle(ev));
     });
     refrescarDespacho();
+    renderCuartel();
   })
   .catch(err => console.error('[CENVAC] Error cargando datos:', err));
+
+// ── Registro del cuartel (persistencia local — Fase 5 stub) ──────────────────────
+function renderCuartel() {
+  const c = getCuartel();
+  const panel = document.getElementById('cuartel-panel');
+  if (!panel) return;
+  if (!c || !c.operaciones) { panel.style.display = 'none'; return; }
+  panel.style.display = 'block';
+  document.getElementById('cuartel-stats').innerHTML =
+    `<span><b>${c.operaciones}</b> ops</span>` +
+    `<span><b>${c.muestras}</b> obj.</span>` +
+    `<span class="cu-her"><b>${c.heridos}</b> heridos</span>` +
+    `<span class="cu-baja"><b>${c.bajas}</b> bajas</span>`;
+  const u = c.historial[0];
+  document.getElementById('cuartel-ultimo').textContent = u
+    ? `Última: ${u.criatura.replace(/_/g, ' ')} — ${(u.final || '').replace('final_', '').replace(/_/g, ' ')}`
+    : '';
+}
 
 // ── Panel de detalle + esquemático ───────────────────────────────────────────────
 
