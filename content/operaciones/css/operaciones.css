@@ -735,12 +735,11 @@ body::after {
 .tac-svg-room.foco.visitada { stroke: var(--red-hi); fill: rgba(192,72,56,0.09); }
 .tac-svg-room.actual { stroke: var(--accent); stroke-width: 2.2; fill: rgba(51,255,102,0.1); filter: drop-shadow(0 0 6px rgba(51,255,102,0.6)); }
 .tac-svg-room.foco.actual { stroke: var(--red-hi); fill: rgba(192,72,56,0.14); filter: drop-shadow(0 0 7px rgba(192,72,56,0.7)); }
-.tac-svg-tag { fill: var(--text3); font-family: var(--mono); font-size: 7.5px; letter-spacing: 0.16em; pointer-events: none; }
-.tac-svg-tag.foco { fill: var(--red); }
-.tac-svg-tag.visitada { fill: var(--green); }
+.tac-svg-tag { fill: var(--text2); font-family: var(--mono); font-size: 8px; letter-spacing: 0.18em; pointer-events: none; }
+.tac-svg-tag.foco { fill: var(--red-hi); }
+.tac-svg-tag.visitada { fill: var(--green-hi); }
 .tac-svg-tag.foco.visitada { fill: var(--red-hi); }
-.tac-svg-name { fill: var(--text3); font-family: var(--mono); font-size: 9px; letter-spacing: 0.02em; pointer-events: none; transition: fill 0.3s; }
-.tac-svg-name.visitada { fill: var(--text); }
+.tac-svg-name { fill: var(--text); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.02em; pointer-events: none; transition: fill 0.3s; }
 .tac-svg-name.actual { fill: var(--accent); }
 .tac-svg-name.foco.actual { fill: var(--red-hi); }
 .tac-squad { transition: transform 0.85s cubic-bezier(0.45,0.05,0.3,1); }
