@@ -133,12 +133,14 @@ function updateSelectionUI() {
   if (seleccionados.length === 0) {
     hint.textContent = 'Ningún agente seleccionado';
     btn.disabled = true;
+    const bm0 = document.getElementById('btn-movil'); if (bm0) bm0.disabled = true;
     ah.textContent = 'Selecciona al menos un agente';
     if (yieldEl) yieldEl.textContent = '';
   } else {
     const lider = agentes.find(a => a.id === liderId);
     hint.textContent = `${seleccionados.length} agente${seleccionados.length > 1 ? 's' : ''} · Líder: ${lider?.nombre_completo || '—'}`;
     btn.disabled = false;
+    const bm = document.getElementById('btn-movil'); if (bm) bm.disabled = false;
     ah.textContent = seleccionados.length < 3 ? 'Puedes añadir más agentes' : 'Equipo completo';
 
     // Yield proyectado: potencia media del equipo. Cohesión: vínculos dentro del equipo.
@@ -155,7 +157,7 @@ function updateSelectionUI() {
   }
 }
 
-document.getElementById('btn-iniciar').addEventListener('click', () => {
+function desplegar(destino) {
   if (seleccionados.length === 0) return;
   // Lleva la cordura persistente del cuartel a la operación.
   const equipo = seleccionados.map(id => {
@@ -167,7 +169,10 @@ document.getElementById('btn-iniciar').addEventListener('click', () => {
   setSession('op_lider_id', liderId);
   // Seed fresco por despliegue → cada operación generada es distinta.
   setSession('op_seed', Math.floor(Math.random() * 1e9));
-  window.location.href = './coms.html';
-});
+  window.location.href = destino;
+}
+
+document.getElementById('btn-iniciar').addEventListener('click', () => desplegar('./coms.html'));
+document.getElementById('btn-movil').addEventListener('click', () => desplegar('./movil.html'));
 
 init().catch(err => console.error('[CENVAC briefing]', err));

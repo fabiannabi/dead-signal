@@ -1252,6 +1252,51 @@ body::before {
 .briefing-yield .y-bajo, .briefing-yield .y-baja { color: var(--red-hi); }
 .briefing-actions { display: flex; align-items: center; gap: 12px; }
 
+/* ── Contacto en tiempo real / móvil (Diseño 7) ── */
+.movil-body { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; }
+.mr-frame {
+  width: 340px; max-width: 100%; height: min(680px, 92vh);
+  display: flex; flex-direction: column;
+  background: var(--bg2); border: 1px solid var(--border3); border-radius: 18px;
+  overflow: hidden; box-shadow: 0 0 0 6px rgba(0,0,0,0.4);
+}
+.mr-statusbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 16px; font-size: 10px; color: var(--text2);
+  background: var(--bg3); letter-spacing: 0.06em;
+}
+.mr-sb-right { display: flex; align-items: center; gap: 6px; }
+.mr-header { padding: 12px 16px; border-bottom: 1px solid var(--border2); }
+.mr-title { font-size: 13px; color: var(--accent); letter-spacing: 0.1em; }
+.mr-sub { font-size: 9px; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 3px; }
+
+.mr-thread { flex: 1; overflow-y: auto; padding: 14px 12px; display: flex; flex-direction: column; gap: 10px; }
+.mr-bubble { max-width: 82%; padding: 8px 11px; border: 1px solid var(--border2); font-size: 11px; line-height: 1.5; }
+.mr-bubble.entrante { align-self: flex-start; background: var(--bg3); border-bottom-left-radius: 0; }
+.mr-bubble.saliente { align-self: flex-end; background: rgba(200,168,74,0.06); border-color: var(--accent2); border-bottom-right-radius: 0; }
+.mr-bubble.sistema  { align-self: center; max-width: 92%; background: transparent; border-color: var(--border); color: var(--text3); }
+.mr-canal { font-size: 8px; letter-spacing: 0.14em; color: var(--text3); text-transform: uppercase; margin-bottom: 4px; }
+.mr-bubble.saliente .mr-canal { color: var(--accent); }
+.mr-texto { color: var(--text); }
+.mr-bubble.sistema .mr-texto { color: var(--text2); }
+.mr-hora { font-size: 8px; color: var(--text3); margin-top: 4px; text-align: right; }
+.mr-sistema { align-self: center; font-size: 9px; color: var(--text3); letter-spacing: 0.06em; font-style: italic; }
+
+.mr-footer { border-top: 1px solid var(--border2); padding: 10px 12px; background: var(--bg3); }
+.mr-countdown { font-size: 9px; color: var(--accent); letter-spacing: 0.06em; min-height: 14px; margin-bottom: 6px; }
+.mr-replies { display: flex; flex-direction: column; gap: 6px; }
+.mr-code-btn {
+  display: block; text-align: left; text-decoration: none;
+  font-family: var(--mono); font-size: 10px; color: var(--text2);
+  background: transparent; border: 1px solid var(--border3);
+  padding: 7px 10px; cursor: pointer; letter-spacing: 0.03em;
+  transition: border-color 0.1s, color 0.1s;
+}
+.mr-code-btn:hover { border-color: var(--accent2); color: var(--accent); }
+.mr-code { color: var(--accent); margin-right: 8px; letter-spacing: 0.12em; }
+.mr-salir { position: fixed; top: 14px; left: 16px; font-size: 10px; color: var(--text3); text-decoration: none; letter-spacing: 0.08em; }
+.mr-salir:hover { color: var(--accent); }
+
 /* ── Scrollbar ── */
 
 ::-webkit-scrollbar { width: 4px; }
