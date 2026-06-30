@@ -25,9 +25,10 @@ const PENAL_AUDIO = { silencio: 0, estatica_baja: 5, estatica_media: 20, estatic
 // Nivel de información disponible en un nodo: combina la señal de despacho con el tramo.
 function infoTier(audio_hint) {
   const eff = Math.max(0, senalDespacho - (PENAL_AUDIO[audio_hint] ?? 0));
+  // corrupción inline MUY baja: el texto sigue legible; la degradación la vende la estática (CSS).
   if (eff >= 60) return { tier: 'claro', eff, corrupt: 0 };
-  if (eff >= 35) return { tier: 'degradado', eff, corrupt: 0.07 };
-  return { tier: 'critico', eff, corrupt: 0.22 };
+  if (eff >= 35) return { tier: 'degradado', eff, corrupt: 0.025 };
+  return { tier: 'critico', eff, corrupt: 0.08 };
 }
 
 // Corrompe una fracción de caracteres con █ (no toca espacios ni saltos).
@@ -108,12 +109,12 @@ async function stepNode(nodo_id) {
   const resultado = procesarNodo(nodo, estado, mision, {});
 
   // Ambient line
-  if (nodo.ambiente) appendAmbiente(corromper(nodo.ambiente, info.corrupt));
+  if (nodo.ambiente) appendAmbiente(nodo.ambiente, info);
 
   // Messages (staggered)
   for (const msg of resultado.mensajes) {
     await delay(100);
-    appendMessage(msg, info.corrupt);
+    appendMessage(msg, info);
   }
 
   // Resultado del check — su visibilidad es parte de la mecánica de señal (§5)
@@ -168,10 +169,10 @@ function showDecisionButtons(nodo, opciones, info = { tier: 'claro', corrupt: 0 
 
   opciones.forEach((op, idx) => {
     const btn = document.createElement('button');
-    btn.className = `decision-btn${info.tier !== 'claro' ? ' degradada' : ''}`;
-    // Protocolo 9: con señal crítica solo llegan códigos; con señal media, texto corrompido.
+    btn.className = `decision-btn${info.tier !== 'claro' ? ' ' + sigClase(info) : ''}`;
+    // Protocolo 9: con señal crítica el texto llega con estática; con señal media, leve.
     if (info.tier === 'critico') {
-      btn.innerHTML = `<span class="op-codigo">CÓDIGO ${idx + 1}</span> ${corromper(op.texto, 0.5)}`;
+      btn.innerHTML = `<span class="op-codigo">CÓDIGO ${idx + 1}</span> ${corromper(op.texto, 0.12)}`;
     } else if (info.tier === 'degradado') {
       btn.textContent = corromper(op.texto, info.corrupt);
     } else {
@@ -220,14 +221,16 @@ function appendNodeSep(tipo, id) {
   document.getElementById('coms-log').appendChild(el);
 }
 
-function appendAmbiente(texto) {
+const sigClase = (info) => (!info || info.tier === 'claro') ? '' : (info.tier === 'critico' ? 'sig-crit' : 'sig-deg');
+
+function appendAmbiente(texto, info) {
   const el = document.createElement('div');
-  el.className = 'coms-ambient';
-  el.textContent = texto;
+  el.className = `coms-ambient ${sigClase(info)}`;
+  el.textContent = corromper(texto, info ? info.corrupt : 0);
   document.getElementById('coms-log').appendChild(el);
 }
 
-function appendMessage(msg, corrupt = 0) {
+function appendMessage(msg, info) {
   const log = document.getElementById('coms-log');
   const row = document.createElement('div');
   row.className = 'coms-message';
@@ -242,8 +245,8 @@ function appendMessage(msg, corrupt = 0) {
   chanEl.textContent = msg.canal;
 
   const textEl = document.createElement('div');
-  textEl.className = `coms-text ${textCls}`;
-  textEl.textContent = corromper(msg.texto, corrupt);
+  textEl.className = `coms-text ${textCls} ${sigClase(info)}`;
+  textEl.textContent = corromper(msg.texto, info ? info.corrupt : 0);
 
   row.appendChild(chanEl);
   row.appendChild(textEl);

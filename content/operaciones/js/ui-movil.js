@@ -19,9 +19,10 @@ let estado = null, mision = null, senalDespacho = 100;
 function infoTier(audio) {
   const eff = Math.max(0, senalDespacho - (PENAL[audio] ?? 0));
   if (eff >= 60) return { tier: 'claro', eff, corrupt: 0 };
-  if (eff >= 35) return { tier: 'degradado', eff, corrupt: 0.07 };
-  return { tier: 'critico', eff, corrupt: 0.22 };
+  if (eff >= 35) return { tier: 'degradado', eff, corrupt: 0.025 };
+  return { tier: 'critico', eff, corrupt: 0.08 };
 }
+const sigClase = (info) => (!info || info.tier === 'claro') ? '' : (info.tier === 'critico' ? 'sig-crit' : 'sig-deg');
 function corromper(t, p) {
   if (!p) return t;
   let o = ''; for (const ch of t) o += (ch === ' ' || ch === '\n') ? ch : (Math.random() < p ? '█' : ch);
@@ -38,10 +39,10 @@ function tickReloj() {
 const thread = () => document.getElementById('mr-thread');
 function scrollAbajo() { const t = thread(); t.scrollTop = t.scrollHeight; }
 
-function burbuja(tipo, canal, texto, hora) {
+function burbuja(tipo, canal, texto, hora, sig = '') {
   const row = document.createElement('div');
   row.className = `mr-bubble ${tipo}`;
-  row.innerHTML = `<div class="mr-canal">${canal}</div><div class="mr-texto">${texto}</div><div class="mr-hora">${hora}</div>`;
+  row.innerHTML = `<div class="mr-canal">${canal}</div><div class="mr-texto ${sig}">${texto}</div><div class="mr-hora">${hora}</div>`;
   thread().appendChild(row);
   scrollAbajo();
 }
@@ -81,7 +82,7 @@ async function avanzar(nodoId) {
     const esControl = msg.canal === 'CONTROL';
     const esSistema = msg.canal === 'SISTEMA';
     const tipo = esControl ? 'saliente' : esSistema ? 'sistema' : 'entrante';
-    burbuja(tipo, msg.canal, corromper(msg.texto, info.corrupt), hora);
+    burbuja(tipo, msg.canal, corromper(msg.texto, info.corrupt), hora, sigClase(info));
   }
 
   if (resultado.check_resultado) {

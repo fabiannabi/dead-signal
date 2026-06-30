@@ -129,10 +129,10 @@ function renderEsquematico() {
     tpl.zonas.forEach(z => {
       const revelada = est.zonas_reveladas.includes(z.id);
       const box = document.createElement('div');
-      box.className = `zona-box ${revelada ? 'revelada' : 'oculta'}${z.es_foco ? ' foco' : ''}`;
+      box.className = `zona-box ${revelada ? 'revelada' : 'oculta'}${z.es_foco ? ' foco wide' : ''}`;
       box.innerHTML = revelada
-        ? `<span class="zb-label">${z.etiqueta}</span>${z.es_foco ? '<span class="zb-foco">◉ FOCO</span>' : ''}`
-        : `<span class="zb-redacted">███████</span>`;
+        ? `<span class="zb-tag">${z.es_foco ? '◉ FOCO' : 'ZONA'}</span><span class="zb-label">${z.etiqueta}</span>`
+        : `<span class="zb-tag">— —</span><span class="zb-name">no escaneado</span>`;
       wire.appendChild(box);
     });
   }
