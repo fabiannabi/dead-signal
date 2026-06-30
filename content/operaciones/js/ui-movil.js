@@ -7,6 +7,12 @@ import { consolidarOperacion } from './roster-store.js';
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 const SIG_BARS = { silencio: '▇▇▇▇', estatica_baja: '▇▇▇░', estatica_media: '▇▇░░', estatica_alta: '▇░░░', alerta_critica: '!!!!' };
 const PENAL = { silencio: 0, estatica_baja: 5, estatica_media: 20, estatica_alta: 40, alerta_critica: 10 };
+const CHECK_FLAVOR = {
+  'crítico_éxito': 'El equipo ejecuta con margen de sobra.',
+  'éxito': 'El equipo resuelve el paso.',
+  'fallo': 'El paso se complica.',
+  'crítico_fallo': 'Algo sale mal.',
+};
 
 let estado = null, mision = null, senalDespacho = 100;
 
@@ -81,10 +87,8 @@ async function avanzar(nodoId) {
   if (resultado.check_resultado) {
     const cr = resultado.check_resultado;
     await delay(300);
-    const txt = info.tier === 'critico'
-      ? `CHECK ${cr.stat.toUpperCase()} · ███ — resultado no recibido`
-      : `CHECK ${cr.stat.toUpperCase()} · ${cr.resultado.replace('_', ' ').toUpperCase()}`;
-    sistemaLinea(txt);
+    const txt = info.tier === 'critico' ? 'sin confirmación · señal degradada' : (CHECK_FLAVOR[cr.resultado] || '');
+    sistemaLinea(`— ${txt} —`);
   }
 
   if (resultado.es_final || nodo.tipo === 'final') {

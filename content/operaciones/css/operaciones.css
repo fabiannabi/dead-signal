@@ -421,6 +421,19 @@ body::after {
   opacity: 0.9;
 }
 .coms-degradado.critico { color: var(--red-hi); animation: blink 1.4s step-end infinite; }
+/* Resultado de check como flavor diegético (sin dados) */
+.check-flavor {
+  font-size: 10px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin: 6px 0;
+  color: var(--text3);
+}
+.check-flavor.ok   { color: var(--green-hi); }
+.check-flavor.warn { color: var(--amber); }
+.check-flavor.bad  { color: var(--red-hi); }
+.check-flavor.critico { color: var(--red-hi); }
 .check-result.no-recibido { color: var(--red-hi); font-size: 10px; letter-spacing: 0.1em; }
 .decision-btn.degradada { border-style: dashed; }
 

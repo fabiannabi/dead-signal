@@ -260,38 +260,25 @@ function appendDegradado(info) {
   log.appendChild(el);
 }
 
+// Flavor diegético por resultado — sin dados ni números (el jugador es analista, no ve mecánicas).
+const CHECK_FLAVOR = {
+  'crítico_éxito': 'El equipo ejecuta con margen de sobra.',
+  'éxito':         'El equipo resuelve el paso.',
+  'fallo':         'El paso se complica.',
+  'crítico_fallo': 'Algo sale mal.',
+};
 function appendCheckResult(cr, info = { tier: 'claro' }) {
   const log = document.getElementById('coms-log');
   const el = document.createElement('div');
-  el.className = `check-block ${cr.resultado.replace('ó', 'o').replace(/\_/g, '')}`;
-
-  const resultLabel = {
-    'crítico_éxito': 'CRÍTICO ÉXITO',
-    'éxito':         'ÉXITO',
-    'fallo':         'FALLO',
-    'crítico_fallo': 'CRÍTICO FALLO',
-  }[cr.resultado] || cr.resultado.toUpperCase();
-
-  const resultCls = cr.resultado === 'crítico_éxito' ? 'critico_exito'
-    : cr.resultado === 'crítico_fallo' ? 'critico_fallo'
-    : cr.resultado === 'éxito' ? 'exito' : 'fallo';
-
   if (info.tier === 'critico') {
-    // Señal crítica: el resultado no llega. El efecto mecánico ya se aplicó.
-    el.innerHTML = `<span class="check-label">CHECK ${cr.stat.toUpperCase()} · ███</span><br>` +
-      `<span class="check-result no-recibido">— RESULTADO NO RECIBIDO · SEÑAL DEGRADADA —</span>`;
-  } else if (info.tier === 'degradado') {
-    // Señal media: llega el veredicto, no los números.
-    el.innerHTML = `<span class="check-label">CHECK ${cr.stat.toUpperCase()} · ${cr.agente}</span><br>` +
-      `<span class="check-dice">d10=█ · total=██ vs dif.${cr.dificultad}</span><br>` +
-      `<span class="check-result ${resultCls}">${resultLabel}</span>`;
+    el.className = 'check-flavor critico';
+    el.textContent = '— sin confirmación · señal degradada —';
   } else {
-    el.innerHTML = `<span class="check-label">CHECK ${cr.stat.toUpperCase()} · ${cr.agente}</span><br>` +
-      `<span class="check-dice">d10=${cr.tirada}</span> · ` +
-      `<span class="check-label">total=${cr.total} vs dif.${cr.dificultad}</span><br>` +
-      `<span class="check-result ${resultCls}">${resultLabel}</span>`;
+    const cls = (cr.resultado === 'crítico_éxito' || cr.resultado === 'éxito') ? 'ok'
+      : cr.resultado === 'fallo' ? 'warn' : 'bad';
+    el.className = `check-flavor ${cls}`;
+    el.textContent = `— ${CHECK_FLAVOR[cr.resultado] || ''} —`;
   }
-
   log.appendChild(el);
 }
 
