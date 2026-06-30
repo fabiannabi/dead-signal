@@ -1,23 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 :root {
-  /* paleta igualada al archivo (bestiario/personajes) — ver CLAUDE.md */
-  --bg:  #0a0a08;
-  --bg2: #0f0f0c;
-  --bg3: #141410;
-  --border:  #2a2a22;
-  --border2: #3a3a2a;
-  --border3: #4a463a;
-  --text:  #c8c4a8;
-  --text2: #8a8670;
-  --text3: #5a5648;
-  --accent:  #c8a84a;
-  --accent2: #8a6a2a;
-  --green:   #4a6a3a;
-  --green-hi:#6f9a5a;
-  --red:     #8a3a2a;
-  --red-hi:  #b85a48;
-  --purple:  #5a5a8a;
+  /* paleta CRT fósforo — igualada a la página principal (data-palette="fosfor") */
+  --bg:  #040a04;
+  --bg2: #081408;
+  --bg3: #0c1e0e;
+  --border:  #103016;
+  --border2: #1c5028;
+  --border3: #1c8c3a;
+  --text:  #bdf5cc;
+  --text2: #9fdcb0;
+  --text3: #4f8a5f;
+  --accent:  #33ff66;
+  --accent2: #1c8c3a;
+  --green:   #1c8c3a;
+  --green-hi:#5effa0;
+  --red:     #8a2a2a;
+  --red-hi:  #d24a3a;
+  --amber:   #d9c84a;
+  --purple:  #4a8aff;
   --mono: 'Share Tech Mono', monospace;
 }
 
@@ -89,7 +90,7 @@ body::before {
   color: var(--green);
   letter-spacing: 0.05em;
 }
-.op-signal.low  { color: var(--accent); }
+.op-signal.low  { color: var(--amber); }
 .op-signal.crit { color: var(--red-hi); animation: blink 0.8s step-end infinite; }
 
 .op-time {
@@ -136,7 +137,7 @@ body::before {
   display: inline-block;
 }
 .tag.ok   { border-color: var(--green); color: var(--green); }
-.tag.warn { border-color: var(--accent2); color: var(--accent); }
+.tag.warn { border-color: var(--amber); color: var(--amber); }
 .tag.crit { border-color: var(--red); color: var(--red-hi); }
 
 /* ── Section label ── */
@@ -289,7 +290,7 @@ body::before {
   background: var(--green-hi);
   transition: width 0.35s ease, background 0.35s ease;
 }
-.op-signal-fill.low  { background: var(--accent); }
+.op-signal-fill.low  { background: var(--amber); }
 .op-signal-fill.crit { background: var(--red-hi); }
 
 /* ── Marcadores por icono_mapa ── */
@@ -302,9 +303,9 @@ body::before {
   background: var(--red-hi);
   animation: markerPulse 1.6s ease-in-out infinite;
 }
-.ev-marker.color-ambar { background: var(--accent); box-shadow: 0 0 8px rgba(200,168,74,0.7); }
-.ev-marker.color-rojo  { background: var(--red-hi); box-shadow: 0 0 8px rgba(184,90,72,0.7); }
-.ev-marker.color-verde { background: var(--green-hi); box-shadow: 0 0 8px rgba(111,154,90,0.7); }
+.ev-marker.color-ambar { background: var(--amber); box-shadow: 0 0 8px rgba(217,200,74,0.75); }
+.ev-marker.color-rojo  { background: var(--red-hi); box-shadow: 0 0 8px rgba(210,74,58,0.75); }
+.ev-marker.color-verde { background: var(--green-hi); box-shadow: 0 0 9px rgba(94,255,160,0.8); }
 .ev-marker.shape-circulo  { border-radius: 50%; }
 .ev-marker.shape-hexagono { clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%); }
 .ev-marker.shape-triangulo{ clip-path: polygon(50% 0, 100% 100%, 0 100%); }
@@ -392,7 +393,7 @@ body::before {
   color: var(--text2);
 }
 .scan-msg.ok   { border-left-color: var(--green); color: var(--green-hi); }
-.scan-msg.warn { border-left-color: var(--accent2); color: var(--accent); }
+.scan-msg.warn { border-left-color: var(--amber); color: var(--amber); }
 .scan-msg.err  { border-left-color: var(--red); color: var(--red-hi); }
 
 /* ═══════════════════════════════════════════════════
