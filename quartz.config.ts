@@ -10,7 +10,7 @@ const config: QuartzConfig = {
     analytics: null,
     locale: "es-ES",
     baseUrl: "fabiannabi.github.io/dead-signal",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "templates", ".obsidian", "**/_test*.mjs"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
