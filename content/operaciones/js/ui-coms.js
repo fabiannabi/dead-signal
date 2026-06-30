@@ -19,6 +19,50 @@ let mision = null;
 let procesando = false;
 let senalDespacho = 100;   // señal con la que se desplegó (gastada al escanear) — §5
 
+// ── Esquemático táctico en vivo: posición del equipo por cuarto ──────────────────
+let siteTpl = null;
+let displayZonas = [];
+const visitadas = new Set();
+
+function construirDisplayZonas() {
+  displayZonas = [];
+  if (!siteTpl || !siteTpl.zonas) return;
+  const zonas = siteTpl.zonas;
+  const acceso = zonas.find(z => /acceso/.test(z.id)) || zonas[0];
+  const foco = zonas.find(z => z.es_foco);
+  const mids = zonas.filter(z => z !== acceso && z !== foco);
+  displayZonas = [acceso, ...mids, foco].filter(Boolean);
+}
+
+// Mapea un nodo de la historia a un cuarto del sitio (entrada → foco → salida).
+function posicionDe(id) {
+  if (!displayZonas.length) return null;
+  const acceso = displayZonas[0];
+  const foco = displayZonas.find(z => z.es_foco) || displayZonas[displayZonas.length - 1];
+  const mid = displayZonas.find(z => z !== acceso && !z.es_foco) || acceso;
+  if (/^nodo_(insercion|ventaja|aprox)/.test(id)) return acceso.id;
+  if (/^nodo_busqueda/.test(id)) return mid.id;
+  if (/^nodo_(encuentro|accion|observacion|documentacion|objetivo|senal)/.test(id)) return foco.id;
+  if (/^nodo_(retirada|emergencia)/.test(id)) return acceso.id;
+  if (/^nodo_exterior/.test(id)) return 'exterior';
+  return null;
+}
+
+function renderTactico(zid) {
+  const el = document.getElementById('tactico');
+  if (!el) return;
+  if (!displayZonas.length) { el.innerHTML = '<div class="tac-vacio">sin esquemático del sitio</div>'; return; }
+  const superficie = zid === 'exterior';
+  if (zid && !superficie) visitadas.add(zid);
+  el.innerHTML = displayZonas.map(z => {
+    const actual = !superficie && z.id === zid;
+    const vis = actual || visitadas.has(z.id);
+    const corto = (z.etiqueta || z.id).split(' — ')[0];
+    const mark = actual ? '<span class="tac-mark">▸ TROPAS</span>' : (z.es_foco ? '<span class="tac-foco">◉</span>' : '');
+    return `<div class="tac-room${actual ? ' actual' : ''}${vis ? ' visitada' : ''}${z.es_foco ? ' foco' : ''}"><span class="tac-name">${corto}</span>${mark}</div>`;
+  }).join('') + (superficie ? '<div class="tac-superficie">▸ equipo en superficie</div>' : '');
+}
+
 // Penalización de comunicación por tramo (audio_hint del nodo) sobre la señal de despacho.
 const PENAL_AUDIO = { silencio: 0, estatica_baja: 5, estatica_media: 20, estatica_alta: 40, alerta_critica: 10 };
 
@@ -73,6 +117,10 @@ async function init() {
   }
   setSession('op_mision_obj', misionRaw);
 
+  siteTpl = (grammar && grammar.siteTemplates && grammar.siteTemplates[evento.sitio_tipo]) || null;
+  construirDisplayZonas();
+  renderTactico(null);
+
   mision = cargarMision(misionRaw);
   estado = iniciarMision(evento, misionRaw, equipo.map(a => JSON.parse(JSON.stringify(a))), liderId);
 
@@ -101,6 +149,7 @@ async function stepNode(nodo_id) {
 
   appendNodeSep(nodo.tipo, nodo_id);
   updateSignal(nodo.audio_hint);
+  renderTactico(posicionDe(nodo_id));   // mover las tropas por el esquemático en vivo
 
   // Nivel de información de este tramo según la señal de despacho (§5)
   const info = infoTier(nodo.audio_hint);
