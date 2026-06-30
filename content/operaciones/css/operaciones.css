@@ -34,15 +34,46 @@ body {
   overflow-x: hidden;
 }
 
+/* CRT fósforo — scanlines (igual que data-palette="fosfor" del sitio) */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0)    0px,
+    rgba(0,0,0,0)    2px,
+    rgba(0,0,0,0.10) 3px,
+    rgba(0,0,0,0)    4px
+  );
+  mix-blend-mode: multiply;
   pointer-events: none;
-  z-index: 9999;
-  opacity: 0.25;
+  z-index: 9000;
 }
+
+/* CRT fósforo — viñeta + parpadeo */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9001;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.65) 100%);
+  animation: crt-flicker 5s infinite steps(60);
+}
+
+@keyframes crt-flicker {
+  0%, 100% { opacity: 0.92; }
+  50%       { opacity: 1;    }
+  73%       { opacity: 0.85; }
+}
+
+/* Glow fósforo en acentos */
+.op-logo span,
+.map-overlay h2,
+.briefing-page-title { text-shadow: 0 0 10px rgba(51, 255, 102, 0.4); }
+.op-logo:hover span { text-shadow: 0 0 14px rgba(51, 255, 102, 0.6); }
+.btn-op.primary { text-shadow: 0 0 8px rgba(51, 255, 102, 0.35); }
 
 /* ── Header ── */
 
