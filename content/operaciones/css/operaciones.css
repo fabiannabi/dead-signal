@@ -1202,6 +1202,43 @@ body::before {
 .memorial-row { font-size: 11px; color: var(--text3); line-height: 1.9; letter-spacing: 0.03em; }
 .mem-nombre { text-decoration: line-through; color: var(--text2); }
 
+/* ── Expediente de agente (Diseño 6) ── */
+.exp-wrap { max-width: 760px; margin: 0 auto; padding: 28px 24px 80px; }
+.exp-head { display: flex; align-items: center; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid var(--border2); margin-bottom: 18px; }
+.exp-glyph {
+  flex: 0 0 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--accent2); color: var(--accent);
+  font-size: 16px; letter-spacing: 0.08em;
+}
+.exp-head-main { flex: 1; }
+.exp-nombre { font-size: 18px; color: var(--text); letter-spacing: 0.04em; }
+.exp-rol { font-size: 11px; color: var(--text3); letter-spacing: 0.06em; margin-top: 4px; }
+
+.exp-stats { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.exp-stat {
+  flex: 0 0 auto; width: 46px; padding: 8px 0;
+  border: 1px solid var(--border2); background: var(--bg2);
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+}
+.exp-stat.hi { border-color: var(--accent); }
+.exp-stat-lbl { font-size: 8px; letter-spacing: 0.14em; color: var(--text3); }
+.exp-stat-val { font-size: 15px; color: var(--text2); }
+.exp-stat.hi .exp-stat-val { color: var(--accent); }
+.exp-stat-meta { margin-left: 12px; font-size: 10px; color: var(--text2); line-height: 1.6; letter-spacing: 0.04em; }
+.exp-stat-nota { color: var(--text3); }
+
+.exp-sec-title { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text3); margin: 22px 0 10px; }
+.exp-sec { font-size: 12px; color: var(--text2); line-height: 1.8; letter-spacing: 0.02em; }
+.exp-historia { color: var(--text2); }
+.exp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.exp-cicatriz { color: var(--red-hi); font-size: 11px; line-height: 1.8; }
+.exp-vinculo { color: var(--purple); }
+.exp-reg-row { font-size: 11px; color: var(--text2); line-height: 1.9; }
+.exp-reg-baja { color: var(--red-hi); }
+.exp-vacio { color: var(--text3); font-size: 11px; }
+.exp-tics { margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 10px; color: var(--text3); line-height: 1.7; font-style: italic; }
+
 /* ── Scrollbar ── */
 
 ::-webkit-scrollbar { width: 4px; }
