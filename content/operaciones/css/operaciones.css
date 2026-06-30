@@ -631,9 +631,46 @@ body::before {
 
 .coms-layout {
   display: grid;
-  grid-template-columns: 290px 1fr;
+  grid-template-columns: 290px 1fr 220px;
   height: calc(100vh - 52px);
   overflow: hidden;
+}
+
+/* ── Panel de rendimiento (Diseño 1, columna derecha) ── */
+.rendimiento-panel {
+  border-left: 1px solid var(--border2);
+  background: var(--bg2);
+  padding: 18px 16px;
+  overflow-y: auto;
+}
+.rend-title {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+.rend-item { margin-bottom: 16px; }
+.rend-label { font-size: 10px; color: var(--text2); margin-bottom: 6px; letter-spacing: 0.04em; }
+.rend-bar { height: 4px; background: var(--bg3); border: 1px solid var(--border2); overflow: hidden; }
+.rend-fill { display: block; height: 100%; width: 0; background: var(--accent); transition: width 0.4s ease; }
+.rend-fill.ok { background: var(--green-hi); }
+.rend-state { font-size: 9px; color: var(--text3); margin-top: 4px; letter-spacing: 0.06em; }
+.rend-state.ok { color: var(--green-hi); }
+.rend-state.na { color: var(--text3); }
+.rend-bajas {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 9px;
+  color: var(--text3);
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 1100px) {
+  .coms-layout { grid-template-columns: 250px 1fr; }
+  .rendimiento-panel { display: none; }
 }
 
 /* Left — status panel */

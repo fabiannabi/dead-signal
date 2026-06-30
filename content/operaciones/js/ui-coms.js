@@ -394,6 +394,35 @@ function renderStatusPanel() {
 
   document.getElementById('tiempo-display')?.remove();
   document.getElementById('op-tiempo').textContent = estado.tiempo_simulado;
+
+  renderRendimiento();
+}
+
+// ── Panel de rendimiento (yield acumulándose en vivo) ─────────────────────────
+const YIELD_LABEL = {
+  extraccion_4a: 'Muestra biológica',
+  contencion_8a: 'Neutralización',
+  reconocimiento: 'Documentación conductual',
+  observacion_15: 'Telemetría',
+};
+function renderRendimiento() {
+  const labelEl = document.getElementById('rend-prim-label');
+  if (!labelEl || !mision) return;
+  labelEl.textContent = YIELD_LABEL[mision.objetivo] || 'Objetivo';
+  const fill = document.getElementById('rend-prim-fill');
+  const st = document.getElementById('rend-prim-state');
+  if (estado.muestra_obtenida) {
+    const parcial = String(estado.muestra_tipo || '').includes('parcial');
+    fill.style.width = parcial ? '60%' : '100%';
+    fill.className = 'rend-fill ok';
+    st.textContent = parcial ? 'parcial' : 'confirmado';
+    st.className = 'rend-state ok';
+  } else {
+    fill.style.width = `${Math.min(85, (estado.historial.length || 0) * 7)}%`;
+    fill.className = 'rend-fill';
+    st.textContent = '— pendiente';
+    st.className = 'rend-state na';
+  }
 }
 
 // ── Boot ────────────────────────────────────────────────────────────────────
