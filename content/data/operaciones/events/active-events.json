@@ -20,6 +20,7 @@
     },
     "notas_operativas": "La bodega estuvo en uso hasta semana 3 post-Emergencia. Abandono documentado tras incidente de personal no registrado oficialmente. Hay agua acumulada en nivel subterráneo por falla del sistema de bombeo. Civiles en zona: no confirmados. Acceso recomendado: entrada lateral este (llave de emergencia retirada en reconocimiento previo el 2026-05-08).",
     "sitio_tipo": "drenaje",
+    "objetivo": "extraccion_4a",
     "icono_mapa": {
       "color": "ambar",
       "forma": "hexagono",
@@ -47,6 +48,7 @@
     },
     "notas_operativas": "La zona del parque está sin mantenimiento desde semana 2 post-Emergencia. Vegetación creció sobre los caminos principales. La fuente central está seca. Acceso peatonal posible desde Calle Madero (norte) o Av. Héroe de Nacozari (sur). Civiles en zona: ninguno confirmado después de las 17:30. La ventana de operación es estricta — 18:00 a 20:30. Protocolo 4-A aplicable.",
     "sitio_tipo": "parque",
+    "objetivo": "extraccion_4a",
     "icono_mapa": {
       "color": "ambar",
       "forma": "circulo",
@@ -74,6 +76,7 @@
     },
     "notas_operativas": "El polvo de concreto persistente reduce visibilidad y deja huellas en el suelo — rastro del equipo visible para seguimiento posterior. Estructuras con varios niveles, cobertura de escombros abundante. Protocolo 8-A (contención selectiva) activo: solo el macho dominante puede ser neutralizado. Cualquier baja secundaria de la manada es exceso operativo.",
     "sitio_tipo": "ingenio",
+    "objetivo": "contencion_8a",
     "icono_mapa": {
       "color": "rojo",
       "forma": "hexagono",
@@ -101,6 +104,7 @@
     },
     "notas_operativas": "Cobertura visual abundante entre estructuras colapsadas. Acústica muy pobre — los chacales detectan movimiento y respiración elevada. Protocolo 3 + 4-A activo. Sigilo absoluto en aproximación. Si un centinela detecta al equipo, abortar sin excepción.",
     "sitio_tipo": "feria",
+    "objetivo": "reconocimiento",
     "icono_mapa": {
       "color": "ambar",
       "forma": "triangulo",
@@ -128,6 +132,7 @@
     },
     "notas_operativas": "DISTANCIA MÍNIMA DE 8 KM NO NEGOCIABLE. Protocolo 13 activo. Operación de observación pura — ninguna muestra biológica posible ni autorizada. El éxito se mide en datos de telemetría. Si el espécimen se aproxima a la línea de 8 km, retirada inmediata sin excepción. La interferencia de comunicación en proximidad del espécimen está documentada.",
     "sitio_tipo": "sierra",
+    "objetivo": "observacion_15",
     "icono_mapa": {
       "color": "rojo",
       "forma": "estrella",
@@ -155,6 +160,7 @@
     },
     "notas_operativas": "Sensores de vibración portátiles obligatorios para todos los agentes. Protocolo de movimiento: pasos lentos y planos, sin correr ni saltar. Radio afectada por vibración del substrato — interferencia variable durante la operación. La estación de monitoreo SS-RIO-01 en ribera este puede usarse como punto de coordinación pasivo.",
     "sitio_tipo": "lecho_rio",
+    "objetivo": "reconocimiento",
     "icono_mapa": {
       "color": "verde",
       "forma": "circulo",

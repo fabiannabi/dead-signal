@@ -1,54 +1,102 @@
 {
   "_meta": {
-    "descripcion": "Comportamientos canónicos por criatura, expresados como tags que los beats consumen. Toda entrada debe corresponder a comportamiento ya establecido en el bestiario (tarea §3.2). Los descriptores se interpolan en el texto de los beats con {clave}.",
-    "fase2_soporte_completo": ["arana_hidraulica"]
+    "descripcion": "Comportamientos canónicos por criatura, como tags que los beats consumen. Toda entrada corresponde a comportamiento ya establecido en el bestiario (tarea §3.2). Los descriptores se interpolan en el texto con {clave}: {senal_presencia} {senal_presencia_corta} {senal_visual} {peligro} {rasgo_clave} {criatura} {muestra}.",
+    "stats": "stat_aproximacion / stat_busqueda / stat_accion / stat_retirada definen qué atributo se chequea en cada fase."
   },
   "arana_hidraulica": {
-    "nombre": "Araña Hidráulica",
-    "binomial": "Aranea hydraulica",
-    "nivel_amenaza": "II",
-    "tags": [
-      "quietud_arquitectonica",
-      "sensibilidad_movimiento",
-      "clic_articular",
-      "mimetismo_acustico",
-      "cables_tension",
-      "descarga_hidraulica_unica",
-      "tapetum_lucidum",
-      "restraint"
-    ],
-    "protocolo_defensivo": "8-B",
-    "protocolos_aproximacion": ["6", "8-A"],
-    "protocolo_observacion": "15",
-    "stat_aproximacion": "sigilo",
-    "stat_busqueda": "biológico",
-    "stat_extraccion": "biológico",
-    "stat_retirada": "sigilo",
+    "nombre": "Araña Hidráulica", "binomial": "Aranea hydraulica", "nivel_amenaza": "II",
+    "tags": ["quietud_arquitectonica", "sensibilidad_movimiento", "clic_articular", "mimetismo_acustico", "cables_tension", "descarga_hidraulica_unica", "tapetum_lucidum", "restraint"],
+    "stat_aproximacion": "sigilo", "stat_busqueda": "biológico", "stat_accion": "biológico", "stat_retirada": "sigilo",
     "descriptores": {
       "criatura": "Araña Hidráulica",
-      "clic": "el clic articular — rítmico, húmedo — procedente del fondo del tramo",
-      "clic_corto": "el clic articular",
-      "tapetum": "el reflejo verde del tapetum a más de quince metros en la oscuridad",
-      "cables": "los cables de tensión translúcidos a doce centímetros de la superficie del agua",
-      "descarga": "la descarga hidráulica única que la especie reserva para una sola presa",
-      "señal_advertencia": "el clic acelera cuando el espécimen evalúa un estímulo como presa o interferencia",
+      "senal_presencia": "el clic articular, rítmico y húmedo, desde el fondo del tramo inundado",
+      "senal_presencia_corta": "el clic articular",
+      "senal_visual": "el reflejo verde del tapetum en la oscuridad",
+      "peligro": "la descarga hidráulica única que la especie reserva para una sola presa",
+      "rasgo_clave": "permanece inmóvil y responde al primer movimiento; los cables de tensión marcan su perímetro",
       "muestra": "fluido articular",
       "muestra_desc": "fluido con leve iridiscencia extraíble de articulación distal; produce el clic cuando está presurizado in vivo"
     },
-    "audio": {
-      "aproximacion": "silencio",
-      "busqueda": "estatica_baja",
-      "encuentro": "estatica_media",
-      "extraccion": "estatica_baja",
-      "critico": "alerta_critica"
-    }
+    "audio": { "aproximacion": "silencio", "busqueda": "estatica_baja", "encuentro": "estatica_media", "accion": "estatica_baja", "critico": "alerta_critica" }
   },
-  "_stubs_fase3": {
-    "nota": "Tags base de las demás criaturas para extender en Fase 3 (sin soporte de beats todavía).",
-    "cervato_de_concreto": { "nombre": "Cervato de Concreto", "nivel_amenaza": "III", "tags": ["evaluacion_aproximacion", "marcado_territorial", "manada_jerarquica", "criterio_indeterminado"] },
-    "gusano_de_asfalto": { "nombre": "Gusano de Asfalto", "nivel_amenaza": "II", "tags": ["tunel_residual", "crujido_advertencia", "vibracion_sustrato", "migracion"] },
-    "chacal_de_feria": { "nombre": "Chacal de Feria", "nivel_amenaza": "II", "tags": ["formacion_centinela", "deteccion_acustica", "relevos", "manada"] },
-    "mosca_forunculo": { "nombre": "Mosca Forúnculo", "nivel_amenaza": "II", "tags": ["actividad_crepuscular", "colonia_incipiente", "parasitismo"] },
-    "la_catedral": { "nombre": "La Catedral", "nivel_amenaza": "IV", "tags": ["clase_extincion", "interferencia_comunicacion", "distancia_no_negociable", "observacion_pura"] }
+  "mosca_forunculo": {
+    "nombre": "Mosca Forúnculo", "binomial": "Musca furunculus", "nivel_amenaza": "II",
+    "tags": ["actividad_crepuscular", "colonia_incipiente", "parasitismo", "enjambre_atardecer"],
+    "stat_aproximacion": "sigilo", "stat_busqueda": "biológico", "stat_accion": "biológico", "stat_retirada": "físico",
+    "descriptores": {
+      "criatura": "Mosca Forúnculo",
+      "senal_presencia": "el zumbido grueso que arranca al atardecer bajo el techo caído",
+      "senal_presencia_corta": "el zumbido",
+      "senal_visual": "el enjambre de hembras adultas, abdómenes abultados, contra la última luz",
+      "peligro": "la oviposición parasitaria si un agente queda inmóvil demasiado cerca del foco",
+      "rasgo_clave": "la actividad se enciende entre las 18:00 y las 18:30; fuera de esa ventana el foco está inactivo",
+      "muestra": "hembra adulta con carga parasitaria",
+      "muestra_desc": "ejemplar vivo en contenedor sellado para estudio del ciclo parasitario"
+    },
+    "audio": { "aproximacion": "silencio", "busqueda": "estatica_baja", "encuentro": "estatica_media", "accion": "estatica_baja", "critico": "alerta_critica" }
+  },
+  "cervato_de_concreto": {
+    "nombre": "Cervato de Concreto", "binomial": "Cervus calcareus", "nivel_amenaza": "III",
+    "tags": ["evaluacion_aproximacion", "marcado_territorial", "manada_jerarquica", "criterio_indeterminado", "embestida"],
+    "stat_aproximacion": "sigilo", "stat_busqueda": "biológico", "stat_accion": "físico", "stat_retirada": "físico",
+    "descriptores": {
+      "criatura": "Cervato de Concreto",
+      "senal_presencia": "el chasquido de concreto que se quiebra cuando la manada se desplaza",
+      "senal_presencia_corta": "el chasquido de concreto",
+      "senal_visual": "las placas calcáreas grises del macho dominante contra el polvo en suspensión",
+      "peligro": "la embestida del macho dominante en territorio marcado",
+      "rasgo_clave": "el espécimen evalúa al intruso antes de decidir; el criterio de carga permanece indeterminado",
+      "muestra": "neutralización selectiva del macho dominante",
+      "muestra_desc": "confirmación de neutralización del macho dominante sin exceso operativo sobre la manada"
+    },
+    "audio": { "aproximacion": "silencio", "busqueda": "estatica_baja", "encuentro": "estatica_media", "accion": "alerta_critica", "critico": "alerta_critica" }
+  },
+  "gusano_de_asfalto": {
+    "nombre": "Gusano de Asfalto", "binomial": "Vermis asphalti", "nivel_amenaza": "II",
+    "tags": ["tunel_residual", "crujido_advertencia", "vibracion_sustrato", "migracion"],
+    "stat_aproximacion": "sigilo", "stat_busqueda": "técnico", "stat_accion": "técnico", "stat_retirada": "físico",
+    "descriptores": {
+      "criatura": "Gusano de Asfalto",
+      "senal_presencia": "la vibración rítmica del sustrato que sube por las botas",
+      "senal_presencia_corta": "la vibración del sustrato",
+      "senal_visual": "el levantamiento del asfalto sobre el túnel residual",
+      "peligro": "el colapso del túnel residual, que cede aunque el espécimen ya no esté",
+      "rasgo_clave": "el crujido seco precede al hundimiento; correr o saltar dispara la respuesta de la colonia",
+      "muestra": "mapeo completo de la ruta de migración",
+      "muestra_desc": "telemetría de vibración y estimación de población del frente de migración"
+    },
+    "audio": { "aproximacion": "silencio", "busqueda": "estatica_baja", "encuentro": "estatica_media", "accion": "estatica_baja", "critico": "alerta_critica" }
+  },
+  "chacal_de_feria": {
+    "nombre": "Chacal de Feria", "binomial": "Canis nundinae", "nivel_amenaza": "II",
+    "tags": ["formacion_centinela", "deteccion_acustica", "relevos", "manada", "reaccion_coordinada"],
+    "stat_aproximacion": "sigilo", "stat_busqueda": "sigilo", "stat_accion": "biológico", "stat_retirada": "sigilo",
+    "descriptores": {
+      "criatura": "Chacal de Feria",
+      "senal_presencia": "el silencio de la formación de centinela y el roce de patas sobre metal oxidado",
+      "senal_presencia_corta": "el roce de las patas",
+      "senal_visual": "las firmas térmicas de los centinelas en posición de relevo",
+      "peligro": "la reacción coordinada de la manada si un centinela detecta movimiento o respiración elevada",
+      "rasgo_clave": "dos centinelas vigilan con relevos; cualquier ruido los activa a todos a la vez",
+      "muestra": "documentación del patrón de relevos y saliva con feromonas si es viable",
+      "muestra_desc": "registro del relevo de centinelas; muestra de saliva solo si no compromete el sigilo"
+    },
+    "audio": { "aproximacion": "silencio", "busqueda": "silencio", "encuentro": "estatica_media", "accion": "estatica_baja", "critico": "alerta_critica" }
+  },
+  "la_catedral": {
+    "nombre": "La Catedral", "binomial": "indeterminado", "nivel_amenaza": "IV",
+    "tags": ["clase_extincion", "interferencia_comunicacion", "distancia_no_negociable", "observacion_pura", "desplazamiento_lento"],
+    "stat_aproximacion": "físico", "stat_busqueda": "mental", "stat_accion": "técnico", "stat_retirada": "físico",
+    "descriptores": {
+      "criatura": "La Catedral",
+      "senal_presencia": "la interferencia de comunicación que crece a medida que la firma se acerca",
+      "senal_presencia_corta": "la interferencia",
+      "senal_visual": "la silueta de clase IV en el horizonte, a kilómetros de distancia",
+      "peligro": "el cruce de la línea de 8 km, no negociable bajo ninguna circunstancia",
+      "rasgo_clave": "se desplaza lento; la observación es pura, ninguna muestra es posible ni autorizada",
+      "muestra": "telemetría de clase extinción",
+      "muestra_desc": "registro de telemetría a distancia operacional; sin material biológico"
+    },
+    "audio": { "aproximacion": "silencio", "busqueda": "estatica_media", "encuentro": "estatica_alta", "accion": "estatica_alta", "critico": "alerta_critica" }
   }
 }

@@ -1,195 +1,121 @@
 {
   "_meta": {
-    "descripcion": "Bancos de texto por fase de misión. mission-generator.js arma la estructura y elige variantes con el seed. Placeholders {criatura}{clic}{tapetum}{cables}{muestra}{sitio}{evento}{binomial} se rellenan en generación; {agente.nombre}{equipo.lider.nombre}{estado_equipo}{estado_muestra} los resuelve el motor."
+    "descripcion": "Bancos de texto por fase. El generador arma la estructura y elige variantes con el seed. Placeholders de criatura/sitio: {criatura}{senal_presencia}{senal_presencia_corta}{senal_visual}{peligro}{rasgo_clave}{muestra}{sitio}{evento}{binomial}. Del motor (no tocar): {agente.nombre}{equipo.lider.nombre}{estado_equipo}{estado_muestra}."
   },
   "insercion": {
-    "ambiente": [
-      "CENVAC-Central, consola de Control — frecuencia 7 activa",
-      "Punto de mando móvil — enlace con frecuencia 7-CENVAC establecido"
-    ],
-    "control": [
-      "Frecuencia 7-CENVAC operativa. El evento {evento} fue registrado en {sitio}. El equipo está en punto de inserción. Objetivo: muestra de {muestra}, Protocolo 4-A. Confirme recepción y autorice avance.",
-      "Control en línea. Evento {evento} confirmado en {sitio}. Equipo en posición de inserción. Objetivo: {muestra} de {criatura}, Protocolo 4-A. Esperamos su autorización para avanzar."
-    ],
-    "agente": [
-      "Estamos en el punto de inserción. Perímetro despejado, sin civiles visibles. Equipo completo. Protocolo 8-A activo desde entrada. Esperando autorización.",
-      "{equipo.lider.rango} {equipo.lider.nombre} a Control. En posición. Sin movimiento en el perímetro. Listos para avanzar a su orden."
-    ],
-    "opcion": [
-      "Autorizado. Avancen. Protocolo 8-A en todo tramo con agua. Protocolo 6 al detectar espécimen. Suerte.",
-      "Recibido. Adelante. Protocolo 8-A activo, Protocolo 6 al primer indicio del espécimen. Con cuidado."
-    ]
+    "ambiente": ["CENVAC-Central, consola de Control — frecuencia 7 activa", "Punto de mando móvil — enlace con frecuencia 7-CENVAC establecido"],
+    "control": ["Frecuencia 7-CENVAC operativa. El evento {evento} fue registrado en {sitio}. El equipo está en punto de inserción. {objetivo_brief} Confirme recepción y autorice avance.", "Control en línea. Evento {evento} confirmado en {sitio}. Equipo en posición. {objetivo_brief} Esperamos su autorización."],
+    "agente": ["Estamos en el punto de inserción. Perímetro despejado, sin civiles visibles. Equipo completo. Esperando autorización.", "{equipo.lider.rango} {equipo.lider.nombre} a Control. En posición. Sin movimiento en el perímetro. Listos a su orden."],
+    "opcion": ["Autorizado. Avancen con cuidado. Protocolo 6 al primer indicio del espécimen. Suerte.", "Recibido. Adelante. Protocolo 6 activo. Con cuidado."]
+  },
+  "ventaja_recon": {
+    "ambiente": ["overlay de reconocimiento — datos de escaneo cargados al HUD del equipo", "telemetría de despacho — esquemático del sitio en el visor"],
+    "control": ["El reconocimiento previo dio fruto: el equipo entra con el esquemático del sitio cargado. {senal_presencia_corta} ya está caracterizada. Tienen ventaja de información sobre el foco.", "Escaneo de despacho transferido. El equipo conoce las zonas y {rasgo_clave}. Aprovechen la ventaja."],
+    "agente": ["Recibimos el esquemático. Sabemos por dónde entrar y qué evitar. Esto cambia las cosas.", "Datos cargados. Tenemos el sitio mapeado antes de pisar. Avanzando con ventaja."]
   },
   "aproximacion": {
-    "ambiente": [
-      "travesía interior — superficie irregular, oscuridad parcial, ruido ambiental bajo",
-      "tramo de aproximación — estructura desplazada, eco largo, visibilidad reducida"
-    ],
-    "control": [
-      "El equipo se mueve hacia el foco. El nivel de ruido ambiental es bajo: cualquier sonido inesperado se propaga. {clic_corto} no es audible todavía. El sensor indica actividad adelante.",
-      "Aproximación en curso. El terreno obliga a esquivar material suelto. {criatura} responde al movimiento — un paso en falso se transmite por toda la estructura."
-    ],
-    "agente": [
-      "Avanzando. Hay material suelto, hay que esquivarlo. {agente.nombre} marca el punto de descenso adelante.",
-      "Moviéndonos despacio. Cada apoyo cuenta aquí. Sin contacto aún."
-    ],
+    "ambiente": ["travesía hacia el foco — superficie irregular, ruido ambiental bajo", "tramo de aproximación — visibilidad reducida, eco largo"],
+    "control": ["El equipo se mueve hacia el foco. El ruido ambiental es bajo: cualquier sonido se propaga. {criatura} responde al movimiento — un paso en falso se transmite por toda la estructura.", "Aproximación en curso. El terreno obliga a esquivar material suelto. {rasgo_clave}."],
+    "agente": ["Avanzando. Hay material suelto, hay que esquivarlo. {agente.nombre} marca el punto adelante.", "Moviéndonos despacio. Cada apoyo cuenta aquí. Sin contacto aún."],
     "dificultad": [10, 12],
-    "fallo_ambiente": [
-      "un elemento de la estructura se desestabiliza por contacto — golpe seco que resuena",
-      "un apoyo cede y produce un sonido que viaja por todo el tramo"
-    ],
-    "fallo_control": [
-      "Un golpe seco resuena en la estructura. El sensor registra un cambio en el patrón durante unos segundos, luego se normaliza. El espécimen detectó algo. No está claro qué hizo con esa información.",
-      "El ruido se propaga. Por un momento {clic_corto} cambia de ritmo y vuelve. El espécimen sabe que algo se mueve aquí."
-    ],
-    "fallo_agente": [
-      "Hicimos ruido. Quedamos quietos treinta segundos, el sensor volvió a normalizar. Continuamos.",
-      "Eso se oyó. Nadie se movió. Esperamos. Seguimos, pero el bicho está alerta."
-    ]
+    "fallo_ambiente": ["un elemento de la estructura cede por contacto — golpe seco que resuena", "un apoyo falla y el sonido viaja por todo el tramo"],
+    "fallo_control": ["Un golpe seco resuena. Por un momento {senal_presencia_corta} cambia y vuelve. El espécimen detectó algo. No está claro qué hizo con esa información.", "El ruido se propaga. {criatura} sabe que algo se mueve aquí."],
+    "fallo_agente": ["Hicimos ruido. Quedamos quietos, esperamos. Continuamos, pero está alerta.", "Eso se oyó. Nadie se movió. Seguimos con el bicho despierto."]
   },
   "busqueda": {
-    "ambiente": [
-      "tramo inundado — lámina de agua baja, oscuridad casi total",
-      "corredor estrecho — agua estancada, el techo desciende, {clic_corto} audible"
-    ],
-    "control": [
-      "El equipo avanza hacia el foco. {clic} es audible ahora. El agente de mayor competencia biológica evalúa el entorno: {cables}, residuos en superficie, comportamiento del agua. Localizar al espécimen puede marcar el resultado.",
-      "El foco está cerca. {clic} llega claro. El equipo necesita ubicar al espécimen y {cables} antes de seguir. Una lectura correcta cambia todo lo que viene."
-    ],
-    "agente": [
-      "Analizando. {clic_corto} está ahí. Hay algo en la superficie que no es sedimento. Necesito un segundo.",
-      "Tengo el sonido. Déjenme leer el agua antes de dar un paso más."
-    ],
+    "ambiente": ["acercamiento al foco — oscuridad parcial, {senal_presencia_corta} audible", "corredor hacia el foco — el espacio se cierra"],
+    "control": ["El equipo llega al foco. {senal_presencia} es perceptible ahora. El agente de mayor competencia evalúa el entorno: {senal_visual}, vías de acceso, riesgo. Localizar al espécimen puede marcar el resultado.", "El foco está cerca. {senal_presencia} llega claro. El equipo necesita ubicar al espécimen antes de seguir."],
+    "agente": ["Analizando. {senal_presencia_corta} está ahí. Déjenme leer el entorno antes de avanzar.", "Tengo la señal. Un segundo para ubicarlo."],
     "dificultad": [11, 13],
-    "info_control": [
-      "El agente identifica {cables} y localiza al espécimen: {tapetum}, inmóvil bajo la lámina de agua. La posición es clara. El equipo sabe dónde está y dónde no puede pisar.",
-      "Lectura confirmada: el espécimen está al fondo del corredor, {tapetum}. {cables} quedan mapeados. Tienen la posición."
-    ],
-    "info_agente": [
-      "Confirmado. Tenemos la posición. Repito: tenemos la posición.",
-      "Lo tengo. Veo el reflejo al fondo, no se ha movido. Sabemos dónde está."
-    ],
-    "sininfo_control": [
-      "El agente no pudo identificar cables ni localizar al espécimen con certeza. {clic_corto} continúa, pero su dirección es difícil de precisar. El equipo sabe que el animal está en la zona, no dónde exactamente.",
-      "Sin lectura clara. El sonido rebota y no da una posición. Avanzan sabiendo que está cerca, sin saber dónde."
-    ],
-    "sininfo_agente": [
-      "No pude confirmar posición. Sin cables identificados, sin reflejo. Avanzamos a ciegas en este tramo.",
-      "Nada concluyente. El eco me miente. Seguimos con cuidado."
-    ],
-    "alerta_control": [
-      "Un pie roza algo en el agua. {señal_advertencia}. Se mueve pero no ataca: procesando si el estímulo es presa o interferencia. El equipo quedó completamente quieto. Los segundos que siguen son críticos.",
-      "Contacto con un hilo. {clic_corto} se acelera y se acerca. El espécimen evalúa. Nadie respira."
-    ],
-    "alerta_agente": [
-      "— Quietos — susurra alguien. {clic_corto} viene de adelante. Cerca. Activamos un cable. Equipo inmóvil. Esperando.",
-      "Tocamos algo. Está despierto. Quietos todos. No sé cuánto aguantamos así."
-    ]
+    "info_control": ["Lectura confirmada: el equipo ubica al espécimen — {senal_visual} — y {rasgo_clave}. La posición es clara.", "Posición confirmada. {senal_visual}. Saben dónde está y qué evitar."],
+    "info_agente": ["Confirmado. Tenemos la posición. Repito: tenemos la posición.", "Lo tengo. Sabemos dónde está y por dónde no pasar."],
+    "sininfo_control": ["El agente no logró ubicar al espécimen con certeza. {senal_presencia_corta} continúa, pero su origen es difícil de precisar. Saben que está en la zona, no dónde.", "Sin lectura clara. La señal rebota. Avanzan sabiendo que está cerca."],
+    "sininfo_agente": ["No pude confirmar posición. Avanzamos con cuidado en este tramo.", "Nada concluyente. El eco me miente. Seguimos."],
+    "alerta_control": ["Un movimiento de más. {peligro} se vuelve una posibilidad inmediata: el espécimen evalúa si el estímulo es presa o interferencia. El equipo quedó completamente quieto. Los segundos que siguen son críticos.", "El espécimen reacciona. {senal_presencia_corta} se acerca. Está evaluando. Nadie respira."],
+    "alerta_agente": ["— Quietos — susurra alguien. Está cerca. Equipo inmóvil. Esperando.", "Lo activamos. Está despierto. Quietos todos."]
   },
   "encuentro": {
-    "ambiente": [
-      "cámara ampliada — el espécimen visible a unos metros, agua entre el equipo y el animal",
-      "foco abierto — el espécimen en reposo activo, {cables} sobre la lámina de agua"
+    "ambiente": ["el espécimen al alcance — el equipo decide el método", "foco abierto — el espécimen en reposo activo, aún no los detecta"],
+    "control": ["El espécimen está localizado y aún no los ha detectado. {peligro} sigue latente. Control debe elegir el método ahora.", "Contacto. El animal no se ha percatado. El método se decide aquí — no duren."],
+    "agente": ["...Control. Ahí está. Decidan el método. No duren.", "Lo tenemos a tiro. Esperando instrucción de método."]
+  },
+  "metodos": {
+    "extraccion": [
+      { "id": "luz", "texto": "Protocolo 8-B. Estímulo máximo al espécimen para forzar su retracción. Tienen 2-4 minutos.", "stat": "biológico", "dificultad": 12 },
+      { "id": "sigilo", "texto": "Evasión. Bordeen al espécimen y recuperen material sin despertarlo.", "stat": "sigilo", "dificultad": 13 },
+      { "id": "espera", "texto": "Protocolo 15. Observación pasiva. Esperen a que se desplace y recuperen material.", "stat": "mental", "dificultad": 11 }
     ],
-    "control": [
-      "El espécimen está visible. {clic_corto} es constante: reposo activo, aún no los ha detectado. {cables} atraviesan el espacio entre el equipo y el animal. Control debe elegir el método ahora.",
-      "Contacto visual. El animal no se ha percatado. {tapetum} confirma su orientación. El método de extracción se decide aquí — no duren."
-    ],
-    "agente": [
-      "...Control. Ahí está. {clic_corto} constante. El agua está entre nosotros y él. Hay cables. Decidan. No duren.",
-      "Lo tenemos a la vista. Reposo. {agente.nombre} en posición. Esperando método."
-    ],
-    "metodos": [
-      { "id": "luz", "texto": "Protocolo 8-B. Luz blanca máxima al espécimen. Retracción garantizada. Tienen 2-4 minutos.", "stat": "biológico", "dificultad": 12 },
-      { "id": "sigilo", "texto": "Evasión. Bordeen {cables}. Muestra de residuo en el hilo, sin despertar al animal.", "stat": "sigilo", "dificultad": 13 },
-      { "id": "espera", "texto": "Protocolo 15. Observación pasiva. Esperen a que el espécimen se desplace, luego recuperen material.", "stat": "mental", "dificultad": 11 }
+    "neutralizacion": [
+      { "id": "directo", "texto": "Protocolo 8-A directo. Neutralización del objetivo designado, control de la población.", "stat": "físico", "dificultad": 12 },
+      { "id": "preciso", "texto": "Tiro selectivo. Solo el objetivo designado, cero exceso sobre la manada.", "stat": "biológico", "dificultad": 13 },
+      { "id": "flanqueo", "texto": "Flanqueo silencioso. Posición de ventaja antes de neutralizar.", "stat": "sigilo", "dificultad": 12 }
     ]
   },
-  "extraccion": {
-    "ambiente": [
-      "zona de extracción — material biológico al alcance, cronómetro activo",
-      "punto de muestra — fragmento recuperable en el agua, ventana abierta"
-    ],
-    "control": [
-      "El material está al alcance. La articulación distal todavía retiene {muestra}. El agente debe extraerlo con la jeringa reforzada y transferirlo al contenedor clase B. El tiempo corre.",
-      "Hay {muestra} recuperable. La integridad del contenedor está monitoreada. El procedimiento tiene que ser limpio. Adelante."
-    ],
-    "agente": [
-      "Tengo el fragmento. La articulación está intacta. Voy a intentar la extracción. Dame espacio.",
-      "Material a la vista. Es lo que buscábamos. Procediendo, despacio."
-    ],
-    "asegurada_control": [
-      "La muestra quedó en el contenedor. Monitoreo de integridad en verde. {muestra} confirmado, sin contaminantes. El equipo tiene lo que vino a buscar. Ahora tienen que salir.",
-      "Contenedor sellado y verificado. {muestra} íntegro. Objetivo primario cumplido. Inicien extracción del equipo."
-    ],
-    "asegurada_agente": [
-      "Muestra asegurada. Contenedor íntegro. Listo para extracción del equipo. Aguardando ruta.",
-      "Lo tenemos. Sellado en verde. Sáquennos de aquí."
-    ],
-    "comprometida_control": [
-      "La muestra está en el contenedor pero el procedimiento tuvo complicaciones: volumen inferior o sellado imperfecto. Protocolo 19 — si es viable sobre el 50% continúa con nota de incidencia.",
-      "Muestra parcial asegurada. No es óptima, pero es viable. Protocolo 19 en curso. Continúan con ella."
-    ],
-    "comprometida_agente": [
-      "Muestra en el contenedor. No es perfecta — volumen bajo o contaminación parcial. Viable sobre el cincuenta por ciento. Continuamos.",
-      "La tenemos, a medias. Sirve. Seguimos con ella."
-    ],
-    "perdida_control": [
-      "La muestra no pudo obtenerse. El material era insuficiente o el procedimiento falló. El equipo no tiene nada del objetivo primario. El objetivo secundario sigue activo. Deben salir.",
-      "Sin muestra. El contenedor no selló o el material no alcanzó. Nada que llevar. Inicien retirada."
-    ],
-    "perdida_agente": [
-      "No hay muestra. El material era insuficiente. No tenemos nada que llevar. Iniciamos extracción.",
-      "Se perdió. Nada en el contenedor. Salimos."
-    ],
-    "herida": {
-      "tipo": "laceración",
-      "severidad": 2,
-      "parte_cuerpo": "brazo",
-      "efecto_stat": { "físico": -1 }
+  "accion": {
+    "extraccion": {
+      "ambiente": ["zona de extracción — material biológico al alcance, cronómetro activo", "punto de muestra — fragmento recuperable, ventana abierta"],
+      "control": ["El material está al alcance. La articulación retiene {muestra}. El agente debe extraerlo con la jeringa reforzada y sellarlo en contenedor clase B. El tiempo corre.", "Hay {muestra} recuperable. El procedimiento tiene que ser limpio."],
+      "agente": ["Tengo el material. Voy a intentar la extracción. Dame espacio.", "Material a la vista. Es lo que buscábamos. Procediendo."],
+      "ok_control": ["La muestra quedó en el contenedor, integridad en verde. {muestra} confirmado. Inicien extracción del equipo.", "Contenedor sellado y verificado. {muestra} íntegro. Objetivo cumplido."],
+      "ok_agente": ["Muestra asegurada. Contenedor íntegro. Sáquennos de aquí.", "Lo tenemos. Sellado en verde. Listos para salir."],
+      "comp_control": ["Muestra en el contenedor con complicaciones: volumen bajo o sellado imperfecto. Protocolo 19 — viable sobre el 50% continúa con nota.", "Muestra parcial asegurada. No óptima, pero viable. Continúan con ella."],
+      "comp_agente": ["La tenemos, a medias. Sirve. Seguimos.", "Muestra parcial. Viable sobre el cincuenta por ciento. Continuamos."],
+      "perd_control": ["La muestra no pudo obtenerse. Nada del objetivo primario. Deben salir.", "Sin muestra. Nada que llevar. Inicien retirada."],
+      "perd_agente": ["No hay muestra. No tenemos nada. Salimos.", "Se perdió. Nada en el contenedor. Retirada."]
+    },
+    "neutralizacion": {
+      "ambiente": ["línea de tiro — el objetivo designado en el visor", "posición de neutralización — el resto de la población alrededor"],
+      "control": ["El objetivo designado está a tiro. La neutralización debe ser selectiva: cero exceso sobre la población. {peligro} si falla la ventana.", "El objetivo está aislado por un instante. Es la ventana. Selectivo, limpio."],
+      "agente": ["Objetivo en el visor. Solo él. Confirmen y ejecuto.", "Lo tengo aislado. Esperando luz verde."],
+      "ok_control": ["Objetivo neutralizado. La población no reaccionó como amenaza. Contención selectiva confirmada.", "Neutralización limpia. Cero exceso. Objetivo cumplido."],
+      "ok_agente": ["Objetivo abatido. El resto no cargó. Listo para salir.", "Confirmado. Selectivo. Sáquennos."],
+      "comp_control": ["Objetivo neutralizado pero la maniobra alteró a la población. Hay agitación territorial. Salgan ya.", "Neutralización con complicación: la manada reaccionó. Retírense rápido."],
+      "comp_agente": ["Cayó, pero el resto se movió. Tenemos que salir ya.", "Objetivo abajo, manada agitada. Retirada inmediata."],
+      "perd_control": ["El objetivo no fue neutralizado. La ventana se cerró. El espécimen está alerta. Salgan.", "Falló la neutralización. Objetivo activo y alerta. Retirada."],
+      "perd_agente": ["Falló el tiro. Está alerta. Salimos.", "No cayó. Se movió. Retirada."]
+    },
+    "documentacion": {
+      "ambiente": ["posición de registro — el foco a la vista sin contacto", "punto de documentación — el espécimen ajeno a la presencia del equipo"],
+      "control": ["El foco permite registro sin contacto. El agente documenta {muestra} con el equipo de campo. Protocolo 15: no establecer contacto bajo ninguna circunstancia.", "Ventana de registro abierta. Documentar {muestra} sin que el espécimen note la presencia."],
+      "agente": ["En posición de registro. Documentando sin contacto. Dame los minutos.", "El equipo de campo está grabando. Sin contacto. Procediendo."],
+      "dificultad": [11, 13],
+      "ok_control": ["Documentación completa. {muestra} registrado en su totalidad, sin alterar el comportamiento. Inicien retirada.", "Registro completo de {muestra}. Sin contacto. Objetivo cumplido."],
+      "ok_agente": ["Documentación completa. No nos detectó. Listos para salir.", "Lo tenemos todo. Registro limpio. Retirada."],
+      "comp_control": ["Documentación parcial: la ventana o la interferencia limitaron el registro. Es utilizable con reservas. Salgan.", "Registro parcial de {muestra}. Sirve a medias. Retírense."],
+      "comp_agente": ["Registro a medias. La ventana se cortó. Tenemos algo. Salimos.", "Documentación parcial. Sirve. Retirada."],
+      "perd_control": ["El registro no se completó. Nada utilizable del objetivo. Salgan.", "Sin documentación. La ventana se perdió. Retirada."],
+      "perd_agente": ["No alcanzamos a registrar nada útil. Salimos.", "Sin registro. Se cerró la ventana. Retirada."]
+    },
+    "observacion": {
+      "ambiente": ["posición de observación designada — distancia mínima 8 km, terreno expuesto", "puesto de telemetría — la firma de clase IV en el horizonte"],
+      "control": ["La posición de observación está establecida sobre la cota designada. El equipo de telemetría apunta a la firma. {peligro}: la línea de 8 km no se cruza por ningún motivo. {senal_presencia} dificulta el enlace.", "Puesto activo. La telemetría debe registrar trayectoria y velocidad. {senal_presencia} crece. La distancia mínima es absoluta."],
+      "agente": ["En posición. La firma está en el horizonte. Telemetría apuntando. La interferencia sube.", "Puesto establecido. Distancia confirmada sobre los 8 km. Registrando."],
+      "dificultad": [11, 13],
+      "ok_control": ["Telemetría obtenida: trayectoria y velocidad de {criatura} registradas a distancia segura. La línea de 8 km se mantuvo. Inicien repliegue.", "Registro completo de {muestra}. Distancia respetada. Objetivo cumplido."],
+      "ok_agente": ["Telemetría completa. Distancia intacta. Replegándonos.", "Lo tenemos. No cruzamos la línea. Salimos."],
+      "comp_control": ["Telemetría parcial: la interferencia degradó el enlace. Hay datos, con huecos. Replieguen.", "Registro parcial de {muestra}. La interferencia cortó parte. Repliegue."],
+      "comp_agente": ["Datos a medias. La interferencia nos comió parte. Replegándonos.", "Telemetría parcial. Sirve con reservas. Salimos."],
+      "perd_control": ["Sin telemetría utilizable. La interferencia bloqueó el registro. Mantengan la distancia y replieguen.", "Sin datos. El enlace cayó. Lo prioritario es no cruzar la línea. Repliegue."],
+      "perd_agente": ["Sin telemetría. La interferencia nos cegó. Replegándonos sin cruzar la línea.", "Nada utilizable. Mantenemos distancia. Salimos."]
     }
   },
+  "senal_degradada": {
+    "ambiente": ["la señal de radio empieza a degradarse por interferencia estructural", "el enlace con Control cae a fragmentos"],
+    "control": ["La señal cae. Las transmisiones llegan rotas. {senal_presencia_corta} domina el canal. Mantengan el rumbo aunque Control quede a ciegas un tramo.", "Interferencia severa. El canal se rompe. Sigan el plan, reporten solo novedad."],
+    "agente": ["C█ntrol... {equipo.lider.nombre}. Se█uimos. La señal... no sé si me █scuchan. Mantenemos rumbo.", "Pe█demos señal. Seg█imos al foco. Pro█ocolo 6."]
+  },
   "retirada": {
-    "ambiente": [
-      "tramo de retorno — agua baja, señal mejorando, espécimen en paradero desconocido",
-      "ruta de salida — el sonido de superficie llega desde arriba"
-    ],
-    "control": [
-      "El equipo cruza el tramo de retorno. El espécimen no está donde estaba, pero la red lo conecta con todo el subsuelo. El cruce exige esfuerzo: llevan más de una hora en campo.",
-      "Retirada en curso. Hay que cruzar en silencio bajo la rejilla. El sensor registra una anomalía adyacente — puede ser el espécimen o puede no ser nada."
-    ],
-    "agente": [
-      "Cruzando el tramo de retorno. Sin señal del bicho. Pero tampoco sabemos dónde está. Avanzando.",
-      "Casi en la salida. Hay vibración en el tramo lateral. Cruzamos quietos."
-    ],
+    "ambiente": ["tramo de retorno — el espécimen en paradero desconocido", "ruta de salida — el sonido de superficie llega desde arriba"],
+    "control": ["El equipo inicia el repliegue. El espécimen no está donde estaba. El cruce exige esfuerzo: llevan más de una hora en campo.", "Retirada en curso. Hay que salir en silencio. El sensor registra una anomalía adyacente — puede ser el espécimen o nada."],
+    "agente": ["Replegándonos. Sin señal del bicho, pero tampoco sabemos dónde está. Avanzando.", "Casi en la salida. Hay movimiento en el tramo lateral. Salimos quietos."],
     "dificultad": [11, 13],
-    "emergencia_ambiente": [
-      "base de la salida — un segundo espécimen emerge del lateral",
-      "tramo final — movimiento inesperado en la pared, sobre el equipo"
-    ],
-    "emergencia_control": [
-      "Un segundo espécimen emerge del lateral. Más pequeño — probablemente un adulto joven. Emerge sin activar un hilo: estaba fuera del agua. Los cálculos asumían un solo espécimen. Error. El equipo tiene segundos.",
-      "Movimiento sobre el equipo. Un segundo animal, fuera del agua, en la pared. Nadie lo había contado. Reacción inmediata o no salen."
-    ],
-    "emergencia_agente": [
-      "— SEGUNDO ESPÉCIMEN — EN LA PARED. {equipo.lider.nombre}: PROTOCOLO 8-B. TODOS. AHORA.",
-      "— ARRIBA — alguien grita. LUZ. LUZ. TODOS."
-    ],
-    "exterior_ambiente": [
-      "exterior — superficie, señal de radio recuperada al 100%",
-      "boca de salida — luz exterior, concreto seco bajo los pies"
-    ],
-    "exterior_control": [
-      "El equipo emerge. Luz exterior. La señal vuelve a 100%. El foco queda atrás. El equipo reporta estado y aguarda instrucción de regreso al punto de mando.",
-      "Salida confirmada. Señal restaurada. Silencio, comparativamente. Reporten estado para cierre."
-    ],
-    "exterior_agente": [
-      "Estamos en superficie. Todos presentes. Estado del equipo: {estado_equipo}. La muestra: {estado_muestra}. Listos para retorno. Esperando confirmación.",
-      "En superficie. Estado: {estado_equipo}. Muestra: {estado_muestra}. Aguardando cierre."
-    ],
-    "exterior_opcion": [
-      "Confirmado. Regresen al punto de mando. Operación concluida. Se les espera.",
-      "Recibido. Cierren y vuelvan. Buen trabajo. Operación concluida."
-    ]
-  }
+    "emergencia_ambiente": ["movimiento inesperado sobre el equipo en la salida", "un segundo espécimen aparece en el repliegue"],
+    "emergencia_control": ["Movimiento inesperado sobre el equipo. {peligro}, ahora, sin margen. Los cálculos no contaban con esto. Segundos para reaccionar.", "Un segundo foco en el repliegue. Nadie lo contó. Reacción inmediata o no salen."],
+    "emergencia_agente": ["— MOVIMIENTO — {equipo.lider.nombre}: REACCIÓN. TODOS. AHORA.", "— ARRIBA — alguien grita. TODOS. YA."],
+    "exterior_ambiente": ["exterior — superficie, señal de radio recuperada al 100%", "boca de salida — luz exterior, terreno firme bajo los pies"],
+    "exterior_control": ["El equipo emerge. La señal vuelve a 100%. El foco queda atrás. Reporten estado para cierre.", "Salida confirmada. Señal restaurada. Reporten estado."],
+    "exterior_agente": ["En superficie. Estado del equipo: {estado_equipo}. Objetivo: {estado_muestra}. Listos para retorno.", "Afuera. Estado: {estado_equipo}. Objetivo: {estado_muestra}. Aguardando cierre."],
+    "exterior_opcion": ["Confirmado. Regresen al punto de mando. Operación concluida. Se les espera.", "Recibido. Cierren y vuelvan. Buen trabajo."]
+  },
+  "herida": { "tipo": "laceración", "severidad": 2, "parte_cuerpo": "brazo", "efecto_stat": { "físico": -1 } }
 }

@@ -124,6 +124,8 @@ document.getElementById('btn-iniciar').addEventListener('click', () => {
   const equipo = seleccionados.map(id => agentes.find(a => a.id === id));
   setSession('op_equipo', equipo);
   setSession('op_lider_id', liderId);
+  // Seed fresco por despliegue → cada operación generada es distinta.
+  setSession('op_seed', Math.floor(Math.random() * 1e9));
   window.location.href = './coms.html';
 });
 

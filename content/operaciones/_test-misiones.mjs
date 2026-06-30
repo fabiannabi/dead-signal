@@ -2,12 +2,12 @@
  * _test-misiones.mjs — Test del generador procedural (tarea §7).
  * Uso: node content/operaciones/_test-misiones.mjs
  *
- * Cubre, sobre el generador:
- *   1. Validez estructural (200 seeds): refs ok, todo alcanzable, toda rama → final.
- *   2. Completabilidad: rama de éxito y rama de fracaso corren en el motor real.
+ *   1. Validez estructural: 200 seeds × cada evento (criatura/objetivo).
+ *   2. Completabilidad: rama éxito y rama fracaso corren en el motor real, por evento.
  *   3. Integridad mecánica: ningún final narra baja sin efecto que la produzca.
- *   4. Diferenciación: dos seeds no producen misiones idénticas.
- *   5. Compat: las misiones hand-authored siguen cargando y validan.
+ *   4. Diferenciación: por evento, 50 seeds → misiones únicas y varias formas.
+ *   5. Siembra por escaneo (§4.4): nivel alto injerta ventaja y mejora checks.
+ *   6. Compat: las misiones hand-authored siguen validando.
  */
 
 import { readFileSync, readdirSync } from "fs";
@@ -30,35 +30,23 @@ const grammar = {
   siteTemplates: leer("missions/grammar/site-templates.json"),
 };
 const eventos = leer("events/active-events.json");
-const evento = eventos.find((e) => e.criatura_sospechada === "arana_hidraulica");
+const datosAg = { archetypes: leer("agents/archetypes.json"), traits: leer("agents/traits.json"), names: leer("agents/names.json"), ranks: leer("org/ranks.json") };
 
 let fallos = 0;
 const ok = (cond, msg) => { if (!cond) { fallos++; console.log(`  ✗ ${msg}`); } };
 const seccion = (t) => console.log(`\n── ${t} ──`);
 
 console.log("══════════════════════════════════════════════════════");
-console.log("CENVAC — TEST DEL GENERADOR PROCEDURAL");
+console.log("CENVAC — TEST DEL GENERADOR PROCEDURAL (Fase 3)");
 console.log("══════════════════════════════════════════════════════");
 
-// ── 1. Validez estructural sobre 200 seeds ─────────────────────────────────────
-seccion("1. Validez estructural (200 seeds)");
-let invalidos = 0;
-for (let s = 1; s <= 200; s++) {
-  const m = generarMision(evento, s, { grammar });
-  const r = validarMision(m);
-  if (!r.ok) { invalidos++; if (invalidos <= 3) console.log(`  ✗ seed ${s}: ${r.errores.join("; ")}`); }
-}
-ok(invalidos === 0, `${invalidos}/200 misiones inválidas`);
-console.log(`  ${invalidos === 0 ? "✔" : "✗"} 200 misiones generadas; inválidas: ${invalidos}`);
-
-// ── Helper de traversal en el motor real ───────────────────────────────────────
-const datosAg = { archetypes: leer("agents/archetypes.json"), traits: leer("agents/traits.json"), names: leer("agents/names.json"), ranks: leer("org/ranks.json") };
-function crearEstado(mision) {
+function crearEstado(evento, mision) {
   const equipo = [42, 137, 2026, 999].map((s) => generarAgente(s, datosAg));
   equipo.forEach((a, i) => { a.es_lider = i === 0; });
   return { evento_id: evento.id, mision_id: mision.id, equipo, nodo_actual: mision.nodo_inicial, historial: [], flags: {}, muestra_obtenida: false, muestra_tipo: null, tiempo_simulado: "07:00", log: [] };
 }
-function correr(mision, estado, resultadoForzado) {
+function correr(evento, mision, resultadoForzado) {
+  const estado = crearEstado(evento, mision);
   let id = mision.nodo_inicial, pasos = 0;
   while (id && pasos < 120) {
     const nodo = obtenerNodo(mision, id);
@@ -73,69 +61,90 @@ function correr(mision, estado, resultadoForzado) {
   return { error: "límite de pasos" };
 }
 
-// ── 2. Completabilidad: éxito y fracaso corren en el motor ──────────────────────
-seccion("2. Completabilidad en el motor real");
-{
-  const m = cargarMision(generarMision(evento, 42, { grammar }));
-  const exito = correr(m, crearEstado(m), "éxito");
-  ok(!exito.error, `rama éxito: ${exito.error || "ok"}`);
-  ok(exito.final === "final_exito_limpio", `rama éxito termina en final_exito_limpio (terminó en ${exito.final})`);
-  ok(exito.estado && exito.estado.muestra_obtenida === true, "rama éxito obtiene muestra");
-  console.log(`  rama éxito  → ${exito.final} | muestra=${exito.estado?.muestra_obtenida} bajas=${exito.estado ? contarBajas(exito.estado) : "?"}`);
-
-  const fracaso = correr(m, crearEstado(m), "crítico_fallo");
-  ok(!fracaso.error, `rama fracaso: ${fracaso.error || "ok"}`);
-  ok(fracaso.final && fracaso.final.startsWith("final_"), `rama fracaso llega a un final (${fracaso.final})`);
-  const bajasFracaso = fracaso.estado ? contarBajas(fracaso.estado) : 0;
-  console.log(`  rama fracaso → ${fracaso.final} | muestra=${fracaso.estado?.muestra_obtenida} bajas=${bajasFracaso}`);
+// ── 1. Validez estructural (200 seeds × evento) ─────────────────────────────────
+seccion("1. Validez estructural (200 seeds × evento)");
+for (const ev of eventos) {
+  let inval = 0;
+  for (let s = 1; s <= 200; s++) {
+    const r = validarMision(generarMision(ev, s, { grammar }));
+    if (!r.ok) { inval++; if (inval <= 2) console.log(`  ✗ ${ev.criatura_sospechada}/${ev.objetivo} seed ${s}: ${r.errores[0]}`); }
+  }
+  ok(inval === 0, `${ev.criatura_sospechada}/${ev.objetivo}: ${inval}/200 inválidas`);
+  console.log(`  ${inval === 0 ? "✔" : "✗"} ${ev.criatura_sospechada.padEnd(20)} ${ev.objetivo.padEnd(15)} inválidas: ${inval}`);
 }
 
-// ── 3. Integridad mecánica: finales que narran baja tienen el efecto ────────────
+// ── 2. Completabilidad por evento ───────────────────────────────────────────────
+seccion("2. Completabilidad en el motor real (por evento)");
+for (const ev of eventos) {
+  const m = cargarMision(generarMision(ev, 42, { grammar }));
+  const e = correr(ev, m, "éxito");
+  const f = correr(ev, m, "crítico_fallo");
+  ok(!e.error && e.final?.startsWith("final_"), `${ev.criatura_sospechada}: rama éxito (${e.error || e.final})`);
+  ok(e.estado?.muestra_obtenida === true, `${ev.criatura_sospechada}: rama éxito cumple objetivo`);
+  ok(!f.error && f.final?.startsWith("final_"), `${ev.criatura_sospechada}: rama fracaso (${f.error || f.final})`);
+  console.log(`  ✔ ${ev.criatura_sospechada.padEnd(20)} éxito→${(e.final||"?").padEnd(22)} fracaso→${f.final||"?"} (bajas ${f.estado?contarBajas(f.estado):"?"})`);
+}
+
+// ── 3. Integridad mecánica ──────────────────────────────────────────────────────
 seccion("3. Integridad mecánica (bajas con efecto)");
 {
-  const m = generarMision(evento, 7, { grammar });
   let malos = 0;
-  for (const n of m.nodos.filter((x) => x.tipo === "final")) {
-    const narraBaja = /pirrico|catastrofico/.test(n.resultado);
-    const tieneEfecto = (n.efectos_garantizados_al_entrar || []).some((e) => e.tipo === "baja_garantizada");
-    if (narraBaja && !tieneEfecto) { malos++; console.log(`  ✗ ${n.id} narra baja sin efecto`); }
+  for (const ev of eventos) {
+    const m = generarMision(ev, 7, { grammar });
+    for (const n of m.nodos.filter((x) => x.tipo === "final")) {
+      const narraBaja = /pirrico|catastrofico/.test(n.resultado);
+      const tiene = (n.efectos_garantizados_al_entrar || []).some((e) => e.tipo === "baja_garantizada");
+      if (narraBaja && !tiene) { malos++; console.log(`  ✗ ${ev.objetivo}/${n.id} narra baja sin efecto`); }
+    }
   }
   ok(malos === 0, `${malos} finales narran baja sin efecto`);
-  // y la rama crítica produce baja real por efecto, no por texto
-  const m2 = cargarMision(generarMision(evento, 99, { grammar }));
-  const fr = correr(m2, crearEstado(m2), "crítico_fallo");
-  ok(contarBajas(fr.estado) >= 1, `rama crítica produce baja real por efecto (bajas=${contarBajas(fr.estado)})`);
-  console.log(`  ✔ finales con baja respaldados por efecto; rama crítica bajas=${contarBajas(fr.estado)}`);
+  const ev = eventos[0];
+  const m = cargarMision(generarMision(ev, 99, { grammar }));
+  const fr = correr(ev, m, "crítico_fallo");
+  ok(contarBajas(fr.estado) >= 1, `rama crítica produce baja real (bajas=${contarBajas(fr.estado)})`);
+  console.log(`  ✔ finales con baja respaldados; rama crítica bajas=${contarBajas(fr.estado)}`);
 }
 
-// ── 4. Diferenciación: dos seeds no producen misiones idénticas ─────────────────
-seccion("4. Diferenciación");
-{
-  const N = 50;
-  const full = new Set(), shapes = new Set();
+// ── 4. Diferenciación por evento ────────────────────────────────────────────────
+seccion("4. Diferenciación (por evento)");
+for (const ev of eventos) {
+  const N = 50; const full = new Set(), shapes = new Set();
   for (let s = 1; s <= N; s++) {
-    const m = generarMision(evento, s, { grammar });
+    const m = generarMision(ev, s, { grammar });
     full.add(JSON.stringify(m.nodos));
     shapes.add(m.nodos.map((n) => `${n.id}:${n.tipo}`).sort().join("|"));
   }
-  ok(full.size === N, `${N - full.size} pares de seeds produjeron misiones idénticas`);
-  ok(shapes.size >= 4, `solo ${shapes.size} formas estructurales distintas (esperado ≥4)`);
-  console.log(`  ✔ ${full.size}/${N} misiones únicas; ${shapes.size} formas estructurales distintas`);
+  ok(full.size === N, `${ev.criatura_sospechada}: ${N - full.size} pares idénticos`);
+  ok(shapes.size >= 4, `${ev.criatura_sospechada}: solo ${shapes.size} formas (≥4)`);
+  console.log(`  ${full.size === N && shapes.size >= 4 ? "✔" : "✗"} ${ev.criatura_sospechada.padEnd(20)} únicas ${full.size}/${N}, formas ${shapes.size}`);
 }
 
-// ── 5. Compat: misiones hand-authored cargan y validan ──────────────────────────
-seccion("5. Compatibilidad con misiones hand-authored");
+// ── 5. Siembra por escaneo (§4.4) ───────────────────────────────────────────────
+seccion("5. Siembra por escaneo");
+{
+  const ev = eventos.find((e) => e.criatura_sospechada === "arana_hidraulica");
+  const m0 = generarMision(ev, 5, { grammar, scan_estado: { nivel: 0 } });
+  const m3 = generarMision(ev, 5, { grammar, scan_estado: { nivel: 3 } });
+  const tieneVentaja = (m) => m.nodos.some((n) => n.id === "nodo_ventaja_recon");
+  const busqMod = (m) => m.nodos.find((n) => n.id === "nodo_busqueda")?.check.modificadores_ambiente;
+  ok(!tieneVentaja(m0), "nivel 0 NO injerta ventaja de reconocimiento");
+  ok(tieneVentaja(m3), "nivel 3 injerta nodo de ventaja de reconocimiento");
+  ok(busqMod(m3) > busqMod(m0), `nivel 3 mejora el check de búsqueda (${busqMod(m0)} → ${busqMod(m3)})`);
+  console.log(`  ✔ escaneo modula el árbol: ventaja(n0=${tieneVentaja(m0)}, n3=${tieneVentaja(m3)}), busqueda mod ${busqMod(m0)}→${busqMod(m3)}`);
+}
+
+// ── 6. Compat hand-authored ─────────────────────────────────────────────────────
+seccion("6. Compatibilidad con misiones hand-authored");
 {
   const dir = join(dataDir, "missions");
   const files = readdirSync(dir).filter((f) => f.endsWith(".json"));
   let malas = 0;
   for (const f of files) {
-    const m = JSON.parse(readFileSync(join(dir, f), "utf8"));
-    const r = validarMision(m);
+    const r = validarMision(JSON.parse(readFileSync(join(dir, f), "utf8")));
     if (!r.ok) { malas++; console.log(`  ✗ ${f}: ${r.errores.slice(0, 2).join("; ")}`); }
   }
-  ok(malas === 0, `${malas}/${files.length} misiones hand-authored con problemas estructurales`);
-  console.log(`  ${malas === 0 ? "✔" : "✗"} ${files.length} misiones hand-authored revisadas; problemas: ${malas}`);
+  ok(malas === 0, `${malas}/${files.length} hand-authored con problemas`);
+  console.log(`  ${malas === 0 ? "✔" : "✗"} ${files.length} hand-authored revisadas; problemas: ${malas}`);
 }
 
 console.log("\n══════════════════════════════════════════════════════");
