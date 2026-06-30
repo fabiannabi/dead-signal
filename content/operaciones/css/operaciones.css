@@ -435,25 +435,35 @@ body::after {
 .check-flavor.bad  { color: var(--red-hi); }
 .check-flavor.critico { color: var(--red-hi); }
 
-/* Señal degradada/crítica: el texto sigue LEGIBLE; la degradación se ve como estática */
-.sig-deg { color: var(--text2); opacity: 0.92; }
-.sig-crit {
+/* Señal degradada/crítica: el texto sigue LEGIBLE; la degradación se ve como estática (sin █). */
+.sig-deg {
   position: relative;
   color: var(--text2);
-  text-shadow: -1px 0 rgba(94,255,160,0.35), 1px 0 rgba(192,72,56,0.28);
-  animation: sig-flicker 2.4s steps(12) infinite;
+}
+.sig-deg::after {
+  content: '';
+  position: absolute; inset: -2px -2px;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(0,0,0,0.22) 3px 4px);
+  animation: sig-roll 1.4s linear infinite;
+}
+.sig-crit {
+  position: relative;
+  color: var(--text);
+  text-shadow: -1.2px 0 rgba(94,255,160,0.5), 1.2px 0 rgba(192,72,56,0.45);
+  animation: sig-flicker 1.6s steps(10) infinite;
 }
 .sig-crit::after {
   content: '';
-  position: absolute;
-  inset: -2px -1px;
+  position: absolute; inset: -2px -2px;
   pointer-events: none;
-  background: repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,0.3) 2px 3px);
-  mix-blend-mode: overlay;
-  animation: sig-roll 0.9s linear infinite;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,0.42) 2px 3px),
+    repeating-linear-gradient(90deg, rgba(94,255,160,0.04) 0 2px, transparent 2px 5px);
+  animation: sig-roll 0.55s linear infinite;
 }
-@keyframes sig-flicker { 0%,100% { opacity: 1; } 44% { opacity: 0.8; } 46% { opacity: 1; } 71% { opacity: 0.68; } 73% { opacity: 1; } }
-@keyframes sig-roll { from { background-position: 0 0; } to { background-position: 0 6px; } }
+@keyframes sig-flicker { 0%,100% { opacity: 1; } 40% { opacity: 0.74; } 42% { opacity: 1; } 66% { opacity: 0.6; } 68% { opacity: 1; } 88% { opacity: 0.82; } }
+@keyframes sig-roll { from { background-position: 0 0, 0 0; } to { background-position: 0 7px, 6px 0; } }
 .check-result.no-recibido { color: var(--red-hi); font-size: 10px; letter-spacing: 0.1em; }
 .decision-btn.degradada { border-style: dashed; }
 

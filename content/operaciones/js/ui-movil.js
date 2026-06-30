@@ -18,9 +18,10 @@ let estado = null, mision = null, senalDespacho = 100;
 
 function infoTier(audio) {
   const eff = Math.max(0, senalDespacho - (PENAL[audio] ?? 0));
+  // Sin corrupción de caracteres: texto legible, degradación solo visual (CSS).
   if (eff >= 60) return { tier: 'claro', eff, corrupt: 0 };
-  if (eff >= 35) return { tier: 'degradado', eff, corrupt: 0.025 };
-  return { tier: 'critico', eff, corrupt: 0.08 };
+  if (eff >= 35) return { tier: 'degradado', eff, corrupt: 0 };
+  return { tier: 'critico', eff, corrupt: 0 };
 }
 const sigClase = (info) => (!info || info.tier === 'claro') ? '' : (info.tier === 'critico' ? 'sig-crit' : 'sig-deg');
 function corromper(t, p) {

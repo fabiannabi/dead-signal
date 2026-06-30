@@ -25,10 +25,11 @@ const PENAL_AUDIO = { silencio: 0, estatica_baja: 5, estatica_media: 20, estatic
 // Nivel de información disponible en un nodo: combina la señal de despacho con el tramo.
 function infoTier(audio_hint) {
   const eff = Math.max(0, senalDespacho - (PENAL_AUDIO[audio_hint] ?? 0));
-  // corrupción inline MUY baja: el texto sigue legible; la degradación la vende la estática (CSS).
+  // Sin corrupción de caracteres: el texto queda 100% legible. La degradación
+  // se muestra SOLO con estática visual (CSS sig-deg / sig-crit).
   if (eff >= 60) return { tier: 'claro', eff, corrupt: 0 };
-  if (eff >= 35) return { tier: 'degradado', eff, corrupt: 0.025 };
-  return { tier: 'critico', eff, corrupt: 0.08 };
+  if (eff >= 35) return { tier: 'degradado', eff, corrupt: 0 };
+  return { tier: 'critico', eff, corrupt: 0 };
 }
 
 // Corrompe una fracción de caracteres con █ (no toca espacios ni saltos).
@@ -170,11 +171,9 @@ function showDecisionButtons(nodo, opciones, info = { tier: 'claro', corrupt: 0 
   opciones.forEach((op, idx) => {
     const btn = document.createElement('button');
     btn.className = `decision-btn${info.tier !== 'claro' ? ' ' + sigClase(info) : ''}`;
-    // Protocolo 9: con señal crítica el texto llega con estática; con señal media, leve.
+    // Protocolo 9: con señal crítica antepone el código de estado; el texto queda legible con estática.
     if (info.tier === 'critico') {
-      btn.innerHTML = `<span class="op-codigo">CÓDIGO ${idx + 1}</span> ${corromper(op.texto, 0.12)}`;
-    } else if (info.tier === 'degradado') {
-      btn.textContent = corromper(op.texto, info.corrupt);
+      btn.innerHTML = `<span class="op-codigo">CÓDIGO ${idx + 1}</span> ${op.texto}`;
     } else {
       btn.textContent = op.texto;
     }
