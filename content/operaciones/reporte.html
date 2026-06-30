@@ -3,27 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CENVAC — Expediente</title>
+<title>CENVAC — Cierre de operación</title>
 <link rel="stylesheet" href="./css/operaciones.css">
 </head>
 <body>
 
 <header class="op-header">
-  <a href="./index.html" class="op-logo">APE — <span>SEÑAL MUERTA</span></a>
-  <div class="op-divider"></div>
-  <span class="op-freq">EXPEDIENTE POST-OPERACIONAL</span>
+  <a href="./index.html" class="op-logo">A.P.E. <span>· CIERRE</span></a>
   <span class="op-spacer"></span>
-  <span class="op-time" id="op-id-header"></span>
+  <span class="op-freq" id="op-id-header"></span>
 </header>
 
 <div class="reporte-wrap">
-  <div class="section-label" style="margin-bottom:20px">Expediente generado</div>
-  <div class="reporte-doc" id="reporte-doc">
-    <div style="color:var(--text3);font-size:11px">Generando expediente…</div>
+  <div class="cierre-doc" id="cierre-doc">
+    <div style="color:var(--text3);font-size:11px">Procesando cierre…</div>
   </div>
   <div class="reporte-actions" id="reporte-actions" style="display:none">
-    <button class="btn-op primary" id="btn-export">↓ EXPORTAR .MD</button>
-    <button class="btn-op" id="btn-mapa">← Volver al mapa</button>
+    <span class="cierre-foot" id="cierre-foot"></span>
+    <span class="op-spacer"></span>
+    <button class="btn-op" id="btn-export">↓ COPIA LOCAL</button>
+    <button class="btn-op primary" id="btn-mapa">NUEVO DESPLIEGUE →</button>
   </div>
 </div>
 
