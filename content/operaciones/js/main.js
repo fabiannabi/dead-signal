@@ -1,3 +1,6 @@
+import { generarAgente } from './agent-generator.js';
+import { SEEDS_PROCEDURALES } from './roster-store.js';
+
 export const DATA_BASE = '../data/operaciones';
 
 export async function fetchJSON(path) {
@@ -45,6 +48,13 @@ export function hashSeed(str) {
   let h = 2166136261;
   for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
   return h >>> 0;
+}
+
+// Roster base reproducible (nombrados + procedurales fijos) — mismo en cuartel y briefing.
+export async function cargarRosterBase() {
+  const datos = await cargarDatos();
+  const procedurales = SEEDS_PROCEDURALES.map((s) => generarAgente(s, datos));
+  return { datos, base: [...datos.named, ...procedurales] };
 }
 
 export function getSession(key) {
