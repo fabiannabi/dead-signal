@@ -48,19 +48,57 @@ function posicionDe(id) {
   return null;
 }
 
-function renderTactico(zid) {
+let mapaBuilt = false;
+let roomPos = {};
+
+// Construye el plano SVG una sola vez: cuartos en posición + corredores + escuadrón.
+function construirMapa() {
   const el = document.getElementById('tactico');
   if (!el) return;
   if (!displayZonas.length) { el.innerHTML = '<div class="tac-vacio">sin esquemático del sitio</div>'; return; }
-  const superficie = zid === 'exterior';
-  if (zid && !superficie) visitadas.add(zid);
-  el.innerHTML = displayZonas.map(z => {
-    const actual = !superficie && z.id === zid;
-    const vis = actual || visitadas.has(z.id);
-    const corto = (z.etiqueta || z.id).split(' — ')[0];
-    const mark = actual ? '<span class="tac-mark">▸ TROPAS</span>' : (z.es_foco ? '<span class="tac-foco">◉</span>' : '');
-    return `<div class="tac-room${actual ? ' actual' : ''}${vis ? ' visitada' : ''}${z.es_foco ? ' foco' : ''}"><span class="tac-name">${corto}</span>${mark}</div>`;
-  }).join('') + (superficie ? '<div class="tac-superficie">▸ equipo en superficie</div>' : '');
+  const N = displayZonas.length;
+  const W = 210, rowH = 46, pad = 26;
+  const H = pad * 2 + (N - 1) * rowH;
+  roomPos = {};
+  const pts = displayZonas.map((z, i) => {
+    const x = i % 2 === 0 ? 56 : 154;   // zig-zag → sensación de plano
+    const y = pad + i * rowH;
+    roomPos[z.id] = { x, y };
+    return { x, y, z };
+  });
+  let corr = '', rooms = '', labels = '';
+  for (let i = 0; i < pts.length - 1; i++) corr += `<line class="tac-corr" x1="${pts[i].x}" y1="${pts[i].y}" x2="${pts[i + 1].x}" y2="${pts[i + 1].y}"/>`;
+  const rw = 78, rh = 26;
+  pts.forEach(({ x, y, z }) => {
+    rooms += `<rect class="tac-svg-room${z.es_foco ? ' foco' : ''}" data-zid="${z.id}" x="${x - rw / 2}" y="${y - rh / 2}" width="${rw}" height="${rh}" rx="2"/>`;
+    const corto = (z.etiqueta || z.id).split(/[ —]/)[0].slice(0, 11);
+    labels += `<text class="tac-svg-label" x="${x}" y="${y + 3}" text-anchor="middle">${z.es_foco ? '◉ ' : ''}${corto}</text>`;
+  });
+  const squad = `<g class="tac-squad" id="tac-squad" transform="translate(${pts[0].x},${pts[0].y})">
+    <circle class="tac-dot" cx="-7" cy="7" r="2.3"/><circle class="tac-dot" cx="7" cy="6" r="2.3"/><circle class="tac-dot" cx="0" cy="-7" r="2.3"/></g>`;
+  el.innerHTML = `<svg class="tac-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${corr}${rooms}${labels}${squad}</svg><div class="tac-caption" id="tac-caption">— en inserción —</div>`;
+  mapaBuilt = true;
+}
+
+// Mueve el escuadrón (dots) al cuarto actual y marca lo visitado. CSS anima el deslizamiento.
+function renderTactico(zid) {
+  if (!mapaBuilt) construirMapa();
+  if (!mapaBuilt) return;
+  const cap = document.getElementById('tac-caption');
+  const squad = document.getElementById('tac-squad');
+  if (zid && zid !== 'exterior') visitadas.add(zid);
+  document.querySelectorAll('.tac-svg-room').forEach(r => {
+    const id = r.getAttribute('data-zid');
+    r.classList.toggle('actual', id === zid);
+    if (id === zid || visitadas.has(id)) r.classList.add('visitada');
+  });
+  if (zid === 'exterior') {
+    if (cap) cap.textContent = '▸ equipo en superficie';
+  } else if (zid && roomPos[zid] && squad) {
+    squad.setAttribute('transform', `translate(${roomPos[zid].x},${roomPos[zid].y})`);
+    const z = displayZonas.find(x => x.id === zid);
+    if (cap) cap.textContent = '▸ ' + ((z && z.etiqueta) || '').split(' — ')[0];
+  }
 }
 
 // Penalización de comunicación por tramo (audio_hint del nodo) sobre la señal de despacho.
