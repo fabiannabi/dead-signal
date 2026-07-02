@@ -3,6 +3,7 @@ import { cargarMision, obtenerNodo, procesarNodo, procesarOpcion, filtrarOpcione
 import { generarMision } from './mission-generator.js';
 import { iniciarMision } from './state.js';
 import { consolidarOperacion } from './roster-store.js';
+import { crearNarradorRasgos } from './trait-narrative.js';
 
 const delay = ms => new Promise(r => setTimeout(r, ms));
 
@@ -16,98 +17,11 @@ const SIGNAL = {
 
 let estado = null;
 let mision = null;
+let narrador = null;
 let procesando = false;
 let senalDespacho = 100;   // señal con la que se desplegó (gastada al escanear) — §5
 
-// ── Esquemático táctico en vivo: posición del equipo por cuarto ──────────────────
-let siteTpl = null;
-let displayZonas = [];
-const visitadas = new Set();
-
-function construirDisplayZonas() {
-  displayZonas = [];
-  if (!siteTpl || !siteTpl.zonas) return;
-  const zonas = siteTpl.zonas;
-  const acceso = zonas.find(z => /acceso/.test(z.id)) || zonas[0];
-  const foco = zonas.find(z => z.es_foco);
-  const mids = zonas.filter(z => z !== acceso && z !== foco);
-  displayZonas = [acceso, ...mids, foco].filter(Boolean);
-}
-
-// Mapea un nodo de la historia a un cuarto del sitio (entrada → foco → salida).
-function posicionDe(id) {
-  if (!displayZonas.length) return null;
-  const acceso = displayZonas[0];
-  const foco = displayZonas.find(z => z.es_foco) || displayZonas[displayZonas.length - 1];
-  const mid = displayZonas.find(z => z !== acceso && !z.es_foco) || acceso;
-  if (/^nodo_(insercion|ventaja|aprox)/.test(id)) return acceso.id;
-  if (/^nodo_busqueda/.test(id)) return mid.id;
-  if (/^nodo_(encuentro|accion|observacion|documentacion|objetivo|senal)/.test(id)) return foco.id;
-  if (/^nodo_(retirada|emergencia)/.test(id)) return acceso.id;
-  if (/^nodo_exterior/.test(id)) return 'exterior';
-  return null;
-}
-
-let mapaBuilt = false;
-let roomPos = {};
-
-// Construye el plano SVG una sola vez: cuadrícula de cuartos grandes + corredores + escuadrón.
-function construirMapa() {
-  const el = document.getElementById('tactico');
-  if (!el) return;
-  if (!displayZonas.length) { el.innerHTML = '<div class="tac-vacio">sin esquemático del sitio</div>'; return; }
-  const N = displayZonas.length;
-  // Plano de planta: cuartos que comparten paredes (footprint de edificio).
-  // displayZonas = [acceso, ...mids, foco]. Slots normalizados 0..100.
-  const SLOTS = {
-    4: [ {x:0,y:50,w:46,h:50}, {x:0,y:0,w:46,h:46}, {x:50,y:0,w:50,h:46}, {x:50,y:50,w:50,h:50} ],
-    5: [ {x:0,y:48,w:42,h:52}, {x:0,y:0,w:42,h:44}, {x:46,y:0,w:54,h:44}, {x:46,y:48,w:26,h:52}, {x:76,y:48,w:24,h:52} ],
-    6: [ {x:0,y:50,w:32,h:50}, {x:0,y:0,w:32,h:46}, {x:36,y:0,w:30,h:46}, {x:70,y:0,w:30,h:46}, {x:36,y:50,w:30,h:50}, {x:70,y:50,w:30,h:50} ],
-  };
-  const slots = SLOTS[N] || SLOTS[5];
-  const VW = 320, VH = 248, pad = 6;
-  const sx = (VW - pad * 2) / 100, sy = (VH - pad * 2) / 100, wall = 2.5;
-  roomPos = {};
-  let rooms = '', labels = '';
-  displayZonas.forEach((z, i) => {
-    const s = slots[i] || slots[slots.length - 1];
-    const rx = pad + s.x * sx + wall, ry = pad + s.y * sy + wall;
-    const rw = s.w * sx - wall * 2, rh = s.h * sy - wall * 2;
-    roomPos[z.id] = { x: rx + rw * 0.72, y: ry + rh * 0.66 };   // dots dentro del cuarto, abajo-der
-    rooms += `<rect class="tac-svg-room${z.es_foco ? ' foco' : ''}" data-zid="${z.id}" x="${rx}" y="${ry}" width="${rw}" height="${rh}" rx="2"/>`;
-    const tag = z.es_foco ? '◉ FOCO' : 'ZONA';
-    const corto = (z.etiqueta || z.id).split(/[ —]/)[0].slice(0, 12);
-    labels += `<text class="tac-svg-tag${z.es_foco ? ' foco' : ''}" data-zid="${z.id}" x="${rx + 8}" y="${ry + 17}">${tag}</text>`;
-    labels += `<text class="tac-svg-name" data-zid="${z.id}" x="${rx + 8}" y="${ry + 35}">${corto}</text>`;
-  });
-  const s0 = roomPos[displayZonas[0].id];
-  const squad = `<g class="tac-squad" id="tac-squad" transform="translate(${s0.x},${s0.y})">
-    <circle class="tac-ping" cx="0" cy="0" r="6"/>
-    <circle class="tac-dot" cx="-6" cy="5" r="3.2"/><circle class="tac-dot" cx="6" cy="4" r="3.2"/><circle class="tac-dot" cx="0" cy="-6" r="3.2"/></g>`;
-  el.innerHTML = `<svg class="tac-svg" viewBox="0 0 ${VW} ${VH}">${rooms}${labels}${squad}</svg><div class="tac-caption" id="tac-caption">— en inserción —</div>`;
-  mapaBuilt = true;
-}
-
-// Mueve el escuadrón (dots) al cuarto actual y marca lo visitado. CSS anima el deslizamiento.
-function renderTactico(zid) {
-  if (!mapaBuilt) construirMapa();
-  if (!mapaBuilt) return;
-  const cap = document.getElementById('tac-caption');
-  const squad = document.getElementById('tac-squad');
-  if (zid && zid !== 'exterior') visitadas.add(zid);
-  document.querySelectorAll('.tac-svg-room, .tac-svg-name, .tac-svg-tag').forEach(r => {
-    const id = r.getAttribute('data-zid');
-    r.classList.toggle('actual', id === zid);
-    if (id === zid || visitadas.has(id)) r.classList.add('visitada');
-  });
-  if (zid === 'exterior') {
-    if (cap) cap.textContent = '▸ equipo en superficie';
-  } else if (zid && roomPos[zid] && squad) {
-    squad.setAttribute('transform', `translate(${roomPos[zid].x},${roomPos[zid].y})`);
-    const z = displayZonas.find(x => x.id === zid);
-    if (cap) cap.textContent = '▸ ' + ((z && z.etiqueta) || '').split(' — ')[0];
-  }
-}
+// (El esquemático táctico/mapa se retiró — la operación es narrativa por radio.)
 
 // Penalización de comunicación por tramo (audio_hint del nodo) sobre la señal de despacho.
 const PENAL_AUDIO = { silencio: 0, estatica_baja: 5, estatica_media: 20, estatica_alta: 40, alerta_critica: 10 };
@@ -163,12 +77,9 @@ async function init() {
   }
   setSession('op_mision_obj', misionRaw);
 
-  siteTpl = (grammar && grammar.siteTemplates && grammar.siteTemplates[evento.sitio_tipo]) || null;
-  construirDisplayZonas();
-  renderTactico(null);
-
   mision = cargarMision(misionRaw);
   estado = iniciarMision(evento, misionRaw, equipo.map(a => JSON.parse(JSON.stringify(a))), liderId);
+  narrador = crearNarradorRasgos();
 
   // Header
   document.getElementById('ev-id').textContent    = evento.id;
@@ -195,7 +106,6 @@ async function stepNode(nodo_id) {
 
   appendNodeSep(nodo.tipo, nodo_id);
   updateSignal(nodo.audio_hint);
-  renderTactico(posicionDe(nodo_id));   // mover las tropas por el esquemático en vivo
 
   // Nivel de información de este tramo según la señal de despacho (§5)
   const info = infoTier(nodo.audio_hint);
@@ -204,17 +114,28 @@ async function stepNode(nodo_id) {
   // Process node — applies effects, records historial, advances time
   const resultado = procesarNodo(nodo, estado, mision, {});
 
+  // Cada bloque cae con su propia pausa: se lee como feed de radio, no como muro de texto.
   // Ambient line
-  if (nodo.ambiente) appendAmbiente(nodo.ambiente, info);
+  if (nodo.ambiente) { await delay(320); appendAmbiente(nodo.ambiente, info); scrollBottom(); }
+
+  // Peso narrativo de las limitaciones provocadas por el entorno (drenaje, encierro, calma…)
+  for (const m of narrador.porAmbiente(estado, nodo)) { await delay(650); appendRasgoInsert(m, info); scrollBottom(); }
 
   // Messages (staggered)
   for (const msg of resultado.mensajes) {
-    await delay(100);
+    await delay(500);
     appendMessage(msg, info);
+    scrollBottom();
   }
 
   // Resultado del check — su visibilidad es parte de la mecánica de señal (§5)
-  if (resultado.check_resultado) appendCheckResult(resultado.check_resultado, info);
+  if (resultado.check_resultado) {
+    await delay(480);
+    appendCheckResult(resultado.check_resultado, info);
+    scrollBottom();
+    // Un fallo saca la limitación de quien actuó; un crítico de éxito, su ventaja.
+    for (const m of narrador.porCheck(estado, resultado.check_resultado)) { await delay(650); appendRasgoInsert(m, info); scrollBottom(); }
+  }
 
   renderStatusPanel();
   scrollBottom();
@@ -236,15 +157,69 @@ async function stepNode(nodo_id) {
   }
 
   if (resultado.requiere_decision) {
+    // Un solo camino = "Continuar" (no es una decisión); dos o más = decisión real.
+    if (resultado.opciones_disponibles.length === 1) {
+      showAdvanceOption(nodo, resultado.opciones_disponibles[0]);
+      return;
+    }
     showDecisionButtons(nodo, resultado.opciones_disponibles, info);
     return;
   }
 
-  // Auto-advance (check, resolucion, narrativo with no options)
+  // Avance controlado: un clic = un beat. Antes el motor encadenaba solo por los
+  // checks (que se auto-resuelven) hasta la próxima decisión, volcando varios nodos
+  // de una. Ahora cada nodo espera "▶ Continuar". Los nodos de resolución son
+  // plumbing (resolución → final), así que esos sí avanzan solos.
   if (resultado.siguiente) {
-    await delay(nodo.tipo === 'check' ? 1100 : 450);
-    stepNode(resultado.siguiente);
+    if (nodo.tipo === 'resolucion') {
+      await delay(450);
+      stepNode(resultado.siguiente);
+    } else {
+      showContinueButton(resultado.siguiente);
+    }
   }
+}
+
+function showContinueButton(siguiente) {
+  const zone = document.getElementById('decision-zone');
+  zone.innerHTML = '';
+  const btns = document.createElement('div');
+  btns.className = 'decision-btns';
+  const b = document.createElement('button');
+  b.className = 'decision-btn continue';
+  b.textContent = '▶ Continuar';
+  b.addEventListener('click', async () => {
+    b.disabled = true;
+    zone.innerHTML = '';
+    await stepNode(siguiente);
+  });
+  btns.appendChild(b);
+  zone.appendChild(btns);
+  scrollBottom();
+}
+
+// Nodo de un solo camino (reconocimiento/acuse de Control): botón Continuar que
+// aplica esa única opción (sus efectos) y avanza. No se presenta como "decisión".
+function showAdvanceOption(nodo, op) {
+  const zone = document.getElementById('decision-zone');
+  zone.innerHTML = '';
+  const btns = document.createElement('div');
+  btns.className = 'decision-btns';
+  const b = document.createElement('button');
+  b.className = 'decision-btn continue';
+  b.textContent = '▶ Continuar';
+  b.addEventListener('click', async () => {
+    b.disabled = true;
+    zone.innerHTML = '';
+    appendSelectedOption(op.texto);
+    const siguiente = procesarOpcion(nodo, estado, 0);
+    renderStatusPanel();
+    scrollBottom();
+    if (siguiente) await stepNode(siguiente);
+  });
+  btns.appendChild(b);
+  zone.appendChild(btns);
+  scrollBottom();
 }
 
 // ── Decision buttons ────────────────────────────────────────────────────────
@@ -327,11 +302,11 @@ function appendAmbiente(texto, info) {
 function appendMessage(msg, info) {
   const log = document.getElementById('coms-log');
   const row = document.createElement('div');
-  row.className = 'coms-message';
 
   const isControl = msg.canal === 'CONTROL';
   const isSistema = msg.canal === 'SISTEMA';
   const chanCls   = isControl ? 'control' : isSistema ? 'sistema' : 'agent';
+  row.className = `coms-message ${chanCls}`;
   const textCls   = isControl ? 'control' : isSistema ? 'sistema' : '';
 
   const chanEl = document.createElement('div');
@@ -345,6 +320,23 @@ function appendMessage(msg, info) {
   row.appendChild(chanEl);
   row.appendChild(textEl);
   log.appendChild(row);
+}
+
+// Insert de rasgo: la ventaja/limitación de un agente aflorando en la transmisión.
+function appendRasgoInsert(m, info) {
+  const log = document.getElementById('coms-log');
+  const el = document.createElement('div');
+  const neg = m.polaridad === '-';
+  el.className = `coms-rasgo ${neg ? 'neg' : 'pos'} ${sigClase(info)}`;
+  const tag = document.createElement('span');
+  tag.className = 'rasgo-tag';
+  tag.textContent = `${neg ? '▽ limitación' : '▲ ventaja'} · ${m.rasgo}`;
+  const txt = document.createElement('div');
+  txt.className = 'rasgo-text';
+  txt.textContent = corromper(m.texto, info ? info.corrupt : 0);
+  el.appendChild(tag);
+  el.appendChild(txt);
+  log.appendChild(el);
 }
 
 function appendDegradado(info) {
@@ -399,7 +391,7 @@ function appendFinalBlock(nodo) {
 function appendSystemMsg(texto) {
   const log = document.getElementById('coms-log');
   const row = document.createElement('div');
-  row.className = 'coms-message';
+  row.className = 'coms-message sistema';
   row.innerHTML = `<div class="coms-channel sistema">SISTEMA</div><div class="coms-text sistema">${texto}</div>`;
   log.appendChild(row);
 }

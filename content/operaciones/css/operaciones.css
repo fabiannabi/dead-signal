@@ -118,10 +118,10 @@ body::after {
 
 .btn-op {
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 7px 16px;
+  padding: 9px 18px;
   background: transparent;
   border: 1px solid var(--border3);
   color: var(--text2);
@@ -158,8 +158,8 @@ body::after {
 /* ── Section label ── */
 
 .section-label {
-  font-size: 9px;
-  letter-spacing: 0.22em;
+  font-size: 12px;
+  letter-spacing: 0.2em;
   color: var(--text3);
   text-transform: uppercase;
   display: flex;
@@ -423,11 +423,11 @@ body::after {
 .coms-degradado.critico { color: var(--red-hi); animation: blink 1.4s step-end infinite; }
 /* Resultado de check como flavor diegético (sin dados) */
 .check-flavor {
-  font-size: 10px;
+  font-size: 14px;
   font-style: italic;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-align: center;
-  margin: 6px 0;
+  margin: 8px 0;
   color: var(--text3);
 }
 .check-flavor.ok   { color: var(--green-hi); }
@@ -524,43 +524,45 @@ body::after {
 }
 
 .briefing-page-title {
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.22em;
   color: var(--accent);
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .briefing-page-sub {
-  font-size: 10px;
-  color: var(--text3);
-  letter-spacing: 0.06em;
+  font-size: 12.5px;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
   margin-bottom: 24px;
 }
 
 .mission-card {
   background: var(--bg2);
   border: 1px solid var(--border2);
-  padding: 16px 20px;
+  border-left: 3px solid var(--border3);
+  padding: 18px 22px;
   margin-bottom: 28px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px 24px;
 }
 
-.mission-field { display: flex; flex-direction: column; gap: 3px; }
+.mission-field { display: flex; flex-direction: column; gap: 5px; }
 
 .field-label {
-  font-size: 8px;
-  letter-spacing: 0.2em;
+  font-size: 11px;
+  letter-spacing: 0.16em;
   color: var(--text3);
   text-transform: uppercase;
 }
 
 .field-value {
-  font-size: 11px;
-  color: var(--text2);
-  letter-spacing: 0.04em;
+  font-size: 16px;
+  color: var(--text);
+  letter-spacing: 0.02em;
 }
 
 .selection-bar {
@@ -576,22 +578,22 @@ body::after {
 .slot-row { display: flex; gap: 5px; }
 
 .slot {
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
   border: 1px solid var(--border3);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 9px;
+  font-size: 13px;
   color: var(--text3);
   letter-spacing: 0;
 }
 .slot.filled { border-color: var(--accent2); color: var(--accent); }
 
 .selection-hint {
-  font-size: 10px;
-  color: var(--text3);
-  letter-spacing: 0.06em;
+  font-size: 14px;
+  color: var(--text2);
+  letter-spacing: 0.03em;
   flex: 1;
 }
 
@@ -599,8 +601,8 @@ body::after {
 
 .roster-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-  gap: 6px;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -634,9 +636,9 @@ body::after {
   margin-bottom: 6px;
 }
 
-.agent-rank { font-size: 9px; letter-spacing: 0.14em; color: var(--text3); }
-.agent-name { font-size: 15px; color: var(--text); letter-spacing: 0.05em; }
-.agent-rol  { font-size: 12px; color: var(--text2); letter-spacing: 0.06em; margin-bottom: 12px; }
+.agent-rank { font-size: 11px; letter-spacing: 0.12em; color: var(--accent); background: var(--bg3); border: 1px solid var(--border2); padding: 2px 6px; }
+.agent-name { font-size: 18px; color: var(--text); letter-spacing: 0.04em; }
+.agent-rol  { font-size: 13.5px; color: var(--text2); letter-spacing: 0.04em; margin-bottom: 12px; }
 
 .agent-stats { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 8px; }
 
@@ -664,7 +666,7 @@ body::after {
 .agent-card.nombrado { border-color: var(--accent2); }
 .agent-named-badge {
   display: inline-block;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   color: var(--accent);
   border: 1px solid var(--accent2);
@@ -674,12 +676,99 @@ body::after {
   text-transform: uppercase;
 }
 
+/* ── Briefing Opción B v2 — capacidades (barras) + ventajas/limitaciones ── */
+.briefing-page-sub .leg-clave { color: var(--purple); }
+.briefing-page-sub .leg-pos   { color: var(--green-hi); font-weight: 700; }
+.briefing-page-sub .leg-neg   { color: var(--amber); font-weight: 700; }
+.field-value.clave { color: var(--purple); }
+
+.agent-card .sel-pill {
+  margin-left: auto; font-size: 11px; letter-spacing: 0.1em; color: var(--text3);
+  white-space: nowrap; text-transform: uppercase;
+}
+.agent-card.selected .sel-pill { color: var(--text2); }
+.agent-card .sel-pill.lead { color: var(--accent); }
+.agent-card.leader::after { display: none; }   /* el indicador de líder lo da .sel-pill.lead */
+
+/* Barras de capacidad — stat clave en azul, stat máximo en fósforo */
+.cap-block { margin: 14px 0 12px; }
+.cap-head {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+  font-size: 11px; letter-spacing: 0.1em; color: var(--text3); text-transform: uppercase;
+  border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 10px;
+}
+.cap-head .cap-clave { color: var(--purple); white-space: nowrap; }
+.srow {
+  display: grid; grid-template-columns: 92px 1fr 30px; gap: 10px; align-items: center;
+  font-size: 13.5px; margin: 6px 0;
+}
+.srow .slbl { color: var(--text2); white-space: nowrap; letter-spacing: 0.03em; }
+.srow.clave .slbl { color: var(--purple); }
+.srow.clave .slbl::after { content: ' · clave'; font-size: 10px; color: var(--purple); opacity: 0.85; }
+.track { position: relative; height: 15px; background: var(--bg); border: 1px solid var(--border); }
+.track::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(120,180,140,0.14); }
+.track .fill { height: 100%; background: var(--green); }
+.srow.clave .track .fill { background: var(--purple); }
+.srow.top .track .fill { background: var(--accent); box-shadow: 0 0 6px rgba(51,255,102,0.4); }
+.srow .snum { font-size: 15px; color: var(--text); text-align: right; }
+.srow.clave .snum { color: var(--purple); }
+.srow.top .snum { color: var(--accent); }
+.srow.top .snum::before { content: '▲ '; font-size: 10px; color: var(--accent); }
+
+/* Perfil de agente */
+.agent-perfil {
+  font-size: 13px; color: var(--text2); background: var(--bg);
+  border-left: 2px solid var(--border3); padding: 8px 11px; margin: 10px 0; letter-spacing: 0.01em; line-height: 1.5;
+}
+.agent-perfil b { color: var(--green-hi); font-weight: 400; }
+
+/* Ventajas / limitaciones (chips con signo + efecto mecánico) */
+.rasgos {
+  border-top: 1px solid var(--border); padding-top: 12px; margin-top: 4px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.rgroup { display: grid; grid-template-columns: 92px 1fr; gap: 10px; align-items: start; }
+.rgroup .rlbl { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding-top: 4px; }
+.rgroup.pos .rlbl { color: var(--green-hi); }
+.rgroup.neg .rlbl { color: var(--amber); }
+.rchips { display: flex; flex-wrap: wrap; gap: 6px; }
+.rchip {
+  font-size: 13px; padding: 5px 10px; border: 1px solid; display: inline-flex; align-items: center; gap: 6px;
+  letter-spacing: 0.01em;
+}
+.rchip.pos { color: var(--text); border-color: var(--border3); background: rgba(51,255,102,0.05); }
+.rchip.neg { color: #f0e6b0; border-color: #6b5f22; background: rgba(217,200,74,0.06); }
+.rchip .sign { font-weight: 700; }
+.rchip.pos .sign { color: var(--green-hi); }
+.rchip.neg .sign { color: var(--amber); }
+.rchip .ef { font-size: 11px; letter-spacing: 0.01em; opacity: 0.9; }
+.rchip.pos .ef { color: var(--green-hi); }
+.rchip.neg .ef { color: var(--amber); }
+
+/* ── Insert de rasgo = NOTA DEL ANALISTA (no radio): prosa en cursiva, sangrada. ── */
+.coms-rasgo {
+  margin: 10px 0;
+  padding: 9px 16px;
+  border-left: 3px solid var(--border3);
+  background: rgba(28,140,58,0.045);
+  animation: fadeIn 0.2s ease;
+}
+.coms-rasgo.neg { border-left-color: var(--amber); background: rgba(217,200,74,0.05); }
+.coms-rasgo .rasgo-tag {
+  display: block; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--green-hi); margin-bottom: 4px; opacity: 0.9;
+}
+.coms-rasgo.neg .rasgo-tag { color: var(--amber); }
+.coms-rasgo .rasgo-text { color: var(--text2); font-style: italic; letter-spacing: 0.01em; line-height: 1.55; font-size: 14px; }
+.coms-rasgo.sig-deg { opacity: 0.72; }
+.coms-rasgo.sig-crit { opacity: 0.5; }
+
 .briefing-actions { display: flex; gap: 10px; align-items: center; }
 
 .briefing-actions-hint {
-  font-size: 10px;
-  color: var(--text3);
-  letter-spacing: 0.05em;
+  font-size: 13px;
+  color: var(--text2);
+  letter-spacing: 0.03em;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -872,70 +961,82 @@ body::after {
   gap: 0;
 }
 
+/* Ambiente = descriptor de ESCENA (no una transmisión): centrado, tenue, con marcas. */
 .coms-ambient {
-  font-size: 14px;
-  letter-spacing: 0.07em;
+  font-size: 12px;
+  letter-spacing: 0.12em;
   color: var(--text3);
-  border-left: 2px solid var(--border2);
-  padding: 4px 0 4px 10px;
   text-transform: uppercase;
-  margin: 8px 0 2px;
-  line-height: 1.4;
+  text-align: center;
+  margin: 16px auto 8px;
+  max-width: 620px;
+  line-height: 1.5;
+  opacity: 0.9;
   animation: fadeIn 0.2s ease;
 }
+.coms-ambient::before { content: '◈  '; color: var(--border3); }
+.coms-ambient::after  { content: '  ◈'; color: var(--border3); }
 
+/* Mensaje = burbuja de conversación. CONTROL a la izquierda, CAMPO a la derecha:
+   se ve de un vistazo quién habla con quién. */
 .coms-message {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 0;
-  align-items: baseline;
+  display: block;
+  max-width: 66%;
+  padding: 8px 15px 10px;
+  margin: 7px 0;
+  border: 1px solid var(--border2);
+  border-left-width: 3px;
+  background: var(--bg2);
   font-size: 16px;
-  line-height: 1.65;
-  padding: 4px 0;
+  line-height: 1.6;
   animation: fadeIn 0.2s ease;
+}
+.coms-message.control {
+  margin-right: auto;
+  border-left-color: var(--accent2);
+}
+.coms-message.agent {
+  margin-left: auto;
+  border-left-color: var(--green);
+  background: var(--bg3);
+}
+.coms-message.sistema {
+  max-width: 100%;
+  margin: 6px 0;
+  padding: 4px 0;
+  border: none;
+  background: none;
+  text-align: center;
 }
 
 .coms-channel {
+  display: block;
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text3);
-  text-align: right;
-  padding-right: 12px;
-  border-right: 1px solid var(--border2);
-  line-height: 1.6;
-  padding-top: 1px;
+  text-align: left;
+  margin-bottom: 3px;
 }
 .coms-channel.control { color: var(--accent2); }
-.coms-channel.agent   { color: var(--green); }
+.coms-channel.agent   { color: var(--green-hi); }
 .coms-channel.sistema { color: var(--text3); }
 
 .coms-text {
-  padding-left: 12px;
+  display: block;
   color: var(--text);
   letter-spacing: 0.02em;
+  font-size: 16px;
+  line-height: 1.6;
 }
 .coms-text.control { color: var(--text2); }
-.coms-text.sistema { color: var(--text3); font-size: 10px; letter-spacing: 0.08em; }
+.coms-text.sistema { color: var(--text3); font-size: 11px; letter-spacing: 0.08em; }
 
 /* Node type separator */
 
-.node-sep {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--border3);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin: 10px 0 2px;
-}
-.node-sep::before, .node-sep::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
+/* El descriptor de ESCENA (ambiente, centrado) actúa como corte de sección; el
+   tipo interno de nodo ("narrativo/decision/check") no se muestra: rompe la lectura. */
+.node-sep { display: none; }
 
 /* Check block */
 
@@ -1029,14 +1130,34 @@ body::after {
 }
 .decision-btn:disabled { opacity: 0.3; pointer-events: none; }
 
+/* Continuar: avanza un beat (no es una decisión) — más discreto y centrado. */
+.decision-btn.continue {
+  color: var(--text3);
+  border-color: var(--border2);
+  border-style: dashed;
+  text-align: center;
+  letter-spacing: 0.12em;
+  font-size: 14px;
+  max-width: 240px;
+}
+.decision-btn.continue:hover:not(:disabled) {
+  color: var(--accent);
+  border-color: var(--accent2);
+  background: transparent;
+}
+
+/* Eco de la orden elegida por Control: caja centrada de ancho completo (es la
+   decisión del jugador materializándose en el canal). */
 .selected-option-echo {
   font-size: 15px;
-  color: var(--accent2);
-  letter-spacing: 0.08em;
-  padding: 4px 0 2px;
-  border-left: 2px solid var(--accent2);
-  padding-left: 10px;
-  margin: 4px 0;
+  color: var(--green-hi);
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 7px 16px;
+  margin: 8px auto;
+  max-width: 82%;
+  border: 1px dashed var(--border3);
+  background: rgba(51,255,102,0.04);
   animation: fadeIn 0.2s ease;
 }
 
@@ -1285,7 +1406,7 @@ body::after {
 .roster-tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .tag.cicatriz { border-color: var(--red); color: var(--red-hi); }
 .roster-estado { flex: 0 0 auto; align-self: flex-start; }
-.estado-pill { font-size: 8px; letter-spacing: 0.14em; padding: 3px 8px; border: 1px solid; text-transform: uppercase; }
+.estado-pill { font-size: 10.5px; letter-spacing: 0.1em; padding: 3px 8px; border: 1px solid; text-transform: uppercase; }
 .estado-pill.activa { color: var(--green-hi); border-color: var(--green); }
 .estado-pill.recuperacion { color: var(--accent); border-color: var(--accent2); }
 .estado-pill.herida { color: var(--red-hi); border-color: var(--red); }
@@ -1339,8 +1460,9 @@ body::after {
 .agent-card.afectada { border-left: 3px solid var(--red); }
 .agent-card .bar-row { margin: 6px 0; }
 .agent-card .agent-card-header .estado-pill { margin-left: auto; }
-.agent-vinculo-na { font-size: 9px; color: var(--purple); margin-top: 6px; letter-spacing: 0.04em; }
-.briefing-yield { font-size: 11px; color: var(--text3); letter-spacing: 0.04em; }
+.agent-vinculo-na { font-size: 11.5px; color: var(--purple); margin-top: 6px; letter-spacing: 0.03em; }
+.agent-card .bar-lbl { font-size: 12px; width: auto; margin-right: 4px; }
+.briefing-yield { font-size: 13.5px; color: var(--text2); letter-spacing: 0.03em; }
 .briefing-yield .y-alto, .briefing-yield .y-alta { color: var(--green-hi); }
 .briefing-yield .y-medio, .briefing-yield .y-media { color: var(--accent); }
 .briefing-yield .y-bajo, .briefing-yield .y-baja { color: var(--red-hi); }
@@ -1434,6 +1556,9 @@ body::after {
   .rendimiento-panel { display: none; }
   .coms-log { max-height: none; }
   .coms-panel { min-height: 50vh; }
+  /* Burbujas más anchas en pantallas chicas para no dejar el texto en una columna angosta */
+  .coms-message { max-width: 90%; }
+  .selected-option-echo { max-width: 96%; }
 
   /* Tablero: overlay como hoja inferior a todo el ancho */
   #map-wrap { height: calc(100vh - 96px); }

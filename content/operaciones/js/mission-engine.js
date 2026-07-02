@@ -171,40 +171,91 @@ function _resolverFinal(nodo, estado) {
 
 function _construirMensajes(nodo, estado, mensajes) {
   const lider  = estado.equipo.find(a => a.es_lider) || estado.equipo[0];
-  const agente_voz = _resolverVoz(estado.equipo, nodo.agente_voz);
+  const agente_voz = _resolverVoz(estado.equipo, nodo.agente_voz, nodo.id);
 
-  if (nodo.texto_control) {
-    mensajes.push({
-      canal: 'CONTROL',
-      texto: _interpolar(nodo.texto_control, estado, agente_voz)
-    });
-  }
-  if (nodo.texto_agente) {
-    mensajes.push({
-      canal: `${agente_voz.rango_abreviatura} ${agente_voz.nombre_completo}`,
-      archetype: agente_voz.archetype_id,
-      texto: _interpolar(nodo.texto_agente, estado, agente_voz)
-    });
-  }
+  const control = nodo.texto_control ? {
+    canal: 'CONTROL',
+    texto: _interpolar(nodo.texto_control, estado, agente_voz)
+  } : null;
+  const agente = nodo.texto_agente ? {
+    canal: `${agente_voz.rango_abreviatura} ${agente_voz.nombre_completo}`,
+    archetype: agente_voz.archetype_id,
+    texto: _aplicarEstiloRadio(_interpolar(nodo.texto_agente, estado, agente_voz), agente_voz, nodo.id)
+  } : null;
+
+  // En nodos de reacción/resultado el agente en campo reporta primero y Control
+  // responde a ese reporte; en nodos de brief/orden Control encuadra y el agente confirma.
+  const secuencia = nodo.orden_voz === 'agente_primero' ? [agente, control] : [control, agente];
+  for (const m of secuencia) if (m) mensajes.push(m);
 }
 
-function _resolverVoz(equipo, criterio) {
+// Hash determinístico string→uint (para elegir muletilla estable por nodo+agente).
+function _hashStr(s) {
+  let h = 2166136261;
+  for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+
+// Aplica la voz del agente (estilo_radio) a su línea: prefijo (inicio) y/o cierre.
+// Determinístico por nodo+agente para que no cambie al re-jugar el mismo nodo.
+function _aplicarEstiloRadio(txt, agente, nodoId) {
+  const est = agente && agente.estilo_radio;
+  if (!est || !txt) return txt;
+  const h = _hashStr(`${nodoId}|${agente.id || agente.nombre_completo || ''}`);
+  let out = txt.trim();
+  const dashStart = /^[—-]/.test(out);
+  const primerNombre = (agente.nombre_completo || '').split(' ')[0];
+
+  // inicio: prefijo con minúscula en la 1ª letra; evita diálogo, nombre propio y "Control".
+  if (est.inicio && est.inicio.length && (h % 100) < (est.inicio_prob || 0)
+      && !dashStart && !out.startsWith(primerNombre) && !/^Control/.test(out)) {
+    const ini = est.inicio[h % est.inicio.length];
+    out = ini + out.charAt(0).toLowerCase() + out.slice(1);
+  }
+  // cierre: frase final; no se añade tras un grito/diálogo. (>>> sin signo: evita índice negativo)
+  if (est.cierre && est.cierre.length && ((h >>> 3) % 100) < (est.cierre_prob || 0) && !dashStart) {
+    const cie = est.cierre[(h >>> 3) % est.cierre.length];
+    if (cie) {
+      if (!/[.…?!]$/.test(out)) out += '.';
+      out += ' ' + cie;
+    }
+  }
+  return out;
+}
+
+function _resolverVoz(equipo, criterio, nodoId = '') {
   const activos = equipo.filter(a => a.estado?.vivo !== false);
-  if (!criterio || criterio === 'auto') return activos.find(a => a.es_lider) || activos[0];
-  return activos.find(a => a.archetype_id === criterio) || activos.find(a => a.es_lider) || activos[0];
+  const pool = activos.length ? activos : equipo;
+  if (!criterio || criterio === 'auto') return pool.find(a => a.es_lider) || pool[0];
+  const match = pool.find(a => a.archetype_id === criterio);
+  if (match) return match;
+  // Arquetipo no presente: da la voz a un no-líder (estable por nodo) para que el
+  // líder no acapare la transmisión — el líder ya habla en los nodos "auto".
+  const noLider = pool.filter(a => !a.es_lider);
+  const base = noLider.length ? noLider : pool;
+  return base[_hashStr(String(nodoId)) % base.length];
+}
+
+// Capitaliza inicio de oración: los descriptores de criatura son minúscula (uso
+// intra-frase), así que al caer tras punto/al inicio se ven mal si no se corrigen.
+function _capitalizarOraciones(txt) {
+  return txt
+    .replace(/^(\s*)([a-záéíóúñ])/, (m, sp, c) => sp + c.toUpperCase())
+    .replace(/([.?!…]\s+)([a-záéíóúñ])/g, (m, sep, c) => sep + c.toUpperCase());
 }
 
 function _interpolar(txt, estado, agente) {
   const lider = estado.equipo.find(a => a.es_lider) || estado.equipo[0];
   const ag = agente || lider;
-  return txt
+  const out = txt
     .replace(/\{equipo\.lider\.nombre\}/g, lider.nombre_completo)
     .replace(/\{equipo\.lider\.rango\}/g,  lider.rango_abreviatura)
-    .replace(/\{agente\.nombre\}/g,        ag.nombre_completo)
+    .replace(/\{agente\.nombre\}/g,        ag.nombre_completo.split(' ')[0])
     .replace(/\{agente\.rango\}/g,         ag.rango_abreviatura)
     .replace(/\{nombre\}/g,                ag.nombre_completo)
     .replace(/\{estado_equipo\}/g,  _resumenEquipo(estado.equipo))
     .replace(/\{estado_muestra\}/g, estado.muestra_obtenida ? estado.muestra_tipo : 'no obtenida');
+  return _capitalizarOraciones(out);
 }
 
 function _resumenEquipo(equipo) {

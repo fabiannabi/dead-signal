@@ -1,22 +1,60 @@
-import { cargarRosterBase, getSession, setSession } from './main.js';
+import { cargarRosterBase, getSession, setSession, cargarGramatica } from './main.js';
 import { perfilCompleto } from './roster-store.js';
 
-const STATS_DISPLAY = [
-  { key: 'físico',    label: 'F' },
-  { key: 'técnico',   label: 'T' },
-  { key: 'biológico', label: 'B' },
-  { key: 'sigilo',    label: 'S' },
-  { key: 'mental',    label: 'M' },
-  { key: 'liderazgo', label: 'L' },
+// Orden y etiqueta larga de capacidades (mockup Opción B v2).
+const STATS_ORDEN = [
+  { key: 'físico',    label: 'Físico'    },
+  { key: 'técnico',   label: 'Técnico'   },
+  { key: 'biológico', label: 'Biológico' },
+  { key: 'sigilo',    label: 'Sigilo'    },
+  { key: 'mental',    label: 'Mental'    },
+  { key: 'liderazgo', label: 'Liderazgo' },
 ];
+
+// Abreviaturas para el efecto mecánico mostrado en los chips de rasgo.
+const STAT_ABBR = { 'físico': 'fís', 'técnico': 'téc', 'biológico': 'bio', 'sigilo': 'sig', 'mental': 'men', 'liderazgo': 'lid' };
+const ESTADO_LABEL = {
+  estamina_max: 'estam. máx', cordura_max: 'cord. máx',
+  cordura_equipo_en_encuentro: 'cord. equipo',
+};
+const CAP = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
 let agentes = [];
 let perfiles = {};       // id → perfil persistente
 let nombres = {};        // id → nombre corto (vínculos)
+let claveStats = [];     // capacidades clave de la misión (creature-tags)
 let seleccionados = [];
 let liderId = null;
 
 const seleccionable = (id) => perfiles[id] && perfiles[id].estado !== 'recuperacion';
+
+// ── Formato del efecto mecánico de un rasgo (derivado de sus modificadores) ──
+function sgn(n) { return (n > 0 ? '+' : '−') + Math.abs(n); }
+function efectoDe(rasgo) {
+  const parts = [];
+  for (const [k, v] of Object.entries(rasgo.modificadores_stat || {})) {
+    if (typeof v !== 'number' || v === 0) continue;
+    const m = k.match(/^(.+?)_(?:contra|en)_(.+)$/);   // p.ej. técnico_contra_arana_hidraulica
+    if (m) {
+      const ab = STAT_ABBR[m[1]] || m[1];
+      parts.push(`${sgn(v)} ${ab} vs ${m[2].replace(/_/g, ' ').replace(/arana/g, 'araña')}`);
+    } else {
+      parts.push(`${sgn(v)} ${STAT_ABBR[k] || k}`);
+    }
+  }
+  for (const [k, v] of Object.entries(rasgo.modificadores_estado || {})) {
+    if (typeof v !== 'number' || v === 0) continue;   // valores de texto → solo narrativos
+    parts.push(`${sgn(v)} ${ESTADO_LABEL[k] || k.replace(/_/g, ' ')}`);
+  }
+  return parts.join(' · ');
+}
+
+// ── Texto de perfil (mejores dos capacidades / la más floja) ──
+function perfilTexto(stats) {
+  const ord = Object.entries(stats).sort((a, b) => b[1] - a[1]);
+  if (ord.length < 2) return '';
+  return `Destaca en <b>${ord[0][0]}</b> y <b>${ord[1][0]}</b>; flojo en ${ord[ord.length - 1][0]}.`;
+}
 
 async function init() {
   const evento = getSession('op_evento');
@@ -28,12 +66,34 @@ async function init() {
   document.getElementById('mc-ubic').textContent  = evento.ubicacion_descrita.slice(0, 60) + '…';
   document.getElementById('mc-nivel').textContent = `AMENAZA ${evento.nivel_amenaza_estimado}`;
 
+  // Capacidades clave de la misión = stats que la criatura chequea (aproximación / búsqueda / acción).
+  try {
+    const g = await cargarGramatica();
+    const ct = g.creatureTags[evento.criatura_sospechada];
+    if (ct) {
+      claveStats = [...new Set([ct.stat_aproximacion, ct.stat_busqueda, ct.stat_accion].filter(Boolean))];
+    }
+  } catch { /* sin gramática → sin resalte de clave */ }
+  document.getElementById('mc-perfil').textContent = claveStats.length ? claveStats.join(' · ') : 'estándar';
+
   const { base } = await cargarRosterBase();
   nombres = Object.fromEntries(base.map(a => [a.id, a.nombre_completo.split(' ')[0]]));
   perfiles = Object.fromEntries(base.map(a => [a.id, perfilCompleto(a)]));
   agentes = base.filter(a => perfiles[a.id].estado !== 'baja');
 
   renderRoster();
+}
+
+function chipsHTML(rasgos, pol) {
+  const arr = rasgos.filter(r => (r.polaridad || '+') === pol);
+  if (!arr.length) return '';
+  const cls = pol === '+' ? 'pos' : 'neg';
+  const sign = pol === '+' ? '+' : '−';
+  const chips = arr.map(r => {
+    const ef = efectoDe(r);
+    return `<span class="rchip ${cls}"><span class="sign">${sign}</span>${r.nombre}${ef ? `<span class="ef">${ef}</span>` : ''}</span>`;
+  }).join('');
+  return `<div class="rgroup ${cls}"><span class="rlbl">${pol === '+' ? 'Ventajas' : 'Limitaciones'}</span><div class="rchips">${chips}</div></div>`;
 }
 
 function renderRoster() {
@@ -56,7 +116,6 @@ function renderRoster() {
     if (p.estado === 'herida') card.classList.add('afectada');
 
     const maxStat = Math.max(...Object.values(a.stats));
-    const minStat = Math.min(...Object.values(a.stats));
     const cordPct = Math.round((p.cordura / p.cordura_max) * 100);
     const corCls = cordPct < 30 ? 'crit' : cordPct < 60 ? 'low' : '';
 
@@ -67,22 +126,37 @@ function renderRoster() {
     const estadoTag = enRecup ? `<span class="estado-pill recuperacion">RECUPERACIÓN · ${p.recuperacion_ops} ops</span>`
       : p.estado === 'herida' ? `<span class="estado-pill herida">AFECTADA</span>` : '';
 
+    const ident = (a.es_nombrado && a.identificado !== false) ? '<span class="agent-named-badge">IDENT</span>' : '';
+    const selPill = isLider ? '<span class="sel-pill lead">★ LÍDER</span>'
+      : isSelected ? '<span class="sel-pill">● EN EQUIPO</span>' : '';
+
+    const filas = STATS_ORDEN.map(s => {
+      const v = a.stats[s.key] || 0;
+      const esClave = claveStats.includes(s.key);
+      const esTop = v === maxStat;
+      return `<div class="srow${esClave ? ' clave' : ''}${esTop ? ' top' : ''}">
+        <span class="slbl">${s.label}</span>
+        <div class="track"><div class="fill" style="width:${v * 10}%"></div></div>
+        <span class="snum">${v}</span></div>`;
+    }).join('');
+
+    const claveLbl = claveStats.length ? `clave: ${claveStats.map(CAP).join(' · ')}` : 'sin clave definida';
+
     card.innerHTML = `
       <div class="agent-card-header">
         <span class="agent-rank">${a.rango_abreviatura}</span>
-        <span class="agent-name">${a.nombre_completo}${a.es_nombrado ? '<span class="agent-named-badge">IDENT</span>' : ''}</span>
+        <span class="agent-name">${a.nombre_completo}${ident}</span>
+        ${selPill}
         ${estadoTag}
       </div>
       <div class="agent-rol">${a.nombre_rol} — ${p.ops} op${p.ops !== 1 ? 's' : ''} · cordura ${cordPct}%</div>
       <div class="bar-row"><span class="bar-lbl">COR</span><div class="bar-track"><div class="bar-fill mind ${corCls}" style="width:${cordPct}%"></div></div></div>
-      <div class="agent-stats">
-        ${STATS_DISPLAY.map(s => {
-          const v = a.stats[s.key] || 0;
-          const cls = v >= maxStat ? 'hi' : v <= minStat ? 'lo' : '';
-          return `<span class="stat-chip ${cls}">${s.label}<span>${v}</span></span>`;
-        }).join('')}
+      <div class="cap-block">
+        <div class="cap-head"><span>Capacidades · 0–10</span><span class="cap-clave">${claveLbl}</span></div>
+        ${filas}
       </div>
-      <div class="agent-traits">${a.rasgos.map(r => r.nombre).join(' · ')}</div>
+      <div class="agent-perfil">Perfil: ${perfilTexto(a.stats)}</div>
+      <div class="rasgos">${chipsHTML(a.rasgos, '+')}${chipsHTML(a.rasgos, '-')}</div>
       ${vincNota}
     `;
 

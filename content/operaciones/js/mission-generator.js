@@ -12,7 +12,15 @@
  */
 
 class SeededRNG {
-  constructor(seed) { this.seed = (seed >>> 0) || 1; }
+  constructor(seed) {
+    // Scramble (splitmix32) para que semillas pequeñas y consecutivas no correlacionen
+    // sus primeros valores — si no, coins como tempoLargo salen iguales en seeds 1..50.
+    let s = (seed >>> 0) || 1;
+    s = Math.imul(s ^ (s >>> 16), 0x21f0aaad);
+    s = Math.imul(s ^ (s >>> 15), 0x735a2d97);
+    s ^= s >>> 15;
+    this.seed = (s >>> 0) || 1;
+  }
   next() { this.seed = (Math.imul(1664525, this.seed) + 1013904223) >>> 0; return this.seed / 0x100000000; }
   int(min, max) { return Math.floor(this.next() * (max - min + 1)) + min; }
   pick(arr) { return arr[this.int(0, arr.length - 1)]; }
@@ -68,8 +76,8 @@ export function generarMision(evento, seed, opciones = {}) {
 
   // ── Variación estructural por seed (§4.2) ───────────────────────────────────
   const tempoLargo = rng.chance(0.5);                 // inserta nodo de señal degradada
-  const conRutaAprox = rng.chance(0.5);
-  const conSegundaAprox = rng.chance(0.4) || tempoLargo === false && rng.chance(0.2);
+  const conRutaAprox = true;                          // decisión de ruta: siempre presente
+  const conSegundaAprox = rng.chance(0.5);   // eje estructural independiente (variedad de forma)
   const conVentajaRecon = scanNivel >= 2;             // nodo de ventaja por escaneo (§4.4)
   const vozNarrativa = rng.pick(["auto", "veterano", "auto", "reconocimiento"]);
   const metodoBank = (b.metodos && b.metodos[accion]) || [];
@@ -84,9 +92,11 @@ export function generarMision(evento, seed, opciones = {}) {
   const ID = {
     INS: "nodo_insercion", VENTAJA: "nodo_ventaja_recon", APROX_RUTA: "nodo_aprox_ruta",
     APROX: "nodo_aproximacion", APROX2: "nodo_aproximacion_2", APROX_FALLO: "nodo_aprox_fallo",
-    BUSQ: "nodo_busqueda", BUSQ_INFO: "nodo_busqueda_info", BUSQ_SININFO: "nodo_busqueda_sininfo", BUSQ_ALERTA: "nodo_busqueda_alerta",
+    BUSQ_DEC: "nodo_busqueda_decision", BUSQ: "nodo_busqueda", BUSQ_SOLO: "nodo_busqueda_avanzada",
+    BUSQ_INFO: "nodo_busqueda_info", BUSQ_SININFO: "nodo_busqueda_sininfo", BUSQ_ALERTA: "nodo_busqueda_alerta",
     ENC: "nodo_encuentro", OBS: "nodo_observacion", DOC: "nodo_documentacion",
     OBJ_OK: "nodo_objetivo_cumplido", OBJ_COMP: "nodo_objetivo_parcial", OBJ_PERD: "nodo_objetivo_fallido",
+    DILEMA: "nodo_dilema_salida", SEGUNDA: "nodo_segunda_pasada", RET_RAPIDO: "nodo_retirada_rapida",
     SENAL: "nodo_senal_degradada", RET: "nodo_retirada", EMERG: "nodo_emergencia", OUT: "nodo_exterior", RES: "nodo_resolucion",
   };
 
@@ -98,58 +108,79 @@ export function generarMision(evento, seed, opciones = {}) {
   const efFlag = (nombre, valor = true) => ({ tipo: "flag", nombre, valor });
 
   // Entradas dinámicas según fases
-  const middleEntry = conBusqueda ? ID.BUSQ : ID.OBS;
+  const accionEntry = conEncuentro ? ID.ENC : (accion === "documentacion" ? ID.DOC : ID.OBS);
+  const middleEntry = conBusqueda ? ID.BUSQ_DEC : accionEntry;
   const aproxExito = conSegundaAprox ? ID.APROX2 : middleEntry;
-  const insSiguiente = conVentajaRecon ? ID.VENTAJA : (conRutaAprox ? ID.APROX_RUTA : ID.APROX);
-  const ventajaSiguiente = conRutaAprox ? ID.APROX_RUTA : ID.APROX;
-  const objSiguiente = tempoLargo ? ID.SENAL : ID.RET;
+  const insSiguiente = conVentajaRecon ? ID.VENTAJA : ID.APROX_RUTA;
+  const ventajaSiguiente = ID.APROX_RUTA;
+  const trasDilema = tempoLargo ? ID.SENAL : ID.RET;   // salida ordenada tras el dilema
+  const objSiguiente = ID.DILEMA;                       // el objetivo desemboca en el dilema de salida
 
-  // ── INSERCIÓN ───────────────────────────────────────────────────────────────
-  N({ id: ID.INS, tipo: "narrativo", ambiente: v(b.insercion.ambiente), texto_control: v(b.insercion.control), texto_agente: v(b.insercion.agente), agente_voz: "auto", opciones: [opt(v(b.insercion.opcion), insSiguiente)], efectos: [], audio_hint: "estatica_baja" });
+  // ── INSERCIÓN — decisión de postura (Control fija el tono de la entrada) ──────
+  const post = b.insercion.postura || {};
+  N({ id: ID.INS, tipo: "decision", ambiente: v(b.insercion.ambiente), texto_control: v(b.insercion.control), texto_agente: v(b.insercion.agente), agente_voz: "auto",
+    opciones: [
+      opt(v(post.cautela),  insSiguiente, [efFlag("postura_cautela")]),
+      opt(v(post.estandar), insSiguiente, [efEstamina(-4)]),
+      opt(v(post.rapida),   insSiguiente, [efEstamina(-12), efFlag("postura_rapida"), efFlag("especimen_alerta")]),
+    ], efectos: [], audio_hint: "estatica_baja" });
 
   if (conVentajaRecon) {
-    N({ id: ID.VENTAJA, tipo: "narrativo", ambiente: v(b.ventaja_recon.ambiente), texto_control: v(b.ventaja_recon.control), texto_agente: v(b.ventaja_recon.agente), agente_voz: vozNarrativa, opciones: [opt("Aprovechen la ventaja. Avancen.", ventajaSiguiente, [efFlag("ventaja_recon")])], efectos: [], audio_hint: "estatica_baja" });
+    N({ id: ID.VENTAJA, tipo: "narrativo", ambiente: v(b.ventaja_recon.ambiente), texto_control: v(b.ventaja_recon.control), texto_agente: v(b.ventaja_recon.agente), agente_voz: vozNarrativa, opciones: [opt(v(b.ventaja_recon.opcion), ventajaSiguiente, [efFlag("ventaja_recon")])], efectos: [], audio_hint: "estatica_baja" });
   }
 
   // ── APROXIMACIÓN ─────────────────────────────────────────────────────────────
   if (conRutaAprox) {
-    N({ id: ID.APROX_RUTA, tipo: "decision", ambiente: v(b.aproximacion.ambiente), texto_control: "El acceso admite dos líneas: una directa que ahorra tiempo y una más larga que reduce exposición. Control decide.", texto_agente: "Dos rutas hasta el foco. Directa o la larga sin exposición. Diga.", agente_voz: "reconocimiento", opciones: [opt("Ruta directa. Más rápido, asuman el desgaste.", ID.APROX, [efEstamina(-5)]), opt("Ruta larga. Sin anunciar presencia.", ID.APROX)], efectos: [], audio_hint: "silencio" });
+    const ruta = b.aproximacion.ruta || {};
+    N({ id: ID.APROX_RUTA, tipo: "decision", ambiente: v(b.aproximacion.ambiente), texto_agente: v(ruta.agente), agente_voz: "reconocimiento", opciones: [opt(v(ruta.opcion_directa), ID.APROX, [efEstamina(-5)]), opt(v(ruta.opcion_larga), ID.APROX)], efectos: [], audio_hint: "silencio" });
   }
   N({ id: ID.APROX, tipo: "check", ambiente: v(b.aproximacion.ambiente), texto_control: v(b.aproximacion.control), texto_agente: v(b.aproximacion.agente), agente_voz: "reconocimiento",
     check: { stat: ct.stat_aproximacion || "sigilo", agente: "mejor_stat", dificultad: difAprox, modificadores_ambiente: modAmb(ct.stat_aproximacion || "sigilo"),
       resultados: { "crítico_éxito": aproxExito, "éxito": aproxExito, "fallo": ID.APROX_FALLO, "crítico_fallo": ID.APROX_FALLO } },
     efectos: [], audio_hint: audio.aproximacion || "silencio" });
   if (conSegundaAprox) {
-    N({ id: ID.APROX2, tipo: "check", ambiente: v(b.aproximacion.ambiente), texto_control: "Segundo tramo de aproximación; el margen de error baja. " + v(b.aproximacion.control), texto_agente: v(b.aproximacion.agente), agente_voz: "reconocimiento",
+    N({ id: ID.APROX2, tipo: "check", ambiente: v(b.aproximacion.ambiente), texto_control: v(b.aproximacion.segundo_tramo) + " " + v(b.aproximacion.control), texto_agente: v(b.aproximacion.agente), agente_voz: "reconocimiento",
       check: { stat: "sigilo", agente: "mejor_stat", dificultad: difAprox + 1, modificadores_ambiente: modAmb("sigilo"),
         resultados: { "crítico_éxito": middleEntry, "éxito": middleEntry, "fallo": middleEntry, "crítico_fallo": ID.APROX_FALLO },
         efectos_por_resultado: { "fallo": [efEstamina(-5)] } },
       efectos: [], audio_hint: audio.aproximacion || "silencio" });
   }
-  N({ id: ID.APROX_FALLO, tipo: "narrativo", ambiente: v(b.aproximacion.fallo_ambiente), texto_control: v(b.aproximacion.fallo_control), texto_agente: v(b.aproximacion.fallo_agente), agente_voz: "auto", opciones: [opt("Entendido. Sigan con precaución. El espécimen posiblemente está alerta.", middleEntry, [efCordura(-5)])], efectos: [efFlag("especimen_alerta")], audio_hint: "estatica_baja" });
+  N({ id: ID.APROX_FALLO, tipo: "narrativo", orden_voz: "agente_primero", ambiente: v(b.aproximacion.fallo_ambiente), texto_control: v(b.aproximacion.fallo_control), texto_agente: v(b.aproximacion.fallo_agente), agente_voz: "auto", opciones: [opt(v(b.aproximacion.fallo_opcion), middleEntry, [efCordura(-5)])], efectos: [efFlag("especimen_alerta")], audio_hint: "estatica_baja" });
 
   // ── MEDIO: búsqueda (+encuentro) o acción directa ───────────────────────────
-  const accionEntry = conEncuentro ? ID.ENC : (accion === "documentacion" ? ID.DOC : ID.OBS);
-
   if (conBusqueda) {
+    const bd = b.busqueda;
+    // Decisión real: cómo abordar el foco (cada opción con su costo/riesgo).
+    N({ id: ID.BUSQ_DEC, tipo: "decision", ambiente: v(bd.ambiente), texto_agente: v(bd.decision_agente), agente_voz: "reconocimiento",
+      opciones: [
+        opt(v(bd.barrido), ID.BUSQ, [efEstamina(-6)]),
+        opt(v(bd.rapido), accionEntry, [efCordura(-5), efFlag("especimen_alerta"), efFlag("sin_recon")]),
+        opt(v(bd.solo), ID.BUSQ_SOLO),
+      ], efectos: [], audio_hint: "silencio" });
+    // Avanzada en solitario: el mejor sigilo entra solo — más difícil, más frágil.
+    N({ id: ID.BUSQ_SOLO, tipo: "check", ambiente: v(bd.ambiente), texto_control: v(bd.solo_control), texto_agente: v(bd.solo_agente), agente_voz: "reconocimiento",
+      check: { stat: "sigilo", agente: "mejor_stat", dificultad: difMedio + 1, modificadores_ambiente: percMod("sigilo"),
+        resultados: { "crítico_éxito": ID.BUSQ_INFO, "éxito": ID.BUSQ_INFO, "fallo": ID.BUSQ_ALERTA, "crítico_fallo": ID.BUSQ_ALERTA },
+        efectos_por_resultado: { "crítico_fallo": [efCordura(-10)] } },
+      efectos: [], audio_hint: audio.busqueda || "estatica_baja" });
     N({ id: ID.BUSQ, tipo: "check", ambiente: v(b.busqueda.ambiente), texto_control: v(b.busqueda.control), texto_agente: v(b.busqueda.agente), agente_voz: "sanitario",
       check: { stat: ct.stat_busqueda || "biológico", agente: "mejor_stat", dificultad: difMedio, modificadores_ambiente: percMod(ct.stat_busqueda || "biológico"),
         resultados: { "crítico_éxito": ID.BUSQ_INFO, "éxito": ID.BUSQ_INFO, "fallo": ID.BUSQ_SININFO, "crítico_fallo": ID.BUSQ_ALERTA } },
       efectos: [], audio_hint: audio.busqueda || "estatica_baja" });
-    N({ id: ID.BUSQ_INFO, tipo: "narrativo", ambiente: v(b.busqueda.ambiente), texto_control: v(b.busqueda.info_control), texto_agente: v(b.busqueda.info_agente), agente_voz: "auto", opciones: [opt("Confirmo. Protocolo 15 — avancen al punto de acción y esperen instrucción.", accionEntry, [efFlag("posicion_confirmada")])], efectos: [], audio_hint: "silencio" });
-    N({ id: ID.BUSQ_SININFO, tipo: "narrativo", ambiente: v(b.busqueda.ambiente), texto_control: v(b.busqueda.sininfo_control), texto_agente: v(b.busqueda.sininfo_agente), agente_voz: "auto", opciones: [opt("Entendido. Avancen despacio. Protocolo 6 hasta nuevo aviso.", accionEntry, [efCordura(-5)])], efectos: [], audio_hint: "estatica_media" });
-    N({ id: ID.BUSQ_ALERTA, tipo: "narrativo", ambiente: v(b.busqueda.ambiente), texto_control: v(b.busqueda.alerta_control), texto_agente: v(b.busqueda.alerta_agente), agente_voz: "auto", opciones: [opt("No se muevan. Cero ruido. Si reacciona, protocolo defensivo inmediato. Esperen.", accionEntry, [efCordura(-15), efEstamina(-5), efFlag("especimen_alerta")])], efectos: [], audio_hint: "silencio" });
+    N({ id: ID.BUSQ_INFO, tipo: "narrativo", orden_voz: "agente_primero", ambiente: v(b.busqueda.ambiente), texto_control: v(b.busqueda.info_control), texto_agente: v(b.busqueda.info_agente), agente_voz: "auto", opciones: [opt(v(b.busqueda.info_opcion), accionEntry, [efFlag("posicion_confirmada")])], efectos: [], audio_hint: "silencio" });
+    N({ id: ID.BUSQ_SININFO, tipo: "narrativo", orden_voz: "agente_primero", ambiente: v(b.busqueda.ambiente), texto_control: v(b.busqueda.sininfo_control), texto_agente: v(b.busqueda.sininfo_agente), agente_voz: "auto", opciones: [opt(v(b.busqueda.sininfo_opcion), accionEntry, [efCordura(-5)])], efectos: [], audio_hint: "estatica_media" });
+    N({ id: ID.BUSQ_ALERTA, tipo: "narrativo", orden_voz: "agente_primero", ambiente: v(b.busqueda.ambiente), texto_control: v(b.busqueda.alerta_control), texto_agente: v(b.busqueda.alerta_agente), agente_voz: "auto", opciones: [opt(v(b.busqueda.alerta_opcion), accionEntry, [efCordura(-15), efEstamina(-5), efFlag("especimen_alerta")])], efectos: [], audio_hint: "silencio" });
   }
 
   // ── ACCIÓN ───────────────────────────────────────────────────────────────────
   const ab = b.accion[accion] || {};
   const herida = b.herida;
-  const okEf = [{ tipo: "muestra_obtenida", valor: resultadoTipo }];
-  const compEf = [{ tipo: "muestra_obtenida", valor: resultadoTipo + "_parcial" }];
+  const okEf = [{ tipo: "muestra_obtenida", valor: resultadoTipo }, efFlag("muestra_ok")];
+  const compEf = [{ tipo: "muestra_obtenida", valor: resultadoTipo + "_parcial" }, efFlag("muestra_ok")];
 
   if (conEncuentro) {
     const idExt = (m) => `nodo_accion_${m.id}`;
-    N({ id: ID.ENC, tipo: "decision", ambiente: v(b.encuentro.ambiente), texto_control: v(b.encuentro.control), texto_agente: v(b.encuentro.agente), agente_voz: "auto", opciones: metodos.map((m) => opt(m.texto, idExt(m))), efectos: [], audio_hint: audio.encuentro || "estatica_media" });
+    N({ id: ID.ENC, tipo: "decision", ambiente: v(b.encuentro.ambiente), texto_agente: v(b.encuentro.agente), agente_voz: "auto", opciones: metodos.map((m) => opt(m.texto, idExt(m))), efectos: [], audio_hint: audio.encuentro || "estatica_media" });
     metodos.forEach((m) => {
       const dosEtapas = m.stat === "sigilo";
       const exitoTarget = dosEtapas ? idExt(m) + "_2" : ID.OBJ_OK;
@@ -179,13 +210,36 @@ export function generarMision(evento, seed, opciones = {}) {
   }
 
   // ── NODOS DE OBJETIVO ────────────────────────────────────────────────────────
-  N({ id: ID.OBJ_OK, tipo: "narrativo", ambiente: v(ab.ambiente), texto_control: v(ab.ok_control), texto_agente: v(ab.ok_agente), agente_voz: "auto", opciones: [opt("Objetivo cumplido. Inicien retirada.", objSiguiente, okEf)], efectos: [], audio_hint: "estatica_baja" });
-  N({ id: ID.OBJ_COMP, tipo: "narrativo", ambiente: v(ab.ambiente), texto_control: v(ab.comp_control), texto_agente: v(ab.comp_agente), agente_voz: "auto", opciones: [opt("Recibido. Continúan con lo obtenido. Inicien retirada.", objSiguiente, compEf)], efectos: [efCordura(-5, "lider")], audio_hint: "estatica_media" });
-  N({ id: ID.OBJ_PERD, tipo: "narrativo", ambiente: v(ab.ambiente), texto_control: v(ab.perd_control), texto_agente: v(ab.perd_agente), agente_voz: "auto", opciones: [opt("Entendido. Salgan en orden. Elijan ruta.", objSiguiente)], efectos: [efCordura(-10, "lider")], audio_hint: "estatica_media" });
+  const obj_op = b.objetivo || {};
+  N({ id: ID.OBJ_OK, tipo: "narrativo", orden_voz: "agente_primero", ambiente: v(ab.ambiente), texto_control: v(ab.ok_control), texto_agente: v(ab.ok_agente), agente_voz: "auto", opciones: [opt(v(obj_op.ok_opcion), objSiguiente, okEf)], efectos: [], audio_hint: "estatica_baja" });
+  N({ id: ID.OBJ_COMP, tipo: "narrativo", orden_voz: "agente_primero", ambiente: v(ab.ambiente), texto_control: v(ab.comp_control), texto_agente: v(ab.comp_agente), agente_voz: "auto", opciones: [opt(v(obj_op.comp_opcion), objSiguiente, compEf)], efectos: [efCordura(-5, "lider")], audio_hint: "estatica_media" });
+  N({ id: ID.OBJ_PERD, tipo: "narrativo", orden_voz: "agente_primero", ambiente: v(ab.ambiente), texto_control: v(ab.perd_control), texto_agente: v(ab.perd_agente), agente_voz: "auto", opciones: [opt(v(obj_op.perd_opcion), objSiguiente)], efectos: [efCordura(-10, "lider")], audio_hint: "estatica_media" });
+
+  // ── DILEMA DE SALIDA — momento de mando: complicación + decisión con costo ───
+  const dil = b.dilema || {};
+  N({ id: ID.DILEMA, tipo: "decision", ambiente: v(dil.ambiente), texto_agente: v(dil.agente), agente_voz: "auto",
+    opciones: [
+      opt(v(dil.salir_orden), trasDilema),
+      opt(v(dil.salir_rapido), ID.RET_RAPIDO, [efEstamina(-8)]),
+      opt(v(dil.insistir), ID.SEGUNDA, [], { flag: "muestra_ok", valor: true }),   // solo con algo que asegurar
+    ], efectos: [], audio_hint: "estatica_media" });
+  // Segunda pasada: exprime el hallazgo a cambio de riesgo real.
+  N({ id: ID.SEGUNDA, tipo: "check", ambiente: v(ab.ambiente), texto_control: "Una pasada más sobre el foco. La ventana es mínima y el riesgo, real. " + v(ab.control), texto_agente: v(ab.agente), agente_voz: "sanitario",
+    check: { stat: ct.stat_accion || "biológico", agente: "mejor_stat", dificultad: difMedio + 2, modificadores_ambiente: modAmb(ct.stat_accion || "biológico"),
+      resultados: { "crítico_éxito": trasDilema, "éxito": trasDilema, "fallo": trasDilema, "crítico_fallo": ID.RET_RAPIDO },
+      efectos_por_resultado: { "crítico_éxito": [efFlag("muestra_extra")], "crítico_fallo": [{ tipo: "herida", valor: { ...herida }, alcance: "aleatorio" }, efCordura(-10)] } },
+    efectos: [], audio_hint: audio.accion || "estatica_media" });
+  // Retirada forzada (elegida en el dilema o caída desde la segunda pasada): más dura, desgasta.
+  const rr = b.retirada_rapida || {};
+  N({ id: ID.RET_RAPIDO, tipo: "check", ambiente: v(b.retirada.ambiente), texto_control: v(rr.control), texto_agente: v(rr.agente), agente_voz: "asalto",
+    check: { stat: "físico", agente: "mejor_stat", dificultad: difRet + 2, modificadores_ambiente: modAmb("físico"),
+      resultados: { "crítico_éxito": ID.OUT, "éxito": ID.OUT, "fallo": ID.OUT, "crítico_fallo": ID.EMERG },
+      efectos_por_resultado: { "fallo": [efEstamina(-10)] } },
+    efectos: [efEstamina(-8)], audio_hint: "estatica_media" });
 
   // ── SEÑAL DEGRADADA (tempo largo) ───────────────────────────────────────────
   if (tempoLargo) {
-    N({ id: ID.SENAL, tipo: "narrativo", ambiente: v(b.senal_degradada.ambiente), texto_control: v(b.senal_degradada.control), texto_agente: v(b.senal_degradada.agente), agente_voz: "auto", opciones: [opt("Código 2. Mantengan rumbo. Reporten solo novedad.", ID.RET)], efectos: [{ tipo: "recurso", recurso: "batería", delta: -1 }], audio_hint: "estatica_alta" });
+    N({ id: ID.SENAL, tipo: "narrativo", orden_voz: "agente_primero", ambiente: v(b.senal_degradada.ambiente), texto_control: v(b.senal_degradada.control), texto_agente: v(b.senal_degradada.agente), agente_voz: "auto", opciones: [opt(v(b.senal_degradada.opcion), ID.RET)], efectos: [{ tipo: "recurso", recurso: "batería", delta: -1 }], audio_hint: "estatica_alta" });
   }
 
   // ── RETIRADA → exterior; crítico_fallo → emergencia ─────────────────────────
@@ -204,7 +258,7 @@ export function generarMision(evento, seed, opciones = {}) {
     efectos: [efEstamina(-25), efCordura(-25)], audio_hint: audio.critico || "alerta_critica" });
 
   // ── EXTERIOR → RESOLUCIÓN → FINALES ─────────────────────────────────────────
-  N({ id: ID.OUT, tipo: "narrativo", ambiente: v(b.retirada.exterior_ambiente), texto_control: v(b.retirada.exterior_control), texto_agente: v(b.retirada.exterior_agente), agente_voz: "auto", opciones: [opt(v(b.retirada.exterior_opcion), ID.RES)], efectos: [], audio_hint: "estatica_baja" });
+  N({ id: ID.OUT, tipo: "narrativo", orden_voz: "agente_primero", ambiente: v(b.retirada.exterior_ambiente), texto_control: v(b.retirada.exterior_control), texto_agente: v(b.retirada.exterior_agente), agente_voz: "auto", opciones: [opt(v(b.retirada.exterior_opcion), ID.RES)], efectos: [], audio_hint: "estatica_baja" });
   N({ id: ID.RES, tipo: "resolucion", texto_control: "La operación está cerrada. CENVAC-Central procesa el resultado. El archivo del evento será actualizado.", logica_resolucion: logica, efectos: [] });
 
   for (const f of obj.finales) {

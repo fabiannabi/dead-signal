@@ -1,6 +1,7 @@
 [
   {
     "id": "reconocimiento",
+    "estilo_radio": {"cierre":["Corto.","Cambio."],"cierre_prob":40},
     "nombre_rol": "Especialista en Reconocimiento",
     "descripcion_breve": "Primer elemento en avanzar. Recopila inteligencia antes de comprometer al equipo. Opera en silencio sostenido.",
     "stats_base": {
@@ -18,6 +19,7 @@
   },
   {
     "id": "sanitario",
+    "estilo_radio": {"cierre":["Estado estable.","Sin cambios."],"cierre_prob":30},
     "nombre_rol": "Sanitario de Campo",
     "descripcion_breve": "Médico operativo. Mantiene al equipo funcional bajo fuego. La frialdad es su recurso más valioso.",
     "stats_base": {
@@ -35,6 +37,7 @@
   },
   {
     "id": "tecnico",
+    "estilo_radio": {"cierre":["Confirmen canal.","Datos en su pantalla."],"cierre_prob":35},
     "nombre_rol": "Operador Técnico",
     "descripcion_breve": "Electrónica, comunicaciones y drones. Mantiene los ojos que el equipo no puede poner en el campo.",
     "stats_base": {
@@ -52,6 +55,7 @@
   },
   {
     "id": "asalto",
+    "estilo_radio": {"cierre":["A la orden.","Ejecuto y reporto."],"cierre_prob":30},
     "nombre_rol": "Agente de Asalto",
     "descripcion_breve": "Contención directa. Entra cuando el equipo no puede evitar el contacto. Frontal pero no imprudente.",
     "stats_base": {
@@ -69,6 +73,7 @@
   },
   {
     "id": "cazador",
+    "estilo_radio": {"cierre":["Para su registro.","Corto."],"cierre_prob":25},
     "nombre_rol": "Rastreador de Campo",
     "descripcion_breve": "Fondo rural. Conoce fauna mutada mejor que cualquier manual. Lee rastros donde otros ven piso mojado.",
     "stats_base": {
@@ -86,6 +91,7 @@
   },
   {
     "id": "analista",
+    "estilo_radio": {"cierre":["Hay matices, pero eso es lo central.","…me extiendo, perdón. Cambio."],"cierre_prob":30},
     "nombre_rol": "Analista de Campo",
     "descripcion_breve": "Científico desplegado. Frágil físicamente. Indispensable para identificar lo que el equipo no puede clasificar.",
     "stats_base": {
@@ -103,6 +109,7 @@
   },
   {
     "id": "veterano",
+    "estilo_radio": {"cierre":["¿Copian?","Confirmen recepción."],"cierre_prob":40},
     "nombre_rol": "Agente Veterano",
     "descripcion_breve": "Ha visto operaciones antes y después de la Emergencia. Stats medios, pero su presencia estabiliza al equipo completo.",
     "stats_base": {
@@ -120,6 +127,7 @@
   },
   {
     "id": "recluta",
+    "estilo_radio": {"inicio":["Control, "],"inicio_prob":40,"cierre":["…¿me copian?","Perdón. Cambio."],"cierre_prob":45},
     "nombre_rol": "Recluta",
     "descripcion_breve": "Sin experiencia de campo. Alto potencial, cero historial. Una operación puede hacer o destruir a este agente.",
     "stats_base": {

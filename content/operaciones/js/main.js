@@ -4,7 +4,10 @@ import { SEEDS_PROCEDURALES } from './roster-store.js';
 export const DATA_BASE = '../data/operaciones';
 
 export async function fetchJSON(path) {
-  const r = await fetch(path);
+  // no-store: los .json de datos (gramática, eventos, agentes) cambian entre
+  // versiones; sin esto el navegador sirve una copia vieja y la misión se genera
+  // con texto obsoleto aunque el archivo en disco ya esté actualizado.
+  const r = await fetch(path, { cache: 'no-store' });
   if (!r.ok) throw new Error(`fetch ${path} → ${r.status}`);
   return r.json();
 }

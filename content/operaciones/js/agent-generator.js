@@ -70,6 +70,7 @@ export function generarAgente(seed, { archetypes, traits, names, ranks }) {
     equipo: arch.equipo_estándar,
     voz: arch.voz,
     patron_radio: arch.patron_radio,
+    estilo_radio: arch.estilo_radio || null,
     estado: {
       estamina: estamina_max,
       estamina_max,

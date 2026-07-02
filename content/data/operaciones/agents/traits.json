@@ -1,6 +1,7 @@
 [
   {
     "id": "asma_leve",
+    "polaridad": "-",
     "nombre": "Asma leve",
     "categoria": "físico",
     "modificadores_stat": { "físico": -1 },
@@ -14,6 +15,7 @@
   },
   {
     "id": "cicatriz_rodilla",
+    "polaridad": "-",
     "nombre": "Cicatriz de rodilla (lesión vieja)",
     "categoria": "físico",
     "modificadores_stat": { "físico": -1 },
@@ -27,6 +29,7 @@
   },
   {
     "id": "daltonismo",
+    "polaridad": "-",
     "nombre": "Daltonismo (rojo-verde)",
     "categoria": "físico",
     "modificadores_stat": { "técnico": -1 },
@@ -39,6 +42,7 @@
   },
   {
     "id": "miopia_severa",
+    "polaridad": "-",
     "nombre": "Miopía severa",
     "categoria": "físico",
     "modificadores_stat": { "sigilo": -1 },
@@ -51,6 +55,7 @@
   },
   {
     "id": "hipoacusia_derecha",
+    "polaridad": "-",
     "nombre": "Hipoacusia unilateral (oído derecho)",
     "categoria": "físico",
     "modificadores_stat": { "técnico": -1, "sigilo": 1 },
@@ -63,6 +68,7 @@
   },
   {
     "id": "migrania_cronica",
+    "polaridad": "-",
     "nombre": "Migraña crónica",
     "categoria": "físico",
     "modificadores_stat": { "mental": -1, "físico": -1 },
@@ -76,6 +82,7 @@
   },
   {
     "id": "resistencia_excepcional",
+    "polaridad": "+",
     "nombre": "Resistencia física excepcional",
     "categoria": "físico",
     "modificadores_stat": { "físico": 1 },
@@ -88,6 +95,7 @@
   },
   {
     "id": "manos_grandes",
+    "polaridad": "-",
     "nombre": "Manos grandes (coordinación fina limitada)",
     "categoria": "físico",
     "modificadores_stat": { "técnico": -1, "físico": 1 },
@@ -100,6 +108,7 @@
   },
   {
     "id": "tept_leve",
+    "polaridad": "-",
     "nombre": "TEPT leve (no incapacitante)",
     "categoria": "psicológico",
     "modificadores_stat": { "mental": -1 },
@@ -113,6 +122,7 @@
   },
   {
     "id": "claustrofobia",
+    "polaridad": "-",
     "nombre": "Claustrofobia (desencadenada por espacios subterráneos)",
     "categoria": "psicológico",
     "modificadores_stat": { "mental": -2 },
@@ -126,6 +136,7 @@
   },
   {
     "id": "optimismo_terco",
+    "polaridad": "+",
     "nombre": "Optimismo terco",
     "categoria": "psicológico",
     "modificadores_stat": { "liderazgo": 1, "mental": 1 },
@@ -139,6 +150,7 @@
   },
   {
     "id": "frialdad_clinica",
+    "polaridad": "+",
     "nombre": "Frialdad clínica",
     "categoria": "psicológico",
     "modificadores_stat": { "mental": 2, "liderazgo": -1 },
@@ -152,6 +164,7 @@
   },
   {
     "id": "hipervigilancia",
+    "polaridad": "+",
     "nombre": "Hipervigilancia",
     "categoria": "psicológico",
     "modificadores_stat": { "sigilo": 1, "mental": -1 },
@@ -165,6 +178,7 @@
   },
   {
     "id": "impulsividad",
+    "polaridad": "-",
     "nombre": "Impulsividad bajo presión",
     "categoria": "psicológico",
     "modificadores_stat": { "físico": 1, "sigilo": -2 },
@@ -178,6 +192,7 @@
   },
   {
     "id": "fobia_agua",
+    "polaridad": "-",
     "nombre": "Fobia al agua estancada (post-Emergencia)",
     "categoria": "psicológico",
     "modificadores_stat": { "mental": -2 },
@@ -191,6 +206,7 @@
   },
   {
     "id": "calma_bajo_fuego",
+    "polaridad": "+",
     "nombre": "Calma bajo presión extrema",
     "categoria": "psicológico",
     "modificadores_stat": { "mental": 2 },
@@ -204,6 +220,7 @@
   },
   {
     "id": "ex_militar",
+    "polaridad": "+",
     "nombre": "Ex-militar (Ejército Mexicano, pre-Emergencia)",
     "categoria": "biográfico",
     "modificadores_stat": { "físico": 1, "liderazgo": 1 },
@@ -217,6 +234,7 @@
   },
   {
     "id": "ex_cazador",
+    "polaridad": "+",
     "nombre": "Ex-cazador de campo (Jalisco / Zacatecas)",
     "categoria": "biográfico",
     "modificadores_stat": { "biológico": 1, "sigilo": 1 },
@@ -230,6 +248,7 @@
   },
   {
     "id": "perdio_familia_emergencia",
+    "polaridad": "-",
     "nombre": "Perdió familia en la Emergencia",
     "categoria": "biográfico",
     "modificadores_stat": { "mental": -1, "liderazgo": 2 },
@@ -243,6 +262,7 @@
   },
   {
     "id": "medico_civil",
+    "polaridad": "+",
     "nombre": "Médico civil integrado a CENVAC",
     "categoria": "biográfico",
     "modificadores_stat": { "biológico": 1, "técnico": 1 },
@@ -256,6 +276,7 @@
   },
   {
     "id": "ingeniero_campo",
+    "polaridad": "+",
     "nombre": "Ingeniero de infraestructura (campo)",
     "categoria": "biográfico",
     "modificadores_stat": { "técnico": 2 },
@@ -269,19 +290,21 @@
   },
   {
     "id": "sobreviviente_incidente_AH",
+    "polaridad": "-",
     "nombre": "Sobreviviente de incidente con Aranea hydraulica",
     "categoria": "biográfico",
     "modificadores_stat": { "biológico": 2, "mental": -2 },
     "modificadores_estado": { "cordura_max": -20 },
     "narrativa_inserts": [
-      "{nombre} conoce el clic articular antes de que el equipo lo escuche. Y se detiene primero.",
-      "— La primera vez que la vi — empieza {nombre}. Luego cierra la boca. Sigue caminando.",
-      "La experiencia de {nombre} con la especie es un activo. El costo de esa experiencia, también."
+      "{nombre} se detiene medio paso antes que el equipo. Ya sabe lo que se siente equivocarse con una de estas.",
+      "— La primera vez que enfrenté una así — empieza {nombre}. Luego cierra la boca. Sigue caminando.",
+      "La experiencia de {nombre} con esto es un activo. El costo de esa experiencia, también."
     ],
     "incompatible_con": []
   },
   {
     "id": "instructor_evacuacion",
+    "polaridad": "+",
     "nombre": "Ex-instructor de evacuación civil (CENVAC pre-despliegue)",
     "categoria": "biográfico",
     "modificadores_stat": { "liderazgo": 1, "mental": 1 },
@@ -295,6 +318,7 @@
   },
   {
     "id": "conoce_red_drenaje",
+    "polaridad": "+",
     "nombre": "Conoce la red de drenaje de Aguascalientes",
     "categoria": "biográfico",
     "modificadores_stat": { "técnico": 2 },
@@ -308,6 +332,7 @@
   },
   {
     "id": "poliglota",
+    "polaridad": "+",
     "nombre": "Políglota (español, inglés, portugués)",
     "categoria": "habilidad",
     "modificadores_stat": { "liderazgo": 1 },
@@ -320,6 +345,7 @@
   },
   {
     "id": "mecanico_aficionado",
+    "polaridad": "+",
     "nombre": "Mecánico aficionado (vehículos y electrónica básica)",
     "categoria": "habilidad",
     "modificadores_stat": { "técnico": 1 },
@@ -332,6 +358,7 @@
   },
   {
     "id": "primeros_auxilios_avanzados",
+    "polaridad": "+",
     "nombre": "Primeros auxilios avanzados (certificado CENVAC)",
     "categoria": "habilidad",
     "modificadores_stat": { "biológico": 1 },
@@ -344,6 +371,7 @@
   },
   {
     "id": "tiradora_competitiva",
+    "polaridad": "+",
     "nombre": "Tiradora de precisión (competencia civil, pre-Emergencia)",
     "categoria": "habilidad",
     "modificadores_stat": { "físico": 1 },
@@ -356,6 +384,7 @@
   },
   {
     "id": "entrenador_perros",
+    "polaridad": "+",
     "nombre": "Entrenador de perros de trabajo (pre-Emergencia)",
     "categoria": "habilidad",
     "modificadores_stat": { "biológico": 1 },
@@ -368,6 +397,7 @@
   },
   {
     "id": "escalada",
+    "polaridad": "+",
     "nombre": "Escalada y movilidad vertical",
     "categoria": "habilidad",
     "modificadores_stat": { "físico": 1 },

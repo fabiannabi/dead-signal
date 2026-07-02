@@ -1,6 +1,7 @@
 [
   {
     "id": "agente_esther_valverde",
+    "estilo_radio": {"cierre":["Confirmen."],"cierre_prob":60},
     "seed": null,
     "es_nombrado": true,
     "nombre_completo": "Esther Valverde Cruz",
@@ -21,6 +22,7 @@
     "rasgos": [
       {
         "id": "perdida_bien_procesada",
+        "polaridad": "+",
         "nombre": "Pérdida bien procesada",
         "categoria": "mental",
         "modificadores_stat": {},
@@ -33,13 +35,14 @@
       },
       {
         "id": "veterana_primera_ola",
+        "polaridad": "+",
         "nombre": "Veterana de la Primera Ola",
         "categoria": "experiencia",
         "modificadores_stat": { "técnico_contra_arana_hidraulica": -1 },
         "modificadores_estado": {},
         "narrativa_inserts": [
-          "Esther reconoce la seda antes de ver la araña. Cuatro años no son suficientes para olvidar el primer encuentro.",
-          "— Esto ya lo vi. — Pausa. — No salimos igual entonces."
+          "Esther se queda quieta medio segundo antes que nadie. Cuatro años atrás, algo parecido le costó caro.",
+          "— Esto ya lo vi antes. — Pausa. — No salimos igual entonces."
         ],
         "incompatible_con": []
       }
@@ -80,6 +83,7 @@
   },
   {
     "id": "agente_marco_tellez",
+    "estilo_radio": {"cierre":["Confirmación de canal, ¿recibo?"],"cierre_prob":35},
     "seed": null,
     "es_nombrado": true,
     "nombre_completo": "Marco Téllez Romo",
@@ -100,6 +104,7 @@
     "rasgos": [
       {
         "id": "improvisacion_con_basura",
+        "polaridad": "+",
         "nombre": "Improvisación con basura",
         "categoria": "técnico",
         "modificadores_stat": { "técnico": 2 },
@@ -112,6 +117,7 @@
       },
       {
         "id": "tartamudez_bajo_estres",
+        "polaridad": "-",
         "nombre": "Tartamudez bajo estrés",
         "categoria": "mental",
         "modificadores_stat": {},
@@ -159,6 +165,7 @@
   },
   {
     "id": "agente_lucia_herrera",
+    "estilo_radio": {"cierre":["Cambio."],"cierre_prob":20},
     "seed": null,
     "es_nombrado": true,
     "nombre_completo": "Lucía Herrera Vega",
@@ -179,6 +186,7 @@
     "rasgos": [
       {
         "id": "silencio_del_campo",
+        "polaridad": "+",
         "nombre": "Silencio del campo",
         "categoria": "campo",
         "modificadores_stat": { "sigilo": 2 },
@@ -191,6 +199,7 @@
       },
       {
         "id": "no_reporta_lo_trivial",
+        "polaridad": "-",
         "nombre": "No reporta lo trivial",
         "categoria": "comunicación",
         "modificadores_stat": {},
@@ -237,6 +246,7 @@
   },
   {
     "id": "agente_joaquin_ramirez",
+    "estilo_radio": {"cierre":["Para su registro.","Corto."],"cierre_prob":30},
     "seed": null,
     "es_nombrado": true,
     "nombre_completo": "Joaquín Ramírez Solís",
@@ -257,26 +267,29 @@
     "rasgos": [
       {
         "id": "voz_del_campo",
+        "polaridad": "+",
         "nombre": "Voz del campo",
         "categoria": "campo",
         "modificadores_stat": { "biológico": 1 },
         "modificadores_estado": {},
         "narrativa_inserts": [
-          "— Fíjese que ese chacal está comiendo. Come de izquierda a derecha, siempre. Eso significa que tiene flanco ciego del ojo derecho. Por si les sirve.",
-          "La información de Joaquín siempre tiene un detalle de más. El detalle de más siempre resulta útil."
+          "— Observen: se desplaza siempre hacia el mismo lado. Por el opuesto no tiene visión. Para su registro.",
+          "La información de Joaquín siempre trae un detalle de más. El detalle de más siempre resulta útil."
         ],
         "incompatible_con": []
       },
       {
         "id": "la_familia_perdida",
+        "polaridad": "-",
         "nombre": "La familia perdida",
         "categoria": "mental",
         "modificadores_stat": {},
         "modificadores_estado": { "narrativa_momento_calma": "insert gentil sobre recuerdo familiar" },
         "narrativa_inserts": [
-          "— Mi hijo mayor tenía una bicicleta azul. Se la robaron dos días antes. Me alegra que no estuviera ahí cuando pasó. — Pausa. — Sigo.",
-          "— Este arroyo seco me recuerda al rancho. Mis papás tenían uno igual atrás. Ya no, supongo.",
-          "— Perdone el comentario. Ya pasó. Vamos."
+          "— Salimos los que entramos. — Joaquín cuenta cabezas por costumbre. — Yo una vez no salí completo de un lugar. Continúo.",
+          "— En campo no da tiempo de pensar. — Pausa. — Es al salir cuando pesa. Disculpe, Control.",
+          "— Treinta años leyendo rastros y nunca leí venir lo de mi gente. — Se acomoda el rifle. — Disculpe. Continúo.",
+          "— Cuente al equipo, Control. Completo. — Baja la voz. — Ese número me tranquiliza."
         ],
         "incompatible_con": []
       }
@@ -315,6 +328,7 @@
   },
   {
     "id": "agente_daniela_gomez",
+    "estilo_radio": {"inicio":["Señora, ","Señor, "],"inicio_prob":35,"cierre":["¿Correcto?"],"cierre_prob":40},
     "seed": null,
     "es_nombrado": true,
     "nombre_completo": "Daniela Gómez Ortiz",
@@ -335,6 +349,7 @@
     "rasgos": [
       {
         "id": "aprendizaje_acelerado",
+        "polaridad": "+",
         "nombre": "Aprendizaje acelerado",
         "categoria": "progresión",
         "modificadores_stat": {},
@@ -348,6 +363,7 @@
       },
       {
         "id": "protegida_por_el_equipo",
+        "polaridad": "-",
         "nombre": "Protegida por el equipo",
         "categoria": "social",
         "modificadores_stat": {},
@@ -392,6 +408,314 @@
       "misiones_completadas": 1,
       "stat_bonus_acumulado": {},
       "rasgo_veterana_desbloqueado": false
+    }
+  },
+  {
+    "id": "agente_javier_solis",
+    "estilo_radio": {"cierre":["Atención a eso.","Para su registro."],"cierre_prob":25},
+    "seed": null,
+    "es_nombrado": true,
+    "identificado": false,
+    "nombre_completo": "Javier Solís Arredondo",
+    "genero": "m",
+    "archetype_id": "cazador",
+    "nombre_rol": "Rastreador de Campo",
+    "rango": "suboficial",
+    "rango_abreviatura": "SUBOF",
+    "rango_nivel": 4,
+    "stats": {
+      "físico": 6,
+      "técnico": 4,
+      "biológico": 9,
+      "sigilo": 8,
+      "mental": 5,
+      "liderazgo": 4
+    },
+    "rasgos": [
+      {
+        "id": "ex_cazador",
+        "nombre": "Ex-cazador de campo (Jalisco / Zacatecas)",
+        "categoria": "biográfico",
+        "polaridad": "+",
+        "modificadores_stat": {
+          "biológico": 1,
+          "sigilo": 1
+        },
+        "modificadores_estado": {},
+        "narrativa_inserts": [
+          "— Los rastros bajan al colector. Frescos, de hoy. Alguien más pasó por aquí. — dice Javier, en cuclillas.",
+          "Javier lee el piso como otros leen un mapa. Señala sin hablar y el equipo se detiene."
+        ],
+        "incompatible_con": []
+      },
+      {
+        "id": "entrenador_perros",
+        "nombre": "Entrenador de perros de trabajo (pre-Emergencia)",
+        "categoria": "habilidad",
+        "polaridad": "+",
+        "modificadores_stat": {
+          "biológico": 1
+        },
+        "modificadores_estado": {},
+        "narrativa_inserts": [
+          "— Si fuera un perro, ya se habría calmado. No lo hace. Atención a eso. — dice Javier.",
+          "Javier nota el cambio en la fauna antes que el escáner. — Algo los puso nerviosos. No fuimos nosotros."
+        ],
+        "incompatible_con": []
+      },
+      {
+        "id": "asma_leve",
+        "nombre": "Asma leve",
+        "categoria": "físico",
+        "polaridad": "-",
+        "modificadores_stat": {
+          "físico": -1
+        },
+        "modificadores_estado": {
+          "estamina_max": -10
+        },
+        "narrativa_inserts": [
+          "Javier saca el inhalador sin hacer ruido. Una bocanada. Lo guarda antes de que alguien lo note.",
+          "— Denme... denme diez segundos. El aire aquí abajo pesa. — La voz de Javier raspa.",
+          "El pecho de Javier silba bajo la humedad del drenaje. Aprieta los dientes y sigue."
+        ],
+        "incompatible_con": [
+          "resistencia_excepcional"
+        ]
+      }
+    ],
+    "equipo": [
+      "rifle_caza_largo",
+      "kit_rastreo_biológico",
+      "cuerda_campo",
+      "cuchillo_caza"
+    ],
+    "voz": "seco, pocas palabras, modismos de rancho, reporta rastros antes que estados de ánimo",
+    "patron_radio": "Reporta lo que ve en el piso antes que nada. Frases cortas. Cuando el aire lo obliga, pide segundos sin dar explicaciones.",
+    "estado": {
+      "estamina": 90,
+      "estamina_max": 90,
+      "cordura": 90,
+      "cordura_max": 90,
+      "heridas": [],
+      "vivo": true,
+      "operativo": true
+    },
+    "recursos": {
+      "munición": 14,
+      "batería": 2,
+      "agua": 3,
+      "kit_médico": 1,
+      "contenedor_muestra": 1
+    },
+    "es_lider": false,
+    "operaciones_completadas": 14,
+    "historia": "Rastreador de fauna de la sierra de Asientos, 39 años. Trabajó con perros de trabajo antes de la Emergencia; ninguno sobrevivió al primer invierno post-evento. Desarrolló asma tras el incendio del almacén de Peñuelas donde estuvo atrapado con humo dos horas. CENVAC lo integró por su lectura de rastros en terreno subterráneo, donde su Biológico 8 y su Sigilo compensan de sobra el costo respiratorio. En drenajes y espacios cargados de humedad es donde más rinde y más le cuesta — a la vez.",
+    "tics_radio": "Empieza describiendo el piso. Nunca dice que le falta el aire; dice \"denme un segundo\" y el equipo ya aprendió a esperarlo sin comentarlo.",
+    "relaciones_internas": {
+      "con_lucia_herrera": "Dos rastreadores que no necesitan hablarse. Se reparten el terreno con la mirada.",
+      "con_joaquin_ramirez": "Se reconocen del campo. Compiten en silencio por quién ve primero el rastro."
+    },
+    "estado_persistente": {
+      "insert_asma_disparado_esta_mision": false
+    }
+  },
+  {
+    "id": "agente_tomas_elizondo",
+    "estilo_radio": {"cierre":["Voy.","Hecho."],"cierre_prob":30},
+    "seed": null,
+    "es_nombrado": true,
+    "identificado": false,
+    "nombre_completo": "Tomás Elizondo Cisneros",
+    "genero": "m",
+    "archetype_id": "asalto",
+    "nombre_rol": "Agente de Asalto",
+    "rango": "agente",
+    "rango_abreviatura": "AGT",
+    "rango_nivel": 2,
+    "stats": {
+      "físico": 10,
+      "técnico": 4,
+      "biológico": 4,
+      "sigilo": 4,
+      "mental": 4,
+      "liderazgo": 7
+    },
+    "rasgos": [
+      {
+        "id": "impulsividad",
+        "nombre": "Impulsividad bajo presión",
+        "categoria": "psicológico",
+        "polaridad": "-",
+        "modificadores_stat": {
+          "físico": 1,
+          "sigilo": -2
+        },
+        "modificadores_estado": {},
+        "narrativa_inserts": [
+          "Tomás ya se movió antes de que Control terminara la instrucción. — Perdón. Funcionó.",
+          "La decisión de Tomás fue rápida. Demasiado rápida. Esta vez salió bien.",
+          "— Ya está hecho — dice Tomás. Nadie se lo había pedido todavía."
+        ],
+        "incompatible_con": []
+      },
+      {
+        "id": "perdio_familia_emergencia",
+        "nombre": "Perdió familia en la Emergencia",
+        "categoria": "biográfico",
+        "polaridad": "-",
+        "modificadores_stat": {
+          "mental": -1,
+          "liderazgo": 2
+        },
+        "modificadores_estado": {},
+        "narrativa_inserts": [
+          "Tomás trabaja como si cada operación fuera la última cosa útil que le queda por hacer.",
+          "No hay foto en el casco de Tomás. Ya no.",
+          "— Prefiero estar aquí que en la base pensando — dice Tomás. — Aquí no pienso."
+        ],
+        "incompatible_con": []
+      }
+    ],
+    "equipo": [
+      "equipo_asalto_pesado",
+      "equipo_proteccion_reforzado",
+      "arma_larga",
+      "palanca_demolicion"
+    ],
+    "voz": "directo, tono duro, poca paciencia, se ofrece de punta sin que se lo pidan",
+    "patron_radio": "Confirma con una sola palabra. Bajo presión reacciona antes de recibir la orden completa. Rara vez explica.",
+    "estado": {
+      "estamina": 100,
+      "estamina_max": 100,
+      "cordura": 85,
+      "cordura_max": 85,
+      "heridas": [],
+      "vivo": true,
+      "operativo": true
+    },
+    "recursos": {
+      "munición": 18,
+      "batería": 2,
+      "agua": 2,
+      "kit_médico": 1,
+      "contenedor_muestra": 0
+    },
+    "es_lider": false,
+    "operaciones_completadas": 1,
+    "historia": "Ex-obrero de la construcción de Jesús María, 33 años. Perdió a su esposa y su hija en los primeros tres días de la Emergencia. Físicamente el agente más fuerte del roster activo, pero su Sigilo 4 y su tendencia a actuar antes de pensar lo hacen un riesgo en operaciones que exigen contención. CENVAC lo mantiene por su capacidad de carga y su disposición absoluta a ir de punta. Recluta reciente: una sola operación completada.",
+    "tics_radio": "Responde \"voy\" a casi todo. Cuando algo sale mal, ya está encima antes de que el equipo decida. Su liderazgo es de ejemplo físico, no de palabra.",
+    "relaciones_internas": {
+      "con_esther_valverde": "Ella lo frena con una sola palabra. Es la única a quien Tomás le hace caso a tiempo."
+    },
+    "estado_persistente": {
+      "insert_impulso_disparado_esta_mision": false
+    }
+  },
+  {
+    "id": "agente_hector_villalba",
+    "estilo_radio": {"cierre":["Repitan por el costado derecho."],"cierre_prob":25},
+    "seed": null,
+    "es_nombrado": true,
+    "identificado": true,
+    "nombre_completo": "Héctor Villalba Torres",
+    "genero": "m",
+    "archetype_id": "tecnico",
+    "nombre_rol": "Operador Técnico",
+    "rango": "agente_especialista",
+    "rango_abreviatura": "AGT-E",
+    "rango_nivel": 3,
+    "stats": {
+      "físico": 4,
+      "técnico": 9,
+      "biológico": 4,
+      "sigilo": 6,
+      "mental": 6,
+      "liderazgo": 5
+    },
+    "rasgos": [
+      {
+        "id": "ingeniero_campo",
+        "nombre": "Ingeniero de infraestructura (campo)",
+        "categoria": "biográfico",
+        "polaridad": "+",
+        "modificadores_stat": {
+          "técnico": 2
+        },
+        "modificadores_estado": {},
+        "narrativa_inserts": [
+          "— Este drenaje descarga al noreste; el colector está a unos cuarenta metros. Lo dice la pendiente. — dice Héctor.",
+          "Héctor mira la tubería como quien lee un plano que ya conoce. — Si algo falló aquí, lo construyeron mal."
+        ],
+        "incompatible_con": []
+      },
+      {
+        "id": "poliglota",
+        "nombre": "Políglota (español, inglés, portugués)",
+        "categoria": "habilidad",
+        "polaridad": "+",
+        "modificadores_stat": {
+          "liderazgo": 1
+        },
+        "modificadores_estado": {},
+        "narrativa_inserts": [
+          "El manual del equipo importado viene en portugués. Héctor lo resuelve en medio minuto.",
+          "— La etiqueta dice 'no exceder presión', en inglés. Justo lo que íbamos a hacer. — dice Héctor."
+        ],
+        "incompatible_con": []
+      },
+      {
+        "id": "hipoacusia_derecha",
+        "nombre": "Hipoacusia unilateral (oído derecho)",
+        "categoria": "físico",
+        "polaridad": "-",
+        "modificadores_stat": {
+          "técnico": -1,
+          "sigilo": 1
+        },
+        "modificadores_estado": {},
+        "narrativa_inserts": [
+          "— Repite, Control. El lado derecho no te recibió. — Héctor inclina la cabeza a la izquierda.",
+          "Héctor gira todo el cuerpo para ubicar el sonido. El oído derecho no le da dirección.",
+          "— Hay algo, pero no sé de qué lado viene. Que alguien confirme. — dice Héctor."
+        ],
+        "incompatible_con": []
+      }
+    ],
+    "equipo": [
+      "kit_técnico_avanzado",
+      "detector_vibración_campo",
+      "herramientas_multiuso",
+      "arma_corta"
+    ],
+    "voz": "preciso, didáctico, pide confirmaciones por su oído, tono tranquilo",
+    "patron_radio": "Explica la infraestructura antes de moverse. Pide que le repitan por el lado derecho. Traduce sin que se lo pidan.",
+    "estado": {
+      "estamina": 90,
+      "estamina_max": 90,
+      "cordura": 95,
+      "cordura_max": 95,
+      "heridas": [],
+      "vivo": true,
+      "operativo": true
+    },
+    "recursos": {
+      "munición": 8,
+      "batería": 5,
+      "agua": 2,
+      "kit_médico": 1,
+      "contenedor_muestra": 1
+    },
+    "es_lider": false,
+    "operaciones_completadas": 3,
+    "historia": "Ingeniero civil de infraestructura hidráulica, 41 años, formado en la UAA con posgrado en Brasil — de ahí el portugués. Trabajó en la red de drenaje pluvial de Aguascalientes antes de la Emergencia, lo que lo hace invaluable en operaciones subterráneas. Perdió audición del oído derecho en la explosión de una subestación durante la Primera Ola. Su Técnico 9 y su conocimiento de infraestructura compensan un físico bajo; su oído lo obliga a depender del equipo para ubicar sonidos por la derecha.",
+    "tics_radio": "Antecede reportes con la geometría del sitio. Cuando pierde una transmisión dice 'por el derecho no me llegó' sin dramatismo. Traduce etiquetas y manuales en voz alta.",
+    "relaciones_internas": {
+      "con_marco_tellez": "Dos técnicos que se respetan y compiten. Héctor teoriza, Marco improvisa.",
+      "con_esther_valverde": "Ella lo coloca siempre a su izquierda en formación, sin decir por qué. Héctor lo notó y lo agradece."
+    },
+    "estado_persistente": {
+      "insert_oido_disparado_esta_mision": false
     }
   }
 ]

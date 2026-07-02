@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CENVAC — Briefing</title>
-<link rel="stylesheet" href="./css/operaciones.css">
+<link rel="stylesheet" href="./css/operaciones.css?v=3">
 </head>
 <body>
 
@@ -21,7 +21,7 @@
 <div class="briefing-wrap">
 
   <div class="briefing-page-title">Selección de equipo</div>
-  <div class="briefing-page-sub">Selecciona 1–3 agentes. Click en agente seleccionado para designar líder.</div>
+  <div class="briefing-page-sub">Selecciona 1–3 agentes · click en agente seleccionado = líder. <span class="leg-clave">Azul</span> = capacidad clave de la misión · <span class="leg-pos">+</span> ventaja · <span class="leg-neg">−</span> limitación.</div>
 
   <div class="mission-card" id="mission-card">
     <div class="mission-field">
@@ -39,6 +39,10 @@
     <div class="mission-field">
       <span class="field-label">Amenaza</span>
       <span class="field-value" id="mc-nivel">—</span>
+    </div>
+    <div class="mission-field">
+      <span class="field-label">Perfil requerido</span>
+      <span class="field-value clave" id="mc-perfil">—</span>
     </div>
   </div>
 
