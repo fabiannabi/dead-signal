@@ -1,0 +1,395 @@
+// ============================================================
+//  BESTIARIO — capa "Terminal CENVAC" de fichas con pestañas
+//  Todo scopeado bajo .bestiario-terminal (cssclass de la ficha),
+//  usando los tokens del tema (--secondary, --dark, --gray…) para
+//  heredar la paleta activa (fosfor/ámbar/…) y el switcher.
+//  Reutiliza los componentes existentes (chapter-header, archive-
+//  grid, confidential-section, media-gallery, audio-list); aquí solo
+//  vive lo NUEVO: barra de pestañas + protocolo + red trófica +
+//  historial + gating.
+// ============================================================
+
+.bestiario-terminal {
+
+  // ── barra de pestañas ─────────────────────────────────────
+  .fiche-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 1.6rem 0 0;
+    border-bottom: 1px solid var(--secondary);
+  }
+  .fiche-tab {
+    font-family: var(--codeFont, monospace);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+    background: transparent;
+    border: 1px solid transparent;
+    border-bottom: none;
+    cursor: pointer;
+    padding: 0.55rem 1.1rem;
+    position: relative;
+    top: 1px;
+    transition: color 0.12s ease;
+
+    &::before { content: "▸ "; color: var(--gray); }
+    &:hover { color: var(--dark); }
+    &.active {
+      color: var(--secondary);
+      border-color: var(--secondary);
+      background: var(--light);
+      &::before { content: "▾ "; color: var(--secondary); }
+    }
+    .tab-mini {
+      font-size: 0.78rem;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+      margin-left: 0.35em;
+    }
+  }
+
+  // breadcrumb de pestaña
+  .fiche-crumb {
+    color: var(--gray);
+    font-family: var(--codeFont, monospace);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 0 0;
+    b { color: var(--secondary); }
+  }
+
+  // ── vistas conmutadas ─────────────────────────────────────
+  .fiche-view { display: none; padding: 1.1rem 0 0; }
+  .fiche-view.active { display: block; }
+
+  // ── protocolo de contacto (alerta) ────────────────────────
+  .protocolo {
+    border: 1px solid var(--red, #d0563a);
+    background: rgba(208, 86, 58, 0.06);
+    margin: 1.1rem 0 1.4rem;
+  }
+  .proto-h {
+    color: var(--red, #d0563a);
+    letter-spacing: 0.12em;
+    font-family: var(--codeFont, monospace);
+    font-size: 0.82rem;
+    padding: 0.55rem 0.85rem;
+    border-bottom: 1px solid rgba(208, 86, 58, 0.35);
+    background: rgba(208, 86, 58, 0.08);
+  }
+  .proto-row {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 0.75rem;
+    padding: 0.5rem 0.85rem;
+    border-bottom: 1px dotted rgba(208, 86, 58, 0.25);
+    font-size: 0.92rem;
+    &:last-child { border-bottom: none; }
+  }
+  .proto-k {
+    color: var(--red, #d0563a);
+    font-family: var(--codeFont, monospace);
+    font-size: 0.86rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.85;
+  }
+  .proto-v { color: var(--darkgray); }
+  .proto-v.no { color: var(--gray); font-style: italic; }
+  .proto-v.crit { color: var(--red, #d0563a); }
+
+  // ── registros vinculados / historial ──────────────────────
+  .vinc-row, .hist-row {
+    color: var(--darkgray);
+    padding: 0.4rem 0;
+    border-bottom: 1px dotted var(--lightgray);
+    font-size: 1.02rem;
+    .arw { color: var(--secondary); font-family: var(--codeFont, monospace); }
+    .cls { color: var(--gray); font-size: 0.9rem; }
+    a { color: var(--secondary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  }
+  .hist-row.obsoleto {
+    text-decoration: line-through;
+    color: var(--gray);
+    opacity: 0.7;
+  }
+  .hist-row .up { color: var(--secondary); }
+
+  // ── expediente con gating (Clase A) ───────────────────────
+  .gated {
+    border: 1px solid var(--gray);
+    background: var(--lightgray);
+    margin: 0.85rem 0;
+    padding: 0.7rem 0.85rem;
+    .lock { color: var(--red, #d0563a); letter-spacing: 0.08em; font-family: var(--codeFont, monospace); }
+    .gated-reveal { display: none; color: var(--darkgray); line-height: 1.6; margin-top: 0.4rem; }
+    &.open .gated-reveal { display: block; }
+    &.open .gated-locked { display: none; }
+    button {
+      font-family: var(--codeFont, monospace);
+      font-size: 0.9rem;
+      color: var(--secondary);
+      background: transparent;
+      border: 1px solid var(--gray);
+      padding: 0.28rem 0.7rem;
+      cursor: pointer;
+      margin-top: 0.55rem;
+      &:hover { background: var(--light); }
+    }
+  }
+
+  // ── redacción reusable (barra sólida, texto no seleccionable) ─
+  .redact {
+    background: var(--gray);
+    color: transparent;
+    user-select: none;
+    letter-spacing: 0.1em;
+    padding: 0 0.25em;
+    border-radius: 1px;
+  }
+
+  // ── SVG (lámina anatómica + red trófica) ──────────────────
+  .fiche-svg-wrap { overflow-x: auto; margin: 0.6rem 0 1rem; }
+  svg.fiche-figure { width: 100%; height: auto; max-width: 340px; display: block; }
+  .fig-cap {
+    color: var(--gray);
+    font-family: var(--codeFont, monospace);
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    margin: 0.3rem 0 0.6rem;
+  }
+  .fig-key { font-size: 0.95rem; color: var(--darkgray); line-height: 1.85; b { color: var(--secondary); } }
+
+  // medidas
+  .medidas { font-size: 0.98rem; margin: 0.8rem 0; }
+  .medidas div {
+    display: flex; justify-content: space-between;
+    border-bottom: 1px dotted var(--lightgray);
+    padding: 0.2rem 0; color: var(--darkgray);
+    span { color: var(--gray); }
+  }
+
+  // hábitat (2 col)
+  .habitat {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.15rem 1rem;
+    font-size: 1rem; margin: 0.6rem 0 1rem;
+    div { border-bottom: 1px dotted var(--lightgray); padding: 0.28rem 0; color: var(--darkgray); }
+    div span { color: var(--gray); }
+  }
+
+  // hint de salto entre pestañas
+  .fiche-jump {
+    margin-top: 1.4rem;
+    border: 1px dashed var(--gray);
+    padding: 0.7rem 0.85rem;
+    color: var(--gray);
+    font-size: 0.85rem;
+    a { color: var(--secondary); cursor: pointer; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  }
+
+  // badge hilo meta ████-A
+  .badge-hilo {
+    display: inline-block; font-size: 0.78rem; letter-spacing: 0.08em;
+    color: var(--light); background: var(--red, #d0563a);
+    padding: 0.05rem 0.4rem; vertical-align: middle;
+  }
+
+  // ── dossier de laboratorio (morfología a detalle) ────────
+  // tabla de datos analíticos
+  table.labtable {
+    width: 100%; border-collapse: collapse; margin: 0.7rem 0 1.1rem; font-size: 1rem;
+  }
+  table.labtable th {
+    text-align: left; color: var(--secondary); font-family: var(--codeFont, monospace);
+    font-size: 0.84rem; letter-spacing: 0.06em; text-transform: uppercase;
+    border-bottom: 1px solid var(--gray); padding: 0.45rem 0.6rem;
+  }
+  table.labtable td {
+    color: var(--darkgray); border-bottom: 1px dotted var(--lightgray);
+    padding: 0.45rem 0.6rem; vertical-align: top; line-height: 1.45;
+  }
+  table.labtable td.k { color: var(--gray); white-space: nowrap; }
+  table.labtable td.num { text-align: right; font-family: var(--codeFont, monospace); white-space: nowrap; }
+  table.labtable td.conf { color: var(--gray); font-size: 0.9rem; }
+  table.labtable tr.anom td { color: var(--red, #d0563a); }
+  .wrap-scroll { overflow-x: auto; }
+
+  // banda de método / instrumentación
+  .lab-band {
+    border-left: 2px solid var(--secondary); background: var(--lightgray);
+    padding: 0.6rem 0.8rem; margin: 0.6rem 0 1rem; font-size: 0.95rem; color: var(--gray);
+    b { color: var(--darkgray); }
+  }
+  .instr {
+    display: inline-block; border: 1px solid var(--gray); color: var(--darkgray);
+    font-family: var(--codeFont, monospace); font-size: 0.84rem; letter-spacing: 0.03em;
+    padding: 0.12rem 0.5rem; margin: 0.18rem 0.3rem 0.18rem 0;
+  }
+
+  // metadato de método (n, réplicas, lab)
+  .lab-meta { color: var(--gray); font-size: 0.9rem; font-style: italic; margin: 0.2rem 0 0.9rem; }
+
+  // hipótesis con estado
+  .hyp {
+    border: 1px solid var(--gray); background: var(--lightgray);
+    padding: 0.75rem 0.9rem; margin: 0.6rem 0;
+  }
+  .hyp-h { display: flex; justify-content: space-between; gap: 0.6rem; align-items: baseline; margin-bottom: 0.4rem; flex-wrap: wrap; }
+  .hyp-code { color: var(--secondary); font-family: var(--codeFont, monospace); font-size: 0.95rem; letter-spacing: 0.06em; }
+  .hyp-body { color: var(--darkgray); font-size: 1.02rem; line-height: 1.55; }
+  .hyp-ev { color: var(--gray); font-size: 0.92rem; margin-top: 0.4rem; }
+  .st {
+    font-family: var(--codeFont, monospace); font-size: 0.8rem; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 0.14rem 0.55rem; border: 1px solid currentColor; white-space: nowrap;
+  }
+  .st-ok { color: var(--secondary); }
+  .st-no { color: var(--red, #d0563a); }
+  .st-open { color: var(--gray); }
+
+  // tesis destacada
+  .tesis {
+    border: 1px solid var(--secondary); background: rgba(120, 191, 94, 0.05);
+    padding: 0.85rem 1rem; margin: 0.9rem 0 1.1rem; color: var(--dark); line-height: 1.65; font-size: 1.04rem;
+  }
+  .tesis .tesis-k { display: block; color: var(--secondary); font-family: var(--codeFont, monospace);
+    font-size: 0.84rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+
+  @media (max-width: 700px) {
+    .proto-row, .habitat { grid-template-columns: 1fr; gap: 0.15rem; }
+    .fiche-tab { padding: 0.5rem 0.7rem; font-size: 0.86rem; }
+  }
+}
+
+// ══════════════════════════════════════════════════════════
+//  PALETA ÁMBAR + VT323 — como el wireframe (dos tonos):
+//  ámbar = títulos / pestaña activa / valores clave / marco
+//  verde = "el sistema hablando" (boot, enlaces, flechas, secciones)
+// ══════════════════════════════════════════════════════════
+
+// TÍTULO GRANDE en TODAS las páginas: VT323 ámbar con glow
+// (Quartz pinta .article-title en criaturas y sujetos por igual)
+.article-title,
+.bestiario-terminal .chapter-title-a {
+  font-family: "VT323", var(--codeFont, monospace) !important;
+  color: #e8b73e !important;
+  font-size: clamp(44px, 8vw, 58px);
+  line-height: 0.9;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(232, 183, 62, 0.45);
+}
+
+// En las fichas del bestiario, el título grande lo pinta MI header
+// (dentro del marco); se oculta el de Quartz y su meta para no duplicar.
+.center:has(article.bestiario-terminal) {
+  .article-title { display: none; }
+  .content-meta { display: none; }
+}
+
+.bestiario-terminal {
+  --amb: #e8b73e;
+  --amb-dim: #8a7326;
+
+  // TODO el contenido de la ficha en monospace (Share Tech Mono) — look
+  // "computadora", uniforme. `!important` porque varios componentes del sitio
+  // (.conf-desc, .clase-desc, captions…) fijan su propia serif por especificidad.
+  // El título grande queda en VT323 (regla más específica, más arriba).
+  &, * { font-family: var(--codeFont, monospace) !important; }
+  p { line-height: 1.7; }
+
+  .chapter-title-a { display: block; margin: 0.1rem 0; }
+  .chapter-code { color: var(--gray); letter-spacing: 0.1em; } // eyebrow verde-dim
+  .fiche-subtitle { color: var(--gray); font-size: 0.98rem; letter-spacing: 0.06em; margin-top: 0.1rem; }
+
+  // boot (fuera del marco, arriba)
+  .fiche-boot {
+    color: var(--secondary); font-size: 0.9rem; line-height: 1.7; font-family: var(--codeFont, monospace);
+    .dim { color: var(--gray); }
+    a { color: var(--amb); text-decoration: none; }
+  }
+
+  // ── MARCO ÁMBAR que envuelve el contenido (como .frame del wireframe) ──
+  .fiche-frame {
+    border: 1px dashed var(--amb-dim);
+    background: var(--lightgray);
+    box-shadow:
+      0 0 0 1px #000 inset,
+      1.5px 0 0 rgba(208, 86, 58, 0.26),     // desfase rojo
+      -1.5px 0 0 rgba(120, 191, 94, 0.2),    // desfase verde
+      0 0 22px rgba(232, 183, 62, 0.08);      // glow ámbar
+    margin: 0.5rem 0 1.1rem;
+    padding: 0 1.1rem 1.2rem;
+    animation: frame-static 7s infinite steps(1);
+  }
+  // barra superior del marco (flush a los bordes, sólo borde inferior)
+  .fiche-frame-bar {
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    margin: 0 -1.1rem 0.4rem; padding: 0.5rem 1.1rem;
+    border-bottom: 1px solid var(--amb-dim);
+    background: linear-gradient(#0e1a0a, #091307);
+    color: var(--amb); letter-spacing: 0.12em; font-size: 0.9rem; font-family: var(--codeFont, monospace);
+    .r { color: var(--gray); }
+  }
+
+  // pestaña activa y marco de pestañas en ámbar
+  .fiche-tabs { border-bottom-color: var(--amb-dim); }
+  .fiche-tab.active {
+    color: var(--amb); border-color: var(--amb-dim); background: var(--light);
+    &::before { content: "▾ "; color: var(--amb); }
+  }
+  .fiche-crumb b { color: var(--amb); }
+
+  // valores clave de la ficha técnica en ámbar (.hot)
+  .archive-field .field-value.hot { color: var(--amb); }
+}
+
+// ══════════════════════════════════════════════════════════
+//  FUENTE DE COMPUTADORA (monospace) EN TODO EL CONTENIDO
+//  Excepciones que quedan TAL CUAL (serif / papel):
+//   1. Notas de campo (.field-notes-block) — papel físico.
+//   2. Documentos originales (body[data-slug^="documentos/"]) —
+//      las notas de los personajes se conservan como estaban.
+// ══════════════════════════════════════════════════════════
+html { --amb: #e8b73e; --amb-dim: #8a7326; } // ámbar disponible en todo el sitio
+
+article { font-family: var(--codeFont, monospace); }
+
+// Excepción 1 — notas de campo (papel)
+.field-notes-block,
+.field-notes-block :is(p, li, span, strong, em, b, i, a, div) {
+  font-family: var(--bodyFont) !important;
+}
+// Excepción 2 — documentos originales: notas de los personajes tal cual.
+// (El callout institucional "doc-ref" mantiene su mono por su propia regla.)
+body[data-slug^="documentos/"] article { font-family: var(--bodyFont); }
+
+// ── MARCO "CRT" ámbar: punteado + desfase cromático + glow + estática ──
+// Aberración rojo/verde como la de las letras, borde dashed tipo terminal,
+// glow ámbar tenue y un parpadeo apenas perceptible.
+@keyframes frame-static {
+  0%, 96%, 100% { border-color: var(--amb-dim); }
+  97%           { border-color: rgba(138, 115, 38, 0.35); }
+  98%           { border-color: var(--amb); }
+  99%           { border-color: rgba(138, 115, 38, 0.5); }
+}
+
+// El bestiario ya trae su propio .fiche-frame, así que se excluye.
+article:not(.bestiario-terminal) {
+  border: 1px dashed var(--amb-dim);
+  background: var(--lightgray);
+  box-shadow:
+    1.5px 0 0 rgba(208, 86, 58, 0.28),     // desfase rojo (derecha)
+    -1.5px 0 0 rgba(120, 191, 94, 0.22),   // desfase verde (izquierda)
+    0 0 18px rgba(232, 183, 62, 0.09);      // glow ámbar
+  padding: 1.3rem 1.5rem;
+  margin-top: 0.7rem;
+  animation: frame-static 7s infinite steps(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  article:not(.bestiario-terminal), .bestiario-terminal .fiche-frame { animation: none !important; }
+}

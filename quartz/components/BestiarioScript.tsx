@@ -433,6 +433,47 @@ function initNarratorRadioEffect(){
   });
 }
 
+// ── Fichas de criatura con pestañas (terminal) ─────────────────
+function initFicheTabs(){
+  var root = document.querySelector('.bestiario-terminal');
+  if(!root) return;
+  var tabs = Array.prototype.slice.call(root.querySelectorAll('.fiche-tab'));
+  if(!tabs.length) return;
+  var crumb = root.querySelector('#fiche-crumb');
+  var keys = tabs.map(function(t){ return t.getAttribute('data-tab'); });
+
+  function activate(key, updateHash){
+    if(keys.indexOf(key)===-1) key = keys[0];
+    tabs.forEach(function(tab){
+      var k = tab.getAttribute('data-tab'); var on = k===key;
+      tab.classList.toggle('active', on);
+      var v = root.querySelector('#v-'+k); if(v) v.classList.toggle('active', on);
+      if(on && crumb) crumb.textContent = tab.getAttribute('data-crumb') || k;
+    });
+    if(updateHash && window.history && history.replaceState){
+      history.replaceState(null, '', '#'+key);
+    }
+  }
+  function goTo(key){ activate(key, true); window.scrollTo({top:0, behavior:'smooth'}); }
+
+  // idempotente (onclick, no addEventListener) — seguro en cada corrida de init/nav
+  tabs.forEach(function(tab){ tab.onclick = function(){ goTo(tab.getAttribute('data-tab')); }; });
+  Array.prototype.forEach.call(root.querySelectorAll('[data-jump]'), function(l){
+    l.onclick = function(e){ e.preventDefault(); goTo(l.getAttribute('data-jump')); };
+  });
+  Array.prototype.forEach.call(root.querySelectorAll('[data-gate]'), function(b){
+    b.onclick = function(){ var g = b.closest('.gated'); if(g) g.classList.add('open'); };
+  });
+
+  // Solo la primera corrida decide la pestaña (por hash de entrada); las
+  // re-corridas de 'nav' respetan la elección actual del usuario.
+  if(root.dataset.ficheInit !== '1'){
+    root.dataset.ficheInit = '1';
+    var h = (location.hash || '').replace(/^#/, '');
+    activate(keys.indexOf(h) >= 0 ? h : keys[0], false);
+  }
+}
+
 // ── Init on load and SPA navigation ────────────────────────────
 function init(){
   initTagFilter();
@@ -441,6 +482,7 @@ function init(){
   initNarratorRadioEffect();
   buildInstitutionalFooter();
   initSeismicPanel();
+  initFicheTabs();
 }
 
 if(document.readyState==='loading'){
