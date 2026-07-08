@@ -398,8 +398,44 @@ title: "Bestiario"
 
 </div>
 
+<div class="entry-section-title" style="margin: 1.75rem 0 0.5rem;">Flora documentada</div>
+
+<div class="entry-grid">
+
+<a href="/bestiario/enredadera-acelerada" class="entry-item" data-tags="flora,f-01">
+  <div class="entry-header">
+    <span class="entry-threat">Flora — Crecimiento acelerado</span>
+    <div class="entry-status fragmentario"><span class="entry-status-dot"></span>fragmentario</div>
+  </div>
+  <div class="entry-body">
+    <div class="entry-name">Enredadera Acelerada</div>
+    <div class="entry-type">Flora mutada · F-01 día 2</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-FL/EA</span>
+    <span class="entry-doc-count">archivo incompleto</span>
+  </div>
+</a>
+
+<a href="/bestiario/hongo-de-cemento" class="entry-item" data-tags="flora,f-01">
+  <div class="entry-header">
+    <span class="entry-threat">Flora — Fúngico / sustrato mineral</span>
+    <div class="entry-status fragmentario"><span class="entry-status-dot"></span>fragmentario</div>
+  </div>
+  <div class="entry-body">
+    <div class="entry-name">Hongo de Cemento</div>
+    <div class="entry-type">Flora mutada · F-01 día 4</div>
+  </div>
+  <div class="entry-footer">
+    <span class="entry-code">APE/BST-FL/HG</span>
+    <span class="entry-doc-count">archivo incompleto</span>
+  </div>
+</a>
+
+</div>
+
 <div class="page-footer">
   <span><span class="status-dot"></span>Archivo activo</span>
-  <span>Bestiario — 13 entradas registradas</span>
+  <span>Bestiario — 17 entradas registradas</span>
   <span><a href="/">← Volver al archivo</a></span>
 </div>
