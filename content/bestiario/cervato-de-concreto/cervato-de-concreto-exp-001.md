@@ -1,5 +1,6 @@
 ---
 title: "CC-EXP-001 — Protocolo de acercamiento"
+cssclasses: [bestiario-subdoc]
 ---
 
 <div class="archive-stamp">Bestiario — Expediente Clasificado / Clase B</div>

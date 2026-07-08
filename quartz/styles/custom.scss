@@ -2289,7 +2289,6 @@ table {
   font-family: var(--codeFont);
   font-size: 0.85rem;
   font-weight: 400;
-  color: #c8c4a8;
   text-transform: uppercase;
   letter-spacing: 0.22em;
   margin: 3.5rem 0 1.25rem;
@@ -2298,10 +2297,11 @@ table {
   border: 1px solid #2a2a22;
   border-left: 3px solid #c8a84a;
   position: relative;
+  color: #e8b73e;
 
   &::before {
     content: '//';
-    color: #8a6a2a;
+    color: #b8923a;
     margin-right: 0.7em;
   }
 }
@@ -3364,8 +3364,17 @@ table {
   border-bottom: none;
   font-family: var(--codeFont);
 }
+// La barra del expediente con el mismo look que la barra del marco de la ficha
+// (.fiche-frame-bar): texto ámbar sobre gradiente oscuro con borde ámbar.
+.bestiario-subdoc .subdoc-access-bar {
+  background: linear-gradient(#0e1a0a, #091307);
+  border: 1px solid var(--amb-dim);
+  padding: 0.6rem 1.25rem;
+}
+.bestiario-subdoc .subdoc-access-bar .subdoc-access-level { color: var(--amb); }
+.bestiario-subdoc .subdoc-access-bar .subdoc-access-code { color: var(--gray); }
 .subdoc-access-level {
-  font-size: 0.625rem;
+  font-size: 0.8rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   &.clase-a { color: var(--secondary); }
@@ -3373,7 +3382,7 @@ table {
   &.clase-c { color: var(--gray); }
 }
 .subdoc-access-code {
-  font-size: 0.575rem;
+  font-size: 0.72rem;
   color: var(--gray);
   letter-spacing: 0.1em;
 }
@@ -3393,27 +3402,48 @@ table {
   &.span2 { grid-column: span 2; @media (max-width: 640px) { grid-column: span 1; } }
 }
 .subdoc-meta-label {
-  font-size: 0.74rem;
+  font-size: 0.8rem;
   color: var(--gray);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   display: block;
   margin-bottom: 0.2rem;
 }
 .subdoc-meta-value {
-  font-size: 0.825rem;
-  color: var(--dark);
+  font-size: 1.05rem;
+  color: var(--darkgray);
 }
+// Expedientes/sub-documentos con la misma tipografía "computadora" que las
+// fichas (monospace en todo el cuerpo, incl. .archivist-note), pero conservando
+// su marco de expediente (siguen siendo article:not(.bestiario-terminal)).
+.bestiario-subdoc,
+.bestiario-subdoc * { font-family: var(--codeFont) !important; }
+.bestiario-subdoc .archivist-note { color: var(--darkgray); line-height: 1.7; font-size: 1.12rem; }
+
 .subdoc-section { margin-bottom: 2rem; }
 .subdoc-section-title {
   font-family: var(--codeFont);
-  font-size: 0.625rem;
+  font-size: 0.8rem;
   color: var(--secondary);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   border-bottom: 1px solid var(--lightgray);
   padding-bottom: 0.375rem;
   margin-bottom: 1rem;
+}
+// Mismo look que los títulos de sección de las fichas: VT323 ámbar con
+// aberración cromática ("letra desfasada"). !important para ganar a la regla
+// `.bestiario-subdoc *` que fuerza monospace.
+.bestiario-subdoc .subdoc-section-title {
+  font-family: "VT323", var(--codeFont, monospace) !important;
+  font-size: 1.5rem;
+  color: #e8b73e;
+  letter-spacing: 0.05em;
+  text-shadow:
+    -1.5px 0 rgba(255, 70, 70, 0.55),
+    1.5px 0 rgba(70, 150, 255, 0.5),
+    0 0 12px rgba(232, 183, 62, 0.35);
+  border-bottom-color: var(--amb-dim);
 }
 .subdoc-body {
   font-family: var(--bodyFont);
@@ -3433,15 +3463,15 @@ table {
   &:last-child { border-bottom: none; }
 }
 .subdoc-time {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   color: var(--secondary);
   white-space: nowrap;
   padding-top: 0.1rem;
 }
 .subdoc-event {
-  font-size: 0.8rem;
-  color: var(--dark);
-  line-height: 1.5;
+  font-size: 0.95rem;
+  color: var(--darkgray);
+  line-height: 1.6;
 }
 .subdoc-note {
   background: #{$bg2};
@@ -3449,7 +3479,7 @@ table {
   padding: 0.875rem 1.25rem;
   margin: 1.5rem 0;
   font-family: var(--codeFont);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-style: italic;
   color: var(--darkgray);
   line-height: 1.6;
@@ -3457,7 +3487,7 @@ table {
 .subdoc-note-author {
   display: block;
   margin-top: 0.5rem;
-  font-size: 0.575rem;
+  font-size: 0.82rem;
   color: var(--gray);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -3481,7 +3511,7 @@ table {
   display: block;
   margin-bottom: 0.25rem;
 }
-.subdoc-sig-value { font-size: 0.88rem; color: var(--dark); }
+.subdoc-sig-value { font-size: 1rem; color: var(--darkgray); }
 .subdoc-back {
   font-family: var(--codeFont);
   font-size: 0.82rem;
@@ -3507,13 +3537,29 @@ table {
 }
 
 // ── Archivist label (overrides .archivist-note::before for explicit labels) ──
+// Cuando hay una etiqueta explícita, se oculta el ::before genérico para no
+// duplicar el título ("// Nota del archivista" + la etiqueta del markup).
+.archivist-note:has(.archivist-label)::before { display: none; }
 .archivist-label {
-  font-size: 0.9rem;
-  color: var(--secondary);
+  font-size: 1rem;
+  color: #e8b73e;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   display: block;
   margin-bottom: 0.5rem;
+}
+// Dentro de fichas y expedientes, la etiqueta del archivista comparte el look
+// de los títulos de sección: VT323 ámbar con aberración cromática ("de compu").
+.bestiario-terminal .archivist-label,
+.bestiario-subdoc .archivist-label {
+  font-family: "VT323", var(--codeFont, monospace) !important;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: #e8b73e;
+  text-shadow:
+    -1.5px 0 rgba(255, 70, 70, 0.55),
+    1.5px 0 rgba(70, 150, 255, 0.5),
+    0 0 12px rgba(232, 183, 62, 0.35);
 }
 
 // ── Status legend ──

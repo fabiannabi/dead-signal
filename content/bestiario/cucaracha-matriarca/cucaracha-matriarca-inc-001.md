@@ -1,5 +1,6 @@
 ---
 title: "CM-INC-001 — Inmolación múltiple bloque 7"
+cssclasses: [bestiario-subdoc]
 ---
 
 <div class="archive-stamp">Bestiario — Expediente Clasificado / Clase B</div>

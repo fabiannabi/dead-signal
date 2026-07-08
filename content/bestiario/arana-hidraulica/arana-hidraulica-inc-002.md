@@ -1,5 +1,6 @@
 ---
 title: "AH-INC-002 — Paso inundado, regla de inmovilidad"
+cssclasses: [bestiario-subdoc]
 ---
 
 <div class="archive-stamp">Bestiario — Expediente Clasificado / Clase B</div>

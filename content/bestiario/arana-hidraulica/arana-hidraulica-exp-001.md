@@ -1,5 +1,6 @@
 ---
 title: "AH-EXP-001 — Caracterización acústica del clic articular"
+cssclasses: [bestiario-subdoc]
 ---
 
 <div class="archive-stamp">Bestiario — Expediente Clasificado / Clase B</div>

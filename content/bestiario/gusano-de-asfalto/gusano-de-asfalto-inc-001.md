@@ -1,5 +1,6 @@
 ---
 title: "GA-INC-001 — Colapso progresivo de vía, columna de abasto"
+cssclasses: [bestiario-subdoc]
 ---
 
 <div class="archive-stamp">Bestiario — Expediente Clasificado / Clase B</div>

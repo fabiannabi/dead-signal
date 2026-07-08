@@ -283,6 +283,24 @@
   text-shadow: 0 0 10px rgba(232, 183, 62, 0.45);
 }
 
+// Títulos de sección con el mismo look que el título de criatura:
+// VT323 ámbar + aberración cromática ("letra desfasada" de monitor viejo,
+// canal rojo desplazado a un lado y azul al otro). Solo dentro de las fichas.
+// !important para ganar a la regla `.bestiario-terminal *` que fuerza monospace.
+.bestiario-terminal .entry-section-title {
+  font-family: "VT323", var(--codeFont, monospace) !important;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #e8b73e;
+  text-shadow:
+    -1.5px 0 rgba(255, 70, 70, 0.55),
+    1.5px 0 rgba(70, 150, 255, 0.5),
+    0 0 12px rgba(232, 183, 62, 0.35);
+
+  &::before { color: #b8923a; }
+}
+
 // En las fichas del bestiario, el título grande lo pinta MI header
 // (dentro del marco); se oculta el de Quartz y su meta para no duplicar.
 .center:has(article.bestiario-terminal) {

@@ -1,5 +1,6 @@
 ---
 title: "AH-INC-001 — Contacto no autorizado, zona de drenaje sur"
+cssclasses: [bestiario-subdoc]
 ---
 
 <div class="archive-stamp">Bestiario — Expediente Clasificado / Clase B</div>
