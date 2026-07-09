@@ -201,6 +201,66 @@ cssclasses: [bestiario-terminal]
 </table>
 </div>
 
+<div class="entry-section-title">Derivación cinemática del golpe <span class="badge-hilo" style="background:var(--secondary);color:var(--light)">FÍSICA</span></div>
+
+<p class="lab-meta">Modelo de cuerpo rígido, m = 34.6 kg (medida), Δv = 4.0 m/s, t = 52 ms (media de videometría). Las cifras del recuadro anterior se obtienen así:</p>
+
+<div class="calc-grid">
+  <div class="calc">
+    <span class="calc-k">Aceleración media</span>
+    <div class="calc-expr">a <span class="op">=</span> Δv <span class="op">/</span> Δt <span class="op">=</span> 4.0 m·s⁻¹ <span class="op">/</span> 0.052 s <span class="op">=</span> <span class="res">76.9 m·s⁻²</span> <span class="op">≈</span> <span class="res">7.84 g</span></div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Fuerza de reacción</span>
+    <div class="calc-expr">F <span class="op">=</span> m·a <span class="op">=</span> 34.6 kg × 76.9 m·s⁻² <span class="op">=</span> <span class="res">2 661 N</span> <span class="op">≈</span> <span class="res">2.66 kN</span></div>
+    <div class="calc-note">consistente con las ≈ 2.6 kN medidas por galgas en el apéndice anterior.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Impulso mecánico</span>
+    <div class="calc-expr">J <span class="op">=</span> m·Δv <span class="op">=</span> 34.6 kg × 4.0 m·s⁻¹ <span class="op">=</span> <span class="res">138 N·s</span></div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Energía cinética del lanzamiento</span>
+    <div class="calc-expr">E<sub>k</sub> <span class="op">=</span> ½·m·v² <span class="op">=</span> 0.5 × 34.6 × (4.0)² <span class="op">=</span> <span class="res">277 J</span></div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Potencia media desarrollada</span>
+    <div class="calc-expr">P <span class="op">=</span> E<sub>k</sub> <span class="op">/</span> t <span class="op">=</span> 277 J <span class="op">/</span> 0.052 s <span class="op">=</span> <span class="res">5.33 kW</span></div>
+    <div class="calc-note">imposible por contracción muscular directa a esta masa: el sistema hidráulico actúa como acumulador-liberador (catapulta de hemolinfa).</div>
+  </div>
+</div>
+
+<div class="fig-cap">FIG.2 — TRANSITORIO DE PRESIÓN PROSÓMICA · TELEMETRÍA DE CÁNULA</div>
+<div class="fiche-svg-wrap">
+<svg viewBox="0 0 480 250" width="480" height="250" xmlns="http://www.w3.org/2000/svg" font-family="var(--codeFont)" role="img" aria-label="Curva de presión prosómica contra tiempo: reposo 17 kPa, pico de golpe 66 kPa a los 52 ms">
+  <g stroke="var(--lightgray)" stroke-width="1">
+    <line x1="58" y1="43"  x2="455" y2="43"/>
+    <line x1="58" y1="122" x2="455" y2="122"/>
+  </g>
+  <rect x="296" y="25" width="40" height="180" fill="var(--secondary)" opacity="0.08"/>
+  <line x1="58" y1="25" x2="58" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="58" y1="205" x2="455" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="58" y1="161" x2="455" y2="161" stroke="var(--gray)" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <path d="M58 161 L107 161 C190 150 275 50 316 35 C360 25 410 92 455 120" fill="none" stroke="var(--amb)" stroke-width="2.2"/>
+  <circle cx="316" cy="35" r="3" fill="var(--amb)"/>
+  <g fill="var(--gray)" font-size="11">
+    <text x="52" y="39" text-anchor="end">66</text>
+    <text x="52" y="165" text-anchor="end">17</text>
+    <text x="52" y="209" text-anchor="end">0</text>
+    <text x="107" y="222">0</text>
+    <text x="207" y="222">20</text>
+    <text x="306" y="222">40</text>
+    <text x="405" y="222">60</text>
+    <text x="240" y="243" text-anchor="middle">tiempo (ms)</text>
+  </g>
+  <text x="20" y="120" fill="var(--gray)" font-size="11" transform="rotate(-90 20 120)" text-anchor="middle">presión (kPa)</text>
+  <text x="324" y="34" fill="var(--amb)" font-size="11">pico 66 kPa</text>
+  <text x="316" y="20" fill="var(--secondary)" font-size="10" text-anchor="middle">48–56 ms</text>
+  <text x="112" y="157" fill="var(--gray)" font-size="10">reposo</text>
+</svg>
+</div>
+<div class="chart-note">El golpe es un transitorio único de ~50 ms: la presión salta ×3.9 sobre reposo y decae sin oscilación amortiguada — firma de liberación balística, no de bombeo cíclico.</div>
+
 <p>El <b>clic articular</b> es un transitorio de banda ancha con energía dominante en <b>2.4–5.8 kHz</b>, duración ≈ 7 ms y nivel ≈ 112 dB SPL (re 20 µPa @ 1 m). Mecanismo propuesto: <span class="a">cavitación</span> del fluido articular presurizado en el desbloqueo de la articulación. Caracterización completa en <a href="/bestiario/arana-hidraulica/arana-hidraulica-exp-001">AH-EXP-001</a>.</p>
 
 <div class="entry-section-title">Aparato sensorial y respiración</div>
@@ -293,6 +353,122 @@ cssclasses: [bestiario-terminal]
 </div>
 
 <p>Cuanto más instrumental se le aplica, <span class="a">más consistente es su comportamiento y más se resiste su identidad</span>: fluoresce igual en cada muestra, aguanta temperaturas que degradarían cualquier proteína conocida y reacciona a un campo magnético — pero ningún espectrómetro devuelve dos veces la misma huella de masas. La hipótesis de trabajo (H-03) la vincula al órgano subesofágico. <span class="redact">El resto está bajo Clase A.</span></p>
+
+<div class="entry-section-title">Cinética enzimática — proteasas del cóctel <span class="badge-hilo" style="background:var(--secondary);color:var(--light)">QUÍMICA</span></div>
+
+<div class="lab-band"><b>Ensayo cinético</b> — sustrato cromogénico (azocaseína), 25 °C, pH 2.3 · ajuste no lineal a Michaelis–Menten · n = 5 réplicas<br>
+<span class="instr">espectrofotometría 366 nm</span><span class="instr">HPLC</span><span class="instr">zimografía</span><span class="instr">ajuste Levenberg–Marquardt</span></div>
+
+<div class="wrap-scroll">
+<table class="labtable">
+  <tr><th>Parámetro cinético</th><th>Valor</th><th>Nota</th></tr>
+  <tr><td class="k">K<sub>m</sub></td><td class="num">0.42 ± 0.05 mM</td><td class="conf">afinidad alta</td></tr>
+  <tr><td class="k">V<sub>máx</sub></td><td class="num">18.4 µmol·min⁻¹·mg⁻¹</td><td class="conf">saturación</td></tr>
+  <tr><td class="k">k<sub>cat</sub></td><td class="num">47 s⁻¹</td><td class="conf">recambio</td></tr>
+  <tr><td class="k">k<sub>cat</sub> / K<sub>m</sub></td><td class="num">1.12 × 10⁵ M⁻¹s⁻¹</td><td class="conf">eficiencia catalítica</td></tr>
+  <tr><td class="k">pH óptimo</td><td class="num">2.3</td><td class="conf">coincide con el pH del fluido</td></tr>
+  <tr><td class="k">T óptima</td><td class="num">41 °C</td><td class="conf">meseta 38–44 °C</td></tr>
+</table>
+</div>
+
+<div class="fig-cap">FIG.3 — CINÉTICA DE SATURACIÓN · MICHAELIS–MENTEN</div>
+<div class="fiche-svg-wrap">
+<svg viewBox="0 0 470 250" width="470" height="250" xmlns="http://www.w3.org/2000/svg" font-family="var(--codeFont)" role="img" aria-label="Curva de Michaelis-Menten: velocidad contra concentración de sustrato, Vmax 18.4, Km 0.42 mM">
+  <line x1="58" y1="39" x2="440" y2="39" stroke="var(--lightgray)" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="58" y1="122" x2="138" y2="122" stroke="var(--lightgray)" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <line x1="138" y1="122" x2="138" y2="205" stroke="var(--lightgray)" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <line x1="58" y1="25" x2="58" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="58" y1="205" x2="440" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <path d="M58 205 C96 152 118 130 138 122 C230 92 330 76 440 68" fill="none" stroke="var(--amb)" stroke-width="2.2"/>
+  <circle cx="138" cy="122" r="3" fill="var(--secondary)"/>
+  <g fill="var(--gray)" font-size="11">
+    <text x="52" y="43" text-anchor="end">18.4</text>
+    <text x="52" y="126" text-anchor="end">9.2</text>
+    <text x="52" y="209" text-anchor="end">0</text>
+    <text x="138" y="222" text-anchor="middle">0.42</text>
+    <text x="440" y="222" text-anchor="middle">2.0</text>
+    <text x="250" y="243" text-anchor="middle">[S] sustrato (mM)</text>
+  </g>
+  <text x="16" y="115" fill="var(--gray)" font-size="11" transform="rotate(-90 16 115)" text-anchor="middle">v (µmol·min⁻¹·mg⁻¹)</text>
+  <text x="360" y="52" fill="var(--amb)" font-size="11">V<tspan dy="2" font-size="8">máx</tspan></text>
+  <text x="146" y="118" fill="var(--secondary)" font-size="10">K<tspan dy="2" font-size="8">m</tspan> · ½V<tspan dy="2" font-size="8">máx</tspan></text>
+</svg>
+</div>
+<div class="chart-note">La alta eficiencia catalítica (k<sub>cat</sub>/K<sub>m</sub> ≈ 10⁵) sitúa a la proteasa cerca del régimen limitado por difusión: el fluido está optimizado para digerir tejido, no para conservarse.</div>
+
+<div class="entry-section-title">Cálculos fisicoquímicos derivados</div>
+
+<div class="calc-grid">
+  <div class="calc">
+    <span class="calc-k">Concentración de protones (de pH 1.9)</span>
+    <div class="calc-expr">[H₃O⁺] <span class="op">=</span> 10<sup>−pH</sup> <span class="op">=</span> 10<sup>−1.9</sup> <span class="op">=</span> <span class="res">1.26 × 10⁻² mol·L⁻¹</span></div>
+    <div class="calc-note">pOH = 14 − 1.9 = 12.1 → [OH⁻] = 10⁻¹²·¹ = 7.9 × 10⁻¹³ mol·L⁻¹.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Presión osmótica (van 't Hoff, 25 °C)</span>
+    <div class="calc-expr">π <span class="op">=</span> c·R·T <span class="op">=</span> 2.38 <span class="op">×</span> 0.08206 <span class="op">×</span> 298 <span class="op">=</span> <span class="res">58.2 atm</span> <span class="op">≈</span> <span class="res">5.9 MPa</span></div>
+    <div class="calc-note">explica la avidez del fluido por el agua tisular: deshidrata la presa desde el primer contacto.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Cinética de desmineralización de quitina (1.er orden)</span>
+    <div class="calc-expr">k <span class="op">=</span> −ln(0.78) <span class="op">/</span> 2 h <span class="op">=</span> <span class="res">0.124 h⁻¹</span> &nbsp; → &nbsp; t<sub>½</sub> <span class="op">=</span> ln2 <span class="op">/</span> k <span class="op">=</span> <span class="res">5.6 h</span></div>
+    <div class="calc-note">a partir del cupón de quitina: −22 % de masa en 2 h (queda fracción 0.78).</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Desplazamiento de Stokes de <span class="badge-hilo">████-A</span> (exc. 365 → em. 510 nm)</span>
+    <div class="calc-expr">Δṽ <span class="op">=</span> 10⁷·(1/365 − 1/510) <span class="op">=</span> <span class="res">7 789 cm⁻¹</span> &nbsp;(ΔE <span class="op">≈</span> <span class="res">0.97 eV</span>)</div>
+    <div class="calc-note">desplazamiento enorme y sin banda vibracional asignable — no encaja con ningún fluoróforo orgánico catalogado.</div>
+  </div>
+</div>
+
+<div class="entry-section-title">Perfil cromatográfico — HPLC preparativa</div>
+<div class="fig-cap">FIG.4 — CROMATOGRAMA UV (280 nm) · FRACCIONAMIENTO DEL FLUIDO</div>
+<div class="fiche-svg-wrap">
+<svg viewBox="0 0 480 240" width="480" height="240" xmlns="http://www.w3.org/2000/svg" font-family="var(--codeFont)" role="img" aria-label="Cromatograma HPLC del fluido digestivo con la fracción anómala destacada a 12.4 minutos">
+  <line x1="55" y1="25" x2="55" y2="195" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="55" y1="195" x2="465" y2="195" stroke="var(--gray)" stroke-width="1.2"/>
+  <g fill="none" stroke="var(--gray)" stroke-width="1.4">
+    <path d="M77 195 Q84 155 91 195"/>
+    <path d="M141 195 Q149 125 157 195"/>
+    <path d="M211 195 Q219 140 227 195"/>
+    <path d="M249 195 Q257 165 265 195"/>
+    <path d="M293 195 Q301 157 309 195"/>
+    <path d="M334 195 Q342 167 350 195"/>
+  </g>
+  <path d="M408 195 Q418 100 428 195" fill="var(--amb)" fill-opacity="0.14" stroke="var(--amb)" stroke-width="2"/>
+  <g fill="var(--gray)" font-size="9.5" text-anchor="middle">
+    <text x="84" y="150">matriz</text>
+    <text x="149" y="120">ácidos</text>
+    <text x="219" y="135">proteasas</text>
+    <text x="257" y="160">quitin.</text>
+    <text x="301" y="152">tensioact.</text>
+    <text x="342" y="162">quelantes</text>
+  </g>
+  <text x="418" y="94" fill="var(--amb)" font-size="10.5" text-anchor="middle">████-A</text>
+  <text x="418" y="82" fill="var(--amb)" font-size="8.5" text-anchor="middle">7.6 %</text>
+  <g fill="var(--gray)" font-size="10">
+    <text x="55" y="210" text-anchor="middle">0</text>
+    <text x="172" y="210" text-anchor="middle">4</text>
+    <text x="289" y="210" text-anchor="middle">8</text>
+    <text x="406" y="210" text-anchor="middle">12</text>
+    <text x="260" y="230" text-anchor="middle">tiempo de retención (min)</text>
+  </g>
+  <text x="18" y="110" fill="var(--gray)" font-size="10" transform="rotate(-90 18 110)" text-anchor="middle">señal UV (mAU)</text>
+</svg>
+</div>
+<div class="chart-note">La fracción <span class="badge-hilo">████-A</span> eluye como pico único, agudo y de área reproducible (7.6 % ± 0.3) — <span class="a">pero su huella de masas no se repite entre inyecciones</span>. Área constante, identidad variable: la anomalía central del expediente químico.</div>
+
+<div class="entry-section-title">Anomalía térmica de <span class="badge-hilo">████-A</span></div>
+
+<div class="calc-grid">
+  <div class="calc">
+    <span class="calc-k">Energía térmica disponible vs. enlace covalente</span>
+    <div class="calc-expr">R·T <span class="op">(613 K)</span> <span class="op">=</span> 8.314 × 613 <span class="op">=</span> <span class="res">5.1 kJ·mol⁻¹</span> &nbsp;≪&nbsp; E<sub>enlace C–C</sub> ≈ <span class="res">348 kJ·mol⁻¹</span></div>
+    <div class="calc-note">a 340 °C (613 K) no se observa degradación medible (k<sub>deg</sub> &lt; límite de detección), cuando toda biomolécula proteica desnaturaliza &lt; 60 °C.</div>
+  </div>
+</div>
+
+<p>El comportamiento resiste el marco molecular: <span class="a">estabilidad térmica &gt; 340 °C</span>, actividad óptica sin quiralidad resuelta, <span class="a">reorientación bajo campo magnético moderado</span> y una huella de masas que nunca se repite. Se conserva medida tras medida <em>lo que hace</em>; se pierde sistemáticamente <em>lo que es</em>. La caracterización restante permanece bajo <a href="/bestiario/arana-hidraulica/arana-hidraulica-exp-001">AH-EXP-002</a> — Clase A. <span class="redact">Marcador ████-A presente en otras entradas del bestiario.</span></p>
 
 <div class="entry-section-title">Hipótesis y tesis de laboratorio</div>
 
