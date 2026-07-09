@@ -235,6 +235,36 @@ cssclasses: [bestiario-terminal]
 </table>
 </div>
 
+<div class="fig-cap">FIG.2 — PERFIL DE NANOINDENTACIÓN · DUREZA vs PROFUNDIDAD</div>
+<div class="fiche-svg-wrap">
+<svg viewBox="0 0 470 250" width="470" height="250" xmlns="http://www.w3.org/2000/svg" font-family="var(--codeFont)" role="img" aria-label="Perfil de nanoindentación: dureza contra profundidad, capa externa 4.8 GPa que decae hacia el interior inervado">
+  <rect x="58" y="25" width="112" height="180" fill="var(--amb)" opacity="0.06"/>
+  <line x1="58" y1="61" x2="169" y2="61" stroke="var(--lightgray)" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <line x1="58" y1="25" x2="58" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="58" y1="205" x2="455" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <path d="M58 61 L121 61 L169 67 L217 97 L280 136 L344 163 L455 184" fill="none" stroke="var(--amb)" stroke-width="2.2"/>
+  <circle cx="58" cy="61" r="3" fill="var(--amb)"/>
+  <g fill="var(--gray)" font-size="11">
+    <text x="52" y="29" text-anchor="end">6.0</text>
+    <text x="52" y="65" text-anchor="end">4.8</text>
+    <text x="52" y="137" text-anchor="end">2.4</text>
+    <text x="52" y="209" text-anchor="end">0</text>
+    <text x="58" y="222" text-anchor="middle">0</text>
+    <text x="137" y="222" text-anchor="middle">10</text>
+    <text x="217" y="222" text-anchor="middle">20</text>
+    <text x="296" y="222" text-anchor="middle">30</text>
+    <text x="376" y="222" text-anchor="middle">40</text>
+    <text x="455" y="222" text-anchor="middle">50</text>
+    <text x="255" y="243" text-anchor="middle">profundidad (µm)</text>
+  </g>
+  <text x="16" y="115" fill="var(--gray)" font-size="11" transform="rotate(-90 16 115)" text-anchor="middle">dureza (GPa)</text>
+  <text x="66" y="52" fill="var(--amb)" font-size="11">4.8 GPa · superficie</text>
+  <text x="64" y="196" fill="var(--secondary)" font-size="10">capa mineralizada externa</text>
+  <text x="300" y="150" fill="var(--gray)" font-size="10">gradiente → interior inervado</text>
+</svg>
+</div>
+<div class="chart-note">La dureza cae de <b>4.8 GPa</b> en la corteza mineralizada externa a &lt;1 GPa hacia el interior vascularizado: la placa es un <span class="a">gradiente funcional</span> — cáscara dura sobre tejido vivo — no un bloque mineral homogéneo. El perfil descarta una costra ambiental pasiva.</div>
+
 <p>La <span class="a">fracción ████-A</span> es la anomalía del expediente: eluye de la matriz mineral pero <span class="a">no cristaliza</span> — la DRX la reporta amorfa, el FTIR arroja bandas sin coincidencia de biblioteca y no tiene homólogo en la mineralogía biológica pre-Emergencia. La hipótesis de trabajo (H-03) la vincula a la capacidad de la placa de <span class="a">permanecer viva, inervada y no frágil</span> pese a un grado de mineralización que en hueso ordinario produciría fractura quebradiza. <span class="redact">El resto de su caracterización permanece bajo Clase A.</span></p>
 
 <p class="lab-meta">Perfil de ████-A — lo que se pudo medir frente a lo que no.</p>
@@ -248,6 +278,64 @@ cssclasses: [bestiario-terminal]
   <tr class="anom"><td>Huella de masas (LC-MS/MS)</td><td>no reproducible entre inyecciones</td><td>no identificable</td></tr>
   <tr class="anom"><td>Identidad molecular</td><td><span class="redact">████████████████</span></td><td>sin resolver</td></tr>
 </table>
+</div>
+
+<div class="fig-cap">FIG.3 — DIFRACTOGRAMA DRX · MATRIZ CRISTALINA vs FRACCIÓN ████-A</div>
+<div class="fiche-svg-wrap">
+<svg viewBox="0 0 480 240" width="480" height="240" xmlns="http://www.w3.org/2000/svg" font-family="var(--codeFont)" role="img" aria-label="Difractograma DRX: picos cristalinos de hidroxiapatita sobre un halo amorfo atribuido a la fracción anómala">
+  <path d="M120 195 Q220 118 330 195" fill="var(--amb)" fill-opacity="0.13" stroke="var(--amb)" stroke-width="1" stroke-opacity="0.5"/>
+  <line x1="55" y1="25" x2="55" y2="195" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="55" y1="195" x2="465" y2="195" stroke="var(--gray)" stroke-width="1.2"/>
+  <g fill="none" stroke="var(--gray)" stroke-width="1.4">
+    <path d="M182 195 L186 72 L190 195"/>
+    <path d="M231 195 L235 45 L239 195"/>
+    <path d="M297 195 L301 108 L305 195"/>
+    <path d="M346 195 L350 122 L354 195"/>
+    <path d="M403 195 L407 138 L411 195"/>
+  </g>
+  <text x="235" y="40" fill="var(--gray)" font-size="9.5" text-anchor="middle">apatita (211)</text>
+  <text x="186" y="66" fill="var(--gray)" font-size="8.5" text-anchor="middle">(002)</text>
+  <text x="219" y="112" fill="var(--amb)" font-size="10.5" text-anchor="middle">████-A · halo amorfo</text>
+  <text x="219" y="124" fill="var(--amb)" font-size="8.5" text-anchor="middle">1.6 %</text>
+  <g fill="var(--gray)" font-size="10">
+    <text x="55" y="210" text-anchor="middle">10</text>
+    <text x="137" y="210" text-anchor="middle">20</text>
+    <text x="219" y="210" text-anchor="middle">30</text>
+    <text x="301" y="210" text-anchor="middle">40</text>
+    <text x="383" y="210" text-anchor="middle">50</text>
+    <text x="465" y="210" text-anchor="middle">60</text>
+    <text x="260" y="230" text-anchor="middle">2θ (grados)</text>
+  </g>
+  <text x="18" y="110" fill="var(--gray)" font-size="10" transform="rotate(-90 18 110)" text-anchor="middle">intensidad (u.a.)</text>
+</svg>
+</div>
+<div class="chart-note">Los picos agudos son <span class="a">hidroxiapatita cristalina</span> (reflexiones 002/211) — mineral biológico ordinario. Bajo ellos, un <span class="a">halo amorfo ancho</span> sin reflexiones asignables: la fracción <span class="badge-hilo">████-A</span> no difracta. Coexisten en el mismo tejido un mineral que cristaliza y una fracción que se niega a hacerlo.</div>
+
+<div class="entry-section-title">Cálculos derivados <span class="badge-hilo" style="background:var(--secondary);color:var(--light)">MATERIAL</span></div>
+
+<p class="lab-meta">A partir de la densidad de la placa (ρ = 2.1 g·cm⁻³, espesor 4–7 cm), la tenacidad medida (8.5 kJ·m⁻²) y el perfil anómalo de ████-A. Cifras trabajadas paso a paso:</p>
+
+<div class="calc-grid">
+  <div class="calc">
+    <span class="calc-k">Masa areal de la coraza</span>
+    <div class="calc-expr">σ<sub>A</sub> <span class="op">=</span> ρ·t <span class="op">=</span> 2 100 kg·m⁻³ × 0.055 m <span class="op">=</span> <span class="res">115.5 kg·m⁻²</span></div>
+    <div class="calc-note">sobre ~1.5 m² de lomo y flancos ≈ 173 kg de mineral vivo — cerca del 29 % de la masa corporal invertido en blindaje.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Energía de impacto por unidad de área</span>
+    <div class="calc-expr">E<sub>k</sub><span class="op">/</span>A <span class="op">=</span> 35.7 kJ <span class="op">/</span> 0.05 m² <span class="op">=</span> <span class="res">714 kJ·m⁻²</span> <span class="op">≈</span> <span class="res">84×</span> la tenacidad de la placa</div>
+    <div class="calc-note">714 frente a 8.5 kJ·m⁻²: una placa frágil pasiva se astillaría en la primera carga. Sobrevive porque el golpe se transmite como cuerpo rígido y ████-A mantiene el mineral no frágil.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Estabilidad térmica de <span class="badge-hilo">████-A</span> vs enlace covalente</span>
+    <div class="calc-expr">R·T <span class="op">(633 K)</span> <span class="op">=</span> 8.314 × 633 <span class="op">=</span> <span class="res">5.26 kJ·mol⁻¹</span> &nbsp;≪&nbsp; E<sub>enlace C–C</sub> ≈ <span class="res">348 kJ·mol⁻¹</span></div>
+    <div class="calc-note">a 360 °C (633 K) no hay degradación medible, cuando el colágeno de la propia placa desnaturaliza &lt; 60 °C: la fracción desacopla su estabilidad de la matriz orgánica que la rodea.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Desplazamiento de Stokes de <span class="badge-hilo">████-A</span> (exc. 365 → em. 505 nm)</span>
+    <div class="calc-expr">Δṽ <span class="op">=</span> 10⁷·(1/365 − 1/505) <span class="op">=</span> <span class="res">7 595 cm⁻¹</span> &nbsp;(ΔE <span class="op">≈</span> <span class="res">0.94 eV</span>)</div>
+    <div class="calc-note">mismo corrimiento anómalo registrado en otras entradas del bestiario — sin banda vibracional asignable ni fluoróforo mineral catalogado.</div>
+  </div>
 </div>
 
 <div class="entry-section-title">Biomecánica de la carga <span class="badge-hilo" style="background:var(--secondary);color:var(--light)">FÍSICA</span></div>
@@ -265,6 +353,67 @@ cssclasses: [bestiario-terminal]
   <tr><td class="k">Presión de contacto (placa frontal)</td><td class="num">≈ 4.8 MPa</td><td class="conf">área ≈ 0.05 m²</td></tr>
 </table>
 </div>
+
+<div class="entry-section-title">Derivación de la embestida <span class="badge-hilo" style="background:var(--secondary);color:var(--light)">FÍSICA</span></div>
+
+<p class="lab-meta">Modelo de cuerpo rígido, m = 590 kg (estimación autopsia), v = 11 m·s⁻¹ (videometría de campo), distancia de frenado d = 0.15 m contra barrera rígida. Las cifras del recuadro anterior se obtienen así:</p>
+
+<div class="calc-grid">
+  <div class="calc">
+    <span class="calc-k">Energía cinética pico</span>
+    <div class="calc-expr">E<sub>k</sub> <span class="op">=</span> ½·m·v² <span class="op">=</span> 0.5 × 590 × (11)² <span class="op">=</span> 0.5 × 590 × 121 <span class="op">=</span> <span class="res">35.7 kJ</span></div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Momento lineal</span>
+    <div class="calc-expr">p <span class="op">=</span> m·v <span class="op">=</span> 590 kg × 11 m·s⁻¹ <span class="op">=</span> <span class="res">6 490 kg·m·s⁻¹</span></div>
+    <div class="calc-note">frenar esa cantidad de movimiento en 0.15 s exigiría ~43 kN sostenidos; en impacto rígido el tiempo es mucho menor y la fuerza, mucho mayor.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Desaceleración en el impacto</span>
+    <div class="calc-expr">a <span class="op">=</span> v² <span class="op">/</span> 2d <span class="op">=</span> 121 <span class="op">/</span> (2 × 0.15) <span class="op">=</span> <span class="res">403 m·s⁻²</span> <span class="op">≈</span> <span class="res">41 g</span></div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Fuerza de impacto</span>
+    <div class="calc-expr">F <span class="op">=</span> E<sub>k</sub> <span class="op">/</span> d <span class="op">=</span> 35 700 J <span class="op">/</span> 0.15 m <span class="op">=</span> <span class="res">238 kN</span></div>
+    <div class="calc-note">coincide con m·a = 590 × 403 = 238 kN — basta para derribar un muro de block o volcar un auto compacto. Si el frenado se alarga a 0.30 m la fuerza cae a la mitad (~119 kN): ceder terreno y no ofrecer barrera rígida es la contramedida.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Presión de contacto sobre la placa frontal</span>
+    <div class="calc-expr">P <span class="op">=</span> F <span class="op">/</span> A <span class="op">=</span> 238 000 N <span class="op">/</span> 0.05 m² <span class="op">=</span> <span class="res">4.76 MPa</span> <span class="op">≈</span> <span class="res">4.8 MPa</span></div>
+    <div class="calc-note">muy por debajo de la resistencia a compresión de la placa (~180 MPa): la coraza encaja su propia embestida sin fracturarse — el daño lo recibe el blanco, no el animal.</div>
+  </div>
+</div>
+
+<div class="fig-cap">FIG.4 — FUERZA DE IMPACTO vs DISTANCIA DE FRENADO</div>
+<div class="fiche-svg-wrap">
+<svg viewBox="0 0 480 250" width="480" height="250" xmlns="http://www.w3.org/2000/svg" font-family="var(--codeFont)" role="img" aria-label="Fuerza de impacto contra distancia de frenado: hipérbola decreciente, con banda de impacto rígido donde colapsa un muro de block">
+  <rect x="98" y="25" width="39" height="180" fill="var(--secondary)" opacity="0.10"/>
+  <line x1="58" y1="62" x2="117" y2="62" stroke="var(--lightgray)" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <line x1="58" y1="25" x2="58" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="58" y1="205" x2="455" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <path d="M106 27 L117 62 L137 98 L157 119 L177 134 L217 151 L256 162 L336 174 L455 184" fill="none" stroke="var(--amb)" stroke-width="2.2"/>
+  <circle cx="117" cy="62" r="3.4" fill="var(--amb)"/>
+  <circle cx="177" cy="134" r="3" fill="var(--secondary)"/>
+  <g fill="var(--gray)" font-size="11">
+    <text x="52" y="29" text-anchor="end">300</text>
+    <text x="52" y="89" text-anchor="end">200</text>
+    <text x="52" y="149" text-anchor="end">100</text>
+    <text x="52" y="209" text-anchor="end">0</text>
+    <text x="58" y="222" text-anchor="middle">0</text>
+    <text x="137" y="222" text-anchor="middle">0.2</text>
+    <text x="217" y="222" text-anchor="middle">0.4</text>
+    <text x="296" y="222" text-anchor="middle">0.6</text>
+    <text x="376" y="222" text-anchor="middle">0.8</text>
+    <text x="455" y="222" text-anchor="middle">1.0</text>
+    <text x="255" y="243" text-anchor="middle">distancia de frenado (m)</text>
+  </g>
+  <text x="16" y="115" fill="var(--gray)" font-size="11" transform="rotate(-90 16 115)" text-anchor="middle">fuerza de impacto (kN)</text>
+  <text x="124" y="58" fill="var(--amb)" font-size="11">238 kN · 15 cm</text>
+  <text x="184" y="130" fill="var(--secondary)" font-size="10">119 kN · 30 cm</text>
+  <text x="117" y="18" fill="var(--secondary)" font-size="9" text-anchor="middle">impacto rígido</text>
+</svg>
+</div>
+<div class="chart-note">La fuerza sigue una hipérbola F = E<sub>k</sub>/d: cuanto más corto el frenado, más brutal el golpe. En la banda de impacto rígido (10–20 cm) la carga entrega <b>180–360 kN</b> — sobra para atravesar mampostería de block y volcar un vehículo compacto. Alargar la distancia de parada es la única variable a favor del blanco.</div>
 
 <div class="entry-section-title">Aparato sensorial</div>
 

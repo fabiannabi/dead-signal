@@ -213,6 +213,80 @@ cssclasses: [bestiario-terminal]
 
 <p>La casta <span class="a">guardia</span> presenta cutícula suficientemente esclerotizada para soportar un pisotón sin colapsar: su neutralización requiere penetración con objeto metálico o carga corporal completa distribuida sobre la zona dorsal. Sus mandíbulas vencen en solitario a una rata grande y no retrocede ante perturbaciones menores. La casta <span class="a">centinela</span>, en el extremo opuesto, invierte la lógica de blindaje — cutícula delgada y abdomen dilatado que aloja el reservorio; se posiciona en perímetros y entradas y no participa en forrajeo ni custodia.</p>
 
+<div class="entry-section-title">Polimorfismo de castas — alometría <span class="badge-hilo" style="background:var(--secondary);color:var(--light)">BIOLOGÍA</span></div>
+
+<p class="lab-meta">Tallas medidas por casta (punto medio de rango) y proporción censal estimada de la colonia. La masa se estima por escala isométrica desde un blátido de referencia pre-Emergencia (≈ 4 cm ≈ 1 g), m ∝ L³.</p>
+
+<div class="calc-grid">
+  <div class="calc">
+    <span class="calc-k">Razón alométrica de masa (m ∝ L³)</span>
+    <div class="calc-expr">m<sub>G</sub>/m<sub>O</sub> <span class="op">=</span> (37.5/26)³ <span class="op">=</span> (1.442)³ <span class="op">=</span> <span class="res">3.0×</span> &nbsp;·&nbsp; m<sub>C</sub>/m<sub>O</sub> <span class="op">=</span> (24/26)³ <span class="op">=</span> <span class="res">0.79×</span></div>
+    <div class="calc-note">la guardia triplica la masa de la obrera a igual densidad; su refuerzo mineral dorsal la eleva por encima de esa cota. La centinela pesa menos que la obrera pese a su abdomen dilatado — cutícula fina, carga líquida.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Masa estimada por escala isométrica</span>
+    <div class="calc-expr">m <span class="op">=</span> (L/4)³ <span class="op">·</span> 1 g <span class="op">→</span> O <span class="op">=</span> <span class="res">275 g</span> · G <span class="op">=</span> <span class="res">824 g</span> · C <span class="op">=</span> <span class="res">216 g</span></div>
+    <div class="calc-note">consistente con el rango "rata pequeña a palomo" (obrera) y "rata mediana" (guardia) del registro operativo; cotas inferiores — no incluyen la mineralización de la guardia.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Carga secretora por centinela</span>
+    <div class="calc-expr">m<sub>res</sub> <span class="op">=</span> 0.35 × 216 g <span class="op">=</span> <span class="res">75.6 g</span> &nbsp;·&nbsp; ████-A <span class="op">=</span> 0.033 × 75.6 g <span class="op">=</span> <span class="res">2.5 g</span></div>
+    <div class="calc-note">reservorio ≈ 35 % de la masa corporal (rango medido 30–40 %); la fracción anómala ████-A ronda 2.5 g por individuo. Una inmolación múltiple coordinada suma varias cargas en un mismo volumen.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Inversión defensiva — biomasa en casta sacrificial</span>
+    <div class="calc-expr">φ<sub>C</sub> <span class="op">=</span> (0.08 × 216) <span class="op">/</span> Σ(nᵢ·mᵢ) <span class="op">=</span> 17.3 <span class="op">/</span> 330.7 <span class="op">=</span> <span class="res">5.2 %</span></div>
+    <div class="calc-note">censo O:G:C = 78:12:8 % (reina excluida — talla sin dato). Cerca del 5 % de la biomasa colonial se destina a defensa fungible: barata en masa, cara en efecto.</div>
+  </div>
+</div>
+
+<div class="fig-cap">FIG.2 — DISTRIBUCIÓN DE TALLAS POR CASTA · PROPORCIÓN CENSAL</div>
+<div class="fiche-svg-wrap">
+<svg viewBox="0 0 470 250" width="470" height="250" xmlns="http://www.w3.org/2000/svg" font-family="var(--codeFont)" role="img" aria-label="Barras de talla por casta: obrera 26 cm 78 por ciento, guardia 37.5 cm 12 por ciento, centinela 24 cm 8 por ciento, reina sin dato 2 por ciento">
+  <g stroke="var(--lightgray)" stroke-width="0.8" stroke-dasharray="3 3">
+    <line x1="58" y1="169" x2="450" y2="169"/>
+    <line x1="58" y1="133" x2="450" y2="133"/>
+    <line x1="58" y1="97"  x2="450" y2="97"/>
+    <line x1="58" y1="61"  x2="450" y2="61"/>
+  </g>
+  <line x1="58" y1="25" x2="58" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="58" y1="205" x2="450" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <rect x="85"  y="111" width="46" height="94"  fill="var(--amb)" fill-opacity="0.18" stroke="var(--amb)" stroke-width="1.4"/>
+  <rect x="182" y="70"  width="46" height="135" fill="var(--amb)" fill-opacity="0.18" stroke="var(--amb)" stroke-width="1.4"/>
+  <rect x="280" y="119" width="46" height="86"  fill="var(--secondary)" fill-opacity="0.2" stroke="var(--secondary)" stroke-width="1.6"/>
+  <rect x="377" y="79"  width="46" height="126" fill="none" stroke="var(--gray)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <g font-size="11" text-anchor="middle">
+    <text x="108" y="107" fill="var(--amb)">26 cm</text>
+    <text x="205" y="66"  fill="var(--amb)">37.5 cm</text>
+    <text x="303" y="115" fill="var(--secondary)">24 cm</text>
+    <text x="400" y="120" fill="var(--gray)">████</text>
+  </g>
+  <g font-size="10" text-anchor="middle" fill="var(--gray)">
+    <text x="108" y="185">78 %</text>
+    <text x="205" y="185">12 %</text>
+    <text x="303" y="185">8 %</text>
+    <text x="400" y="150">2 %</text>
+  </g>
+  <text x="400" y="99" fill="var(--gray)" font-size="9" text-anchor="middle">sin dato</text>
+  <g fill="var(--gray)" font-size="11" text-anchor="middle">
+    <text x="108" y="219">Obrera</text>
+    <text x="205" y="219">Guardia</text>
+    <text x="303" y="219">Centinela</text>
+    <text x="400" y="219">Reina</text>
+  </g>
+  <g fill="var(--gray)" font-size="10" text-anchor="end">
+    <text x="52" y="209">0</text>
+    <text x="52" y="173">10</text>
+    <text x="52" y="137">20</text>
+    <text x="52" y="101">30</text>
+    <text x="52" y="65">40</text>
+    <text x="52" y="29">50</text>
+  </g>
+  <text x="18" y="115" fill="var(--gray)" font-size="10" transform="rotate(-90 18 115)" text-anchor="middle">talla — punto medio (cm)</text>
+</svg>
+</div>
+<div class="chart-note">La talla no predice la letalidad: la guardia domina en masa y blindaje, pero la <span class="a">centinela</span> — la más pequeña tras la obrera y de apariencia enferma — concentra el arma química de la colonia. El eje de amenaza es el reservorio, no el tamaño.</div>
+
 <div class="entry-section-title">Secreción centinela — química <span class="badge-hilo">████-A</span> <span class="badge-hilo" style="background:var(--secondary);color:var(--light)">QUÍMICA</span></div>
 
 <div class="lab-band"><b>Suite analítica desplegada</b> — muestra única de campo (F-01) · réplicas limitadas<br>
@@ -251,6 +325,144 @@ cssclasses: [bestiario-terminal]
 <p>La <span class="a">sinergia</span> ácido + proteasa + quitinasa explica la corrosión documentada: cadáveres de <a href="/bestiario/hormiga-coordinadora">Hormiga Coordinadora</a> recuperados tras enfrentamientos presentan exoesqueleto incompleto o estructuralmente frágil, como parcialmente disuelto desde el exterior. Los mucopolisacáridos aportan la adherencia que impide la retirada limpia; los volátiles ácidos y sulfurados generan el vapor persistente sobre el charco residual. Las feromonas de alarma y reclutamiento son la base de la hipótesis de coordinación colonial (H-02).</p>
 
 <p>La fracción <span class="badge-hilo">████-A</span> eluye como pico único en HPLC pero <span class="a">no produce un espectro de masas reproducible</span>; el FTIR muestra bandas sin coincidencia de biblioteca y la RMN arroja resonancias no asignables. <span class="redact">Sin análogo en la taxonomía química pre-Emergencia</span> — la misma firma detectada en el ácido digestivo de la Araña Hidráulica. La caracterización restante permanece bajo CM-EXP-002 — Clase A.</p>
+
+<div class="entry-section-title">Feromona centinela — composición volátil <span class="badge-hilo">████-A</span> <span class="badge-hilo" style="background:var(--secondary);color:var(--light)">QUÍMICA</span></div>
+
+<div class="lab-band"><b>Perfil de espacio de cabeza (headspace)</b> — HS-SPME sobre muestra de campo (F-01) · integración GC-MS · normalizado al total volátil<br>
+<span class="instr">HS-SPME</span><span class="instr">GC-MS</span><span class="instr">GC×GC-TOF</span><span class="instr">índices de retención (Kováts)</span></div>
+
+<p>La fracción volátil es el vector semioquímico de la secreción: se dispersa al romperse el abdomen y porta las señales de alarma y reclutamiento (H-02). La composición del <span class="a">bouquet volátil</span> — distinta de la composición másica total del fluido — está dominada por una cetona de alarma (<span class="a">2-heptanona</span>) y un hidrocarburo marcador (<span class="a">undecano</span>), patrón compartido con feromonas de alarma de otros insectos sociales.</p>
+
+<div class="wrap-scroll">
+<table class="labtable">
+  <tr><th>Componente volátil</th><th>% de la fracción volátil</th><th>Rol / identificación</th></tr>
+  <tr><td>2-heptanona</td><td class="num">28.4</td><td class="conf">cetona de alarma · GC-MS · IR Kováts</td></tr>
+  <tr><td>Undecano (n-C₁₁)</td><td class="num">17.9</td><td class="conf">marcador de alarma · GC-MS</td></tr>
+  <tr><td>Ácidos carboxílicos volátiles (acético · propiónico · butírico)</td><td class="num">15.3</td><td class="conf">corrosión + olor · GC-MS</td></tr>
+  <tr><td>(E)-2-hexenal + aldehídos α,β-insaturados</td><td class="num">12.6</td><td class="conf">alarma · HS-SPME</td></tr>
+  <tr><td>Hidrocarburos cuticulares (n-alcanos C₂₃–C₂₉)</td><td class="num">9.8</td><td class="conf">reclutamiento · GC×GC-TOF</td></tr>
+  <tr><td>Dimetil disulfuro + tioles</td><td class="num">7.2</td><td class="conf">olor pútrido · GC-MS</td></tr>
+  <tr><td>2-heptanol</td><td class="num">4.6</td><td class="conf">alcohol asociado · GC-MS</td></tr>
+  <tr class="anom"><td>Fracción volátil anómala ████-A</td><td class="num">4.2</td><td class="conf">sin identificación</td></tr>
+</table>
+</div>
+
+<div class="fig-cap">FIG.3 — CROMATOGRAMA GC-MS DE LA SECRECIÓN CENTINELA · ESPACIO DE CABEZA</div>
+<div class="fiche-svg-wrap">
+<svg viewBox="0 0 480 240" width="480" height="240" xmlns="http://www.w3.org/2000/svg" font-family="var(--codeFont)" role="img" aria-label="Cromatograma GC-MS del bouquet volátil con 2-heptanona dominante y la fracción anómala destacada a 12.4 minutos">
+  <line x1="55" y1="25" x2="55" y2="195" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="55" y1="195" x2="465" y2="195" stroke="var(--gray)" stroke-width="1.2"/>
+  <g fill="none" stroke="var(--gray)" stroke-width="1.4">
+    <path d="M91 195 Q98 155 105 195"/>
+    <path d="M118 195 Q125 165 132 195"/>
+    <path d="M142 195 Q149 151 156 195"/>
+    <path d="M175 195 Q182 100 189 195"/>
+    <path d="M194 195 Q201 173 208 195"/>
+    <path d="M249 195 Q256 133 263 195"/>
+    <path d="M366 195 Q373 165 380 195"/>
+    <path d="M396 195 Q403 157 410 195"/>
+    <path d="M427 195 Q434 167 441 195"/>
+  </g>
+  <path d="M302 195 Q309 118 316 195" fill="var(--amb)" fill-opacity="0.14" stroke="var(--amb)" stroke-width="2"/>
+  <g fill="var(--gray)" font-size="9" text-anchor="middle">
+    <text x="98" y="150">ácidos</text>
+    <text x="125" y="160">DMDS</text>
+    <text x="149" y="146">hexenal</text>
+    <text x="182" y="94">2-heptanona</text>
+    <text x="201" y="168">heptanol</text>
+    <text x="256" y="128">undecano</text>
+    <text x="403" y="151">HC cuticulares</text>
+  </g>
+  <text x="309" y="112" fill="var(--amb)" font-size="10.5" text-anchor="middle">████-A</text>
+  <text x="309" y="100" fill="var(--amb)" font-size="8.5" text-anchor="middle">4.2 %</text>
+  <g fill="var(--gray)" font-size="10">
+    <text x="55" y="210" text-anchor="middle">0</text>
+    <text x="157" y="210" text-anchor="middle">5</text>
+    <text x="260" y="210" text-anchor="middle">10</text>
+    <text x="362" y="210" text-anchor="middle">15</text>
+    <text x="465" y="210" text-anchor="middle">20</text>
+    <text x="260" y="230" text-anchor="middle">tiempo de retención (min)</text>
+  </g>
+  <text x="18" y="110" fill="var(--gray)" font-size="10" transform="rotate(-90 18 110)" text-anchor="middle">abundancia (TIC)</text>
+</svg>
+</div>
+<div class="chart-note">La <span class="badge-hilo">████-A</span> eluye como pico volátil único y agudo a 12.4 min, entre el undecano y el grupo de hidrocarburos cuticulares — <span class="a">área reproducible, huella de masas que no se repite entre inyecciones</span>. Misma firma anómala que en la Araña Hidráulica.</div>
+
+<div class="entry-section-title">Respuesta dosis-colonia — modelo de Hill <span class="badge-hilo" style="background:var(--secondary);color:var(--light)">QUÍMICA</span></div>
+
+<p>La respuesta colectiva de la colonia (fracción de individuos que conmutan a conducta de alarma/reclutamiento) frente a la concentración de feromona en aire se ajusta a una <span class="a">función de Hill</span> con coeficiente n ≈ 2.4 — respuesta cooperativa, de tipo umbral, no gradual. El punto medio de activación es <b>EC50 ≈ 3.2 ng·L⁻¹</b> en aire.</p>
+
+<p class="lab-meta">θ = fracción de respuesta · C = concentración en aire (ng·L⁻¹) · EC50 = 3.2 · n = 2.4 · EC50ⁿ = 3.2²·⁴ = 16.3.</p>
+
+<div class="calc-grid">
+  <div class="calc">
+    <span class="calc-k">Sensibilidad — EC50 en base molar y volumétrica</span>
+    <div class="calc-expr">3.2 ng·L⁻¹ <span class="op">=</span> 3.2 µg·m⁻³ <span class="op">→</span> <span class="res">28 pM</span> (M=114) <span class="op">≈</span> <span class="res">0.69 ppbv</span></div>
+    <div class="calc-note">[C]<sub>molar</sub> = 3.2×10⁻⁹ g·L⁻¹ / 114 g·mol⁻¹ = 2.8×10⁻¹¹ M; ppbv = (3.2 µg·m⁻³ × 24.45)/114. Umbral sub-ppb — coherente con las antenas hipersensibles (ref. 1 de la lámina).</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Ecuación de Hill — evaluación</span>
+    <div class="calc-expr">θ <span class="op">=</span> Cⁿ <span class="op">/</span> (EC50ⁿ + Cⁿ)</div>
+    <div class="calc-expr">θ(1.6) <span class="op">=</span> 3.09/(16.3+3.09) <span class="op">=</span> <span class="res">0.16</span> &nbsp;·&nbsp; θ(3.2) <span class="op">=</span> <span class="res">0.50</span> &nbsp;·&nbsp; θ(6.4) <span class="op">=</span> 86.1/102.4 <span class="op">=</span> <span class="res">0.84</span></div>
+    <div class="calc-note">un cambio ×4 en concentración (½·EC50 → 2·EC50) lleva la respuesta de 16 % a 84 %: cooperatividad (n&gt;1). Con n=1 el mismo tramo daría solo 33 → 67 %.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Rango dinámico (10 → 90 %)</span>
+    <div class="calc-expr">C₉₀ <span class="op">/</span> C₁₀ <span class="op">=</span> 81<sup>1/n</sup> <span class="op">=</span> 81<sup>1/2.4</sup> <span class="op">=</span> <span class="res">6.2×</span></div>
+    <div class="calc-note">la colonia pasa de reposo a respuesta plena en menos de una década de concentración — conmutación de tipo interruptor, no reóstato.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Espacio activo — alcance de alarma</span>
+    <div class="calc-expr">r<sub>máx</sub> <span class="op">=</span> (3/2π)<sup>½</sup>·(M·e<sup>−3/2</sup>/C<sub>EC50</sub>)<sup>⅓</sup> <span class="op">=</span> 0.691×(3.49×10³)<sup>⅓</sup> <span class="op">=</span> <span class="res">10.5 m</span></div>
+    <div class="calc-note">bolo puntual M ≈ 50 mg de volátil, aire quieto, C<sub>EC50</sub> = 3.2×10³ ng·m⁻³. Tiempo al alcance t* = r²/6K ≈ 6 min (difusividad de remolino K ≈ 0.05 m²·s⁻¹). En espacio confinado la nube supera EC50 en ~10 m en minutos — base física de la letalidad de CM-INC-001.</div>
+  </div>
+</div>
+
+<div class="fig-cap">FIG.4 — CURVA DOSIS-RESPUESTA (HILL) · RESPUESTA DE COLONIA vs CONCENTRACIÓN</div>
+<div class="fiche-svg-wrap">
+<svg viewBox="0 0 470 250" width="470" height="250" xmlns="http://www.w3.org/2000/svg" font-family="var(--codeFont)" role="img" aria-label="Curva sigmoide de Hill: respuesta de colonia contra concentración de feromona en escala logarítmica, EC50 3.2 ng por litro en el 50 por ciento">
+  <g stroke="var(--lightgray)" stroke-width="0.8" stroke-dasharray="3 3">
+    <line x1="58" y1="25"  x2="440" y2="25"/>
+    <line x1="58" y1="115" x2="250" y2="115"/>
+  </g>
+  <line x1="250" y1="205" x2="250" y2="115" stroke="var(--lightgray)" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <line x1="58" y1="25" x2="58" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="58" y1="205" x2="440" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <path d="M58 205 L122 204 L185 195 L211 176 L224 161 L250 115 L262 92 L288 54 L300 43 L313 36 L377 26 L440 25" fill="none" stroke="var(--amb)" stroke-width="2.2"/>
+  <circle cx="250" cy="115" r="3.2" fill="var(--secondary)"/>
+  <circle cx="211" cy="176" r="2.6" fill="var(--amb)"/>
+  <circle cx="288" cy="54"  r="2.6" fill="var(--amb)"/>
+  <g fill="var(--gray)" font-size="11">
+    <text x="52" y="29"  text-anchor="end">100</text>
+    <text x="52" y="119" text-anchor="end">50</text>
+    <text x="52" y="209" text-anchor="end">0</text>
+    <text x="122" y="220" text-anchor="middle">0.32</text>
+    <text x="185" y="220" text-anchor="middle">1</text>
+    <text x="250" y="220" text-anchor="middle">3.2</text>
+    <text x="313" y="220" text-anchor="middle">10</text>
+    <text x="377" y="220" text-anchor="middle">32</text>
+    <text x="250" y="240" text-anchor="middle">concentración feromona (ng·L⁻¹, log)</text>
+  </g>
+  <text x="16" y="115" fill="var(--gray)" font-size="10" transform="rotate(-90 16 115)" text-anchor="middle">respuesta de colonia θ (%)</text>
+  <text x="258" y="112" fill="var(--secondary)" font-size="10">EC50 · 3.2</text>
+  <text x="200" y="172" fill="var(--amb)" font-size="9" text-anchor="end">16 %</text>
+  <text x="296" y="52" fill="var(--amb)" font-size="9">84 %</text>
+</svg>
+</div>
+<div class="chart-note">La pendiente pronunciada en torno a EC50 (n ≈ 2.4) convierte una diferencia pequeña de concentración en una decisión colectiva de todo-o-nada: la colonia no "sube el volumen" de forma gradual, <span class="a">conmuta</span>. Explica la sincronía observada en la inmolación múltiple.</div>
+
+<div class="entry-section-title">Anomalía de ████-A — termoestabilidad y huella</div>
+
+<div class="calc-grid">
+  <div class="calc">
+    <span class="calc-k">Fracción de Boltzmann sobre la barrera covalente (613 K)</span>
+    <div class="calc-expr">R·T <span class="op">=</span> 8.314 × 613 <span class="op">=</span> <span class="res">5.10 kJ·mol⁻¹</span></div>
+    <div class="calc-expr">f <span class="op">=</span> e<sup>−E<sub>a</sub>/RT</sup> <span class="op">=</span> e<sup>−348000/5097</sup> <span class="op">=</span> e<sup>−68.3</sup> <span class="op">≈</span> <span class="res">2 × 10⁻³⁰</span></div>
+    <div class="calc-note">a 340 °C (613 K) la fracción de enlaces C–C con energía suficiente para romperse es despreciable — pero ninguna proteína conserva estructura funcional &gt; 60 °C por desplegamiento no covalente. ████-A no degrada ni se desnaturaliza: no encaja en el marco molecular.</div>
+  </div>
+</div>
+
+<p>La anomalía se comporta como dato medible y a la vez irreproducible: <span class="a">área cromatográfica constante</span> (4.2 % ± 0.3 de la fracción volátil), estabilidad térmica &gt; 340 °C y respuesta óptica no nula, frente a una <span class="a">huella de masas que nunca se repite</span> entre inyecciones. Se conserva lo que <em>hace</em>; se pierde lo que <em>es</em>. La misma firma ████-A aparece en el ácido digestivo de la <a href="/bestiario/arana-hidraulica" class="bestiario-ref">Araña Hidráulica</a>. La caracterización restante permanece bajo CM-EXP-002 — Clase A. <span class="redact">Marcador ████-A presente en otras entradas del bestiario.</span></p>
 
 <div class="entry-section-title">Aparato glandular y estructuras</div>
 

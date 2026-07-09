@@ -255,6 +255,127 @@ cssclasses: [bestiario-terminal]
 
 <p>La fracción <span class="badge-hilo">████-A</span> eluye como pico único en HPLC pero <span class="a">no produce un espectro de masas reproducible</span>; el FTIR muestra bandas sin coincidencia de biblioteca y la termogravimetría revela que el residuo <span class="redact">no se degrada por debajo de 300 °C</span> — incongruente con cualquier lípido o proteína conocida. Es esta persistencia térmica la que mantiene "calientes" los túneles residuales más tiempo del previsto, contradiciendo el modelo de disipación de riesgo. La caracterización restante permanece bajo <b>GA-EXP-002</b> — Clase A.</p>
 
+<div class="entry-section-title">Cinética de degradación de bitumen <span class="badge-hilo" style="background:var(--secondary);color:var(--light)">QUÍMICA</span></div>
+
+<p class="lab-meta">Ensayo gravimétrico sobre dos sustratos: cupón de <b>bitumen puro</b> humectado con el fluido a 41 °C (punto de ablandamiento de la secreción) y cupón de <b>mezcla asfáltica</b> completa (bitumen + árido mineral). La pérdida de masa se ajusta a un decaimiento de primer orden, m(t) = m₀·e<sup>−kt</sup>.</p>
+
+<div class="calc-grid">
+  <div class="calc">
+    <span class="calc-k">Constante de degradación — bitumen puro (1.er orden)</span>
+    <div class="calc-expr">k <span class="op">=</span> −ln(0.70) <span class="op">/</span> 3 h <span class="op">=</span> 0.3567 <span class="op">/</span> 3 <span class="op">=</span> <span class="res">0.119 h⁻¹</span></div>
+    <div class="calc-note">del cupón de bitumen: queda fracción 0.70 tras 3 h — consistente con la "emulsión visible &lt; 3 h" del ensayo de campo.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Vida media del bitumen</span>
+    <div class="calc-expr">t<sub>½</sub> <span class="op">=</span> ln2 <span class="op">/</span> k <span class="op">=</span> 0.6931 <span class="op">/</span> 0.119 <span class="op">=</span> <span class="res">5.8 h</span></div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Constante sobre la mezcla asfáltica completa</span>
+    <div class="calc-expr">k′ <span class="op">=</span> −ln(0.86) <span class="op">/</span> 24 h <span class="op">=</span> <span class="res">6.28 × 10⁻³ h⁻¹</span> &nbsp;→&nbsp; t<sub>½</sub> <span class="op">≈</span> <span class="res">110 h</span></div>
+    <div class="calc-note">del −14 % de masa en 24 h. El árido ralentiza la degradación ×19 frente al bitumen puro: la <span class="a">matriz mineral es la etapa limitante</span>, no la química orgánica. Por eso una vialidad tarda días en fallar mientras el bitumen se emulsiona en horas.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Reducción de tensión superficial (biotensioactivo)</span>
+    <div class="calc-expr">Δγ <span class="op">=</span> γ<sub>agua</sub> − γ<sub>fluido</sub> <span class="op">=</span> 72.8 − 28 <span class="op">=</span> <span class="res">44.8 mN·m⁻¹</span> <span class="op">(</span><span class="res">−61.5 %</span><span class="op">)</span></div>
+    <div class="calc-note">a 28 mN·m⁻¹ el fluido queda por debajo de la meseta de un ramnolípido de referencia (~30–32 mN·m⁻¹): humecta y emulsiona el bitumen <em>antes</em> de que actúen las oxidasas.</div>
+  </div>
+</div>
+
+<div class="wrap-scroll">
+<table class="labtable">
+  <tr><th>Componente</th><th>Papel cinético en la degradación</th><th>Parámetro medido</th></tr>
+  <tr><td class="k">Biotensioactivos / emulsificantes</td><td>bajan la tensión interfacial y dispersan el bitumen en microgotas</td><td class="conf">γ → 28 mN·m⁻¹</td></tr>
+  <tr><td class="k">Oxidasas (alcano-monooxigenasa-símil)</td><td>rompen cadenas de hidrocarburo saturado expuestas por la emulsión</td><td class="conf">etapa de mayor k sobre bitumen</td></tr>
+  <tr><td class="k">Ácidos húmicos / orgánicos</td><td>desmineralizan y disgregan la matriz de árido</td><td class="conf">quelación Ca²⁺/Fe³⁺</td></tr>
+  <tr><td class="k">Quelantes</td><td>secuestran cationes estructurales del árido</td><td class="conf">−[Ca²⁺] diferencial</td></tr>
+  <tr class="anom"><td>Fracción ████-A</td><td>sin efecto medible sobre k — no acelera ni inhibe la reacción</td><td>persiste íntegra tras la digestión</td></tr>
+</table>
+</div>
+
+<div class="fig-cap">FIG.2 — CURVA DE DEGRADACIÓN DE BITUMEN · GRAVIMETRÍA (1.er ORDEN)</div>
+<div class="fiche-svg-wrap">
+<svg viewBox="0 0 480 250" width="480" height="250" xmlns="http://www.w3.org/2000/svg" font-family="var(--codeFont)" role="img" aria-label="Curva de degradación de bitumen: masa restante contra tiempo, decaimiento de primer orden, vida media 5.8 horas">
+  <line x1="58" y1="79"  x2="455" y2="79"  stroke="var(--lightgray)" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <line x1="58" y1="115" x2="455" y2="115" stroke="var(--lightgray)" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <line x1="154" y1="25" x2="154" y2="205" stroke="var(--secondary)" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <line x1="58" y1="25" x2="58" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="58" y1="205" x2="455" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <path d="M58 25 C88 63 122 96 154 115 C210 148 270 172 320 182 C370 190 415 193 455 195" fill="none" stroke="var(--amb)" stroke-width="2.2"/>
+  <circle cx="108" cy="79" r="3" fill="var(--amb)"/>
+  <circle cx="154" cy="115" r="3" fill="var(--secondary)"/>
+  <g fill="var(--gray)" font-size="11">
+    <text x="52" y="29"  text-anchor="end">100</text>
+    <text x="52" y="83"  text-anchor="end">70</text>
+    <text x="52" y="119" text-anchor="end">50</text>
+    <text x="52" y="209" text-anchor="end">0</text>
+    <text x="58"  y="221" text-anchor="middle">0</text>
+    <text x="157" y="221" text-anchor="middle">6</text>
+    <text x="256" y="221" text-anchor="middle">12</text>
+    <text x="356" y="221" text-anchor="middle">18</text>
+    <text x="455" y="221" text-anchor="middle">24</text>
+    <text x="256" y="242" text-anchor="middle">tiempo (h)</text>
+  </g>
+  <text x="18" y="115" fill="var(--gray)" font-size="11" transform="rotate(-90 18 115)" text-anchor="middle">masa restante (%)</text>
+  <text x="112" y="73" fill="var(--amb)" font-size="10">70 % · 3 h</text>
+  <text x="160" y="110" fill="var(--secondary)" font-size="10">t½ ≈ 5.8 h</text>
+</svg>
+</div>
+<div class="chart-note">El bitumen puro sigue un decaimiento de primer orden limpio (t½ ≈ 5.8 h); la mezcla asfáltica completa decae ×19 más lento porque el árido mineral, que el fluido no ataca, sostiene la estructura hasta que la mina la peristalsis. La <span class="a">impredecibilidad</span> del colapso es esta doble cinética.</div>
+
+<div class="entry-section-title">Perfil cromatográfico del fluido digestivo</div>
+<div class="fig-cap">FIG.3 — CROMATOGRAMA UV (280 nm) · FRACCIONAMIENTO DEL FLUIDO</div>
+<div class="fiche-svg-wrap">
+<svg viewBox="0 0 480 240" width="480" height="240" xmlns="http://www.w3.org/2000/svg" font-family="var(--codeFont)" role="img" aria-label="Cromatograma HPLC del fluido digestivo del Gusano de Asfalto con la fracción anómala destacada">
+  <line x1="55" y1="25" x2="55" y2="195" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="55" y1="195" x2="465" y2="195" stroke="var(--gray)" stroke-width="1.2"/>
+  <g fill="none" stroke="var(--gray)" stroke-width="1.4">
+    <path d="M70 195 Q84 108 98 195"/>
+    <path d="M137 195 Q149 138 161 195"/>
+    <path d="M207 195 Q219 150 231 195"/>
+    <path d="M245 195 Q257 160 269 195"/>
+    <path d="M289 195 Q301 166 313 195"/>
+    <path d="M330 195 Q342 177 354 195"/>
+  </g>
+  <path d="M408 195 Q418 138 428 195" fill="var(--amb)" fill-opacity="0.14" stroke="var(--amb)" stroke-width="2"/>
+  <g fill="var(--gray)" font-size="9.5" text-anchor="middle">
+    <text x="84" y="102">matriz</text>
+    <text x="149" y="132">biotensioact.</text>
+    <text x="219" y="144">ác. húmicos</text>
+    <text x="257" y="154">oxidasas</text>
+    <text x="301" y="160">hidrolasas</text>
+    <text x="342" y="171">quelantes</text>
+  </g>
+  <text x="418" y="132" fill="var(--amb)" font-size="10.5" text-anchor="middle">████-A</text>
+  <text x="418" y="120" fill="var(--amb)" font-size="8.5" text-anchor="middle">4.4 %</text>
+  <g fill="var(--gray)" font-size="10">
+    <text x="55"  y="210" text-anchor="middle">0</text>
+    <text x="172" y="210" text-anchor="middle">4</text>
+    <text x="289" y="210" text-anchor="middle">8</text>
+    <text x="406" y="210" text-anchor="middle">12</text>
+    <text x="260" y="230" text-anchor="middle">tiempo de retención (min)</text>
+  </g>
+  <text x="18" y="110" fill="var(--gray)" font-size="10" transform="rotate(-90 18 110)" text-anchor="middle">señal UV (mAU)</text>
+</svg>
+</div>
+<div class="chart-note">La fracción <span class="badge-hilo">████-A</span> eluye tardía, como pico único, agudo y de área reproducible (4.4 % ± 0.2) — <span class="a">pero su huella de masas no se repite entre inyecciones</span>. Área constante, identidad variable: el mismo comportamiento que documenta la <a href="/bestiario/arana-hidraulica">Araña Hidráulica</a> en su propio ████-A.</div>
+
+<div class="entry-section-title">Anomalía térmica de <span class="badge-hilo">████-A</span></div>
+
+<div class="calc-grid">
+  <div class="calc">
+    <span class="calc-k">Energía térmica disponible vs. enlace covalente</span>
+    <div class="calc-expr">R·T <span class="op">(573 K)</span> <span class="op">=</span> 8.314 × 573 <span class="op">=</span> <span class="res">4.76 kJ·mol⁻¹</span> &nbsp;≪&nbsp; E<sub>enlace C–C</sub> ≈ <span class="res">348 kJ·mol⁻¹</span></div>
+    <div class="calc-note">a 300 °C (573 K) la energía térmica es ~73× menor que un enlace C–C. Un sólido covalente estable no se degradaría — pero <em>toda</em> proteína o lípido catalogado sí lo hace por sus enlaces de cadena débiles; ████-A no.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Fracción de moléculas sobre la barrera (Boltzmann)</span>
+    <div class="calc-expr">e<sup>−E/RT</sup> <span class="op">=</span> e<sup>−348000/4764</sup> <span class="op">=</span> e<sup>−73.1</sup> <span class="op">≈</span> <span class="res">2 × 10⁻³²</span></div>
+    <div class="calc-note">degradación térmica por debajo del límite de detección de la TGA. Es esta persistencia la que mantiene "calientes" los túneles residuales más tiempo del que predice el modelo de disipación de GA-EXP-001.</div>
+  </div>
+</div>
+
+<p>Tratada como dato y no como misterio, la fracción <span class="badge-hilo">████-A</span> resiste el marco molecular: los polímeros biológicos catalogados (amida proteica, éster lipídico) descomponen a 200–300 °C por sus enlaces de cadena; ████-A no exhibe esos puntos de fractura y sobrevive medida tras medida. Se conserva <em>lo que hace</em> — mantener el túnel caliente — y se pierde <em>lo que es</em>: la termogravimetría no devuelve una curva de descomposición asignable ni el espectrómetro repite dos veces la misma huella. La caracterización restante permanece bajo <b>GA-EXP-002</b> — Clase A. <span class="redact">Marcador ████-A presente en otras entradas del bestiario.</span></p>
+
 <div class="entry-section-title">Locomoción peristáltica y firma acústica <span class="badge-hilo" style="background:var(--secondary);color:var(--light)">FÍSICA</span></div>
 
 <p>El animal carece de músculos extensores de apéndice — se desplaza por <span class="a">peristalsis</span>, ondas de contracción longitudinal-circular que corren de cabeza a cola sobre un hidroesqueleto celómico segmentado, ancladas al sustrato por las setae ventrales. El avance factura y comprime la costra de asfalto ablandado; la fractura de esa costra genera el crujido seco que delata al organismo.</p>
@@ -279,6 +400,58 @@ cssclasses: [bestiario-terminal]
   <tr><td class="k">Umbral de detección sísmica</td><td class="num">≈ 120 m</td><td class="conf">red F-05 · 4 nodos</td></tr>
 </table>
 </div>
+
+<div class="entry-section-title">Derivación de la firma sísmica <span class="badge-hilo" style="background:var(--secondary);color:var(--light)">FÍSICA</span></div>
+
+<p class="lab-meta">Frecuencia dominante f = 4.0 Hz (centro de la banda 3.5–4.5 Hz). Velocidades de propagación en suelo urbano compacto: onda de compresión (cuerpo) v<sub>P</sub> ≈ 2 500 m·s⁻¹, onda superficial (Rayleigh) v<sub>R</sub> ≈ 300 m·s⁻¹.</p>
+
+<div class="calc-grid">
+  <div class="calc">
+    <span class="calc-k">Longitud de onda — onda de cuerpo</span>
+    <div class="calc-expr">λ<sub>P</sub> <span class="op">=</span> v<sub>P</sub> <span class="op">/</span> f <span class="op">=</span> 2 500 m·s⁻¹ <span class="op">/</span> 4 Hz <span class="op">=</span> <span class="res">625 m</span></div>
+    <div class="calc-note">la onda de compresión "ilumina" un radio de cientos de metros: por eso 4 geófonos F-05 triangulan con umbral ≈ 120 m.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Longitud de onda — onda superficial</span>
+    <div class="calc-expr">λ<sub>R</sub> <span class="op">=</span> v<sub>R</sub> <span class="op">/</span> f <span class="op">=</span> 300 m·s⁻¹ <span class="op">/</span> 4 Hz <span class="op">=</span> <span class="res">75 m</span></div>
+    <div class="calc-note">la Rayleigh es la que agita el pavimento en superficie; su λ de decenas de metros fija la escala del patrón de grietas radiales.</div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Periodo de la firma</span>
+    <div class="calc-expr">T <span class="op">=</span> 1 <span class="op">/</span> f <span class="op">=</span> 1 <span class="op">/</span> 4 Hz <span class="op">=</span> <span class="res">0.25 s</span></div>
+  </div>
+  <div class="calc">
+    <span class="calc-k">Separación del ruido vehicular (infrasonido)</span>
+    <div class="calc-expr">f <span class="op">=</span> 4 Hz <span class="op">&lt;</span> f<sub>audible</sub> (20 Hz) <span class="op">;</span> f<sub>vehicular</sub> <span class="op">&gt;</span> 8 Hz</div>
+    <div class="calc-note">a 4 Hz la firma sísmica es <span class="a">infrasónica</span> — ningún humano la "oye". F-01 no escuchó el desplazamiento subterráneo sino el crujido aéreo (0.9–2.3 kHz); el pico de 4 Hz solo aparece con geófono, limpio del ruido de motor (&gt; 8 Hz). Lo delató una octava por encima, en el aire, antes de verlo.</div>
+  </div>
+</div>
+
+<div class="fig-cap">FIG.4 — ESPECTRO DE POTENCIA SÍSMICA · GEÓFONO (RED F-05)</div>
+<div class="fiche-svg-wrap">
+<svg viewBox="0 0 480 250" width="480" height="250" xmlns="http://www.w3.org/2000/svg" font-family="var(--codeFont)" role="img" aria-label="Espectro de potencia sísmica: densidad espectral contra frecuencia, pico dominante entre 3.5 y 4.5 Hz destacado en ámbar, banda vehicular por encima de 8 Hz">
+  <rect x="197" y="25" width="40" height="180" fill="var(--amb)" opacity="0.08"/>
+  <rect x="376" y="25" width="79" height="180" fill="var(--lightgray)" opacity="0.22"/>
+  <line x1="58" y1="25" x2="58" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <line x1="58" y1="205" x2="455" y2="205" stroke="var(--gray)" stroke-width="1.2"/>
+  <path d="M58 198 Q140 195 200 197 Q300 199 360 196 Q390 180 415 186 Q435 182 455 192" fill="none" stroke="var(--gray)" stroke-width="1.4"/>
+  <path d="M190 205 C205 205 210 45 217 40 C224 45 229 205 244 205 Z" fill="var(--amb)" fill-opacity="0.14" stroke="var(--amb)" stroke-width="2.2"/>
+  <circle cx="217" cy="40" r="3" fill="var(--amb)"/>
+  <g fill="var(--gray)" font-size="11">
+    <text x="58"  y="220" text-anchor="middle">0</text>
+    <text x="137" y="220" text-anchor="middle">2</text>
+    <text x="217" y="220" text-anchor="middle">4</text>
+    <text x="296" y="220" text-anchor="middle">6</text>
+    <text x="376" y="220" text-anchor="middle">8</text>
+    <text x="455" y="220" text-anchor="middle">10</text>
+    <text x="256" y="241" text-anchor="middle">frecuencia (Hz)</text>
+  </g>
+  <text x="20" y="115" fill="var(--gray)" font-size="11" transform="rotate(-90 20 115)" text-anchor="middle">densidad espectral (rel.)</text>
+  <text x="217" y="32" fill="var(--amb)" font-size="11" text-anchor="middle">pico 3.5–4.5 Hz</text>
+  <text x="415" y="170" fill="var(--gray)" font-size="9.5" text-anchor="middle">vehicular &gt; 8 Hz</text>
+</svg>
+</div>
+<div class="chart-note">La energía del desplazamiento se concentra en un pico único entre <b>3.5 y 4.5 Hz</b>, separado por una octava de la banda vehicular (&gt; 8 Hz). Esa banda limpia es la que permite la <span class="a">detección pasiva</span> a ~120 m sin contacto visual — el gusano se delata antes de emerger.</div>
 
 <div class="entry-section-title">Órganos y estructuras</div>
 
