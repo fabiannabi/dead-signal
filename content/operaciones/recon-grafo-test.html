@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RECON GRAFO — eventos y códec (spike)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  :root { --bg:#04100a; --ph:#4dff7a; --ph2:#2aa855; --amber:#ffc24d; --red:#ff6a55; --route:#8affc0; --chip:rgba(2,12,6,.86); }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); overflow:hidden; color:var(--ph); font-family:'Share Tech Mono',ui-monospace,monospace; }
+  #map { position:absolute; inset:0; z-index:0; filter:grayscale(1) contrast(.95) brightness(.9); }
+  #phosphor { position:absolute; inset:0; z-index:1; pointer-events:none; background:#1ee65e; mix-blend-mode:color; opacity:.16; }
+  #vig { position:absolute; inset:0; z-index:2; pointer-events:none; background:radial-gradient(130% 130% at 50% 45%, transparent 55%, rgba(1,6,3,.72) 100%); }
+  #scan { position:absolute; inset:0; z-index:3; pointer-events:none; opacity:.35; background:repeating-linear-gradient(0deg, rgba(0,0,0,.10) 0 1px, transparent 1px 3px); }
+  .leaflet-container { background:transparent; }
+
+  .hud { position:absolute; top:14px; left:14px; z-index:20; width:280px; background:var(--chip); border:1px solid var(--ph2); padding:12px 14px; text-shadow:0 0 3px #000; line-height:1.5; }
+  .hud h1 { margin:0 0 8px; font-size:13px; letter-spacing:.14em; color:var(--ph); text-transform:uppercase; }
+  .hud .sub { font-size:11px; color:var(--amber); letter-spacing:.04em; margin-bottom:10px; }
+  .hud .stat { display:flex; justify-content:space-between; font-size:12px; margin:2px 0; }
+  .hud .stat b { color:var(--ph); font-weight:400; }
+  .hud .k { color:var(--ph2); }
+  .hud .instr { margin-top:10px; padding-top:8px; border-top:1px dashed var(--ph2); font-size:11px; color:#8fd6a8; }
+  .hud .instr div { margin:3px 0; }
+  .hud .dot { display:inline-block; width:9px; height:9px; margin-right:5px; vertical-align:middle; }
+  .hud button { margin-top:10px; width:100%; background:transparent; color:var(--amber); border:1px solid var(--amber); padding:6px; font-family:inherit; font-size:11px; letter-spacing:.12em; cursor:pointer; text-transform:uppercase; }
+  .hud button:hover { background:rgba(255,194,77,.12); }
+  .ctl { margin-top:12px; padding-top:9px; border-top:1px dashed var(--ph2); }
+  .ctl label { display:flex; justify-content:space-between; font-size:11px; color:var(--ph2); letter-spacing:.04em; margin-bottom:5px; }
+  .ctl label b { color:var(--amber); font-weight:400; }
+  .ctl input[type=range] { width:100%; accent-color:var(--amber); background:transparent; cursor:pointer; }
+
+  .blip { width:14px; height:14px; margin:-7px 0 0 -7px; border-radius:50%; background:var(--amber); box-shadow:0 0 6px var(--amber), 0 0 14px var(--amber); animation:pulse 1.1s ease-in-out infinite; }
+  .contacto { width:13px; height:13px; margin:-6.5px 0 0 -6.5px; border-radius:50%; background:var(--red); box-shadow:0 0 7px var(--red), 0 0 16px var(--red); animation:pulse .9s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.6);opacity:.55} }
+
+  /* Códec */
+  #codec { position:absolute; left:50%; bottom:26px; transform:translateX(-50%) translateY(16px); z-index:25; width:min(700px,92vw); opacity:0; pointer-events:none; transition:opacity .3s, transform .3s; }
+  #codec.on { opacity:1; transform:translateX(-50%) translateY(0); }
+  .codec-inner { display:grid; grid-template-columns:92px 1fr 92px; gap:8px; align-items:stretch; }
+  .portrait { position:relative; height:92px; background:#04140b; border:1px solid #123; overflow:hidden; filter:brightness(.32) saturate(.7); transition:filter .25s; }
+  .portrait svg { position:absolute; left:50%; bottom:-8px; width:80px; transform:translateX(-50%); filter:drop-shadow(0 0 5px currentColor); opacity:.35; transition:opacity .2s; }
+  .portrait .ini { position:absolute; top:4px; right:6px; font-size:22px; color:currentColor; opacity:.28; }
+  .portrait .freq { position:absolute; bottom:1px; left:0; right:0; text-align:center; font-size:9px; letter-spacing:.1em; color:var(--ph2); }
+  .portrait::after { content:''; position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(0deg, rgba(0,0,0,.35) 0 1px, transparent 1px 3px); }
+  .portrait.talking { filter:brightness(1.08) saturate(1); border-color:var(--ph2); }
+  .portrait.talking svg { opacity:1; animation:talk .34s steps(2) infinite; }
+  @keyframes talk { 0%{transform:translateX(-50%) scaleY(1)} 100%{transform:translateX(-50%) scaleY(.9)} }
+  .codec-text { background:var(--chip); border:1px solid var(--ph2); padding:9px 13px; display:flex; flex-direction:column; justify-content:center; text-shadow:0 0 3px #000; }
+  .codec-name { font-size:11px; letter-spacing:.14em; text-transform:uppercase; margin-bottom:5px; color:var(--amber); }
+  .codec-line { font-size:15px; color:var(--ph); line-height:1.45; min-height:2.9em; }
+  .codec-cursor { color:var(--ph2); animation:blink .8s steps(1) infinite; }
+  @keyframes blink { 50%{opacity:0} }
+
+  /* Opciones de decisión */
+  #opts { position:absolute; left:50%; bottom:132px; transform:translateX(-50%); z-index:30; width:min(560px,86vw); display:none; }
+  #opts.on { display:block; }
+  .opts-timer { height:6px; background:rgba(255,255,255,.08); overflow:hidden; margin-bottom:9px; border:1px solid #123; }
+  #opts-fill { height:100%; width:100%; background:var(--amber); }
+  #opts-fill.urgente { background:var(--red); }
+  .opt { display:block; width:100%; text-align:left; margin:7px 0; background:var(--chip); border:1px solid var(--amber); color:var(--ph); padding:10px 14px; font-family:inherit; font-size:14px; letter-spacing:.02em; cursor:pointer; transition:background .1s; }
+  .opt:hover { background:rgba(255,194,77,.18); }
+  .opt b { color:var(--amber); margin-right:8px; }
+
+  /* QTE de reflejo */
+  #qte { position:absolute; inset:0; z-index:40; display:none; align-items:center; justify-content:center; pointer-events:none; }
+  #qte.on { display:flex; }
+  .qte-box { background:rgba(22,5,4,.9); border:2px solid var(--red); padding:22px 34px; text-align:center; box-shadow:0 0 34px rgba(255,106,85,.45); animation:qtepop .12s ease-out; }
+  @keyframes qtepop { from{transform:scale(.88)} to{transform:scale(1)} }
+  .qte-txt { font-size:22px; color:var(--red); letter-spacing:.1em; font-weight:bold; text-shadow:0 0 8px #000; }
+  .qte-key { margin:15px 0 13px; font-size:13px; color:var(--amber); letter-spacing:.08em; }
+  .qte-key b { display:inline-block; min-width:70px; margin-top:8px; padding:9px 16px; border:2px solid var(--amber); font-size:20px; }
+  .qte-bar { height:8px; width:260px; background:rgba(255,255,255,.08); overflow:hidden; margin:0 auto; }
+  #qte-fill { height:100%; background:var(--red); width:100%; }
+  .qte-res { margin-top:12px; font-size:14px; letter-spacing:.06em; }
+</style>
+</head>
+<body>
+
+<div id="map"></div>
+<div id="phosphor"></div>
+<div id="vig"></div>
+<div id="scan"></div>
+
+<div class="hud">
+  <h1>Recon · despacho de unidad</h1>
+  <div class="sub" id="sector">cargando grafo…</div>
+  <div class="stat"><span class="k">Unidad en</span><b id="s-pos">—</b></div>
+  <div class="stat"><span class="k">Estado</span><b id="s-estado">en espera</b></div>
+  <div class="stat"><span class="k">Distancia</span><b id="s-dist">—</b></div>
+  <div class="stat"><span class="k">Contactos</span><b id="s-cont">0</b></div>
+  <div class="instr">
+    <div><span class="dot" style="background:var(--amber)"></span>unidad · <span class="dot" style="background:var(--red)"></span>contacto</div>
+    <div style="margin-top:6px">› click en <b>calle</b>: marchan ahí</div>
+    <div>› en ruta saltan <b>reflejos</b> (tecla a tiempo) y <b>decisiones</b> a Control</div>
+  </div>
+  <div class="ctl">
+    <label>Velocidad de marcha <b><span id="vel-val">6</span> m/s</b></label>
+    <input type="range" id="vel" min="1" max="18" step="1" value="6">
+    <label style="margin-top:9px">Ritmo de radio <b id="rad-val">normal</b></label>
+    <input type="range" id="rad" min="0" max="2" step="1" value="1">
+  </div>
+  <button id="btn-reset">Reiniciar recon</button>
+</div>
+
+<div id="codec">
+  <div class="codec-inner">
+    <div class="portrait" id="port-left"></div>
+    <div class="codec-text">
+      <div class="codec-name" id="codec-name"></div>
+      <div class="codec-line" id="codec-line"></div>
+    </div>
+    <div class="portrait" id="port-right"></div>
+  </div>
+</div>
+
+<div id="opts">
+  <div class="opts-timer"><div id="opts-fill"></div></div>
+  <div id="opts-inner"></div>
+</div>
+
+<div id="qte">
+  <div class="qte-box">
+    <div class="qte-txt" id="qte-txt"></div>
+    <div class="qte-key">PULSA <b id="qte-key"></b></div>
+    <div class="qte-bar"><div id="qte-fill"></div></div>
+    <div class="qte-res" id="qte-res"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script type="module">
+import { construirGrafo, aStar, haversine } from './js/pathfinding.js';
+
+const raw = await (await fetch('../data/operaciones/recon/grafo-centro.json')).json();
+const grafo = construirGrafo(raw);
+document.getElementById('sector').textContent = raw._meta?.sector || 'sector';
+
+const map = L.map('map', { zoomControl: true, attributionControl: false }).setView([21.8810, -102.2968], 16);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19, subdomains: 'abcd' }).addTo(map);
+
+let VEL = 6;
+const REVEAL_R = 90;
+let charMs = 45, holdMs = 2200;
+const peso = (e) => e.m * (e._peligro ? 40 : 1);
+const $ = (id) => document.getElementById(id);
+
+// ── Grafo ────────────────────────────────────────────────────────────────────
+const edgeLayer = new Map();
+for (const e of raw.aristas) {
+  const a = grafo.nodos.get(e.a), b = grafo.nodos.get(e.b);
+  edgeLayer.set(e, L.polyline([[a.lat, a.lng], [b.lat, b.lng]], { color: '#2aa855', weight: 3, opacity: 0.85 }).addTo(map));
+}
+function restyleEdge(e) {
+  edgeLayer.get(e).setStyle({ color: e._peligro ? '#ff6a55' : '#2aa855', weight: e._peligro ? 5 : 3, opacity: e._peligro ? 0.95 : 0.85 });
+  if (e._peligro) edgeLayer.get(e).bringToFront();
+}
+for (const [id, p] of grafo.nodos) {
+  L.circleMarker([p.lat, p.lng], { radius: 3, color: '#4dff7a', weight: 1, fillColor: '#04100a', fillOpacity: 0.9 })
+    .addTo(map).on('click', (ev) => { L.DomEvent.stop(ev); despachar(id); });
+}
+function calleDe(id) {
+  const inc = grafo.adj.get(id);
+  const con = inc.find(x => x.arista.calle && !/^(service|footway|residential)$/.test(x.arista.calle));
+  return (con || inc[0])?.arista.calle || 'la posición';
+}
+const nodeToLatLng = (id) => { const p = grafo.nodos.get(id); return [p.lat, p.lng]; };
+
+// ── Contactos ────────────────────────────────────────────────────────────────
+const nodeIds = [...grafo.nodos.keys()];
+const entrada = nodeIds.reduce((m, id) => grafo.nodos.get(id).lng < grafo.nodos.get(m).lng ? id : m, nodeIds[0]);
+const contactos = [];
+(function sembrar(n) {
+  const usados = new Set([entrada]);
+  while (contactos.length < n) {
+    const id = nodeIds[Math.floor(Math.random() * nodeIds.length)];
+    if (usados.has(id)) continue; usados.add(id);
+    const p = grafo.nodos.get(id);
+    contactos.push({ id, lat: p.lat, lng: p.lng, revelado: false });
+  }
+})(6);
+function revelar(c) {
+  if (c.revelado) return;
+  c.revelado = true;
+  L.marker([c.lat, c.lng], { icon: L.divIcon({ className: '', html: '<div class="contacto"></div>', iconSize: [0, 0] }), interactive: false }).addTo(map);
+  for (const e of raw.aristas) {
+    const a = grafo.nodos.get(e.a), b = grafo.nodos.get(e.b);
+    if (!e._peligro && (haversine(c, a) < 55 || haversine(c, b) < 55)) { e._peligro = true; restyleEdge(e); }
+  }
+  $('s-cont').textContent = contactos.filter(x => x.revelado).length;
+}
+function revelarCercanos(lat, lng) {
+  let nuevo = null;
+  for (const c of contactos) if (!c.revelado && haversine({ lat, lng }, c) < REVEAL_R) { revelar(c); nuevo = c; }
+  return nuevo;
+}
+function revelarMasCercano() {
+  const bp = blip.getLatLng(); let best = null, md = Infinity;
+  for (const c of contactos) if (!c.revelado) { const d = haversine({ lat: bp.lat, lng: bp.lng }, c); if (d < md) { md = d; best = c; } }
+  if (best) revelar(best);
+}
+
+// ── Unidad + marcha (con pausa/reanudar para eventos) ────────────────────────
+let unidadNode = entrada, rutaLine = null, dstMark = null, marcha = null, moving = false;
+const blip = L.marker(nodeToLatLng(entrada), { icon: L.divIcon({ className: '', html: '<div class="blip"></div>', iconSize: [0, 0] }), interactive: false }).addTo(map);
+$('s-pos').textContent = calleDe(entrada);
+
+function despachar(destino) {
+  if (moving || destino === unidadNode) return;
+  if (rutaLine) map.removeLayer(rutaLine);
+  if (dstMark) map.removeLayer(dstMark);
+  const r = aStar(grafo, unidadNode, destino, { peso });
+  if (!r) return;
+  const coords = r.path.map(nodeToLatLng);
+  rutaLine = L.polyline(coords, { color: '#8affc0', weight: 4, opacity: 0.95 }).addTo(map);
+  dstMark = L.circleMarker(nodeToLatLng(destino), { radius: 6, color: '#8affc0', weight: 2, fillColor: '#8affc0', fillOpacity: 0.5 }).addTo(map);
+  $('s-estado').textContent = 'en marcha';
+  guionar(pick(TRANSITO, 3), calleDe(destino), true);
+  iniciarMarcha(coords, destino);
+}
+
+function iniciarMarcha(coords, destino) {
+  const seg = []; let total = 0;
+  for (let i = 1; i < coords.length; i++) {
+    const d = haversine({ lat: coords[i-1][0], lng: coords[i-1][1] }, { lat: coords[i][0], lng: coords[i][1] });
+    seg.push({ a: coords[i-1], b: coords[i], d, acc: total }); total += d;
+  }
+  marcha = { seg, total, destino, base: 0, t0: 0, raf: null, triggers: planearEventos(total) };
+  moving = true;
+  reanudar();
+}
+function reanudar() {
+  marcha.t0 = performance.now();
+  marcha.raf = requestAnimationFrame(tick);
+}
+function pausar(rec) {
+  marcha.base = rec;
+  if (marcha.raf) cancelAnimationFrame(marcha.raf);
+  marcha.raf = null;
+}
+function posicionar(rec) {
+  const m = marcha;
+  const s = m.seg.find(x => rec <= x.acc + x.d) || m.seg[m.seg.length - 1];
+  const f = s.d ? (rec - s.acc) / s.d : 1;
+  const lat = s.a[0] + (s.b[0]-s.a[0])*f, lng = s.a[1] + (s.b[1]-s.a[1])*f;
+  blip.setLatLng([lat, lng]);
+  $('s-dist').textContent = Math.max(0, Math.round(m.total - rec)) + ' m';
+  return revelarCercanos(lat, lng);
+}
+function tick(now) {
+  const m = marcha;
+  const rec = Math.min(m.total, m.base + (now - m.t0) / 1000 * VEL);
+  const nuevo = posicionar(rec);
+  if (nuevo) guionar(CONTACTO, calleDe(nuevo.id), true);
+  const trig = m.triggers.find(t => !t.fired && rec >= t.at);
+  if (trig) { trig.fired = true; pausar(rec); dispararEvento(trig); return; }
+  if (rec >= m.total) { moving = false; marcha.raf = null; return llegada(m.destino); }
+  m.raf = requestAnimationFrame(tick);
+}
+function llegada(destino) {
+  unidadNode = destino;
+  $('s-pos').textContent = calleDe(destino);
+  $('s-estado').textContent = 'en posición';
+  $('s-dist').textContent = '0 m';
+  const cerca = contactos.some(c => c.revelado && haversine(c, grafo.nodos.get(destino)) < 170);
+  guionar(cerca ? LLEGADA_TENSA : LLEGADA_CALMA, calleDe(destino), true);
+}
+
+// ── Eventos programados en la ruta ───────────────────────────────────────────
+function planearEventos(total) {
+  const n = total < 160 ? 1 : 2;
+  const tipos = n === 2 ? shuffle(['qte', 'decision']) : [Math.random() < 0.5 ? 'qte' : 'decision'];
+  const fracs = n === 2 ? [0.15, 0.55] : [0.2];   // temprano, para testear rápido
+  return tipos.map((tipo, i) => ({ at: total * fracs[i], tipo, fired: false }));
+}
+function dispararEvento(trig) {
+  $('s-estado').textContent = trig.tipo === 'qte' ? '¡reflejo!' : 'decisión';
+  if (trig.tipo === 'qte') mostrarQTE(pickOne(QTE), reanudar);
+  else mostrarDecision(pickOne(DECISIONES), reanudar);
+}
+
+// QTE de reflejo ─────────────────────────────────────────────────────────────
+const KEYS = [{ k: ' ', l: 'ESPACIO' }, { k: 'e', l: 'E' }, { k: 'f', l: 'F' }, { k: 'q', l: 'Q' }];
+const QTE = [
+  { txt: '¡ESCOMBRO CAYENDO!', ok: { q: 'solis', t: '¡Salté! Por poco me abre la cabeza.' }, fail: { q: 'solis', t: 'Me alcanzó el hombro. Puedo seguir.' } },
+  { txt: '¡EL PISO CEDE!', ok: { q: 'estrada', t: 'Firme. Salté al borde a tiempo.' }, fail: { q: 'estrada', t: 'Caí un metro. La rodilla, maldita sea.' } },
+  { txt: '¡CABLE TRAMPA!', ok: { q: 'lead', t: 'Alto — lo vi. Nadie se mueve.' }, fail: { q: 'lead', t: 'Sonó algo arriba. Nos oyeron.' } },
+  { txt: '¡BOLSA DE GAS!', ok: { q: 'solis', t: 'Contuve el aire. Cruzamos limpio.' }, fail: { q: 'solis', t: 'Tragué algo. Me arde la garganta.' } },
+];
+let qteResolved = false, qteKeyHandler = null, qteTimer = null;
+function mostrarQTE(ev, done) {
+  const { k, l } = KEYS[Math.floor(Math.random() * KEYS.length)];
+  const LEER = 750;      // telegrafía: tiempo para leer la tecla antes de que corra el reloj
+  const VENTANA = 2100;  // ventana de reacción visible
+  qteResolved = false;
+  $('qte-txt').textContent = ev.txt;
+  $('qte-key').textContent = l;
+  $('qte-res').textContent = '';
+  $('qte-res').style.color = 'var(--amber)';
+  const fill = $('qte-fill');
+  fill.style.transition = 'none'; fill.style.width = '100%';
+  $('qte').classList.add('on');
+  beep(920);
+  // Se acepta la tecla desde ya; la barra recién empieza a bajar tras LEER.
+  setTimeout(() => { fill.style.transition = `width ${VENTANA}ms linear`; fill.style.width = '0%'; }, LEER);
+  const resolver = (exito) => {
+    if (qteResolved) return; qteResolved = true;
+    clearTimeout(qteTimer);
+    window.removeEventListener('keydown', qteKeyHandler);
+    $('qte-res').textContent = exito ? '✓ ESQUIVADO' : '✗ IMPACTO';
+    $('qte-res').style.color = exito ? 'var(--ph)' : 'var(--red)';
+    setTimeout(() => {
+      $('qte').classList.remove('on');
+      guionar([exito ? ev.ok : ev.fail], null, true);
+      done();
+    }, 620);
+  };
+  qteKeyHandler = (e) => { const key = e.key === ' ' ? ' ' : e.key.toLowerCase(); if (key === k) { e.preventDefault(); resolver(true); } };
+  window.addEventListener('keydown', qteKeyHandler);
+  qteTimer = setTimeout(() => resolver(false), LEER + VENTANA);
+}
+
+// Decisión a Control ─────────────────────────────────────────────────────────
+const DECISIONES = [
+  { pregunta: { q: 'lead', t: 'Control, reja bloqueada. ¿Forzamos o rodeamos?' },
+    opciones: [
+      { txt: 'Forzar la reja', verdict: [{ q: 'control', t: 'Autorizado. Rápido y en silencio.' }, { q: 'estrada', t: 'Cede... listo. Adentro.' }], efecto: 'ruido' },
+      { txt: 'Rodear la manzana', verdict: [{ q: 'control', t: 'Rodeen. No quiero ruido.' }, { q: 'lead', t: 'Copiado. Perdemos tiempo pero pasamos limpio.' }], efecto: null },
+    ],
+    timeout: { verdict: [{ q: 'lead', t: 'Sin respuesta de Control. Decido yo: la forzamos.' }, { q: 'estrada', t: 'Cedió, pero sonó por todo el sector.' }], efecto: 'ruido' } },
+  { pregunta: { q: 'solis', t: 'Hay un cuerpo en el paso. ¿Lo revisamos o seguimos?' },
+    opciones: [
+      { txt: 'Revisar el cuerpo', verdict: [{ q: 'control', t: 'Revisen. Puede llevar algo útil.' }, { q: 'solis', t: '...esto no murió hace mucho. Vámonos.' }], efecto: 'contacto' },
+      { txt: 'Seguir de largo', verdict: [{ q: 'lead', t: 'Lo dejamos. Avanzamos.' }, { q: 'control', t: 'Correcto. No es la misión.' }], efecto: null },
+    ],
+    timeout: { verdict: [{ q: 'solis', t: '¿Control? ...nada. No me arriesgo, lo dejo.' }, { q: 'lead', t: 'Bien. Sigan moviéndose.' }], efecto: null } },
+  { pregunta: { q: 'estrada', t: 'Oigo algo grande tras el muro. ¿Radío posición o silencio?' },
+    opciones: [
+      { txt: 'Radiar la posición', verdict: [{ q: 'control', t: 'Recibido. Marcado en el mapa.' }, { q: 'estrada', t: 'Hecho. Que quede en registro.' }], efecto: 'marcar' },
+      { txt: 'Silencio total', verdict: [{ q: 'lead', t: 'Nadie respira. Dejen que pase.' }, { q: 'control', t: '...' }], efecto: null },
+    ],
+    timeout: { verdict: [{ q: 'estrada', t: 'Me congelé. Se acercó demasiado antes de que decidieras.' }, { q: 'control', t: 'Muévanse. YA.' }], efecto: 'marcar' } },
+];
+const VENTANA_DEC = 6000;   // ventana de respuesta (Telltale-style)
+let decKeyHandler = null, decTimer = null;
+function mostrarDecision(dec, done) {
+  guionar([dec.pregunta], null, true);
+  const cont = $('opts-inner');
+  cont.innerHTML = '';
+  dec.opciones.forEach((o, i) => {
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.innerHTML = `<b>${i + 1}</b>${o.txt}`;
+    b.addEventListener('click', () => resolver(o));
+    cont.appendChild(b);
+  });
+  $('opts').classList.add('on');
+
+  // Barra de tiempo: se vacía en VENTANA_DEC; se pone roja en el último tercio.
+  const fill = $('opts-fill');
+  fill.className = ''; fill.style.transition = 'none'; fill.style.width = '100%';
+  requestAnimationFrame(() => { fill.style.transition = `width ${VENTANA_DEC}ms linear`; fill.style.width = '0%'; });
+  const urgente = setTimeout(() => fill.classList.add('urgente'), VENTANA_DEC * 0.66);
+
+  let hecho = false;
+  const cerrar = () => { hecho = true; clearTimeout(decTimer); clearTimeout(urgente); window.removeEventListener('keydown', decKeyHandler); $('opts').classList.remove('on'); };
+  const resolver = (salida) => {
+    if (hecho) return;
+    cerrar();
+    guionar(salida.verdict, null, true);
+    if (['ruido', 'contacto', 'marcar'].includes(salida.efecto)) revelarMasCercano();
+    done();
+  };
+  decKeyHandler = (e) => { const n = parseInt(e.key, 10); if (n >= 1 && n <= dec.opciones.length) resolver(dec.opciones[n - 1]); };
+  window.addEventListener('keydown', decKeyHandler);
+  decTimer = setTimeout(() => resolver(dec.timeout), VENTANA_DEC);   // no respondiste → el silencio decide
+}
+
+// ── Códec ────────────────────────────────────────────────────────────────────
+const VOZ = {
+  lead:    { nombre: 'AGT-7 HERRERA', freq: '141.12', tint: '#ffc24d', ini: 'H', lado: 'left' },
+  solis:   { nombre: 'AGT SOLÍS',     freq: '141.30', tint: '#4dff7a', ini: 'S', lado: 'left' },
+  estrada: { nombre: 'RCL ESTRADA',   freq: '141.48', tint: '#4dff7a', ini: 'E', lado: 'left' },
+  control: { nombre: 'CENVAC CONTROL',freq: '140.85', tint: '#8affc0', ini: 'C', lado: 'right' },
+};
+const SVG_BUST = '<svg viewBox="0 0 100 100"><path fill="currentColor" d="M50 20a15 15 0 1 1-0.1 0zM20 94a30 27 0 0 1 60 0z"/></svg>';
+function pintarPortrait(el, voz, talking) {
+  el.style.color = voz.tint;
+  el.innerHTML = `${SVG_BUST}<span class="ini">${voz.ini}</span><span class="freq">${voz.freq}</span>`;
+  el.classList.toggle('talking', talking);
+}
+pintarPortrait($('port-right'), VOZ.control, false);
+let ultimoCampo = VOZ.lead;
+pintarPortrait($('port-left'), ultimoCampo, false);
+
+const TRANSITO = [
+  { q: 'solis', t: 'Sector muerto. Ni un perro.' },
+  { q: 'lead', t: 'Mantengan formación. No me gusta este silencio.' },
+  { q: 'estrada', t: 'Huele a drenaje abierto. Algo reventó una tubería.' },
+  { q: 'control', t: 'Unidad 7, sigan el corredor. No se desvíen.' },
+  { q: 'solis', t: '¿Oyeron eso? Como un raspado contra el asfalto.' },
+  { q: 'lead', t: 'Ojos abiertos. Nada es lo que parece aquí.' },
+];
+const CONTACTO = [
+  { q: 'solis', t: '¡Movimiento! A las diez, sobre {c}.' },
+  { q: 'lead', t: 'Alto. Nadie dispara. Control, ¿ven esto?' },
+  { q: 'control', t: 'Negativo desde aquí. Ustedes son mis ojos.' },
+];
+const LLEGADA_CALMA = [
+  { q: 'lead', t: 'En posición sobre {c}. Perímetro despejado.' },
+  { q: 'control', t: 'Recibido. Mantengan y reporten.' },
+];
+const LLEGADA_TENSA = [
+  { q: 'lead', t: 'En {c}. Tenemos compañía cerca. ¿Avanzo o me repliego?' },
+  { q: 'control', t: 'Aguanten. No puedo sacarlos todavía.' },
+];
+const pickOne = (a) => a[Math.floor(Math.random() * a.length)];
+function pick(a, n) { const c = [...a], o = []; while (o.length < n && c.length) o.push(c.splice(Math.floor(Math.random() * c.length), 1)[0]); return o; }
+function shuffle(a) { const c = [...a]; for (let i = c.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [c[i], c[j]] = [c[j], c[i]]; } return c; }
+
+let cola = [], playing = false, tw = null, actx = null;
+function guionar(lines, calle, reset) {
+  const m = lines.map(x => ({ q: x.q, t: x.t.replace('{c}', calle || 'la posición') }));
+  cola = reset ? m : cola.concat(m);
+  $('codec').classList.add('on');
+  if (!playing) siguiente();
+}
+function siguiente() {
+  if (!cola.length) { playing = false; return; }
+  playing = true;
+  const { q, t } = cola.shift();
+  const voz = VOZ[q];
+  if (voz.lado === 'left') { ultimoCampo = voz; pintarPortrait($('port-left'), voz, true); pintarPortrait($('port-right'), VOZ.control, false); }
+  else { pintarPortrait($('port-left'), ultimoCampo, false); pintarPortrait($('port-right'), voz, true); }
+  const nameEl = $('codec-name');
+  nameEl.textContent = voz.nombre;
+  nameEl.style.textAlign = voz.lado === 'right' ? 'right' : 'left';
+  nameEl.style.color = voz.tint;
+  beep(760);
+  escribir($('codec-line'), t, () => { apagarTalking(); setTimeout(siguiente, holdMs * (0.8 + Math.random() * 0.5)); });
+}
+function escribir(el, texto, done) {
+  clearInterval(tw); let i = 0;
+  tw = setInterval(() => {
+    el.innerHTML = texto.slice(0, ++i) + '<span class="codec-cursor">▍</span>';
+    if (i >= texto.length) { clearInterval(tw); el.textContent = texto; done(); }
+  }, charMs);
+}
+function apagarTalking() { $('port-left').classList.remove('talking'); $('port-right').classList.remove('talking'); }
+function beep(freq) {
+  try {
+    actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+    const o = actx.createOscillator(), g = actx.createGain();
+    o.type = 'sine'; o.frequency.value = freq; g.gain.value = 0.03;
+    o.connect(g); g.connect(actx.destination); o.start(); o.stop(actx.currentTime + 0.05);
+  } catch { /* audio bloqueado hasta gesto */ }
+}
+
+// ── Controles ────────────────────────────────────────────────────────────────
+$('vel').addEventListener('input', (e) => { VEL = +e.target.value; $('vel-val').textContent = VEL; });
+$('rad').addEventListener('input', (e) => {
+  const p = [{ c: 62, h: 3200, n: 'lento' }, { c: 45, h: 2200, n: 'normal' }, { c: 30, h: 1400, n: 'rápido' }][+e.target.value];
+  charMs = p.c; holdMs = p.h; $('rad-val').textContent = p.n;
+});
+$('btn-reset').addEventListener('click', () => location.reload());
+</script>
+</body>
+</html>
