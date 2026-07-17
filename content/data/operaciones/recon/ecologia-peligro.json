@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "descripcion": "Modelo de peligro por criatura × hora × feature de terreno (§1.5). El peso del pathfinding se DERIVA de aquí, no se pinta a mano. peligro.js lo aplica sobre las aristas del grafo del sector.",
+    "escala_peligro": "0 = sin riesgo · ~0.5 riesgo moderado · ~0.9 mortal. Es un factor: peso_arista = distancia_m × (1 + Σ peligro de criaturas activas).",
+    "horas": "Bandas [inicio, fin) en horas 0–24. Soportan cruce de medianoche (inicio > fin).",
+    "features_de_arista": "clase = tipo de calle OSM · mercado = corredor avenida–mercado · rejilla = coladera/drenaje (pendiente de tag en el grafo).",
+    "nota_canon": "Las bandas horarias no explícitas en el bestiario van marcadas [PROPUESTA — REQUIERE APROBACIÓN]."
+  },
+  "reglas": {
+    "gusano_de_asfalto": {
+      "nombre": "Gusano de Asfalto",
+      "horas": [[11, 15]],
+      "aplica": { "clase": ["primary", "secondary", "tertiary", "residential", "living_street", "unclassified", "service", "secondary_link", "primary_link", "tertiary_link"] },
+      "peligro": 0.85,
+      "canon": "Actividad diurna ligada a la temperatura del asfalto (11:00–15:00); la misma calle es segura de noche.",
+      "fuente": "bestiario/gusano-de-asfalto"
+    },
+    "arana_hidraulica": {
+      "nombre": "Araña Hidráulica",
+      "horas": [[0, 24]],
+      "aplica": { "feature": "rejilla" },
+      "peligro": 0.9,
+      "canon": "Actividad permanente, sin ciclo diurno/nocturno. Usa coladeras/rejillas como red de tránsito y emboscada.",
+      "fuente": "bestiario/arana-hidraulica",
+      "pendiente_datos": "El grafo aún no marca aristas 'rejilla' → esta regla no tiene efecto todavía. Falta tag de drenaje/coladeras en el sector."
+    },
+    "chacal_de_feria": {
+      "nombre": "Chacal de Feria",
+      "horas": [[18, 23]],
+      "aplica": { "feature": "mercado", "clase": ["primary", "secondary", "tertiary", "secondary_link", "primary_link"] },
+      "peligro": 0.7,
+      "canon": "Corredor avenida–mercado; centinela en posición elevada.",
+      "fuente": "bestiario/chacal-de-feria",
+      "propuesta_horaria": "Franja 18:00–23:00 [PROPUESTA DE CANON — REQUIERE APROBACIÓN]: el bestiario da el corredor pero no una hora explícita."
+    }
+  }
+}
