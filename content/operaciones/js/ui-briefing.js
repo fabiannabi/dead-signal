@@ -1,60 +1,17 @@
 import { cargarRosterBase, getSession, setSession, cargarGramatica } from './main.js';
 import { perfilCompleto } from './roster-store.js';
 
-// Orden y etiqueta larga de capacidades (mockup Opción B v2).
-const STATS_ORDEN = [
-  { key: 'físico',    label: 'Físico'    },
-  { key: 'técnico',   label: 'Técnico'   },
-  { key: 'biológico', label: 'Biológico' },
-  { key: 'sigilo',    label: 'Sigilo'    },
-  { key: 'mental',    label: 'Mental'    },
-  { key: 'liderazgo', label: 'Liderazgo' },
-];
+// Orden de capacidades — se usa solo para el ajuste de protocolo (fallback sin clave).
+const STATS_ORDEN = ['físico', 'técnico', 'biológico', 'sigilo', 'mental', 'liderazgo'];
 
-// Abreviaturas para el efecto mecánico mostrado en los chips de rasgo.
-const STAT_ABBR = { 'físico': 'fís', 'técnico': 'téc', 'biológico': 'bio', 'sigilo': 'sig', 'mental': 'men', 'liderazgo': 'lid' };
-const ESTADO_LABEL = {
-  estamina_max: 'estam. máx', cordura_max: 'cord. máx',
-  cordura_equipo_en_encuentro: 'cord. equipo',
-};
-const CAP = (s) => s.charAt(0).toUpperCase() + s.slice(1);
-
-let agentes = [];
-let perfiles = {};       // id → perfil persistente
-let nombres = {};        // id → nombre corto (vínculos)
+let agentes = [];        // roster base desplegable (sin bajas)
+let perfiles = {};       // id → perfil persistente (cordura del cuartel)
 let claveStats = [];     // capacidades clave de la misión (creature-tags)
-let seleccionados = [];
-let liderId = null;
+let seleccionados = [];  // unidad ASIGNADA por el sistema (no seleccionada por el jugador)
+let liderId = null;      // líder ASIGNADO
 
+// Disponible/desplegable: fuera del cuartel por baja o recuperación no cuenta.
 const seleccionable = (id) => perfiles[id] && perfiles[id].estado !== 'recuperacion';
-
-// ── Formato del efecto mecánico de un rasgo (derivado de sus modificadores) ──
-function sgn(n) { return (n > 0 ? '+' : '−') + Math.abs(n); }
-function efectoDe(rasgo) {
-  const parts = [];
-  for (const [k, v] of Object.entries(rasgo.modificadores_stat || {})) {
-    if (typeof v !== 'number' || v === 0) continue;
-    const m = k.match(/^(.+?)_(?:contra|en)_(.+)$/);   // p.ej. técnico_contra_arana_hidraulica
-    if (m) {
-      const ab = STAT_ABBR[m[1]] || m[1];
-      parts.push(`${sgn(v)} ${ab} vs ${m[2].replace(/_/g, ' ').replace(/arana/g, 'araña')}`);
-    } else {
-      parts.push(`${sgn(v)} ${STAT_ABBR[k] || k}`);
-    }
-  }
-  for (const [k, v] of Object.entries(rasgo.modificadores_estado || {})) {
-    if (typeof v !== 'number' || v === 0) continue;   // valores de texto → solo narrativos
-    parts.push(`${sgn(v)} ${ESTADO_LABEL[k] || k.replace(/_/g, ' ')}`);
-  }
-  return parts.join(' · ');
-}
-
-// ── Texto de perfil (mejores dos capacidades / la más floja) ──
-function perfilTexto(stats) {
-  const ord = Object.entries(stats).sort((a, b) => b[1] - a[1]);
-  if (ord.length < 2) return '';
-  return `Destaca en <b>${ord[0][0]}</b> y <b>${ord[1][0]}</b>; flojo en ${ord[ord.length - 1][0]}.`;
-}
 
 async function init() {
   const evento = getSession('op_evento');
@@ -66,169 +23,88 @@ async function init() {
   document.getElementById('mc-ubic').textContent  = evento.ubicacion_descrita.slice(0, 60) + '…';
   document.getElementById('mc-nivel').textContent = `AMENAZA ${evento.nivel_amenaza_estimado}`;
 
-  // Capacidades clave de la misión = stats que la criatura chequea (aproximación / búsqueda / acción).
+  // Capacidades clave de la misión = stats que la criatura chequea. Definen el
+  // ajuste de protocolo con que el sistema arma la unidad (no visible al jugador).
   try {
     const g = await cargarGramatica();
     const ct = g.creatureTags[evento.criatura_sospechada];
     if (ct) {
       claveStats = [...new Set([ct.stat_aproximacion, ct.stat_busqueda, ct.stat_accion].filter(Boolean))];
     }
-  } catch { /* sin gramática → sin resalte de clave */ }
+  } catch { /* sin gramática → ajuste por competencia general */ }
   document.getElementById('mc-perfil').textContent = claveStats.length ? claveStats.join(' · ') : 'estándar';
 
   const { base } = await cargarRosterBase();
-  nombres = Object.fromEntries(base.map(a => [a.id, a.nombre_completo.split(' ')[0]]));
   perfiles = Object.fromEntries(base.map(a => [a.id, perfilCompleto(a)]));
   agentes = base.filter(a => perfiles[a.id].estado !== 'baja');
 
-  renderRoster();
+  autoEnsamblar();
+  renderUnidad();
 }
 
-function chipsHTML(rasgos, pol) {
-  const arr = rasgos.filter(r => (r.polaridad || '+') === pol);
-  if (!arr.length) return '';
-  const cls = pol === '+' ? 'pos' : 'neg';
-  const sign = pol === '+' ? '+' : '−';
-  const chips = arr.map(r => {
-    const ef = efectoDe(r);
-    return `<span class="rchip ${cls}"><span class="sign">${sign}</span>${r.nombre}${ef ? `<span class="ef">${ef}</span>` : ''}</span>`;
+// ── Auto-armado de la unidad (§1.1) ─────────────────────────────────────────
+// El jugador es despachador: NO elige a dedo. La institución asigna por
+// disponibilidad y ajuste de protocolo (las capacidades que la misión chequea).
+// Determinista: mismo evento + mismo roster ⇒ misma unidad. No escogiste al que
+// mandas, y no ves su expediente hasta que el reporte vuelve: por eso la baja pega.
+const TAM_UNIDAD = 3;
+
+function ajusteProtocolo(a) {
+  const keys = claveStats.length ? claveStats : STATS_ORDEN;
+  return keys.reduce((s, k) => s + (a.stats[k] || 0), 0);
+}
+
+function autoEnsamblar() {
+  const disponibles = agentes.filter(a => seleccionable(a.id));
+  // Orden estable: mejor ajuste de protocolo, desempate por capacidad pico, luego id.
+  const ordenados = [...disponibles].sort((x, y) =>
+    ajusteProtocolo(y) - ajusteProtocolo(x)
+    || Math.max(...Object.values(y.stats)) - Math.max(...Object.values(x.stats))
+    || x.id.localeCompare(y.id));
+  const equipo = ordenados.slice(0, TAM_UNIDAD);
+  seleccionados = equipo.map(a => a.id);
+  // Líder = mayor liderazgo de la unidad asignada; desempate por ajuste, luego id.
+  liderId = equipo.slice().sort((x, y) =>
+    (y.stats.liderazgo || 0) - (x.stats.liderazgo || 0)
+    || ajusteProtocolo(y) - ajusteProtocolo(x)
+    || x.id.localeCompare(y.id))[0]?.id || null;
+}
+
+// ── Identidad mínima: designación + nombres/rango, nada más ─────────────────
+// El expediente (traits, condición, qué les pasó) se abre en el cierre. Aquí
+// solo lo suficiente para que te importen cuando no vuelvan.
+function renderUnidad() {
+  const lista = document.getElementById('unidad-lista');
+  const hint  = document.getElementById('sel-hint');
+  const btn   = document.getElementById('btn-iniciar');
+  const bm    = document.getElementById('btn-movil');
+  const ah    = document.getElementById('actions-hint');
+
+  const unidad = seleccionados.map(id => agentes.find(a => a.id === id));
+
+  if (!unidad.length) {
+    lista.innerHTML = '<div class="unidad-vacia">Sin personal desplegable — roster agotado.</div>';
+    hint.textContent = 'Sin unidad disponible';
+    btn.disabled = true; if (bm) bm.disabled = true;
+    ah.textContent = 'No hay agentes para asignar';
+    return;
+  }
+
+  lista.innerHTML = unidad.map(a => {
+    const esLider = a.id === liderId;
+    const apellidos = a.nombre_completo.split(' ').slice(1).join(' ') || a.nombre_completo;
+    const pill = esLider ? '<span class="u-lead">★ LÍDER</span>' : '';
+    return `<div class="unidad-row${esLider ? ' lead' : ''}">
+      <span class="u-rank">${a.rango_abreviatura}</span>
+      <span class="u-name">${apellidos}</span>
+      ${pill}
+    </div>`;
   }).join('');
-  return `<div class="rgroup ${cls}"><span class="rlbl">${pol === '+' ? 'Ventajas' : 'Limitaciones'}</span><div class="rchips">${chips}</div></div>`;
-}
 
-function renderRoster() {
-  const grid = document.getElementById('roster-grid');
-  grid.innerHTML = '';
-
-  agentes.forEach(a => {
-    const p = perfiles[a.id];
-    const card = document.createElement('div');
-    card.className = 'agent-card';
-    card.dataset.id = a.id;
-
-    const isSelected = seleccionados.includes(a.id);
-    const isLider = a.id === liderId;
-    const enRecup = p.estado === 'recuperacion';
-    if (isSelected)  card.classList.add('selected');
-    if (isLider)     card.classList.add('leader');
-    if (a.es_nombrado) card.classList.add('nombrado');
-    if (enRecup)     card.classList.add('recuperacion');
-    if (p.estado === 'herida') card.classList.add('afectada');
-
-    const maxStat = Math.max(...Object.values(a.stats));
-    const cordPct = Math.round((p.cordura / p.cordura_max) * 100);
-    const corCls = cordPct < 30 ? 'crit' : cordPct < 60 ? 'low' : '';
-
-    // Vínculo no disponible si el par está en recuperación.
-    const parRecup = p.vinculo && perfiles[p.vinculo.otro] && perfiles[p.vinculo.otro].estado === 'recuperacion';
-    const vincNota = parRecup ? `<div class="agent-vinculo-na">vínculo ↔ ${nombres[p.vinculo.otro]} no disponible</div>` : '';
-
-    const estadoTag = enRecup ? `<span class="estado-pill recuperacion">RECUPERACIÓN · ${p.recuperacion_ops} ops</span>`
-      : p.estado === 'herida' ? `<span class="estado-pill herida">AFECTADA</span>` : '';
-
-    const ident = (a.es_nombrado && a.identificado !== false) ? '<span class="agent-named-badge">IDENT</span>' : '';
-    const selPill = isLider ? '<span class="sel-pill lead">★ LÍDER</span>'
-      : isSelected ? '<span class="sel-pill">● EN EQUIPO</span>' : '';
-
-    const filas = STATS_ORDEN.map(s => {
-      const v = a.stats[s.key] || 0;
-      const esClave = claveStats.includes(s.key);
-      const esTop = v === maxStat;
-      return `<div class="srow${esClave ? ' clave' : ''}${esTop ? ' top' : ''}">
-        <span class="slbl">${s.label}</span>
-        <div class="track"><div class="fill" style="width:${v * 10}%"></div></div>
-        <span class="snum">${v}</span></div>`;
-    }).join('');
-
-    const claveLbl = claveStats.length ? `clave: ${claveStats.map(CAP).join(' · ')}` : 'sin clave definida';
-
-    card.innerHTML = `
-      <div class="agent-card-header">
-        <span class="agent-rank">${a.rango_abreviatura}</span>
-        <span class="agent-name">${a.nombre_completo}${ident}</span>
-        ${selPill}
-        ${estadoTag}
-      </div>
-      <div class="agent-rol">${a.nombre_rol} — ${p.ops} op${p.ops !== 1 ? 's' : ''} · cordura ${cordPct}%</div>
-      <div class="bar-row"><span class="bar-lbl">COR</span><div class="bar-track"><div class="bar-fill mind ${corCls}" style="width:${cordPct}%"></div></div></div>
-      <div class="cap-block">
-        <div class="cap-head"><span>Capacidades · 0–10</span><span class="cap-clave">${claveLbl}</span></div>
-        ${filas}
-      </div>
-      <div class="agent-perfil">Perfil: ${perfilTexto(a.stats)}</div>
-      <div class="rasgos">${chipsHTML(a.rasgos, '+')}${chipsHTML(a.rasgos, '-')}</div>
-      ${vincNota}
-    `;
-
-    card.addEventListener('click', () => handleCardClick(a.id));
-    grid.appendChild(card);
-  });
-
-  updateSelectionUI();
-}
-
-function handleCardClick(id) {
-  if (!seleccionable(id)) return;   // en recuperación: no desplegable
-  if (seleccionados.includes(id)) {
-    if (id === liderId) {
-      // deselect leader → remove and reassign leader
-      seleccionados = seleccionados.filter(x => x !== id);
-      liderId = seleccionados[0] || null;
-    } else {
-      // promote to leader
-      liderId = id;
-    }
-  } else {
-    if (seleccionados.length >= 3) return;
-    seleccionados.push(id);
-    if (!liderId) liderId = id;
-  }
-  renderRoster();
-}
-
-function updateSelectionUI() {
-  const slots = document.querySelectorAll('.slot');
-  slots.forEach((sl, i) => {
-    if (i < seleccionados.length) {
-      sl.classList.add('filled');
-      sl.textContent = i + 1;
-    } else {
-      sl.classList.remove('filled');
-      sl.textContent = i + 1;
-    }
-  });
-
-  const hint = document.getElementById('sel-hint');
-  const btn  = document.getElementById('btn-iniciar');
-  const ah   = document.getElementById('actions-hint');
-
-  const yieldEl = document.getElementById('briefing-yield');
-
-  if (seleccionados.length === 0) {
-    hint.textContent = 'Ningún agente seleccionado';
-    btn.disabled = true;
-    const bm0 = document.getElementById('btn-movil'); if (bm0) bm0.disabled = true;
-    ah.textContent = 'Selecciona al menos un agente';
-    if (yieldEl) yieldEl.textContent = '';
-  } else {
-    const lider = agentes.find(a => a.id === liderId);
-    hint.textContent = `${seleccionados.length} agente${seleccionados.length > 1 ? 's' : ''} · Líder: ${lider?.nombre_completo || '—'}`;
-    btn.disabled = false;
-    const bm = document.getElementById('btn-movil'); if (bm) bm.disabled = false;
-    ah.textContent = seleccionados.length < 3 ? 'Puedes añadir más agentes' : 'Equipo completo';
-
-    // Yield proyectado: potencia media del equipo. Cohesión: vínculos dentro del equipo.
-    const power = seleccionados.reduce((s, id) => s + Math.max(...Object.values(agentes.find(a => a.id === id).stats)), 0) / seleccionados.length;
-    const yld = power >= 8 ? 'alto' : power >= 6 ? 'medio' : 'bajo';
-    let pares = 0;
-    for (const id of seleccionados) {
-      const v = perfiles[id].vinculo;
-      if (v && seleccionados.includes(v.otro)) pares++;
-    }
-    pares = pares / 2;   // cada vínculo cuenta dos veces
-    const coh = pares >= 1.5 ? 'alta' : pares >= 0.5 ? 'media' : 'baja';
-    if (yieldEl) yieldEl.innerHTML = `Yield proyectado <b class="y-${yld}">${yld}</b> · cohesión <b class="y-${coh}">${coh}</b>`;
-  }
+  const lider = unidad.find(a => a.id === liderId);
+  hint.textContent = `Unidad de ${unidad.length} · Líder: ${lider ? lider.rango_abreviatura + ' ' + lider.nombre_completo : '—'}`;
+  btn.disabled = false; if (bm) bm.disabled = false;
+  ah.textContent = 'Asignación por protocolo — no modificable';
 }
 
 function desplegar(destino) {
@@ -251,6 +127,6 @@ document.getElementById('btn-movil').addEventListener('click', () => desplegar('
 
 init().catch(err => {
   console.error('[CENVAC briefing]', err);
-  const grid = document.getElementById('roster-grid');
-  if (grid) grid.innerHTML = `<div style="color:var(--red-hi);font-size:11px;padding:16px;line-height:1.6">No se pudo cargar el roster: ${err.message}<br><a href="./index.html" style="color:var(--accent)">← Volver al mapa</a></div>`;
+  const lista = document.getElementById('unidad-lista');
+  if (lista) lista.innerHTML = `<div style="color:var(--red-hi);font-size:11px;padding:16px;line-height:1.6">No se pudo asignar la unidad: ${err.message}<br><a href="./index.html" style="color:var(--accent)">← Volver al mapa</a></div>`;
 });

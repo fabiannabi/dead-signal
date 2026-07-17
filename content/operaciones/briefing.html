@@ -20,8 +20,8 @@
 
 <div class="briefing-wrap">
 
-  <div class="briefing-page-title">Selección de equipo</div>
-  <div class="briefing-page-sub">Selecciona 1–3 agentes · click en agente seleccionado = líder. <span class="leg-clave">Azul</span> = capacidad clave de la misión · <span class="leg-pos">+</span> ventaja · <span class="leg-neg">−</span> limitación.</div>
+  <div class="briefing-page-title">Despliegue</div>
+  <div class="briefing-page-sub">El sistema asigna la unidad por protocolo y disponibilidad. Recibes designación e identidades — el expediente completo se abre en el cierre de la operación.</div>
 
   <div class="mission-card" id="mission-card">
     <div class="mission-field">
@@ -46,25 +46,22 @@
     </div>
   </div>
 
-  <div class="section-label">Roster disponible</div>
+  <div class="section-label">Unidad asignada</div>
 
-  <div class="selection-bar">
-    <div class="slot-row" id="slot-row">
-      <div class="slot">1</div>
-      <div class="slot">2</div>
-      <div class="slot">3</div>
+  <div class="unidad-card">
+    <div class="unidad-stamp">
+      <span class="unidad-desig">DESIGNACIÓN CENVAC</span>
+      <span class="selection-hint" id="sel-hint">Asignando unidad…</span>
     </div>
-    <span class="selection-hint" id="sel-hint">Ningún agente seleccionado</span>
-  </div>
-
-  <div class="roster-grid" id="roster-grid">
-    <div style="color:var(--text3);font-size:11px;letter-spacing:.08em">Cargando roster…</div>
+    <div class="unidad-lista" id="unidad-lista">
+      <div style="color:var(--text3);font-size:12px;letter-spacing:.08em">Asignando…</div>
+    </div>
+    <div class="unidad-nota">Expediente restringido hasta cierre de operación. Se libera con el reporte.</div>
   </div>
 
   <div class="briefing-actions">
-    <span class="briefing-yield" id="briefing-yield"></span>
     <span class="op-spacer"></span>
-    <span class="briefing-actions-hint" id="actions-hint">Selecciona al menos un agente</span>
+    <span class="briefing-actions-hint" id="actions-hint">Asignación por protocolo — no modificable</span>
     <button class="btn-op" id="btn-movil" disabled>MÓVIL →</button>
     <button class="btn-op primary" id="btn-iniciar" disabled>DESPLEGAR →</button>
   </div>

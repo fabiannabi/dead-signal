@@ -1,5 +1,6 @@
 import { getSession, cargarMisionData } from './main.js';
 import { cargarMision } from './mission-engine.js';
+import { perfilCompleto } from './roster-store.js';
 import { generarReporte, descargarReporte } from './report-generator.js';
 
 // Etiqueta de yield por tipo de objetivo (qué dimensión informativa produce la op).
@@ -60,13 +61,6 @@ function renderCierre(estado, mision, evento) {
     tile(y.contexto[1], 'no aplica', 'na'),
   ].join('');
 
-  const computo = (bajas.length || heridos.length)
-    ? [
-        ...bajas.map(a => `<div class="cc-row"><span class="cc-tag baja">BAJA</span> ${a.rango_abreviatura} ${a.nombre_completo} — ${causaBaja(a)}</div>`),
-        ...heridos.map(a => `<div class="cc-row"><span class="cc-tag herida">HERIDA</span> ${a.rango_abreviatura} ${a.nombre_completo} — ${causaHerida(a)}</div>`),
-      ].join('')
-    : `<div class="cc-row" style="color:var(--text3)">Sin bajas ni heridas registradas.</div>`;
-
   return `
     <div class="cierre-eyebrow">Rendimiento informativo</div>
     <div class="cierre-veredicto ${verd.cls}">${verd.t}</div>
@@ -74,11 +68,80 @@ function renderCierre(estado, mision, evento) {
 
     <div class="cierre-tiles">${tiles}</div>
 
-    <div class="cierre-computo-label">Cómputo de personal</div>
-    <div class="cierre-computo">${computo}</div>
+    <div class="cierre-computo-label">Expediente de la unidad · liberado al cierre</div>
+    <div class="cierre-expedientes">${renderExpedientes(estado, evento)}</div>
 
     <div class="cierre-nota">Las bajas no afectan la valoración de rendimiento de esta operación. El personal es reemplazable; el dato no.</div>
   `;
+}
+
+// Expediente liberado al cierre: quién era la unidad que despachaste, sus rasgos
+// y qué le pasó. Registro frío de personal — la humanidad vive en los mementos,
+// no en la consola. Aquí el jugador conoce al equipo por lo que le ocurrió.
+function renderExpedientes(estado, evento) {
+  return estado.equipo.map(a => {
+    const vivo = a.estado.vivo;
+    const heridas = a.estado.heridas || [];
+    const fate = !vivo ? { t: 'BAJA', cls: 'baja' }
+      : heridas.length ? { t: 'HERIDA', cls: 'herida' }
+      : { t: 'ACTIVA', cls: 'activa' };
+    const lider = a.es_lider ? '<span class="exp-lead">★ LÍDER</span>' : '';
+    const rasgos = (a.rasgos || []).map(r => {
+      const pol = (r.polaridad || '+') === '+' ? 'pos' : 'neg';
+      return `<span class="exp-trait ${pol}">${r.nombre}</span>`;
+    }).join('');
+    const cord = a.estado.cordura != null ? ` · cordura ${Math.round(a.estado.cordura)}` : '';
+    const detalle = !vivo ? `<div class="exp-detalle baja">Causa — ${causaBaja(a)}</div>`
+      : heridas.length ? `<div class="exp-detalle herida">${causaHerida(a)}</div>`
+      : '';
+    const perdura = renderPerdura(a, evento);
+    return `
+      <div class="exp-row ${fate.cls}">
+        <div class="exp-head">
+          <span class="exp-rank">${a.rango_abreviatura}</span>
+          <span class="exp-name">${a.nombre_completo}</span>
+          ${lider}
+          <span class="exp-fate ${fate.cls}">${fate.t}</span>
+        </div>
+        <div class="exp-rol">${a.nombre_rol || 'agente de campo'}${cord}</div>
+        ${rasgos ? `<div class="exp-traits">${rasgos}</div>` : ''}
+        ${detalle}
+        ${perdura}
+      </div>`;
+  }).join('');
+}
+
+// Lo que perdura: la consecuencia que esta operación deja en el agente y lo
+// seguirá al próximo despliegue. Se lee del overlay YA persistido por
+// consolidarOperacion (fuente de verdad), no se recomputa aquí.
+function renderPerdura(a, evento) {
+  const p = perfilCompleto(a);
+  const idOp = `OP-${evento.id.replace('EVT-', '')}`;
+  const items = [];
+
+  if (!a.estado.vivo) {
+    items.push({ cls: 'baja', txt: 'Baja definitiva. Expediente cerrado y trasladado al memorial. Sin reemplazo asignado.' });
+  } else {
+    // Cicatrices registradas en ESTA operación → penalización de por vida.
+    for (const ci of (p.cicatrices || []).filter(c => c.op === idOp)) {
+      const mods = Object.entries(ci.efecto || {})
+        .map(([k, v]) => `${k} ${v > 0 ? '+' : ''}${v}`).join(', ');
+      items.push({ cls: 'baja', txt: `Lesión consolidada — ${ci.tipo}${ci.parte ? ` (${ci.parte})` : ''}${mods ? ` · déficit ${mods} permanente en expediente` : ''}.` });
+    }
+    if (p.recuperacion_ops > 0) {
+      items.push({ cls: 'herida', txt: `Baja médica — ${p.recuperacion_ops} operación${p.recuperacion_ops > 1 ? 'es' : ''} fuera de rotación.` });
+    }
+    if (p.cordura < p.cordura_max) {
+      const cls = p.estado === 'herida' ? 'herida' : 'nota';
+      items.push({ cls, txt: `Cordura ${Math.round(p.cordura)}/${p.cordura_max} — merma no remitida al cierre; persiste en expediente.` });
+    }
+    if (!items.length) {
+      items.push({ cls: 'nota', txt: 'Sin secuelas registradas. Apto para rotación inmediata.' });
+    }
+  }
+
+  const filas = items.map(i => `<div class="perdura-item ${i.cls}">${i.txt}</div>`).join('');
+  return `<div class="exp-perdura"><span class="perdura-lbl">Lo que perdura</span>${filas}</div>`;
 }
 
 function tile(label, value, cls) {
