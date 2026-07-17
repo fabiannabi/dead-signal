@@ -26,12 +26,12 @@
     },
     "chacal_de_feria": {
       "nombre": "Chacal de Feria",
-      "horas": [[18, 23]],
+      "horas": [[10, 22]],
       "aplica": { "feature": "mercado", "clase": ["primary", "secondary", "tertiary", "secondary_link", "primary_link"] },
       "peligro": 0.7,
       "canon": "Corredor avenida–mercado; centinela en posición elevada.",
       "fuente": "bestiario/chacal-de-feria",
-      "propuesta_horaria": "Franja 18:00–23:00 [PROPUESTA DE CANON — REQUIERE APROBACIÓN]: el bestiario da el corredor pero no una hora explícita."
+      "propuesta_horaria": "Franja 10:00–22:00 [PROPUESTA DE CANON — REQUIERE APROBACIÓN]: el bestiario da el corredor pero no hora; una feria/mercado es predador diurno y vespertino."
     }
   }
 }

@@ -122,8 +122,8 @@ function desplegar(destino) {
   window.location.href = destino;
 }
 
-document.getElementById('btn-iniciar').addEventListener('click', () => desplegar('./coms.html'));
-document.getElementById('btn-movil').addEventListener('click', () => desplegar('./movil.html'));
+document.getElementById('btn-iniciar').addEventListener('click', () => desplegar('./sala.html'));
+const _bm = document.getElementById('btn-movil'); if (_bm) _bm.style.display = 'none';   // coms/móvil descartado
 
 init().catch(err => {
   console.error('[CENVAC briefing]', err);

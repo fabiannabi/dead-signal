@@ -26,7 +26,7 @@ console.log("══════════════════════�
 
 sec("1. Bandas horarias");
 ok(horaActiva(13, [[11, 15]]) && !horaActiva(3, [[11, 15]]), "Gusano activo 13:00, inactivo 03:00");
-ok(horaActiva(20, [[18, 23]]) && !horaActiva(13, [[18, 23]]), "Chacal activo 20:00, inactivo 13:00");
+ok(horaActiva(20, [[10, 22]]) && !horaActiva(3, [[10, 22]]), "Chacal activo 20:00, inactivo 03:00");
 ok(horaActiva(1, [[22, 4]]), "banda con cruce de medianoche (22→04) cubre 01:00");
 
 sec("2. El terreno tiene features para las reglas");
@@ -41,8 +41,8 @@ ok(p13 > p3, `13:00 (mediodía): Gusano vuelve peligroso el asfalto (${p13} aris
 ok(p20 > 0 && p20 < p13, `20:00 (noche): solo el corredor del Chacal (${p20} aristas), no todo el asfalto`);
 
 sec("4. Criaturas activas por hora");
-ok(criaturasActivas(ecologia, 13, CRIATURAS).join() === "gusano_de_asfalto", "13:00 → solo Gusano");
-ok(criaturasActivas(ecologia, 20, CRIATURAS).join() === "chacal_de_feria", "20:00 → solo Chacal");
+ok(criaturasActivas(ecologia, 13, CRIATURAS).includes("gusano_de_asfalto"), "13:00 → Gusano activo (asfalto)");
+ok(criaturasActivas(ecologia, 20, CRIATURAS).join() === "chacal_de_feria", "20:00 → solo Chacal (Gusano dormido)");
 ok(criaturasActivas(ecologia, 3, CRIATURAS).length === 0, "03:00 → ninguna");
 
 sec("5. A* paga la hora: misma ruta cuesta más al mediodía");

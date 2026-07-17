@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENVAC — Sala de Vigilancia</title>
+<link rel="stylesheet" href="./css/operaciones.css?v=4">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body class="sala-page">
+
+<div id="sala-map"></div>
+<div class="sala-vig"></div>
+<div class="sala-scan"></div>
+
+<div class="sala-hud">
+  <div class="sala-hud-title">Sala de Vigilancia</div>
+  <div class="sala-hud-sub" id="sala-sector">cargando sector…</div>
+  <div class="sala-stat"><span class="k">Objetivo</span><b id="sala-obj">—</b></div>
+  <div class="sala-stat"><span class="k">Hora</span><b id="sala-hora">—</b></div>
+  <div class="sala-stat"><span class="k">Amenaza</span><b id="sala-amenaza">—</b></div>
+  <div class="sala-sep"></div>
+  <div class="sala-stat"><span class="k">Unidad en</span><b id="sala-pos">—</b></div>
+  <div class="sala-stat"><span class="k">Estado</span><b id="sala-estado">en espera</b></div>
+  <div class="sala-stat"><span class="k">Intel recuperada</span><b id="sala-intel">0</b></div>
+  <div class="sala-stat"><span class="k">Puntos reconocidos</span><b id="sala-recon">0/0</b></div>
+  <div class="sala-stat"><span class="k">Unidad</span><b id="sala-unidad">—</b></div>
+  <div class="sala-legend">
+    <div>peligro: <span class="sala-dot" style="background:#2fbf5f"></span>nulo <span class="sala-dot" style="background:#ffe23a"></span>leve <span class="sala-dot" style="background:#ff9128"></span>alto <span class="sala-dot" style="background:#ff4436"></span>mortal</div>
+    <div><span class="sala-dot" style="background:var(--amber)"></span>unidad · <span class="sala-dot" style="background:#6ad0ff"></span>punto recon · <span class="sala-dot" style="background:#ff2020"></span>contacto</div>
+    <div style="margin-top:5px">› click en <b>nodo</b>: la unidad marcha ahí y reconoce</div>
+    <div>› al detectar contacto se detiene; empujá para enfrentarlo</div>
+  </div>
+  <button class="btn-op primary" id="btn-extraer">EXTRAER → CIERRE</button>
+</div>
+
+<div id="sala-codec">
+  <div class="sala-codec-inner">
+    <div class="sala-portrait" id="sala-port-left"></div>
+    <div class="sala-codec-text">
+      <div class="sala-codec-name" id="sala-codec-name"></div>
+      <div class="sala-codec-line" id="sala-codec-line"></div>
+    </div>
+    <div class="sala-portrait" id="sala-port-right"></div>
+  </div>
+</div>
+
+<div id="sala-opts">
+  <div class="sala-opts-timer"><div id="sala-opts-fill"></div></div>
+  <div id="sala-opts-inner"></div>
+</div>
+
+<div id="sala-qte">
+  <div class="sala-qte-box">
+    <div class="sala-qte-txt" id="sala-qte-txt"></div>
+    <div class="sala-qte-key">PULSA <span id="sala-qte-keys"></span></div>
+    <div class="sala-qte-bar"><div id="sala-qte-fill"></div></div>
+    <div class="sala-qte-res" id="sala-qte-res"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script type="module" src="./js/ui-sala.js?v=6"></script>
+</body>
+</html>
