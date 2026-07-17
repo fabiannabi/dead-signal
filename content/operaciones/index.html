@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CENVAC — Operaciones</title>
-<link rel="stylesheet" href="./css/operaciones.css">
+<link rel="stylesheet" href="./css/operaciones.css?v=4">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
@@ -12,18 +12,8 @@
 <header class="op-header">
   <a href="../index.html" class="op-logo">SEÑAL MUERTA</a>
   <span class="op-freq" style="color:var(--text3)">›</span>
-  <span class="op-freq">DESPACHO DE UNIDADES</span>
+  <span class="op-freq">DESPACHO DE RECONOCIMIENTO</span>
   <span class="op-spacer"></span>
-  <span class="op-signal-wrap">
-    <span class="op-signal-label">SEÑAL</span>
-    <span class="op-signal-bar"><span id="op-signal-fill" class="op-signal-fill"></span></span>
-    <span id="op-signal" class="op-signal">100%</span>
-  </span>
-  <span class="op-time-wrap">
-    <span class="op-time-label">DESPACHO</span>
-    <span id="op-clock" class="op-time">06:00</span>
-  </span>
-  <div class="op-divider"></div>
   <a href="./cuartel.html" class="op-freq op-nav-link">CUARTEL →</a>
 </header>
 
@@ -31,39 +21,10 @@
   <div id="map"></div>
 
   <div class="mapa-leyenda">
-    <div class="leyenda-titulo">Eventos activos</div>
-    <div class="leyenda-row"><span class="ev-marker shape-circulo color-verde leyenda-glyph"></span>Amenaza I–II</div>
-    <div class="leyenda-row"><span class="ev-marker shape-hexagono color-ambar leyenda-glyph"></span>Amenaza II–III</div>
-    <div class="leyenda-row"><span class="ev-marker shape-estrella color-rojo leyenda-glyph"></span>Amenaza IV</div>
-    <div class="leyenda-nota">forma = tipo · color = severidad</div>
-  </div>
-
-  <div class="map-overlay" id="map-overlay" style="display:none">
-    <div class="map-overlay-eyebrow" id="ov-eyebrow">Evento activo</div>
-    <h2 id="ov-id"></h2>
-    <p id="ov-zona"></p>
-    <div class="overlay-tags">
-      <span class="tag warn" id="ov-nivel"></span>
-      <span class="tag" id="ov-scan-nivel">RECON 0/3</span>
-    </div>
-    <p id="ov-desc"></p>
-
-    <div class="esquematico">
-      <div class="esquematico-head">
-        <span class="esquematico-title">Esquemático del sitio</span>
-        <span id="ov-sitio-nombre" class="esquematico-sitio"></span>
-      </div>
-      <div id="ov-zonas" class="sitio-schematic"></div>
-      <p id="ov-pista" class="esquematico-pista" style="display:none"></p>
-    </div>
-
-    <p id="ov-recom" class="ov-recom"></p>
-
-    <div class="overlay-actions">
-      <button class="btn-op" id="btn-escanear">ESCANEAR</button>
-      <button class="btn-op primary" id="btn-briefing">→ INICIAR BRIEFING</button>
-    </div>
-    <div id="ov-scan-msg" class="scan-msg" style="display:none"></div>
+    <div class="leyenda-titulo">Cuadrantes de reconocimiento</div>
+    <div class="leyenda-row"><span class="leyenda-glyph" style="border:2px solid #4dff7a;background:rgba(77,255,122,.1)"></span>Operable — recon disponible</div>
+    <div class="leyenda-row"><span class="leyenda-glyph" style="border:1px dashed #6a6a4a"></span>Cartografía pendiente</div>
+    <div class="leyenda-nota">Elegí un cuadrante operable para despachar una unidad a reconocerlo.</div>
   </div>
 
   <div class="cuartel-panel" id="cuartel-panel" style="display:none">
@@ -74,6 +35,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="./js/ui-map.js"></script>
+<script type="module" src="./js/ui-map.js?v=4"></script>
 </body>
 </html>
