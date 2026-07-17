@@ -9,8 +9,10 @@
   :root { --bg:#04100a; --ph:#4dff7a; --ph2:#2aa855; --amber:#ffc24d; --red:#ff6a55; --route:#8affc0; --chip:rgba(2,12,6,.86); }
   * { box-sizing:border-box; }
   html,body { margin:0; height:100%; background:var(--bg); overflow:hidden; color:var(--ph); font-family:'Share Tech Mono',ui-monospace,monospace; }
-  #map { position:absolute; inset:0; z-index:0; filter:grayscale(1) contrast(.95) brightness(.9); }
-  #phosphor { position:absolute; inset:0; z-index:1; pointer-events:none; background:#1ee65e; mix-blend-mode:color; opacity:.16; }
+  #map { position:absolute; inset:0; z-index:0; }
+  /* El look fósforo/grayscale va SOLO en las tiles del basemap; los overlays
+     (grafo, peligro, ruta, blip) quedan en color pleno. */
+  .leaflet-tile-pane { filter:grayscale(1) brightness(.72) sepia(.55) hue-rotate(58deg) saturate(1.5) contrast(.95); }
   #vig { position:absolute; inset:0; z-index:2; pointer-events:none; background:radial-gradient(130% 130% at 50% 45%, transparent 55%, rgba(1,6,3,.72) 100%); }
   #scan { position:absolute; inset:0; z-index:3; pointer-events:none; opacity:.35; background:repeating-linear-gradient(0deg, rgba(0,0,0,.10) 0 1px, transparent 1px 3px); }
   .leaflet-container { background:transparent; }
@@ -70,7 +72,8 @@
   @keyframes qtepop { from{transform:scale(.88)} to{transform:scale(1)} }
   .qte-txt { font-size:22px; color:var(--red); letter-spacing:.1em; font-weight:bold; text-shadow:0 0 8px #000; }
   .qte-key { margin:15px 0 13px; font-size:13px; color:var(--amber); letter-spacing:.08em; }
-  .qte-key b { display:inline-block; min-width:70px; margin-top:8px; padding:9px 16px; border:2px solid var(--amber); font-size:20px; }
+  .qte-key b { display:inline-block; min-width:70px; margin:8px 5px 0; padding:9px 16px; border:2px solid var(--amber); font-size:20px; transition:all .08s; }
+  .qte-key b.hit { color:var(--ph); border-color:var(--ph); background:rgba(77,255,122,.18); }
   .qte-bar { height:8px; width:260px; background:rgba(255,255,255,.08); overflow:hidden; margin:0 auto; }
   #qte-fill { height:100%; background:var(--red); width:100%; }
   .qte-res { margin-top:12px; font-size:14px; letter-spacing:.06em; }
@@ -79,7 +82,6 @@
 <body>
 
 <div id="map"></div>
-<div id="phosphor"></div>
 <div id="vig"></div>
 <div id="scan"></div>
 
@@ -90,13 +92,19 @@
   <div class="stat"><span class="k">Estado</span><b id="s-estado">en espera</b></div>
   <div class="stat"><span class="k">Distancia</span><b id="s-dist">—</b></div>
   <div class="stat"><span class="k">Contactos</span><b id="s-cont">0</b></div>
+  <div class="stat"><span class="k">Amenaza activa</span><b id="s-amenaza">—</b></div>
   <div class="instr">
-    <div><span class="dot" style="background:var(--amber)"></span>unidad · <span class="dot" style="background:var(--red)"></span>contacto</div>
-    <div style="margin-top:6px">› click en <b>calle</b>: marchan ahí</div>
-    <div>› en ruta saltan <b>reflejos</b> (tecla a tiempo) y <b>decisiones</b> a Control</div>
+    <div>peligro: <span class="dot" style="background:#2fbf5f"></span>nulo <span class="dot" style="background:#ffe23a"></span>leve <span class="dot" style="background:#ff9128"></span>alto <span class="dot" style="background:#ff4436"></span>mortal</div>
+    <div><span class="dot" style="background:var(--amber)"></span>unidad · <span class="dot" style="background:#ff2020"></span>contacto revelado</div>
+    <div style="margin-top:6px">› mové la <b>hora</b>: el peligro del bestiario respira</div>
+    <div>› click en <b>nodo</b>: marchan ahí (A* evita el peligro conocido)</div>
+    <div>› al <b>detectar contacto</b> se detienen y esperan órdenes</div>
+    <div>› calles <b>rojas</b> = más reflejos; nodos peligrosos = encuentro o falsa alarma</div>
   </div>
   <div class="ctl">
-    <label>Velocidad de marcha <b><span id="vel-val">6</span> m/s</b></label>
+    <label>Hora del despacho <b><span id="hora-val">13</span>:00</b></label>
+    <input type="range" id="hora" min="0" max="23" step="1" value="13">
+    <label style="margin-top:9px">Velocidad de marcha <b><span id="vel-val">6</span> m/s</b></label>
     <input type="range" id="vel" min="1" max="18" step="1" value="6">
     <label style="margin-top:9px">Ritmo de radio <b id="rad-val">normal</b></label>
     <input type="range" id="rad" min="0" max="2" step="1" value="1">
@@ -123,7 +131,7 @@
 <div id="qte">
   <div class="qte-box">
     <div class="qte-txt" id="qte-txt"></div>
-    <div class="qte-key">PULSA <b id="qte-key"></b></div>
+    <div class="qte-key">PULSA <span id="qte-keybank"></span></div>
     <div class="qte-bar"><div id="qte-fill"></div></div>
     <div class="qte-res" id="qte-res"></div>
   </div>
@@ -131,34 +139,62 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script type="module">
-import { construirGrafo, aStar, haversine } from './js/pathfinding.js';
+import { construirGrafo, aStar, nodoMasCercano, haversine } from './js/pathfinding.js';
+import { peligroDeArista, criaturasActivas } from './js/peligro.js';
 
-const raw = await (await fetch('../data/operaciones/recon/grafo-centro.json')).json();
+const [raw, ecologia] = await Promise.all([
+  fetch('../data/operaciones/recon/grafo-centro.json').then(r => r.json()),
+  fetch('../data/operaciones/recon/ecologia-peligro.json').then(r => r.json()),
+]);
 const grafo = construirGrafo(raw);
+const CRIATURAS = ['gusano_de_asfalto', 'chacal_de_feria']; // ecología del centro
+let horaActual = 13;
 document.getElementById('sector').textContent = raw._meta?.sector || 'sector';
 
 const map = L.map('map', { zoomControl: true, attributionControl: false }).setView([21.8810, -102.2968], 16);
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19, subdomains: 'abcd' }).addTo(map);
 
 let VEL = 6;
-const REVEAL_R = 90;
+const REVEAL_R = 90, ENCUENTRO_R = 42;   // detectás a 90m; te embosca a 40m
+const UMBRAL_RIESGO = 55;   // riesgo acumulado (peligro×metros) que dispara un reflejo
 let charMs = 45, holdMs = 2200;
-const peso = (e) => e.m * (e._peligro ? 40 : 1);
+// Peso de despacho = distancia × (1 + peligro de ecología a la hora actual + contacto revelado).
+const peso = (e) => e.m * (1 + peligroDeArista(e, ecologia, horaActual, CRIATURAS) + (e._peligro ? 3 : 0));
 const $ = (id) => document.getElementById(id);
 
 // ── Grafo ────────────────────────────────────────────────────────────────────
 const edgeLayer = new Map();
 for (const e of raw.aristas) {
   const a = grafo.nodos.get(e.a), b = grafo.nodos.get(e.b);
-  edgeLayer.set(e, L.polyline([[a.lat, a.lng], [b.lat, b.lng]], { color: '#2aa855', weight: 3, opacity: 0.85 }).addTo(map));
+  // interactive:false → las calles no capturan el click; pasa al nodo de abajo.
+  edgeLayer.set(e, L.polyline([[a.lat, a.lng], [b.lat, b.lng]], { color: '#2aa855', weight: 3, opacity: 0.7, interactive: false }).addTo(map));
+}
+// Color de la calle: verde=seguro · ámbar=riesgo · rojo=mortal (peligro de ecología a la hora),
+// y rojo intenso si hay un contacto revelado encima (§1.7 — amenaza discreta detectada).
+function estiloArista(e) {
+  if (e._peligro) return { color: '#ff2020', weight: 6, opacity: 1 };          // contacto revelado
+  const p = peligroDeArista(e, ecologia, horaActual, CRIATURAS);
+  if (p <= 0)   return { color: '#2fbf5f', weight: 3, opacity: 0.6 };          // seguro
+  if (p < 0.4)  return { color: '#ffe23a', weight: 4, opacity: 0.95 };         // leve
+  if (p < 0.75) return { color: '#ff9128', weight: 5, opacity: 0.97 };         // riesgo
+  return { color: '#ff4436', weight: 5, opacity: 1 };                          // mortal
 }
 function restyleEdge(e) {
-  edgeLayer.get(e).setStyle({ color: e._peligro ? '#ff6a55' : '#2aa855', weight: e._peligro ? 5 : 3, opacity: e._peligro ? 0.95 : 0.85 });
-  if (e._peligro) edgeLayer.get(e).bringToFront();
+  const pl = edgeLayer.get(e);
+  pl.setStyle(estiloArista(e));
+  if (e._peligro) pl.bringToFront();
 }
+function repintarPeligro() {
+  for (const e of raw.aristas) restyleEdge(e);
+  nodeMarkers.forEach(m => m.bringToFront());   // nodos clickeables siempre al frente
+  const act = criaturasActivas(ecologia, horaActual, CRIATURAS).map(c => ecologia.reglas[c].nombre);
+  $('s-amenaza').textContent = act.length ? act.join(' · ') : 'ninguna';
+}
+const nodeMarkers = [];
 for (const [id, p] of grafo.nodos) {
-  L.circleMarker([p.lat, p.lng], { radius: 3, color: '#4dff7a', weight: 1, fillColor: '#04100a', fillOpacity: 0.9 })
+  const cm = L.circleMarker([p.lat, p.lng], { radius: 5, color: '#4dff7a', weight: 1, fillColor: '#04100a', fillOpacity: 0.9, bubblingMouseEvents: false })
     .addTo(map).on('click', (ev) => { L.DomEvent.stop(ev); despachar(id); });
+  nodeMarkers.push(cm);
 }
 function calleDe(id) {
   const inc = grafo.adj.get(id);
@@ -177,18 +213,30 @@ const contactos = [];
     const id = nodeIds[Math.floor(Math.random() * nodeIds.length)];
     if (usados.has(id)) continue; usados.add(id);
     const p = grafo.nodos.get(id);
-    contactos.push({ id, lat: p.lat, lng: p.lng, revelado: false });
+    contactos.push({ id, lat: p.lat, lng: p.lng, revelado: false, encontrado: false });
   }
 })(6);
 function revelar(c) {
   if (c.revelado) return;
   c.revelado = true;
-  L.marker([c.lat, c.lng], { icon: L.divIcon({ className: '', html: '<div class="contacto"></div>', iconSize: [0, 0] }), interactive: false }).addTo(map);
+  c.marker = L.marker([c.lat, c.lng], { icon: L.divIcon({ className: '', html: '<div class="contacto"></div>', iconSize: [0, 0] }), interactive: false }).addTo(map);
+  c.aristasMarcadas = [];
   for (const e of raw.aristas) {
     const a = grafo.nodos.get(e.a), b = grafo.nodos.get(e.b);
-    if (!e._peligro && (haversine(c, a) < 55 || haversine(c, b) < 55)) { e._peligro = true; restyleEdge(e); }
+    if (!e._peligro && (haversine(c, a) < 55 || haversine(c, b) < 55)) { e._peligro = true; c.aristasMarcadas.push(e); restyleEdge(e); }
   }
-  $('s-cont').textContent = contactos.filter(x => x.revelado).length;
+  actualizarContactos();
+}
+// Al superar el asalto, el contacto se despeja: se va la marca y su peligro.
+function despejarContacto(c) {
+  c.despejado = true; c.encontrado = true;
+  if (c.marker) { map.removeLayer(c.marker); c.marker = null; }
+  for (const e of (c.aristasMarcadas || [])) { e._peligro = false; restyleEdge(e); }
+  c.aristasMarcadas = [];
+  actualizarContactos();
+}
+function actualizarContactos() {
+  $('s-cont').textContent = contactos.filter(c => c.revelado && !c.despejado).length;
 }
 function revelarCercanos(lat, lng) {
   let nuevo = null;
@@ -213,71 +261,139 @@ function despachar(destino) {
   const r = aStar(grafo, unidadNode, destino, { peso });
   if (!r) return;
   const coords = r.path.map(nodeToLatLng);
-  rutaLine = L.polyline(coords, { color: '#8affc0', weight: 4, opacity: 0.95 }).addTo(map);
-  dstMark = L.circleMarker(nodeToLatLng(destino), { radius: 6, color: '#8affc0', weight: 2, fillColor: '#8affc0', fillOpacity: 0.5 }).addTo(map);
+  rutaLine = L.polyline(coords, { color: '#8affc0', weight: 4, opacity: 0.95, interactive: false }).addTo(map);
+  dstMark = L.circleMarker(nodeToLatLng(destino), { radius: 6, color: '#8affc0', weight: 2, fillColor: '#8affc0', fillOpacity: 0.5, interactive: false }).addTo(map);
   $('s-estado').textContent = 'en marcha';
   guionar(pick(TRANSITO, 3), calleDe(destino), true);
-  iniciarMarcha(coords, destino);
+  iniciarMarcha(r, destino);
 }
 
-function iniciarMarcha(coords, destino) {
+function iniciarMarcha(r, destino) {
+  const coords = r.path.map(nodeToLatLng);
   const seg = []; let total = 0;
   for (let i = 1; i < coords.length; i++) {
     const d = haversine({ lat: coords[i-1][0], lng: coords[i-1][1] }, { lat: coords[i][0], lng: coords[i][1] });
-    seg.push({ a: coords[i-1], b: coords[i], d, acc: total }); total += d;
+    // arista subyacente del tramo (para conocer su peligro a la hora actual)
+    const link = grafo.adj.get(r.path[i-1]).find(x => x.to === r.path[i]);
+    seg.push({ a: coords[i-1], b: coords[i], d, acc: total, arista: link ? link.arista : null });
+    total += d;
   }
-  marcha = { seg, total, destino, base: 0, t0: 0, raf: null, triggers: planearEventos(total) };
+  marcha = { seg, total, destino, base: 0, t0: 0, raf: null, riesgo: 0, lastRec: 0 };
   moving = true;
   reanudar();
 }
 function reanudar() {
+  marcha.lastRec = marcha.base;
   marcha.t0 = performance.now();
   marcha.raf = requestAnimationFrame(tick);
 }
-function pausar(rec) {
+function pausar(rec) {           // congela in situ (para un evento que luego reanuda)
   marcha.base = rec;
   if (marcha.raf) cancelAnimationFrame(marcha.raf);
   marcha.raf = null;
 }
-function posicionar(rec) {
+function detener() {            // HALT: la unidad se planta y espera órdenes
+  if (marcha && marcha.raf) cancelAnimationFrame(marcha.raf);
+  moving = false;
+  const bp = blip.getLatLng();
+  unidadNode = nodoMasCercano(grafo, bp.lat, bp.lng);
+  blip.setLatLng(nodeToLatLng(unidadNode));
+  if (rutaLine) { map.removeLayer(rutaLine); rutaLine = null; }
+  if (dstMark) { map.removeLayer(dstMark); dstMark = null; }
+  $('s-pos').textContent = calleDe(unidadNode);
+  $('s-dist').textContent = '—';
+}
+function tick(now) {
   const m = marcha;
+  const rec = Math.min(m.total, m.base + (now - m.t0) / 1000 * VEL);
   const s = m.seg.find(x => rec <= x.acc + x.d) || m.seg[m.seg.length - 1];
   const f = s.d ? (rec - s.acc) / s.d : 1;
   const lat = s.a[0] + (s.b[0]-s.a[0])*f, lng = s.a[1] + (s.b[1]-s.a[1])*f;
   blip.setLatLng([lat, lng]);
   $('s-dist').textContent = Math.max(0, Math.round(m.total - rec)) + ' m';
-  return revelarCercanos(lat, lng);
-}
-function tick(now) {
-  const m = marcha;
-  const rec = Math.min(m.total, m.base + (now - m.t0) / 1000 * VEL);
-  const nuevo = posicionar(rec);
-  if (nuevo) guionar(CONTACTO, calleDe(nuevo.id), true);
-  const trig = m.triggers.find(t => !t.fired && rec >= t.at);
-  if (trig) { trig.fired = true; pausar(rec); dispararEvento(trig); return; }
+
+  // 1) Detección de contacto → la unidad SE DETIENE y espera órdenes.
+  const nuevo = revelarCercanos(lat, lng);
+  if (nuevo) { detener(); $('s-estado').textContent = '¡contacto! · en espera'; guionar(CONTACTO, calleDe(nuevo.id), true); return; }
+
+  // 2) Emboscada si te metés encima de un contacto ya conocido.
+  const enc = contactos.find(c => !c.encontrado && haversine({ lat, lng }, c) < ENCUENTRO_R);
+  if (enc) { enc.encontrado = true; pausar(rec); asalto(enc); return; }
+
+  // 3) Riesgo acumulado en calles peligrosas → reflejo más seguido en rojo.
+  const dEdge = s.arista ? peligroDeArista(s.arista, ecologia, horaActual, CRIATURAS) : 0;
+  m.riesgo += dEdge * (rec - m.lastRec);
+  m.lastRec = rec;
+  if (m.riesgo >= UMBRAL_RIESGO) { m.riesgo = 0; pausar(rec); hazard(); return; }
+
   if (rec >= m.total) { moving = false; marcha.raf = null; return llegada(m.destino); }
   m.raf = requestAnimationFrame(tick);
 }
 function llegada(destino) {
   unidadNode = destino;
   $('s-pos').textContent = calleDe(destino);
-  $('s-estado').textContent = 'en posición';
   $('s-dist').textContent = '0 m';
-  const cerca = contactos.some(c => c.revelado && haversine(c, grafo.nodos.get(destino)) < 170);
-  guionar(cerca ? LLEGADA_TENSA : LLEGADA_CALMA, calleDe(destino), true);
+  // ¿Nodo peligroso? (alguna calle incidente es alta/mortal a esta hora)
+  const inc = grafo.adj.get(destino).map(x => peligroDeArista(x.arista, ecologia, horaActual, CRIATURAS));
+  const peligroso = inc.length && Math.max(...inc) >= 0.5;
+  const contactoCerca = contactos.some(c => c.revelado && haversine(c, grafo.nodos.get(destino)) < 170);
+  if (peligroso || contactoCerca) {
+    if (Math.random() < 0.5) {   // encuentro al llegar
+      $('s-estado').textContent = '¡contacto!';
+      guionar([{ q: 'lead', t: 'Algo se movió al llegar. ¡Ojo!' }], calleDe(destino), true);
+      mostrarQTE(pickOne(ENCUENTRO), () => { $('s-estado').textContent = 'en posición'; });
+    } else {                     // falso positivo
+      $('s-estado').textContent = 'en posición';
+      guionar([pickOne(FALSO)], calleDe(destino), true);
+    }
+  } else {
+    $('s-estado').textContent = 'en posición';
+    guionar(LLEGADA_CALMA, calleDe(destino), true);
+  }
 }
 
-// ── Eventos programados en la ruta ───────────────────────────────────────────
-function planearEventos(total) {
-  const n = total < 160 ? 1 : 2;
-  const tipos = n === 2 ? shuffle(['qte', 'decision']) : [Math.random() < 0.5 ? 'qte' : 'decision'];
-  const fracs = n === 2 ? [0.15, 0.55] : [0.2];   // temprano, para testear rápido
-  return tipos.map((tipo, i) => ({ at: total * fracs[i], tipo, fired: false }));
+// ── Eventos de peligro (reflejo / falso positivo / decisión) ─────────────────
+function hazard() {
+  const r = Math.random();
+  if (r < 0.6) {                 // reflejo
+    $('s-estado').textContent = '¡reflejo!';
+    mostrarQTE(pickOne(QTE), reanudar);
+  } else if (r < 0.85) {         // falso positivo — pausa breve y nada
+    $('s-estado').textContent = 'falso positivo';
+    guionar([pickOne(FALSO)], null, true);
+    setTimeout(reanudar, 1500);
+  } else {                       // decisión a Control
+    $('s-estado').textContent = 'decisión';
+    mostrarDecision(pickOne(DECISIONES), reanudar);
+  }
 }
-function dispararEvento(trig) {
-  $('s-estado').textContent = trig.tipo === 'qte' ? '¡reflejo!' : 'decisión';
-  if (trig.tipo === 'qte') mostrarQTE(pickOne(QTE), reanudar);
-  else mostrarDecision(pickOne(DECISIONES), reanudar);
+// Asalto multi-fase contra el contacto: varios reflejos seguidos (algunos con
+// dos teclas a la vez), coms entre ellos, y al superarlo el contacto se despeja.
+const ASALTO_INTRO = [
+  { q: 'lead', t: '¡Contacto encima! ¡Formen, cúbranse!' },
+  { q: 'control', t: 'Unidad 7, los tengo en cámara. Aguanten.' },
+];
+function dosKeys() {
+  const pool = KEYS.map(x => x.k);
+  const a = pool[Math.floor(Math.random() * pool.length)];
+  let b = a; while (b === a) b = pool[Math.floor(Math.random() * pool.length)];
+  return [a, b];
+}
+async function asalto(c) {
+  $('s-estado').textContent = '¡ASALTO!';
+  let danos = 0;
+  await decir(ASALTO_INTRO, calleDe(c.id));
+  if (!await qtePromise({ txt: '¡EMBISTE! ¡ESQUIVA!' })) danos++;
+  await decir([danos ? { q: 'solis', t: '¡Me rozó! Aguanto, aguanto.' } : { q: 'solis', t: '¡Esquivado! ¡Sigan firmes!' }]);
+  if (!await qtePromise({ txt: '¡TE RODEA! ¡DOS FLANCOS A LA VEZ!', keys: dosKeys() })) danos++;
+  await decir([{ q: 'control', t: 'Aguanten. Rómpanlo hacia el norte.' }]);
+  if (!await qtePromise({ txt: '¡ÚLTIMO EMPUJE! ¡AHORA!', keys: dosKeys() })) danos++;
+  if (danos >= 2) await decir([{ q: 'lead', t: 'Nos dio duro... pero se replegó. Tenemos un herido.' }, { q: 'control', t: 'Recibido. Sáquenlo de ahí.' }]);
+  else if (danos === 1) await decir([{ q: 'lead', t: '¡Rompimos contacto! Un golpe, nada grave.' }]);
+  else await decir([{ q: 'lead', t: '¡Lo repelimos limpio! Se replegó. Sigan.' }]);
+  despejarContacto(c);
+  $('s-estado').textContent = 'en marcha';
+  reanudar();
 }
 
 // QTE de reflejo ─────────────────────────────────────────────────────────────
@@ -288,21 +404,35 @@ const QTE = [
   { txt: '¡CABLE TRAMPA!', ok: { q: 'lead', t: 'Alto — lo vi. Nadie se mueve.' }, fail: { q: 'lead', t: 'Sonó algo arriba. Nos oyeron.' } },
   { txt: '¡BOLSA DE GAS!', ok: { q: 'solis', t: 'Contuve el aire. Cruzamos limpio.' }, fail: { q: 'solis', t: 'Tragué algo. Me arde la garganta.' } },
 ];
+// Emboscada al meterse encima de un contacto. Nunca se ve la criatura (§1.2):
+// solo el golpe, la voz y la consecuencia.
+const ENCUENTRO = [
+  { txt: '¡ALGO SALE DEL DRENAJE!', ok: { q: 'lead', t: '¡Rompimos contacto! No se detengan.' }, fail: { q: 'solis', t: '¡Me agarró el brazo! ...sigo, sigo.' } },
+  { txt: '¡SE NOS ECHÓ ENCIMA!', ok: { q: 'estrada', t: 'Lo esquivé por nada. Vámonos de aquí.' }, fail: { q: 'estrada', t: 'Me tiró al piso. Las costillas. Puedo caminar.' } },
+];
+// Falsos positivos — el susto que resulta ser nada (tensión sin costo).
+const FALSO = [
+  { q: 'solis', t: '...creí ver algo. Nada. Falsa alarma.' },
+  { q: 'estrada', t: 'Fue una rata. Solo una rata. Sigamos.' },
+  { q: 'lead', t: 'Sombras y nervios. Manténganse firmes.' },
+];
 let qteResolved = false, qteKeyHandler = null, qteTimer = null;
+const keyLbl = (k) => k === ' ' ? 'ESPACIO' : k.toUpperCase();
+const dataK = (k) => k === ' ' ? 'space' : k;
+// ev.keys = teclas requeridas (todas, en cualquier orden). Sin keys → una al azar.
 function mostrarQTE(ev, done) {
-  const { k, l } = KEYS[Math.floor(Math.random() * KEYS.length)];
-  const LEER = 750;      // telegrafía: tiempo para leer la tecla antes de que corra el reloj
-  const VENTANA = 2100;  // ventana de reacción visible
+  const reqKeys = (ev.keys && ev.keys.length) ? ev.keys.slice() : [KEYS[Math.floor(Math.random() * KEYS.length)].k];
+  const LEER = 750, VENTANA = reqKeys.length > 1 ? 2600 : 2100;   // más margen si son varias
+  const pressed = new Set();
   qteResolved = false;
   $('qte-txt').textContent = ev.txt;
-  $('qte-key').textContent = l;
+  $('qte-keybank').innerHTML = reqKeys.map(k => `<b data-k="${dataK(k)}">${keyLbl(k)}</b>`).join('');
   $('qte-res').textContent = '';
   $('qte-res').style.color = 'var(--amber)';
   const fill = $('qte-fill');
   fill.style.transition = 'none'; fill.style.width = '100%';
   $('qte').classList.add('on');
   beep(920);
-  // Se acepta la tecla desde ya; la barra recién empieza a bajar tras LEER.
   setTimeout(() => { fill.style.transition = `width ${VENTANA}ms linear`; fill.style.width = '0%'; }, LEER);
   const resolver = (exito) => {
     if (qteResolved) return; qteResolved = true;
@@ -312,14 +442,23 @@ function mostrarQTE(ev, done) {
     $('qte-res').style.color = exito ? 'var(--ph)' : 'var(--red)';
     setTimeout(() => {
       $('qte').classList.remove('on');
-      guionar([exito ? ev.ok : ev.fail], null, true);
-      done();
+      if (ev.ok || ev.fail) guionar([exito ? ev.ok : ev.fail], null, true);
+      done(exito);
     }, 620);
   };
-  qteKeyHandler = (e) => { const key = e.key === ' ' ? ' ' : e.key.toLowerCase(); if (key === k) { e.preventDefault(); resolver(true); } };
+  qteKeyHandler = (e) => {
+    const key = e.key === ' ' ? ' ' : e.key.toLowerCase();
+    if (!reqKeys.includes(key)) return;
+    e.preventDefault();
+    pressed.add(key);
+    const b = $('qte-keybank').querySelector(`[data-k="${dataK(key)}"]`);
+    if (b) b.classList.add('hit');
+    if (reqKeys.every(k => pressed.has(k))) resolver(true);
+  };
   window.addEventListener('keydown', qteKeyHandler);
   qteTimer = setTimeout(() => resolver(false), LEER + VENTANA);
 }
+function qtePromise(ev) { return new Promise(res => mostrarQTE(ev, res)); }
 
 // Decisión a Control ─────────────────────────────────────────────────────────
 const DECISIONES = [
@@ -419,15 +558,18 @@ const pickOne = (a) => a[Math.floor(Math.random() * a.length)];
 function pick(a, n) { const c = [...a], o = []; while (o.length < n && c.length) o.push(c.splice(Math.floor(Math.random() * c.length), 1)[0]); return o; }
 function shuffle(a) { const c = [...a]; for (let i = c.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [c[i], c[j]] = [c[j], c[i]]; } return c; }
 
-let cola = [], playing = false, tw = null, actx = null;
-function guionar(lines, calle, reset) {
+let cola = [], playing = false, tw = null, actx = null, colaOnDone = null;
+function guionar(lines, calle, reset, onDone) {
   const m = lines.map(x => ({ q: x.q, t: x.t.replace('{c}', calle || 'la posición') }));
   cola = reset ? m : cola.concat(m);
+  colaOnDone = onDone || null;
   $('codec').classList.add('on');
   if (!playing) siguiente();
 }
+// Reproduce líneas y devuelve una promesa que resuelve al terminar (para secuenciar).
+function decir(lines, calle) { return new Promise(res => guionar(lines, calle, true, res)); }
 function siguiente() {
-  if (!cola.length) { playing = false; return; }
+  if (!cola.length) { playing = false; const cb = colaOnDone; colaOnDone = null; if (cb) cb(); return; }
   playing = true;
   const { q, t } = cola.shift();
   const voz = VOZ[q];
@@ -458,12 +600,19 @@ function beep(freq) {
 }
 
 // ── Controles ────────────────────────────────────────────────────────────────
+$('hora').addEventListener('input', (e) => {
+  horaActual = +e.target.value;
+  $('hora-val').textContent = String(horaActual).padStart(2, '0');
+  repintarPeligro();
+});
 $('vel').addEventListener('input', (e) => { VEL = +e.target.value; $('vel-val').textContent = VEL; });
 $('rad').addEventListener('input', (e) => {
   const p = [{ c: 62, h: 3200, n: 'lento' }, { c: 45, h: 2200, n: 'normal' }, { c: 30, h: 1400, n: 'rápido' }][+e.target.value];
   charMs = p.c; holdMs = p.h; $('rad-val').textContent = p.n;
 });
 $('btn-reset').addEventListener('click', () => location.reload());
+
+repintarPeligro();   // pintar el mapa de peligro de la hora inicial
 </script>
 </body>
 </html>
