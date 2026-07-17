@@ -1,0 +1,2262 @@
+{
+  "_meta": {
+    "sector": "centro — Plaza de la Patria / Catedral",
+    "fuente": "OpenStreetMap vía Overpass API",
+    "consulta": "way[\"highway\"](21.878,-102.3002,21.884,-102.2942);(._;>;);out body;",
+    "bbox_SWNE": [
+      21.878,
+      -102.3002,
+      21.884,
+      -102.2942
+    ],
+    "horneado": "2026-07-16",
+    "nota": "Grafo curado (§1.6): grado-2 colapsado. peligro_base=0 placeholder; el peso lugar×hora se deriva del bestiario (§1.5) aún sin autorar."
+  },
+  "nodos": [
+    {
+      "id": "n0",
+      "lat": 21.879116,
+      "lng": -102.296117
+    },
+    {
+      "id": "n1",
+      "lat": 21.881246,
+      "lng": -102.296627
+    },
+    {
+      "id": "n2",
+      "lat": 21.882064,
+      "lng": -102.299441
+    },
+    {
+      "id": "n3",
+      "lat": 21.882585,
+      "lng": -102.298147
+    },
+    {
+      "id": "n4",
+      "lat": 21.878158,
+      "lng": -102.296965
+    },
+    {
+      "id": "n5",
+      "lat": 21.877578,
+      "lng": -102.296848
+    },
+    {
+      "id": "n6",
+      "lat": 21.873985,
+      "lng": -102.296964
+    },
+    {
+      "id": "n7",
+      "lat": 21.880623,
+      "lng": -102.297672
+    },
+    {
+      "id": "n8",
+      "lat": 21.880508,
+      "lng": -102.297633
+    },
+    {
+      "id": "n9",
+      "lat": 21.879784,
+      "lng": -102.29739
+    },
+    {
+      "id": "n10",
+      "lat": 21.882144,
+      "lng": -102.297128
+    },
+    {
+      "id": "n11",
+      "lat": 21.882883,
+      "lng": -102.297471
+    },
+    {
+      "id": "n12",
+      "lat": 21.880685,
+      "lng": -102.302043
+    },
+    {
+      "id": "n13",
+      "lat": 21.880965,
+      "lng": -102.299934
+    },
+    {
+      "id": "n14",
+      "lat": 21.882583,
+      "lng": -102.296031
+    },
+    {
+      "id": "n15",
+      "lat": 21.882594,
+      "lng": -102.296002
+    },
+    {
+      "id": "n16",
+      "lat": 21.88298,
+      "lng": -102.295045
+    },
+    {
+      "id": "n17",
+      "lat": 21.881358,
+      "lng": -102.297868
+    },
+    {
+      "id": "n18",
+      "lat": 21.880409,
+      "lng": -102.295469
+    },
+    {
+      "id": "n19",
+      "lat": 21.881164,
+      "lng": -102.295659
+    },
+    {
+      "id": "n20",
+      "lat": 21.881256,
+      "lng": -102.295682
+    },
+    {
+      "id": "n21",
+      "lat": 21.882663,
+      "lng": -102.29796
+    },
+    {
+      "id": "n22",
+      "lat": 21.881118,
+      "lng": -102.296482
+    },
+    {
+      "id": "n23",
+      "lat": 21.88027,
+      "lng": -102.299882
+    },
+    {
+      "id": "n24",
+      "lat": 21.879914,
+      "lng": -102.302408
+    },
+    {
+      "id": "n25",
+      "lat": 21.882067,
+      "lng": -102.299662
+    },
+    {
+      "id": "n26",
+      "lat": 21.88196,
+      "lng": -102.299665
+    },
+    {
+      "id": "n27",
+      "lat": 21.881094,
+      "lng": -102.299683
+    },
+    {
+      "id": "n28",
+      "lat": 21.883351,
+      "lng": -102.299195
+    },
+    {
+      "id": "n29",
+      "lat": 21.882955,
+      "lng": -102.299281
+    },
+    {
+      "id": "n30",
+      "lat": 21.882793,
+      "lng": -102.29931
+    },
+    {
+      "id": "n31",
+      "lat": 21.883806,
+      "lng": -102.297853
+    },
+    {
+      "id": "n32",
+      "lat": 21.883606,
+      "lng": -102.298382
+    },
+    {
+      "id": "n33",
+      "lat": 21.884117,
+      "lng": -102.298604
+    },
+    {
+      "id": "n34",
+      "lat": 21.88395,
+      "lng": -102.298652
+    },
+    {
+      "id": "n35",
+      "lat": 21.883273,
+      "lng": -102.298936
+    },
+    {
+      "id": "n36",
+      "lat": 21.884707,
+      "lng": -102.298855
+    },
+    {
+      "id": "n37",
+      "lat": 21.883127,
+      "lng": -102.298176
+    },
+    {
+      "id": "n38",
+      "lat": 21.884011,
+      "lng": -102.29891
+    },
+    {
+      "id": "n39",
+      "lat": 21.883067,
+      "lng": -102.30012
+    },
+    {
+      "id": "n40",
+      "lat": 21.878993,
+      "lng": -102.298008
+    },
+    {
+      "id": "n41",
+      "lat": 21.878459,
+      "lng": -102.297882
+    },
+    {
+      "id": "n42",
+      "lat": 21.877555,
+      "lng": -102.301182
+    },
+    {
+      "id": "n43",
+      "lat": 21.878073,
+      "lng": -102.299554
+    },
+    {
+      "id": "n44",
+      "lat": 21.878172,
+      "lng": -102.299139
+    },
+    {
+      "id": "n45",
+      "lat": 21.878542,
+      "lng": -102.297076
+    },
+    {
+      "id": "n46",
+      "lat": 21.87877,
+      "lng": -102.296076
+    },
+    {
+      "id": "n47",
+      "lat": 21.878785,
+      "lng": -102.296009
+    },
+    {
+      "id": "n48",
+      "lat": 21.878309,
+      "lng": -102.299587
+    },
+    {
+      "id": "n49",
+      "lat": 21.878073,
+      "lng": -102.300598
+    },
+    {
+      "id": "n50",
+      "lat": 21.877533,
+      "lng": -102.299608
+    },
+    {
+      "id": "n51",
+      "lat": 21.877944,
+      "lng": -102.297833
+    },
+    {
+      "id": "n52",
+      "lat": 21.879111,
+      "lng": -102.297213
+    },
+    {
+      "id": "n53",
+      "lat": 21.878709,
+      "lng": -102.299289
+    },
+    {
+      "id": "n54",
+      "lat": 21.883732,
+      "lng": -102.29528
+    },
+    {
+      "id": "n55",
+      "lat": 21.883782,
+      "lng": -102.295149
+    },
+    {
+      "id": "n56",
+      "lat": 21.885302,
+      "lng": -102.291467
+    },
+    {
+      "id": "n57",
+      "lat": 21.882645,
+      "lng": -102.290316
+    },
+    {
+      "id": "n58",
+      "lat": 21.881597,
+      "lng": -102.294378
+    },
+    {
+      "id": "n59",
+      "lat": 21.880194,
+      "lng": -102.294194
+    },
+    {
+      "id": "n60",
+      "lat": 21.879611,
+      "lng": -102.295231
+    },
+    {
+      "id": "n61",
+      "lat": 21.884003,
+      "lng": -102.296373
+    },
+    {
+      "id": "n62",
+      "lat": 21.883688,
+      "lng": -102.29722
+    },
+    {
+      "id": "n63",
+      "lat": 21.878805,
+      "lng": -102.295945
+    },
+    {
+      "id": "n64",
+      "lat": 21.879097,
+      "lng": -102.295077
+    },
+    {
+      "id": "n65",
+      "lat": 21.879506,
+      "lng": -102.293973
+    },
+    {
+      "id": "n66",
+      "lat": 21.882263,
+      "lng": -102.284384
+    },
+    {
+      "id": "n67",
+      "lat": 21.880847,
+      "lng": -102.29439
+    },
+    {
+      "id": "n68",
+      "lat": 21.881727,
+      "lng": -102.290293
+    },
+    {
+      "id": "n69",
+      "lat": 21.884137,
+      "lng": -102.297421
+    },
+    {
+      "id": "n70",
+      "lat": 21.883094,
+      "lng": -102.296929
+    },
+    {
+      "id": "n71",
+      "lat": 21.882257,
+      "lng": -102.294824
+    },
+    {
+      "id": "n72",
+      "lat": 21.883039,
+      "lng": -102.29339
+    },
+    {
+      "id": "n73",
+      "lat": 21.878515,
+      "lng": -102.293597
+    },
+    {
+      "id": "n74",
+      "lat": 21.878157,
+      "lng": -102.294819
+    },
+    {
+      "id": "n75",
+      "lat": 21.877896,
+      "lng": -102.295735
+    },
+    {
+      "id": "n76",
+      "lat": 21.881939,
+      "lng": -102.297617
+    },
+    {
+      "id": "n77",
+      "lat": 21.884127,
+      "lng": -102.295361
+    },
+    {
+      "id": "n78",
+      "lat": 21.886682,
+      "lng": -102.296353
+    },
+    {
+      "id": "n79",
+      "lat": 21.883025,
+      "lng": -102.295058
+    },
+    {
+      "id": "n80",
+      "lat": 21.883001,
+      "lng": -102.295052
+    },
+    {
+      "id": "n81",
+      "lat": 21.881538,
+      "lng": -102.294624
+    },
+    {
+      "id": "n82",
+      "lat": 21.88167,
+      "lng": -102.297488
+    },
+    {
+      "id": "n83",
+      "lat": 21.880903,
+      "lng": -102.29704
+    },
+    {
+      "id": "n84",
+      "lat": 21.883388,
+      "lng": -102.29618
+    },
+    {
+      "id": "n85",
+      "lat": 21.884495,
+      "lng": -102.296517
+    },
+    {
+      "id": "n86",
+      "lat": 21.883966,
+      "lng": -102.297852
+    },
+    {
+      "id": "n87",
+      "lat": 21.883369,
+      "lng": -102.296227
+    },
+    {
+      "id": "n88",
+      "lat": 21.886639,
+      "lng": -102.297039
+    },
+    {
+      "id": "n89",
+      "lat": 21.879956,
+      "lng": -102.296827
+    },
+    {
+      "id": "n90",
+      "lat": 21.880069,
+      "lng": -102.296432
+    },
+    {
+      "id": "n91",
+      "lat": 21.877793,
+      "lng": -102.299005
+    },
+    {
+      "id": "n92",
+      "lat": 21.879228,
+      "lng": -102.299442
+    },
+    {
+      "id": "n93",
+      "lat": 21.878383,
+      "lng": -102.295888
+    },
+    {
+      "id": "n94",
+      "lat": 21.878498,
+      "lng": -102.29592
+    },
+    {
+      "id": "n95",
+      "lat": 21.870588,
+      "lng": -102.292648
+    },
+    {
+      "id": "n96",
+      "lat": 21.878625,
+      "lng": -102.294923
+    },
+    {
+      "id": "n97",
+      "lat": 21.87916,
+      "lng": -102.299746
+    },
+    {
+      "id": "n98",
+      "lat": 21.877667,
+      "lng": -102.299492
+    },
+    {
+      "id": "n99",
+      "lat": 21.878999,
+      "lng": -102.296011
+    },
+    {
+      "id": "n100",
+      "lat": 21.879171,
+      "lng": -102.29614
+    },
+    {
+      "id": "n101",
+      "lat": 21.879325,
+      "lng": -102.29619
+    },
+    {
+      "id": "n102",
+      "lat": 21.880102,
+      "lng": -102.296443
+    },
+    {
+      "id": "n103",
+      "lat": 21.879154,
+      "lng": -102.296198
+    },
+    {
+      "id": "n104",
+      "lat": 21.879365,
+      "lng": -102.295474
+    },
+    {
+      "id": "n105",
+      "lat": 21.879507,
+      "lng": -102.295583
+    },
+    {
+      "id": "n106",
+      "lat": 21.879523,
+      "lng": -102.295532
+    },
+    {
+      "id": "n107",
+      "lat": 21.879599,
+      "lng": -102.295273
+    },
+    {
+      "id": "n108",
+      "lat": 21.879421,
+      "lng": -102.295495
+    },
+    {
+      "id": "n109",
+      "lat": 21.88036,
+      "lng": -102.297515
+    },
+    {
+      "id": "n110",
+      "lat": 21.880447,
+      "lng": -102.29658
+    },
+    {
+      "id": "n111",
+      "lat": 21.880657,
+      "lng": -102.296654
+    },
+    {
+      "id": "n112",
+      "lat": 21.880933,
+      "lng": -102.296757
+    },
+    {
+      "id": "n113",
+      "lat": 21.881013,
+      "lng": -102.296295
+    },
+    {
+      "id": "n114",
+      "lat": 21.87745,
+      "lng": -102.304651
+    },
+    {
+      "id": "n115",
+      "lat": 21.8787,
+      "lng": -102.294615
+    },
+    {
+      "id": "n116",
+      "lat": 21.878556,
+      "lng": -102.295197
+    },
+    {
+      "id": "n117",
+      "lat": 21.878855,
+      "lng": -102.29398
+    },
+    {
+      "id": "n118",
+      "lat": 21.87873,
+      "lng": -102.294954
+    },
+    {
+      "id": "n119",
+      "lat": 21.879438,
+      "lng": -102.295179
+    },
+    {
+      "id": "n120",
+      "lat": 21.87956,
+      "lng": -102.295215
+    },
+    {
+      "id": "n121",
+      "lat": 21.878667,
+      "lng": -102.295214
+    },
+    {
+      "id": "n122",
+      "lat": 21.878801,
+      "lng": -102.294647
+    },
+    {
+      "id": "n123",
+      "lat": 21.878948,
+      "lng": -102.294012
+    },
+    {
+      "id": "n124",
+      "lat": 21.879374,
+      "lng": -102.295402
+    },
+    {
+      "id": "n125",
+      "lat": 21.879487,
+      "lng": -102.295443
+    },
+    {
+      "id": "n126",
+      "lat": 21.878988,
+      "lng": -102.29504
+    },
+    {
+      "id": "n127",
+      "lat": 21.883447,
+      "lng": -102.29362
+    },
+    {
+      "id": "n128",
+      "lat": 21.878444,
+      "lng": -102.296178
+    },
+    {
+      "id": "n129",
+      "lat": 21.87833,
+      "lng": -102.296142
+    },
+    {
+      "id": "n130",
+      "lat": 21.878591,
+      "lng": -102.295532
+    },
+    {
+      "id": "n131",
+      "lat": 21.878271,
+      "lng": -102.297
+    },
+    {
+      "id": "n132",
+      "lat": 21.87822,
+      "lng": -102.296668
+    },
+    {
+      "id": "n133",
+      "lat": 21.878345,
+      "lng": -102.29665
+    },
+    {
+      "id": "n134",
+      "lat": 21.878066,
+      "lng": -102.297862
+    },
+    {
+      "id": "n135",
+      "lat": 21.877861,
+      "lng": -102.298724
+    },
+    {
+      "id": "n136",
+      "lat": 21.883504,
+      "lng": -102.29963
+    },
+    {
+      "id": "n137",
+      "lat": 21.883586,
+      "lng": -102.299865
+    },
+    {
+      "id": "n138",
+      "lat": 21.88408,
+      "lng": -102.301282
+    },
+    {
+      "id": "n139",
+      "lat": 21.881277,
+      "lng": -102.295477
+    },
+    {
+      "id": "n140",
+      "lat": 21.880297,
+      "lng": -102.299622
+    },
+    {
+      "id": "n141",
+      "lat": 21.882712,
+      "lng": -102.299811
+    },
+    {
+      "id": "n142",
+      "lat": 21.882812,
+      "lng": -102.300393
+    },
+    {
+      "id": "n143",
+      "lat": 21.882936,
+      "lng": -102.300391
+    },
+    {
+      "id": "n144",
+      "lat": 21.882844,
+      "lng": -102.299698
+    },
+    {
+      "id": "n145",
+      "lat": 21.882968,
+      "lng": -102.300634
+    },
+    {
+      "id": "n146",
+      "lat": 21.883248,
+      "lng": -102.299926
+    },
+    {
+      "id": "n147",
+      "lat": 21.883356,
+      "lng": -102.299625
+    },
+    {
+      "id": "n148",
+      "lat": 21.883369,
+      "lng": -102.300026
+    },
+    {
+      "id": "n149",
+      "lat": 21.883373,
+      "lng": -102.299679
+    },
+    {
+      "id": "n150",
+      "lat": 21.883662,
+      "lng": -102.29984
+    },
+    {
+      "id": "n151",
+      "lat": 21.883724,
+      "lng": -102.29982
+    },
+    {
+      "id": "n152",
+      "lat": 21.882066,
+      "lng": -102.299563
+    },
+    {
+      "id": "n153",
+      "lat": 21.882012,
+      "lng": -102.299542
+    },
+    {
+      "id": "n154",
+      "lat": 21.881963,
+      "lng": -102.299523
+    },
+    {
+      "id": "n155",
+      "lat": 21.88418,
+      "lng": -102.299673
+    },
+    {
+      "id": "n156",
+      "lat": 21.882878,
+      "lng": -102.296058
+    },
+    {
+      "id": "n157",
+      "lat": 21.882891,
+      "lng": -102.295396
+    },
+    {
+      "id": "n158",
+      "lat": 21.882162,
+      "lng": -102.301684
+    },
+    {
+      "id": "n159",
+      "lat": 21.881652,
+      "lng": -102.299406
+    },
+    {
+      "id": "n160",
+      "lat": 21.878966,
+      "lng": -102.29614
+    },
+    {
+      "id": "n161",
+      "lat": 21.879501,
+      "lng": -102.295246
+    },
+    {
+      "id": "n162",
+      "lat": 21.879559,
+      "lng": -102.2956
+    }
+  ],
+  "aristas": [
+    {
+      "a": "n0",
+      "b": "n1",
+      "m": 244,
+      "calle": "Boulevard José María Chávez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n2",
+      "b": "n3",
+      "m": 145,
+      "calle": "Calle Rivero y Gutiérrez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n4",
+      "b": "n5",
+      "m": 66,
+      "calle": "Calle Galeana Sur",
+      "peligro_base": 0
+    },
+    {
+      "a": "n5",
+      "b": "n6",
+      "m": 423,
+      "calle": "Calle Galeana Sur",
+      "peligro_base": 0
+    },
+    {
+      "a": "n7",
+      "b": "n8",
+      "m": 13,
+      "calle": "Calle Galeana Norte",
+      "peligro_base": 0
+    },
+    {
+      "a": "n8",
+      "b": "n9",
+      "m": 84,
+      "calle": "Calle Galeana Norte",
+      "peligro_base": 0
+    },
+    {
+      "a": "n1",
+      "b": "n10",
+      "m": 113,
+      "calle": "Calle 5 de Mayo",
+      "peligro_base": 0
+    },
+    {
+      "a": "n10",
+      "b": "n11",
+      "m": 89,
+      "calle": "Calle 5 de Mayo",
+      "peligro_base": 0
+    },
+    {
+      "a": "n12",
+      "b": "n13",
+      "m": 220,
+      "calle": "Calle General Ignacio Allende",
+      "peligro_base": 0
+    },
+    {
+      "a": "n10",
+      "b": "n14",
+      "m": 123,
+      "calle": "Peatonal Allende Oriente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n14",
+      "b": "n15",
+      "m": 3,
+      "calle": "Peatonal Allende Oriente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n15",
+      "b": "n16",
+      "m": 108,
+      "calle": "Peatonal Allende Oriente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n7",
+      "b": "n17",
+      "m": 84,
+      "calle": "Calle del Codo",
+      "peligro_base": 0
+    },
+    {
+      "a": "n18",
+      "b": "n19",
+      "m": 86,
+      "calle": "Benito Juárez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n19",
+      "b": "n20",
+      "m": 11,
+      "calle": "Benito Juárez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n21",
+      "b": "n11",
+      "m": 56,
+      "calle": "Calle Rivero y Gutiérrez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n20",
+      "b": "n22",
+      "m": 85,
+      "calle": "Avenida Francisco I. Madero",
+      "peligro_base": 0
+    },
+    {
+      "a": "n23",
+      "b": "n24",
+      "m": 264,
+      "calle": "Calle de Venustiano Carranza",
+      "peligro_base": 0
+    },
+    {
+      "a": "n25",
+      "b": "n26",
+      "m": 12,
+      "calle": "Calle Aracon",
+      "peligro_base": 0
+    },
+    {
+      "a": "n26",
+      "b": "n27",
+      "m": 96,
+      "calle": "Calle Aracon",
+      "peligro_base": 0
+    },
+    {
+      "a": "n28",
+      "b": "n29",
+      "m": 45,
+      "calle": "Calle Gorostiza",
+      "peligro_base": 0
+    },
+    {
+      "a": "n29",
+      "b": "n30",
+      "m": 18,
+      "calle": "Calle Gorostiza",
+      "peligro_base": 0
+    },
+    {
+      "a": "n30",
+      "b": "n2",
+      "m": 82,
+      "calle": "Calle Gorostiza",
+      "peligro_base": 0
+    },
+    {
+      "a": "n31",
+      "b": "n32",
+      "m": 59,
+      "calle": "Calle Adolfo Torres",
+      "peligro_base": 0
+    },
+    {
+      "a": "n33",
+      "b": "n34",
+      "m": 19,
+      "calle": "Calle Plazuela Juárez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n34",
+      "b": "n35",
+      "m": 81,
+      "calle": "Calle Plazuela Juárez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n36",
+      "b": "n33",
+      "m": 70,
+      "calle": "Calle General Guadalupe Victoria",
+      "peligro_base": 0
+    },
+    {
+      "a": "n33",
+      "b": "n32",
+      "m": 61,
+      "calle": "Calle General Guadalupe Victoria",
+      "peligro_base": 0
+    },
+    {
+      "a": "n32",
+      "b": "n37",
+      "m": 57,
+      "calle": "Calle General Guadalupe Victoria",
+      "peligro_base": 0
+    },
+    {
+      "a": "n37",
+      "b": "n21",
+      "m": 56,
+      "calle": "Calle General Guadalupe Victoria",
+      "peligro_base": 0
+    },
+    {
+      "a": "n34",
+      "b": "n38",
+      "m": 27,
+      "calle": "Plazuela Juárez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n29",
+      "b": "n39",
+      "m": 87,
+      "calle": "Gorostiza",
+      "peligro_base": 0
+    },
+    {
+      "a": "n40",
+      "b": "n41",
+      "m": 61,
+      "calle": "Calle Arce",
+      "peligro_base": 0
+    },
+    {
+      "a": "n42",
+      "b": "n43",
+      "m": 178,
+      "calle": "Calle Rayón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n43",
+      "b": "n44",
+      "m": 44,
+      "calle": "Calle Rayón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n44",
+      "b": "n41",
+      "m": 134,
+      "calle": "Calle Rayón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n41",
+      "b": "n45",
+      "m": 84,
+      "calle": "Calle Rayón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n45",
+      "b": "n46",
+      "m": 106,
+      "calle": "Calle Rayón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n46",
+      "b": "n47",
+      "m": 7,
+      "calle": "Calle Rayón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n47",
+      "b": "n0",
+      "m": 38,
+      "calle": "Boulevard José María Chávez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n48",
+      "b": "n49",
+      "m": 108,
+      "calle": "Calle Tesoro",
+      "peligro_base": 0
+    },
+    {
+      "a": "n50",
+      "b": "n51",
+      "m": 189,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n51",
+      "b": "n4",
+      "m": 93,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n52",
+      "b": "n40",
+      "m": 83,
+      "calle": "Calle Insurgentes",
+      "peligro_base": 0
+    },
+    {
+      "a": "n40",
+      "b": "n53",
+      "m": 136,
+      "calle": "Calle Insurgentes",
+      "peligro_base": 0
+    },
+    {
+      "a": "n54",
+      "b": "n55",
+      "m": 15,
+      "calle": "Calle Pedro Parga",
+      "peligro_base": 0
+    },
+    {
+      "a": "n55",
+      "b": "n56",
+      "m": 416,
+      "calle": "Calle Pedro Parga",
+      "peligro_base": 0
+    },
+    {
+      "a": "n57",
+      "b": "n58",
+      "m": 435,
+      "calle": "Avenida Francisco I. Madero",
+      "peligro_base": 0
+    },
+    {
+      "a": "n59",
+      "b": "n60",
+      "m": 125,
+      "calle": "Calle Antonio Acevedo Escobedo",
+      "peligro_base": 0
+    },
+    {
+      "a": "n61",
+      "b": "n62",
+      "m": 94,
+      "calle": "San Antonio",
+      "peligro_base": 0
+    },
+    {
+      "a": "n47",
+      "b": "n63",
+      "m": 7,
+      "calle": "Calle Francisco G. Hornedo",
+      "peligro_base": 0
+    },
+    {
+      "a": "n63",
+      "b": "n64",
+      "m": 95,
+      "calle": "Calle Francisco G. Hornedo",
+      "peligro_base": 0
+    },
+    {
+      "a": "n64",
+      "b": "n65",
+      "m": 123,
+      "calle": "Calle Francisco G. Hornedo",
+      "peligro_base": 0
+    },
+    {
+      "a": "n65",
+      "b": "n66",
+      "m": 1037,
+      "calle": "Calle Francisco G. Hornedo",
+      "peligro_base": 0
+    },
+    {
+      "a": "n67",
+      "b": "n68",
+      "m": 434,
+      "calle": "Calle Juan de Montoro",
+      "peligro_base": 0
+    },
+    {
+      "a": "n69",
+      "b": "n62",
+      "m": 54,
+      "calle": "Pasaje Ortega",
+      "peligro_base": 0
+    },
+    {
+      "a": "n62",
+      "b": "n70",
+      "m": 72,
+      "calle": "Pasaje Ortega",
+      "peligro_base": 0
+    },
+    {
+      "a": "n71",
+      "b": "n72",
+      "m": 172,
+      "calle": "Calle de Hospitalidad",
+      "peligro_base": 0
+    },
+    {
+      "a": "n73",
+      "b": "n74",
+      "m": 132,
+      "calle": "Calle Héroes de Chapultepec",
+      "peligro_base": 0
+    },
+    {
+      "a": "n74",
+      "b": "n75",
+      "m": 99,
+      "calle": "Calle Héroes de Chapultepec",
+      "peligro_base": 0
+    },
+    {
+      "a": "n75",
+      "b": "n5",
+      "m": 120,
+      "calle": "Calle Héroes de Chapultepec",
+      "peligro_base": 0
+    },
+    {
+      "a": "n10",
+      "b": "n76",
+      "m": 55,
+      "calle": "Calle General Ignacio Allende",
+      "peligro_base": 0
+    },
+    {
+      "a": "n76",
+      "b": "n27",
+      "m": 233,
+      "calle": "Calle General Ignacio Allende",
+      "peligro_base": 0
+    },
+    {
+      "a": "n77",
+      "b": "n55",
+      "m": 44,
+      "calle": "secondary_link",
+      "peligro_base": 0
+    },
+    {
+      "a": "n78",
+      "b": "n77",
+      "m": 302,
+      "calle": "Calle José María Morelos y Pavón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n77",
+      "b": "n54",
+      "m": 45,
+      "calle": "Calle José María Morelos y Pavón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n54",
+      "b": "n79",
+      "m": 82,
+      "calle": "Calle José María Morelos y Pavón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n79",
+      "b": "n80",
+      "m": 3,
+      "calle": "Calle José María Morelos y Pavón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n80",
+      "b": "n16",
+      "m": 3,
+      "calle": "Calle José María Morelos y Pavón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n16",
+      "b": "n71",
+      "m": 84,
+      "calle": "Calle José María Morelos y Pavón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n71",
+      "b": "n81",
+      "m": 83,
+      "calle": "Calle José María Morelos y Pavón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n21",
+      "b": "n76",
+      "m": 88,
+      "calle": "Calle General Guadalupe Victoria",
+      "peligro_base": 0
+    },
+    {
+      "a": "n76",
+      "b": "n82",
+      "m": 33,
+      "calle": "Calle General Guadalupe Victoria",
+      "peligro_base": 0
+    },
+    {
+      "a": "n82",
+      "b": "n83",
+      "m": 97,
+      "calle": "Calle General Guadalupe Victoria",
+      "peligro_base": 0
+    },
+    {
+      "a": "n84",
+      "b": "n61",
+      "m": 71,
+      "calle": "Calle Licenciado Benito Juárez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n61",
+      "b": "n85",
+      "m": 57,
+      "calle": "Calle Licenciado Benito Juárez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n85",
+      "b": "n69",
+      "m": 101,
+      "calle": "Calle Unión",
+      "peligro_base": 0
+    },
+    {
+      "a": "n69",
+      "b": "n86",
+      "m": 48,
+      "calle": "Calle Unión",
+      "peligro_base": 0
+    },
+    {
+      "a": "n84",
+      "b": "n54",
+      "m": 100,
+      "calle": "Calle Rivero y Gutiérrez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n11",
+      "b": "n70",
+      "m": 61,
+      "calle": "Calle Rivero y Gutiérrez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n70",
+      "b": "n87",
+      "m": 79,
+      "calle": "Calle Rivero y Gutiérrez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n87",
+      "b": "n84",
+      "m": 5,
+      "calle": "Calle Rivero y Gutiérrez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n86",
+      "b": "n88",
+      "m": 311,
+      "calle": "Calle 5 de Mayo",
+      "peligro_base": 0
+    },
+    {
+      "a": "n83",
+      "b": "n7",
+      "m": 72,
+      "calle": "Calle de Moctezuma",
+      "peligro_base": 0
+    },
+    {
+      "a": "n89",
+      "b": "n90",
+      "m": 43,
+      "calle": "Peatonal Plaza Principal",
+      "peligro_base": 0
+    },
+    {
+      "a": "n90",
+      "b": "n18",
+      "m": 106,
+      "calle": "Peatonal Plaza Principal",
+      "peligro_base": 0
+    },
+    {
+      "a": "n91",
+      "b": "n44",
+      "m": 44,
+      "calle": "Calle General Vicente Guerrero Sur",
+      "peligro_base": 0
+    },
+    {
+      "a": "n44",
+      "b": "n53",
+      "m": 62,
+      "calle": "Calle General Vicente Guerrero Sur",
+      "peligro_base": 0
+    },
+    {
+      "a": "n53",
+      "b": "n92",
+      "m": 60,
+      "calle": "Calle General Vicente Guerrero Sur",
+      "peligro_base": 0
+    },
+    {
+      "a": "n93",
+      "b": "n94",
+      "m": 13,
+      "calle": "Boulevard José María Chávez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n9",
+      "b": "n89",
+      "m": 61,
+      "calle": "Calle Nieto",
+      "peligro_base": 0
+    },
+    {
+      "a": "n95",
+      "b": "n74",
+      "m": 871,
+      "calle": "Calle Cristóbal Colón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n74",
+      "b": "n96",
+      "m": 53,
+      "calle": "Calle Cristóbal Colón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n94",
+      "b": "n47",
+      "m": 33,
+      "calle": "Boulevard José María Chávez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n97",
+      "b": "n48",
+      "m": 96,
+      "calle": "Calle Mariano Matamoros Norte",
+      "peligro_base": 0
+    },
+    {
+      "a": "n48",
+      "b": "n43",
+      "m": 26,
+      "calle": "Calle Mariano Matamoros Norte",
+      "peligro_base": 0
+    },
+    {
+      "a": "n43",
+      "b": "n98",
+      "m": 46,
+      "calle": "Calle Mariano Matamoros Norte",
+      "peligro_base": 0
+    },
+    {
+      "a": "n63",
+      "b": "n99",
+      "m": 23,
+      "calle": "Calle José María Chávez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n100",
+      "b": "n101",
+      "m": 18,
+      "calle": "Calle José María Chávez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n101",
+      "b": "n90",
+      "m": 86,
+      "calle": "Calle José María Chávez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n90",
+      "b": "n102",
+      "m": 4,
+      "calle": "Calle José María Chávez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n103",
+      "b": "n100",
+      "m": 6,
+      "calle": "Peatonal Plaza de la República",
+      "peligro_base": 0
+    },
+    {
+      "a": "n100",
+      "b": "n104",
+      "m": 72,
+      "calle": "Peatonal Plaza de la República",
+      "peligro_base": 0
+    },
+    {
+      "a": "n101",
+      "b": "n105",
+      "m": 66,
+      "calle": "Peatonal Plaza de la República",
+      "peligro_base": 0
+    },
+    {
+      "a": "n105",
+      "b": "n106",
+      "m": 5,
+      "calle": "Peatonal Plaza de la República",
+      "peligro_base": 0
+    },
+    {
+      "a": "n106",
+      "b": "n107",
+      "m": 28,
+      "calle": "Peatonal Plaza de la República",
+      "peligro_base": 0
+    },
+    {
+      "a": "n104",
+      "b": "n108",
+      "m": 7,
+      "calle": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n108",
+      "b": "n106",
+      "m": 12,
+      "calle": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n109",
+      "b": "n110",
+      "m": 125,
+      "calle": "Plaza de la República",
+      "peligro_base": 0
+    },
+    {
+      "a": "n110",
+      "b": "n111",
+      "m": 25,
+      "calle": "Plaza de la República",
+      "peligro_base": 0
+    },
+    {
+      "a": "n111",
+      "b": "n109",
+      "m": 95,
+      "calle": "Plaza de la República",
+      "peligro_base": 0
+    },
+    {
+      "a": "n112",
+      "b": "n111",
+      "m": 32,
+      "calle": "Plaza de la Patria",
+      "peligro_base": 0
+    },
+    {
+      "a": "n110",
+      "b": "n102",
+      "m": 45,
+      "calle": "Plaza de la Patria",
+      "peligro_base": 0
+    },
+    {
+      "a": "n102",
+      "b": "n113",
+      "m": 135,
+      "calle": "Plaza de la Patria",
+      "peligro_base": 0
+    },
+    {
+      "a": "n113",
+      "b": "n112",
+      "m": 59,
+      "calle": "Plaza de la Patria",
+      "peligro_base": 0
+    },
+    {
+      "a": "n114",
+      "b": "n97",
+      "m": 542,
+      "calle": "Calle Nieto",
+      "peligro_base": 0
+    },
+    {
+      "a": "n97",
+      "b": "n92",
+      "m": 32,
+      "calle": "Calle Nieto",
+      "peligro_base": 0
+    },
+    {
+      "a": "n92",
+      "b": "n9",
+      "m": 221,
+      "calle": "Calle Nieto",
+      "peligro_base": 0
+    },
+    {
+      "a": "n67",
+      "b": "n59",
+      "m": 75,
+      "calle": "Calle Doctor Jesús Díaz de León",
+      "peligro_base": 0
+    },
+    {
+      "a": "n59",
+      "b": "n65",
+      "m": 80,
+      "calle": "Calle Doctor Jesús Díaz de León",
+      "peligro_base": 0
+    },
+    {
+      "a": "n96",
+      "b": "n115",
+      "m": 33,
+      "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n116",
+      "b": "n96",
+      "m": 29,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n115",
+      "b": "n117",
+      "m": 68,
+      "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n96",
+      "b": "n118",
+      "m": 12,
+      "calle": "Calle Cristóbal Colón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n64",
+      "b": "n119",
+      "m": 39,
+      "calle": "Calle Cristóbal Colón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n119",
+      "b": "n120",
+      "m": 14,
+      "calle": "Calle Cristóbal Colón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n120",
+      "b": "n60",
+      "m": 6,
+      "calle": "Calle Cristóbal Colón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n60",
+      "b": "n18",
+      "m": 92,
+      "calle": "Calle Cristóbal Colón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n118",
+      "b": "n121",
+      "m": 28,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n122",
+      "b": "n118",
+      "m": 33,
+      "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n123",
+      "b": "n122",
+      "m": 68,
+      "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n124",
+      "b": "n119",
+      "m": 24,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n120",
+      "b": "n125",
+      "m": 25,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n126",
+      "b": "n64",
+      "m": 13,
+      "calle": "Calle Cristóbal Colón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n118",
+      "b": "n126",
+      "m": 30,
+      "calle": "Calle Cristóbal Colón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n18",
+      "b": "n67",
+      "m": 122,
+      "calle": "Calle Juan de Montoro",
+      "peligro_base": 0
+    },
+    {
+      "a": "n127",
+      "b": "n80",
+      "m": 156,
+      "calle": "Calle Licenciado Francisco Primo Verdad",
+      "peligro_base": 0
+    },
+    {
+      "a": "n94",
+      "b": "n128",
+      "m": 27,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n93",
+      "b": "n116",
+      "m": 74,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n129",
+      "b": "n93",
+      "m": 27,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n130",
+      "b": "n94",
+      "m": 41,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n121",
+      "b": "n130",
+      "m": 34,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n131",
+      "b": "n4",
+      "m": 13,
+      "calle": "Calle Galeana Norte",
+      "peligro_base": 0
+    },
+    {
+      "a": "n132",
+      "b": "n129",
+      "m": 56,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n4",
+      "b": "n132",
+      "m": 31,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n133",
+      "b": "n131",
+      "m": 37,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n128",
+      "b": "n133",
+      "m": 50,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n131",
+      "b": "n134",
+      "m": 92,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n134",
+      "b": "n135",
+      "m": 92,
+      "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
+      "peligro_base": 0
+    },
+    {
+      "a": "n3",
+      "b": "n21",
+      "m": 21,
+      "calle": "Calle Rivero y Gutiérrez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n134",
+      "b": "n51",
+      "m": 14,
+      "calle": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n28",
+      "b": "n136",
+      "m": 48,
+      "calle": "Calle Guadalupe",
+      "peligro_base": 0
+    },
+    {
+      "a": "n136",
+      "b": "n137",
+      "m": 26,
+      "calle": "Calle Guadalupe",
+      "peligro_base": 0
+    },
+    {
+      "a": "n137",
+      "b": "n138",
+      "m": 156,
+      "calle": "Calle Guadalupe",
+      "peligro_base": 0
+    },
+    {
+      "a": "n37",
+      "b": "n35",
+      "m": 80,
+      "calle": "Calle Guadalupe",
+      "peligro_base": 0
+    },
+    {
+      "a": "n35",
+      "b": "n28",
+      "m": 28,
+      "calle": "Calle Guadalupe",
+      "peligro_base": 0
+    },
+    {
+      "a": "n58",
+      "b": "n81",
+      "m": 26,
+      "calle": "Avenida Francisco I. Madero",
+      "peligro_base": 0
+    },
+    {
+      "a": "n81",
+      "b": "n139",
+      "m": 93,
+      "calle": "Avenida Francisco I. Madero",
+      "peligro_base": 0
+    },
+    {
+      "a": "n92",
+      "b": "n140",
+      "m": 120,
+      "calle": "Calle General Vicente Guerrero Norte",
+      "peligro_base": 0
+    },
+    {
+      "a": "n75",
+      "b": "n93",
+      "m": 56,
+      "calle": "Calle José María Chávez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n141",
+      "b": "n142",
+      "m": 61,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n143",
+      "b": "n142",
+      "m": 14,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n141",
+      "b": "n144",
+      "m": 19,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n30",
+      "b": "n144",
+      "m": 40,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n144",
+      "b": "n143",
+      "m": 72,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n143",
+      "b": "n145",
+      "m": 25,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n146",
+      "b": "n147",
+      "m": 43,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n148",
+      "b": "n146",
+      "m": 24,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n147",
+      "b": "n149",
+      "m": 6,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n149",
+      "b": "n146",
+      "m": 42,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n136",
+      "b": "n149",
+      "m": 15,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n150",
+      "b": "n151",
+      "m": 7,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n152",
+      "b": "n153",
+      "m": 6,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n153",
+      "b": "n154",
+      "m": 6,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n151",
+      "b": "n155",
+      "m": 53,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n137",
+      "b": "n150",
+      "m": 9,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n156",
+      "b": "n84",
+      "m": 58,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n157",
+      "b": "n79",
+      "m": 38,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n158",
+      "b": "n25",
+      "m": 209,
+      "calle": "Calle General Emiliano Zapata",
+      "peligro_base": 0
+    },
+    {
+      "a": "n25",
+      "b": "n152",
+      "m": 10,
+      "calle": "Calle General Emiliano Zapata",
+      "peligro_base": 0
+    },
+    {
+      "a": "n152",
+      "b": "n2",
+      "m": 13,
+      "calle": "Calle General Emiliano Zapata",
+      "peligro_base": 0
+    },
+    {
+      "a": "n27",
+      "b": "n13",
+      "m": 30,
+      "calle": "Calle General Ignacio Allende",
+      "peligro_base": 0
+    },
+    {
+      "a": "n20",
+      "b": "n15",
+      "m": 152,
+      "calle": "Peatonal Benito Juárez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n139",
+      "b": "n20",
+      "m": 21,
+      "calle": "Avenida Francisco I. Madero",
+      "peligro_base": 0
+    },
+    {
+      "a": "n22",
+      "b": "n83",
+      "m": 62,
+      "calle": "Avenida Francisco I. Madero",
+      "peligro_base": 0
+    },
+    {
+      "a": "n8",
+      "b": "n140",
+      "m": 207,
+      "calle": "Calle de Venustiano Carranza",
+      "peligro_base": 0
+    },
+    {
+      "a": "n140",
+      "b": "n23",
+      "m": 27,
+      "calle": "Calle de Venustiano Carranza",
+      "peligro_base": 0
+    },
+    {
+      "a": "n9",
+      "b": "n52",
+      "m": 77,
+      "calle": "Calle Galeana Norte",
+      "peligro_base": 0
+    },
+    {
+      "a": "n52",
+      "b": "n45",
+      "m": 65,
+      "calle": "Calle Galeana Norte",
+      "peligro_base": 0
+    },
+    {
+      "a": "n45",
+      "b": "n131",
+      "m": 31,
+      "calle": "Calle Galeana Norte",
+      "peligro_base": 0
+    },
+    {
+      "a": "n81",
+      "b": "n67",
+      "m": 80,
+      "calle": "Calle José María Morelos y Pavón",
+      "peligro_base": 0
+    },
+    {
+      "a": "n154",
+      "b": "n159",
+      "m": 37,
+      "calle": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n13",
+      "b": "n23",
+      "m": 78,
+      "calle": "Calle Mariano Matamoros Norte",
+      "peligro_base": 0
+    },
+    {
+      "a": "n23",
+      "b": "n97",
+      "m": 124,
+      "calle": "Calle Mariano Matamoros Norte",
+      "peligro_base": 0
+    },
+    {
+      "a": "n2",
+      "b": "n153",
+      "m": 12,
+      "calle": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n153",
+      "b": "n26",
+      "m": 14,
+      "calle": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n31",
+      "b": "n86",
+      "m": 18,
+      "calle": "Calle 5 de Mayo",
+      "peligro_base": 0
+    },
+    {
+      "a": "n11",
+      "b": "n31",
+      "m": 110,
+      "calle": "Calle 5 de Mayo",
+      "peligro_base": 0
+    },
+    {
+      "a": "n87",
+      "b": "n14",
+      "m": 90,
+      "calle": "Peatonal Benito Juárez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n113",
+      "b": "n19",
+      "m": 68,
+      "calle": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n46",
+      "b": "n160",
+      "m": 23,
+      "calle": "Calle José María Chávez",
+      "peligro_base": 0
+    },
+    {
+      "a": "n108",
+      "b": "n161",
+      "m": 27,
+      "calle": "Peatonal Plaza de la República",
+      "peligro_base": 0
+    },
+    {
+      "a": "n162",
+      "b": "n105",
+      "m": 6,
+      "calle": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n17",
+      "b": "n82",
+      "m": 61,
+      "calle": "Calle del Codo",
+      "peligro_base": 0
+    }
+  ]
+}
