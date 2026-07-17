@@ -12,6 +12,7 @@ import { DATA_BASE, getSession, setSession, fetchJSON } from './main.js';
 import { construirGrafo, aStar, nodoMasCercano, haversine } from './pathfinding.js';
 import { peligroDeArista, criaturasActivas } from './peligro.js';
 import { consolidarOperacion } from './roster-store.js';
+import { claveVoz } from './coms-hash.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -125,6 +126,7 @@ function revelar(c) {
     const a = grafo.nodos.get(e.a), b = grafo.nodos.get(e.b);
     if (!e._peligro && (haversine(c, a) < 55 || haversine(c, b) < 55)) { e._peligro = true; c.aristasMarcadas.push(e); restyleEdge(e); }
   }
+  sfxPing();
 }
 function despejarContacto(c) {
   c.despejado = true; c.encontrado = true;
@@ -166,6 +168,7 @@ const peso = (e) => e.m * (1 + peligroDeArista(e, ecologia, horaActual, CRIATURA
 
 function despachar(destino) {
   if (moving || destino === unidadNode) return;
+  sfxSelect(); iniciarAmbiente();
   if (rutaLine) map.removeLayer(rutaLine);
   if (dstMark) map.removeLayer(dstMark);
   const r = aStar(grafo, unidadNode, destino, { peso });
@@ -243,7 +246,7 @@ function reconocer(poi) {
   if (poi.marker) poi.marker.getElement()?.querySelector('.sala-poi')?.classList.add('hecho');
   const r = Math.random();
   if (r < 0.55) {                       // intel
-    intel++;
+    intel++; sfxIntel();
     guionar([{ rol: 'lider', t: `Registrado. Hay datos aquí — ${calleDe(poi.node)}. Documentando.` }, { rol: 'control', t: 'Recibido. Buen material. Sigan.' }]);
   } else if (r < 0.75) {                // rastro → revela un contacto
     revelarMasCercano();
@@ -280,7 +283,7 @@ async function asalto(c) {
 
 // Aplica una herida a un agente vivo al azar (alimenta "lo que perdura").
 function herir() {
-  danosUnidad++;
+  danosUnidad++; sfxHit();
   const vivos = equipo.filter(a => a.estado.vivo);
   if (!vivos.length) return;
   const a = vivos[Math.floor(Math.random() * vivos.length)];
@@ -298,7 +301,7 @@ function mermarCordura(n) {
 function aplicarEfectos(efectos) {
   for (const e of (efectos || [])) {
     if (e === 'ruido' || e === 'contacto') revelarMasCercano();
-    else if (e === 'intel') { intel++; actualizarHUD(); }
+    else if (e === 'intel') { intel++; sfxIntel(); actualizarHUD(); }
     else if (e === 'fatiga') mermarCordura(12);
   }
 }
@@ -325,6 +328,12 @@ function extraer() {
   window.location.href = './reporte.html';
 }
 $('btn-extraer').addEventListener('click', extraer);
+$('sala-audio').addEventListener('click', toggleAudio);
+$('sala-volumen').addEventListener('input', (e) => {
+  volMaster = +e.target.value / 100;
+  $('sala-vol-val').textContent = e.target.value;
+  if (master) master.gain.value = volMaster;
+});
 
 // ── Códec (voces = unidad real) ──────────────────────────────────────────────
 const TINT = ['#4dff7a', '#6ad0ff', '#c8a84a'];
@@ -407,7 +416,7 @@ function siguiente() {
   else { pintarPortrait($('sala-port-left'), ultimoCampo, false); pintarPortrait($('sala-port-right'), voz, true); }
   const nameEl = $('sala-codec-name');
   nameEl.textContent = voz.nombre; nameEl.style.textAlign = voz.lado === 'right' ? 'right' : 'left'; nameEl.style.color = voz.tint;
-  beep(760);
+  beep(760); hablar(t, voz, rol);
   escribir($('sala-codec-line'), t, () => { apagarTalking(); setTimeout(siguiente, holdMs * (0.8 + Math.random() * 0.5)); });
 }
 function escribir(el, texto, done) {
@@ -415,8 +424,132 @@ function escribir(el, texto, done) {
   tw = setInterval(() => { el.innerHTML = texto.slice(0, ++i) + '<span class="sala-cursor">▍</span>'; if (i >= texto.length) { clearInterval(tw); el.textContent = texto; done(); } }, charMs);
 }
 function apagarTalking() { $('sala-port-left').classList.remove('talking'); $('sala-port-right').classList.remove('talking'); }
-function beep(freq) {
-  try { actx = actx || new (window.AudioContext || window.webkitAudioContext)(); const o = actx.createOscillator(), g = actx.createGain(); o.type = 'sine'; o.frequency.value = freq; g.gain.value = 0.03; o.connect(g); g.connect(actx.destination); o.start(); o.stop(actx.currentTime + 0.05); } catch { }
+// ── Audio: ambiente + SFX (WebAudio) + voz (speechSynthesis) ─────────────────
+// Todo sintetizado en el navegador: sin archivos, sin llaves, offline.
+let audioOn = true, ambGain = null, master = null, volMaster = 0.35;
+function ensureCtx() {
+  if (!actx) { try { actx = new (window.AudioContext || window.webkitAudioContext)(); } catch { return null; } }
+  if (actx && !master) { master = actx.createGain(); master.gain.value = volMaster; master.connect(actx.destination); }  // volumen general
+  if (actx.state === 'suspended') actx.resume();
+  return actx;
+}
+// Drone de dread + estática filtrada con respiración lenta. Arranca al primer gesto.
+function iniciarAmbiente() {
+  if (!audioOn || ambGain) return;
+  const ctx = ensureCtx(); if (!ctx) return;
+  ambGain = ctx.createGain(); ambGain.gain.value = 0; ambGain.connect(master);
+  [55, 82.4, 110].forEach((f, i) => {
+    const o = ctx.createOscillator(); o.type = i === 2 ? 'sine' : 'triangle'; o.frequency.value = f;
+    const g = ctx.createGain(); g.gain.value = i === 2 ? 0.02 : 0.045; o.connect(g); g.connect(ambGain); o.start();
+  });
+  const buf = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate);
+  const d = buf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * 0.5;
+  const noise = ctx.createBufferSource(); noise.buffer = buf; noise.loop = true;
+  const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 440;
+  const ng = ctx.createGain(); ng.gain.value = 0.02; noise.connect(lp); lp.connect(ng); ng.connect(ambGain); noise.start();
+  const lfo = ctx.createOscillator(); lfo.frequency.value = 0.08; const lfoG = ctx.createGain(); lfoG.gain.value = 0.25;
+  lfo.connect(lfoG); lfoG.connect(ambGain.gain); lfo.start();
+  ambGain.gain.setValueAtTime(0, ctx.currentTime);
+  ambGain.gain.linearRampToValueAtTime(0.85, ctx.currentTime + 3);
+}
+function tono(freq, type, dur, peak) {
+  if (!audioOn) return; const ctx = ensureCtx(); if (!ctx) return;
+  const o = ctx.createOscillator(), g = ctx.createGain(); o.type = type; o.frequency.value = freq;
+  o.connect(g); g.connect(master); const t = ctx.currentTime;
+  g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(peak, t + 0.005); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  o.start(t); o.stop(t + dur);
+}
+function beep(freq = 760) { tono(freq, 'sine', 0.05, 0.03); }
+function sfxSelect() { tono(430, 'square', 0.05, 0.035); tono(650, 'square', 0.05, 0.03); }
+function sfxPing() { tono(1250, 'sine', 0.28, 0.05); }
+function sfxIntel() { tono(660, 'sine', 0.12, 0.05); setTimeout(() => tono(990, 'sine', 0.16, 0.05), 110); }
+function sfxAlarm() { tono(300, 'sawtooth', 0.18, 0.06); setTimeout(() => tono(300, 'sawtooth', 0.18, 0.06), 210); }
+function sfxHit() {
+  if (!audioOn) return; const ctx = ensureCtx(); if (!ctx) return;
+  const buf = ctx.createBuffer(1, ctx.sampleRate * 0.2, ctx.sampleRate);
+  const d = buf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 2);
+  const n = ctx.createBufferSource(); n.buffer = buf; const g = ctx.createGain(); g.gain.value = 0.13; n.connect(g); g.connect(master); n.start();
+  tono(90, 'sine', 0.22, 0.12);
+}
+// Voz: si existe el clip pre-renderizado (ElevenLabs horneado) lo reproduce; si
+// no, cae al TTS robótico del navegador (CENVAC-OS lee la transcripción).
+const CLIP_BASE = './assets/audio/coms';
+let clipsBaked = new Set(), clipActual = null;
+fetch(`${CLIP_BASE}/manifest.json`, { cache: 'no-store' })
+  .then(r => r.ok ? r.json() : []).then(list => { clipsBaked = new Set(list); }).catch(() => { });
+let vocesTTS = [];
+function cargarVocesTTS() { vocesTTS = window.speechSynthesis ? speechSynthesis.getVoices().filter(v => /es/i.test(v.lang)) : []; }
+if (window.speechSynthesis) { cargarVocesTTS(); window.speechSynthesis.onvoiceschanged = cargarVocesTTS; }
+function hablar(texto, voz, rol) {
+  if (!audioOn) return;
+  const clave = claveVoz(rol || (voz && voz.lado === 'right' ? 'control' : 'miembro'), texto);
+  if (clipsBaked.has(clave)) { reproducirRadio(clave, texto, voz); return; }
+  ttsHablar(texto, voz);
+}
+// Pasa el clip de ElevenLabs por una cadena de RADIO (banda angosta + crunch +
+// estática de fondo + squelch), para que no suene de estudio sino por el walkie.
+let radioNoise = null;
+function crunchCurve(k) {
+  const n = 256, c = new Float32Array(n);
+  for (let i = 0; i < n; i++) { const x = i * 2 / n - 1; c[i] = (1 + k) * x / (1 + k * Math.abs(x)); }
+  return c;
+}
+function startRadioNoise() {
+  const ctx = ensureCtx(); if (!ctx || !audioOn || radioNoise) return;
+  const buf = ctx.createBuffer(1, ctx.sampleRate, ctx.sampleRate);
+  const d = buf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+  const n = ctx.createBufferSource(); n.buffer = buf; n.loop = true;
+  const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 1800; bp.Q.value = 0.6;
+  const g = ctx.createGain(); g.gain.value = 0.06;
+  n.connect(bp); bp.connect(g); g.connect(master); n.start();
+  radioNoise = { n, g };
+}
+function stopRadioNoise() { if (radioNoise) { try { radioNoise.g.gain.value = 0; radioNoise.n.stop(); } catch { } radioNoise = null; } }
+function squelch(delay) {
+  const ctx = ensureCtx(); if (!ctx || !audioOn) return;
+  const t = ctx.currentTime + delay;
+  const buf = ctx.createBuffer(1, Math.floor(ctx.sampleRate * 0.05), ctx.sampleRate);
+  const d = buf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 1.5);
+  const n = ctx.createBufferSource(); n.buffer = buf;
+  const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 1200;
+  const g = ctx.createGain(); g.gain.value = 0.07;
+  n.connect(bp); bp.connect(g); g.connect(master); n.start(t);
+}
+function reproducirRadio(clave, texto, voz) {
+  const ctx = ensureCtx();
+  try { if (clipActual) clipActual.pause(); } catch { }
+  stopRadioNoise();
+  const el = new Audio(`${CLIP_BASE}/${clave}.mp3`); el.volume = 1; clipActual = el;
+  if (!ctx) { el.play().catch(() => ttsHablar(texto, voz)); return; }
+  let src;
+  try { src = ctx.createMediaElementSource(el); }
+  catch { el.play().catch(() => ttsHablar(texto, voz)); return; }
+  const hp = ctx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 360;
+  const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 3200;
+  const peak = ctx.createBiquadFilter(); peak.type = 'peaking'; peak.frequency.value = 1600; peak.gain.value = 3; peak.Q.value = 0.8;
+  const shaper = ctx.createWaveShaper(); shaper.curve = crunchCurve(10);
+  const g = ctx.createGain(); g.gain.value = 0.6;
+  src.connect(hp); hp.connect(lp); lp.connect(peak); peak.connect(shaper); shaper.connect(g); g.connect(master);
+  startRadioNoise(); squelch(0);
+  el.onended = () => { stopRadioNoise(); squelch(0.02); };
+  el.play().catch(() => { stopRadioNoise(); ttsHablar(texto, voz); });
+}
+function ttsHablar(texto, voz) {
+  if (!window.speechSynthesis) return;
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(String(texto).replace(/[¡!¿?►▍]/g, ''));
+    if (vocesTTS[0]) u.voice = vocesTTS[0];
+    u.lang = 'es-MX'; u.volume = 0.95; u.rate = 1.05;
+    u.pitch = voz && voz.lado === 'right' ? 0.7 : (voz === voces[liderId] ? 0.9 : 1.1);
+    speechSynthesis.speak(u);
+  } catch { }
+}
+function toggleAudio() {
+  audioOn = !audioOn;
+  const btn = $('sala-audio'); if (btn) btn.textContent = audioOn ? '♪ AUDIO ON' : '♪ AUDIO OFF';
+  if (!audioOn) { try { speechSynthesis.cancel(); } catch { } try { if (clipActual) clipActual.pause(); } catch { } stopRadioNoise(); if (ambGain) ambGain.gain.value = 0; }
+  else if (ambGain) ambGain.gain.value = 0.85;
 }
 
 // ── QTE (multi-tecla) ────────────────────────────────────────────────────────
@@ -438,7 +571,7 @@ function mostrarQTE(ev, done) {
   $('sala-qte-keys').innerHTML = reqKeys.map(k => `<b data-k="${dataK(k)}">${keyLbl(k)}</b>`).join('');
   $('sala-qte-res').textContent = ''; $('sala-qte-res').style.color = 'var(--amber)';
   const fill = $('sala-qte-fill'); fill.style.transition = 'none'; fill.style.width = '100%';
-  $('sala-qte').classList.add('on'); beep(920);
+  $('sala-qte').classList.add('on'); sfxAlarm();
   setTimeout(() => { fill.style.transition = `width ${VENTANA}ms linear`; fill.style.width = '0%'; }, LEER);
   const resolver = (exito) => {
     if (qteResolved) return; qteResolved = true;

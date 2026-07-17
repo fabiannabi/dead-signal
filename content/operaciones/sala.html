@@ -31,6 +31,8 @@
     <div style="margin-top:5px">› click en <b>nodo</b>: la unidad marcha ahí y reconoce</div>
     <div>› al detectar contacto se detiene; empujá para enfrentarlo</div>
   </div>
+  <button class="btn-op" id="sala-audio">♪ AUDIO ON</button>
+  <div class="sala-vol"><label>Volumen <span id="sala-vol-val">35</span></label><input type="range" id="sala-volumen" min="0" max="100" step="1" value="35"></div>
   <button class="btn-op primary" id="btn-extraer">EXTRAER → CIERRE</button>
 </div>
 
@@ -60,6 +62,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="./js/ui-sala.js?v=6"></script>
+<script type="module" src="./js/ui-sala.js?v=12"></script>
 </body>
 </html>
