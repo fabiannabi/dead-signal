@@ -1,0 +1,39 @@
+{
+  "_nota": "Cada clave apunta a uno o mas archivos. Con varias variantes, el reproductor elige al azar y le mueve la afinacion, para que repetir no suene a videojuego. Lo que no tenga archivo cae al sintetizador automaticamente.",
+
+  "sfx": {
+    "disparo": [],
+    "rafagaTiros": [],
+    "disparoLejano": [],
+    "casquillo": [],
+    "recarga": [],
+    "explosion": [],
+
+    "grito": [],
+    "gritoLejano": [],
+    "cuerpoCae": [],
+    "pasos": [],
+    "corrida": [],
+
+    "rugido": [],
+    "chillido": [],
+    "gorgoteo": [],
+    "siseo": [],
+    "mandibulas": [],
+    "garras": [],
+    "pisadaPesada": [],
+    "aullido": [],
+
+    "rafaga": [],
+    "perro": [],
+    "pajaro": [],
+    "grillos": [],
+    "metal": [],
+    "crujido": [],
+    "vidrio": [],
+    "gota": [],
+    "campanaLejana": []
+  },
+
+  "musica": {}
+}

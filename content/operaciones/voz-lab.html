@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENVAC — Banco de Pruebas de Voz</title>
+<link rel="stylesheet" href="./css/operaciones.css?v=4">
+<link rel="stylesheet" href="./css/voz-lab.css?v=8">
+</head>
+<body class="lab-page">
+
+<header class="lab-head">
+  <div>
+    <div class="lab-title">Banco de pruebas — Modulador de voz</div>
+    <div class="lab-sub">CENVAC / herramienta interna — no forma parte del archivo</div>
+  </div>
+  <div class="lab-head-actions">
+    <button class="lab-btn primary" id="btn-play">▶ REPRODUCIR</button>
+    <button class="lab-btn" id="btn-stop">■ PARAR</button>
+    <button class="lab-btn" id="btn-reset">↺ VALORES BASE</button>
+  </div>
+</header>
+
+<div class="lab-grid">
+
+  <!-- Izquierda: qué se dice -->
+  <section class="lab-col">
+    <div class="lab-panel">
+      <div class="lab-panel-title">Muestra</div>
+      <div class="lab-field">
+        <label for="sel-escena">Escena del recon</label>
+        <select id="sel-escena"></select>
+      </div>
+      <div class="lab-field">
+        <label for="txt-guion">Guion — <code>rol/emoción: texto</code></label>
+        <textarea id="txt-guion" rows="6" spellcheck="false"></textarea>
+      </div>
+      <div class="lab-hint">
+        Roles: <code>control</code>, <code>lider</code>, <code>miembro</code>. Si no ponés emoción, usa la marcada abajo.
+      </div>
+    </div>
+
+    <div class="lab-panel">
+      <div class="lab-panel-title">Emoción</div>
+      <div class="lab-hint" style="margin-bottom:10px">Click en una para oír la primera línea del guion con ese estado.</div>
+      <div class="lab-emo-row" id="lab-emo-chips"></div>
+    </div>
+  </section>
+
+  <!-- Derecha: cómo suena -->
+  <section class="lab-col">
+    <div class="lab-panel">
+      <div class="lab-panel-title">Voz</div>
+      <div class="lab-field">
+        <label for="sel-rol">Rol a ajustar</label>
+        <select id="sel-rol">
+          <option value="miembro">Miembro de unidad</option>
+          <option value="lider">Líder de unidad</option>
+          <option value="control">CENVAC Control</option>
+        </select>
+      </div>
+      <div class="lab-field">
+        <label for="sel-canal">Canal / aparato de este rol</label>
+        <select id="sel-canal"></select>
+        <div class="lab-slider-desc" id="canal-desc"></div>
+      </div>
+      <div id="sliders-macro"></div>
+    </div>
+
+    <div class="lab-panel">
+      <div class="lab-panel-title">Música — estado</div>
+      <div class="lab-hint" style="margin-bottom:10px">
+        Durante la escena cambia sola según la tensión. Click para escuchar cada una.
+      </div>
+      <div class="lab-field">
+        <label for="sel-estilo">Estilo / instrumentación</label>
+        <select id="sel-estilo"></select>
+        <div class="lab-slider-desc" id="estilo-desc"></div>
+      </div>
+      <div class="lab-sfx-titulo">Estado</div>
+      <div class="lab-emo-row" id="lab-mus-botones"></div>
+      <div class="lab-sfx-titulo" style="margin-top:12px">Golpes narrativos</div>
+      <div class="lab-emo-row" id="lab-mus-golpes"></div>
+    </div>
+
+    <div class="lab-panel">
+      <div class="lab-panel-title">Sonidos del sector</div>
+      <div class="lab-hint" style="margin-bottom:10px">
+        Se disparan solos durante la escena — más seguido cuanto más alta la tensión.
+        Click para oírlos de a uno.
+      </div>
+      <div class="lab-hint" id="lab-assets" style="margin-bottom:10px">verificando grabaciones…</div>
+      <div id="lab-sfx-grupos"></div>
+    </div>
+
+    <div class="lab-panel">
+      <div class="lab-panel-title">Comparar canales</div>
+      <div class="lab-hint" style="margin-bottom:10px">
+        Click en uno para oír la primera línea del guion por ese aparato. El que suene
+        mejor para Control, asignalo arriba.
+      </div>
+      <div class="lab-canal-lista" id="lab-canal-lista"></div>
+    </div>
+
+    <div class="lab-panel">
+      <div class="lab-panel-title">Monitor de transmisiones</div>
+      <div class="lab-log" id="lab-log"></div>
+
+      <!-- Tensión de la escena: la marca la emoción de la línea en curso -->
+      <div class="lab-tension">
+        <span class="lab-tension-lbl">Tensión</span>
+        <div class="lab-tension-riel"><div class="lab-tension-barra" id="amb-barra"></div></div>
+        <span class="lab-tension-val" id="amb-val">12%</span>
+      </div>
+
+      <div class="lab-field">
+        <label for="rng-vol">Volumen general <b id="val-vol">35</b></label>
+        <input type="range" id="rng-vol" min="0" max="100" value="35">
+      </div>
+      <div class="lab-field">
+        <label for="rng-amb">Volumen del ambiente <b id="val-amb">80</b></label>
+        <input type="range" id="rng-amb" min="0" max="100" value="80">
+      </div>
+      <div class="lab-field">
+        <label for="rng-mus">Volumen de la música <b id="val-mus">50</b></label>
+        <input type="range" id="rng-mus" min="0" max="100" value="50">
+      </div>
+      <label class="lab-check"><input type="checkbox" id="chk-amb" checked> Ambiente reactivo (música + latido)</label>
+    </div>
+
+    <div class="lab-panel">
+      <div class="lab-panel-title">Salida — pegar en el chat</div>
+      <div class="lab-hint">Cuando te guste cómo suena, copiá esto y pasámelo: lo dejo como valor por defecto.</div>
+      <textarea id="out-json" rows="10" spellcheck="false" readonly></textarea>
+      <div class="lab-out-actions">
+        <button class="lab-btn primary" id="btn-copiar">COPIAR AJUSTES</button>
+        <span class="lab-copiado" id="lab-copiado">copiado ✓</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Todo lo fino vive acá abajo, plegado: solo se abre si una macro no alcanza -->
+<details class="lab-avanzado">
+  <summary>Controles finos — abrir solo si alguna perilla de arriba no alcanza</summary>
+  <div class="lab-grid">
+    <section class="lab-col">
+      <div class="lab-panel">
+        <div class="lab-panel-title">Emoción — <span id="lab-emo-nombre">tenso</span></div>
+        <div class="lab-field">
+          <label for="sel-emocion">Estado a ajustar</label>
+          <select id="sel-emocion"></select>
+        </div>
+        <div id="sliders-emocion"></div>
+      </div>
+    </section>
+    <section class="lab-col">
+      <div class="lab-panel">
+        <div class="lab-panel-title">Voz — detalle</div>
+        <div class="lab-field">
+          <label for="sel-onda">Forma de onda</label>
+          <select id="sel-onda">
+            <option value="square">square — nasal, radio</option>
+            <option value="sawtooth">sawtooth — áspera, grave</option>
+            <option value="triangle">triangle — suave, opaca</option>
+            <option value="sine">sine — limpia, blanda</option>
+          </select>
+        </div>
+        <div id="sliders-voz"></div>
+      </div>
+      <div class="lab-panel">
+        <div class="lab-panel-title">Entonación</div>
+        <div id="sliders-entonacion"></div>
+      </div>
+    </section>
+    <section class="lab-col">
+      <div class="lab-panel">
+        <div class="lab-panel-title">Articulación</div>
+        <div id="sliders-articulacion"></div>
+      </div>
+      <div class="lab-panel">
+        <div class="lab-panel-title">Ritmo de tecleo</div>
+        <div id="sliders-ritmo"></div>
+      </div>
+      <div class="lab-panel">
+        <div class="lab-panel-title">Cadena de radio</div>
+        <div id="sliders-radio"></div>
+      </div>
+    </section>
+  </div>
+</details>
+
+<script type="module" src="./js/ui-voz-lab.js?v=11"></script>
+</body>
+</html>

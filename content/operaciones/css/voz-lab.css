@@ -1,0 +1,168 @@
+/* voz-lab.css — Banco de pruebas del modulador de voz (herramienta interna).
+   Misma paleta fósforo que el resto de Operaciones; layout de tres columnas. */
+
+.lab-page { padding: 0 0 40px; }
+
+.lab-head {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  padding: 14px 22px; background: var(--bg2); border-bottom: 1px solid var(--border2);
+}
+.lab-title { color: var(--accent); font-size: 16px; letter-spacing: 1px; text-transform: uppercase; }
+.lab-sub { color: var(--text3); font-size: 12px; }
+.lab-head-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.lab-btn {
+  background: var(--bg3); color: var(--text); border: 1px solid var(--border2);
+  font-family: var(--mono); font-size: 12px; letter-spacing: .5px;
+  padding: 8px 14px; cursor: pointer;
+}
+.lab-btn:hover { border-color: var(--border3); color: var(--accent); }
+.lab-btn.primary { border-color: var(--accent2); color: var(--accent); }
+.lab-btn.primary:hover { background: rgba(51, 255, 102, .08); }
+
+.lab-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px; padding: 18px 22px; align-items: start;
+}
+/* Dentro del bloque avanzado sí caben tres columnas de sliders finos */
+.lab-avanzado .lab-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); padding-top: 4px; }
+@media (max-width: 1100px) { .lab-grid, .lab-avanzado .lab-grid { grid-template-columns: 1fr; } }
+
+/* Bloque plegado de controles finos */
+.lab-avanzado { margin: 6px 22px 0; border-top: 1px solid var(--border); }
+.lab-avanzado > summary {
+  cursor: pointer; color: var(--text3); font-size: 12px; letter-spacing: .5px;
+  padding: 12px 0; list-style: none;
+}
+.lab-avanzado > summary::-webkit-details-marker { display: none; }
+.lab-avanzado > summary::before { content: '▸ '; color: var(--accent2); }
+.lab-avanzado[open] > summary::before { content: '▾ '; }
+.lab-avanzado > summary:hover { color: var(--accent); }
+.lab-avanzado .lab-grid { padding-left: 0; padding-right: 0; }
+
+.lab-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+.lab-panel { background: var(--bg2); border: 1px solid var(--border); padding: 14px 16px; }
+.lab-panel-title {
+  color: var(--accent); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding-bottom: 8px; margin-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+
+.lab-field { margin-bottom: 14px; }
+.lab-field label { display: block; color: var(--text2); font-size: 12px; margin-bottom: 6px; }
+.lab-field label b { color: var(--accent); font-weight: normal; }
+.lab-field code { color: var(--text); background: var(--bg3); padding: 1px 4px; font-size: 11px; }
+
+.lab-page select,
+.lab-page textarea {
+  width: 100%; background: var(--bg); color: var(--text);
+  border: 1px solid var(--border2); font-family: var(--mono); font-size: 13px;
+  padding: 8px 10px; line-height: 1.6;
+}
+.lab-page select:focus,
+.lab-page textarea:focus { outline: none; border-color: var(--border3); }
+.lab-page textarea { resize: vertical; }
+
+/* Sliders */
+.lab-slider { margin-bottom: 13px; }
+.lab-slider-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 5px; }
+.lab-slider-name { color: var(--text2); font-size: 12px; }
+.lab-slider-val { color: var(--accent); font-size: 13px; }
+.lab-slider-desc { color: var(--text3); font-size: 11px; margin-top: 3px; line-height: 1.4; }
+
+.lab-page input[type=range] {
+  width: 100%; height: 20px; background: transparent; -webkit-appearance: none; appearance: none; cursor: pointer;
+}
+.lab-page input[type=range]::-webkit-slider-runnable-track {
+  height: 3px; background: var(--border2);
+}
+.lab-page input[type=range]::-moz-range-track { height: 3px; background: var(--border2); }
+.lab-page input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 13px; height: 13px; margin-top: -5px;
+  background: var(--accent); border: none; border-radius: 0;
+}
+.lab-page input[type=range]::-moz-range-thumb {
+  width: 13px; height: 13px; background: var(--accent); border: none; border-radius: 0;
+}
+
+/* Chips de emoción — prueba rápida de a una */
+.lab-emo-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.lab-chip {
+  background: var(--bg3); color: var(--text2); border: 1px solid var(--border);
+  font-family: var(--mono); font-size: 11px; padding: 5px 9px; cursor: pointer;
+}
+.lab-chip:hover { border-color: var(--border3); color: var(--accent); }
+.lab-chip.on { border-color: var(--accent2); color: var(--accent); background: rgba(51, 255, 102, .08); }
+
+/* Lista de canales para comparar — cada uno con su color */
+.lab-canal-lista { display: flex; flex-direction: column; gap: 6px; }
+.lab-canal {
+  border: 1px solid var(--border); background: var(--bg); padding: 8px 10px;
+  cursor: pointer; text-align: left; font-family: var(--mono); width: 100%;
+  display: grid; grid-template-columns: 9px 1fr auto; gap: 9px; align-items: center;
+  transition: border-color .12s, background .12s;
+}
+.lab-canal:hover { border-color: var(--border3); }
+.lab-canal-luz {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--tint, var(--text3)); opacity: .35; transition: opacity .12s, box-shadow .12s;
+}
+.lab-canal-nom { font-size: 12px; letter-spacing: 1px; color: var(--tint, var(--text2)); }
+.lab-canal-det { font-size: 10px; color: var(--text3); line-height: 1.45; grid-column: 2 / -1; }
+.lab-canal-freq { font-size: 10px; color: var(--text3); }
+/* Canal transmitiendo ahora */
+.lab-canal.on { background: rgba(255, 255, 255, .03); border-color: var(--tint); }
+.lab-canal.on .lab-canal-luz { opacity: 1; box-shadow: 0 0 8px var(--tint); }
+/* Canal asignado al rol que estás editando */
+.lab-canal.asignado::after {
+  content: 'ASIGNADO'; grid-column: 3; font-size: 9px; letter-spacing: 1px; color: var(--tint);
+}
+
+.lab-log {
+  background: var(--bg); border: 1px solid var(--border2); padding: 10px;
+  height: 190px; overflow-y: auto; margin-bottom: 14px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.lab-tx { max-width: 88%; }
+.lab-tx.izq { align-self: flex-start; }
+.lab-tx.der { align-self: flex-end; text-align: right; }
+.lab-tx.centro { align-self: center; text-align: center; }
+.lab-tx-cab { font-size: 10px; letter-spacing: .8px; margin-bottom: 2px; color: var(--tint, var(--accent)); }
+.lab-tx-txt { font-size: 13px; line-height: 1.6; color: var(--text); }
+.lab-tx.vieja { opacity: .4; }
+.lab-cursor { color: var(--accent); }
+
+/* Medidor de tensión de la escena */
+.lab-tension { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; }
+.lab-tension-lbl { font-size: 11px; color: var(--text2); }
+.lab-tension-riel { flex: 1; height: 5px; background: var(--bg3); border: 1px solid var(--border); }
+.lab-tension-barra {
+  height: 100%; width: 12%; background: var(--accent2);
+  transition: width .5s linear, background .5s linear;
+}
+.lab-tension-barra.alta { background: var(--red-hi); }
+.lab-tension-val { font-size: 11px; color: var(--accent); min-width: 44px; text-align: right; }
+
+.lab-check {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 12px; color: var(--text2); cursor: pointer; margin-top: 2px;
+}
+.lab-check input { accent-color: var(--accent); }
+
+.lab-hint { color: var(--text3); font-size: 11px; line-height: 1.5; margin-top: 4px; }
+.lab-hint code { color: var(--text2); }
+
+.lab-out-actions { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+.lab-copiado { color: var(--accent); font-size: 12px; opacity: 0; transition: opacity .2s; }
+.lab-copiado.on { opacity: 1; }
+
+#out-json { font-size: 12px; color: var(--text2); }
+
+/* Subtítulo de grupo de SFX */
+.lab-sfx-grupo { margin-bottom: 12px; }
+.lab-sfx-titulo { font-size: 11px; color: var(--text3); letter-spacing: 1px; margin-bottom: 6px; }
+
+/* Chip de SFX que ya tiene grabacion real (no sintetizado) */
+.lab-chip.real { border-color: var(--amber); color: var(--amber); }
+.lab-chip.real::before { content: "CF "; font-size: 8px; }

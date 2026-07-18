@@ -37,13 +37,68 @@ Rama: `feature/sala-de-vigilancia`. Brief original: `_incoming/operaciones-sala-
 
 ---
 
+## Sesión 17–18 jul 2026 — Se reemplazó el bake de voces por audio procedural
+
+El bake de ElevenLabs **quedó descartado**: no escalaba (un MP3 por línea, y las
+variantes por resultado multiplican el costo). Los MP3 viejos siguen en
+`assets/audio/coms/` y `scripts/bake-coms-voz.mjs` sin usar — se pueden borrar.
+
+**Módulos nuevos, todos en `content/operaciones/js/`:**
+
+| Archivo | Qué hace |
+|---|---|
+| `voz-sim.js` | Voz del códec estilo Undertale: un blip por **sílaba** (solo vocales), formantes reales del español en paralelo, 8 emociones, 8 canales de radio |
+| `ambiente.js` | Mundo reactivo: drone, viento, disonancia, latido (65→129 lpm) + **31 SFX** agendados según tensión |
+| `musica.js` | BGM procedural: 4 estados (recon/sospecha/combate/duelo) × **5 estilos**, reverb por convolución, secuenciador con lookahead |
+| `audio-lib.js` | Reproductor de **grabaciones reales** con caída automática al sintetizador |
+| `voz-lab.html` + `ui-voz-lab.js` | Banco de pruebas: 4 macros, guion por escena, comparador de canales, catálogo de SFX, salida JSON |
+
+**Decisiones que costaron encontrar** (no repetir los errores):
+- Los formantes van **en paralelo**, no en serie — en serie la voz era casi inaudible.
+- Un blip **por letra** suena a máquina de escribir; por sílaba suena a habla.
+- Voz y ambiente en **buses separados**; anidados se comen dos atenuaciones y no se oye.
+- Lo procedural tiene techo: **disparos, gritos y criaturas necesitan grabaciones**.
+
+---
+
+## Para mañana
+
+**1. Cargar audio real (lo primero).**
+Carpeta y sistema ya listos: `content/data/operaciones/audio/` con `manifest.json`
+y un README con fuentes, términos de búsqueda y cómo preparar los archivos.
+Empezar por seis: `disparo` (×3), `grito`, `rugido`, `pasos` (×3), `explosion`, `vidrio`.
+Fuente principal: **Sonniss GDC Bundle** (royalty-free, sin atribución, uso comercial).
+
+**2. Misiones combinatorias a partir de la biblioteca de sonido.** ← idea grande
+La librería de Sonniss trae miles de sonidos, y el sistema ya sabe elegir por
+estado y tensión. En vez de escribir misiones a mano, **generarlas combinando**:
+
+- **Paleta sonora por cuadrante** — cada zona con su set de SFX y su estilo musical.
+  El mercado suena distinto al panteón aunque el mapa sea el mismo.
+- **Criatura → firma sonora** — cada bicho del bestiario con sus vocalizaciones,
+  pisada y rastro. El jugador aprende a identificarlas *de oído* antes de verlas,
+  que es el mejor sistema de tensión posible y sale gratis con lo que ya está.
+- **Eventos combinables** — hallazgo, emboscada, otra unidad en problemas, señal
+  intervenida, civil escondido. Cada uno con su repertorio; el generador arma la
+  misión eligiendo eventos y el audio se adapta solo.
+- **Los canales como recurso narrativo** — "grabación recuperada" y "señal
+  intervenida" ya existen: una misión donde lo que oís es una cinta vieja, u otra
+  donde alguien más entra en la frecuencia.
+- **Hora del día × paleta** — la ecología por hora ya existe (`peligro.js`);
+  falta cruzarla con el audio: grillos de noche, mercado de día.
+
+**3. Pendientes menores.**
+- Llevar los estilos musicales y el catálogo de SFX a `ui-sala.js` (hoy solo el lab).
+- Elegir canal definitivo para Control (candidatos en el lab: base, repetidora,
+  búnker, satelital).
+- Nada de esto está commiteado todavía.
+
+---
+
 ## Qué falta / backlog
 
 **Audio (afinar):**
-- La voz de ElevenLabs suena mejor pero **aún hay que afinar el sentimiento**. Palancas:
-  bajar `stability` (0.3 → 0.2), probar otras voces más expresivas, o usar **modelo v3**
-  (los tags `[urgent]`/`[nervous]`/etc. ya están en el bake, solo aplican en v3).
-- Balancear capas por separado (voz vs drone vs SFX) si alguna resalta.
+- Balancear capas por separado (voz vs música vs SFX) una vez que haya grabaciones.
 
 **Contenido / datos:**
 - **Mementos** en los POIs (fragmento humano VERSION_B, §1.8) — el paso 2 del recon; aún no está.
