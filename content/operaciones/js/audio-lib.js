@@ -22,13 +22,28 @@
 
 export const BASE_AUDIO = '../data/operaciones/audio';
 
+/**
+ * Calibración del bus de grabaciones contra el del sintetizador.
+ *
+ * Los archivos se normalizan a pico −1 dBFS (para no perder rango dinámico en el
+ * MP3), pero el sintetizador de `ambiente.js` trabaja mucho más abajo: sus SFX usan
+ * vol ~0.1 y pasan por un master a 0.55, o sea un pico efectivo de ~−24 dBFS. Sin
+ * esta calibración una grabación entra ~22 dB por encima y entierra a todo lo que
+ * todavía es sintetizado — en `acecho`, por ejemplo, la lámina y la respiración
+ * tapaban a pasos/piedra/crujido/corrida.
+ *
+ * Se deja un par de dB por arriba del sinte a propósito: la grabación debe notarse
+ * mejor, no dominar. Subir este número hace que lo grabado pese más en la mezcla.
+ */
+export const GANANCIA_ARCHIVO = 0.16;   // ≈ −16 dB
+
 export function crearAudioLib(ctx, destino) {
   const buffers = new Map();      // clave → AudioBuffer
   let manifest = null, cargando = null;
 
   const master = ctx.createGain(); master.gain.value = 1; master.connect(destino);
   const musG = ctx.createGain(); musG.gain.value = 0; musG.connect(master);
-  const sfxG = ctx.createGain(); sfxG.gain.value = 1; sfxG.connect(master);
+  const sfxG = ctx.createGain(); sfxG.gain.value = GANANCIA_ARCHIVO; sfxG.connect(master);
 
   /** Lee el manifiesto. Si no existe, la librería queda vacía y todo cae al sinte. */
   async function cargarManifest() {
@@ -150,7 +165,8 @@ export function crearAudioLib(ctx, destino) {
   }
 
   const setVolumenMusica = (v) => musG.gain.linearRampToValueAtTime(v, ctx.currentTime + 0.2);
-  const setVolumenSFX = (v) => sfxG.gain.linearRampToValueAtTime(v, ctx.currentTime + 0.2);
+  // v es relativo a la calibración: 1 = nivel calibrado, no ganancia unitaria.
+  const setVolumenSFX = (v) => sfxG.gain.linearRampToValueAtTime(v * GANANCIA_ARCHIVO, ctx.currentTime + 0.2);
 
   return {
     cargarManifest, precargar, sfx, tiene,

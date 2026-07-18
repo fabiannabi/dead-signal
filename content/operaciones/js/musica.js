@@ -97,7 +97,27 @@ export function crearMusica(ctx, destino) {
   let S = ESTILOS.cuerdas, estiloNom = 'cuerdas';
 
   const master = ctx.createGain(); master.gain.value = 0;
-  master.connect(destino);
+
+  /**
+   * Nodo de ducking, DESPUÉS del master: la música se agacha cuando suena un evento
+   * del ambiente, sin tocar `master` — así `setVolumen()` y los fundidos de
+   * `start`/`stop` siguen mandando sobre el volumen real y no se pisan entre sí.
+   *
+   * Hace falta porque la reverb va al 0.9: la cola emborrona el medio y un evento
+   * corto (una piedra, un crujido) se pierde dentro de ella aunque tenga nivel.
+   */
+  const duckG = ctx.createGain(); duckG.gain.value = 1;
+  master.connect(duckG); duckG.connect(destino);
+
+  const DUCK_CAIDA = 0.06, DUCK_VUELTA = 0.7;
+
+  function duck(prof = 0.5) {
+    const t = ctx.currentTime;
+    duckG.gain.cancelScheduledValues(t);
+    duckG.gain.setValueAtTime(duckG.gain.value, t);
+    duckG.gain.linearRampToValueAtTime(prof, t + DUCK_CAIDA);
+    duckG.gain.linearRampToValueAtTime(1, t + DUCK_CAIDA + DUCK_VUELTA);
+  }
 
   // ── Espacio: reverb por convolución con impulso generado ──────────────────
   // Ruido con caída exponencial = cola de sala. Esto es lo que saca el sonido de
@@ -396,7 +416,7 @@ export function crearMusica(ctx, destino) {
   }
 
   return {
-    start, stop, setEstado, setEstilo, setVolumen, golpe, porTension, master,
+    start, stop, setEstado, setEstilo, setVolumen, golpe, porTension, duck, master,
     get estado() { return estado; }, get estilo() { return estiloNom; },
   };
 }

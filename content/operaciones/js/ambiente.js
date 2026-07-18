@@ -37,14 +37,41 @@ export const TENSION_POR_EMOCION = {
   agitado: 0.96, enojado: 0.80, herido: 0.52, triste: 0.20,
 };
 
-export function crearAmbiente(ctx, destino, lib = null) {
+export function crearAmbiente(ctx, destino, lib = null, alEvento = null) {
   const master = ctx.createGain(); master.gain.value = 0;
   master.connect(destino);
+
+  /**
+   * Bus de la CAMA (drone, viento, disonancia, luto, pulso) — separado de los
+   * eventos, que van directo al master.
+   *
+   * Existe para poder hacer ducking. La cama sale a ~0.17 de amplitud y un evento
+   * a ~0.12, así que sin esto la cama tapa a los eventos; y como el drone vive en
+   * 41–82 Hz, enmascara hacia arriba y se come el medio, que es justo donde se
+   * distinguen los pasos, la piedra o el crujido. Bajarle el volumen fijo apaga el
+   * sector; agacharla medio segundo cuando pasa algo deja oír el evento sin perder
+   * el suelo. Es lo que hacen los juegos con la música cuando alguien habla.
+   */
+  const camaG = ctx.createGain(); camaG.gain.value = 1; camaG.connect(master);
+
+  const DUCK_PROF = 0.42;   // a cuánto baja la cama (0.42 = −7.5 dB)
+  const DUCK_CAIDA = 0.06;  // qué tan rápido se agacha
+  const DUCK_VUELTA = 0.7;  // qué tan lento vuelve — rápido delata el truco
+
+  /** Agacha la cama un instante para que se oiga lo que acaba de sonar. */
+  function duck(prof = DUCK_PROF) {
+    const t = ctx.currentTime;
+    camaG.gain.cancelScheduledValues(t);
+    camaG.gain.setValueAtTime(camaG.gain.value, t);
+    camaG.gain.linearRampToValueAtTime(prof, t + DUCK_CAIDA);
+    camaG.gain.linearRampToValueAtTime(1, t + DUCK_CAIDA + DUCK_VUELTA);
+    if (alEvento) { try { alEvento(prof); } catch { } }   // para que la música también se agache
+  }
 
   let tension = 0, luto = false, vivo = false, pulsoTimer = null;
 
   // ── Capa 1: drone. El suelo, siempre presente. ────────────────────────────
-  const droneG = ctx.createGain(); droneG.gain.value = 0.5; droneG.connect(master);
+  const droneG = ctx.createGain(); droneG.gain.value = 0.5; droneG.connect(camaG);
   const drones = [41.2, 55, 82.4].map((f, i) => {
     const o = ctx.createOscillator();
     o.type = i === 2 ? 'sine' : 'triangle'; o.frequency.value = f;
@@ -60,7 +87,7 @@ export function crearAmbiente(ctx, destino, lib = null) {
   const viento = ctx.createBufferSource(); viento.buffer = vientoBuf; viento.loop = true;
   const vientoLP = ctx.createBiquadFilter(); vientoLP.type = 'lowpass'; vientoLP.frequency.value = 420;
   const vientoG = ctx.createGain(); vientoG.gain.value = 0.14;
-  viento.connect(vientoLP); vientoLP.connect(vientoG); vientoG.connect(master); viento.start();
+  viento.connect(vientoLP); vientoLP.connect(vientoG); vientoG.connect(camaG); viento.start();
 
   const lfo = ctx.createOscillator(); lfo.frequency.value = 0.07;
   const lfoG = ctx.createGain(); lfoG.gain.value = 0.02;
@@ -68,7 +95,7 @@ export function crearAmbiente(ctx, destino, lib = null) {
 
   // ── Capa 3: disonancia. Entra sola cuando hay amenaza. ────────────────────
   // Un tritono contra el drone: el intervalo que el oído lee como "algo está mal".
-  const disoG = ctx.createGain(); disoG.gain.value = 0; disoG.connect(master);
+  const disoG = ctx.createGain(); disoG.gain.value = 0; disoG.connect(camaG);
   [58.3, 116.5].forEach(f => {
     const o = ctx.createOscillator(); o.type = 'sawtooth'; o.frequency.value = f;
     const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 700;
@@ -77,7 +104,7 @@ export function crearAmbiente(ctx, destino, lib = null) {
   });
 
   // ── Capa 4: duelo. Pad menor, solo en luto. ───────────────────────────────
-  const lutoG = ctx.createGain(); lutoG.gain.value = 0; lutoG.connect(master);
+  const lutoG = ctx.createGain(); lutoG.gain.value = 0; lutoG.connect(camaG);
   [110, 130.8, 164.8].forEach((f, i) => {          // La menor: la, do, mi
     const o = ctx.createOscillator(); o.type = 'sine'; o.frequency.value = f;
     const g = ctx.createGain(); g.gain.value = 0.13 - i * 0.025;
@@ -94,7 +121,7 @@ export function crearAmbiente(ctx, destino, lib = null) {
     const g = ctx.createGain();
     g.gain.setValueAtTime(0.16 * tension, t);
     g.gain.exponentialRampToValueAtTime(0.0001, t + 0.15);
-    o.connect(g); g.connect(master);
+    o.connect(g); g.connect(camaG);
     o.start(t); o.stop(t + 0.17);
   }
   function programarPulso() {
@@ -479,6 +506,9 @@ export function crearAmbiente(ctx, destino, lib = null) {
    */
   function sfx(nombre) {
     ensureVivo();
+    // La cama se agacha ANTES de que suene el evento, no después: si el ducking
+    // llega tarde el golpe ya se perdió abajo del drone.
+    duck();
     if (lib && lib.sfx(nombre)) return 'archivo';
     if (SFX[nombre]) { SFX[nombre](); return 'sintetizado'; }
     return null;
@@ -488,7 +518,7 @@ export function crearAmbiente(ctx, destino, lib = null) {
   function ensureVivo() { if (!vivo) { vivo = true; master.gain.value = 0.55; } }
 
   return {
-    start, stop, setTension, setLuto, golpe, sfx, origen, master,
+    start, stop, setTension, setLuto, golpe, sfx, origen, duck, master,
     nombresSFX: Object.keys(SFX), repertorio: REPERTORIO,
     get tension() { return tension; }, get luto() { return luto; },
   };
