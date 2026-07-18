@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CENVAC — Sala de Vigilancia</title>
-<link rel="stylesheet" href="./css/operaciones.css?v=8">
+<link rel="stylesheet" href="./css/operaciones.css?v=9">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body class="sala-page">
@@ -63,6 +63,21 @@
   <div id="sala-opts-inner"></div>
 </div>
 
+<!-- Memento (§1.8): lo único en esta pantalla que no es CENVAC. Sin cromo de
+     radio, sin códec, sin beeps — el contraste con la consola ES el mecanismo. -->
+<div id="sala-memento">
+  <div class="mem-caja">
+    <div class="mem-sitio" id="mem-sitio"></div>
+    <div class="mem-formato" id="mem-formato"></div>
+    <div class="mem-titulo" id="mem-titulo"></div>
+    <div class="mem-texto" id="mem-texto"></div>
+    <div class="mem-pie">
+      <span class="mem-marca" id="mem-marca"></span>
+      <button class="btn-op" id="mem-cerrar">ARCHIVAR Y CONTINUAR</button>
+    </div>
+  </div>
+</div>
+
 <div id="sala-qte">
   <div class="sala-qte-box">
     <div class="sala-qte-txt" id="sala-qte-txt"></div>
@@ -73,6 +88,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="./js/ui-sala.js?v=19"></script>
+<script type="module" src="./js/ui-sala.js?v=20"></script>
 </body>
 </html>

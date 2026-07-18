@@ -35,9 +35,15 @@ const slugGrafo = (evento.grafo || 'centro').replace(/[^a-z0-9_-]/gi, '');
 // `fetchJSON` LANZA en 404, no devuelve null: sin este catch un sector sin
 // cartografía deja la página colgada para siempre en "cargando sector…" en vez
 // de devolver al jugador a la malla.
-const [rawGrafo, ecologia] = await Promise.all([
+const [rawGrafo, ecologia, coms, sitesData, memData] = await Promise.all([
   fetchJSON(`${DATA_BASE}/recon/grafo-${slugGrafo}.json`).catch(() => null),
   fetchJSON(`${DATA_BASE}/recon/ecologia-peligro.json`),
+  // El banco de transmisiones no es crítico: si falta, la sala corre muda antes
+  // que no correr. Lo mismo con sitios y mementos: sin ellos el recon sigue
+  // funcionando, solo que sin la capa humana.
+  fetchJSON(`${DATA_BASE}/coms.json`).catch(() => ({})),
+  fetchJSON(`${DATA_BASE}/sites.json`).catch(() => ({ sectores: {} })),
+  fetchJSON(`${DATA_BASE}/mementos.json`).catch(() => ({ mementos: [] })),
 ]);
 if (!rawGrafo) {
   window.location.href = './index.html';   // sector sin cartografía horneada
@@ -166,10 +172,33 @@ const entrada = nodeIds.reduce((m, id) => grafo.nodos.get(id).lng < grafo.nodos.
 const focoNode = nodoMasCercano(grafo, foco.lat, foco.lng);
 const pois = [];      // { node, reconocido }
 const poisMarkers = [];
+/**
+ * Sitios con nombre del sector (§1.8). Un punto de recon anclado a un edificio
+ * real no es lo mismo que un cruce cualquiera: la unidad va A un lugar, y ese
+ * lugar puede tener a alguien adentro — en forma de lo que dejó escrito.
+ */
+const sitiosSector = (sitesData.sectores || {})[slugGrafo] || [];
+const sitiosAnclados = sitiosSector.map(s => {
+  const node = nodoMasCercano(grafo, s.lat, s.lng);
+  const d = haversine(s, grafo.nodos.get(node));
+  return d < 140 ? { ...s, node, d } : null;      // más lejos, el ancla ya no convence
+}).filter(Boolean).sort((a, b) => a.d - b.d);
+
 (function sembrarPois(n) {
   const usados = new Set([entrada]);
   // El foco del evento SIEMPRE es un punto de recon.
   pois.push({ node: focoNode, reconocido: false, foco: true }); usados.add(focoNode);
+
+  // Primero los sitios con nombre, barajados para que dos operaciones seguidas en
+  // el mismo sector no manden a la unidad exactamente a los mismos edificios.
+  const barajados = [...sitiosAnclados].sort(() => Math.random() - 0.5);
+  for (const s of barajados) {
+    if (pois.length >= n) break;
+    if (usados.has(s.node)) continue;
+    usados.add(s.node);
+    pois.push({ node: s.node, reconocido: false, sitio: s });
+  }
+  // Si el sector tiene pocos sitios, se completa con cruces sueltos.
   while (pois.length < n) {
     const id = nodeIds[Math.floor(Math.random() * nodeIds.length)];
     if (usados.has(id)) continue; usados.add(id);
@@ -226,6 +255,9 @@ function revelarMasCercano() {
 
 // ── Estado de misión ─────────────────────────────────────────────────────────
 let intel = 0, danosUnidad = 0, distAcumulada = 0;
+// Lo humano que la unidad trajo de vuelta. Va al reporte junto a las heridas:
+// una operación deja bajas y deja esto.
+const mementosHallados = [];
 let unidadNode = entrada, rutaLine = null, dstMark = null, marcha = null, moving = false;
 equipo.forEach(a => { a.es_lider = (a.id === liderId); a.estado = a.estado || {}; a.estado.vivo = a.estado.vivo !== false; a.estado.heridas = a.estado.heridas || []; });
 const blip = L.marker(nodeToLatLng(entrada), { icon: L.divIcon({ className: '', html: '<div class="sala-blip"></div>', iconSize: [0, 0] }), interactive: false }).addTo(map);
@@ -271,7 +303,7 @@ function despachar(destino) {
   rutaLine = L.polyline(coords, { color: '#8affc0', weight: 4, opacity: 0.95, interactive: false }).addTo(map);
   dstMark = L.circleMarker(nodeToLatLng(destino), { radius: 6, color: '#8affc0', weight: 2, fillColor: '#8affc0', fillOpacity: 0.5, interactive: false }).addTo(map);
   $('sala-estado').textContent = 'en marcha';
-  guionar(pick(TRANSITO, 2));
+  guionar(pickComs(TRANSITO, 2));
   iniciarMarcha(r, destino);
 }
 /**
@@ -444,7 +476,7 @@ function llegada(destino) {
   if (poi) return reconocer(poi);
   const inc = grafo.adj.get(destino).map(x => peligroDeArista(x.arista, ecologia, horaActual, CRIATURAS));
   const peligroso = inc.length && Math.max(...inc) >= 0.5;
-  if (peligroso && Math.random() < 0.4) { guionar([pickOne(FALSO)]); }
+  if (peligroso && Math.random() < 0.4) { guionar([unaComs(FALSO)]); }
   else guionar(LLEGADA_CALMA);
 }
 
@@ -459,21 +491,75 @@ function reconocer(poi) {
     // El intel no es un contador: es cartografía. Lo documentado alrededor del
     // punto pasa a ser peligro CONOCIDO, y la próxima ruta puede evitarlo.
     const nuevas = conocer(aristasCerca(nodeToLatLng(poi.node), 180));
+    // La primera línea nombra la calle, así que se arma acá; la respuesta de
+    // Control sale del banco salvo cuando hay cartografía nueva que reportar.
     guionar([
       { rol: 'lider', t: `Registrado. Hay datos aquí — ${calleDe(poi.node)}. Documentando.` },
       nuevas
         ? { rol: 'control', t: `Recibido. Actualizo carta del sector: ${nuevas} tramo${nuevas !== 1 ? 's' : ''} más.` }
-        : { rol: 'control', t: 'Recibido. Nada que no tuviéramos ya. Sigan.' },
+        : unaComs(INTEL),
     ]);
   } else if (r < 0.75) {                // rastro → revela un contacto
     revelarMasCercano();
-    guionar([{ rol: 'miembro', t: 'Marcas frescas... algo pasó por aquí. No hace mucho.' }, { rol: 'control', t: 'Marcado. Ojo con lo que despertaron.' }]);
+    guionar(pickComs(RASTRO, 2));
   } else {                              // nada
-    guionar([{ rol: 'miembro', t: 'Nada. Polvo y silencio.' }, { rol: 'lider', t: 'Anótalo igual. El vacío también es dato.' }]);
+    guionar(pickComs(NADA, 2));
   }
   actualizarHUD();
   if (poi.foco) $('sala-estado').textContent = 'foco reconocido';
+
+  // El memento va DESPUÉS del resultado del recon, no en lugar de él: la unidad
+  // reporta lo suyo en frío y recién entonces se abre lo que había adentro.
+  if (poi.sitio) {
+    const m = mementoPara(poi.sitio);
+    if (m) {
+      mementosHallados.push({ id: m.id, titulo: m.titulo, sitio: poi.sitio.nombre });
+      $('sala-estado').textContent = 'registro recuperado en sitio';
+      setTimeout(() => mostrarMemento(m, poi.sitio), 900);
+    }
+  }
 }
+
+// ── Mementos (§1.8) ──────────────────────────────────────────────────────────
+/**
+ * Un memento aflora cuando la unidad llega a un sitio con nombre y el archivo
+ * tiene un fragmento que encaje con ese tipo de lugar.
+ *
+ * Todo lo demás en esta pantalla es CENVAC. Esto no: se detiene la marcha, calla
+ * la radio y baja el ambiente, porque el fragmento no compite con la consola —
+ * la interrumpe. El módulo entero existe para producir este cambio de registro.
+ */
+const mementosUsados = new Set();
+let memPendiente = null;
+
+function mementoPara(sitio) {
+  const pool = (memData.mementos || []).filter(m => !mementosUsados.has(m.id) && (m.tipos || []).includes(sitio.tipo));
+  if (!pool.length) return null;
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+function mostrarMemento(m, sitio, alCerrar) {
+  mementosUsados.add(m.id);
+  memPendiente = alCerrar || null;
+  $('mem-sitio').textContent = `${sitio.nombre} · ${sitio.tipo}`;
+  $('mem-formato').textContent = m.formato || '';
+  $('mem-titulo').textContent = m.titulo || '';
+  $('mem-texto').textContent = m.texto || '';
+  // CENVAC marca pero no comenta: una etiqueta de archivo, ningún juicio.
+  $('mem-marca').textContent = `${m.id} · CLASE ${m.clase} · RECUPERADO EN SITIO`;
+  $('sala-memento').classList.add('on');
+  if (vozSim) vozSim.cerrarCanal();
+  if (amb) amb.setTension(0.05, 2);
+  if (mus) mus.setVolumen(VOL_MUS * 0.25);
+}
+
+function cerrarMemento() {
+  $('sala-memento').classList.remove('on');
+  if (mus) mus.setVolumen(VOL_MUS);
+  const cb = memPendiente; memPendiente = null;
+  if (cb) cb();
+}
+$('mem-cerrar').addEventListener('click', cerrarMemento);
 
 // ── Eventos de peligro ───────────────────────────────────────────────────────
 function hazard() {
@@ -486,7 +572,7 @@ function hazard() {
   } else {
     $('sala-estado').textContent = 'falso positivo';
     ambEstado('falso');
-    guionar([pickOne(FALSO)]);
+    guionar([unaComs(FALSO)]);
     setTimeout(() => { ambEstado('marcha'); reanudar(); }, 1500);
   }
 }
@@ -595,45 +681,54 @@ pintarPortrait($('sala-port-right'), voces.control, false);
 let ultimoCampo = voces[liderId] || voces[miembros[0]];
 pintarPortrait($('sala-port-left'), ultimoCampo, false);
 
-const TRANSITO = [
-  { rol: 'miembro', t: 'Sector muerto. Ni un perro.' },
-  { rol: 'lider', t: 'Mantengan formación. No me gusta este silencio.' },
-  { rol: 'miembro', t: 'Huele a drenaje abierto por aquí.' },
-  { rol: 'control', t: 'Sigan el corredor. No se desvíen.' },
-  { rol: 'lider', t: 'Ojos abiertos. Nada es lo que parece.' },
-];
-const CONTACTO = [
-  { rol: 'miembro', t: '¡Movimiento! A las diez.' },
-  { rol: 'lider', t: 'Alto. Nadie dispara. Control, ¿ven esto?' },
-  { rol: 'control', t: 'Negativo desde aquí. Ustedes son mis ojos.' },
-];
-const LLEGADA_CALMA = [
-  { rol: 'lider', t: 'En posición. Perímetro despejado.' },
-  { rol: 'control', t: 'Recibido. Mantengan y reporten.' },
-];
-const FALSO = [
-  { rol: 'miembro', t: '...creí ver algo. Nada. Falsa alarma.' },
-  { rol: 'miembro', t: 'Fue una rata. Solo una rata.' },
-  { rol: 'lider', t: 'Sombras y nervios. Manténganse.' },
-];
-const ASALTO_INTRO = [
-  { rol: 'lider', t: '¡Contacto encima! ¡Formen, cúbranse!' },
-  { rol: 'control', t: 'Unidad, los tengo en cámara. Aguanten.' },
-];
-const DECISIONES = [
-  { pregunta: { rol: 'lider', t: 'Control, paso bloqueado. ¿Forzamos o rodeamos?' },
-    opciones: [
-      { txt: 'Forzar el paso (rápido, ruidoso)', verdict: [{ rol: 'control', t: 'Autorizado. Rápido.' }, { rol: 'miembro', t: 'Cede... pero sonó por todo el sector.' }], efectos: ['ruido'] },
-      { txt: 'Rodear (lento, agotador)', verdict: [{ rol: 'lider', t: 'El rodeo nos costó tiempo y aliento. Seguimos, más gastados.' }], efectos: ['fatiga'] },
-    ],
-    timeout: { verdict: [{ rol: 'lider', t: 'Sin respuesta. Forzamos por instinto — y sonó.' }], efectos: ['ruido', 'fatiga'] } },
-  { pregunta: { rol: 'miembro', t: 'Hay un cuerpo en el paso, con algo encima. ¿Revisamos o seguimos?' },
-    opciones: [
-      { txt: 'Revisar (intel, pero riesgo)', verdict: [{ rol: 'miembro', t: 'Lleva documentos... intel. Y esto no murió hace mucho.' }, { rol: 'control', t: 'Buen hallazgo. Muévanse.' }], efectos: ['intel', 'ruido'] },
-      { txt: 'Seguir de largo (seguro)', verdict: [{ rol: 'lider', t: 'Lo dejamos. Con él se va lo que supiera.' }], efectos: [] },
-    ],
-    timeout: { verdict: [{ rol: 'miembro', t: 'Me congelé. Lo dejo — y con él, lo que sabía.' }], efectos: [] } },
-];
+/**
+ * Banco de transmisiones (§1.9: el texto de misión nunca vive en el generador).
+ *
+ * Para cada situación se junta el pozo general con el de la franja horaria y el de
+ * la criatura reportada. Así la radio suena a ESTE sector: en uno con drenaje
+ * hablan de coladeras y en uno de mercado miran hacia arriba. Antes eran quince
+ * líneas fijas para los ochenta sectores.
+ */
+const FRANJA = horaActual < 6 ? 'madrugada' : horaActual < 12 ? 'dia' : horaActual < 19 ? 'tarde' : 'noche';
+const criaturaEvento = evento.criatura_sospechada;
+
+function pozo(situacion) {
+  const s = coms[situacion];
+  if (!s) return [];
+  return [...(s.general || []), ...(s[FRANJA] || []), ...(s[criaturaEvento] || [])];
+}
+
+/**
+ * Elige n líneas sin repetir. Lleva memoria de lo ya dicho en la operación: con
+ * ochenta sectores, oír dos veces la misma frase en una misma salida es lo que
+ * delata que el pozo es chico.
+ */
+// Nombre propio y no `pick`, porque el genérico también se usa con arreglos de
+// texto suelto (las partes del cuerpo de una herida) y ahí no hay `.t` que
+// deduplicar: todas colapsarían en la misma clave.
+const dichas = new Set();
+function pickComs(pool, n = 1) {
+  if (!pool.length) return [];
+  let libres = pool.filter(l => !dichas.has(l.t));
+  if (libres.length < n) { pool.forEach(l => dichas.delete(l.t)); libres = pool; }
+  const out = [], copia = [...libres];
+  for (let i = 0; i < n && copia.length; i++) {
+    const [l] = copia.splice(Math.floor(Math.random() * copia.length), 1);
+    dichas.add(l.t); out.push(l);
+  }
+  return out;
+}
+const unaComs = (pool) => pickComs(pool, 1)[0];
+
+const TRANSITO = pozo('transito');
+const CONTACTO = pozo('contacto');
+const LLEGADA_CALMA = pozo('llegada_calma');
+const FALSO = pozo('falso');
+const ASALTO_INTRO = pozo('asalto_intro');
+const INTEL = pozo('intel');
+const RASTRO = pozo('rastro');
+const NADA = pozo('nada');
+const DECISIONES = coms.decisiones || [];
 
 const pickOne = (a) => a[Math.floor(Math.random() * a.length)];
 function pick(a, n) { const c = [...a], o = []; while (o.length < n && c.length) o.push(c.splice(Math.floor(Math.random() * c.length), 1)[0]); return o; }

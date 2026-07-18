@@ -1750,6 +1750,27 @@ body::after {
 .map-migas .miga:hover { color:var(--amber); }
 .map-migas .miga.on { color:var(--ph); font-weight:700; }
 
+/* ── Memento (§1.8) ─────────────────────────────────────────────────────────
+   Todo lo demás en esta pantalla es CENVAC: monoespaciada, fósforo, mayúsculas.
+   Esto no. Es papel: serif, cálido, alineado a la izquierda, sin parpadeo ni
+   escaneo. El horror del módulo está justo en ese cambio de registro — la consola
+   dice "punto reconocido" y de golpe adentro había una persona. */
+#sala-memento { position:fixed; inset:0; z-index:2000; display:none; align-items:center; justify-content:center;
+  background:rgba(2,6,3,.86); padding:24px; }
+#sala-memento.on { display:flex; }
+.mem-caja { max-width:620px; width:100%; max-height:82vh; overflow-y:auto;
+  background:#151109; border:1px solid #6b5a2e; box-shadow:0 0 40px rgba(0,0,0,.7);
+  padding:26px 30px; color:#e8dcc0; font-family:'Crimson Pro',Georgia,serif; }
+.mem-sitio { font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#a08a4e; }
+.mem-formato { font-family:var(--mono); font-size:12px; color:#7d6a3e; margin-top:3px; }
+.mem-titulo { font-size:23px; line-height:1.25; margin:14px 0 12px; color:#f0e6cc; }
+.mem-texto { font-size:18px; line-height:1.65; white-space:pre-wrap; }
+.mem-pie { display:flex; justify-content:space-between; align-items:center; gap:14px;
+  margin-top:22px; padding-top:14px; border-top:1px solid #3a3220; }
+/* CENVAC marca, no comenta: la única voz del archivo acá es una etiqueta seca. */
+.mem-marca { font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:#6b5a2e; }
+.mem-pie .btn-op { margin-top:0; width:auto; border-color:#6b5a2e; color:#c9b47a; }
+
 .sala-hud .btn-op { margin-top:12px; width:100%; }
 
 /* Órdenes de protocolo (§3.2): fila compacta, no botones de acción principal —
