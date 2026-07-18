@@ -1,0 +1,246 @@
+{
+  "_meta": {
+    "descripcion": "Banco de transmisiones de la Sala de Vigilancia. El texto de misión NUNCA se escribe en el generador (§1.9): sale de aquí.",
+    "roles": "control = CENVAC Control, voz fría y extractiva · lider = líder de unidad · miembro = agente de unidad. Son AGENTES DE CENVAC ANÓNIMOS, jamás los cinco sobrevivientes (§2.1).",
+    "seleccion": "Para cada situación se junta el pozo `general` con el de la franja horaria y el de la criatura reportada, y se elige al azar sin repetir dentro de una misma operación.",
+    "franjas": "madrugada 0–6 · dia 6–12 · tarde 12–19 · noche 19–24"
+  },
+
+  "transito": {
+    "general": [
+      { "rol": "miembro", "t": "Sector muerto. Ni un perro." },
+      { "rol": "lider", "t": "Mantengan formación. No me gusta este silencio." },
+      { "rol": "control", "t": "Sigan el corredor. No se desvíen." },
+      { "rol": "lider", "t": "Ojos abiertos. Nada es lo que parece." },
+      { "rol": "miembro", "t": "Las puertas de esta cuadra están abiertas. Todas." },
+      { "rol": "lider", "t": "Nadie se separa. El que se separa no vuelve." },
+      { "rol": "control", "t": "Avancen. El reloj corre en su contra, no en la mía." },
+      { "rol": "miembro", "t": "Hay ropa tendida todavía. Seca, tiesa." },
+      { "rol": "lider", "t": "Pisen donde piso. No improvisen." },
+      { "rol": "control", "t": "Documenten lo que encuentren. Todo cuenta." },
+      { "rol": "miembro", "t": "Los coches siguen estacionados en batería. Como si fueran a volver." },
+      { "rol": "lider", "t": "Respiren. Vamos bien." },
+      { "rol": "control", "t": "Unidad, reporte de posición." },
+      { "rol": "lider", "t": "En ruta, Control. Sin novedad que valga la pena." },
+      { "rol": "miembro", "t": "Este barrio lo conozco. Lo conocía." },
+      { "rol": "lider", "t": "Guárdatelo para el reporte." },
+      { "rol": "control", "t": "No toquen nada que no puedan cargar." },
+      { "rol": "miembro", "t": "Se oye agua corriendo por algún lado. Bajo el piso." }
+    ],
+    "madrugada": [
+      { "rol": "miembro", "t": "No se ve un carajo. Vamos por linterna y memoria." },
+      { "rol": "lider", "t": "Luces bajas. Que no nos vean venir." },
+      { "rol": "control", "t": "A esta hora lo que se mueve, caza." },
+      { "rol": "miembro", "t": "Hace frío. Se me está durmiendo la mano." },
+      { "rol": "lider", "t": "Falta poco para que aclare. Aguanten." }
+    ],
+    "dia": [
+      { "rol": "miembro", "t": "Hay sol. Se ve todo — y todo nos ve." },
+      { "rol": "lider", "t": "De día se avanza rápido y se muere igual. No se confíen." },
+      { "rol": "control", "t": "Aprovechen la luz. No van a tenerla siempre." },
+      { "rol": "miembro", "t": "El asfalto ya está caliente." }
+    ],
+    "tarde": [
+      { "rol": "miembro", "t": "Las sombras se están alargando." },
+      { "rol": "lider", "t": "Quiero estar fuera antes de que oscurezca." },
+      { "rol": "control", "t": "Calculen el regreso. No los quiero ahí de noche." },
+      { "rol": "miembro", "t": "El aire cambió. Huele distinto a hace una hora." }
+    ],
+    "noche": [
+      { "rol": "lider", "t": "Silencio absoluto de aquí en adelante." },
+      { "rol": "miembro", "t": "Algo se movió atrás. No volteen todos." },
+      { "rol": "control", "t": "Los tengo en cámara pero no veo lo que ustedes." },
+      { "rol": "miembro", "t": "Prefiero no saber qué hay a tres metros." }
+    ],
+    "gusano_de_asfalto": [
+      { "rol": "miembro", "t": "El pavimento está blando. Se hunde." },
+      { "rol": "lider", "t": "Por la banqueta. Nadie camina por el centro de la calle." },
+      { "rol": "control", "t": "Eviten el asfalto abierto mientras dure el calor." },
+      { "rol": "miembro", "t": "Hay una grieta nueva. No estaba en la carta." }
+    ],
+    "chacal_de_feria": [
+      { "rol": "miembro", "t": "Los puestos siguen armados. Lonas y todo." },
+      { "rol": "lider", "t": "Miren arriba. Les gusta lo alto." },
+      { "rol": "control", "t": "Corredor de mercado. Manada probable — no se dispersen." },
+      { "rol": "miembro", "t": "Huesos limpios entre los puestos. Muchos." }
+    ],
+    "arana_hidraulica": [
+      { "rol": "miembro", "t": "Todas las coladeras de esta calle están destapadas." },
+      { "rol": "lider", "t": "Ni una pisada sobre rejilla. Ninguna." },
+      { "rol": "control", "t": "Red de drenaje activa en el sector. Traten cada boca como ocupada." },
+      { "rol": "miembro", "t": "Se oye chapotear abajo. Va a nuestro paso." }
+    ],
+    "rata_coendu": [
+      { "rol": "miembro", "t": "Se oyen patas. Muchas. Abajo del piso." },
+      { "rol": "lider", "t": "Nada de espacios cerrados. Nos quedamos en lo abierto." },
+      { "rol": "control", "t": "Densidad alta reportada. El peligro no es el bicho, es cuántos." },
+      { "rol": "miembro", "t": "Hay basura removida. Fresca." }
+    ],
+    "cucaracha_matriarca": [
+      { "rol": "miembro", "t": "Huele dulce. Dulce y podrido." },
+      { "rol": "lider", "t": "Si ven una quieta en la entrada, no la toquen. Retrocedan." },
+      { "rol": "control", "t": "Posible nido. No entren a ninguna estructura cerrada." },
+      { "rol": "miembro", "t": "Las paredes tienen una capa. Como cera." }
+    ],
+    "cervato_de_concreto": [
+      { "rol": "miembro", "t": "Hay ramoneo en los camellones. Reciente." },
+      { "rol": "lider", "t": "Si aparece, le abrimos paso. Nadie se le atraviesa." },
+      { "rol": "control", "t": "Herbívoro grande en el sector. No lo acorralen y no pasa nada." },
+      { "rol": "miembro", "t": "Huellas hondas en la tierra del parque." }
+    ]
+  },
+
+  "contacto": {
+    "general": [
+      { "rol": "miembro", "t": "¡Movimiento! A las diez." },
+      { "rol": "lider", "t": "Alto. Nadie dispara. Control, ¿ven esto?" },
+      { "rol": "control", "t": "Negativo desde aquí. Ustedes son mis ojos." },
+      { "rol": "miembro", "t": "Ahí. Entre los coches. No se mueve." },
+      { "rol": "lider", "t": "Todos quietos. Que pase de largo." },
+      { "rol": "control", "t": "Marcado en la carta. No lo provoquen." },
+      { "rol": "miembro", "t": "Nos está viendo. Estoy seguro de que nos está viendo." },
+      { "rol": "lider", "t": "Espalda con espalda. Ahora." },
+      { "rol": "control", "t": "Confirmen tipo y distancia antes de moverse." },
+      { "rol": "miembro", "t": "Es grande. Control, es más grande de lo que dijeron." }
+    ]
+  },
+
+  "llegada_calma": {
+    "general": [
+      { "rol": "lider", "t": "En posición. Perímetro despejado." },
+      { "rol": "control", "t": "Recibido. Mantengan y reporten." },
+      { "rol": "miembro", "t": "Limpio por este lado." },
+      { "rol": "lider", "t": "Punto asegurado. Sin novedad." },
+      { "rol": "control", "t": "Anotado. Tienen dos minutos, no más." },
+      { "rol": "miembro", "t": "Nada. Otra vez nada." },
+      { "rol": "lider", "t": "Que nadie baje la guardia por estar tranquilo." },
+      { "rol": "control", "t": "El silencio también es dato. Sigan." }
+    ]
+  },
+
+  "falso": {
+    "general": [
+      { "rol": "miembro", "t": "...creí ver algo. Nada. Falsa alarma." },
+      { "rol": "miembro", "t": "Fue una rata. Solo una rata." },
+      { "rol": "lider", "t": "Sombras y nervios. Manténganse." },
+      { "rol": "miembro", "t": "Perdón. Perdón, fue el viento." },
+      { "rol": "lider", "t": "Mejor una falsa alarma que la otra opción." },
+      { "rol": "miembro", "t": "Se cayó algo adentro. Solo eso." },
+      { "rol": "control", "t": "Sin lectura desde aquí. Sigan." },
+      { "rol": "miembro", "t": "Juraría que había algo. Juraría." },
+      { "rol": "lider", "t": "Respira. Y sigue caminando." },
+      { "rol": "miembro", "t": "Era una lona suelta. Nada más." }
+    ]
+  },
+
+  "asalto_intro": {
+    "general": [
+      { "rol": "lider", "t": "¡Contacto encima! ¡Formen, cúbranse!" },
+      { "rol": "control", "t": "Unidad, los tengo en cámara. Aguanten." },
+      { "rol": "lider", "t": "¡Nos cerró el paso! ¡Espalda con espalda!" },
+      { "rol": "miembro", "t": "¡Viene por el flanco! ¡Por el flanco!" },
+      { "rol": "control", "t": "Mantengan la línea. No corran — si corren, los alcanza." },
+      { "rol": "lider", "t": "¡Se nos echó encima! ¡Aguanten posición!" }
+    ]
+  },
+
+  "intel": {
+    "general": [
+      { "rol": "control", "t": "Recibido. Actualizo carta del sector." },
+      { "rol": "control", "t": "Buen material. Eso nos ahorra una unidad la próxima." },
+      { "rol": "control", "t": "Anotado. Sigan mientras haya luz." },
+      { "rol": "lider", "t": "Documentando. Esto sirve." },
+      { "rol": "miembro", "t": "Hay papeles legibles. Me los llevo." },
+      { "rol": "control", "t": "Recibido. Nada que no tuviéramos ya." }
+    ]
+  },
+
+  "rastro": {
+    "general": [
+      { "rol": "miembro", "t": "Marcas frescas... algo pasó por aquí. No hace mucho." },
+      { "rol": "control", "t": "Marcado. Ojo con lo que despertaron." },
+      { "rol": "miembro", "t": "Está tibio. Lo que sea que fue, sigue cerca." },
+      { "rol": "lider", "t": "Rastro fresco. Cambiamos de ruta." },
+      { "rol": "miembro", "t": "Arrastró algo. Se ve el surco." },
+      { "rol": "control", "t": "Registrado. Eso ya no es sospecha, es presencia." }
+    ]
+  },
+
+  "nada": {
+    "general": [
+      { "rol": "miembro", "t": "Nada. Polvo y silencio." },
+      { "rol": "lider", "t": "Anótalo igual. El vacío también es dato." },
+      { "rol": "miembro", "t": "Vacío. Ni siquiera saqueado." },
+      { "rol": "lider", "t": "Alguien se llevó todo hace mucho." },
+      { "rol": "miembro", "t": "Aquí ya no queda nadie a quien buscar." },
+      { "rol": "control", "t": "Negativo entonces. Sigan al siguiente punto." }
+    ]
+  },
+
+  "decisiones": [
+    {
+      "pregunta": { "rol": "lider", "t": "Control, paso bloqueado. ¿Forzamos o rodeamos?" },
+      "opciones": [
+        { "txt": "Forzar el paso (rápido, ruidoso)", "verdict": [{ "rol": "control", "t": "Autorizado. Rápido." }, { "rol": "miembro", "t": "Cede... pero sonó por todo el sector." }], "efectos": ["ruido"] },
+        { "txt": "Rodear (lento, agotador)", "verdict": [{ "rol": "lider", "t": "El rodeo nos costó tiempo y aliento. Seguimos, más gastados." }], "efectos": ["fatiga"] }
+      ],
+      "timeout": { "verdict": [{ "rol": "lider", "t": "Sin respuesta. Forzamos por instinto — y sonó." }], "efectos": ["ruido", "fatiga"] }
+    },
+    {
+      "pregunta": { "rol": "miembro", "t": "Hay un cuerpo en el paso, con algo encima. ¿Revisamos o seguimos?" },
+      "opciones": [
+        { "txt": "Revisar (intel, pero riesgo)", "verdict": [{ "rol": "miembro", "t": "Lleva documentos... intel. Y esto no murió hace mucho." }, { "rol": "control", "t": "Buen hallazgo. Muévanse." }], "efectos": ["intel", "ruido"] },
+        { "txt": "Seguir de largo (seguro)", "verdict": [{ "rol": "lider", "t": "Lo dejamos. Con él se va lo que supiera." }], "efectos": [] }
+      ],
+      "timeout": { "verdict": [{ "rol": "miembro", "t": "Me congelé. Lo dejo — y con él, lo que sabía." }], "efectos": [] }
+    },
+    {
+      "pregunta": { "rol": "lider", "t": "Control, hay una puerta cerrada con golpes del otro lado. Rítmicos." },
+      "opciones": [
+        { "txt": "Abrir (puede ser alguien)", "verdict": [{ "rol": "miembro", "t": "No hay nadie. La puerta golpeaba sola contra el marco." }, { "rol": "control", "t": "Sigan. No vuelvan a abrir nada por corazonada." }], "efectos": ["ruido"] },
+        { "txt": "Dejarlo sellado", "verdict": [{ "rol": "lider", "t": "Sellado queda. Que lo resuelva otro." }, { "rol": "miembro", "t": "¿Y si era alguien?" }], "efectos": ["fatiga"] }
+      ],
+      "timeout": { "verdict": [{ "rol": "lider", "t": "Nos quedamos parados demasiado tiempo frente a esa puerta." }], "efectos": ["fatiga"] }
+    },
+    {
+      "pregunta": { "rol": "miembro", "t": "Control, la ruta corta cruza terreno sin reportar. ¿Entramos a ciegas?" },
+      "opciones": [
+        { "txt": "Atajo por lo desconocido", "verdict": [{ "rol": "control", "t": "Autorizado. Si algo se mueve, retroceden." }, { "rol": "miembro", "t": "Salimos limpios. Esta vez." }], "efectos": ["intel"] },
+        { "txt": "Rodeo por lo cartografiado", "verdict": [{ "rol": "lider", "t": "Nos vamos por lo conocido. Más largo, más seguro." }], "efectos": ["fatiga"] }
+      ],
+      "timeout": { "verdict": [{ "rol": "lider", "t": "Perdimos el momento. Entramos igual, pero sin decidirlo." }], "efectos": ["ruido"] }
+    },
+    {
+      "pregunta": { "rol": "miembro", "t": "Encontré una mochila de escuela. Llena. ¿La abro?" },
+      "opciones": [
+        { "txt": "Abrirla", "verdict": [{ "rol": "miembro", "t": "Cuadernos. Un suéter. Nada útil." }, { "rol": "miembro", "t": "...tenía el nombre escrito adentro." }], "efectos": ["fatiga"] },
+        { "txt": "Dejarla donde está", "verdict": [{ "rol": "lider", "t": "Déjala. No venimos a eso." }], "efectos": [] }
+      ],
+      "timeout": { "verdict": [{ "rol": "miembro", "t": "La dejé. No sé por qué me costó tanto." }], "efectos": ["fatiga"] }
+    },
+    {
+      "pregunta": { "rol": "lider", "t": "Control, tenemos una vista alta disponible. Cuesta tiempo subir." },
+      "opciones": [
+        { "txt": "Subir a reconocer", "verdict": [{ "rol": "miembro", "t": "Desde aquí se ve medio sector. Marcando." }, { "rol": "control", "t": "Excelente. Eso vale el tiempo." }], "efectos": ["intel", "fatiga"] },
+        { "txt": "Seguir a nivel de calle", "verdict": [{ "rol": "lider", "t": "Seguimos abajo. No quiero a nadie expuesto en una azotea." }], "efectos": [] }
+      ],
+      "timeout": { "verdict": [{ "rol": "control", "t": "Sin respuesta. Sigan a nivel de calle." }], "efectos": [] }
+    },
+    {
+      "pregunta": { "rol": "miembro", "t": "Hay un perro. Vivo. Nos está siguiendo desde hace dos cuadras." },
+      "opciones": [
+        { "txt": "Espantarlo", "verdict": [{ "rol": "miembro", "t": "Se fue. Ladró tres veces antes de irse." }, { "rol": "lider", "t": "Y ese ladrido lo oyó todo el sector." }], "efectos": ["ruido"] },
+        { "txt": "Dejar que siga", "verdict": [{ "rol": "lider", "t": "Que venga. Va a oír antes que nosotros." }, { "rol": "miembro", "t": "Se le paran las orejas cada tanto. No me gusta." }], "efectos": ["intel"] }
+      ],
+      "timeout": { "verdict": [{ "rol": "miembro", "t": "Se quedó atrás solo. Miró un rato y se dio la vuelta." }], "efectos": [] }
+    },
+    {
+      "pregunta": { "rol": "lider", "t": "Control, uno de los míos está mal. Puede seguir, pero va lento." },
+      "opciones": [
+        { "txt": "Continuar al mismo ritmo", "verdict": [{ "rol": "control", "t": "El objetivo no se mueve. Ustedes sí. Sigan." }, { "rol": "miembro", "t": "Aguanto. Aguanto." }], "efectos": ["fatiga"] },
+        { "txt": "Bajar el ritmo", "verdict": [{ "rol": "lider", "t": "Bajamos el paso. Nadie se queda atrás." }], "efectos": ["fatiga"] }
+      ],
+      "timeout": { "verdict": [{ "rol": "lider", "t": "Nadie dijo nada. Seguimos como si no pasara." }], "efectos": ["fatiga"] }
+    }
+  ]
+}
