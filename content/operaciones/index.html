@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CENVAC — Operaciones</title>
-<link rel="stylesheet" href="./css/operaciones.css?v=4">
+<link rel="stylesheet" href="./css/operaciones.css?v=8">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
@@ -20,11 +20,13 @@
 <div id="map-wrap">
   <div id="map"></div>
 
+  <div class="map-migas" id="map-migas"></div>
+
   <div class="mapa-leyenda">
-    <div class="leyenda-titulo">Cuadrantes de reconocimiento</div>
-    <div class="leyenda-row"><span class="leyenda-glyph" style="border:2px solid #4dff7a;background:rgba(77,255,122,.1)"></span>Operable — recon disponible</div>
-    <div class="leyenda-row"><span class="leyenda-glyph" style="border:1px dashed #6a6a4a"></span>Cartografía pendiente</div>
-    <div class="leyenda-nota">Elegí un cuadrante operable para despachar una unidad a reconocerlo.</div>
+    <div class="leyenda-titulo">Malla de reconocimiento</div>
+    <div class="leyenda-row"><span class="leyenda-glyph" style="border:2px solid #4dff7a;background:rgba(77,255,122,.1)"></span>Distrito — abre sus sectores</div>
+    <div class="leyenda-row"><span class="leyenda-glyph" style="border:1px solid #8affc0;background:rgba(138,255,192,.12)"></span>Sector — recon disponible</div>
+    <div class="leyenda-nota">Entra a un distrito y elige el sector a reconocer. La hora del reporte decide qué caza a esa hora: el mismo sector a mediodía y de madrugada no es el mismo sector.</div>
   </div>
 
   <div class="cuartel-panel" id="cuartel-panel" style="display:none">
@@ -35,6 +37,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="./js/ui-map.js?v=4"></script>
+<script type="module" src="./js/ui-map.js?v=7"></script>
 </body>
 </html>

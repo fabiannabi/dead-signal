@@ -25,17 +25,31 @@ const equipo = getSession('op_equipo');
 const liderId = getSession('op_lider_id');
 if (!evento || !equipo || !equipo.length) { window.location.href = './index.html'; throw new Error('sala: sin sesión'); }
 
+// Cada cuadrante trae su propia cartografía; `evento.grafo` dice cuál. Los eventos
+// viejos (sin ese campo) siguen cayendo al centro, que era el único sector cuando
+// se guardaron.
+// El guion bajo va en la lista: los slugs de sector son `s<fila>_<columna>`
+// (sm4_0, s3_m2…). Sin él, `sm4_0` se saneaba a `sm40` y el fetch daba 404.
+// Lo que importa es que no pasen `/` ni `.`, para que esto no lea fuera de recon/.
+const slugGrafo = (evento.grafo || 'centro').replace(/[^a-z0-9_-]/gi, '');
+// `fetchJSON` LANZA en 404, no devuelve null: sin este catch un sector sin
+// cartografía deja la página colgada para siempre en "cargando sector…" en vez
+// de devolver al jugador a la malla.
 const [rawGrafo, ecologia] = await Promise.all([
-  fetchJSON(`${DATA_BASE}/recon/grafo-centro.json`),
+  fetchJSON(`${DATA_BASE}/recon/grafo-${slugGrafo}.json`).catch(() => null),
   fetchJSON(`${DATA_BASE}/recon/ecologia-peligro.json`),
 ]);
+if (!rawGrafo) {
+  window.location.href = './index.html';   // sector sin cartografía horneada
+  throw new Error(`sala: sector sin cartografía (${slugGrafo})`);
+}
 
-// ¿El foco del evento cae en el sector cartografiado? Si no, cae al flujo viejo.
-const foco = evento.coordenadas_foco || { lat: evento.lat, lng: evento.lng };
+// Si el foco cae fuera del sector, se ancla al centro del bbox en vez de rebotar:
+// el cuadrante SÍ tiene cartografía, solo que el reporte apunta a un borde.
 const [S, W, N, E] = rawGrafo._meta.bbox_SWNE;
-if (foco.lat < S || foco.lat > N || foco.lng < W || foco.lng > E) {
-  window.location.href = './index.html';   // cuadrante sin cartografía horneada
-  throw new Error('sala: sector sin cartografía');
+let foco = evento.coordenadas_foco || { lat: evento.lat, lng: evento.lng };
+if (!foco || foco.lat < S || foco.lat > N || foco.lng < W || foco.lng > E) {
+  foco = { lat: (S + N) / 2, lng: (W + E) / 2 };
 }
 
 const grafo = construirGrafo(rawGrafo);
