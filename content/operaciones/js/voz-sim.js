@@ -59,7 +59,7 @@ export const AJUSTES = {
 // ── Canales ──────────────────────────────────────────────────────────────────
 // Control y la unidad en calle no se distinguen por la voz sino por la RADIO que
 // los trae. Cada canal tiene su propia cadena, su lugar en el estéreo y su tono
-// de apertura, que es la pista más fuerte: antes de la primera sílaba ya sabés
+// de apertura, que es la pista más fuerte: antes de la primera sílaba ya sabes
 // quién habla. Coincide con el lado del retrato en pantalla.
 export const CANALES = {
   // ── El de la unidad en calle ────────────────────────────────────────────
@@ -70,7 +70,7 @@ export const CANALES = {
     vol: 1, eco: 0, latencia: 0, apertura: [[1500, 0.045]],       // click seco de PTT
   },
 
-  // ── Candidatos para Control: elegí uno ──────────────────────────────────
+  // ── Candidatos para Control: elige uno ──────────────────────────────────
   control: {
     nombre: 'ESTACIÓN BASE', desc: 'Sala de operaciones. Angosto, saturado, con cola de cuarto.',
     tint: '#d9c84a', freq: '140.85',
@@ -349,7 +349,7 @@ export function crearVozSim(ctx, destino, ajustes = {}) {
 
   // ── Apertura y cierre de transmisión ──────────────────────────────────────
   // El tono de apertura es la pista más fuerte de todas: suena ANTES de la primera
-  // sílaba, así que ya sabés quién habla sin haber oído la voz.
+  // sílaba, así que ya sabes quién habla sin haber oído la voz.
   let abierto = null;
   function abrirCanal(nombre = 'campo') {
     if (abierto) cerrarCanal();
