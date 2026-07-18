@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RECON 3D — maqueta táctica (spike desechable)</title>
+<style>
+  /* Spike desechable — no forma parte del sitio. Borrar tras evaluar. */
+  :root { --bg:#04100a; --ph:#33ff66; --ph2:#1c8a44; --amber:#ffb038; --red:#ff5a44;
+    --panel:rgba(4,16,10,.88); }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); overflow:hidden;
+    color:var(--ph); font-family:'Share Tech Mono',ui-monospace,monospace; }
+  #stage { position:absolute; inset:0; }
+  canvas { display:block; }
+
+  .panel { position:absolute; z-index:20; background:var(--panel);
+    border:1px solid var(--ph2); border-radius:4px; padding:10px 12px;
+    backdrop-filter:blur(3px); font-size:13px; }
+  #ctrl { top:12px; left:12px; width:288px; }
+  #ctrl h1 { font-size:13px; margin:0 0 8px; letter-spacing:1px; color:var(--amber);
+    border-bottom:1px solid var(--ph2); padding-bottom:6px; }
+  #ctrl label { display:block; margin:9px 0 3px; color:#7fe0a0; font-size:11px; letter-spacing:.5px; }
+  select { width:100%; background:#06180d; color:var(--ph); border:1px solid var(--ph2);
+    padding:5px; font-family:inherit; font-size:12px; border-radius:3px; }
+  input[type=range] { width:100%; }
+  .val { color:var(--amber); font-size:11px; }
+  .toggle { display:flex; align-items:center; gap:8px; margin-top:10px; font-size:12px; cursor:pointer; }
+
+  #hud { position:absolute; top:12px; right:12px; z-index:20; text-align:right; font-size:11px; color:#7fe0a0; }
+  #hud .evt { color:var(--amber); font-size:13px; letter-spacing:1px; }
+  #status { position:absolute; bottom:12px; left:12px; z-index:20; max-width:64vw;
+    font-size:11px; color:#7fe0a0; line-height:1.5; }
+  #status b { color:var(--amber); } #status .err { color:var(--red); }
+
+  /* Retícula táctica central */
+  #reticle { position:absolute; z-index:15; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:120px; height:120px; pointer-events:none; opacity:.55; }
+  #reticle::before,#reticle::after { content:''; position:absolute; background:var(--ph); }
+  #reticle::before { left:50%; top:0; width:1px; height:100%; transform:translateX(-.5px); }
+  #reticle::after { top:50%; left:0; height:1px; width:100%; transform:translateY(-.5px); }
+  .corner { position:absolute; width:16px; height:16px; border:2px solid var(--ph); }
+  .corner.tl{top:0;left:0;border-right:0;border-bottom:0}.corner.tr{top:0;right:0;border-left:0;border-bottom:0}
+  .corner.bl{bottom:0;left:0;border-right:0;border-top:0}.corner.br{bottom:0;right:0;border-left:0;border-top:0}
+  /* Viñeta / escaneo */
+  #scan { position:absolute; inset:0; z-index:12; pointer-events:none;
+    background:radial-gradient(120% 120% at 50% 45%, transparent 55%, rgba(2,8,4,.65) 100%); }
+</style>
+</head>
+<body>
+
+<div id="stage"></div>
+<div id="scan"></div>
+
+<div id="reticle">
+  <span class="corner tl"></span><span class="corner tr"></span>
+  <span class="corner bl"></span><span class="corner br"></span>
+</div>
+
+<div id="hud">
+  <div class="evt" id="hud-evt">—</div>
+  <div id="hud-coords">—</div>
+  <div id="hud-count">—</div>
+</div>
+
+<div id="ctrl" class="panel">
+  <h1>RECON 3D · MAQUETA</h1>
+  <label for="sel-evt">Evento (coordenadas reales)</label>
+  <select id="sel-evt"></select>
+
+  <label>Radio de captura <span class="val" id="rad-v">300 m</span></label>
+  <input type="range" id="rad" min="150" max="500" step="50" value="300">
+
+  <label>Altura base por nivel <span class="val" id="lvl-v">3.2 m</span></label>
+  <input type="range" id="lvl" min="2" max="6" step="0.2" value="3.2">
+
+  <label class="toggle"><input type="checkbox" id="orbit" checked> Órbita automática</label>
+  <label class="toggle"><input type="checkbox" id="edges" checked> Solo aristas (blueprint)</label>
+</div>
+
+<div id="status">iniciando motor…</div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+} }
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { DATA_BASE, fetchJSON } from './js/main.js';
+
+const $ = (id) => document.getElementById(id);
+const say = (html, err=false) => $('status').innerHTML = err ? `<span class="err">${html}</span>` : html;
+
+// Footprints reales pre-horneados a JSON estático (arquitectura de producción:
+// cero dependencia de red en runtime). Si falta el archivo, se intenta Overpass
+// en vivo como respaldo (mirror de mail.ru primero, es el que responde).
+const OSM_BAKED = `${DATA_BASE}/recon/osm`;
+const OVERPASS = [
+  'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
+  'https://overpass-api.de/api/interpreter',
+  'https://overpass.kumi.systems/api/interpreter',
+];
+// Umbral: por debajo de esto, se rellena el sector con bloques procedurales.
+const MIN_REALES = 25;
+
+let eventos = [], cur = null;
+let scene, camera, renderer, controls, cityGroup;
+const COL = { ph:0x33ff66, ph2:0x0f6a33, amber:0xffb038, red:0xff5a44, ground:0x0a1c12 };
+
+// ── Proyección lat/lng → metros locales (origen = foco del evento) ─────────────
+let origin = null;
+function proj(lat, lng) {
+  const mLat = 110540, mLng = 111320 * Math.cos(origin.lat * Math.PI/180);
+  return { e: (lng - origin.lng) * mLng, n: (lat - origin.lat) * mLat };
+}
+// Coloca objetos en mundo: este=+X, norte=+Z se mapea a -Z (ver extrusión).
+const world = (p, y=0) => new THREE.Vector3(p.e, y, -p.n);
+
+function focoDe(ev) {
+  const f = ev.coordenadas_foco;
+  return { lat: (f?.lat ?? ev.lat), lng: (f?.lng ?? ev.lng) };
+}
+
+// ── Three.js: escena base ──────────────────────────────────────────────────────
+function initThree() {
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x04100a);
+  scene.fog = new THREE.FogExp2(0x04100a, 0.0016);
+
+  camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 1, 6000);
+  camera.position.set(230, 190, 230);
+
+  renderer = new THREE.WebGLRenderer({ antialias:true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setSize(innerWidth, innerHeight);
+  $('stage').appendChild(renderer.domElement);
+
+  controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.06;
+  controls.maxPolarAngle = Math.PI * 0.49; // no cruzar el suelo
+  controls.autoRotateSpeed = 0.6;
+
+  // Luz tenue solo para dar un poco de forma a las caras
+  scene.add(new THREE.AmbientLight(0x224433, 1.1));
+  const key = new THREE.DirectionalLight(0x66ffaa, 0.6);
+  key.position.set(1, 2, 1); scene.add(key);
+
+  addEventListener('resize', () => {
+    camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight);
+  });
+
+  (function loop(){
+    requestAnimationFrame(loop);
+    controls.autoRotate = $('orbit').checked;
+    controls.update();
+    // pulso del anillo del foco
+    const t = performance.now() * 0.001;
+    if (focoRing) { const s = 1 + Math.sin(t*2)*0.12; focoRing.scale.set(s,s,s);
+      focoRing.material.opacity = 0.5 + Math.sin(t*2)*0.2; }
+    renderer.render(scene, camera);
+  })();
+}
+
+// ── Suelo + rejilla táctica ────────────────────────────────────────────────────
+function addGround(radio) {
+  const g = new THREE.Group();
+  const plane = new THREE.Mesh(
+    new THREE.CircleGeometry(radio*1.4, 64),
+    new THREE.MeshBasicMaterial({ color: COL.ground })
+  );
+  plane.rotation.x = -Math.PI/2; plane.position.y = -0.4;
+  g.add(plane);
+  const grid = new THREE.GridHelper(radio*2.8, Math.round(radio/12), COL.ph2, 0x0a2a18);
+  grid.material.opacity = 0.5; grid.material.transparent = true;
+  g.add(grid);
+  return g;
+}
+
+// ── Marcador del foco (columna + anillo pulsante) ──────────────────────────────
+let focoRing = null;
+function addFoco(group) {
+  const p = { e:0, n:0 }; // el foco es el origen de la proyección
+  const beam = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.6, 0.6, 140, 8),
+    new THREE.MeshBasicMaterial({ color: COL.amber, transparent:true, opacity:0.55 })
+  );
+  beam.position.copy(world(p, 70)); group.add(beam);
+  focoRing = new THREE.Mesh(
+    new THREE.RingGeometry(6, 8, 40),
+    new THREE.MeshBasicMaterial({ color: COL.amber, transparent:true, opacity:0.6, side:THREE.DoubleSide })
+  );
+  focoRing.rotation.x = -Math.PI/2; focoRing.position.copy(world(p, 0.2));
+  group.add(focoRing);
+}
+
+// ── Point-in-polygon (para resaltar el edificio del foco) ──────────────────────
+function contiene(poly, pt) {
+  let inside = false;
+  for (let i=0, j=poly.length-1; i<poly.length; j=i++) {
+    const xi=poly[i].e, yi=poly[i].n, xj=poly[j].e, yj=poly[j].n;
+    if (((yi>pt.n)!==(yj>pt.n)) && (pt.e < (xj-xi)*(pt.n-yi)/(yj-yi)+xi)) inside=!inside;
+  }
+  return inside;
+}
+
+// ── Carga de footprints: primero JSON horneado, luego Overpass en vivo ─────────
+async function traerOSM(ev, lat, lng, radio) {
+  try {
+    const r = await fetch(`${OSM_BAKED}/${ev.id}.json`);
+    if (r.ok) { const j = await r.json(); if (j && j.elements) return { osm:j, fuente:'horneado' }; }
+  } catch { /* sin archivo local — probamos la red */ }
+  const osm = await traerFootprints(lat, lng, radio);
+  return { osm, fuente:'overpass' };
+}
+
+// ── Overpass: footprints de edificios alrededor del evento ─────────────────────
+async function traerFootprints(lat, lng, radio) {
+  const q = `[out:json][timeout:25];(way["building"](around:${radio},${lat},${lng});`
+          + `relation["building"](around:${radio},${lat},${lng}););out body;>;out skel qt;`;
+  let lastErr = null;
+  for (const url of OVERPASS) {
+    try {
+      const r = await fetch(url, { method:'POST', body:'data='+encodeURIComponent(q) });
+      if (!r.ok) { lastErr = new Error('HTTP '+r.status); continue; }
+      return await r.json();
+    } catch (e) { lastErr = e; }
+  }
+  throw lastErr || new Error('overpass');
+}
+
+// Reconstruye polígonos (solo ways cerradas con tag building) desde la respuesta.
+function polígonos(osm) {
+  const nodes = new Map();
+  for (const el of osm.elements) if (el.type==='node') nodes.set(el.id, el);
+  const polys = [];
+  for (const el of osm.elements) {
+    if (el.type!=='way' || !el.nodes || el.nodes.length < 4) continue;
+    const pts = el.nodes.map(id => nodes.get(id)).filter(Boolean)
+      .map(n => proj(n.lat, n.lon));
+    if (pts.length < 4) continue;
+    const t = el.tags || {};
+    let niveles = parseFloat(t['building:levels']);
+    let altura = parseFloat(t['height']);
+    polys.push({ pts, niveles: isFinite(niveles)?niveles:null, altura: isFinite(altura)?altura:null });
+  }
+  return polys;
+}
+
+// ── PRNG determinista (mismo evento → mismo sector) ────────────────────────────
+function semilla(str) {
+  let h = 2166136261;
+  for (let i=0; i<str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return () => { h += 0x6D2B79F5; let t = h; t = Math.imul(t ^ (t>>>15), t|1);
+    t ^= t + Math.imul(t ^ (t>>>7), t|61); return ((t ^ (t>>>14))>>>0)/4294967296; };
+}
+
+// Rellena el sector con manzanas procedurales cuando OSM es ralo/vacío. Rejilla de
+// calles con lotes extruidos; deja un claro alrededor del foco. Marcadas como
+// "reconstrucción estimada" (más tenues) para distinguirlas de los footprints reales.
+function generarSector(ev, radio, reales) {
+  const rnd = semilla(ev.id);
+  const polys = [];
+  const manzana = 46, calle = 12, paso = manzana + calle;
+  const lim = radio * 0.92;
+  const ocupado = (e, n) => reales.some(p => {
+    // evita solapar manzanas sobre footprints reales (test rápido por centroide)
+    const c = p.pts.reduce((a,q)=>({e:a.e+q.e, n:a.n+q.n}), {e:0,n:0});
+    c.e/=p.pts.length; c.n/=p.pts.length;
+    return Math.hypot(c.e-e, c.n-n) < paso*0.7;
+  });
+  for (let x=-lim; x<=lim; x+=paso) for (let z=-lim; z<=lim; z+=paso) {
+    if (Math.hypot(x, z) > lim) continue;
+    if (Math.hypot(x, z) < 34) continue;            // claro alrededor del foco
+    if (ocupado(x, z)) continue;                    // no pisar lo real
+    const lotes = 1 + Math.floor(rnd()*3);
+    for (let l=0; l<lotes; l++) {
+      const w = 10 + rnd()*20, d = 10 + rnd()*20;
+      const ox = x + (rnd()-0.5)*(manzana-w), oz = z + (rnd()-0.5)*(manzana-d);
+      const niveles = 1 + Math.floor(rnd()*3);
+      polys.push({
+        pts: [ {e:ox,n:oz}, {e:ox+w,n:oz}, {e:ox+w,n:oz+d}, {e:ox,n:oz+d} ],
+        niveles, altura:null, estimado:true,
+      });
+    }
+  }
+  return polys;
+}
+
+// ── Construye la maqueta 3D ─────────────────────────────────────────────────────
+function construirCiudad(polys) {
+  const soloAristas = $('edges').checked;
+  const porNivel = +$('lvl').value;
+  const g = new THREE.Group();
+  const foco = { e:0, n:0 };
+  let focoMarcado = false;
+
+  // Variación determinista de altura por índice (sin Math.random)
+  const alturaDe = (p, i) => {
+    if (p.altura) return p.altura;
+    if (p.niveles) return p.niveles * porNivel;
+    const base = 1 + ((i*7) % 3);           // 1–3 niveles pseudo
+    return base * porNivel;
+  };
+
+  polys.forEach((p, i) => {
+    const shape = new THREE.Shape();
+    p.pts.forEach((pt, k) => k ? shape.lineTo(pt.e, pt.n) : shape.moveTo(pt.e, pt.n));
+    const h = alturaDe(p, i);
+    const geo = new THREE.ExtrudeGeometry(shape, { depth: h, bevelEnabled:false });
+    geo.rotateX(-Math.PI/2); // footprint al plano XZ, altura hacia +Y
+
+    const esFoco = !focoMarcado && !p.estimado && contiene(p.pts, foco);
+    if (esFoco) focoMarcado = true;
+    const color = esFoco ? COL.amber : COL.ph;
+    const est = !!p.estimado;
+
+    if (!soloAristas) {
+      const fill = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
+        color, transparent:true, opacity: esFoco?0.35:(est?0.06:0.18),
+        metalness:0.1, roughness:0.8, emissive:color, emissiveIntensity:esFoco?0.35:(est?0.04:0.12),
+      }));
+      g.add(fill);
+    }
+    const edges = new THREE.LineSegments(
+      new THREE.EdgesGeometry(geo),
+      new THREE.LineBasicMaterial({ color, transparent:true, opacity: esFoco?0.95:(est?0.32:0.7) })
+    );
+    g.add(edges);
+  });
+
+  return { group:g, focoMarcado };
+}
+
+// ── Cargar un evento completo ────────────────────────────────────────────────────
+async function cargarEvento(ev) {
+  cur = ev;
+  const foco = focoDe(ev);
+  origin = { lat: foco.lat, lng: foco.lng };
+  $('hud-evt').textContent = ev.id;
+  $('hud-coords').textContent = `${foco.lat.toFixed(4)} · ${foco.lng.toFixed(4)}`;
+  say(`bajando footprints de OpenStreetMap para <b>${ev.id}</b>…`);
+
+  if (cityGroup) { scene.remove(cityGroup); cityGroup.traverse(o=>{o.geometry?.dispose?.(); o.material?.dispose?.();}); }
+  cityGroup = new THREE.Group();
+  const radio = +$('rad').value;
+  cityGroup.add(addGround(radio));
+  addFoco(cityGroup);
+  scene.add(cityGroup);
+  focoRing = focoRing; // (re-set en addFoco)
+  controls.target.set(0, 8, 0);
+
+  let reales = [], fuente = '—';
+  try {
+    const { osm, fuente:f } = await traerOSM(ev, foco.lat, foco.lng, radio);
+    reales = polígonos(osm); fuente = f;
+  } catch (e) {
+    say(`Sin footprints reales (${e.message}); se genera el sector completo procedural.`);
+  }
+
+  // Relleno procedural cuando OSM es ralo/vacío (industrial, ingenio, sierra, río).
+  const estimados = reales.length < MIN_REALES ? generarSector(ev, radio, reales) : [];
+  const polys = reales.concat(estimados);
+  if (!polys.length) return say(`Sin datos para <b>${ev.id}</b>.`, true);
+
+  const { group, focoMarcado } = construirCiudad(polys);
+  cityGroup.add(group);
+  $('hud-count').textContent = `${reales.length} reales · ${estimados.length} estimados`;
+
+  const nota = estimados.length
+    ? `<b>${reales.length}</b> edificios reales (${fuente}) + <b>${estimados.length}</b> estimados `
+      + `(sector reconstruido — OSM ralo aquí). `
+    : `<b>${reales.length}</b> edificios reales desde OSM (${fuente}). `;
+  say(nota + (focoMarcado ? 'Objetivo resaltado en ámbar. ' : 'Foco con baliza ámbar. ')
+    + 'Volumen en <b>los 6 eventos</b> — sin cobertura de Google, sin gente, sin banner.');
+}
+
+// ── UI ──────────────────────────────────────────────────────────────────────────
+function wire() {
+  $('sel-evt').addEventListener('change', e => cargarEvento(eventos[+e.target.value]));
+  const bind = (id, vId, fmt, reload) => $(id).addEventListener('input', e => {
+    $(vId).textContent = fmt(e.target.value);
+    if (reload) clearTimeout(bind._t), bind._t = setTimeout(()=>cargarEvento(cur), 350);
+  });
+  bind('rad', 'rad-v', v => v+' m', true);
+  bind('lvl', 'lvl-v', v => (+v).toFixed(1)+' m', true);
+  $('edges').addEventListener('change', () => cargarEvento(cur));
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────────
+(async function init() {
+  try { eventos = await fetchJSON(`${DATA_BASE}/events/active-events.json`); }
+  catch { return say('No pude cargar active-events.json. Sírvelo desde el sitio, no file://.', true); }
+  $('sel-evt').innerHTML = eventos.map((e,i) =>
+    `<option value="${i}">${e.id} · ${(e.ubicacion_descrita||'').slice(0,32)}</option>`).join('');
+  initThree();
+  wire();
+  cargarEvento(eventos[0]); // Zona Industrial Norte — donde Google fallaba
+})();
+</script>
+</body>
+</html>
