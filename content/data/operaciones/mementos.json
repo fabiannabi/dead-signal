@@ -1,0 +1,156 @@
+{
+  "_meta": {
+    "descripcion": "Mementos (§1.8): fragmentos humanos que afloran cuando una unidad llega a un sitio con nombre. El contraste entre el despacho seco y la voz de una persona real es el mecanismo de horror central del módulo.",
+    "clase_2": "One-shots ANÓNIMOS y autocontenidos. Nunca tocan lo sobrenatural, la causa de la Emergencia, ████-A ni el meta-misterio. No son de los cinco sujetos del archivo: son de cualquiera. Se leen completos y se cierran.",
+    "clase_1": "RESERVADA — VERSION_B canónico periférico de los cinco, donde CENVAC marca pero no comenta. Pendiente de autoría de Fabián; este banco solo trae Clase 2.",
+    "voz": "Primera persona, sin pulir. Es la letra de alguien, no un documento. CENVAC lo encuentra, no lo escribe.",
+    "estado": "[BORRADOR — PENDIENTE DE CURADURÍA] Generados como punto de partida. Revisar tono y descartar los que no encajen antes de darlos por canon.",
+    "tipos": "Cada memento declara en qué tipos de sitio puede aflorar (ver sites.json)."
+  },
+  "mementos": [
+    {
+      "id": "MEM-C2-001", "clase": 2, "formato": "recado en el pizarrón",
+      "tipos": ["escuela"],
+      "titulo": "Pizarrón sin borrar",
+      "texto": "Niños: dejé la tarea de fracciones en el escritorio. El que llegue primero la reparte.\n\nY por favor cierren la puerta del salón cuando salgan. Ayer la dejaron abierta toda la noche y se metió el frío.\n\nNos vemos el lunes."
+    },
+    {
+      "id": "MEM-C2-002", "clase": 2, "formato": "hoja doblada en un pupitre",
+      "tipos": ["escuela"],
+      "titulo": "Lista de asistencia",
+      "texto": "Faltaron: Ramírez, Ocampo, las dos Hernández, Villalobos.\n\nSegundo día seguido de Villalobos. Anotar para hablar con la mamá.\n\nSe presentaron 9 de 34."
+    },
+    {
+      "id": "MEM-C2-003", "clase": 2, "formato": "letra en la pared del pasillo",
+      "tipos": ["hospital"],
+      "titulo": "Escrito junto a urgencias",
+      "texto": "SI LEES ESTO Y ERES DE LA FAMILIA DE MARISOL AGUIRRE:\n\nSe la llevaron al tercer piso el jueves. No sé más. Yo la estuve acompañando dos días porque no llegaba nadie.\n\nNo estaba sola. Eso sí te lo puedo decir."
+    },
+    {
+      "id": "MEM-C2-004", "clase": 2, "formato": "libreta de turno",
+      "tipos": ["hospital"],
+      "titulo": "Bitácora de enfermería",
+      "texto": "23:40 — Se acabó el suero. Improvisando.\n01:15 — Nadie del turno de la mañana llegó.\n03:00 — Sigo yo.\n06:20 — Sigo yo.\n11:00 — Sigo yo.\n\nSi alguien encuentra esto: las llaves del almacén están en el bote de los abatelenguas. No las escondí por maldad, las escondí porque se estaban llevando todo."
+    },
+    {
+      "id": "MEM-C2-005", "clase": 2, "formato": "recado en un puesto",
+      "tipos": ["mercado"],
+      "titulo": "Cartón sobre la báscula",
+      "texto": "CERRADO. NO ES POR FALTA DE GANAS.\n\nDon Beto: le dejé sus tres kilos en la hielera de atrás, como quedamos. Ya no me pague.\n\nCuarenta y un años aquí. Se dice fácil."
+    },
+    {
+      "id": "MEM-C2-006", "clase": 2, "formato": "cuaderno de fiado",
+      "tipos": ["mercado", "comida"],
+      "titulo": "Libreta de cuentas",
+      "texto": "Sra. Lupe — 240\nEl del taller — 180\nLa muchacha del 14 — 95\nDoña Chelo — 610\n\n(Doña Chelo no me debe nada. Le apunto para que sienta que puede seguir viniendo.)"
+    },
+    {
+      "id": "MEM-C2-007", "clase": 2, "formato": "hoja clavada en la puerta",
+      "tipos": ["templo"],
+      "titulo": "Aviso en la entrada",
+      "texto": "La misa de las siete se suspende hasta nuevo aviso.\n\nEl templo queda abierto. No tiene caso cerrar una puerta que la gente necesita.\n\nHay agua en la sacristía. Tómenla."
+    },
+    {
+      "id": "MEM-C2-008", "clase": 2, "formato": "papeles en una banca",
+      "tipos": ["templo"],
+      "titulo": "Peticiones sin recoger",
+      "texto": "Que mi hijo llegue bien.\nQue mi hijo llegue.\nQue mi hijo.\n\n(Tres papeles distintos, la misma letra, tres días seguidos.)"
+    },
+    {
+      "id": "MEM-C2-009", "clase": 2, "formato": "grabación en un celular sin batería",
+      "tipos": ["edificio", "comida"],
+      "titulo": "Nota de voz sin enviar",
+      "texto": "Ma, ya sé que no te va a llegar esto.\n\nEstoy bien. En serio estoy bien. Conseguí dónde quedarme y hay gente buena.\n\nNo me hagas caso si oyes que me tiembla la voz, es que hace frío.\n\nTe hablo mañana."
+    },
+    {
+      "id": "MEM-C2-010", "clase": 2, "formato": "letra en el muro",
+      "tipos": ["parque", "deportivo"],
+      "titulo": "Pintado en la barda",
+      "texto": "NOS VAMOS AL NORTE. SOMOS 11. VAMOS A PIE.\n\nSI VIENES ATRÁS, SIGUE LOS MOÑOS ROJOS.\n\nSI NO HAY MOÑOS, ES QUE YA NO PUDIMOS PONERLOS. NO NOS BUSQUES."
+    },
+    {
+      "id": "MEM-C2-011", "clase": 2, "formato": "cuaderno escolar",
+      "tipos": ["parque", "escuela"],
+      "titulo": "Dibujo con leyenda",
+      "texto": "Un dibujo de dos personas tomadas de la mano junto a un árbol. Abajo, con letra grande y despareja:\n\n\"MI MAMA Y YO EN EL PARQUE EL DOMINGO\"\n\nEn la esquina, con otra letra, de adulto:\n\n\"El domingo fuimos. Que conste que sí fuimos.\""
+    },
+    {
+      "id": "MEM-C2-012", "clase": 2, "formato": "cartulina en el vidrio",
+      "tipos": ["farmacia"],
+      "titulo": "Aviso en el mostrador",
+      "texto": "NO HAY INSULINA. NO HAY. DE VERDAD NO HAY.\n\nDejé de contestar la puerta porque no aguanto volver a decirlo.\n\nSi eres de los que vienen por eso: perdón. Perdón de verdad."
+    },
+    {
+      "id": "MEM-C2-013", "clase": 2, "formato": "libreta bajo el mostrador",
+      "tipos": ["farmacia", "servicio"],
+      "titulo": "Lista de pendientes",
+      "texto": "Cerrar la caja.\nLlamar al proveedor.\nPagar la luz.\nLlamarle a Sofía.\nLlamarle a Sofía.\nLlamarle a Sofía.\n\n(Las últimas tres, cada una con tinta distinta.)"
+    },
+    {
+      "id": "MEM-C2-014", "clase": 2, "formato": "hoja en la bomba 3",
+      "tipos": ["gasolinera"],
+      "titulo": "Papel bajo el limpiaparabrisas",
+      "texto": "Al que se lleve el coche: llévatelo, está bien.\n\nSolo saca el asiento de bebé de atrás y déjalo en la banqueta, donde se vea.\n\nAlguien lo va a necesitar."
+    },
+    {
+      "id": "MEM-C2-015", "clase": 2, "formato": "letra en el concreto fresco",
+      "tipos": ["gasolinera", "edificio"],
+      "titulo": "Marcado con un palo",
+      "texto": "AQUÍ ESPERAMOS 6 DÍAS.\n\nNADIE PASÓ.\n\nSEGUIMOS."
+    },
+    {
+      "id": "MEM-C2-016", "clase": 2, "formato": "flores y un papel",
+      "tipos": ["panteon"],
+      "titulo": "Dejado sobre una lápida",
+      "texto": "Apá:\n\nNo pude traerle las de siempre. Estas las corté del camellón y sé lo que va a decir.\n\nPero vine. Como cada mes.\n\nY voy a seguir viniendo mientras pueda caminar hasta acá."
+    },
+    {
+      "id": "MEM-C2-017", "clase": 2, "formato": "libreta en la caseta",
+      "tipos": ["panteon"],
+      "titulo": "Registro del velador",
+      "texto": "Ya no llevo la cuenta de quién entra.\n\nAntes anotaba nombre y hora. Ahora nomás abro y dejo que la gente esté el tiempo que necesite.\n\nSi vienen por su gente, no les voy a pedir identificación."
+    },
+    {
+      "id": "MEM-C2-018", "clase": 2, "formato": "programa de mano anotado",
+      "tipos": ["teatro"],
+      "titulo": "Entre las butacas",
+      "texto": "Función suspendida al minuto veinte.\n\nEn el margen, a lápiz:\n\n\"Se paró Rosaura a mitad del monólogo y dijo 'ya no puedo'. Nadie se rió. Todos aplaudimos. No sé por qué eso me consoló tanto.\""
+    },
+    {
+      "id": "MEM-C2-019", "clase": 2, "formato": "ficha de préstamo",
+      "tipos": ["biblioteca", "universidad"],
+      "titulo": "Papeleta sin devolver",
+      "texto": "Título: Manual de horticultura en clima semiárido\nPrestado: hace catorce meses\nA nombre de: ilegible\n\nAl reverso, con otra letra:\n\n\"Ya no lo voy a devolver. Lo estoy usando. Ojalá eso cuente como buena razón.\""
+    },
+    {
+      "id": "MEM-C2-020", "clase": 2, "formato": "pizarrón de anuncios",
+      "tipos": ["universidad"],
+      "titulo": "Recado en el departamento",
+      "texto": "Compañeros:\n\nLas calificaciones del semestre están capturadas. No sé si sirva de algo, pero están.\n\nLes tocaba a ustedes revisar los proyectos finales. Los dejé en el cubículo, ordenados por equipo.\n\nHicieron un buen trabajo. Quería que quedara escrito en algún lado."
+    },
+    {
+      "id": "MEM-C2-021", "clase": 2, "formato": "placa rayada",
+      "tipos": ["monumento"],
+      "titulo": "Sobre el pedestal",
+      "texto": "Bajo la inscripción original, rayado con algo metálico:\n\n\"NOS VIMOS AQUÍ EL 14. SI LEES ESTO Y ERES DE LOS NUESTROS, VUELVE EL 14 DEL MES QUE ENTRE.\n\nY EL SIGUIENTE.\n\nYO VOY A VENIR.\""
+    },
+    {
+      "id": "MEM-C2-022", "clase": 2, "formato": "cuaderno en la banca",
+      "tipos": ["monumento", "parque"],
+      "titulo": "Bitácora de espera",
+      "texto": "14 — vine. No llegó nadie.\n14 — vine. Un señor que tampoco conocía a nadie. Nos hicimos compañía un rato.\n14 — vine. El señor otra vez. Se llama Efrén.\n14 — vinimos los dos. Trajo café.\n\nYa somos dos. Es más de lo que había."
+    },
+    {
+      "id": "MEM-C2-023", "clase": 2, "formato": "hoja pegada en el andén",
+      "tipos": ["terminal"],
+      "titulo": "Pegado en la taquilla",
+      "texto": "NO SALEN CORRIDAS. NO VA A SALIR NINGUNA.\n\nDejen de preguntarme. No lo digo de mala gana, lo digo porque cada vez que alguien pregunta tengo que ver cómo se le cae la cara.\n\nY ya vi muchas."
+    },
+    {
+      "id": "MEM-C2-024", "clase": 2, "formato": "gis en la banqueta",
+      "tipos": ["edificio", "escuela", "parque"],
+      "titulo": "Rayuela sin terminar",
+      "texto": "Un juego de rayuela dibujado con gis, del uno al siete. El ocho está empezado y no se terminó.\n\nJunto al siete, con la misma letra infantil:\n\n\"AQUI ME QUEDE. MAÑANA SIGO.\""
+    }
+  ]
+}

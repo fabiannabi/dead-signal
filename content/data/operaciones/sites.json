@@ -1,0 +1,3819 @@
+{
+  "_meta": {
+    "descripcion": "Sitios con nombre por sector — anclajes posibles de memento (§1.8). Un memento aflora cuando la unidad llega a uno de estos lugares.",
+    "fuente": "OpenStreetMap vía Overpass API, misma malla que los grafos.",
+    "horneado": "2026-07-18",
+    "tipos": "escuela · universidad · hospital · farmacia · templo · mercado · gasolinera · teatro · biblioteca · servicio · terminal · comida · panteon · parque · deportivo · monumento · edificio",
+    "uso": "El `tipo` es la llave: un memento declara en qué tipos de sitio puede aflorar, para que un fragmento de aula no aparezca en una gasolinera."
+  },
+  "sectores": {
+    "s4_m3": [
+      {
+        "nombre": "Canal",
+        "tipo": "parque",
+        "lat": 21.902567,
+        "lng": -102.313495
+      },
+      {
+        "nombre": "Canal",
+        "tipo": "parque",
+        "lat": 21.902241,
+        "lng": -102.314972
+      },
+      {
+        "nombre": "Cinepolis Aguascalientes",
+        "tipo": "teatro",
+        "lat": 21.903838,
+        "lng": -102.315256
+      }
+    ],
+    "s4_m2": [
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.90765,
+        "lng": -102.310467
+      },
+      {
+        "nombre": "Colegio CAMpestre",
+        "tipo": "escuela",
+        "lat": 21.903252,
+        "lng": -102.310698
+      },
+      {
+        "nombre": "Colegio CAMpestre",
+        "tipo": "escuela",
+        "lat": 21.903252,
+        "lng": -102.310702
+      },
+      {
+        "nombre": "Colegio Independencia de Aguascalientes A.C.",
+        "tipo": "escuela",
+        "lat": 21.907214,
+        "lng": -102.30861
+      },
+      {
+        "nombre": "Instituto Educativo Savater",
+        "tipo": "escuela",
+        "lat": 21.907403,
+        "lng": -102.306731
+      },
+      {
+        "nombre": "Canal",
+        "tipo": "parque",
+        "lat": 21.902766,
+        "lng": -102.308758
+      },
+      {
+        "nombre": "Canal",
+        "tipo": "parque",
+        "lat": 21.902683,
+        "lng": -102.311182
+      },
+      {
+        "nombre": "Canal",
+        "tipo": "parque",
+        "lat": 21.902794,
+        "lng": -102.307065
+      },
+      {
+        "nombre": "Banorte",
+        "tipo": "edificio",
+        "lat": 21.906978,
+        "lng": -102.309255
+      },
+      {
+        "nombre": "Mueblería del Carmen",
+        "tipo": "edificio",
+        "lat": 21.906661,
+        "lng": -102.309128
+      },
+      {
+        "nombre": "Tae Global Foods",
+        "tipo": "edificio",
+        "lat": 21.906391,
+        "lng": -102.308761
+      },
+      {
+        "nombre": "Muebles Avanti",
+        "tipo": "edificio",
+        "lat": 21.906814,
+        "lng": -102.309208
+      },
+      {
+        "nombre": "Surtidora de Alambres y Aceros del Centro",
+        "tipo": "edificio",
+        "lat": 21.907155,
+        "lng": -102.309146
+      },
+      {
+        "nombre": "All4Bikes",
+        "tipo": "edificio",
+        "lat": 21.907135,
+        "lng": -102.309381
+      },
+      {
+        "nombre": "Alimentos Balanceados Api Alba",
+        "tipo": "edificio",
+        "lat": 21.907114,
+        "lng": -102.308827
+      }
+    ],
+    "s3_m4": [
+      {
+        "nombre": "Carlos Sagredo",
+        "tipo": "escuela",
+        "lat": 21.896915,
+        "lng": -102.320707
+      },
+      {
+        "nombre": "Prof. J. Santos Valdez Garcia",
+        "tipo": "escuela",
+        "lat": 21.897072,
+        "lng": -102.320684
+      },
+      {
+        "nombre": "Universidad la Concordia",
+        "tipo": "universidad",
+        "lat": 21.898468,
+        "lng": -102.319645
+      },
+      {
+        "nombre": "Parque los Sauces",
+        "tipo": "parque",
+        "lat": 21.901205,
+        "lng": -102.319313
+      }
+    ],
+    "s3_m3": [
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.901573,
+        "lng": -102.316827
+      },
+      {
+        "nombre": "Farmacias del Ahorro",
+        "tipo": "farmacia",
+        "lat": 21.898641,
+        "lng": -102.317386
+      },
+      {
+        "nombre": "Centro de Antencion Multiple Vii",
+        "tipo": "escuela",
+        "lat": 21.897679,
+        "lng": -102.312967
+      },
+      {
+        "nombre": "Colegio Robregil",
+        "tipo": "escuela",
+        "lat": 21.898079,
+        "lng": -102.31397
+      },
+      {
+        "nombre": "Colegio Robregil",
+        "tipo": "escuela",
+        "lat": 21.898106,
+        "lng": -102.31398
+      },
+      {
+        "nombre": "Parque Reyes Heroles",
+        "tipo": "parque",
+        "lat": 21.901841,
+        "lng": -102.316071
+      },
+      {
+        "nombre": "Marcial's Chilidogs",
+        "tipo": "comida",
+        "lat": 21.90088,
+        "lng": -102.316457
+      }
+    ],
+    "s3_m2": [
+      {
+        "nombre": "Hospital General ISSSTE",
+        "tipo": "hospital",
+        "lat": 21.901892,
+        "lng": -102.307559
+      },
+      {
+        "nombre": "Farmacia Guadalajara",
+        "tipo": "farmacia",
+        "lat": 21.896282,
+        "lng": -102.30989
+      },
+      {
+        "nombre": "Farmacia Simi",
+        "tipo": "farmacia",
+        "lat": 21.896282,
+        "lng": -102.30918
+      },
+      {
+        "nombre": "Farmacias del Ahorro",
+        "tipo": "farmacia",
+        "lat": 21.896674,
+        "lng": -102.309616
+      },
+      {
+        "nombre": "Fernando Montes de Oca",
+        "tipo": "escuela",
+        "lat": 21.901095,
+        "lng": -102.309111
+      },
+      {
+        "nombre": "Jose Clemente Orozco",
+        "tipo": "escuela",
+        "lat": 21.900478,
+        "lng": -102.31046
+      },
+      {
+        "nombre": "Jose Guadalupe Posada",
+        "tipo": "escuela",
+        "lat": 21.89669,
+        "lng": -102.308756
+      },
+      {
+        "nombre": "Secundaria Tecnica, 1, Jose Reyes Martinez",
+        "tipo": "escuela",
+        "lat": 21.896634,
+        "lng": -102.307822
+      },
+      {
+        "nombre": "Secundaria Tecnica, 1, Jose Reyes Martinez",
+        "tipo": "escuela",
+        "lat": 21.896648,
+        "lng": -102.307777
+      },
+      {
+        "nombre": "Escuela primaria",
+        "tipo": "escuela",
+        "lat": 21.897295,
+        "lng": -102.309163
+      },
+      {
+        "nombre": "Escuela Secundaria Tecnica N1 \"José Reyes Martínez\"",
+        "tipo": "escuela",
+        "lat": 21.897272,
+        "lng": -102.308287
+      },
+      {
+        "nombre": "Biblioteca",
+        "tipo": "edificio",
+        "lat": 21.896821,
+        "lng": -102.307786
+      },
+      {
+        "nombre": "Parque San Cayetano",
+        "tipo": "parque",
+        "lat": 21.900914,
+        "lng": -102.309529
+      },
+      {
+        "nombre": "Secundaria General 2 José Clemente Orozco",
+        "tipo": "escuela",
+        "lat": 21.900451,
+        "lng": -102.310554
+      },
+      {
+        "nombre": "Soriana Híper",
+        "tipo": "edificio",
+        "lat": 21.896487,
+        "lng": -102.310716
+      },
+      {
+        "nombre": "Hospital General de Aguascalientes",
+        "tipo": "hospital",
+        "lat": 21.901542,
+        "lng": -102.308081
+      }
+    ],
+    "s2_m4": [
+      {
+        "nombre": "Santa Maria Reina",
+        "tipo": "templo",
+        "lat": 21.895653,
+        "lng": -102.32119
+      },
+      {
+        "nombre": "Secundaria Tecnica, 20",
+        "tipo": "escuela",
+        "lat": 21.894984,
+        "lng": -102.321517
+      },
+      {
+        "nombre": "Secundaria Tecnica, 20",
+        "tipo": "escuela",
+        "lat": 21.894984,
+        "lng": -102.321517
+      },
+      {
+        "nombre": "Panteón Jardines Eternos",
+        "tipo": "panteon",
+        "lat": 21.890059,
+        "lng": -102.31884
+      },
+      {
+        "nombre": "Cbtis 168",
+        "tipo": "escuela",
+        "lat": 21.895581,
+        "lng": -102.322814
+      }
+    ],
+    "s2_m3": [
+      {
+        "nombre": "Jose Maria Iglesias",
+        "tipo": "escuela",
+        "lat": 21.894486,
+        "lng": -102.315444
+      },
+      {
+        "nombre": "area verde",
+        "tipo": "parque",
+        "lat": 21.890614,
+        "lng": -102.314653
+      }
+    ],
+    "s2_m2": [
+      {
+        "nombre": "Farmacia Benavides",
+        "tipo": "farmacia",
+        "lat": 21.895195,
+        "lng": -102.311344
+      },
+      {
+        "nombre": "Edmundo Games Orozco",
+        "tipo": "escuela",
+        "lat": 21.891503,
+        "lng": -102.311622
+      },
+      {
+        "nombre": "Enrique C. Rebsamen",
+        "tipo": "escuela",
+        "lat": 21.894725,
+        "lng": -102.308182
+      },
+      {
+        "nombre": "Escuela primaria Enrique C. Rebsamen",
+        "tipo": "escuela",
+        "lat": 21.894755,
+        "lng": -102.308214
+      },
+      {
+        "nombre": "KFC",
+        "tipo": "comida",
+        "lat": 21.895606,
+        "lng": -102.31098
+      },
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.893585,
+        "lng": -102.311863
+      }
+    ],
+    "s4_m1": [
+      {
+        "nombre": "Dr. Jaime Torres Bodet",
+        "tipo": "escuela",
+        "lat": 21.90637,
+        "lng": -102.301319
+      },
+      {
+        "nombre": "Canal",
+        "tipo": "parque",
+        "lat": 21.902826,
+        "lng": -102.305412
+      },
+      {
+        "nombre": "Canal",
+        "tipo": "parque",
+        "lat": 21.902964,
+        "lng": -102.303058
+      },
+      {
+        "nombre": "Canal",
+        "tipo": "parque",
+        "lat": 21.903819,
+        "lng": -102.300521
+      },
+      {
+        "nombre": "Canal",
+        "tipo": "parque",
+        "lat": 21.903193,
+        "lng": -102.301643
+      },
+      {
+        "nombre": "Canal",
+        "tipo": "parque",
+        "lat": 21.903354,
+        "lng": -102.300639
+      }
+    ],
+    "s4_0": [
+      {
+        "nombre": "Farmacias del Ahorro",
+        "tipo": "farmacia",
+        "lat": 21.90721,
+        "lng": -102.296502
+      },
+      {
+        "nombre": "México",
+        "tipo": "escuela",
+        "lat": 21.905742,
+        "lng": -102.294459
+      },
+      {
+        "nombre": "Parque La Rinconada",
+        "tipo": "parque",
+        "lat": 21.904434,
+        "lng": -102.297076
+      },
+      {
+        "nombre": "Instituto Margil",
+        "tipo": "escuela",
+        "lat": 21.902081,
+        "lng": -102.298111
+      },
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.907407,
+        "lng": -102.297216
+      }
+    ],
+    "s4_1": [
+      {
+        "nombre": "Instituto Cultural de Aguascalientes",
+        "tipo": "universidad",
+        "lat": 21.902083,
+        "lng": -102.29415
+      },
+      {
+        "nombre": "Instituto Victor Manuel Castelazo Muriel",
+        "tipo": "escuela",
+        "lat": 21.905683,
+        "lng": -102.28825
+      },
+      {
+        "nombre": "Rolcar",
+        "tipo": "edificio",
+        "lat": 21.9034,
+        "lng": -102.291773
+      },
+      {
+        "nombre": "Parque Las Hadas",
+        "tipo": "parque",
+        "lat": 21.907797,
+        "lng": -102.288917
+      },
+      {
+        "nombre": "Permicionarios del Centro",
+        "tipo": "terminal",
+        "lat": 21.902903,
+        "lng": -102.290897
+      },
+      {
+        "nombre": "Oxxo Gas",
+        "tipo": "gasolinera",
+        "lat": 21.906348,
+        "lng": -102.292618
+      },
+      {
+        "nombre": "Central de Gas",
+        "tipo": "gasolinera",
+        "lat": 21.903722,
+        "lng": -102.289273
+      }
+    ],
+    "s3_m1": [
+      {
+        "nombre": "Hospital Star Médica Aguascalientes",
+        "tipo": "hospital",
+        "lat": 21.898074,
+        "lng": -102.304568
+      },
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.896748,
+        "lng": -102.305253
+      },
+      {
+        "nombre": "Parque VIllas de la Universidad",
+        "tipo": "parque",
+        "lat": 21.899453,
+        "lng": -102.304868
+      },
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.8986,
+        "lng": -102.301039
+      }
+    ],
+    "s3_0": [
+      {
+        "nombre": "Farmacias del Ahorro",
+        "tipo": "farmacia",
+        "lat": 21.899821,
+        "lng": -102.296184
+      },
+      {
+        "nombre": "Pedro Garcia Rojas",
+        "tipo": "escuela",
+        "lat": 21.898712,
+        "lng": -102.294307
+      },
+      {
+        "nombre": "Reforma",
+        "tipo": "escuela",
+        "lat": 21.89927,
+        "lng": -102.295245
+      },
+      {
+        "nombre": "Reforma",
+        "tipo": "escuela",
+        "lat": 21.899365,
+        "lng": -102.295232
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 5",
+        "tipo": "escuela",
+        "lat": 21.899666,
+        "lng": -102.29496
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 6",
+        "tipo": "escuela",
+        "lat": 21.899697,
+        "lng": -102.294972
+      },
+      {
+        "nombre": "La Luz Del mundo",
+        "tipo": "templo",
+        "lat": 21.898074,
+        "lng": -102.294226
+      },
+      {
+        "nombre": "Preparatoria Petroleos",
+        "tipo": "escuela",
+        "lat": 21.900863,
+        "lng": -102.295581
+      },
+      {
+        "nombre": "Parque Independencia",
+        "tipo": "parque",
+        "lat": 21.898997,
+        "lng": -102.296354
+      },
+      {
+        "nombre": "Gimnasio Marlyc",
+        "tipo": "deportivo",
+        "lat": 21.901598,
+        "lng": -102.294639
+      }
+    ],
+    "s3_1": [
+      {
+        "nombre": "Templo San Francisco de Asis",
+        "tipo": "templo",
+        "lat": 21.89678,
+        "lng": -102.289429
+      },
+      {
+        "nombre": "IMSS Clinica 10",
+        "tipo": "hospital",
+        "lat": 21.900001,
+        "lng": -102.29321
+      },
+      {
+        "nombre": "Farmacia Simi",
+        "tipo": "farmacia",
+        "lat": 21.900421,
+        "lng": -102.294078
+      },
+      {
+        "nombre": "San Martin de Porres",
+        "tipo": "templo",
+        "lat": 21.898885,
+        "lng": -102.293764
+      },
+      {
+        "nombre": "Aceros y Perfiles de aguascalientes",
+        "tipo": "edificio",
+        "lat": 21.89698,
+        "lng": -102.292107
+      },
+      {
+        "nombre": "izzi",
+        "tipo": "edificio",
+        "lat": 21.90043,
+        "lng": -102.292202
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "gasolinera",
+        "lat": 21.901999,
+        "lng": -102.288811
+      }
+    ],
+    "s2_m1": [
+      {
+        "nombre": "Club de Leones, 1",
+        "tipo": "escuela",
+        "lat": 21.893154,
+        "lng": -102.305706
+      },
+      {
+        "nombre": "Ignacio Ramirez",
+        "tipo": "escuela",
+        "lat": 21.89575,
+        "lng": -102.303426
+      },
+      {
+        "nombre": "Lindavista",
+        "tipo": "farmacia",
+        "lat": 21.891835,
+        "lng": -102.300651
+      }
+    ],
+    "s2_0": [
+      {
+        "nombre": "Manuel Carpio",
+        "tipo": "escuela",
+        "lat": 21.892568,
+        "lng": -102.29479
+      },
+      {
+        "nombre": "Primero de Mayo",
+        "tipo": "escuela",
+        "lat": 21.893992,
+        "lng": -102.296904
+      },
+      {
+        "nombre": "Primero de Mayo",
+        "tipo": "escuela",
+        "lat": 21.893992,
+        "lng": -102.296904
+      },
+      {
+        "nombre": "Profa. Rosa Trillo Lopez",
+        "tipo": "escuela",
+        "lat": 21.895251,
+        "lng": -102.299205
+      },
+      {
+        "nombre": "El Buen Vivir",
+        "tipo": "farmacia",
+        "lat": 21.890465,
+        "lng": -102.299195
+      },
+      {
+        "nombre": "Jardin Manuel Carpio",
+        "tipo": "parque",
+        "lat": 21.891998,
+        "lng": -102.29454
+      },
+      {
+        "nombre": "Parroquia de Nuestra Señora de San Juan de los Lagos",
+        "tipo": "templo",
+        "lat": 21.894023,
+        "lng": -102.298235
+      },
+      {
+        "nombre": "SuperISSSTE",
+        "tipo": "edificio",
+        "lat": 21.892072,
+        "lng": -102.297101
+      }
+    ],
+    "s2_1": [
+      {
+        "nombre": "La Medallita milagrosa",
+        "tipo": "templo",
+        "lat": 21.891094,
+        "lng": -102.289749
+      },
+      {
+        "nombre": "Monumento Guadalupano",
+        "tipo": "monumento",
+        "lat": 21.89048,
+        "lng": -102.289522
+      },
+      {
+        "nombre": "Farmacia similare",
+        "tipo": "farmacia",
+        "lat": 21.893855,
+        "lng": -102.290643
+      },
+      {
+        "nombre": "Jardin Primavera",
+        "tipo": "parque",
+        "lat": 21.890479,
+        "lng": -102.293048
+      },
+      {
+        "nombre": "Medallita Milagrosa",
+        "tipo": "templo",
+        "lat": 21.890923,
+        "lng": -102.290391
+      }
+    ],
+    "s4_2": [
+      {
+        "nombre": "Leyes de Reforma",
+        "tipo": "escuela",
+        "lat": 21.902988,
+        "lng": -102.285436
+      },
+      {
+        "nombre": "Secundaria General 4 Leyes de Reforma",
+        "tipo": "escuela",
+        "lat": 21.902989,
+        "lng": -102.285424
+      },
+      {
+        "nombre": "Modulo de policia",
+        "tipo": "servicio",
+        "lat": 21.903177,
+        "lng": -102.283496
+      },
+      {
+        "nombre": "Centro Deportivo las Hadas",
+        "tipo": "parque",
+        "lat": 21.906105,
+        "lng": -102.285383
+      }
+    ],
+    "s4_3": [
+      {
+        "nombre": "Belisario Dominguez",
+        "tipo": "escuela",
+        "lat": 21.903092,
+        "lng": -102.279596
+      },
+      {
+        "nombre": "General Francisco Villa",
+        "tipo": "escuela",
+        "lat": 21.903151,
+        "lng": -102.279597
+      }
+    ],
+    "s4_4": [
+      {
+        "nombre": "Valero",
+        "tipo": "gasolinera",
+        "lat": 21.90249,
+        "lng": -102.270639
+      }
+    ],
+    "s3_2": [
+      {
+        "nombre": "Velodromo Bicentenario",
+        "tipo": "deportivo",
+        "lat": 21.897668,
+        "lng": -102.283694
+      },
+      {
+        "nombre": "Parque Las Viñas",
+        "tipo": "parque",
+        "lat": 21.901904,
+        "lng": -102.284341
+      }
+    ],
+    "s3_3": [
+      {
+        "nombre": "Del Ahorro",
+        "tipo": "farmacia",
+        "lat": 21.896216,
+        "lng": -102.277961
+      },
+      {
+        "nombre": "Lic. Luis Cabrera",
+        "tipo": "escuela",
+        "lat": 21.89849,
+        "lng": -102.281512
+      },
+      {
+        "nombre": "Ma. Concepcion Maldonado Rodriguez",
+        "tipo": "escuela",
+        "lat": 21.898203,
+        "lng": -102.278013
+      },
+      {
+        "nombre": "Margarita Maza de Juarez",
+        "tipo": "escuela",
+        "lat": 21.897902,
+        "lng": -102.277177
+      },
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.898572,
+        "lng": -102.279216
+      }
+    ],
+    "s3_4": [
+      {
+        "nombre": "Ezequiel A. Chavez",
+        "tipo": "escuela",
+        "lat": 21.897535,
+        "lng": -102.273212
+      },
+      {
+        "nombre": "J. Guadalupe Peralta Gamez",
+        "tipo": "escuela",
+        "lat": 21.898806,
+        "lng": -102.274556
+      },
+      {
+        "nombre": "J. Guadalupe Peralta Gamez",
+        "tipo": "escuela",
+        "lat": 21.898812,
+        "lng": -102.274549
+      },
+      {
+        "nombre": "Jose Santos Valdes",
+        "tipo": "universidad",
+        "lat": 21.898661,
+        "lng": -102.274717
+      },
+      {
+        "nombre": "Parque del S.T.E.M.A.",
+        "tipo": "parque",
+        "lat": 21.897412,
+        "lng": -102.271561
+      }
+    ],
+    "s2_2": [
+      {
+        "nombre": "Carlos A. Carrillo",
+        "tipo": "escuela",
+        "lat": 21.894309,
+        "lng": -102.286925
+      },
+      {
+        "nombre": "Rafael Arellano Valle",
+        "tipo": "escuela",
+        "lat": 21.89384,
+        "lng": -102.286192
+      },
+      {
+        "nombre": "Puerta Saturnina de Aguascalientes",
+        "tipo": "monumento",
+        "lat": 21.89048,
+        "lng": -102.282531
+      },
+      {
+        "nombre": "Dirección",
+        "tipo": "edificio",
+        "lat": 21.894825,
+        "lng": -102.2831
+      }
+    ],
+    "s2_3": [
+      {
+        "nombre": "Instituto Mendel, A. C.",
+        "tipo": "escuela",
+        "lat": 21.895275,
+        "lng": -102.277144
+      },
+      {
+        "nombre": "Foro 3C",
+        "tipo": "edificio",
+        "lat": 21.891845,
+        "lng": -102.281967
+      },
+      {
+        "nombre": "Centenario Hospital Miguel Hidalgo",
+        "tipo": "hospital",
+        "lat": 21.894753,
+        "lng": -102.282121
+      },
+      {
+        "nombre": "Museo Espacio",
+        "tipo": "edificio",
+        "lat": 21.891192,
+        "lng": -102.281156
+      },
+      {
+        "nombre": "Grupo Modelo",
+        "tipo": "edificio",
+        "lat": 21.893996,
+        "lng": -102.280992
+      },
+      {
+        "nombre": "Centro de Reahabilitación Infantil Teletón",
+        "tipo": "hospital",
+        "lat": 21.890857,
+        "lng": -102.278138
+      },
+      {
+        "nombre": "Corporativo Marelli",
+        "tipo": "edificio",
+        "lat": 21.891029,
+        "lng": -102.280398
+      }
+    ],
+    "s2_4": [
+      {
+        "nombre": "Farmacia Benavides",
+        "tipo": "farmacia",
+        "lat": 21.891962,
+        "lng": -102.274631
+      },
+      {
+        "nombre": "Colegio Carlos Tancredi",
+        "tipo": "escuela",
+        "lat": 21.892319,
+        "lng": -102.271269
+      },
+      {
+        "nombre": "Colegio Espa�a",
+        "tipo": "escuela",
+        "lat": 21.893286,
+        "lng": -102.270964
+      },
+      {
+        "nombre": "Ing. Luis Ortega Douglas",
+        "tipo": "escuela",
+        "lat": 21.892975,
+        "lng": -102.272399
+      },
+      {
+        "nombre": "Mobil",
+        "tipo": "gasolinera",
+        "lat": 21.892223,
+        "lng": -102.274781
+      },
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.890246,
+        "lng": -102.274199
+      }
+    ],
+    "s1_m4": [
+      {
+        "nombre": "David G. Berlanga",
+        "tipo": "escuela",
+        "lat": 21.88608,
+        "lng": -102.319138
+      },
+      {
+        "nombre": "Panteón Municipal",
+        "tipo": "panteon",
+        "lat": 21.889116,
+        "lng": -102.31947
+      }
+    ],
+    "s1_m3": [
+      {
+        "nombre": "Del Ahorro",
+        "tipo": "farmacia",
+        "lat": 21.889587,
+        "lng": -102.312828
+      },
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.885957,
+        "lng": -102.317182
+      },
+      {
+        "nombre": "UNID",
+        "tipo": "universidad",
+        "lat": 21.886792,
+        "lng": -102.312964
+      },
+      {
+        "nombre": "Parque Panorama",
+        "tipo": "parque",
+        "lat": 21.88826,
+        "lng": -102.316039
+      },
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.885781,
+        "lng": -102.312835
+      },
+      {
+        "nombre": "Cantaritos El Agave",
+        "tipo": "edificio",
+        "lat": 21.888231,
+        "lng": -102.312877
+      },
+      {
+        "nombre": "Caffenio",
+        "tipo": "comida",
+        "lat": 21.888459,
+        "lng": -102.312782
+      }
+    ],
+    "s1_m2": [
+      {
+        "nombre": "Templo el Senor de los Rayos",
+        "tipo": "templo",
+        "lat": 21.886797,
+        "lng": -102.307249
+      },
+      {
+        "nombre": "Panteón de los Ángeles",
+        "tipo": "panteon",
+        "lat": 21.887238,
+        "lng": -102.308471
+      },
+      {
+        "nombre": "Templo del señor de los Rayos",
+        "tipo": "edificio",
+        "lat": 21.886764,
+        "lng": -102.307294
+      }
+    ],
+    "s0_m4": [
+      {
+        "nombre": "Centro Escolar Tlahuilli, A.C.",
+        "tipo": "escuela",
+        "lat": 21.881279,
+        "lng": -102.318674
+      },
+      {
+        "nombre": "Josefa Ortiz de Domínguez",
+        "tipo": "escuela",
+        "lat": 21.880323,
+        "lng": -102.318221
+      },
+      {
+        "nombre": "Presidentes de Mexico",
+        "tipo": "escuela",
+        "lat": 21.880743,
+        "lng": -102.320401
+      },
+      {
+        "nombre": "Parque San Marcos",
+        "tipo": "parque",
+        "lat": 21.881088,
+        "lng": -102.320552
+      }
+    ],
+    "s0_m3": [
+      {
+        "nombre": "Farmacias del Ahorro",
+        "tipo": "farmacia",
+        "lat": 21.880772,
+        "lng": -102.312658
+      },
+      {
+        "nombre": "Colegio Marista, A.C.",
+        "tipo": "escuela",
+        "lat": 21.882434,
+        "lng": -102.31334
+      },
+      {
+        "nombre": "Comunidad Educativa Asuncion",
+        "tipo": "escuela",
+        "lat": 21.88058,
+        "lng": -102.317297
+      },
+      {
+        "nombre": "Jose Maria Chavez",
+        "tipo": "escuela",
+        "lat": 21.879555,
+        "lng": -102.315709
+      },
+      {
+        "nombre": "Primaria Marista, A.C.",
+        "tipo": "escuela",
+        "lat": 21.883361,
+        "lng": -102.31335
+      },
+      {
+        "nombre": "Secundaria Tecnica, 2",
+        "tipo": "escuela",
+        "lat": 21.880548,
+        "lng": -102.316619
+      },
+      {
+        "nombre": "Iglesia Cuerpo de Cristo",
+        "tipo": "templo",
+        "lat": 21.879257,
+        "lng": -102.315225
+      },
+      {
+        "nombre": "Parque Benito Juarez",
+        "tipo": "parque",
+        "lat": 21.879045,
+        "lng": -102.316243
+      },
+      {
+        "nombre": "Secundaria Tecnica No.2",
+        "tipo": "escuela",
+        "lat": 21.880051,
+        "lng": -102.316559
+      },
+      {
+        "nombre": "IMSS Clinica 7",
+        "tipo": "hospital",
+        "lat": 21.880143,
+        "lng": -102.317435
+      },
+      {
+        "nombre": "Parque Moderno",
+        "tipo": "parque",
+        "lat": 21.883523,
+        "lng": -102.316345
+      },
+      {
+        "nombre": "Mazaryk ABA Center",
+        "tipo": "edificio",
+        "lat": 21.881051,
+        "lng": -102.312907
+      }
+    ],
+    "s0_m2": [
+      {
+        "nombre": "Secundaria Federal No1",
+        "tipo": "escuela",
+        "lat": 21.881716,
+        "lng": -102.307967
+      },
+      {
+        "nombre": "Escuela Primaria Pensador Mexicano",
+        "tipo": "escuela",
+        "lat": 21.880651,
+        "lng": -102.308078
+      },
+      {
+        "nombre": "Colegio Paulo Freire",
+        "tipo": "escuela",
+        "lat": 21.881844,
+        "lng": -102.309183
+      },
+      {
+        "nombre": "Lic. Benito Juarez",
+        "tipo": "escuela",
+        "lat": 21.882277,
+        "lng": -102.307989
+      },
+      {
+        "nombre": "Lic. Benito Juarez",
+        "tipo": "escuela",
+        "lat": 21.882277,
+        "lng": -102.307989
+      },
+      {
+        "nombre": "Pensador Mexicano",
+        "tipo": "escuela",
+        "lat": 21.880793,
+        "lng": -102.308033
+      },
+      {
+        "nombre": "21 de Agosto",
+        "tipo": "escuela",
+        "lat": 21.880287,
+        "lng": -102.308151
+      }
+    ],
+    "sm1_m4": [
+      {
+        "nombre": "Farmacia Guadalajara",
+        "tipo": "farmacia",
+        "lat": 21.876616,
+        "lng": -102.31864
+      },
+      {
+        "nombre": "Parque Río San Pedro",
+        "tipo": "parque",
+        "lat": 21.874171,
+        "lng": -102.321719
+      },
+      {
+        "nombre": "Farmacia Guadalajara",
+        "tipo": "farmacia",
+        "lat": 21.87652,
+        "lng": -102.318626
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "gasolinera",
+        "lat": 21.872013,
+        "lng": -102.318316
+      }
+    ],
+    "sm1_m3": [
+      {
+        "nombre": "Iglesia de Cristo Redentor",
+        "tipo": "templo",
+        "lat": 21.876603,
+        "lng": -102.317849
+      },
+      {
+        "nombre": "Bosque Urbano",
+        "tipo": "parque",
+        "lat": 21.874173,
+        "lng": -102.313268
+      },
+      {
+        "nombre": "BP",
+        "tipo": "gasolinera",
+        "lat": 21.873673,
+        "lng": -102.312241
+      },
+      {
+        "nombre": "Circle K",
+        "tipo": "edificio",
+        "lat": 21.873633,
+        "lng": -102.312579
+      },
+      {
+        "nombre": "BP",
+        "tipo": "gasolinera",
+        "lat": 21.873796,
+        "lng": -102.31228
+      }
+    ],
+    "sm1_m2": [
+      {
+        "nombre": "Templo de Los Dolores",
+        "tipo": "templo",
+        "lat": 21.877504,
+        "lng": -102.311995
+      },
+      {
+        "nombre": "Dr. Pedro de Alba",
+        "tipo": "escuela",
+        "lat": 21.877477,
+        "lng": -102.309272
+      },
+      {
+        "nombre": "Independencia",
+        "tipo": "escuela",
+        "lat": 21.873686,
+        "lng": -102.309749
+      },
+      {
+        "nombre": "Rogelia G. de Aguilera",
+        "tipo": "escuela",
+        "lat": 21.877993,
+        "lng": -102.311394
+      },
+      {
+        "nombre": "Monumento al encierro",
+        "tipo": "monumento",
+        "lat": 21.875444,
+        "lng": -102.307156
+      },
+      {
+        "nombre": "Mega Velaria",
+        "tipo": "edificio",
+        "lat": 21.872767,
+        "lng": -102.30815
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "edificio",
+        "lat": 21.87453,
+        "lng": -102.310037
+      },
+      {
+        "nombre": "BP",
+        "tipo": "gasolinera",
+        "lat": 21.873656,
+        "lng": -102.312069
+      }
+    ],
+    "s1_m1": [
+      {
+        "nombre": "Templo de Guadalupe",
+        "tipo": "templo",
+        "lat": 21.88442,
+        "lng": -102.301213
+      },
+      {
+        "nombre": "Escuela Primaria Alvaro Obregon",
+        "tipo": "escuela",
+        "lat": 21.886031,
+        "lng": -102.30515
+      },
+      {
+        "nombre": "Alvaro Obregon",
+        "tipo": "escuela",
+        "lat": 21.885969,
+        "lng": -102.305202
+      },
+      {
+        "nombre": "Escuela Heroes de Chapultepec",
+        "tipo": "escuela",
+        "lat": 21.888786,
+        "lng": -102.30443
+      },
+      {
+        "nombre": "General Manuel Perez Trevi�o",
+        "tipo": "escuela",
+        "lat": 21.884481,
+        "lng": -102.301687
+      },
+      {
+        "nombre": "Valentin Gomez Farias",
+        "tipo": "escuela",
+        "lat": 21.884843,
+        "lng": -102.300817
+      },
+      {
+        "nombre": "Valentin Gomez Farias",
+        "tipo": "escuela",
+        "lat": 21.884843,
+        "lng": -102.300817
+      },
+      {
+        "nombre": "Jardin de Cholula",
+        "tipo": "parque",
+        "lat": 21.88623,
+        "lng": -102.304998
+      },
+      {
+        "nombre": "Instituto Carrusel",
+        "tipo": "escuela",
+        "lat": 21.884313,
+        "lng": -102.304957
+      },
+      {
+        "nombre": "Templo de Guadalupe",
+        "tipo": "edificio",
+        "lat": 21.88438,
+        "lng": -102.301212
+      },
+      {
+        "nombre": "Valentin Gomez Farias",
+        "tipo": "escuela",
+        "lat": 21.884792,
+        "lng": -102.300966
+      },
+      {
+        "nombre": "Jardín de Guadalupe",
+        "tipo": "parque",
+        "lat": 21.884833,
+        "lng": -102.30204
+      }
+    ],
+    "s1_0": [
+      {
+        "nombre": "San Diego",
+        "tipo": "templo",
+        "lat": 21.884044,
+        "lng": -102.296025
+      },
+      {
+        "nombre": "Mercado Teran",
+        "tipo": "mercado",
+        "lat": 21.884451,
+        "lng": -102.29729
+      },
+      {
+        "nombre": "Templo Sagrado Corazón de Jesús",
+        "tipo": "templo",
+        "lat": 21.887873,
+        "lng": -102.296538
+      },
+      {
+        "nombre": "Instituto Juan Pablo II",
+        "tipo": "escuela",
+        "lat": 21.886681,
+        "lng": -102.295723
+      },
+      {
+        "nombre": "Monumento a Las Madres",
+        "tipo": "monumento",
+        "lat": 21.887152,
+        "lng": -102.296449
+      },
+      {
+        "nombre": "Jardin de Zaragoza",
+        "tipo": "parque",
+        "lat": 21.887167,
+        "lng": -102.296406
+      },
+      {
+        "nombre": "Patio San Diego",
+        "tipo": "parque",
+        "lat": 21.884435,
+        "lng": -102.296207
+      },
+      {
+        "nombre": "Camerín de la Vírgen",
+        "tipo": "edificio",
+        "lat": 21.884192,
+        "lng": -102.296139
+      },
+      {
+        "nombre": "Templo de la Tercera Orden Franciscana",
+        "tipo": "edificio",
+        "lat": 21.88402,
+        "lng": -102.29626
+      },
+      {
+        "nombre": "Mercado Jose Maria Morelos y Pavon",
+        "tipo": "mercado",
+        "lat": 21.884611,
+        "lng": -102.295838
+      },
+      {
+        "nombre": "Plaza GYA",
+        "tipo": "edificio",
+        "lat": 21.887725,
+        "lng": -102.297111
+      },
+      {
+        "nombre": "Escuela de belleza",
+        "tipo": "escuela",
+        "lat": 21.886706,
+        "lng": -102.296498
+      },
+      {
+        "nombre": "Modulo del Triangulo",
+        "tipo": "servicio",
+        "lat": 21.886436,
+        "lng": -102.296395
+      },
+      {
+        "nombre": "Hotel Don jesus",
+        "tipo": "edificio",
+        "lat": 21.885035,
+        "lng": -102.296208
+      },
+      {
+        "nombre": "Coppel",
+        "tipo": "edificio",
+        "lat": 21.886563,
+        "lng": -102.297585
+      },
+      {
+        "nombre": "eL CAMPO",
+        "tipo": "edificio",
+        "lat": 21.887037,
+        "lng": -102.297076
+      }
+    ],
+    "s1_1": [
+      {
+        "nombre": "Templo de San Antonio",
+        "tipo": "templo",
+        "lat": 21.885596,
+        "lng": -102.291858
+      },
+      {
+        "nombre": "Colegio Libertad de Aguascalientes, A.C.",
+        "tipo": "escuela",
+        "lat": 21.886901,
+        "lng": -102.292575
+      },
+      {
+        "nombre": "Colegio Villalba, A.C.",
+        "tipo": "escuela",
+        "lat": 21.886373,
+        "lng": -102.291911
+      },
+      {
+        "nombre": "Colegio de Ciencias Y Humanidades",
+        "tipo": "escuela",
+        "lat": 21.887682,
+        "lng": -102.288737
+      },
+      {
+        "nombre": "Instituto Anita Brenner, A.C.",
+        "tipo": "escuela",
+        "lat": 21.886087,
+        "lng": -102.293634
+      },
+      {
+        "nombre": "Instituto la Paz",
+        "tipo": "escuela",
+        "lat": 21.884464,
+        "lng": -102.29296
+      },
+      {
+        "nombre": "Chalet Douglas",
+        "tipo": "monumento",
+        "lat": 21.885622,
+        "lng": -102.290357
+      },
+      {
+        "nombre": "Total Centro Escuela de musica",
+        "tipo": "escuela",
+        "lat": 21.888134,
+        "lng": -102.291287
+      },
+      {
+        "nombre": "Jardín Castillo Douglas",
+        "tipo": "parque",
+        "lat": 21.885977,
+        "lng": -102.290329
+      },
+      {
+        "nombre": "Castillo Ortega Douglas",
+        "tipo": "monumento",
+        "lat": 21.88573,
+        "lng": -102.289693
+      },
+      {
+        "nombre": "Templo de San Antonio",
+        "tipo": "templo",
+        "lat": 21.885614,
+        "lng": -102.29179
+      },
+      {
+        "nombre": "Galería Jesús F. Contreras",
+        "tipo": "edificio",
+        "lat": 21.885647,
+        "lng": -102.29145
+      },
+      {
+        "nombre": "Televisa Aguascalientes",
+        "tipo": "edificio",
+        "lat": 21.885403,
+        "lng": -102.290223
+      },
+      {
+        "nombre": "Departamento de Musica UAA",
+        "tipo": "universidad",
+        "lat": 21.887512,
+        "lng": -102.291423
+      },
+      {
+        "nombre": "Gas Barragan",
+        "tipo": "gasolinera",
+        "lat": 21.889437,
+        "lng": -102.288879
+      },
+      {
+        "nombre": "Instituto la Paz, A.C.",
+        "tipo": "escuela",
+        "lat": 21.884023,
+        "lng": -102.292892
+      },
+      {
+        "nombre": "Escuela Primaria Melchor Ocampo",
+        "tipo": "escuela",
+        "lat": 21.887096,
+        "lng": -102.293861
+      },
+      {
+        "nombre": "Escuela Primaria Melquiades Moreno",
+        "tipo": "escuela",
+        "lat": 21.886455,
+        "lng": -102.291473
+      }
+    ],
+    "s0_m1": [
+      {
+        "nombre": "San Marcos",
+        "tipo": "templo",
+        "lat": 21.879253,
+        "lng": -102.30456
+      },
+      {
+        "nombre": "Colegio Gobernadores",
+        "tipo": "escuela",
+        "lat": 21.882341,
+        "lng": -102.301967
+      },
+      {
+        "nombre": "Instituto Anita Brenner",
+        "tipo": "escuela",
+        "lat": 21.882169,
+        "lng": -102.300219
+      },
+      {
+        "nombre": "ZONA PATRIMONIO DE LA HUMANIDAD",
+        "tipo": "monumento",
+        "lat": 21.879642,
+        "lng": -102.30485
+      },
+      {
+        "nombre": "Jardin de San Marcos",
+        "tipo": "parque",
+        "lat": 21.879589,
+        "lng": -102.303239
+      },
+      {
+        "nombre": "Patio San Marcos",
+        "tipo": "parque",
+        "lat": 21.87958,
+        "lng": -102.304659
+      },
+      {
+        "nombre": "Palenque de la Feria",
+        "tipo": "teatro",
+        "lat": 21.878424,
+        "lng": -102.303421
+      },
+      {
+        "nombre": "Templo de San Marcos",
+        "tipo": "templo",
+        "lat": 21.879218,
+        "lng": -102.304596
+      },
+      {
+        "nombre": "Casino de la Feria",
+        "tipo": "edificio",
+        "lat": 21.878656,
+        "lng": -102.303733
+      },
+      {
+        "nombre": "Patronato de la Feria Nacional de San Marcos",
+        "tipo": "edificio",
+        "lat": 21.878063,
+        "lng": -102.30353
+      },
+      {
+        "nombre": "Los Globos",
+        "tipo": "edificio",
+        "lat": 21.880211,
+        "lng": -102.304287
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "edificio",
+        "lat": 21.879944,
+        "lng": -102.304579
+      },
+      {
+        "nombre": "Partido Verde",
+        "tipo": "edificio",
+        "lat": 21.87916,
+        "lng": -102.302152
+      },
+      {
+        "nombre": "Punto & Aparte",
+        "tipo": "comida",
+        "lat": 21.879104,
+        "lng": -102.302482
+      },
+      {
+        "nombre": "Sacristía de San Marcos",
+        "tipo": "edificio",
+        "lat": 21.879286,
+        "lng": -102.304739
+      }
+    ],
+    "centro": [
+      {
+        "nombre": "La Merced",
+        "tipo": "templo",
+        "lat": 21.880579,
+        "lng": -102.299773
+      },
+      {
+        "nombre": "Farmacia El Tecolote",
+        "tipo": "farmacia",
+        "lat": 21.883883,
+        "lng": -102.298058
+      },
+      {
+        "nombre": "Farmacia del ahorro",
+        "tipo": "farmacia",
+        "lat": 21.881374,
+        "lng": -102.295567
+      },
+      {
+        "nombre": "Ave Maria",
+        "tipo": "templo",
+        "lat": 21.880054,
+        "lng": -102.297714
+      },
+      {
+        "nombre": "El Sagrario",
+        "tipo": "templo",
+        "lat": 21.880513,
+        "lng": -102.298313
+      },
+      {
+        "nombre": "Vicente Villegas",
+        "tipo": "escuela",
+        "lat": 21.881653,
+        "lng": -102.298471
+      },
+      {
+        "nombre": "Águila de la Exedra",
+        "tipo": "monumento",
+        "lat": 21.88073,
+        "lng": -102.295888
+      },
+      {
+        "nombre": "Farmacias Guadalajara",
+        "tipo": "farmacia",
+        "lat": 21.882877,
+        "lng": -102.295085
+      },
+      {
+        "nombre": "Instituto Técnico en Electrónica y Mecánica",
+        "tipo": "universidad",
+        "lat": 21.88168,
+        "lng": -102.294725
+      },
+      {
+        "nombre": "Centro Universitario de Alternativas Medicas",
+        "tipo": "universidad",
+        "lat": 21.881816,
+        "lng": -102.294765
+      },
+      {
+        "nombre": "Centro INJUVA",
+        "tipo": "escuela",
+        "lat": 21.881536,
+        "lng": -102.294955
+      },
+      {
+        "nombre": "Centro del Espiritu Santo",
+        "tipo": "templo",
+        "lat": 21.881598,
+        "lng": -102.296633
+      },
+      {
+        "nombre": "Puerta sur",
+        "tipo": "monumento",
+        "lat": 21.883505,
+        "lng": -102.296089
+      },
+      {
+        "nombre": "Similares",
+        "tipo": "farmacia",
+        "lat": 21.8827,
+        "lng": -102.294906
+      },
+      {
+        "nombre": "Farmacias del Ahorro",
+        "tipo": "farmacia",
+        "lat": 21.883903,
+        "lng": -102.297733
+      },
+      {
+        "nombre": "Fundación de Aguascalientes",
+        "tipo": "monumento",
+        "lat": 21.879376,
+        "lng": -102.295726
+      },
+      {
+        "nombre": "Peatonal Benito Juárez",
+        "tipo": "monumento",
+        "lat": 21.881241,
+        "lng": -102.296624
+      },
+      {
+        "nombre": "Peatonal Benito Juárez",
+        "tipo": "monumento",
+        "lat": 21.879119,
+        "lng": -102.296119
+      },
+      {
+        "nombre": "Mercado Juárez",
+        "tipo": "mercado",
+        "lat": 21.883525,
+        "lng": -102.29858
+      },
+      {
+        "nombre": "Plaza Patria",
+        "tipo": "edificio",
+        "lat": 21.879116,
+        "lng": -102.296682
+      },
+      {
+        "nombre": "Plaza Fundadores",
+        "tipo": "parque",
+        "lat": 21.880419,
+        "lng": -102.294454
+      },
+      {
+        "nombre": "Jardin de Excedra",
+        "tipo": "parque",
+        "lat": 21.880721,
+        "lng": -102.295929
+      },
+      {
+        "nombre": "Palacio del Gobierno de Aguascalientes",
+        "tipo": "edificio",
+        "lat": 21.879807,
+        "lng": -102.296015
+      },
+      {
+        "nombre": "Palacio Municipal",
+        "tipo": "edificio",
+        "lat": 21.87995,
+        "lng": -102.295611
+      },
+      {
+        "nombre": "Jardín de los Palacios",
+        "tipo": "parque",
+        "lat": 21.879402,
+        "lng": -102.295679
+      },
+      {
+        "nombre": "El Heraldo de Aguascalientes",
+        "tipo": "edificio",
+        "lat": 21.87913,
+        "lng": -102.295611
+      },
+      {
+        "nombre": "Dirección General de Gobernación",
+        "tipo": "edificio",
+        "lat": 21.879091,
+        "lng": -102.295494
+      },
+      {
+        "nombre": "Poder Legislativo",
+        "tipo": "edificio",
+        "lat": 21.88084,
+        "lng": -102.295351
+      },
+      {
+        "nombre": "Castilla",
+        "tipo": "edificio",
+        "lat": 21.880792,
+        "lng": -102.295002
+      },
+      {
+        "nombre": "Secretaria de Finanzas Municipales",
+        "tipo": "edificio",
+        "lat": 21.880489,
+        "lng": -102.294681
+      },
+      {
+        "nombre": "Edificio Administrativo",
+        "tipo": "edificio",
+        "lat": 21.88044,
+        "lng": -102.294813
+      },
+      {
+        "nombre": "La Plaza",
+        "tipo": "edificio",
+        "lat": 21.880336,
+        "lng": -102.295306
+      },
+      {
+        "nombre": "Gestión Urbanística y Ordenamiento Territorial",
+        "tipo": "edificio",
+        "lat": 21.880124,
+        "lng": -102.29521
+      },
+      {
+        "nombre": "Planeación y Proyectos",
+        "tipo": "edificio",
+        "lat": 21.879432,
+        "lng": -102.294865
+      },
+      {
+        "nombre": "Desarrollo Urbano",
+        "tipo": "edificio",
+        "lat": 21.879649,
+        "lng": -102.294899
+      },
+      {
+        "nombre": "IMPLAN",
+        "tipo": "edificio",
+        "lat": 21.879775,
+        "lng": -102.294589
+      },
+      {
+        "nombre": "Dirección de Cultura",
+        "tipo": "edificio",
+        "lat": 21.879887,
+        "lng": -102.294514
+      },
+      {
+        "nombre": "Teatro Morelos",
+        "tipo": "teatro",
+        "lat": 21.880147,
+        "lng": -102.297007
+      },
+      {
+        "nombre": "Patio de las Jacarandas",
+        "tipo": "parque",
+        "lat": 21.880216,
+        "lng": -102.296716
+      },
+      {
+        "nombre": "Patio Jesús F. Contreras",
+        "tipo": "parque",
+        "lat": 21.880059,
+        "lng": -102.297264
+      },
+      {
+        "nombre": "Templo el Sagrario",
+        "tipo": "edificio",
+        "lat": 21.880554,
+        "lng": -102.298219
+      },
+      {
+        "nombre": "Templo Expiatorio Diocesano del Ave María",
+        "tipo": "edificio",
+        "lat": 21.880054,
+        "lng": -102.297714
+      },
+      {
+        "nombre": "Biblioteca Jaime Torres Bodet",
+        "tipo": "biblioteca",
+        "lat": 21.882328,
+        "lng": -102.296196
+      },
+      {
+        "nombre": "Templo de San Diego",
+        "tipo": "edificio",
+        "lat": 21.883914,
+        "lng": -102.296019
+      },
+      {
+        "nombre": "Jardín del Estudiante",
+        "tipo": "parque",
+        "lat": 21.883705,
+        "lng": -102.29575
+      },
+      {
+        "nombre": "Universidad Autónoma de Aguascalientes Campus Central",
+        "tipo": "edificio",
+        "lat": 21.883964,
+        "lng": -102.295798
+      },
+      {
+        "nombre": "Ex Escuela de Cristo",
+        "tipo": "edificio",
+        "lat": 21.881842,
+        "lng": -102.295385
+      },
+      {
+        "nombre": "Pabellón Antonio Acevedo Escobedo",
+        "tipo": "biblioteca",
+        "lat": 21.880887,
+        "lng": -102.297974
+      },
+      {
+        "nombre": "Hotel Francia Aguascalientes",
+        "tipo": "edificio",
+        "lat": 21.881094,
+        "lng": -102.295222
+      },
+      {
+        "nombre": "Jardin Secreto",
+        "tipo": "parque",
+        "lat": 21.881096,
+        "lng": -102.298755
+      },
+      {
+        "nombre": "Patio de las Jacarandas",
+        "tipo": "edificio",
+        "lat": 21.880211,
+        "lng": -102.296704
+      },
+      {
+        "nombre": "Museo de Arte Contemporaneo",
+        "tipo": "edificio",
+        "lat": 21.882892,
+        "lng": -102.294877
+      },
+      {
+        "nombre": "La Nueva Ideal",
+        "tipo": "edificio",
+        "lat": 21.88297,
+        "lng": -102.297962
+      },
+      {
+        "nombre": "Librería Dolores Castro Varela",
+        "tipo": "edificio",
+        "lat": 21.879907,
+        "lng": -102.297634
+      }
+    ],
+    "s0_1": [
+      {
+        "nombre": "Farmacia Guadalajara",
+        "tipo": "farmacia",
+        "lat": 21.881874,
+        "lng": -102.293943
+      },
+      {
+        "nombre": "Templo de San Jose",
+        "tipo": "templo",
+        "lat": 21.883307,
+        "lng": -102.293298
+      },
+      {
+        "nombre": "Farmacias del Ahorro",
+        "tipo": "farmacia",
+        "lat": 21.881551,
+        "lng": -102.293878
+      },
+      {
+        "nombre": "C. A. M. Ii Maria Mercedes Brand Sanchez",
+        "tipo": "escuela",
+        "lat": 21.879509,
+        "lng": -102.288886
+      },
+      {
+        "nombre": "Centro de Atencion Multiple, Xii Ma. Guadalupe Borja de Diaz Ordaz",
+        "tipo": "escuela",
+        "lat": 21.879509,
+        "lng": -102.288885
+      },
+      {
+        "nombre": "Cuauhtemoc",
+        "tipo": "escuela",
+        "lat": 21.881464,
+        "lng": -102.290804
+      },
+      {
+        "nombre": "Cuauhtemoc",
+        "tipo": "escuela",
+        "lat": 21.881392,
+        "lng": -102.290785
+      },
+      {
+        "nombre": "Escuela Primaria Francisco de Rivero y Gutiérrez",
+        "tipo": "escuela",
+        "lat": 21.883156,
+        "lng": -102.292293
+      },
+      {
+        "nombre": "Farmacia Guadalajara",
+        "tipo": "farmacia",
+        "lat": 21.881901,
+        "lng": -102.293577
+      },
+      {
+        "nombre": "Universidad Autonoma de Aguascalientes",
+        "tipo": "universidad",
+        "lat": 21.881219,
+        "lng": -102.292476
+      },
+      {
+        "nombre": "centro de ultrasonido",
+        "tipo": "hospital",
+        "lat": 21.882643,
+        "lng": -102.293959
+      },
+      {
+        "nombre": "TEMPLO CRISTIANO",
+        "tipo": "templo",
+        "lat": 21.882493,
+        "lng": -102.291403
+      },
+      {
+        "nombre": "HOMEOPATICA MELANIE",
+        "tipo": "farmacia",
+        "lat": 21.882904,
+        "lng": -102.290508
+      },
+      {
+        "nombre": "Centro de Catecismo",
+        "tipo": "templo",
+        "lat": 21.880761,
+        "lng": -102.290461
+      },
+      {
+        "nombre": "SAN JOSE",
+        "tipo": "templo",
+        "lat": 21.883365,
+        "lng": -102.293181
+      },
+      {
+        "nombre": "CURSOS LÁZARO",
+        "tipo": "escuela",
+        "lat": 21.883458,
+        "lng": -102.290996
+      },
+      {
+        "nombre": "Ven Aprende Italiano",
+        "tipo": "escuela",
+        "lat": 21.880133,
+        "lng": -102.291947
+      },
+      {
+        "nombre": "Ramon lopez Velarde",
+        "tipo": "monumento",
+        "lat": 21.883122,
+        "lng": -102.293507
+      },
+      {
+        "nombre": "Imprenta Colon de Aguascalientes",
+        "tipo": "edificio",
+        "lat": 21.880008,
+        "lng": -102.293057
+      },
+      {
+        "nombre": "Ramon Lopez",
+        "tipo": "parque",
+        "lat": 21.883154,
+        "lng": -102.293611
+      },
+      {
+        "nombre": "\"Maser\"",
+        "tipo": "edificio",
+        "lat": 21.881167,
+        "lng": -102.292027
+      },
+      {
+        "nombre": "Jardín Jose Martinez Pérez",
+        "tipo": "parque",
+        "lat": 21.881555,
+        "lng": -102.292372
+      },
+      {
+        "nombre": "Quinto Barrio",
+        "tipo": "comida",
+        "lat": 21.881951,
+        "lng": -102.290663
+      },
+      {
+        "nombre": "ULA Universidad las Americas",
+        "tipo": "edificio",
+        "lat": 21.879517,
+        "lng": -102.291264
+      },
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.878982,
+        "lng": -102.290741
+      },
+      {
+        "nombre": "Escuela Primaria Lic. Francisco Primo Verdad",
+        "tipo": "escuela",
+        "lat": 21.883103,
+        "lng": -102.29304
+      }
+    ],
+    "sm1_m1": [
+      {
+        "nombre": "Colegio Mano Amiga Aguascalientes",
+        "tipo": "escuela",
+        "lat": 21.875445,
+        "lng": -102.302299
+      },
+      {
+        "nombre": "Ignacio Allende",
+        "tipo": "escuela",
+        "lat": 21.872558,
+        "lng": -102.30248
+      },
+      {
+        "nombre": "Jose Maria Morelos",
+        "tipo": "escuela",
+        "lat": 21.872684,
+        "lng": -102.302461
+      },
+      {
+        "nombre": "Parque del Lago",
+        "tipo": "parque",
+        "lat": 21.874982,
+        "lng": -102.304968
+      },
+      {
+        "nombre": "Fiesta Americana",
+        "tipo": "edificio",
+        "lat": 21.875878,
+        "lng": -102.303762
+      },
+      {
+        "nombre": "Monumento a Benito Juárez",
+        "tipo": "monumento",
+        "lat": 21.873738,
+        "lng": -102.300615
+      },
+      {
+        "nombre": "Foro del Lago",
+        "tipo": "teatro",
+        "lat": 21.875577,
+        "lng": -102.304581
+      },
+      {
+        "nombre": "Cava Domec",
+        "tipo": "edificio",
+        "lat": 21.876093,
+        "lng": -102.301793
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "edificio",
+        "lat": 21.876435,
+        "lng": -102.303796
+      }
+    ],
+    "sm1_0": [
+      {
+        "nombre": "Club de Leones, 2",
+        "tipo": "escuela",
+        "lat": 21.873172,
+        "lng": -102.299456
+      },
+      {
+        "nombre": "Colegio Boston de Aguascalientes",
+        "tipo": "escuela",
+        "lat": 21.872052,
+        "lng": -102.295892
+      },
+      {
+        "nombre": "Secundaria Tecnica, 5, Genaro Reyna Soto",
+        "tipo": "escuela",
+        "lat": 21.875336,
+        "lng": -102.300019
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 1",
+        "tipo": "escuela",
+        "lat": 21.872988,
+        "lng": -102.29921
+      },
+      {
+        "nombre": "Lindavista",
+        "tipo": "farmacia",
+        "lat": 21.876545,
+        "lng": -102.296511
+      },
+      {
+        "nombre": "Centro de Atención Múltiple - Ayuntamiento de Aguascalientes",
+        "tipo": "edificio",
+        "lat": 21.877117,
+        "lng": -102.297779
+      },
+      {
+        "nombre": "Plaza Miguel Hidalgo",
+        "tipo": "parque",
+        "lat": 21.875652,
+        "lng": -102.296185
+      },
+      {
+        "nombre": "Parque del Obraje",
+        "tipo": "parque",
+        "lat": 21.872188,
+        "lng": -102.297441
+      },
+      {
+        "nombre": "Escuela Secundaria Técnica Nº 5 - Genaro Reyna Soto",
+        "tipo": "escuela",
+        "lat": 21.875341,
+        "lng": -102.300006
+      },
+      {
+        "nombre": "Escuela Primaria Dr. Jesús Díaz de León",
+        "tipo": "escuela",
+        "lat": 21.876459,
+        "lng": -102.298737
+      }
+    ],
+    "sm1_1": [
+      {
+        "nombre": "Farmacias Lindavista Sucursal el Encino",
+        "tipo": "farmacia",
+        "lat": 21.874966,
+        "lng": -102.292368
+      },
+      {
+        "nombre": "Templo del Senor del Encino",
+        "tipo": "templo",
+        "lat": 21.875297,
+        "lng": -102.293173
+      },
+      {
+        "nombre": "Colegio Juan de Montoro, A.C.",
+        "tipo": "escuela",
+        "lat": 21.874893,
+        "lng": -102.291716
+      },
+      {
+        "nombre": "Colegio Missouri",
+        "tipo": "escuela",
+        "lat": 21.875698,
+        "lng": -102.29195
+      },
+      {
+        "nombre": "Fray Bartolome de Las Casas",
+        "tipo": "escuela",
+        "lat": 21.877151,
+        "lng": -102.288281
+      },
+      {
+        "nombre": "Jardín del Encino",
+        "tipo": "parque",
+        "lat": 21.874831,
+        "lng": -102.292852
+      },
+      {
+        "nombre": "Iglesia del Señor del Encino",
+        "tipo": "edificio",
+        "lat": 21.875239,
+        "lng": -102.293162
+      },
+      {
+        "nombre": "Bodega Aurrera",
+        "tipo": "edificio",
+        "lat": 21.874072,
+        "lng": -102.288264
+      },
+      {
+        "nombre": "Antigua Huerta",
+        "tipo": "monumento",
+        "lat": 21.873647,
+        "lng": -102.288809
+      }
+    ],
+    "s1_2": [
+      {
+        "nombre": "Colegio Pascal, A.C.",
+        "tipo": "escuela",
+        "lat": 21.885414,
+        "lng": -102.283446
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 2",
+        "tipo": "escuela",
+        "lat": 21.888755,
+        "lng": -102.283926
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 41",
+        "tipo": "escuela",
+        "lat": 21.888755,
+        "lng": -102.283926
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 48",
+        "tipo": "escuela",
+        "lat": 21.888755,
+        "lng": -102.283926
+      },
+      {
+        "nombre": "Parque El Solar",
+        "tipo": "parque",
+        "lat": 21.889233,
+        "lng": -102.287155
+      }
+    ],
+    "s1_3": [
+      {
+        "nombre": "Escuela Primaria y Sec del Futbol",
+        "tipo": "escuela",
+        "lat": 21.885369,
+        "lng": -102.27814
+      },
+      {
+        "nombre": "Escuela Primaria Del Futbol",
+        "tipo": "escuela",
+        "lat": 21.885435,
+        "lng": -102.277878
+      },
+      {
+        "nombre": "Escuela de Las Artes Y el Toreo",
+        "tipo": "escuela",
+        "lat": 21.888721,
+        "lng": -102.277559
+      },
+      {
+        "nombre": "Manuel Fernandez",
+        "tipo": "escuela",
+        "lat": 21.885824,
+        "lng": -102.276474
+      },
+      {
+        "nombre": "Secundaria Tecnica, 22, Nazario S. Ortiz Garza",
+        "tipo": "escuela",
+        "lat": 21.888814,
+        "lng": -102.276347
+      },
+      {
+        "nombre": "Secundaria Tecnica, 22, Nazario S. Ortiz Garza",
+        "tipo": "escuela",
+        "lat": 21.888814,
+        "lng": -102.276347
+      },
+      {
+        "nombre": "Universidad de las Artes",
+        "tipo": "universidad",
+        "lat": 21.8895,
+        "lng": -102.280799
+      },
+      {
+        "nombre": "ICTEA TRES CENTURIAD",
+        "tipo": "escuela",
+        "lat": 21.88941,
+        "lng": -102.281805
+      },
+      {
+        "nombre": "Locomotora 3035",
+        "tipo": "monumento",
+        "lat": 21.884477,
+        "lng": -102.279189
+      },
+      {
+        "nombre": "Locomotora 8941",
+        "tipo": "monumento",
+        "lat": 21.886263,
+        "lng": -102.279118
+      },
+      {
+        "nombre": "Locomotora 40",
+        "tipo": "monumento",
+        "lat": 21.88658,
+        "lng": -102.279786
+      },
+      {
+        "nombre": "Parque Tres Centurias",
+        "tipo": "parque",
+        "lat": 21.884199,
+        "lng": -102.280843
+      },
+      {
+        "nombre": "Salón Taller de Locomotoras",
+        "tipo": "edificio",
+        "lat": 21.887589,
+        "lng": -102.279532
+      },
+      {
+        "nombre": "Sala de Conciertos",
+        "tipo": "teatro",
+        "lat": 21.888798,
+        "lng": -102.281476
+      },
+      {
+        "nombre": "Antigua estación de Aguascalientes",
+        "tipo": "edificio",
+        "lat": 21.884538,
+        "lng": -102.280257
+      },
+      {
+        "nombre": "Deportivo Ferrocarrilero",
+        "tipo": "parque",
+        "lat": 21.884573,
+        "lng": -102.276579
+      },
+      {
+        "nombre": "Plaza Biblioteca Bicentenario",
+        "tipo": "parque",
+        "lat": 21.888766,
+        "lng": -102.279841
+      },
+      {
+        "nombre": "Cafeteria Universidad de las Artes",
+        "tipo": "edificio",
+        "lat": 21.889663,
+        "lng": -102.280172
+      }
+    ],
+    "s1_4": [
+      {
+        "nombre": "Escuela Manuel Fernandez",
+        "tipo": "escuela",
+        "lat": 21.885949,
+        "lng": -102.275771
+      },
+      {
+        "nombre": "Lic. Jesus Teran",
+        "tipo": "escuela",
+        "lat": 21.887027,
+        "lng": -102.275915
+      },
+      {
+        "nombre": "Alameda",
+        "tipo": "parque",
+        "lat": 21.884094,
+        "lng": -102.27204
+      },
+      {
+        "nombre": "Alameda",
+        "tipo": "parque",
+        "lat": 21.884267,
+        "lng": -102.270827
+      },
+      {
+        "nombre": "SEGUOT",
+        "tipo": "edificio",
+        "lat": 21.885442,
+        "lng": -102.273206
+      },
+      {
+        "nombre": "IMSS Clinica 8",
+        "tipo": "hospital",
+        "lat": 21.884564,
+        "lng": -102.273949
+      },
+      {
+        "nombre": "SEFI Secretaria de Finanzas",
+        "tipo": "edificio",
+        "lat": 21.884794,
+        "lng": -102.27302
+      }
+    ],
+    "s0_2": [
+      {
+        "nombre": "Templo de la Purísima Concepción",
+        "tipo": "templo",
+        "lat": 21.882636,
+        "lng": -102.283853
+      },
+      {
+        "nombre": "mercado reforma",
+        "tipo": "mercado",
+        "lat": 21.881945,
+        "lng": -102.283995
+      },
+      {
+        "nombre": "Nicolas Bravo",
+        "tipo": "escuela",
+        "lat": 21.882721,
+        "lng": -102.285799
+      },
+      {
+        "nombre": "Sublimagen Impresiones",
+        "tipo": "mercado",
+        "lat": 21.883201,
+        "lng": -102.284822
+      },
+      {
+        "nombre": "Parque Infantil Miguel Hidalgo",
+        "tipo": "parque",
+        "lat": 21.879942,
+        "lng": -102.283357
+      },
+      {
+        "nombre": "Sindicato Ferrocarrilero",
+        "tipo": "edificio",
+        "lat": 21.883683,
+        "lng": -102.287521
+      }
+    ],
+    "s0_3": [
+      {
+        "nombre": "Monumento a Don Quijote",
+        "tipo": "monumento",
+        "lat": 21.878609,
+        "lng": -102.281361
+      },
+      {
+        "nombre": "Lic. Adolfo Lopez Mateos",
+        "tipo": "escuela",
+        "lat": 21.879175,
+        "lng": -102.276482
+      },
+      {
+        "nombre": "Revolucion",
+        "tipo": "escuela",
+        "lat": 21.879565,
+        "lng": -102.277408
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 10",
+        "tipo": "escuela",
+        "lat": 21.880669,
+        "lng": -102.276795
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 11",
+        "tipo": "escuela",
+        "lat": 21.880669,
+        "lng": -102.276795
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 23",
+        "tipo": "escuela",
+        "lat": 21.880669,
+        "lng": -102.276795
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 24",
+        "tipo": "escuela",
+        "lat": 21.880669,
+        "lng": -102.276795
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 25",
+        "tipo": "escuela",
+        "lat": 21.880669,
+        "lng": -102.276795
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 28",
+        "tipo": "escuela",
+        "lat": 21.880669,
+        "lng": -102.276795
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 39",
+        "tipo": "escuela",
+        "lat": 21.880921,
+        "lng": -102.2772
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 7",
+        "tipo": "escuela",
+        "lat": 21.880669,
+        "lng": -102.276795
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 8",
+        "tipo": "escuela",
+        "lat": 21.880669,
+        "lng": -102.276795
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 9",
+        "tipo": "escuela",
+        "lat": 21.880669,
+        "lng": -102.276795
+      },
+      {
+        "nombre": "Universidad Interamericana Para el Desarrollo, CAMpus Aguascalientes",
+        "tipo": "universidad",
+        "lat": 21.878502,
+        "lng": -102.281729
+      },
+      {
+        "nombre": "Oficinas del Ministerio Público Aguascalientes",
+        "tipo": "servicio",
+        "lat": 21.879255,
+        "lng": -102.281239
+      },
+      {
+        "nombre": "Fiscalía General del Estado",
+        "tipo": "servicio",
+        "lat": 21.879827,
+        "lng": -102.282163
+      },
+      {
+        "nombre": "Locomotora 2708",
+        "tipo": "monumento",
+        "lat": 21.883497,
+        "lng": -102.279886
+      },
+      {
+        "nombre": "Alameda",
+        "tipo": "parque",
+        "lat": 21.883523,
+        "lng": -102.276288
+      },
+      {
+        "nombre": "Licenciado Adolfo López Mateos",
+        "tipo": "escuela",
+        "lat": 21.879314,
+        "lng": -102.276347
+      },
+      {
+        "nombre": "Plaza Kristal Torre A",
+        "tipo": "edificio",
+        "lat": 21.878264,
+        "lng": -102.280677
+      }
+    ],
+    "s0_4": [
+      {
+        "nombre": "Farmacia del ahorro",
+        "tipo": "farmacia",
+        "lat": 21.88347,
+        "lng": -102.272272
+      },
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.878652,
+        "lng": -102.271363
+      },
+      {
+        "nombre": "Alameda",
+        "tipo": "parque",
+        "lat": 21.883891,
+        "lng": -102.273515
+      },
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.878218,
+        "lng": -102.270883
+      },
+      {
+        "nombre": "Auditorio Hermanos Carreón",
+        "tipo": "edificio",
+        "lat": 21.878685,
+        "lng": -102.272337
+      }
+    ],
+    "sm1_2": [
+      {
+        "nombre": "Rafael Ramirez",
+        "tipo": "escuela",
+        "lat": 21.872079,
+        "lng": -102.284854
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 3",
+        "tipo": "escuela",
+        "lat": 21.872355,
+        "lng": -102.284706
+      },
+      {
+        "nombre": "Parque El Llanito",
+        "tipo": "parque",
+        "lat": 21.877541,
+        "lng": -102.288172
+      }
+    ],
+    "sm1_3": [
+      {
+        "nombre": "Escuela Normal Superior",
+        "tipo": "universidad",
+        "lat": 21.872978,
+        "lng": -102.280683
+      },
+      {
+        "nombre": "Escuela Normal de Aguascalientes",
+        "tipo": "universidad",
+        "lat": 21.873359,
+        "lng": -102.281464
+      },
+      {
+        "nombre": "Universidad de Estudios Avanzados, CAMpus Aguascalientes",
+        "tipo": "universidad",
+        "lat": 21.877738,
+        "lng": -102.280997
+      },
+      {
+        "nombre": "Plaza Kristal",
+        "tipo": "edificio",
+        "lat": 21.877973,
+        "lng": -102.281036
+      },
+      {
+        "nombre": "Unea",
+        "tipo": "edificio",
+        "lat": 21.877529,
+        "lng": -102.280955
+      },
+      {
+        "nombre": "Hotel Aranzasu",
+        "tipo": "edificio",
+        "lat": 21.877722,
+        "lng": -102.280651
+      },
+      {
+        "nombre": "Total",
+        "tipo": "gasolinera",
+        "lat": 21.876832,
+        "lng": -102.281164
+      },
+      {
+        "nombre": "Total",
+        "tipo": "gasolinera",
+        "lat": 21.877023,
+        "lng": -102.281181
+      },
+      {
+        "nombre": "Direccion General de Archivos de Aguascalientes",
+        "tipo": "edificio",
+        "lat": 21.8762,
+        "lng": -102.27993
+      }
+    ],
+    "sm1_4": [
+      {
+        "nombre": "Heroe de Nacozari",
+        "tipo": "escuela",
+        "lat": 21.874266,
+        "lng": -102.275745
+      },
+      {
+        "nombre": "Parque Tabachín",
+        "tipo": "parque",
+        "lat": 21.872956,
+        "lng": -102.273274
+      },
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.877771,
+        "lng": -102.27079
+      }
+    ],
+    "sm2_m4": [
+      {
+        "nombre": "Parque Pirules",
+        "tipo": "parque",
+        "lat": 21.86647,
+        "lng": -102.32101
+      }
+    ],
+    "sm2_m3": [
+      {
+        "nombre": "Amado Nervo",
+        "tipo": "escuela",
+        "lat": 21.869929,
+        "lng": -102.317107
+      },
+      {
+        "nombre": "Ing. Jesus Ma. Rodriguez",
+        "tipo": "escuela",
+        "lat": 21.868048,
+        "lng": -102.312797
+      },
+      {
+        "nombre": "Joaquin Cruz Ramirez",
+        "tipo": "escuela",
+        "lat": 21.869512,
+        "lng": -102.317778
+      },
+      {
+        "nombre": "Parroquia Santo Niño de Atocha",
+        "tipo": "templo",
+        "lat": 21.866538,
+        "lng": -102.314287
+      },
+      {
+        "nombre": "Parque Barranca de Guadalupe",
+        "tipo": "parque",
+        "lat": 21.870826,
+        "lng": -102.31324
+      },
+      {
+        "nombre": "Santo Niño de Atocha",
+        "tipo": "edificio",
+        "lat": 21.866471,
+        "lng": -102.314174
+      },
+      {
+        "nombre": "Primaria Ingeniero Jesús Ma Rodríguez",
+        "tipo": "escuela",
+        "lat": 21.868194,
+        "lng": -102.312937
+      },
+      {
+        "nombre": "Natgas",
+        "tipo": "gasolinera",
+        "lat": 21.870398,
+        "lng": -102.318075
+      }
+    ],
+    "sm2_m2": [
+      {
+        "nombre": "Congreso de Anahuac",
+        "tipo": "escuela",
+        "lat": 21.869859,
+        "lng": -102.306792
+      },
+      {
+        "nombre": "Polifórum Deportivo y Cultural Universitario Morelos",
+        "tipo": "deportivo",
+        "lat": 21.868272,
+        "lng": -102.307203
+      },
+      {
+        "nombre": "Parque Morelos",
+        "tipo": "parque",
+        "lat": 21.868348,
+        "lng": -102.308031
+      },
+      {
+        "nombre": "Secundaria General 3 Congreso de Anáhuac",
+        "tipo": "escuela",
+        "lat": 21.869488,
+        "lng": -102.306965
+      },
+      {
+        "nombre": "Antigua Villa Charra",
+        "tipo": "edificio",
+        "lat": 21.870622,
+        "lng": -102.30873
+      },
+      {
+        "nombre": "Antigua Fabrica de Coca Cola",
+        "tipo": "edificio",
+        "lat": 21.866446,
+        "lng": -102.307282
+      },
+      {
+        "nombre": "Foro de Las Estrellas",
+        "tipo": "edificio",
+        "lat": 21.871676,
+        "lng": -102.309929
+      },
+      {
+        "nombre": "Edificio Lafayette",
+        "tipo": "edificio",
+        "lat": 21.870592,
+        "lng": -102.311233
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "edificio",
+        "lat": 21.869979,
+        "lng": -102.310949
+      }
+    ],
+    "sm3_m4": [
+      {
+        "nombre": "Catrina Monumental",
+        "tipo": "monumento",
+        "lat": 21.862814,
+        "lng": -102.321361
+      },
+      {
+        "nombre": "Isla San Marcos",
+        "tipo": "parque",
+        "lat": 21.861399,
+        "lng": -102.321512
+      },
+      {
+        "nombre": "Acceso Centro de Convenciones Isla San Marcos",
+        "tipo": "edificio",
+        "lat": 21.862122,
+        "lng": -102.323655
+      },
+      {
+        "nombre": "Centro de Convenciones de la Isla San Marcos",
+        "tipo": "edificio",
+        "lat": 21.861607,
+        "lng": -102.323401
+      },
+      {
+        "nombre": "Reloj Monumental",
+        "tipo": "monumento",
+        "lat": 21.861434,
+        "lng": -102.321774
+      }
+    ],
+    "sm3_m3": [
+      {
+        "nombre": "Dr. Francisco Guel Jimenez",
+        "tipo": "escuela",
+        "lat": 21.864466,
+        "lng": -102.315044
+      },
+      {
+        "nombre": "Lic. Ezequiel a Chavez",
+        "tipo": "escuela",
+        "lat": 21.864374,
+        "lng": -102.315039
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "edificio",
+        "lat": 21.862187,
+        "lng": -102.312556
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "edificio",
+        "lat": 21.861158,
+        "lng": -102.312532
+      },
+      {
+        "nombre": "G500",
+        "tipo": "gasolinera",
+        "lat": 21.862501,
+        "lng": -102.317484
+      }
+    ],
+    "sm3_m2": [
+      {
+        "nombre": "Centro Educativo Tonatiuh, A.C.",
+        "tipo": "escuela",
+        "lat": 21.863096,
+        "lng": -102.307748
+      },
+      {
+        "nombre": "Secundaria Tecnica",
+        "tipo": "escuela",
+        "lat": 21.86008,
+        "lng": -102.310276
+      },
+      {
+        "nombre": "Parque Versalles Primera Sección",
+        "tipo": "parque",
+        "lat": 21.860453,
+        "lng": -102.311255
+      },
+      {
+        "nombre": "Escuela Secundaria Técnica 31",
+        "tipo": "escuela",
+        "lat": 21.860257,
+        "lng": -102.309771
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "edificio",
+        "lat": 21.861818,
+        "lng": -102.309436
+      }
+    ],
+    "sm4_m4": [
+      {
+        "nombre": "Mega Velaria de la Isla San Marcos",
+        "tipo": "edificio",
+        "lat": 21.859502,
+        "lng": -102.321566
+      },
+      {
+        "nombre": "Primaria Isidro Castillo Pérez",
+        "tipo": "escuela",
+        "lat": 21.854695,
+        "lng": -102.322703
+      },
+      {
+        "nombre": "Parque Educación Álamos",
+        "tipo": "parque",
+        "lat": 21.857159,
+        "lng": -102.319582
+      },
+      {
+        "nombre": "Arena San Marcos",
+        "tipo": "edificio",
+        "lat": 21.859996,
+        "lng": -102.319369
+      },
+      {
+        "nombre": "Primaria Rafael Ramírez Ugarte",
+        "tipo": "escuela",
+        "lat": 21.854549,
+        "lng": -102.322292
+      }
+    ],
+    "sm4_m3": [
+      {
+        "nombre": "Cinepolis",
+        "tipo": "teatro",
+        "lat": 21.858452,
+        "lng": -102.316738
+      },
+      {
+        "nombre": "Farmacia Guadalajara",
+        "tipo": "farmacia",
+        "lat": 21.854194,
+        "lng": -102.316618
+      },
+      {
+        "nombre": "Plaza Sharazu",
+        "tipo": "edificio",
+        "lat": 21.85946,
+        "lng": -102.316323
+      },
+      {
+        "nombre": "Mobil",
+        "tipo": "gasolinera",
+        "lat": 21.856052,
+        "lng": -102.316356
+      },
+      {
+        "nombre": "Mobil",
+        "tipo": "gasolinera",
+        "lat": 21.856067,
+        "lng": -102.316279
+      },
+      {
+        "nombre": "Pizza Hut",
+        "tipo": "comida",
+        "lat": 21.858403,
+        "lng": -102.314621
+      }
+    ],
+    "sm4_m2": [
+      {
+        "nombre": "Colegio Paideia",
+        "tipo": "escuela",
+        "lat": 21.855946,
+        "lng": -102.307126
+      },
+      {
+        "nombre": "Instituto Convencion de Aguascalientes, A.C.",
+        "tipo": "escuela",
+        "lat": 21.858987,
+        "lng": -102.309634
+      },
+      {
+        "nombre": "Montserrat Moreno",
+        "tipo": "escuela",
+        "lat": 21.856558,
+        "lng": -102.310647
+      },
+      {
+        "nombre": "Secundaria Tecnica, 28",
+        "tipo": "escuela",
+        "lat": 21.855995,
+        "lng": -102.310587
+      },
+      {
+        "nombre": "Parque Versalles Segunda Sección",
+        "tipo": "parque",
+        "lat": 21.856293,
+        "lng": -102.30944
+      },
+      {
+        "nombre": "Bala Gas",
+        "tipo": "gasolinera",
+        "lat": 21.858165,
+        "lng": -102.306759
+      }
+    ],
+    "sm2_m1": [
+      {
+        "nombre": "Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.866177,
+        "lng": -102.300321
+      },
+      {
+        "nombre": "Benemerito de Las Americas",
+        "tipo": "escuela",
+        "lat": 21.868571,
+        "lng": -102.301675
+      },
+      {
+        "nombre": "Benemerito de Las Americas",
+        "tipo": "escuela",
+        "lat": 21.868571,
+        "lng": -102.301675
+      },
+      {
+        "nombre": "Ciencias Biomedicas",
+        "tipo": "universidad",
+        "lat": 21.870651,
+        "lng": -102.301816
+      },
+      {
+        "nombre": "Ciencias Juridicas",
+        "tipo": "universidad",
+        "lat": 21.870651,
+        "lng": -102.301816
+      },
+      {
+        "nombre": "Congreso de Anahuac",
+        "tipo": "escuela",
+        "lat": 21.869746,
+        "lng": -102.306164
+      },
+      {
+        "nombre": "Instituto General Juan Manuel Enriquez Rodriguez, Plantel Sur",
+        "tipo": "escuela",
+        "lat": 21.871844,
+        "lng": -102.305488
+      },
+      {
+        "nombre": "Instituto General Juan Manuel Enriquez Rodriguez, Plantel Sur",
+        "tipo": "escuela",
+        "lat": 21.871843,
+        "lng": -102.305518
+      },
+      {
+        "nombre": "Farmacias Guadalajara",
+        "tipo": "farmacia",
+        "lat": 21.870227,
+        "lng": -102.30239
+      },
+      {
+        "nombre": "BP",
+        "tipo": "gasolinera",
+        "lat": 21.866254,
+        "lng": -102.300867
+      }
+    ],
+    "sm2_0": [
+      {
+        "nombre": "Tres Ave Maria",
+        "tipo": "templo",
+        "lat": 21.8681,
+        "lng": -102.294878
+      },
+      {
+        "nombre": "Colegio Boston de Aguascalientes",
+        "tipo": "escuela",
+        "lat": 21.871909,
+        "lng": -102.296655
+      },
+      {
+        "nombre": "Universidad de Leon, Plantel Aguascalientes",
+        "tipo": "universidad",
+        "lat": 21.866738,
+        "lng": -102.294252
+      },
+      {
+        "nombre": "Punto México",
+        "tipo": "escuela",
+        "lat": 21.866269,
+        "lng": -102.297167
+      },
+      {
+        "nombre": "Oxxo Gas",
+        "tipo": "gasolinera",
+        "lat": 21.86806,
+        "lng": -102.294236
+      }
+    ],
+    "sm2_1": [
+      {
+        "nombre": "Farmacia Guadalajara",
+        "tipo": "farmacia",
+        "lat": 21.866014,
+        "lng": -102.28988
+      },
+      {
+        "nombre": "Francisco Zarco",
+        "tipo": "escuela",
+        "lat": 21.871673,
+        "lng": -102.293135
+      },
+      {
+        "nombre": "Rosa Guerrero Ramirez",
+        "tipo": "escuela",
+        "lat": 21.868566,
+        "lng": -102.291625
+      },
+      {
+        "nombre": "Rosa Guerrero Ramirez",
+        "tipo": "escuela",
+        "lat": 21.868566,
+        "lng": -102.291625
+      },
+      {
+        "nombre": "Unidad de Servicios de Apoyo a la Educacion Regular, 43",
+        "tipo": "escuela",
+        "lat": 21.867323,
+        "lng": -102.293258
+      },
+      {
+        "nombre": "IMSS Clinica 1",
+        "tipo": "edificio",
+        "lat": 21.866317,
+        "lng": -102.293112
+      },
+      {
+        "nombre": "Escuela secundaria general 12",
+        "tipo": "edificio",
+        "lat": 21.869396,
+        "lng": -102.290944
+      },
+      {
+        "nombre": "Escuela secundaria 12",
+        "tipo": "edificio",
+        "lat": 21.86915,
+        "lng": -102.291528
+      },
+      {
+        "nombre": "Escuale secundaria 12",
+        "tipo": "edificio",
+        "lat": 21.86897,
+        "lng": -102.290959
+      },
+      {
+        "nombre": "Casa Colon 821",
+        "tipo": "edificio",
+        "lat": 21.867399,
+        "lng": -102.292149
+      },
+      {
+        "nombre": "Parque Lindavista",
+        "tipo": "parque",
+        "lat": 21.8694,
+        "lng": -102.292868
+      },
+      {
+        "nombre": "Abarrotes El Chiripazo",
+        "tipo": "edificio",
+        "lat": 21.867282,
+        "lng": -102.290558
+      },
+      {
+        "nombre": "IMSS Hospital General de Zona 1",
+        "tipo": "hospital",
+        "lat": 21.86632,
+        "lng": -102.292676
+      }
+    ],
+    "sm3_m1": [
+      {
+        "nombre": "Paloma de la Paz",
+        "tipo": "monumento",
+        "lat": 21.860555,
+        "lng": -102.300721
+      },
+      {
+        "nombre": "Musica Total",
+        "tipo": "escuela",
+        "lat": 21.863092,
+        "lng": -102.304297
+      },
+      {
+        "nombre": "Centro Comercial El Dorado",
+        "tipo": "edificio",
+        "lat": 21.862642,
+        "lng": -102.304601
+      },
+      {
+        "nombre": "Parque El Dorado",
+        "tipo": "parque",
+        "lat": 21.860658,
+        "lng": -102.302098
+      },
+      {
+        "nombre": "Monumento a Juan Pablo II",
+        "tipo": "monumento",
+        "lat": 21.860567,
+        "lng": -102.301298
+      },
+      {
+        "nombre": "Cruz Roja",
+        "tipo": "hospital",
+        "lat": 21.861036,
+        "lng": -102.303246
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "edificio",
+        "lat": 21.861113,
+        "lng": -102.300837
+      }
+    ],
+    "sm3_0": [
+      {
+        "nombre": "Colegio Jean Le Boulch, A.C.",
+        "tipo": "escuela",
+        "lat": 21.861236,
+        "lng": -102.296683
+      },
+      {
+        "nombre": "México conectado",
+        "tipo": "escuela",
+        "lat": 21.865636,
+        "lng": -102.294815
+      },
+      {
+        "nombre": "Gasolinera Pemex",
+        "tipo": "gasolinera",
+        "lat": 21.86422,
+        "lng": -102.299056
+      },
+      {
+        "nombre": "Hospital MAC: Aguascalientes (CMQ)",
+        "tipo": "hospital",
+        "lat": 21.8633,
+        "lng": -102.298325
+      },
+      {
+        "nombre": "CRIS - DIF Estatal",
+        "tipo": "edificio",
+        "lat": 21.864739,
+        "lng": -102.296362
+      },
+      {
+        "nombre": "Corredor mahatma gandhi",
+        "tipo": "parque",
+        "lat": 21.861382,
+        "lng": -102.295313
+      },
+      {
+        "nombre": "Valero",
+        "tipo": "gasolinera",
+        "lat": 21.865393,
+        "lng": -102.298112
+      }
+    ],
+    "sm3_1": [
+      {
+        "nombre": "Templo La Asuncion",
+        "tipo": "templo",
+        "lat": 21.862776,
+        "lng": -102.290364
+      },
+      {
+        "nombre": "Teatro Aguascalientes IMSS",
+        "tipo": "teatro",
+        "lat": 21.865927,
+        "lng": -102.293747
+      },
+      {
+        "nombre": "Nuestra Señora de la Asunción",
+        "tipo": "monumento",
+        "lat": 21.86232,
+        "lng": -102.29342
+      }
+    ],
+    "sm4_m1": [
+      {
+        "nombre": "Jose Guadalupe Posada Aguilar",
+        "tipo": "escuela",
+        "lat": 21.855681,
+        "lng": -102.301536
+      },
+      {
+        "nombre": "Jose Guadalupe Posada Aguilar",
+        "tipo": "escuela",
+        "lat": 21.855675,
+        "lng": -102.301497
+      },
+      {
+        "nombre": "Magisterio Nacional",
+        "tipo": "escuela",
+        "lat": 21.857212,
+        "lng": -102.301927
+      },
+      {
+        "nombre": "Magisterio Nacional",
+        "tipo": "escuela",
+        "lat": 21.857246,
+        "lng": -102.301928
+      },
+      {
+        "nombre": "Asitekmx Abastecimiento y Servicio Industrial Tek, S. de R.L. de C.V.",
+        "tipo": "edificio",
+        "lat": 21.859775,
+        "lng": -102.302562
+      }
+    ],
+    "sm4_0": [
+      {
+        "nombre": "Carmen Serdan",
+        "tipo": "escuela",
+        "lat": 21.854613,
+        "lng": -102.298454
+      },
+      {
+        "nombre": "Colegio Mexico Moderno",
+        "tipo": "escuela",
+        "lat": 21.85756,
+        "lng": -102.298926
+      },
+      {
+        "nombre": "Parque Prados del Sur",
+        "tipo": "parque",
+        "lat": 21.856923,
+        "lng": -102.297957
+      },
+      {
+        "nombre": "Walmart Supercenter",
+        "tipo": "edificio",
+        "lat": 21.859826,
+        "lng": -102.296065
+      },
+      {
+        "nombre": "Shell",
+        "tipo": "gasolinera",
+        "lat": 21.859963,
+        "lng": -102.298966
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "gasolinera",
+        "lat": 21.859556,
+        "lng": -102.299533
+      },
+      {
+        "nombre": "Corredor Mahatma Gandhi",
+        "tipo": "parque",
+        "lat": 21.859231,
+        "lng": -102.295102
+      },
+      {
+        "nombre": "Shell",
+        "tipo": "gasolinera",
+        "lat": 21.859988,
+        "lng": -102.298971
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "gasolinera",
+        "lat": 21.859485,
+        "lng": -102.299465
+      },
+      {
+        "nombre": "Suburbia",
+        "tipo": "edificio",
+        "lat": 21.859969,
+        "lng": -102.298007
+      }
+    ],
+    "sm4_1": [
+      {
+        "nombre": "Avion",
+        "tipo": "monumento",
+        "lat": 21.856675,
+        "lng": -102.288796
+      },
+      {
+        "nombre": "Teatro Aguascalientes",
+        "tipo": "teatro",
+        "lat": 21.857104,
+        "lng": -102.29121
+      },
+      {
+        "nombre": "Domo IMAX",
+        "tipo": "teatro",
+        "lat": 21.85601,
+        "lng": -102.288669
+      },
+      {
+        "nombre": "Planetario y Observatorio Dra. Silvia Torres Castilleja",
+        "tipo": "edificio",
+        "lat": 21.855022,
+        "lng": -102.288771
+      },
+      {
+        "nombre": "Starbucks",
+        "tipo": "comida",
+        "lat": 21.858271,
+        "lng": -102.293728
+      },
+      {
+        "nombre": "Cinepolis",
+        "tipo": "teatro",
+        "lat": 21.855283,
+        "lng": -102.293243
+      },
+      {
+        "nombre": "Chedraui",
+        "tipo": "edificio",
+        "lat": 21.855164,
+        "lng": -102.293881
+      },
+      {
+        "nombre": "Hampton Inn",
+        "tipo": "edificio",
+        "lat": 21.859869,
+        "lng": -102.292882
+      }
+    ],
+    "sm2_2": [
+      {
+        "nombre": "Alfonso Esparza Oteo",
+        "tipo": "escuela",
+        "lat": 21.871795,
+        "lng": -102.286354
+      },
+      {
+        "nombre": "Escuela Por Cooperacion America, A.C.",
+        "tipo": "escuela",
+        "lat": 21.87115,
+        "lng": -102.282826
+      },
+      {
+        "nombre": "Lic. Jose Vasconcelos Calderon",
+        "tipo": "escuela",
+        "lat": 21.871475,
+        "lng": -102.285879
+      },
+      {
+        "nombre": "El señor de la salud",
+        "tipo": "templo",
+        "lat": 21.870848,
+        "lng": -102.283623
+      },
+      {
+        "nombre": "Centro Médico La Salud",
+        "tipo": "hospital",
+        "lat": 21.867213,
+        "lng": -102.283467
+      },
+      {
+        "nombre": "Parque Cedros",
+        "tipo": "parque",
+        "lat": 21.86856,
+        "lng": -102.288023
+      },
+      {
+        "nombre": "Templo el Señor de la Salud",
+        "tipo": "edificio",
+        "lat": 21.870844,
+        "lng": -102.283629
+      }
+    ],
+    "sm2_3": [
+      {
+        "nombre": "Alberto J. Pani",
+        "tipo": "escuela",
+        "lat": 21.868428,
+        "lng": -102.278366
+      },
+      {
+        "nombre": "Jose Landeros Gutierrez",
+        "tipo": "escuela",
+        "lat": 21.87054,
+        "lng": -102.279983
+      },
+      {
+        "nombre": "Entrada IV Centenario",
+        "tipo": "parque",
+        "lat": 21.870742,
+        "lng": -102.28161
+      },
+      {
+        "nombre": "Iglesia del IV Centenario",
+        "tipo": "templo",
+        "lat": 21.870253,
+        "lng": -102.279557
+      },
+      {
+        "nombre": "Rotonda de los Aguascalentenses Ilustres",
+        "tipo": "monumento",
+        "lat": 21.868975,
+        "lng": -102.281125
+      },
+      {
+        "nombre": "PEMEX",
+        "tipo": "gasolinera",
+        "lat": 21.867045,
+        "lng": -102.281533
+      }
+    ],
+    "sm2_4": [
+      {
+        "nombre": "Caritino Maldonado",
+        "tipo": "escuela",
+        "lat": 21.871759,
+        "lng": -102.272831
+      },
+      {
+        "nombre": "Gabriel Fernandez Ledezma",
+        "tipo": "escuela",
+        "lat": 21.868457,
+        "lng": -102.272919
+      },
+      {
+        "nombre": "Zona Recreativa",
+        "tipo": "parque",
+        "lat": 21.8719,
+        "lng": -102.27176
+      }
+    ],
+    "sm3_2": [
+      {
+        "nombre": "Centro de Antencion Multiple V",
+        "tipo": "escuela",
+        "lat": 21.860729,
+        "lng": -102.287019
+      },
+      {
+        "nombre": "Centro de Atencion Multiple Vi",
+        "tipo": "escuela",
+        "lat": 21.861849,
+        "lng": -102.287198
+      },
+      {
+        "nombre": "Jardines de Aguascalientes",
+        "tipo": "escuela",
+        "lat": 21.864043,
+        "lng": -102.287505
+      },
+      {
+        "nombre": "Jardines de Aguascalientes",
+        "tipo": "escuela",
+        "lat": 21.864043,
+        "lng": -102.287505
+      },
+      {
+        "nombre": "Asadero las Fuentes",
+        "tipo": "comida",
+        "lat": 21.863086,
+        "lng": -102.284429
+      }
+    ],
+    "sm3_3": [
+      {
+        "nombre": "Ejercito Nacional",
+        "tipo": "escuela",
+        "lat": 21.863854,
+        "lng": -102.280207
+      }
+    ],
+    "sm3_4": [
+      {
+        "nombre": "Farmacia Guadalajara",
+        "tipo": "farmacia",
+        "lat": 21.860397,
+        "lng": -102.272227
+      }
+    ],
+    "sm4_2": [
+      {
+        "nombre": "farmacia benavides",
+        "tipo": "farmacia",
+        "lat": 21.855699,
+        "lng": -102.28227
+      },
+      {
+        "nombre": "Colegio Frances Hidalgo de Aguascalientes, S.C.",
+        "tipo": "escuela",
+        "lat": 21.854521,
+        "lng": -102.285015
+      },
+      {
+        "nombre": "Colegio Frances Hidalgo de Aguascalientes, S.C.",
+        "tipo": "escuela",
+        "lat": 21.855418,
+        "lng": -102.285325
+      },
+      {
+        "nombre": "Instituto Psicopedagogico Aguascalientes Mm Ipamm",
+        "tipo": "escuela",
+        "lat": 21.858774,
+        "lng": -102.285228
+      },
+      {
+        "nombre": "Instituto de Psicopedagogia Infantil Ausubel",
+        "tipo": "escuela",
+        "lat": 21.858774,
+        "lng": -102.285228
+      },
+      {
+        "nombre": "Poder Judicial de la Federación",
+        "tipo": "edificio",
+        "lat": 21.858619,
+        "lng": -102.287261
+      },
+      {
+        "nombre": "Colegio Francés Hidalgo",
+        "tipo": "escuela",
+        "lat": 21.854857,
+        "lng": -102.285582
+      },
+      {
+        "nombre": "Biblioteca Emilio Alanís Patiño",
+        "tipo": "biblioteca",
+        "lat": 21.855952,
+        "lng": -102.28294
+      },
+      {
+        "nombre": "Oxxo",
+        "tipo": "edificio",
+        "lat": 21.855505,
+        "lng": -102.282824
+      }
+    ],
+    "sm4_3": [
+      {
+        "nombre": "Centro Escolar Monte Alban, A.C.",
+        "tipo": "escuela",
+        "lat": 21.854351,
+        "lng": -102.278084
+      },
+      {
+        "nombre": "Centro Escolar Montealban, A.C.",
+        "tipo": "escuela",
+        "lat": 21.855267,
+        "lng": -102.2782
+      },
+      {
+        "nombre": "Prof. J. Guadalupe Najera",
+        "tipo": "escuela",
+        "lat": 21.859528,
+        "lng": -102.278343
+      }
+    ],
+    "sm4_4": [
+      {
+        "nombre": "Colegio Benjamin Franklin",
+        "tipo": "escuela",
+        "lat": 21.858924,
+        "lng": -102.272209
+      },
+      {
+        "nombre": "Colegio Real Del Sur, S.C.",
+        "tipo": "escuela",
+        "lat": 21.85971,
+        "lng": -102.273871
+      },
+      {
+        "nombre": "Colegio Real Del Sur, S.C.",
+        "tipo": "escuela",
+        "lat": 21.8598,
+        "lng": -102.274722
+      },
+      {
+        "nombre": "Colegio Tical, A.C.",
+        "tipo": "escuela",
+        "lat": 21.856558,
+        "lng": -102.271455
+      },
+      {
+        "nombre": "Otto Granados Roldan",
+        "tipo": "escuela",
+        "lat": 21.856884,
+        "lng": -102.274923
+      },
+      {
+        "nombre": "Otto Granados Roldan",
+        "tipo": "escuela",
+        "lat": 21.856884,
+        "lng": -102.274923
+      },
+      {
+        "nombre": "15 de Septiembre",
+        "tipo": "escuela",
+        "lat": 21.856882,
+        "lng": -102.274154
+      },
+      {
+        "nombre": "15 de Septiembre",
+        "tipo": "escuela",
+        "lat": 21.856882,
+        "lng": -102.274154
+      },
+      {
+        "nombre": "Parque Casa Blanca",
+        "tipo": "parque",
+        "lat": 21.855284,
+        "lng": -102.271824
+      }
+    ]
+  }
+}
