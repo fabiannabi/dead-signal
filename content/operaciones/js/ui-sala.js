@@ -12,7 +12,7 @@ import { DATA_BASE, getSession, setSession, fetchJSON } from './main.js';
 import { construirGrafo, aStar, nodoMasCercano, haversine } from './pathfinding.js';
 import { peligroDeArista, criaturasActivas } from './peligro.js';
 import { consolidarOperacion } from './roster-store.js';
-import { claveVoz } from './coms-hash.js';
+import { AJUSTES, crearVozSim, perfilVoz, ritmoChar } from './voz-sim.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -340,9 +340,9 @@ const TINT = ['#4dff7a', '#6ad0ff', '#c8a84a'];
 const voces = {};
 equipo.forEach((a, i) => {
   const apellido = a.nombre_completo.split(' ').slice(1).join(' ') || a.nombre_completo;
-  voces[a.id] = { nombre: `${a.rango_abreviatura} ${apellido.toUpperCase()}`, freq: (141 + i * 0.18).toFixed(2), tint: a.id === liderId ? '#ffc24d' : TINT[i % TINT.length], ini: apellido[0] || '?', lado: 'left' };
+  voces[a.id] = { nombre: `${a.rango_abreviatura} ${apellido.toUpperCase()}`, freq: (141 + i * 0.18).toFixed(2), tint: a.id === liderId ? '#ffc24d' : TINT[i % TINT.length], ini: apellido[0] || '?', lado: 'left', perfil: perfilVoz(a.id, { lider: a.id === liderId }) };
 });
-voces.control = { nombre: 'CENVAC CONTROL', freq: '140.85', tint: '#8affc0', ini: 'C', lado: 'right' };
+voces.control = { nombre: 'CENVAC CONTROL', freq: '140.85', tint: '#8affc0', ini: 'C', lado: 'right', perfil: perfilVoz('control', { control: true }) };
 const miembros = equipo.map(a => a.id);
 const vozId = (rol) => rol === 'control' ? 'control' : rol === 'lider' ? liderId : miembros[Math.floor(Math.random() * miembros.length)];
 
@@ -399,9 +399,21 @@ const DECISIONES = [
 const pickOne = (a) => a[Math.floor(Math.random() * a.length)];
 function pick(a, n) { const c = [...a], o = []; while (o.length < n && c.length) o.push(c.splice(Math.floor(Math.random() * c.length), 1)[0]); return o; }
 
-let cola = [], playing = false, tw = null, actx = null, colaOnDone = null, charMs = 42, holdMs = 2000;
+let cola = [], playing = false, tw = null, actx = null, colaOnDone = null, charMs = AJUSTES.charMs, holdMs = 2000;
+/**
+ * Estado emocional de una línea. Si el guion no lo declara (`emo`), se infiere de
+ * la puntuación: gritar es agitarse, preguntar es tensarse, los puntos suspensivos
+ * son miedo. Así las líneas viejas ya suenan con carga sin tocarlas una por una.
+ */
+function emocionDe(x) {
+  if (x.emo) return x.emo;
+  if (/!/.test(x.t)) return 'agitado';
+  if (/\.\.\./.test(x.t)) return 'asustado';
+  if (/\?/.test(x.t)) return 'tenso';
+  return x.rol === 'control' ? 'frio' : 'neutral';
+}
 function guionar(lines, onDone) {
-  cola = lines.map(x => ({ rol: x.rol, t: x.t }));
+  cola = lines.map(x => ({ rol: x.rol, t: x.t, emo: emocionDe(x) }));
   colaOnDone = onDone || null;
   $('sala-codec').classList.add('on');
   if (!playing) siguiente();
@@ -410,18 +422,35 @@ function decir(lines) { return new Promise(res => guionar(lines, res)); }
 function siguiente() {
   if (!cola.length) { playing = false; const cb = colaOnDone; colaOnDone = null; if (cb) cb(); return; }
   playing = true;
-  const { rol, t } = cola.shift();
+  const { rol, t, emo } = cola.shift();
   const voz = voces[vozId(rol)];
   if (voz.lado === 'left') { ultimoCampo = voz; pintarPortrait($('sala-port-left'), voz, true); pintarPortrait($('sala-port-right'), voces.control, false); }
   else { pintarPortrait($('sala-port-left'), ultimoCampo, false); pintarPortrait($('sala-port-right'), voz, true); }
   const nameEl = $('sala-codec-name');
   nameEl.textContent = voz.nombre; nameEl.style.textAlign = voz.lado === 'right' ? 'right' : 'left'; nameEl.style.color = voz.tint;
-  beep(760); hablar(t, voz, rol);
-  escribir($('sala-codec-line'), t, () => { apagarTalking(); setTimeout(siguiente, holdMs * (0.8 + Math.random() * 0.5)); });
+  abrirCanal(voz.perfil.canal);
+  if (vozSim && audioOn) vozSim.aliento(voz.perfil, emo);
+  escribir($('sala-codec-line'), t, voz, emo, () => {
+    cerrarCanal(); apagarTalking();
+    // La pausa antes de la próxima línea la marca la emoción de la que acaba de terminar.
+    const espera = vozSim ? vozSim.pausaDe(emo) * (holdMs / 520) : holdMs;
+    setTimeout(siguiente, espera);
+  });
 }
-function escribir(el, texto, done) {
-  clearInterval(tw); let i = 0;
-  tw = setInterval(() => { el.innerHTML = texto.slice(0, ++i) + '<span class="sala-cursor">▍</span>'; if (i >= texto.length) { clearInterval(tw); el.textContent = texto; done(); } }, charMs);
+// El tecleo ES la voz: cada carácter dispara su blip (ver voz-sim.js), así que
+// texto y sonido no pueden desincronizarse y una línea nueva no cuesta nada.
+function escribir(el, texto, voz, emo, done) {
+  clearTimeout(tw);
+  const tono = /\?/.test(texto) ? 'alto' : /!/.test(texto) ? 'fuerte' : null;
+  let i = 0;
+  const paso = () => {
+    const ch = texto[i++];
+    el.innerHTML = texto.slice(0, i) + '<span class="sala-cursor">▍</span>';
+    if (vozSim && audioOn && voz) vozSim.blip(ch, voz.perfil, i / texto.length, tono, emo);
+    if (i >= texto.length) { el.textContent = texto; done(); return; }
+    tw = setTimeout(paso, ritmoChar(ch, charMs, AJUSTES, emo));
+  };
+  paso();
 }
 function apagarTalking() { $('sala-port-left').classList.remove('talking'); $('sala-port-right').classList.remove('talking'); }
 // ── Audio: ambiente + SFX (WebAudio) + voz (speechSynthesis) ─────────────────
@@ -471,84 +500,23 @@ function sfxHit() {
   const n = ctx.createBufferSource(); n.buffer = buf; const g = ctx.createGain(); g.gain.value = 0.13; n.connect(g); g.connect(master); n.start();
   tono(90, 'sine', 0.22, 0.12);
 }
-// Voz: si existe el clip pre-renderizado (ElevenLabs horneado) lo reproduce; si
-// no, cae al TTS robótico del navegador (CENVAC-OS lee la transcripción).
-const CLIP_BASE = './assets/audio/coms';
-let clipsBaked = new Set(), clipActual = null;
-fetch(`${CLIP_BASE}/manifest.json`, { cache: 'no-store' })
-  .then(r => r.ok ? r.json() : []).then(list => { clipsBaked = new Set(list); }).catch(() => { });
-let vocesTTS = [];
-function cargarVocesTTS() { vocesTTS = window.speechSynthesis ? speechSynthesis.getVoices().filter(v => /es/i.test(v.lang)) : []; }
-if (window.speechSynthesis) { cargarVocesTTS(); window.speechSynthesis.onvoiceschanged = cargarVocesTTS; }
-function hablar(texto, voz, rol) {
-  if (!audioOn) return;
-  const clave = claveVoz(rol || (voz && voz.lado === 'right' ? 'control' : 'miembro'), texto);
-  if (clipsBaked.has(clave)) { reproducirRadio(clave, texto, voz); return; }
-  ttsHablar(texto, voz);
+// Voz: sintetizada carácter por carácter (voz-sim.js). Sin archivos, sin API keys,
+// sin bake: cada línea nueva del guion suena sola, incluidas las dinámicas.
+let vozSim = null;
+function ensureVoz() {
+  if (vozSim) return vozSim;
+  const ctx = ensureCtx(); if (!ctx) return null;
+  vozSim = crearVozSim(ctx, master);
+  return vozSim;
 }
-// Pasa el clip de ElevenLabs por una cadena de RADIO (banda angosta + crunch +
-// estática de fondo + squelch), para que no suene de estudio sino por el walkie.
-let radioNoise = null;
-function crunchCurve(k) {
-  const n = 256, c = new Float32Array(n);
-  for (let i = 0; i < n; i++) { const x = i * 2 / n - 1; c[i] = (1 + k) * x / (1 + k * Math.abs(x)); }
-  return c;
-}
-function startRadioNoise() {
-  const ctx = ensureCtx(); if (!ctx || !audioOn || radioNoise) return;
-  const buf = ctx.createBuffer(1, ctx.sampleRate, ctx.sampleRate);
-  const d = buf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
-  const n = ctx.createBufferSource(); n.buffer = buf; n.loop = true;
-  const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 1800; bp.Q.value = 0.6;
-  const g = ctx.createGain(); g.gain.value = 0.06;
-  n.connect(bp); bp.connect(g); g.connect(master); n.start();
-  radioNoise = { n, g };
-}
-function stopRadioNoise() { if (radioNoise) { try { radioNoise.g.gain.value = 0; radioNoise.n.stop(); } catch { } radioNoise = null; } }
-function squelch(delay) {
-  const ctx = ensureCtx(); if (!ctx || !audioOn) return;
-  const t = ctx.currentTime + delay;
-  const buf = ctx.createBuffer(1, Math.floor(ctx.sampleRate * 0.05), ctx.sampleRate);
-  const d = buf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 1.5);
-  const n = ctx.createBufferSource(); n.buffer = buf;
-  const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 1200;
-  const g = ctx.createGain(); g.gain.value = 0.07;
-  n.connect(bp); bp.connect(g); g.connect(master); n.start(t);
-}
-function reproducirRadio(clave, texto, voz) {
-  const ctx = ensureCtx();
-  try { if (clipActual) clipActual.pause(); } catch { }
-  stopRadioNoise();
-  const el = new Audio(`${CLIP_BASE}/${clave}.mp3`); el.volume = 1; clipActual = el;
-  if (!ctx) { el.play().catch(() => ttsHablar(texto, voz)); return; }
-  let src;
-  try { src = ctx.createMediaElementSource(el); }
-  catch { el.play().catch(() => ttsHablar(texto, voz)); return; }
-  const hp = ctx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 360;
-  const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 3200;
-  const peak = ctx.createBiquadFilter(); peak.type = 'peaking'; peak.frequency.value = 1600; peak.gain.value = 3; peak.Q.value = 0.8;
-  const shaper = ctx.createWaveShaper(); shaper.curve = crunchCurve(10);
-  const g = ctx.createGain(); g.gain.value = 0.6;
-  src.connect(hp); hp.connect(lp); lp.connect(peak); peak.connect(shaper); shaper.connect(g); g.connect(master);
-  startRadioNoise(); squelch(0);
-  el.onended = () => { stopRadioNoise(); squelch(0.02); };
-  el.play().catch(() => { stopRadioNoise(); ttsHablar(texto, voz); });
-}
-function ttsHablar(texto, voz) {
-  if (!window.speechSynthesis) return;
-  try {
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(String(texto).replace(/[¡!¿?►▍]/g, ''));
-    if (vocesTTS[0]) u.voice = vocesTTS[0];
-    u.lang = 'es-MX'; u.volume = 0.95; u.rate = 1.05;
-    u.pitch = voz && voz.lado === 'right' ? 0.7 : (voz === voces[liderId] ? 0.9 : 1.1);
-    speechSynthesis.speak(u);
-  } catch { }
-}
+// El canal de radio (estática + squelch) lo maneja voz-sim.js, para que la sala y
+// el playground suenen exactamente igual.
+function abrirCanal(canal) { if (!audioOn) return; const v = ensureVoz(); if (v) v.abrirCanal(canal); }
+function cerrarCanal() { if (vozSim) vozSim.cerrarCanal(); }
 function toggleAudio() {
   audioOn = !audioOn;
   const btn = $('sala-audio'); if (btn) btn.textContent = audioOn ? '♪ AUDIO ON' : '♪ AUDIO OFF';
-  if (!audioOn) { try { speechSynthesis.cancel(); } catch { } try { if (clipActual) clipActual.pause(); } catch { } stopRadioNoise(); if (ambGain) ambGain.gain.value = 0; }
+  if (!audioOn) { if (vozSim) vozSim.cerrarCanal(); if (ambGain) ambGain.gain.value = 0; }
   else if (ambGain) ambGain.gain.value = 0.85;
 }
 
