@@ -56,13 +56,58 @@ for (const e of rawGrafo.aristas) {
   const a = grafo.nodos.get(e.a), b = grafo.nodos.get(e.b);
   edgeLayer.set(e, L.polyline([[a.lat, a.lng], [b.lat, b.lng]], { color: '#2aa855', weight: 3, opacity: 0.7, interactive: false }).addTo(map));
 }
+/**
+ * Cartografía CONOCIDA por CENVAC (§1.7).
+ *
+ * El peligro que se PINTA y el que se PAGA son dos números distintos a propósito.
+ * Si el mapa mostrara la verdad del terreno, el A* siempre encontraría la ruta
+ * segura y esto sería resolver un grafo, no vigilar un sector. La unidad camina
+ * sobre el peligro real (`peligroDeArista` en la marcha y en las llegadas); el
+ * jugador solo ve lo que CENVAC alcanzó a confirmar.
+ *
+ * Una calle sin datos NO se pinta de verde — eso sería mentirle al jugador y
+ * convertir la mecánica en una trampa. Se pinta como lo que es: sin reportar. La
+ * decisión interesante es elegir entre el rodeo largo que ya conoces y el atajo
+ * del que nadie sabe nada.
+ */
+const conocidas = new Set();
+
+function conocer(aristas) {
+  let nuevas = 0;
+  for (const e of aristas) if (!conocidas.has(e)) { conocidas.add(e); nuevas++; restyleEdge(e); }
+  if (nuevas) actualizarHUD();
+  return nuevas;
+}
+
+/**
+ * Aristas con un extremo a menos de `radio` de un punto.
+ *
+ * Acepta `{lat,lng}` o `[lat,lng]` porque en este archivo conviven las dos formas
+ * (`nodeToLatLng` devuelve array para Leaflet, el evento trae objeto). Pasar el
+ * array crudo a `haversine` no truena: da NaN, toda comparación sale falsa y la
+ * siembra se queda en cero sin avisar. Normalizar acá evita ese fallo mudo.
+ */
+const comoPunto = (p) => Array.isArray(p) ? { lat: p[0], lng: p[1] } : p;
+
+function aristasCerca(pt, radio) {
+  const c = comoPunto(pt);
+  return rawGrafo.aristas.filter(e => {
+    const a = grafo.nodos.get(e.a), b = grafo.nodos.get(e.b);
+    return haversine(c, a) < radio || haversine(c, b) < radio;
+  });
+}
+
 function estiloArista(e) {
   if (e._peligro) return { color: '#ff2020', weight: 6, opacity: 1 };
+  // Sin reportar: punteado frío. Tiene que LEERSE como calle (si es más tenue que
+  // el fondo, el sector parece vacío en vez de sin cartografiar), pero sin competir
+  // con los colores de peligro, que son los que deben saltar.
+  if (!conocidas.has(e)) return { color: '#7d8f84', weight: 3, opacity: 0.85, dashArray: '6,5' };
   const p = peligroDeArista(e, ecologia, horaActual, CRIATURAS);
-  if (p <= 0) return { color: '#2fbf5f', weight: 3, opacity: 0.6 };
-  if (p < 0.4) return { color: '#ffe23a', weight: 4, opacity: 0.95 };
-  if (p < 0.75) return { color: '#ff9128', weight: 5, opacity: 0.97 };
-  return { color: '#ff4436', weight: 5, opacity: 1 };
+  if (p <= 0) return { color: '#2fbf5f', weight: 3, opacity: 0.6, dashArray: null };
+  if (p < 0.4) return { color: '#ffe23a', weight: 4, opacity: 0.95, dashArray: null };
+  if (p < 0.75) return { color: '#ff9128', weight: 5, opacity: 0.97, dashArray: null };
+  return { color: '#ff4436', weight: 5, opacity: 1, dashArray: null };
 }
 function restyleEdge(e) { const pl = edgeLayer.get(e); pl.setStyle(estiloArista(e)); if (e._peligro) pl.bringToFront(); }
 
@@ -74,8 +119,11 @@ for (const [id, p] of grafo.nodos) {
 }
 function repintar() {
   for (const e of rawGrafo.aristas) restyleEdge(e);
+  // Solo los nodos: son circleMarker (L.Path) y comparten el overlayPane con las
+  // calles, así que hay que subirlos a mano o el punteado les roba el click.
+  // Los POIs y el blip son L.marker — viven en el markerPane, que ya está por
+  // encima, y NO tienen bringToFront(): llamarlo ahí tiraba el módulo entero.
   nodeMarkers.forEach(m => m.bringToFront());
-  poisMarkers.forEach(m => m.bringToFront());
   const act = criaturasActivas(ecologia, horaActual, CRIATURAS).map(c => ecologia.reglas[c]?.nombre || c);
   $('sala-amenaza').textContent = act.length ? act.join(' · ') : 'sin actividad a esta hora';
 }
@@ -129,6 +177,9 @@ function revelar(c) {
     const a = grafo.nodos.get(e.a), b = grafo.nodos.get(e.b);
     if (!e._peligro && (haversine(c, a) < 55 || haversine(c, b) < 55)) { e._peligro = true; c.aristasMarcadas.push(e); restyleEdge(e); }
   }
+  // Avistar un contacto también es cartografiar: esas calles quedan reportadas y
+  // siguen sabiéndose peligrosas aunque después se despeje al bicho.
+  conocer(c.aristasMarcadas);
   sfxPing();
 }
 function despejarContacto(c) {
@@ -153,11 +204,20 @@ let unidadNode = entrada, rutaLine = null, dstMark = null, marcha = null, moving
 equipo.forEach(a => { a.es_lider = (a.id === liderId); a.estado = a.estado || {}; a.estado.vivo = a.estado.vivo !== false; a.estado.heridas = a.estado.heridas || []; });
 const blip = L.marker(nodeToLatLng(entrada), { icon: L.divIcon({ className: '', html: '<div class="sala-blip"></div>', iconSize: [0, 0] }), interactive: false }).addTo(map);
 $('sala-pos').textContent = calleDe(entrada);
+
+// Lo que CENVAC ya sabía al abrir el expediente: el corredor por donde entra la
+// unidad y el entorno del foco del evento — que es, justamente, lo que motivó el
+// reporte. Todo lo demás del sector está sin cartografiar.
+conocer(aristasCerca(nodeToLatLng(entrada), 110));
+conocer(aristasCerca(foco, 130));
+repintar();
 actualizarHUD();
 
 function actualizarHUD() {
   $('sala-intel').textContent = intel;
   $('sala-recon').textContent = `${pois.filter(p => p.reconocido).length}/${pois.length}`;
+  const cob = Math.round(conocidas.size / rawGrafo.aristas.length * 100);
+  const el = $('sala-carta'); if (el) el.textContent = `${cob}% del sector`;
   const vivos = equipo.filter(a => a.estado.vivo);
   const heridos = vivos.filter(a => a.estado.heridas.length).length;
   const bajas = equipo.length - vivos.length;
@@ -167,7 +227,10 @@ function actualizarHUD() {
 
 // ── Despacho / marcha ────────────────────────────────────────────────────────
 const VEL = 26;   // m/s — tiempo comprimido para prod (el recon cubre varios puntos)
-const peso = (e) => e.m * (1 + peligroDeArista(e, ecologia, horaActual, CRIATURAS) + (e._peligro ? 3 : 0));
+// El A* rutea con lo que CENVAC SABE, no con lo que hay: una calle sin reportar
+// pesa solo su distancia, así que la ruta corta por territorio ciego se ve
+// atractiva — y a veces lo es. Ese es el hueco donde se pierde al agente.
+const peso = (e) => e.m * (1 + (conocidas.has(e) ? peligroDeArista(e, ecologia, horaActual, CRIATURAS) : 0) + (e._peligro ? 3 : 0));
 
 function despachar(destino) {
   if (moving || destino === unidadNode) return;
@@ -258,7 +321,15 @@ function reconocer(poi) {
   if (r < 0.55) {                       // intel
     intel++; sfxIntel();
     if (mus) mus.golpe('hallazgo');
-    guionar([{ rol: 'lider', t: `Registrado. Hay datos aquí — ${calleDe(poi.node)}. Documentando.` }, { rol: 'control', t: 'Recibido. Buen material. Sigan.' }]);
+    // El intel no es un contador: es cartografía. Lo documentado alrededor del
+    // punto pasa a ser peligro CONOCIDO, y la próxima ruta puede evitarlo.
+    const nuevas = conocer(aristasCerca(nodeToLatLng(poi.node), 180));
+    guionar([
+      { rol: 'lider', t: `Registrado. Hay datos aquí — ${calleDe(poi.node)}. Documentando.` },
+      nuevas
+        ? { rol: 'control', t: `Recibido. Actualizo carta del sector: ${nuevas} tramo${nuevas !== 1 ? 's' : ''} más.` }
+        : { rol: 'control', t: 'Recibido. Nada que no tuviéramos ya. Sigan.' },
+    ]);
   } else if (r < 0.75) {                // rastro → revela un contacto
     revelarMasCercano();
     guionar([{ rol: 'miembro', t: 'Marcas frescas... algo pasó por aquí. No hace mucho.' }, { rol: 'control', t: 'Marcado. Ojo con lo que despertaron.' }]);

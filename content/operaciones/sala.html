@@ -24,9 +24,11 @@
   <div class="sala-stat"><span class="k">Estado</span><b id="sala-estado">en espera</b></div>
   <div class="sala-stat"><span class="k">Intel recuperada</span><b id="sala-intel">0</b></div>
   <div class="sala-stat"><span class="k">Puntos reconocidos</span><b id="sala-recon">0/0</b></div>
+  <div class="sala-stat"><span class="k">Carta del sector</span><b id="sala-carta">—</b></div>
   <div class="sala-stat"><span class="k">Unidad</span><b id="sala-unidad">—</b></div>
   <div class="sala-legend">
     <div>peligro: <span class="sala-dot" style="background:#2fbf5f"></span>nulo <span class="sala-dot" style="background:#ffe23a"></span>leve <span class="sala-dot" style="background:#ff9128"></span>alto <span class="sala-dot" style="background:#ff4436"></span>mortal</div>
+    <div><span class="sala-dot" style="background:#7d8f84"></span><b>punteado = sin reportar</b> — CENVAC no tiene datos de esa calle. No es seguro: es desconocido.</div>
     <div><span class="sala-dot" style="background:var(--amber)"></span>unidad · <span class="sala-dot" style="background:#6ad0ff"></span>punto recon · <span class="sala-dot" style="background:#ff2020"></span>contacto</div>
     <div style="margin-top:5px">› click en <b>nodo</b>: la unidad marcha ahí y reconoce</div>
     <div>› al detectar contacto se detiene; empujá para enfrentarlo</div>
@@ -62,6 +64,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="./js/ui-sala.js?v=13"></script>
+<script type="module" src="./js/ui-sala.js?v=15"></script>
 </body>
 </html>
