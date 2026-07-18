@@ -10,11 +10,47 @@
 import { AJUSTES, CANALES, EMOCIONES, crearVozSim, perfilVoz, ritmoChar } from './voz-sim.js';
 import { crearAmbiente, CATALOGO_SFX, TENSION_POR_EMOCION } from './ambiente.js';
 import { crearMusica, ESTADOS as ESTADOS_MUS, ESTILOS as ESTILOS_MUS } from './musica.js';
-import { crearAudioLib } from './audio-lib.js';
+import { crearAudioLib, GANANCIA_ARCHIVO } from './audio-lib.js';
 
 const $ = (id) => document.getElementById(id);
 
 // ── Escenas reales del recon (copiadas de ui-sala.js) ────────────────────────
+/**
+ * Arco contado SOLO con grabaciones — sin voz, sin música, sin drone.
+ *
+ * Existe para juzgar el material en limpio. En el arco normal cada grabación pelea
+ * contra el sintetizador, la cama y la reverb, y es imposible saber si un sonido no
+ * sirve o si simplemente está tapado. Acá no hay dónde esconderse.
+ *
+ * `espera` es la pausa DESPUÉS de disparar el sonido. Los silencios largos son parte
+ * del arco: en un sector muerto lo que da miedo es el hueco entre dos ruidos.
+ */
+const ARCO_SFX = [
+  { fase: 'Sector muerto',      clave: 'rafaga',            espera: 2600 },
+  { fase: 'Sector muerto',      clave: 'perro',             espera: 3200 },
+  { fase: 'Sector muerto',      clave: 'rafaga',            espera: 2400 },
+
+  { fase: 'Algo se movió',      clave: 'metal',             espera: 3000 },
+  { fase: 'Algo se movió',      clave: 'rafaga',            espera: 2200 },
+  { fase: 'Algo se movió',      clave: 'metal',             espera: 2800 },
+
+  { fase: 'Acecho',             clave: 'respiracionLejana', espera: 2600 },
+  { fase: 'Acecho',             clave: 'metal',             espera: 1800 },
+  { fase: 'Acecho',             clave: 'respiracionLejana', espera: 2200 },
+  { fase: 'Acecho',             clave: 'chillido',          espera: 1600 },
+
+  { fase: 'Contacto',           clave: 'rugido',            espera: 1400 },
+  { fase: 'Contacto',           clave: 'chillido',          espera: 900 },
+  { fase: 'Contacto',           clave: 'rugido',            espera: 1100 },
+  { fase: 'Contacto',           clave: 'chillido',          espera: 800 },
+  { fase: 'Contacto',           clave: 'rugido',            espera: 1800 },
+
+  { fase: 'Se replegó',         clave: 'respiracionLejana', espera: 2800 },
+  { fase: 'Se replegó',         clave: 'metal',             espera: 2600 },
+  { fase: 'Se replegó',         clave: 'rafaga',            espera: 3000 },
+  { fase: 'Se replegó',         clave: 'perro',             espera: 2000 },
+];
+
 const ESCENAS = {
   'Patrulla — silencio': [
     'miembro/frio: Sector muerto. Ni un perro.',
@@ -250,7 +286,9 @@ function ensureAudio() {
         : 'sin grabaciones — todo sintetizado (ver content/data/operaciones/audio/README.md)';
       repintarSFX();
     });
-    amb = crearAmbiente(ctx, busAmb, lib);
+    // El callback deja que un evento del ambiente agache también la música: si solo
+    // se agacha la cama del ambiente, la reverb de la música sigue tapando el golpe.
+    amb = crearAmbiente(ctx, busAmb, lib, (prof) => { if (mus) mus.duck(prof + 0.08); });
     mus = crearMusica(ctx, busAmb);
   }
   if (ctx.state === 'suspended') ctx.resume();
@@ -395,8 +433,10 @@ function aplicar() {
 
 // ── Reproducción ─────────────────────────────────────────────────────────────
 /** Cada renglón es `rol/emocion: texto`; ambos prefijos son opcionales. */
-function parsearGuion() {
-  return $('txt-guion').value.split('\n').map(l => l.trim()).filter(Boolean).map(l => {
+function parsearGuion() { return parsearLineas($('txt-guion').value.split('\n')); }
+
+function parsearLineas(lineas) {
+  return lineas.map(l => l.trim()).filter(Boolean).map(l => {
     const m = l.match(/^(control|lider|miembro)(?:\s*\/\s*([a-záéíóú]+))?\s*:\s*(.+)$/i);
     if (!m) return { rol: 'miembro', emo: emoActual(), t: l };
     const emo = (m[2] || '').toLowerCase();
@@ -560,6 +600,126 @@ function parar() {
   marcarCanal(null);
 }
 
+// ── Arco solo grabaciones ────────────────────────────────────────────────────
+// Temporizador propio (`twArco`): si compartiera `tw` con la escena de voz, parar
+// una cancelaría la otra a mitad de camino.
+let twArco = null, arcoVivo = false;
+
+/**
+ * Nivel pleno para este arco. `lib.sfx` pasa por el bus calibrado a
+ * GANANCIA_ARCHIVO (~−16 dB) para convivir con el sintetizador; acá no hay con qué
+ * convivir, así que se compensa para oír el archivo tal cual quedó.
+ */
+const VOL_PLENO = 1 / GANANCIA_ARCHIVO;
+
+function estadoArco(txt) { const e = $('arco-sfx-estado'); if (e) e.textContent = txt; }
+
+async function reproducirArcoSFX() {
+  pararArcoSFX();
+  parar();                       // corta voz/ambiente/música: el arco va solo
+  ensureAudio();
+  if (!lib) { estadoArco('la librería de audio no cargó'); return; }
+
+  arcoVivo = true;
+  let fasePrev = null, sonaron = 0, faltaron = [];
+
+  for (let i = 0; i < ARCO_SFX.length; i++) {
+    if (!arcoVivo) break;
+    const { fase, clave, espera } = ARCO_SFX[i];
+    if (fase !== fasePrev) { fasePrev = fase; }
+
+    const sono = lib.sfx(clave, { vol: VOL_PLENO });
+    if (sono) sonaron++; else if (!faltaron.includes(clave)) faltaron.push(clave);
+
+    estadoArco(`${fase} — ${clave}${sono ? '' : ' (SIN GRABACIÓN)'} · ${i + 1}/${ARCO_SFX.length}`);
+    await new Promise(r => { twArco = setTimeout(r, espera); });
+  }
+
+  if (arcoVivo) {
+    estadoArco(faltaron.length
+      ? `fin — ${sonaron}/${ARCO_SFX.length} sonaron · sin grabación: ${faltaron.join(', ')}`
+      : `fin — ${sonaron}/${ARCO_SFX.length} sonaron, todas grabadas`);
+  }
+  arcoVivo = false;
+}
+
+function pararArcoSFX() {
+  arcoVivo = false;
+  clearTimeout(twArco);
+  estadoArco('detenido');
+}
+
+// ── Arco: conversación + grabaciones, sin música ni cama ─────────────────────
+/**
+ * Lo que pidió Fabián: el ARCO COMPLETO de voz con los SFX reales encima, pero SIN
+ * música ni drone — que eran justamente los que los tapaban.
+ *
+ * Las señales van enganchadas al índice de línea del arco, y la mayoría suenan
+ * ANTES de la línea a propósito: el sonido motiva lo que dice la unidad. Si la
+ * respiración suena después de "hay algo respirando", la escena se siente doblada;
+ * si suena antes, el jugador la oye primero y la línea confirma lo que ya sospechó.
+ */
+const CUES_ARCO = {
+  0:  { antes: ['rafaga'] },
+  2:  { despues: ['perro'] },
+  4:  { despues: ['rafaga'] },
+
+  5:  { antes: ['metal'] },                 // la lámina motiva "¿esas puertas estaban abiertas?"
+  9:  { antes: ['respiracionLejana'] },     // se oye ANTES de "hay algo respirando"
+  10: { despues: ['respiracionLejana'] },   // otra vez, ya más cerca
+
+  11: { antes: ['metal'] },
+  12: { antes: ['chillido'] },
+  13: { despues: ['rugido'] },
+  14: { antes: ['rugido'] },
+  15: { despues: ['chillido'] },
+  17: { antes: ['rugido'] },                // el que se replega
+
+  20: { antes: ['rafaga'] },
+  24: { despues: ['rafaga'] },
+  25: { despues: ['perro'] },               // el mundo sigue, sin ellos
+};
+
+const NOMBRE_ARCO = 'ARCO COMPLETO — patrulla, contacto, asalto, baja';
+
+async function reproducirArcoVozSFX() {
+  pararArcoSFX();
+  parar();
+  ensureAudio();
+  if (!lib) { estadoArco('la librería de audio no cargó'); return; }
+
+  // Ni ambiente ni música: el punto es oír la voz contra las grabaciones y nada más.
+  arcoVivo = true; cancelado = false; reproduciendo = true;
+  const lineas = parsearLineas(ESCENAS[NOMBRE_ARCO]);
+  let disparos = 0;
+
+  const soltar = (claves) => (claves || []).forEach(c => { if (lib.sfx(c, { vol: VOL_PLENO })) disparos++; });
+
+  for (let i = 0; i < lineas.length; i++) {
+    if (!arcoVivo || cancelado) break;
+    const { rol, emo, t } = lineas[i];
+    const cue = CUES_ARCO[i] || {};
+
+    if (cue.antes) {
+      soltar(cue.antes);
+      // Un respiro para que el sonido se lea solo antes de que entre la voz.
+      await new Promise(r => { twArco = setTimeout(r, 900); });
+      if (!arcoVivo || cancelado) break;
+    }
+
+    estadoArco(`${i + 1}/${lineas.length} · ${rol}/${emo}${cue.antes ? ' ← ' + cue.antes.join(',') : ''}`);
+    await decirLinea(t, perfiles[rol], emociones[emo], rol, emo);
+    if (!arcoVivo || cancelado) break;
+
+    if (cue.despues) soltar(cue.despues);
+    await new Promise(r => { twArco = setTimeout(r, sim.pausaDe(emociones[emo])); });
+  }
+
+  reproduciendo = false;
+  if (arcoVivo && !cancelado) estadoArco(`fin — ${lineas.length} líneas · ${disparos} sonidos`);
+  arcoVivo = false;
+}
+
 // ── Salida ───────────────────────────────────────────────────────────────────
 /** JSON con SOLO lo que difiere de los valores base — así el diff es legible. */
 function serializar() {
@@ -631,8 +791,11 @@ montarMacros();
 montarSliders();
 repintar();
 
-$('btn-play').addEventListener('click', reproducir);
-$('btn-stop').addEventListener('click', parar);
+$('btn-play').addEventListener('click', () => { pararArcoSFX(); reproducir(); });
+$('btn-stop').addEventListener('click', () => { pararArcoSFX(); parar(); });
+$('btn-arco-voz-sfx').addEventListener('click', reproducirArcoVozSFX);
+$('btn-arco-sfx').addEventListener('click', reproducirArcoSFX);
+$('btn-arco-sfx-stop').addEventListener('click', () => { pararArcoSFX(); parar(); });
 $('btn-reset').addEventListener('click', () => {
   parar();
   ajustes = { ...BASE_AJUSTES };
