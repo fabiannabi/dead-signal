@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR PONIENTE m3m4",
+    "sector": "Catrina Monumental",
     "distrito": "SUR PONIENTE",
     "celda": "S_-3_-4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -833,7 +833,8 @@
           21.864771,
           -102.319503
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n33",
@@ -841,7 +842,8 @@
       "m": 119,
       "calle": "Bulevar San Marcos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n34",
@@ -967,7 +969,8 @@
       "m": 137,
       "calle": "Bulevar San Marcos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n1",
@@ -1077,7 +1080,8 @@
           21.859819,
           -102.323769
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n41",
@@ -1085,7 +1089,8 @@
       "m": 38,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n42",
@@ -1131,7 +1136,8 @@
           21.86262,
           -102.324525
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n43",
@@ -1153,7 +1159,8 @@
           21.860352,
           -102.323823
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n44",
@@ -1169,7 +1176,8 @@
       "m": 79,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n46",
@@ -1183,7 +1191,8 @@
           21.861208,
           -102.322324
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n47",
@@ -1191,7 +1200,8 @@
       "m": 21,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n48",
@@ -1205,7 +1215,8 @@
           21.860875,
           -102.322123
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n49",
@@ -1213,7 +1224,8 @@
       "m": 25,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1275,7 +1287,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n55",
@@ -1283,7 +1296,8 @@
       "m": 19,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n56",
@@ -1291,7 +1305,8 @@
       "m": 16,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n57",
@@ -1299,7 +1314,8 @@
       "m": 19,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n58",
@@ -1399,7 +1415,8 @@
       "m": 79,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n61",
@@ -1407,7 +1424,8 @@
       "m": 80,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -1415,7 +1433,8 @@
       "m": 79,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n62",
@@ -1423,7 +1442,8 @@
       "m": 81,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -1431,7 +1451,8 @@
       "m": 78,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n63",
@@ -1439,7 +1460,8 @@
       "m": 72,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -1525,7 +1547,8 @@
           21.862018,
           -102.322638
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n71",
@@ -1685,7 +1708,8 @@
       "m": 33,
       "calle": "Bulevar San Marcos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n88",
@@ -1693,7 +1717,8 @@
       "m": 15,
       "calle": "Bulevar San Marcos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n32",
@@ -1711,7 +1736,8 @@
           21.86524,
           -102.318765
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n8",
@@ -1941,7 +1967,8 @@
           21.866306,
           -102.319538
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n96",
@@ -1987,7 +2014,8 @@
           21.866141,
           -102.320267
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n95",
@@ -2001,7 +2029,8 @@
           21.86563,
           -102.319637
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n4",
@@ -2019,7 +2048,8 @@
           21.864256,
           -102.321213
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n100",

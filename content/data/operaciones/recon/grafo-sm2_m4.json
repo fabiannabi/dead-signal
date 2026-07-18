@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR PONIENTE m2m4",
+    "sector": "Parque Pirules",
     "distrito": "SUR PONIENTE",
     "celda": "S_-2_-4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1409,7 +1409,8 @@
       "m": 91,
       "calle": "Calle de las Rosas",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -1493,7 +1494,8 @@
       "m": 102,
       "calle": "Calle Manzanilla",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n19",
@@ -1737,7 +1739,8 @@
           21.867655,
           -102.320447
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n60",
@@ -1745,7 +1748,8 @@
       "m": 96,
       "calle": "Calle Azar",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n64",
@@ -2841,7 +2845,8 @@
       "m": 33,
       "calle": "Bulevar San Marcos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n141",
@@ -2849,7 +2854,8 @@
       "m": 15,
       "calle": "Bulevar San Marcos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n143",
@@ -2875,7 +2881,8 @@
           21.865853,
           -102.318444
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n144",
@@ -3973,7 +3980,8 @@
           21.866306,
           -102.319538
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n177",
@@ -4015,7 +4023,8 @@
       "m": 46,
       "calle": "Calle Amapola",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n62",
@@ -4023,7 +4032,8 @@
       "m": 43,
       "calle": "Calle Amapola",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -4031,7 +4041,8 @@
       "m": 29,
       "calle": "Calle Amapola",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n183",
@@ -4039,7 +4050,8 @@
       "m": 69,
       "calle": "Calle Amapola",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -4047,7 +4059,8 @@
       "m": 42,
       "calle": "Calle Amapola",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n63",
@@ -4055,7 +4068,9 @@
       "m": 56,
       "calle": "Calle Amapola",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true,
+      "parque": true
     },
     {
       "a": "n181",
@@ -4069,7 +4084,8 @@
           21.86563,
           -102.319637
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n174",
@@ -4293,7 +4309,8 @@
       "m": 26,
       "calle": "Calle de la Manzanilla",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n180",

@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE ORIENTE 43",
+    "sector": "Avenida Centaury",
     "distrito": "NORTE ORIENTE",
     "celda": "S_4_3",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -941,7 +941,8 @@
           21.909331,
           -102.277228
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n28",
@@ -949,7 +950,8 @@
       "m": 42,
       "calle": "Calle Lago de Chapala",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n29",
@@ -957,7 +959,8 @@
       "m": 42,
       "calle": "Calle Lago de Chapala",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n30",
@@ -965,7 +968,8 @@
       "m": 43,
       "calle": "Calle Lago de Chapala",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n31",
@@ -973,7 +977,8 @@
       "m": 47,
       "calle": "Calle Lago de Chapala",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n33",
@@ -1035,7 +1040,8 @@
       "m": 216,
       "calle": "Calle Lago de Texcoco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n39",
@@ -1067,7 +1073,8 @@
       "m": 217,
       "calle": "Calle Colorín",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n20",
@@ -1075,7 +1082,8 @@
       "m": 215,
       "calle": "Calle Lago de Pátzcuaro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n31",
@@ -1083,7 +1091,8 @@
       "m": 214,
       "calle": "Calle Lago de Chapultepec",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n25",
@@ -1181,7 +1190,8 @@
           21.903899,
           -102.282775
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n49",
@@ -1781,7 +1791,8 @@
           21.903154,
           -102.283004
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n98",
@@ -2165,7 +2176,8 @@
           21.903935,
           -102.283243
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n107",

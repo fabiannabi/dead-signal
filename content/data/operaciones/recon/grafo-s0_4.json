@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "ORIENTE 04",
+    "sector": "Alameda",
     "distrito": "ORIENTE",
     "celda": "S_0_4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -921,7 +921,8 @@
           21.885412,
           -102.272681
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n2",
@@ -995,7 +996,8 @@
           21.883077,
           -102.27732
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n6",
@@ -1003,7 +1005,8 @@
       "m": 145,
       "calle": "Avenida Alameda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -1011,7 +1014,8 @@
       "m": 27,
       "calle": "Avenida Alameda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -1027,7 +1031,8 @@
       "m": 181,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n11",
@@ -1035,7 +1040,8 @@
       "m": 12,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n12",
@@ -1043,7 +1049,8 @@
       "m": 17,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n13",
@@ -1051,7 +1058,8 @@
       "m": 14,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n14",
@@ -1059,7 +1067,8 @@
       "m": 120,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1067,7 +1076,8 @@
       "m": 107,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1075,7 +1085,8 @@
       "m": 9,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1089,7 +1100,8 @@
           21.88286,
           -102.276712
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n18",
@@ -1097,7 +1109,8 @@
       "m": 11,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n19",
@@ -1111,7 +1124,8 @@
           21.881749,
           -102.275498
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n21",
@@ -1119,7 +1133,8 @@
       "m": 136,
       "calle": "Calle Jaime Nunó",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -1165,7 +1180,8 @@
       "m": 27,
       "calle": "Calle Fernando Montes de Oca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1173,7 +1189,8 @@
       "m": 61,
       "calle": "Calle Fernando Montes de Oca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -1257,7 +1274,8 @@
       "m": 46,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n39",
@@ -1265,7 +1283,8 @@
       "m": 70,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -1281,7 +1300,8 @@
       "m": 100,
       "calle": "Calle Privada José Marín Iglesias",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -1289,7 +1309,8 @@
       "m": 14,
       "calle": "Calle Juan Escutia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -1297,7 +1318,8 @@
       "m": 89,
       "calle": "Calle Juan Escutia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -1353,7 +1375,8 @@
       "m": 50,
       "calle": "Privada González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1367,7 +1390,8 @@
           21.883492,
           -102.273654
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n51",
@@ -1375,7 +1399,8 @@
       "m": 84,
       "calle": "Calle Gutemberg",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n53",
@@ -1417,7 +1442,8 @@
       "m": 12,
       "calle": "Fernando Montes de Oca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n5",
@@ -1451,7 +1477,8 @@
       "m": 54,
       "calle": "Calle Vicente Suárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n59",
@@ -1459,7 +1486,8 @@
       "m": 25,
       "calle": "Calle Vicente Suárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -1467,7 +1495,8 @@
       "m": 20,
       "calle": "Calle Vicente Suárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n62",
@@ -1489,7 +1518,8 @@
           21.880599,
           -102.276446
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n43",
@@ -1497,7 +1527,8 @@
       "m": 50,
       "calle": "Calle Manuel G. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n61",
@@ -1505,7 +1536,8 @@
       "m": 26,
       "calle": "Calle Manuel G. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n20",
@@ -1513,7 +1545,8 @@
       "m": 13,
       "calle": "Calle Manuel G. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n63",
@@ -1521,7 +1554,8 @@
       "m": 21,
       "calle": "Calle Manuel G. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1529,7 +1563,8 @@
       "m": 114,
       "calle": "Calle Manuel G. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -1537,7 +1572,8 @@
       "m": 79,
       "calle": "Calle Manuel G. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n65",
@@ -1599,7 +1635,8 @@
           21.876975,
           -102.272136
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n67",
@@ -1657,7 +1694,8 @@
           21.872836,
           -102.272325
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n24",
@@ -1673,7 +1711,8 @@
       "m": 97,
       "calle": "Calle General Anaya",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n70",
@@ -1681,7 +1720,8 @@
       "m": 14,
       "calle": "Calle General Anaya",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n71",
@@ -1689,7 +1729,8 @@
       "m": 81,
       "calle": "Calle General Anaya",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -1697,7 +1738,8 @@
       "m": 106,
       "calle": "Calle Lope de Vega",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n71",
@@ -1705,7 +1747,8 @@
       "m": 57,
       "calle": "Calle Lope de Vega",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -1753,7 +1796,8 @@
       "m": 60,
       "calle": "Calle Fernando Montes de Oca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1761,7 +1805,8 @@
       "m": 28,
       "calle": "Calle Fernando Montes de Oca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -1769,7 +1814,8 @@
       "m": 9,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -1777,7 +1823,8 @@
       "m": 111,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -1785,7 +1832,8 @@
       "m": 7,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n78",
@@ -1793,7 +1841,8 @@
       "m": 59,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1801,7 +1850,8 @@
       "m": 77,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n79",
@@ -1809,7 +1859,8 @@
       "m": 21,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n80",
@@ -1817,7 +1868,8 @@
       "m": 25,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n82",
@@ -1985,7 +2037,8 @@
       "m": 331,
       "calle": "Calle Manuel Madrigal",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n18",
@@ -1993,7 +2046,8 @@
       "m": 14,
       "calle": "Calle Manuel Madrigal",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n100",
@@ -2001,7 +2055,8 @@
       "m": 21,
       "calle": "Calle Manuel Madrigal",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n101",
@@ -2009,7 +2064,8 @@
       "m": 181,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n100",
@@ -2017,7 +2073,8 @@
       "m": 12,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -2031,7 +2088,8 @@
           21.881131,
           -102.274328
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n99",
@@ -2085,7 +2143,8 @@
           21.880736,
           -102.274517
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n19",
@@ -2093,7 +2152,8 @@
       "m": 14,
       "calle": "Calle Manuel Madrigal",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -2101,7 +2161,8 @@
       "m": 21,
       "calle": "Calle Manuel Madrigal",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n106",
@@ -2425,7 +2486,8 @@
       "m": 11,
       "calle": "Calle Lope de Vega",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n124",
@@ -2433,7 +2495,8 @@
       "m": 58,
       "calle": "Calle Lope de Vega",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n70",
@@ -2441,7 +2504,8 @@
       "m": 105,
       "calle": "Calle Lope de Vega",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n129",
@@ -2505,7 +2569,8 @@
       "m": 116,
       "calle": "Alameda",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -2523,7 +2588,8 @@
           21.883595,
           -102.274907
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n133",
@@ -2531,7 +2597,8 @@
       "m": 8,
       "calle": "secondary_link",
       "clase": "secondary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n135",
@@ -2539,7 +2606,8 @@
       "m": 22,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n136",
@@ -2547,7 +2615,8 @@
       "m": 9,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n64",
@@ -2555,7 +2624,8 @@
       "m": 11,
       "calle": "Calle Manuel G. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -2563,7 +2633,8 @@
       "m": 12,
       "calle": "Calle Manuel G. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n138",
@@ -2585,7 +2656,8 @@
           21.884543,
           -102.274726
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n137",
@@ -2593,7 +2665,8 @@
       "m": 27,
       "calle": "Avenida Heroico Colegio Militar",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n133",
@@ -2601,7 +2674,8 @@
       "m": 15,
       "calle": "Avenida Heroico Colegio Militar",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n78",
@@ -2609,7 +2683,8 @@
       "m": 17,
       "calle": "Avenida Heroico Colegio Militar",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n134",
@@ -2617,7 +2692,8 @@
       "m": 24,
       "calle": "Avenida Heroico Colegio Militar",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n136",
@@ -2635,7 +2711,8 @@
           21.884947,
           -102.274786
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n140",
@@ -2721,7 +2798,8 @@
           21.884059,
           -102.273009
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n141",
@@ -2777,7 +2855,8 @@
       "m": 72,
       "calle": "Calle Fernando Montes de Oca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -2785,7 +2864,8 @@
       "m": 105,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n51",
@@ -2807,7 +2887,8 @@
           21.883682,
           -102.272818
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n150",
@@ -2919,7 +3000,8 @@
       "m": 32,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n156",
@@ -2927,7 +3009,8 @@
       "m": 56,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n157",
@@ -2953,7 +3036,8 @@
           21.883562,
           -102.272535
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n158",
@@ -3075,7 +3159,8 @@
       "m": 39,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n147",
@@ -3083,7 +3168,8 @@
       "m": 125,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n129",
@@ -3099,7 +3185,8 @@
       "m": 111,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n157",
@@ -3107,7 +3194,8 @@
       "m": 14,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n161",
@@ -3115,7 +3203,8 @@
       "m": 19,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n0",
@@ -3123,7 +3212,8 @@
       "m": 15,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n162",
@@ -3131,7 +3221,8 @@
       "m": 112,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n72",
@@ -3139,7 +3230,9 @@
       "m": 88,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n161",
@@ -3157,7 +3250,8 @@
           21.883816,
           -102.272324
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n164",
@@ -3199,7 +3293,8 @@
       "m": 19,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n160",
@@ -3207,7 +3302,8 @@
       "m": 42,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n165",
@@ -3377,7 +3473,8 @@
       "m": 182,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -3423,7 +3520,8 @@
       "m": 6,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n172",
@@ -3431,7 +3529,8 @@
       "m": 27,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n173",
@@ -3439,7 +3538,8 @@
       "m": 32,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n99",
@@ -3463,7 +3563,8 @@
       "m": 116,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -3507,7 +3608,8 @@
           21.883583,
           -102.276955
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n176",
@@ -3515,7 +3617,8 @@
       "m": 164,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -3523,7 +3626,8 @@
       "m": 10,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n177",

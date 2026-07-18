@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR PONIENTE m3m3",
+    "sector": "Avenida de los Maestros",
     "distrito": "SUR PONIENTE",
     "celda": "S_-3_-3",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -812,7 +812,8 @@
       "m": 309,
       "calle": "Calle Santander",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n38",
@@ -820,7 +821,8 @@
       "m": 57,
       "calle": "Calle Santander",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n40",
@@ -962,7 +964,8 @@
       "m": 105,
       "calle": "Calle Galicia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n33",
@@ -1018,7 +1021,8 @@
       "m": 52,
       "calle": "Calle Zamora",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n38",
@@ -1040,7 +1044,9 @@
           21.868444,
           -102.315501
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n62",
@@ -1066,7 +1072,8 @@
       "m": 246,
       "calle": "Calle Málaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n66",
@@ -1074,7 +1081,8 @@
       "m": 233,
       "calle": "Calle Galerías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -1088,7 +1096,8 @@
           21.860045,
           -102.310728
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n63",
@@ -1782,7 +1791,8 @@
       "m": 216,
       "calle": "Calle Segunda de Granada",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n85",

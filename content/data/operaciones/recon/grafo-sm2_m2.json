@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR PONIENTE m2m2",
+    "sector": "Polifórum Deportivo y Cultural Universitario Morelos",
     "distrito": "SUR PONIENTE",
     "celda": "S_-2_-2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -928,7 +928,9 @@
       "m": 123,
       "calle": "Avenida Convención de 1914 Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n1",
@@ -936,7 +938,9 @@
       "m": 121,
       "calle": "Avenida Convención de 1914 Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n2",
@@ -954,7 +958,8 @@
           21.867037,
           -102.304151
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n4",
@@ -1000,7 +1005,8 @@
       "m": 71,
       "calle": "Calle Torre de Marfil",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n11",
@@ -1018,7 +1024,8 @@
           21.869773,
           -102.310027
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n13",
@@ -1064,7 +1071,8 @@
           21.869637,
           -102.309947
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n18",
@@ -1078,7 +1086,8 @@
           21.869229,
           -102.308487
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n20",
@@ -1122,7 +1131,8 @@
           21.869988,
           -102.309129
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n10",
@@ -1130,7 +1140,8 @@
       "m": 39,
       "calle": "Torre Eiffel",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n23",
@@ -1138,7 +1149,8 @@
       "m": 13,
       "calle": "Torre Eiffel",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1152,7 +1164,8 @@
           21.869244,
           -102.309541
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n25",
@@ -1160,7 +1173,8 @@
       "m": 16,
       "calle": "Calle Torre Londres",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n26",
@@ -1168,7 +1182,8 @@
       "m": 19,
       "calle": "Calle Torre Londres",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n19",
@@ -1182,7 +1197,8 @@
           21.869784,
           -102.308687
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n28",
@@ -1294,7 +1310,8 @@
       "m": 61,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -1302,7 +1319,8 @@
       "m": 45,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n39",
@@ -1310,7 +1328,8 @@
       "m": 26,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -1318,7 +1337,8 @@
       "m": 2,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n18",
@@ -1326,7 +1346,8 @@
       "m": 4,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -1334,7 +1355,8 @@
       "m": 33,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -1348,7 +1370,8 @@
           21.868118,
           -102.308805
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n43",
@@ -1356,7 +1379,8 @@
       "m": 8,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -1544,7 +1568,8 @@
       "m": 54,
       "calle": "Calle República de Belice",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n58",
@@ -1768,7 +1793,8 @@
           21.871083,
           -102.312071
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n80",
@@ -1994,7 +2020,9 @@
           21.868851,
           -102.315264
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n0",
@@ -2002,7 +2030,8 @@
       "m": 15,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -2020,7 +2049,8 @@
           21.866515,
           -102.305418
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n2",
@@ -2028,7 +2058,8 @@
       "m": 82,
       "calle": "Calle República de Belice",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n103",
@@ -2036,7 +2067,8 @@
       "m": 49,
       "calle": "Calle República de Belice",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n104",
@@ -2054,7 +2086,8 @@
           21.865406,
           -102.306858
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n106",
@@ -2062,7 +2095,8 @@
       "m": 151,
       "calle": "Calle República de Guatemala",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n108",
@@ -2070,7 +2104,8 @@
       "m": 185,
       "calle": "Calle Montevideo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n104",
@@ -2088,7 +2123,8 @@
           21.865885,
           -102.304386
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n111",
@@ -2096,7 +2132,8 @@
       "m": 169,
       "calle": "Calle Río de Janeiro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n113",
@@ -2182,7 +2219,8 @@
           21.869275,
           -102.310308
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n117",
@@ -2360,7 +2398,8 @@
       "m": 9,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n123",
@@ -2368,7 +2407,8 @@
       "m": 98,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n124",
@@ -2376,7 +2416,8 @@
       "m": 22,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n125",
@@ -2384,7 +2425,8 @@
       "m": 16,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -2392,7 +2434,8 @@
       "m": 18,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n127",
@@ -2406,7 +2449,8 @@
           21.869253,
           -102.307909
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n128",
@@ -2414,7 +2458,8 @@
       "m": 65,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n64",
@@ -2490,7 +2535,9 @@
       "m": 80,
       "calle": "Calle Lima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n107",
@@ -2498,7 +2545,8 @@
       "m": 50,
       "calle": "Calle Lima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n111",
@@ -2506,7 +2554,8 @@
       "m": 51,
       "calle": "Calle Lima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n109",
@@ -2520,7 +2569,8 @@
           21.865611,
           -102.308024
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n44",
@@ -2528,7 +2578,8 @@
       "m": 16,
       "calle": "Avenida Ignacio T. Chávez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n133",
@@ -2646,7 +2697,8 @@
           21.870164,
           -102.316325
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n31",
@@ -2900,7 +2952,8 @@
           21.869501,
           -102.309235
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n145",
@@ -2958,7 +3011,8 @@
           21.869529,
           -102.309195
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n146",
@@ -2972,7 +3026,8 @@
           21.869512,
           -102.3092
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n147",
@@ -3014,7 +3069,8 @@
           21.869426,
           -102.30906
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n148",
@@ -3048,7 +3104,8 @@
           21.869388,
           -102.309096
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n149",
@@ -3066,7 +3123,8 @@
           21.869372,
           -102.309073
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n146",
@@ -3100,7 +3158,8 @@
           21.869446,
           -102.309069
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n150",
@@ -3196,7 +3255,8 @@
       "m": 47,
       "calle": "Avenida Convención de 1914 Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n132",
@@ -3204,7 +3264,8 @@
       "m": 17,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -3212,7 +3273,8 @@
       "m": 14,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n156",
@@ -3274,7 +3336,8 @@
           21.867383,
           -102.305233
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n57",
@@ -3282,7 +3345,9 @@
       "m": 151,
       "calle": "Avenida Convención de 1914 Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n132",
@@ -3290,7 +3355,8 @@
       "m": 113,
       "calle": "Avenida de los Maestros",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n73",
@@ -3328,7 +3394,8 @@
       "m": 56,
       "calle": "Avenida de los Maestros",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n154",
@@ -3336,7 +3403,8 @@
       "m": 42,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n159",
@@ -3344,7 +3412,9 @@
       "m": 41,
       "calle": "Avenida Convención de 1914 Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n37",
@@ -3478,7 +3548,8 @@
       "m": 16,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n39",
@@ -3486,7 +3557,8 @@
       "m": 17,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -3494,7 +3566,8 @@
       "m": 20,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -3502,7 +3575,8 @@
       "m": 18,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n124",
@@ -3510,7 +3584,8 @@
       "m": 20,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n121",
@@ -3526,7 +3601,8 @@
       "m": 19,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -3710,7 +3786,8 @@
           21.868937,
           -102.308648
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n163",
@@ -3804,7 +3881,8 @@
       "m": 29,
       "calle": "Torre de Pisa",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n94",
@@ -3820,7 +3898,8 @@
       "m": 57,
       "calle": "Torre Eiffel",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n177",
@@ -3834,7 +3913,8 @@
           21.869038,
           -102.309093
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n24",
@@ -3852,7 +3932,8 @@
           21.869013,
           -102.309157
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n27",
@@ -3870,7 +3951,8 @@
           21.870009,
           -102.309031
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n149",
@@ -3892,7 +3974,8 @@
           21.869314,
           -102.309089
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n23",
@@ -3914,7 +3997,8 @@
           21.869463,
           -102.309265
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n178",
@@ -3958,7 +4042,8 @@
           21.867676,
           -102.30646
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n181",
@@ -3966,7 +4051,8 @@
       "m": 9,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -3974,7 +4060,8 @@
       "m": 19,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n123",
@@ -3982,7 +4069,8 @@
       "m": 5,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n182",

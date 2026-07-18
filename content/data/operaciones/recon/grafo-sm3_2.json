@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR ORIENTE m32",
+    "sector": "Avenida Aguascalientes Sur",
     "distrito": "SUR ORIENTE",
     "celda": "S_-3_2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1360,7 +1360,8 @@
           21.86262,
           -102.288996
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n64",
@@ -2106,7 +2107,8 @@
           21.863401,
           -102.28838
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n68",

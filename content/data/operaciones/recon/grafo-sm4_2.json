@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR ORIENTE m42",
+    "sector": "Avenida Aguascalientes Sur",
     "distrito": "SUR ORIENTE",
     "celda": "S_-4_2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1803,7 +1803,8 @@
           21.856502,
           -102.285741
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n40",
@@ -1811,7 +1812,8 @@
       "m": 128,
       "calle": "Calle Paseo de las Garzas",
       "clase": "unclassified",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -1835,7 +1837,8 @@
       "m": 127,
       "calle": "Calle Paseo de las Garzas",
       "clase": "unclassified",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1843,7 +1846,8 @@
       "m": 14,
       "calle": "Calle Paseo de las Garzas",
       "clase": "unclassified",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1851,7 +1855,8 @@
       "m": 192,
       "calle": "Calle Paseo de las Garzas",
       "clase": "unclassified",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -3213,7 +3218,8 @@
       "m": 53,
       "calle": "Circuito Alejandría",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n115",
@@ -3277,7 +3283,8 @@
       "m": 20,
       "calle": "Circuito Alejandría",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n122",
@@ -3303,7 +3310,8 @@
           21.857589,
           -102.285728
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n43",
@@ -3311,7 +3319,8 @@
       "m": 7,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n125",
@@ -3623,7 +3632,8 @@
           21.855922,
           -102.28448
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n152",
@@ -3631,7 +3641,8 @@
       "m": 69,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n153",
@@ -3647,7 +3658,8 @@
       "m": 13,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n152",
@@ -3673,7 +3685,8 @@
           21.855814,
           -102.283296
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n154",
@@ -3731,7 +3744,8 @@
       "m": 71,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n158",
@@ -3757,7 +3771,8 @@
           21.857632,
           -102.285446
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n159",
@@ -3765,7 +3780,8 @@
       "m": 10,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n160",
@@ -3979,7 +3995,8 @@
           21.856239,
           -102.285213
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n183",
@@ -4013,7 +4030,8 @@
       "m": 63,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -4021,7 +4039,8 @@
       "m": 13,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n159",
@@ -4029,7 +4048,8 @@
       "m": 9,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n185",
@@ -4037,7 +4057,8 @@
       "m": 14,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n188",
@@ -4677,7 +4698,8 @@
       "m": 6,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n124",
@@ -4685,7 +4707,8 @@
       "m": 8,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n215",

@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE 31",
+    "sector": "IMSS Clinica 10",
     "distrito": "NORTE",
     "celda": "S_3_1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1682,7 +1682,8 @@
           21.905053,
           -102.292334
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n67",
@@ -2392,7 +2393,8 @@
           21.903921,
           -102.292577
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n93",
@@ -2892,7 +2894,8 @@
           21.894956,
           -102.290888
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n58",

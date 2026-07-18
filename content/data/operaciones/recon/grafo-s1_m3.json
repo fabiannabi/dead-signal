@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "PONIENTE 1m3",
+    "sector": "Parque Panorama",
     "distrito": "PONIENTE",
     "celda": "S_1_-3",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1079,7 +1079,8 @@
       "m": 77,
       "calle": "Calle Jardines Eternos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n4",
@@ -1087,7 +1088,8 @@
       "m": 53,
       "calle": "Calle Jardines Eternos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n5",
@@ -1095,7 +1097,8 @@
       "m": 21,
       "calle": "Calle Jardines Eternos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -1103,7 +1106,8 @@
       "m": 51,
       "calle": "Calle Jardines Eternos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -1111,7 +1115,8 @@
       "m": 58,
       "calle": "Calle Jardines Eternos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -1141,7 +1146,8 @@
           21.889853,
           -102.313992
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n11",
@@ -1155,7 +1161,8 @@
           21.890294,
           -102.314468
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n12",
@@ -1169,7 +1176,8 @@
           21.890764,
           -102.314964
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n13",
@@ -1183,7 +1191,8 @@
           21.891438,
           -102.315676
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n14",
@@ -1239,7 +1248,8 @@
       "m": 51,
       "calle": "Calle Miraflores",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -1247,7 +1257,8 @@
       "m": 58,
       "calle": "Calle Miraflores",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n23",
@@ -1255,7 +1266,8 @@
       "m": 57,
       "calle": "Calle Miraflores",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n24",
@@ -1263,7 +1275,8 @@
       "m": 50,
       "calle": "Calle Miraflores",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n26",
@@ -1277,7 +1290,8 @@
           21.890555,
           -102.313539
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n4",
@@ -1285,7 +1299,8 @@
       "m": 15,
       "calle": "Calle Montebello",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1317,7 +1332,8 @@
       "m": 49,
       "calle": "Calle Mar Mediterráneo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n24",
@@ -1325,7 +1341,8 @@
       "m": 117,
       "calle": "Calle Mar Mediterráneo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -1341,7 +1358,8 @@
       "m": 124,
       "calle": "Calle Lindavista",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -1349,7 +1367,8 @@
       "m": 118,
       "calle": "Calle Lindavista",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -1357,7 +1376,8 @@
       "m": 142,
       "calle": "Calle Lindavista",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -1447,7 +1467,8 @@
       "m": 118,
       "calle": "Calle Benjamín de la Mora",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n23",
@@ -1455,7 +1476,8 @@
       "m": 100,
       "calle": "Calle Benjamín de la Mora",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -1477,7 +1499,8 @@
           21.887321,
           -102.315206
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n40",
@@ -1509,7 +1532,8 @@
       "m": 118,
       "calle": "Calle Vista Hermosa",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -1517,7 +1541,8 @@
       "m": 86,
       "calle": "Calle Vista Hermosa",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -1593,7 +1618,8 @@
           21.887475,
           -102.310806
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n45",
@@ -1657,7 +1683,8 @@
           21.8841,
           -102.311475
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n49",
@@ -1741,7 +1768,9 @@
           21.888322,
           -102.318966
         ]
-      ]
+      ],
+      "parque": true,
+      "panteon": true
     },
     {
       "a": "n53",
@@ -1771,7 +1800,8 @@
       "m": 138,
       "calle": "Calle Sor Juana Inés de la Cruz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -1861,7 +1891,8 @@
           21.883723,
           -102.313307
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n61",
@@ -1893,7 +1924,8 @@
       "m": 138,
       "calle": "Calle Fray Servando Teresa de Mier",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -2091,7 +2123,8 @@
       "m": 23,
       "calle": "Avenida Aguascalientes Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n25",
@@ -2099,7 +2132,8 @@
       "m": 109,
       "calle": "Avenida Aguascalientes Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n82",
@@ -2251,7 +2285,8 @@
           21.889759,
           -102.317693
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n88",
@@ -2265,7 +2300,8 @@
           21.889743,
           -102.318563
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n90",
@@ -2283,7 +2319,8 @@
           21.889664,
           -102.318288
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n91",
@@ -2301,7 +2338,8 @@
           21.889676,
           -102.317654
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n92",
@@ -2309,7 +2347,8 @@
       "m": 6,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n92",
@@ -2317,7 +2356,8 @@
       "m": 39,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n93",
@@ -2341,7 +2381,8 @@
       "m": 38,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n96",
@@ -2349,7 +2390,8 @@
       "m": 28,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n97",
@@ -2357,7 +2399,8 @@
       "m": 46,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n99",
@@ -2371,7 +2414,8 @@
           21.889327,
           -102.318283
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n96",
@@ -2379,7 +2423,8 @@
       "m": 29,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n100",
@@ -2387,7 +2432,8 @@
       "m": 29,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n97",
@@ -2395,7 +2441,8 @@
       "m": 29,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n88",
@@ -2413,7 +2460,8 @@
           21.890547,
           -102.31812
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n53",
@@ -2821,7 +2869,8 @@
       "m": 94,
       "calle": "Calle Paseo del Río",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n137",
@@ -2939,7 +2988,8 @@
           21.887777,
           -102.316904
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n148",
@@ -2969,7 +3019,8 @@
           21.888286,
           -102.316803
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n152",
@@ -3099,7 +3150,8 @@
           21.887685,
           -102.317008
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n163",
@@ -3143,7 +3195,8 @@
           21.888142,
           -102.316959
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n150",
@@ -3157,7 +3210,8 @@
           21.888287,
           -102.316845
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n166",
@@ -3259,7 +3313,8 @@
       "m": 125,
       "calle": "Avenida Aguascalientes Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n167",
@@ -3317,7 +3372,8 @@
       "m": 28,
       "calle": "Avenida Aguascalientes Poniente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n51",
@@ -3335,7 +3391,8 @@
           21.887841,
           -102.317055
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n138",
@@ -3465,7 +3522,8 @@
           21.883749,
           -102.312374
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n169",
@@ -3473,7 +3531,8 @@
       "m": 4,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -3481,7 +3540,8 @@
       "m": 58,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -3515,7 +3575,8 @@
       "m": 19,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -3547,7 +3608,8 @@
       "m": 48,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n172",
@@ -3601,7 +3663,8 @@
           21.880651,
           -102.312506
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n123",
@@ -4077,7 +4140,8 @@
       "m": 36,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n195",
@@ -4091,7 +4155,8 @@
           21.889671,
           -102.314525
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n27",
@@ -4099,7 +4164,8 @@
       "m": 55,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n137",
@@ -4137,7 +4203,8 @@
       "m": 35,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n156",
@@ -4195,7 +4262,8 @@
           21.888357,
           -102.316534
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n30",
@@ -4203,7 +4271,8 @@
       "m": 78,
       "calle": "Calle Arroyo Los Arellano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -4221,7 +4290,8 @@
           21.887614,
           -102.315391
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n31",
@@ -4235,7 +4305,8 @@
           21.887583,
           -102.314799
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n117",

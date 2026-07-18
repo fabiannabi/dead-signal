@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "PONIENTE 0m4",
+    "sector": "Parque San Marcos",
     "distrito": "PONIENTE",
     "celda": "S_0_-4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -277,7 +277,8 @@
       "m": 54,
       "calle": "Calle Valle",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -285,7 +286,8 @@
       "m": 53,
       "calle": "Calle Valle",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -401,7 +403,8 @@
       "m": 53,
       "calle": "Calle Valle",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -409,7 +412,8 @@
       "m": 54,
       "calle": "Calle Valle",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -439,7 +443,8 @@
       "m": 55,
       "calle": "Calle Valle del Oro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -511,7 +516,8 @@
       "m": 150,
       "calle": "Calle Valle de San José",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n20",
@@ -519,7 +525,8 @@
       "m": 149,
       "calle": "Calle Valle Nacional",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -527,7 +534,8 @@
       "m": 57,
       "calle": "Calle Valle Nacional",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -641,7 +649,8 @@
       "m": 139,
       "calle": "Privada Valle Nacional",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -773,7 +782,8 @@
       "m": 127,
       "calle": "Privada Valle de San José",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n19",
@@ -797,7 +807,8 @@
       "m": 9,
       "calle": "Calle Valle de San José",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -805,7 +816,8 @@
       "m": 10,
       "calle": "Calle Valle Nacional",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     }
   ]
 }

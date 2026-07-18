@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR PONIENTE m4m2",
+    "sector": "Parque Versalles Segunda Sección",
     "distrito": "SUR PONIENTE",
     "celda": "S_-4_-2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -579,7 +579,8 @@
       "m": 245,
       "calle": "Calle Galicia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n4",
@@ -593,7 +594,8 @@
           21.860018,
           -102.308993
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n6",
@@ -675,7 +677,8 @@
           21.860074,
           -102.311026
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n13",
@@ -683,7 +686,8 @@
       "m": 213,
       "calle": "Calle Galerías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n5",
@@ -707,7 +711,8 @@
       "m": 263,
       "calle": "Calle Jardines de Versalles",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -715,7 +720,8 @@
       "m": 247,
       "calle": "Calle Jardines de Versalles",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -873,7 +879,8 @@
       "m": 246,
       "calle": "Calle José Aceves Díaz de Sandi",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n24",
@@ -887,7 +894,8 @@
           21.855842,
           -102.309905
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n25",
@@ -937,7 +945,8 @@
       "m": 72,
       "calle": "Calle General Francisco Carrera Torres",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -945,7 +954,8 @@
       "m": 60,
       "calle": "Calle General Francisco Carrera Torres",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -953,7 +963,8 @@
       "m": 53,
       "calle": "Calle General Francisco Carrera Torres",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n24",
@@ -967,7 +978,8 @@
           21.855529,
           -102.309049
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n34",
@@ -975,7 +987,8 @@
       "m": 52,
       "calle": "Calle General Francisco Carrera Torres",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -1065,7 +1078,8 @@
       "m": 244,
       "calle": "Calle Gregorio Giacinti López",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -1265,7 +1279,8 @@
       "m": 255,
       "calle": "Calle Gilberto López Velarde",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -1273,7 +1288,8 @@
       "m": 271,
       "calle": "Calle Gilberto López Velarde",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n64",
@@ -1653,7 +1669,8 @@
           21.861104,
           -102.310109
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n4",
@@ -1667,7 +1684,8 @@
           21.860307,
           -102.310576
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n13",
@@ -1675,7 +1693,8 @@
       "m": 61,
       "calle": "Calle Lima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -2019,7 +2038,8 @@
           21.858854,
           -102.305479
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n18",
@@ -2169,7 +2189,8 @@
           21.860028,
           -102.301032
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n77",
@@ -2247,7 +2268,8 @@
       "m": 241,
       "calle": "Calle Enrique C. Rébsamen",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -2255,7 +2277,8 @@
       "m": 276,
       "calle": "Calle Enrique C. Rébsamen",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n54",
@@ -2311,7 +2334,8 @@
       "m": 65,
       "calle": "Calle Lima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",

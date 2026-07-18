@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "CENTRO 11",
+    "sector": "Chalet Douglas",
     "distrito": "CENTRO",
     "celda": "S_1_1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -751,7 +751,8 @@
           21.890188,
           -102.293707
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n2",
@@ -759,7 +760,8 @@
       "m": 65,
       "calle": "Calle de Vázquez del Mercado",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -767,7 +769,8 @@
       "m": 89,
       "calle": "Calle de Vázquez del Mercado",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n4",
@@ -781,7 +784,8 @@
           21.886513,
           -102.28817
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n5",
@@ -879,7 +883,9 @@
           21.883782,
           -102.295149
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n12",
@@ -963,7 +969,8 @@
           21.883875,
           -102.292581
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n20",
@@ -971,7 +978,8 @@
       "m": 31,
       "calle": "Calle Licenciado Francisco Primo Verdad",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -1003,7 +1011,8 @@
           21.882756,
           -102.292547
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n25",
@@ -1077,7 +1086,8 @@
       "m": 82,
       "calle": "Calle Ramón López Velarde",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n33",
@@ -1085,7 +1095,8 @@
       "m": 26,
       "calle": "Calle Ramón López Velarde",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n34",
@@ -1093,7 +1104,8 @@
       "m": 44,
       "calle": "Calle Ramón López Velarde",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n12",
@@ -1101,7 +1113,8 @@
       "m": 23,
       "calle": "Calle Ramón López Velarde",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -1109,7 +1122,8 @@
       "m": 77,
       "calle": "Calle Ramón López Velarde",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n36",
@@ -1201,7 +1215,8 @@
       "m": 66,
       "calle": "Cosio Norte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -1239,7 +1254,8 @@
       "m": 79,
       "calle": "Calle Durango",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n48",
@@ -1345,7 +1361,8 @@
       "m": 49,
       "calle": "Privada Víctor Galindo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n63",
@@ -1353,7 +1370,8 @@
       "m": 20,
       "calle": "Privada Víctor Galindo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -1427,7 +1445,8 @@
       "m": 46,
       "calle": "Privada Víctor Galindo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n53",
@@ -1443,7 +1462,8 @@
       "m": 29,
       "calle": "Pedro Parga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -1503,7 +1523,8 @@
           21.886793,
           -102.295776
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n80",
@@ -1511,7 +1532,8 @@
       "m": 144,
       "calle": "Calle Guzmán",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n82",
@@ -1537,7 +1559,8 @@
           21.890449,
           -102.293436
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n69",
@@ -1559,7 +1582,8 @@
       "m": 122,
       "calle": "Calle General José María Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n85",
@@ -1589,7 +1613,8 @@
           21.88673,
           -102.296311
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n1",
@@ -1597,7 +1622,8 @@
       "m": 63,
       "calle": "Calle México",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n81",
@@ -1619,7 +1645,8 @@
           21.88943,
           -102.291901
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n88",
@@ -1721,7 +1748,8 @@
           21.88572,
           -102.294251
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n81",
@@ -1729,7 +1757,8 @@
       "m": 60,
       "calle": "Calle Gran Avenida",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n94",
@@ -1767,7 +1796,8 @@
           21.892149,
           -102.293315
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n7",
@@ -1775,7 +1805,8 @@
       "m": 33,
       "calle": "Calle Pedro Parga",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n96",
@@ -1783,7 +1814,8 @@
       "m": 71,
       "calle": "Calle Pedro Parga",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -2171,7 +2203,8 @@
       "m": 131,
       "calle": "Calle Independencia de México",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n94",
@@ -2185,7 +2218,8 @@
           21.890024,
           -102.293111
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n83",
@@ -2193,7 +2227,8 @@
       "m": 11,
       "calle": "Calle General José María Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -2201,7 +2236,8 @@
       "m": 44,
       "calle": "Privada Minerva",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n113",
@@ -2235,7 +2271,8 @@
           21.884831,
           -102.287532
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n99",
@@ -2435,7 +2472,8 @@
       "m": 61,
       "calle": "Calle Catalina de Ayala",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -2443,7 +2481,8 @@
       "m": 46,
       "calle": "Calle Catalina de Ayala",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n71",
@@ -2451,7 +2490,8 @@
       "m": 24,
       "calle": "Calle Catalina de Ayala",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n23",
@@ -2535,7 +2575,8 @@
       "m": 54,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -2553,7 +2594,8 @@
           21.88504,
           -102.293872
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n126",
@@ -2617,7 +2659,8 @@
       "m": 51,
       "calle": "Privada Ramón López Velarde 203",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n87",
@@ -2667,7 +2710,8 @@
           21.887914,
           -102.287204
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n114",
@@ -2689,7 +2733,8 @@
       "m": 117,
       "calle": "Calle Pedro Parga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n73",
@@ -2697,7 +2742,8 @@
       "m": 14,
       "calle": "Calle Pedro Parga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n120",
@@ -2711,7 +2757,8 @@
           21.885905,
           -102.29054
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n108",
@@ -2727,7 +2774,8 @@
       "m": 5,
       "calle": "Privada Pedro Parga",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n127",
@@ -2743,7 +2791,8 @@
       "m": 6,
       "calle": "Privada Pedro Parga",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n137",
@@ -2787,7 +2836,8 @@
       "m": 23,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -2795,7 +2845,8 @@
       "m": 13,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n140",
@@ -2841,7 +2892,8 @@
       "m": 40,
       "calle": "Calle Cosío Norte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -2859,7 +2911,8 @@
           21.883443,
           -102.287699
         ]
-      ]
+      ],
+      "parque": true
     }
   ]
 }

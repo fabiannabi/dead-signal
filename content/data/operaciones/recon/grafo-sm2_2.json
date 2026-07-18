@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR ORIENTE m22",
+    "sector": "Centro Médico La Salud",
     "distrito": "SUR ORIENTE",
     "celda": "S_-2_2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1103,7 +1103,8 @@
       "m": 64,
       "calle": "Calle Hernán González",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1117,7 +1118,8 @@
           21.868815,
           -102.287812
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n17",
@@ -1143,7 +1145,8 @@
           21.868467,
           -102.291364
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n18",
@@ -1181,7 +1184,8 @@
       "m": 119,
       "calle": "Calle Jardín del Encino",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1189,7 +1193,8 @@
       "m": 152,
       "calle": "Calle Jardín del Encino",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n20",
@@ -1271,7 +1276,8 @@
       "m": 45,
       "calle": "Calle Josefa Ortiz de Domínguez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1279,7 +1285,8 @@
       "m": 64,
       "calle": "Calle Josefa Ortiz de Domínguez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1805,7 +1812,8 @@
           21.869805,
           -102.281948
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n81",
@@ -1831,7 +1839,8 @@
       "m": 45,
       "calle": "Calle 3 de Mayo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n84",
@@ -1839,7 +1848,8 @@
       "m": 118,
       "calle": "Calle 3 de Mayo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n85",
@@ -1977,7 +1987,8 @@
       "m": 155,
       "calle": "Calle San Joaquín",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n94",
@@ -2111,7 +2122,8 @@
           21.868329,
           -102.288261
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n17",
@@ -2119,7 +2131,8 @@
       "m": 129,
       "calle": "Calle Jardín de Zaragoza",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n99",
@@ -3267,7 +3280,8 @@
           21.871673,
           -102.282239
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n149",

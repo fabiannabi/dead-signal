@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE 41",
+    "sector": "Parque Las Hadas",
     "distrito": "NORTE",
     "celda": "S_4_1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -888,7 +888,8 @@
       "m": 162,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n5",
@@ -896,7 +897,8 @@
       "m": 75,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n6",
@@ -904,7 +906,8 @@
       "m": 47,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n7",
@@ -912,7 +915,8 @@
       "m": 53,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n9",
@@ -920,7 +924,9 @@
       "m": 171,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n10",
@@ -942,7 +948,9 @@
           21.903851,
           -102.295657
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n12",
@@ -956,7 +964,8 @@
           21.906548,
           -102.294785
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n13",
@@ -964,7 +973,8 @@
       "m": 52,
       "calle": "Calle Asientos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n15",
@@ -972,7 +982,9 @@
       "m": 56,
       "calle": "Calle Potrero del Llano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n16",
@@ -980,7 +992,8 @@
       "m": 17,
       "calle": "Calle Potrero del Llano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n17",
@@ -988,7 +1001,8 @@
       "m": 56,
       "calle": "Calle Potrero del Llano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n18",
@@ -996,7 +1010,8 @@
       "m": 64,
       "calle": "Calle Potrero del Llano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n13",
@@ -1004,7 +1019,8 @@
       "m": 99,
       "calle": "Calle Potrero del Llano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n20",
@@ -1012,7 +1028,8 @@
       "m": 122,
       "calle": "Calle Minatitlán",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n14",
@@ -1020,7 +1037,8 @@
       "m": 101,
       "calle": "Calle Minatitlán",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n22",
@@ -1028,7 +1046,8 @@
       "m": 116,
       "calle": "Calle Faja de Oro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n20",
@@ -1036,7 +1055,8 @@
       "m": 51,
       "calle": "Calle Faja de Oro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n23",
@@ -1044,7 +1064,9 @@
       "m": 74,
       "calle": "Calle Poza Rica",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n16",
@@ -1052,7 +1074,8 @@
       "m": 167,
       "calle": "Calle Faja de Oro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n18",
@@ -1070,7 +1093,8 @@
           21.906063,
           -102.295621
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n27",
@@ -1092,7 +1116,9 @@
           21.904859,
           -102.294881
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n28",
@@ -1110,7 +1136,8 @@
           21.906664,
           -102.293143
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n30",
@@ -1144,7 +1171,8 @@
           21.907971,
           -102.287557
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n31",
@@ -1152,7 +1180,8 @@
       "m": 134,
       "calle": "Calle Aglaya",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -1192,7 +1221,8 @@
       "m": 161,
       "calle": "Calle Industria",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n4",
@@ -1296,7 +1326,8 @@
       "m": 151,
       "calle": "Calle Afrodita",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n48",
@@ -1320,7 +1351,8 @@
       "m": 209,
       "calle": "Calle Arco de Belén",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -1512,7 +1544,8 @@
       "m": 138,
       "calle": "Calle Calipso",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n75",
@@ -1520,7 +1553,8 @@
       "m": 191,
       "calle": "Calle Arco Iris",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1536,7 +1570,8 @@
       "m": 49,
       "calle": "Calle Los Arcos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n75",
@@ -1544,7 +1579,8 @@
       "m": 17,
       "calle": "Calle Los Arcos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -1552,7 +1588,8 @@
       "m": 30,
       "calle": "Calle Los Arcos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -1560,7 +1597,8 @@
       "m": 45,
       "calle": "Calle Los Arcos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -1600,7 +1638,8 @@
           21.909612,
           -102.288074
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n80",
@@ -1624,7 +1663,8 @@
       "m": 46,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n83",
@@ -1632,7 +1672,8 @@
       "m": 39,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n22",
@@ -1640,7 +1681,8 @@
       "m": 18,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n25",
@@ -1648,7 +1690,8 @@
       "m": 144,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n84",
@@ -1656,7 +1699,8 @@
       "m": 10,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n9",
@@ -1664,7 +1708,8 @@
       "m": 14,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n85",
@@ -1678,7 +1723,8 @@
           21.901928,
           -102.292676
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n2",
@@ -1694,7 +1740,8 @@
       "m": 173,
       "calle": "Calle Aglaya",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -1736,7 +1783,8 @@
           21.907571,
           -102.286609
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n89",
@@ -1920,7 +1968,8 @@
           21.90742,
           -102.294736
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n19",
@@ -1928,7 +1977,8 @@
       "m": 53,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n21",
@@ -1942,7 +1992,8 @@
           21.90759,
           -102.292866
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n103",
@@ -1956,7 +2007,9 @@
           21.903827,
           -102.293735
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n53",
@@ -2098,7 +2151,8 @@
       "m": 63,
       "calle": "Calle Aglaya",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n114",
@@ -2186,7 +2240,8 @@
       "m": 18,
       "calle": "Calle Afrodita",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n119",
@@ -2194,7 +2249,8 @@
       "m": 25,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n120",
@@ -2232,7 +2288,8 @@
       "m": 87,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n8",
@@ -2240,7 +2297,8 @@
       "m": 92,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n125",
@@ -2248,7 +2306,8 @@
       "m": 35,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n28",
@@ -2256,7 +2315,8 @@
       "m": 12,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n126",
@@ -2264,7 +2324,8 @@
       "m": 26,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n89",
@@ -2272,7 +2333,8 @@
       "m": 67,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n106",
@@ -2392,7 +2454,8 @@
       "m": 4,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n134",
@@ -2400,7 +2463,8 @@
       "m": 48,
       "calle": "Boulevard a Zacatecas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n135",
@@ -2450,7 +2514,8 @@
           21.903995,
           -102.292187
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n116",
@@ -2582,7 +2647,8 @@
       "m": 18,
       "calle": "Calle Ébano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n41",
@@ -2660,7 +2726,8 @@
       "m": 92,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n81",
@@ -2718,7 +2785,8 @@
           21.907167,
           -102.291621
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n162",
@@ -2756,7 +2824,8 @@
       "m": 71,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n126",
@@ -2764,7 +2833,8 @@
       "m": 27,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n10",
@@ -2772,7 +2842,9 @@
       "m": 49,
       "calle": "Calle Potrero del Llano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n23",
@@ -2780,7 +2852,9 @@
       "m": 49,
       "calle": "Calle Potrero del Llano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n171",
@@ -2810,7 +2884,8 @@
           21.90462,
           -102.291959
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n173",
@@ -2818,7 +2893,8 @@
       "m": 77,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n174",
@@ -2826,7 +2902,8 @@
       "m": 44,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n175",

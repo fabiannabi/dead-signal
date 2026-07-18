@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "PONIENTE 0m2",
+    "sector": "Calle Asunción",
     "distrito": "PONIENTE",
     "celda": "S_0_-2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -848,7 +848,8 @@
       "m": 137,
       "calle": "Calle Alfonso Esparza Oteo",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n13",
@@ -856,7 +857,8 @@
       "m": 7,
       "calle": "Calle Alfonso Esparza Oteo",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1092,7 +1094,8 @@
       "m": 127,
       "calle": "Calle Asunción",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n36",
@@ -1300,7 +1303,8 @@
       "m": 129,
       "calle": "Calle Jesús F. Contreras",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -1322,7 +1326,8 @@
           21.882615,
           -102.310822
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n58",
@@ -1330,7 +1335,8 @@
       "m": 34,
       "calle": "Calle Amador Román",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n59",
@@ -1338,7 +1344,8 @@
       "m": 25,
       "calle": "Calle Amador Román",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n61",
@@ -1346,7 +1353,8 @@
       "m": 28,
       "calle": "Andador Gabriel Vicente Picheta",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n62",
@@ -1354,7 +1362,8 @@
       "m": 41,
       "calle": "Andador Gabriel Vicente Picheta",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n64",
@@ -1370,7 +1379,8 @@
       "m": 27,
       "calle": "Colima",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n62",
@@ -1378,7 +1388,8 @@
       "m": 27,
       "calle": "Colima",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -1386,7 +1397,8 @@
       "m": 26,
       "calle": "Colima",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -1394,7 +1406,8 @@
       "m": 13,
       "calle": "Calle David Reynoso Flores",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n70",
@@ -1450,7 +1463,8 @@
       "m": 16,
       "calle": "pedestrian",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -1458,7 +1472,8 @@
       "m": 11,
       "calle": "pedestrian",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -1466,7 +1481,8 @@
       "m": 28,
       "calle": "pedestrian",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n78",
@@ -1474,7 +1490,8 @@
       "m": 25,
       "calle": "pedestrian",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n79",
@@ -1482,7 +1499,8 @@
       "m": 26,
       "calle": "pedestrian",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n80",
@@ -1490,7 +1508,8 @@
       "m": 19,
       "calle": "pedestrian",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n81",
@@ -1498,7 +1517,8 @@
       "m": 8,
       "calle": "pedestrian",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n61",
@@ -1506,7 +1526,8 @@
       "m": 26,
       "calle": "pedestrian",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n83",
@@ -1568,7 +1589,8 @@
       "m": 188,
       "calle": "Calle San Marcos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n54",
@@ -1584,7 +1606,8 @@
       "m": 29,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n53",
@@ -1622,7 +1645,8 @@
       "m": 80,
       "calle": "Calle Doctor Atl Gerardo Murillo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n89",
@@ -1630,7 +1654,8 @@
       "m": 11,
       "calle": "Calle Doctor Atl Gerardo Murillo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n94",
@@ -1638,7 +1663,8 @@
       "m": 93,
       "calle": "Andador José María Velasco",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n80",
@@ -1646,7 +1672,8 @@
       "m": 28,
       "calle": "Andador José María Velasco",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -1654,7 +1681,8 @@
       "m": 42,
       "calle": "Andador José María Velasco",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n59",
@@ -1662,7 +1690,8 @@
       "m": 92,
       "calle": "Calle Gerardo Murillo",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n78",
@@ -1670,7 +1699,8 @@
       "m": 72,
       "calle": "Calle Gerardo Murillo",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n97",
@@ -1698,7 +1728,8 @@
           21.878016,
           -102.309483
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n87",
@@ -1712,7 +1743,8 @@
           21.877795,
           -102.311238
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n35",
@@ -1720,7 +1752,8 @@
       "m": 39,
       "calle": "Calle Navarrete",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n100",
@@ -1736,7 +1769,8 @@
       "m": 36,
       "calle": "Calle Gabriel Picheta",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n69",
@@ -1744,7 +1778,8 @@
       "m": 53,
       "calle": "Calle David Reynoso Flores",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n103",
@@ -2014,7 +2049,8 @@
       "m": 23,
       "calle": "Calle Amador Román",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n94",
@@ -2022,7 +2058,8 @@
       "m": 19,
       "calle": "Calle Amador Román",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -2030,7 +2067,8 @@
       "m": 92,
       "calle": "Calle Saturnino Herrán",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n79",
@@ -2038,7 +2076,8 @@
       "m": 27,
       "calle": "Calle Saturnino Herrán",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n68",
@@ -2046,7 +2085,8 @@
       "m": 43,
       "calle": "Calle Saturnino Herrán",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n116",
@@ -2068,7 +2108,8 @@
           21.878483,
           -102.305984
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n22",
@@ -2158,7 +2199,8 @@
       "m": 32,
       "calle": "Primavera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n121",
@@ -2520,7 +2562,8 @@
       "m": 143,
       "calle": "Calle Primavera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n69",
@@ -2528,7 +2571,8 @@
       "m": 44,
       "calle": "Calle Primavera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n52",
@@ -2580,7 +2624,8 @@
       "m": 73,
       "calle": "Calle Doctor Atl Gerardo Murillo",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     }
   ]
 }

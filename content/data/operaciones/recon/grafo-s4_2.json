@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE ORIENTE 42",
+    "sector": "Centro Deportivo las Hadas",
     "distrito": "NORTE ORIENTE",
     "celda": "S_4_2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1033,7 +1033,8 @@
           21.902553,
           -102.284234
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n2",
@@ -1047,7 +1048,8 @@
           21.902364,
           -102.283787
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n4",
@@ -1097,7 +1099,8 @@
           21.907986,
           -102.288498
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n8",
@@ -1129,7 +1132,8 @@
       "m": 76,
       "calle": "Privada Arco del Triunfo B",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1137,7 +1141,8 @@
       "m": 209,
       "calle": "Calle Arco de Belén",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -1327,7 +1332,8 @@
           21.905311,
           -102.286862
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n14",
@@ -1341,7 +1347,8 @@
           21.905737,
           -102.286709
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n30",
@@ -1349,7 +1356,8 @@
       "m": 50,
       "calle": "Avenida Ferrocarril",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n31",
@@ -1387,7 +1395,8 @@
       "m": 191,
       "calle": "Calle Arco Iris",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -1395,7 +1404,8 @@
       "m": 85,
       "calle": "Privada Arco del Triunfo A",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -1441,7 +1451,8 @@
       "m": 157,
       "calle": "Avenida Paseo de la Solidaridad",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -1455,7 +1466,8 @@
           21.903047,
           -102.283749
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n41",
@@ -1473,7 +1485,8 @@
           21.902553,
           -102.283361
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n42",
@@ -1495,7 +1508,8 @@
           21.901753,
           -102.282751
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n44",
@@ -1541,7 +1555,8 @@
       "m": 153,
       "calle": "primary_link",
       "clase": "primary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1587,7 +1602,8 @@
           21.902789,
           -102.2852
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n52",
@@ -1617,7 +1633,8 @@
       "m": 39,
       "calle": "tertiary_link",
       "clase": "tertiary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -1625,7 +1642,8 @@
       "m": 143,
       "calle": "Camino al Cobano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -1633,7 +1651,8 @@
       "m": 33,
       "calle": "Camino al Cobano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -1641,7 +1660,8 @@
       "m": 20,
       "calle": "Camino al Cobano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -1649,7 +1669,8 @@
       "m": 42,
       "calle": "Camino al Cobano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n48",
@@ -1657,7 +1678,8 @@
       "m": 120,
       "calle": "Camino al Cobano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n59",
@@ -1671,7 +1693,8 @@
           21.906962,
           -102.286124
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n60",
@@ -1679,7 +1702,8 @@
       "m": 131,
       "calle": "Avenida Paseo de la Solidaridad",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n61",
@@ -1687,7 +1711,8 @@
       "m": 54,
       "calle": "Avenida Paseo de la Solidaridad",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -1705,7 +1730,8 @@
           21.90221,
           -102.283229
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n63",
@@ -1727,7 +1753,8 @@
       "m": 51,
       "calle": "Calle B",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n66",
@@ -1953,7 +1980,8 @@
       "m": 49,
       "calle": "Avenida Centaury",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n90",
@@ -1961,7 +1989,8 @@
       "m": 5,
       "calle": "Avenida Centaury",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n91",
@@ -1969,7 +1998,8 @@
       "m": 38,
       "calle": "Avenida Centaury",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n92",
@@ -2067,7 +2097,8 @@
       "m": 73,
       "calle": "Calle Vía Láctea",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n97",
@@ -2155,7 +2186,8 @@
           21.903154,
           -102.283004
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n100",
@@ -2245,7 +2277,8 @@
           21.902722,
           -102.285134
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n106",
@@ -2393,7 +2426,8 @@
           21.902638,
           -102.284288
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n103",
@@ -2409,7 +2443,8 @@
       "m": 142,
       "calle": "Calle Alfredo Lewis",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n113",
@@ -2425,7 +2460,8 @@
       "m": 51,
       "calle": "Vía Lactea",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n118",
@@ -2439,7 +2475,8 @@
           21.902139,
           -102.282766
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n119",
@@ -2453,7 +2490,8 @@
           21.902656,
           -102.283077
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n54",
@@ -2461,7 +2499,8 @@
       "m": 21,
       "calle": "Vía Lactea",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n99",
@@ -2469,7 +2508,8 @@
       "m": 74,
       "calle": "Vía Lactea",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n89",
@@ -2477,7 +2517,8 @@
       "m": 18,
       "calle": "Vía Lactea",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n120",
@@ -2485,7 +2526,8 @@
       "m": 139,
       "calle": "Vía Lactea",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n121",
@@ -2549,7 +2591,8 @@
           21.902324,
           -102.283626
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n51",
@@ -2693,7 +2736,8 @@
       "m": 44,
       "calle": "Calle Florencia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n128",
@@ -2781,7 +2825,8 @@
           21.904451,
           -102.281375
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n133",
@@ -2789,7 +2834,8 @@
       "m": 6,
       "calle": "Avenida Centaury",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n134",
@@ -2797,7 +2843,8 @@
       "m": 52,
       "calle": "Avenida Centaury",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n135",
@@ -2805,7 +2852,8 @@
       "m": 41,
       "calle": "Calle Virgen de Lourdes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n136",
@@ -2813,7 +2861,8 @@
       "m": 34,
       "calle": "Calle Virgen de Lourdes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n138",
@@ -2821,7 +2870,8 @@
       "m": 187,
       "calle": "Calle Virgen de Fátima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n133",
@@ -2829,7 +2879,8 @@
       "m": 7,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n140",
@@ -2847,7 +2898,8 @@
           21.904123,
           -102.283323
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n91",
@@ -2855,7 +2907,8 @@
       "m": 18,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -2873,7 +2926,8 @@
           21.90252,
           -102.283785
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n142",
@@ -3163,7 +3217,8 @@
       "m": 35,
       "calle": "Avenida Manuel Gómez Morín",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n153",
@@ -3221,7 +3276,8 @@
       "m": 8,
       "calle": "Calle Virgen de Almodena",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n155",
@@ -3235,7 +3291,8 @@
           21.904226,
           -102.283206
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n3",
@@ -3249,7 +3306,8 @@
           21.901923,
           -102.283231
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n43",
@@ -3257,7 +3315,8 @@
       "m": 97,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n62",
@@ -3265,7 +3324,8 @@
       "m": 11,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n107",
@@ -3281,7 +3341,8 @@
       "m": 192,
       "calle": "Calle P",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n65",
@@ -3289,7 +3350,8 @@
       "m": 149,
       "calle": "Calle P",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n159",
@@ -3305,7 +3367,8 @@
       "m": 13,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -3393,7 +3456,8 @@
           21.901363,
           -102.28534
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n162",
@@ -3401,7 +3465,8 @@
       "m": 13,
       "calle": "Avenida Manuel Gómez Morín",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n163",
@@ -3523,7 +3588,8 @@
           21.904179,
           -102.283252
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n141",
@@ -3531,7 +3597,8 @@
       "m": 8,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n134",
@@ -3539,7 +3606,8 @@
       "m": 18,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n168",
@@ -3553,7 +3621,8 @@
           21.901807,
           -102.285302
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n26",
@@ -3647,7 +3716,8 @@
       "m": 2,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n173",
@@ -3655,7 +3725,8 @@
       "m": 8,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n174",
@@ -3663,7 +3734,8 @@
       "m": 23,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n175",
@@ -3671,7 +3743,8 @@
       "m": 9,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n176",
@@ -3685,7 +3758,8 @@
           21.906193,
           -102.284894
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n178",
@@ -3717,7 +3791,8 @@
       "m": 35,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n184",
@@ -3725,7 +3800,8 @@
       "m": 46,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n185",
@@ -3733,7 +3809,8 @@
       "m": 50,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n186",
@@ -3741,7 +3818,8 @@
       "m": 69,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n177",
@@ -3749,7 +3827,8 @@
       "m": 19,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n187",
@@ -3757,7 +3836,8 @@
       "m": 29,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n183",
@@ -3765,7 +3845,8 @@
       "m": 51,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n184",
@@ -3773,7 +3854,8 @@
       "m": 50,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n181",
@@ -3797,7 +3879,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -3805,7 +3888,8 @@
       "m": 19,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n189",
@@ -3915,7 +3999,8 @@
           21.906298,
           -102.285626
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n118",
@@ -3923,7 +4008,8 @@
       "m": 39,
       "calle": "Calle Vía Láctea",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n203",
@@ -3931,7 +4017,8 @@
       "m": 193,
       "calle": "Calle Virgen de Almodena",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n137",
@@ -3945,7 +4032,8 @@
           21.904168,
           -102.283425
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n155",
@@ -3953,7 +4041,8 @@
       "m": 15,
       "calle": "Calle Virgen de Guadalupe",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -3967,7 +4056,8 @@
           21.90301,
           -102.284784
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n194",
@@ -4017,7 +4107,8 @@
           21.904684,
           -102.285063
         ]
-      ]
+      ],
+      "parque": true
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR m30",
+    "sector": "Hospital MAC: Aguascalientes (CMQ)",
     "distrito": "SUR",
     "celda": "S_-3_0",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -957,7 +957,8 @@
           21.860616,
           -102.299676
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n20",
@@ -1131,7 +1132,8 @@
       "m": 191,
       "calle": "Calle Fray Antonio de Segovia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1147,7 +1149,8 @@
       "m": 248,
       "calle": "Calle Fray Antonio de Segovia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -1227,7 +1230,8 @@
           21.86064,
           -102.295213
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n52",
@@ -1257,7 +1261,8 @@
       "m": 58,
       "calle": "Calle República de Uruguay",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -1265,7 +1270,8 @@
       "m": 52,
       "calle": "Calle República de Uruguay",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -1499,7 +1505,8 @@
           21.863216,
           -102.293905
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n73",
@@ -1507,7 +1514,8 @@
       "m": 227,
       "calle": "Avenida José María Chávez",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -1693,7 +1701,8 @@
           21.860122,
           -102.299542
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n19",
@@ -1707,7 +1716,8 @@
           21.86058,
           -102.300331
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n66",
@@ -1881,7 +1891,8 @@
           21.861236,
           -102.30038
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n94",
@@ -1889,7 +1900,8 @@
       "m": 36,
       "calle": "Quinta Avenida",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1897,7 +1909,8 @@
       "m": 111,
       "calle": "Quinta Avenida",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -2111,7 +2124,8 @@
       "m": 72,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -2119,7 +2133,8 @@
       "m": 102,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -2127,7 +2142,8 @@
       "m": 13,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -2135,7 +2151,8 @@
       "m": 58,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n107",
@@ -2143,7 +2160,8 @@
       "m": 41,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n108",
@@ -2169,7 +2187,8 @@
           21.858053,
           -102.295041
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n77",
@@ -2271,7 +2290,8 @@
           21.860537,
           -102.295262
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n56",
@@ -2285,7 +2305,8 @@
           21.862036,
           -102.296048
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n58",
@@ -2597,7 +2618,8 @@
           21.859139,
           -102.294991
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n111",
@@ -2605,7 +2627,8 @@
       "m": 66,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n51",
@@ -2613,7 +2636,8 @@
       "m": 4,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n125",
@@ -2621,7 +2645,8 @@
       "m": 158,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -2629,7 +2654,8 @@
       "m": 239,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -2701,7 +2727,8 @@
       "m": 299,
       "calle": "Calle Fray Junípero Serra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n11",
@@ -2773,7 +2800,8 @@
       "m": 9,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n136",
@@ -2781,7 +2809,8 @@
       "m": 3,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n138",
@@ -2925,7 +2954,8 @@
           21.859454,
           -102.295366
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n146",
@@ -3025,7 +3055,8 @@
           21.860063,
           -102.300286
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n151",
@@ -3033,7 +3064,8 @@
       "m": 29,
       "calle": "primary_link",
       "clase": "primary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n91",
@@ -3075,7 +3107,8 @@
       "m": 152,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n19",
@@ -3125,7 +3158,8 @@
           21.860075,
           -102.300156
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n30",
@@ -3165,7 +3199,8 @@
           21.865197,
           -102.305675
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n35",
@@ -3279,7 +3314,8 @@
       "m": 22,
       "calle": "Calle República de Uruguay",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n137",
@@ -3287,7 +3323,8 @@
       "m": 198,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n135",
@@ -3303,7 +3340,8 @@
       "m": 34,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n72",
@@ -3383,7 +3421,8 @@
           21.860155,
           -102.294718
         ]
-      ]
+      ],
+      "parque": true
     }
   ]
 }

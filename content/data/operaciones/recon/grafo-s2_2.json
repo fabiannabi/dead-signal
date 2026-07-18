@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE ORIENTE 22",
+    "sector": "Puerta Saturnina de Aguascalientes",
     "distrito": "NORTE ORIENTE",
     "celda": "S_2_2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1144,7 +1144,8 @@
       "m": 35,
       "calle": "Privada Vasco de Gama",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -1244,7 +1245,8 @@
           21.89386,
           -102.289357
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n27",
@@ -1486,7 +1488,8 @@
           21.889959,
           -102.282551
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n49",
@@ -1500,7 +1503,8 @@
           21.891537,
           -102.283352
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n50",
@@ -1874,7 +1878,8 @@
           21.88916,
           -102.286579
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n76",
@@ -1882,7 +1887,8 @@
       "m": 115,
       "calle": "Calle General Francisco Villa",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n78",
@@ -2134,7 +2140,8 @@
           21.890252,
           -102.282665
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n50",
@@ -2326,7 +2333,8 @@
           21.889836,
           -102.288014
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n18",
@@ -2334,7 +2342,8 @@
       "m": 44,
       "calle": "Calle Vasco de Gama",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -2342,7 +2351,8 @@
       "m": 117,
       "calle": "Calle Vasco de Gama",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -2440,7 +2450,8 @@
           21.889902,
           -102.291592
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n116",
@@ -2850,7 +2861,8 @@
           21.890067,
           -102.282378
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n53",
@@ -2934,7 +2946,8 @@
           21.902001,
           -102.285452
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n62",
@@ -2980,7 +2993,8 @@
           21.891377,
           -102.282486
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n98",
@@ -2988,7 +3002,8 @@
       "m": 7,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n146",
@@ -3002,7 +3017,8 @@
           21.890147,
           -102.282172
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n148",
@@ -3354,7 +3370,8 @@
       "m": 87,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n103",
@@ -3362,7 +3379,8 @@
       "m": 88,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n102",
@@ -3370,7 +3388,8 @@
       "m": 84,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n100",
@@ -3516,7 +3535,8 @@
           21.890742,
           -102.282459
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n70",
@@ -3730,7 +3750,8 @@
           21.890877,
           -102.282423
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n178",
@@ -3748,7 +3769,8 @@
           21.890869,
           -102.282256
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n105",
@@ -3756,7 +3778,8 @@
       "m": 87,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n10",
@@ -3810,7 +3833,8 @@
       "m": 142,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n113",

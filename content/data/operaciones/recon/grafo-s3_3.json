@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE ORIENTE 33",
+    "sector": "Avenida Heroico Colegio Militar",
     "distrito": "NORTE ORIENTE",
     "celda": "S_3_3",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1124,7 +1124,8 @@
           21.901245,
           -102.284886
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n6",
@@ -1150,7 +1151,8 @@
           21.895627,
           -102.278965
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n7",
@@ -1158,7 +1160,8 @@
       "m": 62,
       "calle": "Calle Franz Peter Schubert",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -1166,7 +1169,8 @@
       "m": 51,
       "calle": "Calle Federico Chopin",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -1216,7 +1220,8 @@
       "m": 45,
       "calle": "Circuito de los Almárcigos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n14",
@@ -1224,7 +1229,8 @@
       "m": 78,
       "calle": "Circuito de los Almárcigos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1258,7 +1264,8 @@
           21.900583,
           -102.282783
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n20",
@@ -1304,7 +1311,8 @@
       "m": 37,
       "calle": "Calle Manuel de Falla",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n23",
@@ -1312,7 +1320,8 @@
       "m": 18,
       "calle": "Calle Manuel de Falla",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n25",
@@ -1362,7 +1371,8 @@
       "m": 40,
       "calle": "Circuito de la Uva",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n30",
@@ -1454,7 +1464,8 @@
       "m": 58,
       "calle": "Circuito de la Cava",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -1462,7 +1473,8 @@
       "m": 39,
       "calle": "Circuito de la Cava",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n31",
@@ -1496,7 +1508,8 @@
       "m": 46,
       "calle": "Circuito del Mosto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -1562,7 +1575,8 @@
       "m": 186,
       "calle": "Calle Primero de Mayo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1570,7 +1584,8 @@
       "m": 104,
       "calle": "Calle Primero de Mayo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n52",
@@ -1634,7 +1649,8 @@
       "m": 53,
       "calle": "Calle Obrero Mundial",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1642,7 +1658,8 @@
       "m": 36,
       "calle": "Calle Obrero Mundial",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -1656,7 +1673,8 @@
           21.901401,
           -102.282423
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n62",
@@ -1836,7 +1854,8 @@
       "m": 148,
       "calle": "Calle Fidel Velázquez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n83",
@@ -1844,7 +1863,8 @@
       "m": 68,
       "calle": "Calle Lucero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n84",
@@ -1852,7 +1872,8 @@
       "m": 75,
       "calle": "Calle Lucero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n86",
@@ -1860,7 +1881,8 @@
       "m": 27,
       "calle": "Calle Triángulo Astral",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n85",
@@ -1868,7 +1890,8 @@
       "m": 72,
       "calle": "Calle Triángulo Astral",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n88",
@@ -1898,7 +1921,8 @@
       "m": 95,
       "calle": "Calle Cruz del Sur",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1946,7 +1970,8 @@
       "m": 40,
       "calle": "Convencion de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n91",
@@ -1954,7 +1979,8 @@
       "m": 71,
       "calle": "Convencion de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n92",
@@ -1962,7 +1988,8 @@
       "m": 71,
       "calle": "Convencion de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n87",
@@ -1970,7 +1997,8 @@
       "m": 26,
       "calle": "Convencion de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n90",
@@ -1978,7 +2006,8 @@
       "m": 47,
       "calle": "Convencion de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n93",
@@ -2012,7 +2041,8 @@
           21.897737,
           -102.279559
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n97",
@@ -2130,7 +2160,8 @@
       "m": 73,
       "calle": "Calle Osa Menor",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n84",
@@ -2138,7 +2169,8 @@
       "m": 53,
       "calle": "Calle Osa Menor",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n104",
@@ -2212,7 +2244,8 @@
       "m": 24,
       "calle": "Avenida Nazario Ortiz Garza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n100",
@@ -2416,7 +2449,8 @@
       "m": 59,
       "calle": "Privada Hernán Caballero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n129",
@@ -2500,7 +2534,8 @@
           21.89693,
           -102.280222
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n135",
@@ -2518,7 +2553,8 @@
           21.897297,
           -102.279772
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n137",
@@ -2526,7 +2562,8 @@
       "m": 12,
       "calle": "Avenida Gabriela Mistral",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n138",
@@ -2544,7 +2581,8 @@
           21.897167,
           -102.280035
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n139",
@@ -2684,7 +2722,8 @@
       "m": 55,
       "calle": "Avenida Nazario Ortiz Garza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n141",
@@ -2692,7 +2731,8 @@
       "m": 36,
       "calle": "Avenida Nazario Ortiz Garza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n143",
@@ -2700,7 +2740,8 @@
       "m": 120,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n144",
@@ -2708,7 +2749,8 @@
       "m": 134,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n145",
@@ -2724,7 +2766,8 @@
       "m": 21,
       "calle": "Avenida Nazario Ortiz Garza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n108",
@@ -2732,7 +2775,8 @@
       "m": 8,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n108",
@@ -2740,7 +2784,8 @@
       "m": 20,
       "calle": "Avenida Nazario Ortiz Garza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n148",
@@ -2748,7 +2793,8 @@
       "m": 13,
       "calle": "Avenida Nazario Ortiz Garza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n149",
@@ -2756,7 +2802,8 @@
       "m": 56,
       "calle": "Avenida Nazario Ortiz Garza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n127",
@@ -2834,7 +2881,8 @@
       "m": 18,
       "calle": "Circuito de la Uva",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n153",
@@ -2842,7 +2890,8 @@
       "m": 23,
       "calle": "Circuito de la Uva",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n129",
@@ -2858,7 +2907,8 @@
       "m": 7,
       "calle": "Circuito de la Uva",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n152",
@@ -2866,7 +2916,8 @@
       "m": 73,
       "calle": "Circuito de la Uva",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n159",
@@ -2880,7 +2931,8 @@
           21.896657,
           -102.278991
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n161",
@@ -2954,7 +3006,8 @@
       "m": 19,
       "calle": "secondary_link",
       "clase": "secondary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n163",
@@ -2996,7 +3049,8 @@
           21.898042,
           -102.282409
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n164",
@@ -3132,7 +3186,8 @@
           21.900647,
           -102.282261
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n168",
@@ -3140,7 +3195,8 @@
       "m": 117,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -3148,7 +3204,8 @@
       "m": 56,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -3208,7 +3265,8 @@
       "m": 59,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n137",
@@ -3216,7 +3274,8 @@
       "m": 11,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n136",
@@ -3224,7 +3283,8 @@
       "m": 23,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n24",
@@ -3232,7 +3292,8 @@
       "m": 178,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n172",
@@ -3246,7 +3307,8 @@
           21.898861,
           -102.280662
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n169",
@@ -3268,7 +3330,8 @@
           21.896688,
           -102.278933
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n142",
@@ -3276,7 +3339,8 @@
       "m": 192,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n95",
@@ -3284,7 +3348,8 @@
       "m": 27,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n174",
@@ -3292,7 +3357,8 @@
       "m": 12,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n175",
@@ -3300,7 +3366,8 @@
       "m": 39,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n89",
@@ -3318,7 +3385,8 @@
           21.898785,
           -102.280522
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n21",
@@ -3410,7 +3478,8 @@
           21.896097,
           -102.278223
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n15",
@@ -3418,7 +3487,8 @@
       "m": 38,
       "calle": "Circuito de la Uva",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n156",
@@ -3426,7 +3496,8 @@
       "m": 19,
       "calle": "Circuito de la Uva",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n132",
@@ -3442,7 +3513,8 @@
       "m": 96,
       "calle": "Calle Manuel de Falla",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n136",
@@ -3450,7 +3522,8 @@
       "m": 29,
       "calle": "Avenida Gabriela Mistral",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n174",
@@ -3458,7 +3531,8 @@
       "m": 27,
       "calle": "Avenida Gabriela Mistral",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n96",
@@ -3466,7 +3540,8 @@
       "m": 12,
       "calle": "Avenida Gabriela Mistral",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n182",
@@ -3474,7 +3549,8 @@
       "m": 111,
       "calle": "Avenida Gabriela Mistral",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -3594,7 +3670,8 @@
       "m": 37,
       "calle": "Avenida Gabriela Mistral",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n175",
@@ -3602,7 +3679,8 @@
       "m": 30,
       "calle": "Avenida Gabriela Mistral",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -3702,7 +3780,8 @@
           21.895138,
           -102.277605
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n180",
@@ -3710,7 +3789,8 @@
       "m": 20,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n88",
@@ -3718,7 +3798,8 @@
       "m": 13,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n182",
@@ -3726,7 +3807,8 @@
       "m": 229,
       "calle": "Convencion de 1914 Oriente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n188",
@@ -3734,7 +3816,8 @@
       "m": 37,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n190",
@@ -3790,7 +3873,8 @@
       "m": 87,
       "calle": "Calle Florencia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n13",
@@ -3824,7 +3908,8 @@
           21.901166,
           -102.284676
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n99",
@@ -3910,7 +3995,8 @@
       "m": 7,
       "calle": "Circuito de la Uva",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n197",
@@ -3942,7 +4028,8 @@
           21.899389,
           -102.282142
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n154",
@@ -3950,7 +4037,8 @@
       "m": 10,
       "calle": "Circuito de las Parras",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n18",
@@ -3958,7 +4046,8 @@
       "m": 44,
       "calle": "Circuito de las Parras",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n168",
@@ -3966,7 +4055,8 @@
       "m": 14,
       "calle": "Circuito de las Parras",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n199",
@@ -4006,7 +4096,8 @@
       "m": 34,
       "calle": "Can Mayor",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n82",
@@ -4014,7 +4105,8 @@
       "m": 17,
       "calle": "Can Mayor",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n188",
@@ -4022,7 +4114,8 @@
       "m": 26,
       "calle": "Can Mayor",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -4030,7 +4123,8 @@
       "m": 99,
       "calle": "Convencion de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n94",
@@ -4046,7 +4140,8 @@
       "m": 228,
       "calle": "Convencion de 1914 Oriente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",

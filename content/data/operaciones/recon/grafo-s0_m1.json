@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "CENTRO 0m1",
+    "sector": "ZONA PATRIMONIO DE LA HUMANIDAD",
     "distrito": "CENTRO",
     "celda": "S_0_-1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1189,7 +1189,8 @@
           21.88399,
           -102.301441
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n10",
@@ -1227,7 +1228,8 @@
       "m": 137,
       "calle": "Calle Alfonso Esparza Oteo",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1235,7 +1237,8 @@
       "m": 7,
       "calle": "Calle Alfonso Esparza Oteo",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1249,7 +1252,8 @@
           21.880165,
           -102.302487
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n18",
@@ -1257,7 +1261,8 @@
       "m": 46,
       "calle": "Calle Jesús F. Contreras",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n19",
@@ -1265,7 +1270,8 @@
       "m": 52,
       "calle": "Calle Jesús F. Contreras",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n20",
@@ -1273,7 +1279,8 @@
       "m": 47,
       "calle": "Calle Jesús F. Contreras",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -1281,7 +1288,8 @@
       "m": 19,
       "calle": "Calle Jesús F. Contreras",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -1289,7 +1297,8 @@
       "m": 6,
       "calle": "Calle Jesús F. Contreras",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n23",
@@ -1333,7 +1342,8 @@
           21.878983,
           -102.304277
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n28",
@@ -1347,7 +1357,8 @@
           21.879159,
           -102.303241
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n29",
@@ -1365,7 +1376,8 @@
           21.879306,
           -102.302332
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n30",
@@ -1373,7 +1385,8 @@
       "m": 31,
       "calle": "Calle Manuel M. Ponce",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1381,7 +1394,8 @@
       "m": 7,
       "calle": "Calle Monroy",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -1389,7 +1403,8 @@
       "m": 33,
       "calle": "Calle Monroy",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -1397,7 +1412,8 @@
       "m": 64,
       "calle": "Calle Monroy",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1405,7 +1421,8 @@
       "m": 151,
       "calle": "Calle Monroy",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n19",
@@ -1413,7 +1430,8 @@
       "m": 84,
       "calle": "Calle Antonio Arias Bernal",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -1483,7 +1501,8 @@
       "m": 41,
       "calle": "Calle de Venustiano Carranza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -1529,7 +1548,8 @@
       "m": 4,
       "calle": "Peatonal Arturo J. Parni",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -1543,7 +1563,8 @@
           21.879682,
           -102.304231
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n48",
@@ -1551,7 +1572,8 @@
       "m": 47,
       "calle": "Peatonal Arturo J. Parni",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n49",
@@ -1559,7 +1581,8 @@
       "m": 3,
       "calle": "Peatonal Arturo J. Parni",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -1599,7 +1622,8 @@
       "m": 49,
       "calle": "Calle Enrique Fernandez Ledezma",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n53",
@@ -1607,7 +1631,8 @@
       "m": 19,
       "calle": "Calle Enrique Fernandez Ledezma",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1631,7 +1656,8 @@
       "m": 81,
       "calle": "Calle Azteca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -1777,7 +1803,8 @@
       "m": 58,
       "calle": "Calle Talamantes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n70",
@@ -1785,7 +1812,8 @@
       "m": 18,
       "calle": "Calle Talamantes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n71",
@@ -1793,7 +1821,8 @@
       "m": 44,
       "calle": "Calle Talamantes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n72",
@@ -1801,7 +1830,8 @@
       "m": 34,
       "calle": "Calle Talamantes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -1809,7 +1839,8 @@
       "m": 59,
       "calle": "Calle Talamantes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n73",
@@ -1949,7 +1980,8 @@
       "m": 54,
       "calle": "José Guadalupe Posada",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n59",
@@ -1957,7 +1989,8 @@
       "m": 129,
       "calle": "Calle Jesús F. Contreras",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n86",
@@ -1973,7 +2006,8 @@
       "m": 83,
       "calle": "Calle Licenciado Teodosio Lares",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -2055,7 +2089,8 @@
       "m": 3,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n93",
@@ -2069,7 +2104,8 @@
           21.879616,
           -102.303341
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n94",
@@ -2087,7 +2123,8 @@
           21.879686,
           -102.303293
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n95",
@@ -2105,7 +2142,8 @@
           21.879688,
           -102.303199
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n96",
@@ -2119,7 +2157,8 @@
           21.879643,
           -102.303155
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n97",
@@ -2133,7 +2172,8 @@
           21.879613,
           -102.303147
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n98",
@@ -2151,7 +2191,8 @@
           21.879533,
           -102.30319
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n99",
@@ -2169,7 +2210,8 @@
           21.879524,
           -102.303281
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n100",
@@ -2177,7 +2219,8 @@
       "m": 3,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n99",
@@ -2185,7 +2228,8 @@
       "m": 12,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n101",
@@ -2193,7 +2237,8 @@
       "m": 15,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -2207,7 +2252,8 @@
           21.879197,
           -102.303163
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n93",
@@ -2215,7 +2261,8 @@
       "m": 32,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n103",
@@ -2223,7 +2270,8 @@
       "m": 5,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n104",
@@ -2231,7 +2279,8 @@
       "m": 3,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n105",
@@ -2239,7 +2288,8 @@
       "m": 20,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n106",
@@ -2247,7 +2297,8 @@
       "m": 4,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n107",
@@ -2255,7 +2306,8 @@
       "m": 6,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n108",
@@ -2263,7 +2315,8 @@
       "m": 7,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n109",
@@ -2271,7 +2324,8 @@
       "m": 14,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n97",
@@ -2279,7 +2333,8 @@
       "m": 22,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n110",
@@ -2287,7 +2342,8 @@
       "m": 16,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n111",
@@ -2295,7 +2351,8 @@
       "m": 10,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n112",
@@ -2303,7 +2360,8 @@
       "m": 8,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n113",
@@ -2311,7 +2369,8 @@
       "m": 10,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n114",
@@ -2325,7 +2384,8 @@
           21.879741,
           -102.302413
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n115",
@@ -2333,7 +2393,8 @@
       "m": 43,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n116",
@@ -2341,7 +2402,8 @@
       "m": 19,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n117",
@@ -2349,7 +2411,8 @@
       "m": 17,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n118",
@@ -2357,7 +2420,8 @@
       "m": 19,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n119",
@@ -2365,7 +2429,8 @@
       "m": 31,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n120",
@@ -2373,7 +2438,8 @@
       "m": 28,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n121",
@@ -2381,7 +2447,8 @@
       "m": 34,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n114",
@@ -2389,7 +2456,8 @@
       "m": 38,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n122",
@@ -2397,7 +2465,8 @@
       "m": 32,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n123",
@@ -2405,7 +2474,8 @@
       "m": 27,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n124",
@@ -2413,7 +2483,8 @@
       "m": 16,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -2421,7 +2492,8 @@
       "m": 31,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n125",
@@ -2429,7 +2501,8 @@
       "m": 18,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -2437,7 +2510,8 @@
       "m": 32,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n127",
@@ -2445,7 +2519,8 @@
       "m": 14,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n128",
@@ -2453,7 +2528,8 @@
       "m": 22,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n108",
@@ -2461,7 +2537,8 @@
       "m": 36,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n95",
@@ -2469,7 +2546,8 @@
       "m": 8,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n129",
@@ -2477,7 +2555,8 @@
       "m": 16,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n118",
@@ -2491,7 +2570,8 @@
           21.87998,
           -102.303319
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n115",
@@ -2499,7 +2579,8 @@
       "m": 22,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n130",
@@ -2507,7 +2588,8 @@
       "m": 13,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n131",
@@ -2515,7 +2597,8 @@
       "m": 12,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n132",
@@ -2523,7 +2606,8 @@
       "m": 19,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n133",
@@ -2531,7 +2615,8 @@
       "m": 11,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n127",
@@ -2539,7 +2624,8 @@
       "m": 31,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n134",
@@ -2547,7 +2633,8 @@
       "m": 18,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n135",
@@ -2555,7 +2642,8 @@
       "m": 15,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n136",
@@ -2563,7 +2651,8 @@
       "m": 14,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n122",
@@ -2571,7 +2660,8 @@
       "m": 5,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n137",
@@ -2579,7 +2669,8 @@
       "m": 26,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n138",
@@ -2587,7 +2678,8 @@
       "m": 5,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n139",
@@ -2595,7 +2687,8 @@
       "m": 13,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n140",
@@ -2603,7 +2696,8 @@
       "m": 9,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n141",
@@ -2611,7 +2705,8 @@
       "m": 17,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n121",
@@ -2619,7 +2714,8 @@
       "m": 15,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n142",
@@ -2627,7 +2723,8 @@
       "m": 9,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n143",
@@ -2635,7 +2732,8 @@
       "m": 12,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n144",
@@ -2643,7 +2741,8 @@
       "m": 27,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n145",
@@ -2651,7 +2750,8 @@
       "m": 10,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n146",
@@ -2669,7 +2769,8 @@
           21.879028,
           -102.304182
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n49",
@@ -2683,7 +2784,8 @@
           21.879065,
           -102.303997
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n109",
@@ -2697,7 +2799,8 @@
           21.879849,
           -102.304142
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n47",
@@ -2715,7 +2818,8 @@
           21.879666,
           -102.304499
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n147",
@@ -2723,7 +2827,8 @@
       "m": 18,
       "calle": "Atrio de San Marcos",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n148",
@@ -2769,7 +2874,8 @@
           21.879153,
           -102.304307
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n149",
@@ -2853,7 +2959,8 @@
           21.879228,
           -102.299442
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n27",
@@ -2867,7 +2974,8 @@
           21.878742,
           -102.304963
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n155",
@@ -2947,7 +3055,8 @@
           21.883586,
           -102.299865
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n159",
@@ -2955,7 +3064,8 @@
       "m": 36,
       "calle": "Calle Guadalupe",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n64",
@@ -2963,7 +3073,8 @@
       "m": 54,
       "calle": "Calle Guadalupe",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -2977,7 +3088,8 @@
           21.880122,
           -102.302437
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n153",
@@ -3055,7 +3167,8 @@
       "m": 47,
       "calle": "Privada Benito Gaspar de Larrañaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n61",
@@ -3071,7 +3184,8 @@
       "m": 3,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n169",
@@ -3207,7 +3321,8 @@
       "m": 61,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n181",
@@ -3215,7 +3330,8 @@
       "m": 14,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n179",
@@ -3223,7 +3339,8 @@
       "m": 19,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n183",
@@ -3231,7 +3348,8 @@
       "m": 40,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n182",
@@ -3239,7 +3357,8 @@
       "m": 72,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n181",
@@ -3253,7 +3372,8 @@
           21.882963,
           -102.300595
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n185",
@@ -3303,7 +3423,8 @@
           21.882066,
           -102.299563
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n8",
@@ -3365,7 +3486,8 @@
       "m": 94,
       "calle": "Calle Libertad",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n159",
@@ -3411,7 +3533,8 @@
           21.889206,
           -102.299375
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n170",
@@ -3435,7 +3558,8 @@
       "m": 48,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n173",
@@ -3505,7 +3629,8 @@
       "m": 140,
       "calle": "Andador Arturo J. Pani",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n107",
@@ -3513,7 +3638,8 @@
       "m": 17,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n198",
@@ -3521,7 +3647,8 @@
       "m": 11,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n199",
@@ -3529,7 +3656,8 @@
       "m": 6,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n134",
@@ -3537,7 +3665,8 @@
       "m": 12,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n198",
@@ -3545,7 +3674,8 @@
       "m": 20,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n105",
@@ -3553,7 +3683,8 @@
       "m": 20,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n103",
@@ -3561,7 +3692,8 @@
       "m": 19,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n135",
@@ -3569,7 +3701,8 @@
       "m": 6,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n200",
@@ -3577,7 +3710,8 @@
       "m": 14,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n200",
@@ -3585,7 +3719,8 @@
       "m": 16,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n201",
@@ -3593,7 +3728,8 @@
       "m": 18,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n101",
@@ -3601,7 +3737,8 @@
       "m": 22,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n202",
@@ -3609,7 +3746,8 @@
       "m": 5,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n203",
@@ -3617,7 +3755,8 @@
       "m": 12,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n204",
@@ -3625,7 +3764,8 @@
       "m": 11,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n136",
@@ -3633,7 +3773,8 @@
       "m": 11,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n141",
@@ -3641,7 +3782,8 @@
       "m": 13,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n124",
@@ -3649,7 +3791,8 @@
       "m": 16,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n204",
@@ -3657,7 +3800,8 @@
       "m": 7,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n111",
@@ -3665,7 +3809,8 @@
       "m": 24,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n112",
@@ -3673,7 +3818,8 @@
       "m": 38,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n140",
@@ -3681,7 +3827,8 @@
       "m": 16,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n120",
@@ -3689,7 +3836,8 @@
       "m": 16,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n111",
@@ -3697,7 +3845,8 @@
       "m": 25,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n142",
@@ -3705,7 +3854,8 @@
       "m": 28,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n119",
@@ -3713,7 +3863,8 @@
       "m": 18,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n205",
@@ -3721,7 +3872,8 @@
       "m": 9,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n104",
@@ -3729,7 +3881,8 @@
       "m": 22,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n106",
@@ -3737,7 +3890,8 @@
       "m": 29,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n116",
@@ -3745,7 +3899,8 @@
       "m": 10,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n206",
@@ -3753,7 +3908,8 @@
       "m": 8,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n117",
@@ -3761,7 +3917,8 @@
       "m": 11,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n207",
@@ -3769,7 +3926,8 @@
       "m": 7,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n208",
@@ -3777,7 +3935,8 @@
       "m": 7,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n206",
@@ -3785,7 +3944,8 @@
       "m": 18,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n208",
@@ -3793,7 +3953,8 @@
       "m": 18,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n129",
@@ -3801,7 +3962,8 @@
       "m": 13,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n147",
@@ -3809,7 +3971,8 @@
       "m": 8,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n209",
@@ -3817,7 +3980,8 @@
       "m": 11,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n210",
@@ -3825,7 +3989,8 @@
       "m": 26,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n211",
@@ -3833,7 +3998,8 @@
       "m": 15,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n148",
@@ -3841,7 +4007,8 @@
       "m": 12,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n212",
@@ -3849,7 +4016,8 @@
       "m": 35,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n210",
@@ -3857,7 +4025,8 @@
       "m": 5,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -3865,7 +4034,8 @@
       "m": 13,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n209",
@@ -3873,7 +4043,8 @@
       "m": 18,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n213",
@@ -3881,7 +4052,8 @@
       "m": 15,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     }
   ]
 }

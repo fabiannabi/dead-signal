@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR ORIENTE m23",
+    "sector": "Iglesia del IV Centenario",
     "distrito": "SUR ORIENTE",
     "celda": "S_-2_3",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1424,7 +1424,8 @@
           21.872193,
           -102.281777
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n1",
@@ -1432,7 +1433,8 @@
       "m": 36,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -1440,7 +1442,8 @@
       "m": 38,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -1448,7 +1451,8 @@
       "m": 39,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n5",
@@ -1508,7 +1512,8 @@
           21.869879,
           -102.282695
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n11",
@@ -1516,7 +1521,8 @@
       "m": 11,
       "calle": "Calle Delicias",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n1",
@@ -1550,7 +1556,8 @@
           21.871271,
           -102.285297
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n14",
@@ -1558,7 +1565,8 @@
       "m": 155,
       "calle": "Calle San Joaquín",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1566,7 +1574,8 @@
       "m": 38,
       "calle": "Avenida de los Fundadores",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1574,7 +1583,8 @@
       "m": 36,
       "calle": "Avenida de los Fundadores",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1588,7 +1598,8 @@
           21.870797,
           -102.280496
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n18",
@@ -1720,7 +1731,8 @@
       "m": 31,
       "calle": "Calle Plazoleta Pedro Parga",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1826,7 +1838,8 @@
       "m": 82,
       "calle": "Retorno Agustín Loera y Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1848,7 +1861,8 @@
           21.870192,
           -102.281012
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n45",
@@ -2098,7 +2112,8 @@
       "m": 59,
       "calle": "Retorno Paseo Manuel Rangel",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -2200,7 +2215,8 @@
       "m": 45,
       "calle": "De los Fundadores",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n79",
@@ -2328,7 +2344,8 @@
           21.871885,
           -102.271612
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n86",
@@ -3202,7 +3219,8 @@
       "m": 46,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n12",
@@ -3210,7 +3228,8 @@
       "m": 81,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n159",
@@ -3218,7 +3237,8 @@
       "m": 6,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n78",
@@ -3226,7 +3246,8 @@
       "m": 32,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n160",
@@ -3234,7 +3255,8 @@
       "m": 43,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n161",
@@ -3284,7 +3306,8 @@
           21.877224,
           -102.28133
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n115",
@@ -3552,7 +3575,8 @@
           21.864057,
           -102.278103
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n113",
@@ -3870,7 +3894,8 @@
       "m": 50,
       "calle": "Calle Delicias",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n65",
@@ -3932,7 +3957,8 @@
           21.871504,
           -102.280931
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n38",
@@ -4442,7 +4468,8 @@
       "m": 4,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -4450,7 +4477,8 @@
       "m": 8,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n4",
@@ -4458,7 +4486,8 @@
       "m": 41,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n11",
@@ -4466,7 +4495,8 @@
       "m": 97,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n206",
@@ -4528,7 +4558,8 @@
       "m": 9,
       "calle": "Avenida de los Fundadores",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n210",
@@ -4536,7 +4567,8 @@
       "m": 12,
       "calle": "Avenida de los Fundadores",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n202",
@@ -4544,7 +4576,8 @@
       "m": 13,
       "calle": "Avenida de los Fundadores",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n193",
@@ -4918,7 +4951,8 @@
       "m": 66,
       "calle": "Retorno A. García Cubas",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n219",
@@ -4978,7 +5012,8 @@
       "m": 45,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n223",
@@ -5518,7 +5553,8 @@
           21.871273,
           -102.281436
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n161",
@@ -5526,7 +5562,8 @@
       "m": 24,
       "calle": "Retorno Agustín Loera y Chávez",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n230",
@@ -5540,7 +5577,8 @@
           21.871238,
           -102.28148
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n159",
@@ -5554,7 +5592,8 @@
           21.8705,
           -102.281361
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n268",
@@ -5568,7 +5607,8 @@
           21.869953,
           -102.280783
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n267",
@@ -5586,7 +5626,8 @@
           21.870323,
           -102.281319
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n83",
@@ -5594,7 +5635,8 @@
       "m": 21,
       "calle": "Pasaje Agustín Loera y Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n269",

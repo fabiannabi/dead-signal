@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR m4m1",
+    "sector": "Calle Profesor Enrique Olivares Santana",
     "distrito": "SUR",
     "celda": "S_-4_-1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -615,7 +615,8 @@
           21.859984,
           -102.301747
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n5",
@@ -629,7 +630,8 @@
           21.860206,
           -102.303076
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n7",
@@ -907,7 +909,8 @@
           21.85956,
           -102.301099
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n24",
@@ -915,7 +918,8 @@
       "m": 4,
       "calle": "Avenida Paseo de la Asunción",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n25",
@@ -929,7 +933,8 @@
           21.854168,
           -102.301006
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n26",
@@ -937,7 +942,8 @@
       "m": 88,
       "calle": "Avenida Paseo de la Asunción",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -945,7 +951,8 @@
       "m": 53,
       "calle": "Avenida Paseo de la Asunción",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -1025,7 +1032,8 @@
       "m": 19,
       "calle": "Calle Rafael Ramírez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -1073,7 +1081,8 @@
       "m": 60,
       "calle": "Calle Mariscal Rafael Oropeza",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n39",
@@ -1099,7 +1108,8 @@
           21.854778,
           -102.297612
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n25",
@@ -1107,7 +1117,8 @@
       "m": 43,
       "calle": "Andador Cardenal",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1115,7 +1126,8 @@
       "m": 67,
       "calle": "Calle General Lázaro Cárdenas",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n39",
@@ -1123,7 +1135,8 @@
       "m": 90,
       "calle": "Calle General Lázaro Cárdenas",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -1325,7 +1338,8 @@
       "m": 133,
       "calle": "Calle Mariano Abad Miramontes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n71",
@@ -1629,7 +1643,8 @@
       "m": 59,
       "calle": "Calle Capitán Diego Fernández Villa",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1637,7 +1652,8 @@
       "m": 67,
       "calle": "Calle Capitán Diego Fernández Villa",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -1653,7 +1669,8 @@
       "m": 56,
       "calle": "Calle Mariano Abad Miramontes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -1661,7 +1678,8 @@
       "m": 50,
       "calle": "Calle Mariano Abad Miramontes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n89",
@@ -1731,7 +1749,8 @@
           21.854033,
           -102.300936
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n86",
@@ -1739,7 +1758,8 @@
       "m": 147,
       "calle": "Avenida Paseo de la Asunción",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n70",
@@ -1753,7 +1773,8 @@
           21.85412,
           -102.301147
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n91",
@@ -1817,7 +1838,8 @@
           21.854113,
           -102.301115
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n90",
@@ -1873,7 +1895,8 @@
       "m": 45,
       "calle": "pedestrian",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n97",
@@ -1939,7 +1962,8 @@
       "m": 109,
       "calle": "tertiary",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n98",
@@ -2109,7 +2133,8 @@
           21.859549,
           -102.302227
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n33",
@@ -2123,7 +2148,8 @@
           21.859743,
           -102.301739
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n23",
@@ -2141,7 +2167,8 @@
           21.860028,
           -102.301032
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n59",

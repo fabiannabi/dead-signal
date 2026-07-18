@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE PONIENTE 3m4",
+    "sector": "Parque los Sauces",
     "distrito": "NORTE PONIENTE",
     "celda": "S_3_-4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -495,7 +495,8 @@
           21.895898,
           -102.321301
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n37",
@@ -843,7 +844,8 @@
           21.891638,
           -102.319161
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n36",

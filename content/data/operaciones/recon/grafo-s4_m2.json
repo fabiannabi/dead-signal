@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE PONIENTE 4m2",
+    "sector": "Avenida Canal Interceptor",
     "distrito": "NORTE PONIENTE",
     "celda": "S_4_-2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1038,7 +1038,8 @@
       "m": 47,
       "calle": "Calle Adrián Muñoz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n1",
@@ -1046,7 +1047,8 @@
       "m": 99,
       "calle": "Calle Adrián Muñoz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -1164,7 +1166,8 @@
           21.903602,
           -102.309589
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n15",
@@ -1206,7 +1209,8 @@
           21.900774,
           -102.308675
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n16",
@@ -1214,7 +1218,8 @@
       "m": 49,
       "calle": "Calle San Clemente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1222,7 +1227,8 @@
       "m": 48,
       "calle": "Calle San Clemente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n18",
@@ -1230,7 +1236,8 @@
       "m": 17,
       "calle": "Calle San Clemente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n20",
@@ -1238,7 +1245,8 @@
       "m": 18,
       "calle": "Calle San Jorge",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -1252,7 +1260,8 @@
           21.901781,
           -102.308764
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n16",
@@ -1274,7 +1283,8 @@
           21.899878,
           -102.313084
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n23",
@@ -1296,7 +1306,8 @@
           21.903433,
           -102.301372
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n24",
@@ -1342,7 +1353,8 @@
           21.902957,
           -102.304744
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n25",
@@ -1350,7 +1362,8 @@
       "m": 46,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n26",
@@ -1358,7 +1371,8 @@
       "m": 48,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1366,7 +1380,8 @@
       "m": 12,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -1374,7 +1389,8 @@
       "m": 20,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n30",
@@ -1392,7 +1408,8 @@
           21.903033,
           -102.309285
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n31",
@@ -1400,7 +1417,8 @@
       "m": 16,
       "calle": "Calle Paseo de los Pesebres",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -1414,7 +1432,8 @@
           21.900953,
           -102.311794
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n17",
@@ -1428,7 +1447,8 @@
           21.902529,
           -102.308137
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n18",
@@ -1436,7 +1456,8 @@
       "m": 92,
       "calle": "Calle San Vicente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -1444,7 +1465,8 @@
       "m": 66,
       "calle": "Calle San Vicente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n36",
@@ -1462,7 +1484,8 @@
           21.901317,
           -102.31199
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n2",
@@ -1532,7 +1555,8 @@
           21.902414,
           -102.312554
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n44",
@@ -1540,7 +1564,8 @@
       "m": 13,
       "calle": "Avenida Canal Interceptor",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -1548,7 +1573,8 @@
       "m": 28,
       "calle": "Avenida Canal Interceptor",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -1556,7 +1582,8 @@
       "m": 69,
       "calle": "Avenida Canal Interceptor",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -1564,7 +1591,8 @@
       "m": 100,
       "calle": "Avenida Canal Interceptor",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n19",
@@ -1578,7 +1606,8 @@
           21.902579,
           -102.308347
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n14",
@@ -1586,7 +1615,8 @@
       "m": 17,
       "calle": "Circuito Paseo de los Pesebres",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -1616,7 +1646,8 @@
           21.902743,
           -102.306616
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n50",
@@ -1638,7 +1669,8 @@
           21.899207,
           -102.304992
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n52",
@@ -1866,7 +1898,8 @@
           21.903331,
           -102.301774
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n72",
@@ -1896,7 +1929,8 @@
           21.90309,
           -102.308014
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n77",
@@ -1914,7 +1948,8 @@
           21.902996,
           -102.308118
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n79",
@@ -1944,7 +1979,8 @@
       "m": 5,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n82",
@@ -1952,7 +1988,8 @@
       "m": 14,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n29",
@@ -1960,7 +1997,8 @@
       "m": 16,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n83",
@@ -1968,7 +2006,8 @@
       "m": 11,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n84",
@@ -1976,7 +2015,8 @@
       "m": 19,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n85",
@@ -1984,7 +2024,8 @@
       "m": 24,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -2002,7 +2043,8 @@
           21.901093,
           -102.306826
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n26",
@@ -2020,7 +2062,8 @@
           21.902955,
           -102.307481
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n87",
@@ -2038,7 +2081,8 @@
           21.903016,
           -102.307631
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n88",
@@ -2046,7 +2090,8 @@
       "m": 11,
       "calle": "primary_link",
       "clase": "primary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n90",
@@ -2120,7 +2165,8 @@
       "m": 56,
       "calle": "Calle Gusseppe Garibaldi",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n97",
@@ -2134,7 +2180,8 @@
           21.902993,
           -102.309082
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n98",
@@ -2152,7 +2199,8 @@
           21.903063,
           -102.309159
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n84",
@@ -2160,7 +2208,8 @@
       "m": 20,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n100",
@@ -2168,7 +2217,8 @@
       "m": 11,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n101",
@@ -2176,7 +2226,8 @@
       "m": 52,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -2184,7 +2235,8 @@
       "m": 17,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n103",
@@ -2192,7 +2244,8 @@
       "m": 13,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -2254,7 +2307,8 @@
           21.903447,
           -102.30108
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n29",
@@ -2262,7 +2316,8 @@
       "m": 8,
       "calle": "Avenida Canal Interceptor",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n105",
@@ -2270,7 +2325,8 @@
       "m": 47,
       "calle": "Avenida Canal Interceptor",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n78",
@@ -2278,7 +2334,8 @@
       "m": 25,
       "calle": "Avenida Canal Interceptor",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n106",
@@ -2286,7 +2343,8 @@
       "m": 39,
       "calle": "Avenida Canal Interceptor",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n97",
@@ -2294,7 +2352,8 @@
       "m": 46,
       "calle": "Avenida Canal Interceptor",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -2308,7 +2367,8 @@
           21.902925,
           -102.309473
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n107",
@@ -2326,7 +2386,8 @@
           21.902873,
           -102.310794
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n96",
@@ -2334,7 +2395,8 @@
       "m": 4,
       "calle": "Avenida Canal Interceptor",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n108",
@@ -2356,7 +2418,8 @@
           21.902747,
           -102.313606
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n112",
@@ -2530,7 +2593,8 @@
           21.902629,
           -102.307927
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n119",
@@ -2538,7 +2602,8 @@
       "m": 9,
       "calle": "Avenida Canal Interceptor",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n120",
@@ -2546,7 +2611,8 @@
       "m": 33,
       "calle": "Privada Dominium",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n122",
@@ -2554,7 +2620,8 @@
       "m": 32,
       "calle": "Privada Dominium",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n121",
@@ -2562,7 +2629,8 @@
       "m": 11,
       "calle": "Privada Dominium",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n124",
@@ -2570,7 +2638,8 @@
       "m": 7,
       "calle": "Privada Dominium",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n125",
@@ -2578,7 +2647,8 @@
       "m": 15,
       "calle": "Privada Dominium",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -2586,7 +2656,8 @@
       "m": 14,
       "calle": "Privada Dominium",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n122",
@@ -2594,7 +2665,8 @@
       "m": 16,
       "calle": "Privada Dominium",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n120",
@@ -2602,7 +2674,8 @@
       "m": 9,
       "calle": "Privada Dominium",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -2610,7 +2683,8 @@
       "m": 8,
       "calle": "Privada Dominium",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n123",
@@ -2618,7 +2692,8 @@
       "m": 9,
       "calle": "Privada Dominium",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -2626,7 +2701,8 @@
       "m": 82,
       "calle": "Segunda Privada San Vicente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -2634,7 +2710,8 @@
       "m": 56,
       "calle": "Primera Privada San Vicente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n83",
@@ -2652,7 +2729,8 @@
           21.902851,
           -102.307663
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n129",
@@ -2732,7 +2810,8 @@
           21.904087,
           -102.308412
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n133",
@@ -2740,7 +2819,8 @@
       "m": 28,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -2748,7 +2828,8 @@
       "m": 23,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n89",
@@ -2756,7 +2837,8 @@
       "m": 208,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n71",
@@ -2780,7 +2862,8 @@
       "m": 30,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n135",
@@ -2788,7 +2871,8 @@
       "m": 49,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n20",
@@ -2796,7 +2880,8 @@
       "m": 16,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n136",
@@ -2804,7 +2889,8 @@
       "m": 18,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n100",
@@ -2818,7 +2904,8 @@
           21.902831,
           -102.307586
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n57",
@@ -2916,7 +3003,8 @@
           21.903146,
           -102.309168
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n146",
@@ -2934,7 +3022,8 @@
           21.903119,
           -102.309283
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n98",
@@ -2960,7 +3049,8 @@
           21.90303,
           -102.309259
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n115",
@@ -3040,7 +3130,8 @@
           21.902831,
           -102.309763
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n0",
@@ -3048,7 +3139,8 @@
       "m": 14,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n138",
@@ -3098,7 +3190,8 @@
           21.903212,
           -102.311245
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n10",
@@ -3240,7 +3333,8 @@
           21.902045,
           -102.307037
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n165",
@@ -3258,7 +3352,8 @@
           21.902423,
           -102.306686
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n167",
@@ -3372,7 +3467,8 @@
       "m": 14,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n133",
@@ -3386,7 +3482,8 @@
           21.903446,
           -102.308503
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n66",
@@ -3480,7 +3577,8 @@
           21.902654,
           -102.307917
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n183",
@@ -3488,7 +3586,8 @@
       "m": 8,
       "calle": "primary_link",
       "clase": "primary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n184",
@@ -3496,7 +3595,8 @@
       "m": 8,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n183",
@@ -3504,7 +3604,8 @@
       "m": 7,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n119",
@@ -3512,7 +3613,8 @@
       "m": 5,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n186",
@@ -3526,7 +3628,8 @@
           21.902458,
           -102.306816
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n166",
@@ -3540,7 +3643,8 @@
           21.902462,
           -102.30667
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n102",
@@ -3548,7 +3652,8 @@
       "m": 11,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n187",
@@ -3556,7 +3661,8 @@
       "m": 8,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n169",
@@ -3598,7 +3704,8 @@
       "m": 84,
       "calle": "Circuito Paseo de los Pesebres",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n14",
@@ -3612,7 +3719,8 @@
           21.903162,
           -102.309339
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n189",
@@ -3630,7 +3738,8 @@
           21.903275,
           -102.308881
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n145",
@@ -3652,7 +3761,8 @@
           21.903204,
           -102.308915
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n181",
@@ -3674,7 +3784,8 @@
           21.903526,
           -102.308617
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n174",
@@ -3682,7 +3793,8 @@
       "m": 35,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -3706,7 +3818,8 @@
       "m": 9,
       "calle": "Privada Dominium",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n148",
@@ -3714,7 +3827,8 @@
       "m": 91,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n108",
@@ -3722,7 +3836,8 @@
       "m": 15,
       "calle": "Privada Circuito del Espíritu Santo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n194",
@@ -3740,7 +3855,8 @@
           21.903262,
           -102.311919
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n195",
@@ -3748,7 +3864,8 @@
       "m": 75,
       "calle": "Privada Circuito del Espíritu Santo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n150",
@@ -3836,7 +3953,8 @@
       "m": 61,
       "calle": "Calle Adrián Muñoz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n153",
@@ -3850,7 +3968,8 @@
           21.903235,
           -102.31148
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n28",
@@ -3858,7 +3977,8 @@
       "m": 23,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n199",
@@ -3866,7 +3986,8 @@
       "m": 10,
       "calle": "Avenida Universidad",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n200",
@@ -3874,7 +3995,8 @@
       "m": 1,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n201",
@@ -3882,7 +4004,8 @@
       "m": 6,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n82",
@@ -3890,7 +4013,8 @@
       "m": 17,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n199",
@@ -3898,7 +4022,8 @@
       "m": 3,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n88",
@@ -3906,7 +4031,8 @@
       "m": 8,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n200",
@@ -3914,7 +4040,8 @@
       "m": 1,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n203",
@@ -3922,7 +4049,8 @@
       "m": 8,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n105",
@@ -3930,7 +4058,8 @@
       "m": 4,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n205",
@@ -3938,7 +4067,8 @@
       "m": 6,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -3946,7 +4076,8 @@
       "m": 4,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n207",
@@ -3954,7 +4085,8 @@
       "m": 11,
       "calle": "pedestrian",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n201",
@@ -3968,7 +4100,8 @@
           21.902974,
           -102.307911
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n203",
@@ -3982,7 +4115,8 @@
           21.902983,
           -102.308057
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n206",
@@ -3990,7 +4124,8 @@
       "m": 3,
       "calle": "pedestrian",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n208",
@@ -3998,7 +4133,8 @@
       "m": 10,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n85",
@@ -4006,7 +4142,8 @@
       "m": 20,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n136",
@@ -4014,7 +4151,8 @@
       "m": 10,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n185",
@@ -4022,7 +4160,8 @@
       "m": 13,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n209",
@@ -4030,7 +4169,8 @@
       "m": 16,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n101",
@@ -4038,7 +4178,8 @@
       "m": 26,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -4052,7 +4193,8 @@
           21.902949,
           -102.307532
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n87",
@@ -4060,7 +4202,8 @@
       "m": 5,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n202",
@@ -4074,7 +4217,8 @@
           21.903044,
           -102.307575
         ]
-      ]
+      ],
+      "parque": true
     }
   ]
 }

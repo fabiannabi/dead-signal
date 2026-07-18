@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE ORIENTE 34",
+    "sector": "Parque del S.T.E.M.A.",
     "distrito": "NORTE ORIENTE",
     "celda": "S_3_4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -986,7 +986,8 @@
           21.896277,
           -102.271403
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n5",
@@ -994,7 +995,8 @@
       "m": 8,
       "calle": "Avenida José M. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -1070,7 +1072,8 @@
       "m": 168,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1550,7 +1553,8 @@
       "m": 82,
       "calle": "Calle Cosío",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n71",
@@ -1566,7 +1570,8 @@
       "m": 82,
       "calle": "Calle Jesús María",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n75",
@@ -1574,7 +1579,8 @@
       "m": 38,
       "calle": "Avenida José M. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -1582,7 +1588,8 @@
       "m": 54,
       "calle": "Avenida José M. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -1698,7 +1705,8 @@
           21.897535,
           -102.271913
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n86",
@@ -1728,7 +1736,8 @@
           21.897738,
           -102.271854
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n87",
@@ -1742,7 +1751,8 @@
           21.897785,
           -102.271934
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n88",
@@ -1780,7 +1790,8 @@
           21.897589,
           -102.272089
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n76",
@@ -1788,7 +1799,8 @@
       "m": 147,
       "calle": "Calle Rincón de Romos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n86",
@@ -1796,7 +1808,8 @@
       "m": 100,
       "calle": "Calle Pabellón de Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n82",
@@ -1870,7 +1883,8 @@
       "m": 52,
       "calle": "Calle Artículo 115",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n69",
@@ -1878,7 +1892,8 @@
       "m": 51,
       "calle": "Calle Artículo 115",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -1886,7 +1901,8 @@
       "m": 54,
       "calle": "Calle Artículo 115",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n97",
@@ -1900,7 +1916,8 @@
           21.897124,
           -102.271242
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n90",
@@ -1914,7 +1931,8 @@
           21.896701,
           -102.271266
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n75",
@@ -1922,7 +1940,8 @@
       "m": 19,
       "calle": "Calle Artículo 115",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -1930,7 +1949,8 @@
       "m": 30,
       "calle": "Calle Artículo 115",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n98",
@@ -1998,7 +2018,8 @@
       "m": 5,
       "calle": "Avenida Aguascalientes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n73",
@@ -2006,7 +2027,8 @@
       "m": 50,
       "calle": "Avenida Aguascalientes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n70",
@@ -2014,7 +2036,8 @@
       "m": 52,
       "calle": "Avenida Aguascalientes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n101",
@@ -2214,7 +2237,8 @@
           21.896304,
           -102.278149
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n114",
@@ -2476,7 +2500,8 @@
           21.896868,
           -102.277275
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n84",
@@ -2580,7 +2605,8 @@
       "m": 52,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n129",
@@ -2666,7 +2692,8 @@
       "m": 12,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n135",
@@ -2992,7 +3019,8 @@
       "m": 51,
       "calle": "Avenida Aguascalientes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n89",
@@ -3000,7 +3028,8 @@
       "m": 39,
       "calle": "Avenida Aguascalientes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n87",
@@ -3008,7 +3037,8 @@
       "m": 15,
       "calle": "Avenida Aguascalientes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -3016,7 +3046,8 @@
       "m": 13,
       "calle": "Avenida Aguascalientes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n104",
@@ -3090,7 +3121,8 @@
           21.896634,
           -102.270888
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n150",
@@ -3104,7 +3136,8 @@
           21.896733,
           -102.270929
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n5",
@@ -3112,7 +3145,8 @@
       "m": 6,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n153",
@@ -3120,7 +3154,8 @@
       "m": 8,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n152",
@@ -3144,7 +3179,8 @@
       "m": 11,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -3152,7 +3188,8 @@
       "m": 51,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n156",
@@ -3246,7 +3283,8 @@
       "m": 194,
       "calle": "Avenida Aguascalientes Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n159",
@@ -3272,7 +3310,8 @@
           21.896145,
           -102.271028
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n157",
@@ -3310,7 +3349,8 @@
       "m": 22,
       "calle": "primary_link",
       "clase": "primary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n161",
@@ -3346,7 +3386,8 @@
           21.896464,
           -102.270938
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n151",
@@ -3364,7 +3405,8 @@
           21.897276,
           -102.270939
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n139",
@@ -3704,7 +3746,8 @@
       "m": 28,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n177",
@@ -3730,7 +3773,8 @@
       "m": 60,
       "calle": "Calle Héroe Militar",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n178",

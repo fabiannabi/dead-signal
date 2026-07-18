@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE 40",
+    "sector": "Parque La Rinconada",
     "distrito": "NORTE",
     "celda": "S_4_0",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -922,7 +922,8 @@
           21.903272,
           -102.30048
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n1",
@@ -930,7 +931,8 @@
       "m": 7,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -938,7 +940,8 @@
       "m": 49,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -946,7 +949,8 @@
       "m": 44,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n4",
@@ -954,7 +958,8 @@
       "m": 4,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n5",
@@ -962,7 +967,8 @@
       "m": 71,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -970,7 +976,8 @@
       "m": 26,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -978,7 +985,8 @@
       "m": 47,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -986,7 +994,8 @@
       "m": 50,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -994,7 +1003,8 @@
       "m": 64,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -1002,7 +1012,8 @@
       "m": 12,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n12",
@@ -1100,7 +1111,8 @@
       "m": 63,
       "calle": "Calle Oaxaca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1108,7 +1120,8 @@
       "m": 43,
       "calle": "Calle Oaxaca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n18",
@@ -1116,7 +1129,8 @@
       "m": 73,
       "calle": "Calle Oaxaca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n20",
@@ -1124,7 +1138,8 @@
       "m": 94,
       "calle": "Calle Caoba",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -1148,7 +1163,8 @@
       "m": 109,
       "calle": "Calle Álamo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1172,7 +1188,8 @@
       "m": 235,
       "calle": "Calle Roble",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n29",
@@ -1220,7 +1237,8 @@
           21.902435,
           -102.297262
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n32",
@@ -1260,7 +1278,8 @@
       "m": 109,
       "calle": "Calle Cedro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -1284,7 +1303,8 @@
       "m": 110,
       "calle": "Calle Jacaranda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -1292,7 +1312,8 @@
       "m": 21,
       "calle": "Calle Cedro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -1310,7 +1331,8 @@
           21.90039,
           -102.2971
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n3",
@@ -1332,7 +1354,8 @@
       "m": 45,
       "calle": "Calle Roble",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -1340,7 +1363,8 @@
       "m": 45,
       "calle": "Calle Roble",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1372,7 +1396,8 @@
       "m": 73,
       "calle": "Calle Tabasco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -1380,7 +1405,8 @@
       "m": 108,
       "calle": "Calle Tabasco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -1418,7 +1444,8 @@
           21.901173,
           -102.298285
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n20",
@@ -1426,7 +1453,8 @@
       "m": 40,
       "calle": "Calle Álamo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n48",
@@ -1434,7 +1462,8 @@
       "m": 109,
       "calle": "Calle Sauce",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n14",
@@ -1500,7 +1529,9 @@
       "m": 171,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n53",
@@ -1508,7 +1539,9 @@
       "m": 73,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n54",
@@ -1516,7 +1549,8 @@
       "m": 42,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -1524,7 +1558,8 @@
       "m": 33,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -1532,7 +1567,8 @@
       "m": 76,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -1578,7 +1614,8 @@
           21.905649,
           -102.295692
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n62",
@@ -1586,7 +1623,8 @@
       "m": 191,
       "calle": "Calle Asientos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n63",
@@ -1600,7 +1638,8 @@
           21.906571,
           -102.294053
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n65",
@@ -1640,7 +1679,8 @@
       "m": 56,
       "calle": "Calle Almena",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n71",
@@ -1648,7 +1688,8 @@
       "m": 59,
       "calle": "Calle Relicario",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n65",
@@ -1688,7 +1729,9 @@
       "m": 59,
       "calle": "Calle Profesor Melquíades Moreno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n77",
@@ -1696,7 +1739,9 @@
       "m": 47,
       "calle": "Calle Profesor Melquíades Moreno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n78",
@@ -1704,7 +1749,8 @@
       "m": 42,
       "calle": "Calle Profesor Melquíades Moreno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n79",
@@ -1712,7 +1758,8 @@
       "m": 45,
       "calle": "Calle Profesor Melquíades Moreno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n61",
@@ -1720,7 +1767,8 @@
       "m": 46,
       "calle": "Calle Profesor Melquíades Moreno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n80",
@@ -1728,7 +1776,8 @@
       "m": 55,
       "calle": "Calle Profesor Melquíades Moreno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n63",
@@ -1736,7 +1785,8 @@
       "m": 47,
       "calle": "Calle Profesor Melquíades Moreno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n75",
@@ -1768,7 +1818,8 @@
       "m": 112,
       "calle": "Calle Tampico",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n79",
@@ -1782,7 +1833,9 @@
           21.905246,
           -102.295675
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n68",
@@ -1798,7 +1851,9 @@
       "m": 74,
       "calle": "Calle Poza Rica",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n72",
@@ -1814,7 +1869,8 @@
       "m": 76,
       "calle": "Calle Quintana Roo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n80",
@@ -1828,7 +1884,8 @@
           21.906063,
           -102.295621
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n91",
@@ -1872,7 +1929,8 @@
       "m": 115,
       "calle": "Calle Ciudad Madero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n95",
@@ -1880,7 +1938,8 @@
       "m": 67,
       "calle": "Calle Oaxaca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n94",
@@ -1896,7 +1955,8 @@
       "m": 59,
       "calle": "Calle Oaxaca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n78",
@@ -1904,7 +1964,9 @@
       "m": 73,
       "calle": "Calle Oaxaca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n97",
@@ -2076,7 +2138,8 @@
       "m": 13,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n113",
@@ -2084,7 +2147,8 @@
       "m": 77,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n114",
@@ -2092,7 +2156,8 @@
       "m": 41,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n39",
@@ -2100,7 +2165,8 @@
       "m": 62,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n36",
@@ -2108,7 +2174,8 @@
       "m": 5,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n115",
@@ -2116,7 +2183,8 @@
       "m": 72,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n116",
@@ -2124,7 +2192,8 @@
       "m": 6,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n25",
@@ -2132,7 +2201,8 @@
       "m": 39,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n48",
@@ -2146,7 +2216,8 @@
           21.903575,
           -102.299605
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n117",
@@ -2154,7 +2225,8 @@
       "m": 10,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n118",
@@ -2168,7 +2240,8 @@
           21.903447,
           -102.30108
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n74",
@@ -2176,7 +2249,8 @@
       "m": 96,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n11",
@@ -2184,7 +2258,8 @@
       "m": 22,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -2192,7 +2267,8 @@
       "m": 113,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n95",
@@ -2200,7 +2276,8 @@
       "m": 42,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n85",
@@ -2208,7 +2285,8 @@
       "m": 44,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -2266,7 +2344,8 @@
       "m": 135,
       "calle": "Calle General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n123",
@@ -2304,7 +2383,8 @@
       "m": 36,
       "calle": "Privada Roble",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n11",
@@ -2318,7 +2398,9 @@
           21.903827,
           -102.293735
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n128",
@@ -2332,7 +2414,8 @@
           21.904824,
           -102.299707
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n49",
@@ -2512,7 +2595,8 @@
       "m": 45,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -2520,7 +2604,8 @@
       "m": 45,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n19",
@@ -2528,7 +2613,8 @@
       "m": 110,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n113",
@@ -2536,7 +2622,8 @@
       "m": 23,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -2544,7 +2631,8 @@
       "m": 186,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n117",
@@ -2552,7 +2640,8 @@
       "m": 91,
       "calle": "Prolongación General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n128",
@@ -2560,7 +2649,8 @@
       "m": 19,
       "calle": "Prolongación General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -2568,7 +2658,8 @@
       "m": 26,
       "calle": "Prolongación General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n140",
@@ -2576,7 +2667,8 @@
       "m": 84,
       "calle": "Prolongación General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n118",
@@ -2584,7 +2676,8 @@
       "m": 26,
       "calle": "Prolongación General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n141",
@@ -2712,7 +2805,8 @@
       "m": 64,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n156",
@@ -2984,7 +3078,8 @@
       "m": 25,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n115",
@@ -2992,7 +3087,8 @@
       "m": 24,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n1",
@@ -3000,7 +3096,8 @@
       "m": 16,
       "calle": "Calle General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n122",
@@ -3008,7 +3105,8 @@
       "m": 15,
       "calle": "Calle General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n170",
@@ -3204,7 +3302,9 @@
       "m": 49,
       "calle": "Calle Potrero del Llano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n87",
@@ -3212,7 +3312,9 @@
       "m": 49,
       "calle": "Calle Potrero del Llano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n182",
@@ -3236,7 +3338,8 @@
       "m": 56,
       "calle": "Calle Roble",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -3244,7 +3347,8 @@
       "m": 54,
       "calle": "Calle Roble",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n186",

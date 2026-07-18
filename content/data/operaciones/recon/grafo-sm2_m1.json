@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR m2m1",
+    "sector": "Ciencias Biomedicas",
     "distrito": "SUR",
     "celda": "S_-2_-1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -683,7 +683,8 @@
           21.867447,
           -102.306443
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n1",
@@ -739,7 +740,8 @@
       "m": 96,
       "calle": "Calle Valparaíso",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n14",
@@ -753,7 +755,8 @@
           21.872068,
           -102.302918
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n15",
@@ -761,7 +764,8 @@
       "m": 57,
       "calle": "Calle Valparaíso",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -769,7 +773,8 @@
       "m": 54,
       "calle": "Calle República de Belice",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n18",
@@ -1205,7 +1210,8 @@
           21.861393,
           -102.302233
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n59",
@@ -1293,7 +1299,8 @@
       "m": 49,
       "calle": "Calle República de Nicaragua",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n53",
@@ -1391,7 +1398,8 @@
           21.872339,
           -102.301862
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n21",
@@ -1541,7 +1549,8 @@
       "m": 50,
       "calle": "Calle República de Chile",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n69",
@@ -1767,7 +1776,8 @@
       "m": 122,
       "calle": "Calle República de Guatemala",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n98",
@@ -1809,7 +1819,8 @@
       "m": 122,
       "calle": "Calle Río de Janeiro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n94",
@@ -1981,7 +1992,8 @@
           21.869591,
           -102.307704
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n33",
@@ -2073,7 +2085,8 @@
           21.872115,
           -102.300676
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n111",
@@ -2331,7 +2344,8 @@
       "m": 124,
       "calle": "Avenida Convención de 1914 Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n17",
@@ -2339,7 +2353,9 @@
       "m": 151,
       "calle": "Avenida Convención de 1914 Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n109",
@@ -2555,7 +2571,8 @@
       "m": 121,
       "calle": "Calle República de Ecuador",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n114",

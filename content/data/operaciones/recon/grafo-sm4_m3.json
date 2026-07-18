@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR PONIENTE m4m3",
+    "sector": "Avenida de los Maestros",
     "distrito": "SUR PONIENTE",
     "celda": "S_-4_-3",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1645,7 +1645,8 @@
       "m": 16,
       "calle": "Calle Fray Juan de Zumárraga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n73",
@@ -1653,7 +1654,8 @@
       "m": 60,
       "calle": "Calle Fray Juan de Zumárraga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n74",
@@ -1661,7 +1663,8 @@
       "m": 60,
       "calle": "Calle Fray Juan de Zumárraga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n69",
@@ -1683,7 +1686,8 @@
       "m": 155,
       "calle": "Calle Fray Toribio de Benavente Motolinia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n76",
@@ -1691,7 +1695,8 @@
       "m": 39,
       "calle": "Calle Fray Servando Teresa de Mier",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n77",
@@ -1699,7 +1704,8 @@
       "m": 51,
       "calle": "Calle Fray Servando Teresa de Mier",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n78",
@@ -1841,7 +1847,8 @@
       "m": 60,
       "calle": "Privada Fray Servando Teresa de Mier",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n74",
@@ -1849,7 +1856,8 @@
       "m": 154,
       "calle": "Calle Fray Servando Teresa de Mier",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n84",

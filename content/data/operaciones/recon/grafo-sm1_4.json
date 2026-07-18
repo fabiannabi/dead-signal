@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "ORIENTE m14",
+    "sector": "Parque Tabachín",
     "distrito": "ORIENTE",
     "celda": "S_-1_4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1795,7 +1795,8 @@
       "m": 29,
       "calle": "Avenida Paseo de la Cruz",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -1803,7 +1804,8 @@
       "m": 37,
       "calle": "Avenida Paseo de la Cruz",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -1811,7 +1813,8 @@
       "m": 26,
       "calle": "Avenida Paseo de la Cruz",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n11",
@@ -1819,7 +1822,8 @@
       "m": 25,
       "calle": "Avenida Paseo de la Cruz",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n12",
@@ -1827,7 +1831,8 @@
       "m": 40,
       "calle": "Avenida Paseo de la Cruz",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n13",
@@ -1835,7 +1840,8 @@
       "m": 27,
       "calle": "Avenida Paseo de la Cruz",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n14",
@@ -1843,7 +1849,8 @@
       "m": 42,
       "calle": "Avenida Paseo de la Cruz",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1931,7 +1938,8 @@
       "m": 32,
       "calle": "Avenida de las Palmas",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n30",
@@ -1939,7 +1947,8 @@
       "m": 24,
       "calle": "Avenida de las Palmas",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n31",
@@ -1947,7 +1956,8 @@
       "m": 55,
       "calle": "Avenida de las Palmas",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -2505,7 +2515,8 @@
       "m": 54,
       "calle": "Avenida de las Palmas",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n97",
@@ -2513,7 +2524,8 @@
       "m": 27,
       "calle": "Avenida de las Palmas",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n98",
@@ -2521,7 +2533,8 @@
       "m": 30,
       "calle": "Avenida de las Palmas",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n100",
@@ -3275,7 +3288,8 @@
           21.871885,
           -102.271612
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n158",
@@ -3351,7 +3365,8 @@
           21.872161,
           -102.272298
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n160",
@@ -3365,7 +3380,8 @@
           21.871561,
           -102.273672
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n164",
@@ -3379,7 +3395,8 @@
           21.871581,
           -102.274083
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n165",
@@ -3393,7 +3410,8 @@
           21.871223,
           -102.273422
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n166",
@@ -3407,7 +3425,8 @@
           21.871574,
           -102.274546
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n168",
@@ -3443,7 +3462,8 @@
           21.872839,
           -102.271312
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n17",
@@ -3451,7 +3471,8 @@
       "m": 36,
       "calle": "Privada Octava Paseo de la Cruz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n14",
@@ -3459,7 +3480,8 @@
       "m": 32,
       "calle": "Privada Séptima Paseo de la Cruz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -3483,7 +3505,8 @@
       "m": 19,
       "calle": "Eucalipto",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n178",
@@ -3499,7 +3522,8 @@
       "m": 44,
       "calle": "Prolongación Chopo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n181",
@@ -3507,7 +3531,8 @@
       "m": 26,
       "calle": "Prolongación Chopo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n182",
@@ -3515,7 +3540,8 @@
       "m": 55,
       "calle": "Prolongación Chopo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n183",
@@ -3553,7 +3579,8 @@
       "m": 33,
       "calle": "Privada Quinta Paseo de la Cruz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n187",
@@ -3579,7 +3606,8 @@
           21.872324,
           -102.272322
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n162",
@@ -3605,7 +3633,8 @@
           21.872416,
           -102.272167
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n188",
@@ -3623,7 +3652,8 @@
           21.872537,
           -102.272204
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n29",
@@ -3637,7 +3667,8 @@
           21.872573,
           -102.272289
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n99",
@@ -3655,7 +3686,8 @@
           21.8725,
           -102.272421
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n189",
@@ -3669,7 +3701,8 @@
           21.873076,
           -102.272714
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n191",
@@ -3677,7 +3710,8 @@
       "m": 49,
       "calle": "Andador Eucalipto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n193",
@@ -3685,7 +3719,8 @@
       "m": 41,
       "calle": "Prolongación Eucalipto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n191",
@@ -3693,7 +3728,8 @@
       "m": 27,
       "calle": "Prolongación Eucalipto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n189",
@@ -3701,7 +3737,8 @@
       "m": 54,
       "calle": "Prolongación Eucalipto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n11",
@@ -3709,7 +3746,8 @@
       "m": 54,
       "calle": "Calle Prolongación Tabachín",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n194",
@@ -3717,7 +3755,8 @@
       "m": 26,
       "calle": "Calle Prolongación Tabachín",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n195",
@@ -3725,7 +3764,8 @@
       "m": 43,
       "calle": "Calle Prolongación Tabachín",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n196",
@@ -3743,7 +3783,8 @@
           21.871582,
           -102.272009
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n194",
@@ -3751,7 +3792,8 @@
       "m": 62,
       "calle": "Andador Chopo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n30",
@@ -3759,7 +3801,8 @@
       "m": 16,
       "calle": "Andador Segundo de las Palmas",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n199",
@@ -3767,7 +3810,8 @@
       "m": 44,
       "calle": "Prolongación Pirul",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n200",
@@ -3775,7 +3819,8 @@
       "m": 12,
       "calle": "Prolongación Pirul",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n201",
@@ -3783,7 +3828,8 @@
       "m": 12,
       "calle": "Prolongación Pirul",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n202",
@@ -3791,7 +3837,8 @@
       "m": 54,
       "calle": "Prolongación Pirul",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n203",
@@ -3799,7 +3846,8 @@
       "m": 61,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n180",
@@ -3807,7 +3855,8 @@
       "m": 15,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n167",
@@ -3815,7 +3864,8 @@
       "m": 47,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n164",
@@ -3823,7 +3873,8 @@
       "m": 46,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n163",
@@ -3831,7 +3882,8 @@
       "m": 19,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n193",
@@ -3839,7 +3891,8 @@
       "m": 27,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n165",
@@ -3847,7 +3900,8 @@
       "m": 28,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n5",
@@ -3863,7 +3917,8 @@
       "m": 26,
       "calle": "Privada Novena Paseo de la Cruz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n206",
@@ -3985,7 +4040,8 @@
       "m": 62,
       "calle": "Andador Chopo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n210",
@@ -3999,7 +4055,8 @@
           21.873119,
           -102.271314
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n12",
@@ -4007,7 +4064,8 @@
       "m": 7,
       "calle": "Privada Sexta Paseo de la Cruz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n212",
@@ -4053,7 +4111,8 @@
           21.872336,
           -102.270019
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n215",
@@ -4093,7 +4152,8 @@
           21.872863,
           -102.269957
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n219",
@@ -4549,7 +4609,8 @@
       "m": 16,
       "calle": "primary",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n255",
@@ -4557,7 +4618,8 @@
       "m": 16,
       "calle": "primary",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n257",
@@ -4573,7 +4635,8 @@
       "m": 38,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n196",
@@ -4581,7 +4644,8 @@
       "m": 21,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n199",
@@ -4589,7 +4653,8 @@
       "m": 16,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n157",
@@ -4597,7 +4662,8 @@
       "m": 55,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n260",
@@ -5011,7 +5077,8 @@
       "m": 70,
       "calle": "Avenida Paseo de la Cruz",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n273",
@@ -5019,7 +5086,8 @@
       "m": 64,
       "calle": "Avenida Paseo de la Cruz",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n274",
@@ -5027,7 +5095,8 @@
       "m": 62,
       "calle": "Avenida Paseo de la Cruz",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n275",
@@ -5353,7 +5422,8 @@
           21.869782,
           -102.270221
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n19",
@@ -5385,7 +5455,8 @@
       "m": 26,
       "calle": "Privada Sexta Paseo de la Cruz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n275",
@@ -5393,7 +5464,8 @@
       "m": 12,
       "calle": "Prolongación Chopo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n274",
@@ -5401,7 +5473,8 @@
       "m": 12,
       "calle": "Calle Prolongación Tabachín",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n13",
@@ -5409,7 +5482,8 @@
       "m": 12,
       "calle": "Prolongación Eucalipto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n71",
@@ -5433,7 +5507,8 @@
       "m": 24,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n210",
@@ -5441,7 +5516,8 @@
       "m": 32,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n171",
@@ -5455,7 +5531,8 @@
           21.872672,
           -102.270797
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n287",
@@ -5691,7 +5768,8 @@
       "m": 49,
       "calle": "Andador Segundo de las Palmas",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n192",
@@ -5699,7 +5777,8 @@
       "m": 17,
       "calle": "Andador Eucalipto",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n177",
@@ -5707,7 +5786,8 @@
       "m": 46,
       "calle": "Eucalipto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n190",
@@ -5715,7 +5795,8 @@
       "m": 17,
       "calle": "Andador Eucalipto",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n95",
@@ -5741,7 +5822,8 @@
           21.871956,
           -102.270734
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n256",
@@ -5749,7 +5831,8 @@
       "m": 15,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n302",
@@ -5933,7 +6016,8 @@
       "m": 37,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n214",
@@ -5941,7 +6025,8 @@
       "m": 9,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n217",
@@ -5949,7 +6034,8 @@
       "m": 29,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n250",
@@ -5973,7 +6059,8 @@
       "m": 17,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n307",
@@ -6203,7 +6290,8 @@
           21.87246,
           -102.270588
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n255",
@@ -6225,7 +6313,8 @@
           21.871295,
           -102.271124
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n314",
@@ -6323,7 +6412,8 @@
       "m": 15,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n259",
@@ -6331,7 +6421,8 @@
       "m": 15,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n254",
@@ -6339,7 +6430,8 @@
       "m": 14,
       "calle": "Calle General Rodolfo Sánchez Taboada",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n111",

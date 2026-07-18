@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE 4m1",
+    "sector": "Prolongación General Ignacio Zaragoza",
     "distrito": "NORTE",
     "celda": "S_4_-1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -748,7 +748,8 @@
       "m": 11,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n1",
@@ -762,7 +763,8 @@
           21.903799,
           -102.301021
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n2",
@@ -770,7 +772,8 @@
       "m": 15,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -792,7 +795,8 @@
           21.903189,
           -102.301944
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n4",
@@ -800,7 +804,8 @@
       "m": 37,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n5",
@@ -808,7 +813,8 @@
       "m": 115,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -816,7 +822,8 @@
       "m": 34,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -830,7 +837,8 @@
           21.902967,
           -102.304466
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n8",
@@ -856,7 +864,8 @@
           21.90289,
           -102.30762
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n4",
@@ -864,7 +873,8 @@
       "m": 23,
       "calle": "Calle Libertad",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -886,7 +896,8 @@
           21.898812,
           -102.300819
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n12",
@@ -908,7 +919,8 @@
           21.901017,
           -102.303201
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n14",
@@ -934,7 +946,8 @@
           21.899634,
           -102.303253
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n16",
@@ -942,7 +955,8 @@
       "m": 161,
       "calle": "Calle Primavera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n18",
@@ -968,7 +982,8 @@
           21.901267,
           -102.302287
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n20",
@@ -986,7 +1001,8 @@
           21.899392,
           -102.304134
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n22",
@@ -1000,7 +1016,8 @@
           21.901488,
           -102.305737
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n24",
@@ -1022,7 +1039,8 @@
           21.900537,
           -102.304956
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n26",
@@ -1036,7 +1054,8 @@
           21.903176,
           -102.301257
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n27",
@@ -1044,7 +1063,8 @@
       "m": 49,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1052,7 +1072,8 @@
       "m": 50,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -1098,7 +1119,8 @@
           21.903585,
           -102.296491
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n30",
@@ -1106,7 +1128,8 @@
       "m": 197,
       "calle": "Calle Laurel",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -1128,7 +1151,8 @@
           21.901643,
           -102.300914
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n34",
@@ -1146,7 +1170,8 @@
           21.900775,
           -102.304084
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n27",
@@ -1164,7 +1189,8 @@
           21.900501,
           -102.300094
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n37",
@@ -1364,7 +1390,8 @@
           21.903934,
           -102.302729
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n71",
@@ -1414,7 +1441,8 @@
       "m": 121,
       "calle": "Calle Benjamín Méndez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n75",
@@ -1422,7 +1450,8 @@
       "m": 122,
       "calle": "Calle Benjamín Méndez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -1430,7 +1459,8 @@
       "m": 38,
       "calle": "Calle Benjamín Méndez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -1444,7 +1474,8 @@
           21.903331,
           -102.301774
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n78",
@@ -1482,7 +1513,8 @@
       "m": 57,
       "calle": "Calle Rincón de Romos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n84",
@@ -1490,7 +1522,8 @@
       "m": 12,
       "calle": "Calle Rincón de Romos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n75",
@@ -1498,7 +1531,8 @@
       "m": 66,
       "calle": "Calle Rincón de Romos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1708,7 +1742,8 @@
       "m": 42,
       "calle": "Calle Pabellón de Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n69",
@@ -1716,7 +1751,8 @@
       "m": 64,
       "calle": "Calle Pabellón de Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -1724,7 +1760,8 @@
       "m": 30,
       "calle": "Calle Pabellón de Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n51",
@@ -1840,7 +1877,8 @@
           21.903575,
           -102.299605
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n101",
@@ -1848,7 +1886,8 @@
       "m": 10,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -1856,7 +1895,8 @@
       "m": 104,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n103",
@@ -1864,7 +1904,8 @@
       "m": 30,
       "calle": "Calle Ébano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n104",
@@ -1894,7 +1935,8 @@
           21.902673,
           -102.306601
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n22",
@@ -1902,7 +1944,8 @@
       "m": 49,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n25",
@@ -1910,7 +1953,8 @@
       "m": 46,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n20",
@@ -1918,7 +1962,8 @@
       "m": 50,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -1926,7 +1971,8 @@
       "m": 53,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n14",
@@ -1934,7 +1980,8 @@
       "m": 44,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n13",
@@ -1942,7 +1989,8 @@
       "m": 54,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n30",
@@ -1950,7 +1998,8 @@
       "m": 47,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n19",
@@ -1958,7 +2007,8 @@
       "m": 71,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -1966,7 +2016,8 @@
       "m": 78,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -1974,7 +2025,8 @@
       "m": 7,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n26",
@@ -1988,7 +2040,8 @@
           21.903287,
           -102.30122
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n103",
@@ -1996,7 +2049,8 @@
       "m": 41,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n106",
@@ -2058,7 +2112,8 @@
       "m": 121,
       "calle": "Calle Libertad",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n110",
@@ -2190,7 +2245,8 @@
           21.907287,
           -102.296842
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n101",
@@ -2198,7 +2254,8 @@
       "m": 91,
       "calle": "Prolongación General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n114",
@@ -2206,7 +2263,8 @@
       "m": 19,
       "calle": "Prolongación General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n116",
@@ -2214,7 +2272,8 @@
       "m": 84,
       "calle": "Prolongación General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -2222,7 +2281,8 @@
       "m": 26,
       "calle": "Prolongación General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n117",
@@ -2230,7 +2290,8 @@
       "m": 63,
       "calle": "Prolongación General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n1",
@@ -2238,7 +2299,8 @@
       "m": 19,
       "calle": "Prolongación General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -2246,7 +2308,8 @@
       "m": 97,
       "calle": "Calle Jesús María",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n119",
@@ -2296,7 +2359,8 @@
           21.902863,
           -102.304177
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n125",
@@ -2488,7 +2552,8 @@
           21.904896,
           -102.299878
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n105",
@@ -2502,7 +2567,8 @@
           21.904021,
           -102.300546
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n116",
@@ -2510,7 +2576,8 @@
       "m": 12,
       "calle": "Avenida Canal Interceptor",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -2518,7 +2585,8 @@
       "m": 9,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -2548,7 +2616,8 @@
       "m": 23,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n139",
@@ -2566,7 +2635,8 @@
           21.903306,
           -102.304051
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n141",
@@ -2706,7 +2776,8 @@
           21.903174,
           -102.304185
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n84",
@@ -2724,7 +2795,8 @@
           21.903521,
           -102.303953
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n142",
@@ -2754,7 +2826,8 @@
           21.905535,
           -102.300771
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n56",

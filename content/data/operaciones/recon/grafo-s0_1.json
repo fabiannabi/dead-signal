@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "CENTRO 01",
+    "sector": "Ramon lopez Velarde",
     "distrito": "CENTRO",
     "celda": "S_0_1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -979,7 +979,8 @@
       "m": 158,
       "calle": "Avenida Francisco I. Madero",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -987,7 +988,8 @@
       "m": 34,
       "calle": "Avenida Francisco I. Madero",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -995,7 +997,8 @@
       "m": 137,
       "calle": "Avenida Francisco I. Madero",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n12",
@@ -1009,7 +1012,8 @@
           21.879829,
           -102.294912
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n14",
@@ -1017,7 +1021,8 @@
       "m": 51,
       "calle": "Calle Miguel Hidalgo y Costilla",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1025,7 +1030,8 @@
       "m": 70,
       "calle": "Calle Miguel Hidalgo y Costilla",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1033,7 +1039,8 @@
       "m": 41,
       "calle": "Calle Miguel Hidalgo y Costilla",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n18",
@@ -1055,7 +1062,8 @@
           21.883875,
           -102.292581
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n20",
@@ -1063,7 +1071,8 @@
       "m": 31,
       "calle": "Calle Licenciado Francisco Primo Verdad",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1071,7 +1080,8 @@
       "m": 54,
       "calle": "Calle González Saracho",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -1079,7 +1089,8 @@
       "m": 9,
       "calle": "Calle González Saracho",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -1087,7 +1098,8 @@
       "m": 208,
       "calle": "Calle González Saracho",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n23",
@@ -1167,7 +1179,9 @@
           21.884184,
           -102.293649
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1201,7 +1215,8 @@
           21.879425,
           -102.294207
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n34",
@@ -1209,7 +1224,8 @@
       "m": 137,
       "calle": "Calle Francisco G. Hornedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -1317,7 +1333,9 @@
           21.882192,
           -102.284583
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n42",
@@ -1325,7 +1343,8 @@
       "m": 20,
       "calle": "Calle Doctor Jesús Díaz de León",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1333,7 +1352,8 @@
       "m": 27,
       "calle": "Calle Doctor Jesús Díaz de León",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1341,7 +1361,9 @@
       "m": 96,
       "calle": "Calle Doctor Jesús Díaz de León",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n45",
@@ -1395,7 +1417,8 @@
           21.872514,
           -102.291809
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n47",
@@ -1417,7 +1440,8 @@
       "m": 38,
       "calle": "Calle Juan de Montoro",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1425,7 +1449,8 @@
       "m": 49,
       "calle": "Calle Juan de Montoro",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n51",
@@ -1439,7 +1464,8 @@
           21.881148,
           -102.29337
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n52",
@@ -1453,7 +1479,8 @@
           21.881338,
           -102.292449
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n53",
@@ -1461,7 +1488,8 @@
       "m": 114,
       "calle": "Calle Juan de Montoro",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n54",
@@ -1563,7 +1591,8 @@
       "m": 172,
       "calle": "Calle de Hospitalidad",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -1571,7 +1600,8 @@
       "m": 81,
       "calle": "Privada Francisco G. Horneado",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n64",
@@ -1663,7 +1693,9 @@
           21.882541,
           -102.285639
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n73",
@@ -1739,7 +1771,8 @@
           21.877896,
           -102.295735
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n80",
@@ -1747,7 +1780,8 @@
       "m": 21,
       "calle": "Calle Francisco Javier Mina",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n81",
@@ -1761,7 +1795,8 @@
           21.878287,
           -102.292512
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n60",
@@ -1769,7 +1804,8 @@
       "m": 170,
       "calle": "Calle del Sol",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n45",
@@ -1783,7 +1819,8 @@
           21.877626,
           -102.293543
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n84",
@@ -1897,7 +1934,8 @@
           21.877532,
           -102.289208
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n85",
@@ -1911,7 +1949,8 @@
           21.878483,
           -102.289085
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n87",
@@ -1933,7 +1972,8 @@
           21.878365,
           -102.288111
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n88",
@@ -2035,7 +2075,8 @@
       "m": 25,
       "calle": "Calle Miguel Hidalgo y Costilla",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -2043,7 +2084,8 @@
       "m": 64,
       "calle": "Calle Miguel Hidalgo y Costilla",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -2057,7 +2099,8 @@
           21.878756,
           -102.293625
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n95",
@@ -2075,7 +2118,8 @@
           21.878859,
           -102.292904
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n96",
@@ -2083,7 +2127,8 @@
       "m": 15,
       "calle": "pedestrian",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n97",
@@ -2283,7 +2328,8 @@
       "m": 91,
       "calle": "Calle 16 de Septiembre",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n109",
@@ -2291,7 +2337,8 @@
       "m": 17,
       "calle": "Calle 16 de Septiembre",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n111",
@@ -2329,7 +2376,8 @@
       "m": 29,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n113",
@@ -2337,7 +2385,8 @@
       "m": 26,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n115",
@@ -2345,7 +2394,8 @@
       "m": 27,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n112",
@@ -2353,7 +2403,8 @@
       "m": 53,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n80",
@@ -2361,7 +2412,8 @@
       "m": 113,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n116",
@@ -2369,7 +2421,8 @@
       "m": 29,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n113",
@@ -2377,7 +2430,8 @@
       "m": 10,
       "calle": "Calle Doctor Jesús Díaz de León",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n49",
@@ -2385,7 +2439,8 @@
       "m": 75,
       "calle": "Calle Doctor Jesús Díaz de León",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n12",
@@ -2393,7 +2448,8 @@
       "m": 24,
       "calle": "Calle Doctor Jesús Díaz de León",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n117",
@@ -2401,7 +2457,8 @@
       "m": 56,
       "calle": "Calle Doctor Jesús Díaz de León",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n108",
@@ -2409,7 +2466,8 @@
       "m": 116,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n118",
@@ -2423,7 +2481,8 @@
           21.87909,
           -102.293224
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n118",
@@ -2431,7 +2490,8 @@
       "m": 11,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n119",
@@ -2439,7 +2499,8 @@
       "m": 68,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n114",
@@ -2447,7 +2508,8 @@
       "m": 68,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -2455,7 +2517,8 @@
       "m": 60,
       "calle": "Calle Doctor Jesús Díaz de León",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -2471,7 +2534,8 @@
       "m": 193,
       "calle": "Avenida Francisco I. Madero",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n75",
@@ -2493,7 +2557,9 @@
           21.883383,
           -102.2938
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n17",
@@ -2507,7 +2573,8 @@
           21.882039,
           -102.29281
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n123",
@@ -2565,7 +2632,8 @@
           21.878057,
           -102.289435
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n107",
@@ -2609,7 +2677,8 @@
       "m": 37,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -2623,7 +2692,8 @@
           21.882427,
           -102.292455
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n128",
@@ -2631,7 +2701,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n130",
@@ -2647,7 +2718,8 @@
       "m": 28,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n134",
@@ -2661,7 +2733,8 @@
           21.880741,
           -102.293059
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n132",
@@ -2677,7 +2750,8 @@
       "m": 9,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n138",
@@ -2691,7 +2765,8 @@
           21.880565,
           -102.292529
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n139",
@@ -2699,7 +2774,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n134",
@@ -2707,7 +2783,8 @@
       "m": 15,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n137",
@@ -2715,7 +2792,8 @@
       "m": 18,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n140",
@@ -2729,7 +2807,8 @@
           21.880865,
           -102.291908
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n109",
@@ -2737,7 +2816,8 @@
       "m": 5,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -2789,7 +2869,8 @@
           21.880834,
           -102.293058
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n145",
@@ -2869,7 +2950,8 @@
           21.880681,
           -102.293703
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n154",
@@ -2877,7 +2959,8 @@
       "m": 38,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n152",
@@ -2885,7 +2968,8 @@
       "m": 13,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n156",
@@ -2899,7 +2983,8 @@
           21.880168,
           -102.293492
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n158",
@@ -2907,7 +2992,8 @@
       "m": 8,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n160",
@@ -2915,7 +3001,8 @@
       "m": 46,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n161",
@@ -2923,7 +3010,8 @@
       "m": 56,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n161",
@@ -2937,7 +3025,8 @@
           21.882074,
           -102.293323
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n163",
@@ -2945,7 +3034,8 @@
       "m": 30,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n159",
@@ -2953,7 +3043,8 @@
       "m": 10,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n162",
@@ -2971,7 +3062,8 @@
           21.882129,
           -102.293021
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n10",
@@ -2985,7 +3077,8 @@
           21.881962,
           -102.293121
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n164",
@@ -2993,7 +3086,8 @@
       "m": 7,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n92",
@@ -3021,7 +3115,8 @@
           21.881998,
           -102.291349
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n50",
@@ -3029,7 +3124,8 @@
       "m": 7,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n171",
@@ -3069,7 +3165,8 @@
       "m": 22,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n170",
@@ -3077,7 +3174,8 @@
       "m": 13,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n155",
@@ -3085,7 +3183,8 @@
       "m": 6,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n52",
@@ -3093,7 +3192,8 @@
       "m": 7,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n174",
@@ -3101,7 +3201,8 @@
       "m": 10,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n117",
@@ -3109,7 +3210,8 @@
       "m": 7,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -3131,7 +3233,8 @@
           21.878268,
           -102.292465
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n176",
@@ -3213,7 +3316,8 @@
       "m": 7,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n143",

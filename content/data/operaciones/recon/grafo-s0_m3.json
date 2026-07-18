@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "PONIENTE 0m3",
+    "sector": "IMSS Clinica 7",
     "distrito": "PONIENTE",
     "celda": "S_0_-3",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -734,7 +734,8 @@
       "m": 120,
       "calle": "Calle Campeche",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -742,7 +743,8 @@
       "m": 118,
       "calle": "Calle Campeche",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -772,7 +774,8 @@
           21.873177,
           -102.315199
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n12",
@@ -780,7 +783,8 @@
       "m": 75,
       "calle": "Calle Talamantes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n13",
@@ -852,7 +856,8 @@
           21.883726,
           -102.311851
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n23",
@@ -920,7 +925,8 @@
           21.883486,
           -102.312118
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n27",
@@ -952,7 +958,8 @@
       "m": 138,
       "calle": "Calle Federico García Lorca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -960,7 +967,8 @@
       "m": 42,
       "calle": "Calle Federico García Lorca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -968,7 +976,8 @@
       "m": 148,
       "calle": "Calle Federico García Lorca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n30",
@@ -992,7 +1001,8 @@
       "m": 148,
       "calle": "Calle Fray Servando Teresa de Mier",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -1000,7 +1010,8 @@
       "m": 138,
       "calle": "Calle Sor Juana Inés de la Cruz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n39",
@@ -1030,7 +1041,8 @@
           21.877596,
           -102.313164
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n40",
@@ -1104,7 +1116,8 @@
       "m": 53,
       "calle": "Calle Salvador Díaz Mirón",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n36",
@@ -1112,7 +1125,8 @@
       "m": 56,
       "calle": "Calle Salvador Díaz Mirón",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -1120,7 +1134,8 @@
       "m": 57,
       "calle": "Calle Salvador Díaz Mirón",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n48",
@@ -1128,7 +1143,8 @@
       "m": 77,
       "calle": "Calle Primavera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n49",
@@ -1136,7 +1152,8 @@
       "m": 138,
       "calle": "Calle Fray Servando Teresa de Mier",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -1160,7 +1177,8 @@
       "m": 147,
       "calle": "Calle Vicente Riva Palacio",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -1168,7 +1186,8 @@
       "m": 43,
       "calle": "Calle Vicente Riva Palacio",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n53",
@@ -1176,7 +1195,8 @@
       "m": 138,
       "calle": "Calle Vicente Riva Palacio",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -1184,7 +1204,8 @@
       "m": 148,
       "calle": "Calle Sor Juana Inés de la Cruz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -1200,7 +1221,8 @@
       "m": 56,
       "calle": "Calle Manuel Payno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -1208,7 +1230,8 @@
       "m": 53,
       "calle": "Calle Manuel Payno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n49",
@@ -1216,7 +1239,8 @@
       "m": 57,
       "calle": "Calle Manuel Payno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1224,7 +1248,8 @@
       "m": 79,
       "calle": "Calle Colima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -1292,7 +1317,8 @@
           21.879571,
           -102.31705
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n63",
@@ -1332,7 +1358,8 @@
       "m": 74,
       "calle": "Calle Pueblito",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -1374,7 +1401,8 @@
           21.87333,
           -102.316677
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n5",
@@ -1432,7 +1460,8 @@
           21.877535,
           -102.316258
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n11",
@@ -1462,7 +1491,8 @@
           21.877541,
           -102.315426
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n66",
@@ -1470,7 +1500,8 @@
       "m": 118,
       "calle": "Calle Campeche",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n12",
@@ -1478,7 +1509,8 @@
       "m": 120,
       "calle": "Calle Campeche",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1726,7 +1758,8 @@
       "m": 57,
       "calle": "Calle Londres",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n116",
@@ -1734,7 +1767,8 @@
       "m": 72,
       "calle": "Privada Rafael",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n115",
@@ -1860,7 +1894,8 @@
       "m": 56,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n139",
@@ -1868,7 +1903,8 @@
       "m": 32,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n140",
@@ -1876,7 +1912,8 @@
       "m": 10,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n141",
@@ -1884,7 +1921,8 @@
       "m": 35,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n142",
@@ -1892,7 +1930,8 @@
       "m": 46,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n26",
@@ -1900,7 +1939,8 @@
       "m": 28,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -1922,7 +1962,8 @@
           21.884626,
           -102.312392
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n34",
@@ -1978,7 +2019,8 @@
       "m": 12,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -1986,7 +2028,8 @@
       "m": 74,
       "calle": "Calle Pueblito",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n72",
@@ -1994,7 +2037,8 @@
       "m": 73,
       "calle": "Calle Pueblito",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -2002,7 +2046,8 @@
       "m": 104,
       "calle": "Calle Pueblito",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n144",
@@ -2056,7 +2101,8 @@
       "m": 18,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n148",
@@ -2064,7 +2110,8 @@
       "m": 19,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n141",
@@ -2072,7 +2119,8 @@
       "m": 19,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n149",
@@ -2080,7 +2128,8 @@
       "m": 20,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n150",
@@ -2088,7 +2137,8 @@
       "m": 19,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n151",
@@ -2096,7 +2146,8 @@
       "m": 18,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n94",
@@ -2170,7 +2221,8 @@
           21.884066,
           -102.312561
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n151",
@@ -2178,7 +2230,8 @@
       "m": 4,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -2186,7 +2239,8 @@
       "m": 24,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n150",
@@ -2194,7 +2248,8 @@
       "m": 46,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n149",
@@ -2202,7 +2257,8 @@
       "m": 34,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n48",
@@ -2210,7 +2266,8 @@
       "m": 11,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n148",
@@ -2218,7 +2275,8 @@
       "m": 33,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n147",
@@ -2226,7 +2284,8 @@
       "m": 56,
       "calle": "Avenida Convención de 1914 Poniente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n146",
@@ -2266,7 +2325,8 @@
       "m": 32,
       "calle": "Primavera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n18",
@@ -2392,7 +2452,8 @@
           21.883491,
           -102.312876
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n161",
@@ -2490,7 +2551,8 @@
           21.87951,
           -102.316983
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n66",
@@ -2498,7 +2560,8 @@
       "m": 11,
       "calle": "Calle Pueblito",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     }
   ]
 }

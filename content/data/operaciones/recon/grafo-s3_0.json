@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE 30",
+    "sector": "La Luz Del mundo",
     "distrito": "NORTE",
     "celda": "S_3_0",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -821,7 +821,8 @@
       "m": 65,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -835,7 +836,8 @@
           21.898982,
           -102.29585
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n8",
@@ -935,7 +937,8 @@
           21.894604,
           -102.298201
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n16",
@@ -953,7 +956,8 @@
           21.89517,
           -102.297969
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n17",
@@ -977,7 +981,8 @@
       "m": 115,
       "calle": "Calle Cedro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -1047,7 +1052,8 @@
       "m": 114,
       "calle": "Calle Pino",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n31",
@@ -1055,7 +1061,8 @@
       "m": 182,
       "calle": "Calle Pino",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -1135,7 +1142,8 @@
           21.893975,
           -102.29653
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n40",
@@ -1153,7 +1161,8 @@
           21.895118,
           -102.296383
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n41",
@@ -1451,7 +1460,8 @@
       "m": 161,
       "calle": "Calle Primavera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n66",
@@ -1497,7 +1507,8 @@
           21.900184,
           -102.301249
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n67",
@@ -1613,7 +1624,8 @@
       "m": 175,
       "calle": "Calle Roble",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n81",
@@ -1621,7 +1633,8 @@
       "m": 171,
       "calle": "Calle Palma",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n82",
@@ -1731,7 +1744,8 @@
       "m": 235,
       "calle": "Calle Roble",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n87",
@@ -1745,7 +1759,8 @@
           21.900515,
           -102.29666
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n75",
@@ -1759,7 +1774,8 @@
           21.902435,
           -102.297262
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n73",
@@ -1767,7 +1783,8 @@
       "m": 197,
       "calle": "Calle Pino",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n90",
@@ -1781,7 +1798,8 @@
           21.903278,
           -102.297997
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n74",
@@ -1795,7 +1813,8 @@
           21.90039,
           -102.2971
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n92",
@@ -1847,7 +1866,8 @@
           21.903048,
           -102.298872
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n97",
@@ -1903,7 +1923,8 @@
       "m": 130,
       "calle": "Calle Alfredo Lewis",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -1911,7 +1932,8 @@
       "m": 10,
       "calle": "Calle Alfredo Lewis",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -1919,7 +1941,8 @@
       "m": 65,
       "calle": "Calle Alfredo Lewis",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n20",
@@ -1927,7 +1950,8 @@
       "m": 46,
       "calle": "Calle Alfredo Lewis",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n31",
@@ -1935,7 +1959,8 @@
       "m": 47,
       "calle": "Calle Alfredo Lewis",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -2023,7 +2048,8 @@
           21.898337,
           -102.300666
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n29",
@@ -2101,7 +2127,8 @@
       "m": 116,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -2109,7 +2136,8 @@
       "m": 63,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n49",
@@ -2199,7 +2227,8 @@
       "m": 135,
       "calle": "Calle General Ignacio Zaragoza",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n119",
@@ -2343,7 +2372,8 @@
       "m": 38,
       "calle": "Avenida Convención de 1914 Norte",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n87",
@@ -2351,7 +2381,8 @@
       "m": 46,
       "calle": "Avenida Convención de 1914 Norte",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n91",
@@ -2359,7 +2390,8 @@
       "m": 49,
       "calle": "Avenida Convención de 1914 Norte",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n89",
@@ -2367,7 +2399,8 @@
       "m": 47,
       "calle": "Avenida Convención de 1914 Norte",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n94",
@@ -2441,7 +2474,8 @@
           21.89781,
           -102.303148
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n105",
@@ -2491,7 +2525,8 @@
       "m": 105,
       "calle": "Avenida Convención de 1914 Norte",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -2499,7 +2534,8 @@
       "m": 11,
       "calle": "Avenida Convención de 1914 Norte",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n110",
@@ -2523,7 +2559,8 @@
       "m": 47,
       "calle": "Avenida Convención de 1914 Norte",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n30",
@@ -2531,7 +2568,8 @@
       "m": 48,
       "calle": "Avenida Convención de 1914 Norte",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -2539,7 +2577,8 @@
       "m": 83,
       "calle": "Avenida Convención de 1914 Norte",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n112",
@@ -2547,7 +2586,8 @@
       "m": 10,
       "calle": "Avenida Convención de 1914 Norte",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -2555,7 +2595,8 @@
       "m": 104,
       "calle": "Avenida Convención de 1914 Norte",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n122",
@@ -2563,7 +2604,8 @@
       "m": 18,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n127",
@@ -2571,7 +2613,8 @@
       "m": 40,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n100",
@@ -2711,7 +2754,8 @@
       "m": 18,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -2719,7 +2763,8 @@
       "m": 132,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n25",
@@ -2855,7 +2900,8 @@
           21.897701,
           -102.296118
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n141",
@@ -2863,7 +2909,8 @@
       "m": 26,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n143",
@@ -2879,7 +2926,8 @@
       "m": 25,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n145",
@@ -2911,7 +2959,8 @@
       "m": 42,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n141",
@@ -2919,7 +2968,8 @@
       "m": 36,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n117",

@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "ORIENTE 03",
+    "sector": "Monumento a Don Quijote",
     "distrito": "ORIENTE",
     "celda": "S_0_3",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1148,7 +1148,8 @@
           21.879307,
           -102.281589
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n1",
@@ -1196,7 +1197,8 @@
       "m": 43,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -1222,7 +1224,8 @@
           21.878747,
           -102.281855
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n10",
@@ -1236,7 +1239,8 @@
           21.878472,
           -102.281454
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n11",
@@ -1250,7 +1254,8 @@
           21.878424,
           -102.281312
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n12",
@@ -1268,7 +1273,8 @@
           21.878516,
           -102.281118
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n13",
@@ -1282,7 +1288,8 @@
           21.878628,
           -102.281076
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n14",
@@ -1290,7 +1297,8 @@
       "m": 9,
       "calle": "Avenida Glorieta Don Quijote",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1298,7 +1306,8 @@
       "m": 124,
       "calle": "Calle Arquitecto José Refugio Reyes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -1458,7 +1467,8 @@
       "m": 100,
       "calle": "Calle Damasco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -1474,7 +1484,8 @@
       "m": 140,
       "calle": "Avenida Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -1504,7 +1515,8 @@
           21.884217,
           -102.281899
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n32",
@@ -1614,7 +1626,8 @@
           21.879099,
           -102.279109
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n30",
@@ -1622,7 +1635,8 @@
       "m": 85,
       "calle": "Calle Antonia L. Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1670,7 +1684,8 @@
       "m": 7,
       "calle": "Calle 28 de Agosto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -1678,7 +1693,8 @@
       "m": 76,
       "calle": "Calle 28 de Agosto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -1712,7 +1728,8 @@
           21.887041,
           -102.282233
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n60",
@@ -1758,7 +1775,8 @@
       "m": 60,
       "calle": "Calle 28 de Agosto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n54",
@@ -1766,7 +1784,8 @@
       "m": 24,
       "calle": "Calle 28 de Agosto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n63",
@@ -1774,7 +1793,8 @@
       "m": 66,
       "calle": "Calle 28 de Agosto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n29",
@@ -1782,7 +1802,8 @@
       "m": 92,
       "calle": "Privada Rosalía Monrroy",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n25",
@@ -1806,7 +1827,8 @@
       "m": 128,
       "calle": "Calle Hortelanos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -1830,7 +1852,8 @@
       "m": 71,
       "calle": "Avenida Alameda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n70",
@@ -1838,7 +1861,8 @@
       "m": 22,
       "calle": "Avenida Alameda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n71",
@@ -1852,7 +1876,8 @@
           21.883308,
           -102.275721
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n73",
@@ -1882,7 +1907,8 @@
           21.881406,
           -102.274415
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n74",
@@ -1890,7 +1916,8 @@
       "m": 107,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n75",
@@ -1898,7 +1925,8 @@
       "m": 9,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -1906,7 +1934,8 @@
       "m": 51,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -1914,7 +1943,8 @@
       "m": 50,
       "calle": "Calle Teniente Juan de la Barrera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n78",
@@ -1988,7 +2018,8 @@
       "m": 27,
       "calle": "Calle Fernando Montes de Oca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -1996,7 +2027,8 @@
       "m": 61,
       "calle": "Calle Fernando Montes de Oca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n85",
@@ -2060,7 +2092,8 @@
       "m": 47,
       "calle": "Calle Agustín Melgar",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n92",
@@ -2076,7 +2109,8 @@
       "m": 100,
       "calle": "Calle Privada José Marín Iglesias",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n96",
@@ -2450,7 +2484,8 @@
       "m": 54,
       "calle": "Calle Vicente Suárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n113",
@@ -2464,7 +2499,8 @@
           21.881711,
           -102.275908
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n115",
@@ -2472,7 +2508,8 @@
       "m": 86,
       "calle": "Calle Felipe Pescador",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n116",
@@ -2614,7 +2651,8 @@
       "m": 85,
       "calle": "Calle Manuel G. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n94",
@@ -2622,7 +2660,8 @@
       "m": 50,
       "calle": "Calle Manuel G. Escobedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n114",
@@ -2640,7 +2679,8 @@
           21.881914,
           -102.275532
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n74",
@@ -2654,7 +2694,8 @@
           21.882876,
           -102.274762
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n11",
@@ -2720,7 +2761,8 @@
           21.870522,
           -102.281893
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n127",
@@ -2734,7 +2776,8 @@
           21.878449,
           -102.282094
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n129",
@@ -2742,7 +2785,8 @@
       "m": 131,
       "calle": "Calle Bugambilia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n130",
@@ -2776,7 +2820,8 @@
           21.877477,
           -102.27807
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n129",
@@ -2790,7 +2835,8 @@
           21.878265,
           -102.27807
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n134",
@@ -2816,7 +2862,8 @@
           21.878079,
           -102.280351
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n136",
@@ -2858,7 +2905,8 @@
       "m": 66,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n134",
@@ -2866,7 +2914,8 @@
       "m": 37,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n88",
@@ -2912,7 +2961,8 @@
       "m": 60,
       "calle": "Calle Fernando Montes de Oca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n75",
@@ -2920,7 +2970,8 @@
       "m": 28,
       "calle": "Calle Fernando Montes de Oca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n140",
@@ -2928,7 +2979,8 @@
       "m": 62,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n142",
@@ -3012,7 +3064,9 @@
       "m": 140,
       "calle": "Avenida Héroe de Nacozari Norte",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n150",
@@ -3020,7 +3074,8 @@
       "m": 7,
       "calle": "Avenida Héroe de Nacozari Norte",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n40",
@@ -3028,7 +3083,8 @@
       "m": 57,
       "calle": "Avenida Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n152",
@@ -3036,7 +3092,8 @@
       "m": 81,
       "calle": "Avenida Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n154",
@@ -3134,7 +3191,8 @@
           21.877224,
           -102.28133
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n1",
@@ -3322,7 +3380,8 @@
           21.880187,
           -102.276497
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n162",
@@ -3368,7 +3427,8 @@
           21.877219,
           -102.280222
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n9",
@@ -3376,7 +3436,8 @@
       "m": 39,
       "calle": "Avenida Héroe de Nacozari Norte",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -3394,7 +3455,8 @@
           21.878844,
           -102.281227
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n166",
@@ -3402,7 +3464,8 @@
       "m": 9,
       "calle": "Avenida Glorieta Don Quijote",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n0",
@@ -3416,7 +3479,8 @@
           21.878788,
           -102.281481
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n165",
@@ -3424,7 +3488,8 @@
       "m": 7,
       "calle": "Avenida Glorieta Don Quijote",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -3438,7 +3503,8 @@
           21.878593,
           -102.281537
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n167",
@@ -3446,7 +3512,9 @@
       "m": 103,
       "calle": "Avenida Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n168",
@@ -3454,7 +3522,8 @@
       "m": 25,
       "calle": "Avenida Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n169",
@@ -3462,7 +3531,8 @@
       "m": 33,
       "calle": "Avenida Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n141",
@@ -3470,7 +3540,8 @@
       "m": 37,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n171",
@@ -3548,7 +3619,8 @@
       "m": 20,
       "calle": "Avenida Héroe de Nacozari Norte",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -3564,7 +3636,9 @@
       "m": 113,
       "calle": "Avenida Héroe de Nacozari Norte",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n178",
@@ -3578,7 +3652,8 @@
           21.878817,
           -102.283701
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n127",
@@ -3586,7 +3661,8 @@
       "m": 38,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -3594,7 +3670,8 @@
       "m": 224,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n153",
@@ -3602,7 +3679,9 @@
       "m": 23,
       "calle": "Avenida Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n182",
@@ -3624,7 +3703,8 @@
           21.88319,
           -102.278359
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n109",
@@ -3680,7 +3760,9 @@
           21.881373,
           -102.28237
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n151",
@@ -3698,7 +3780,8 @@
           21.881046,
           -102.283664
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n176",
@@ -3706,7 +3789,8 @@
       "m": 8,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n185",
@@ -3842,7 +3926,8 @@
       "m": 25,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n138",
@@ -3850,7 +3935,8 @@
       "m": 188,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n190",
@@ -3858,7 +3944,8 @@
       "m": 22,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n192",
@@ -3866,7 +3953,8 @@
       "m": 194,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n81",
@@ -3960,7 +4048,8 @@
       "m": 30,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n111",
@@ -4086,7 +4175,8 @@
       "m": 31,
       "calle": "Calle 5 de Febrero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n36",
@@ -4094,7 +4184,8 @@
       "m": 55,
       "calle": "Calle 5 de Febrero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n152",
@@ -4102,7 +4193,8 @@
       "m": 12,
       "calle": "Calle Damasco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n168",
@@ -4110,7 +4202,8 @@
       "m": 145,
       "calle": "Calle Damasco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n197",
@@ -4170,7 +4263,9 @@
           21.880642,
           -102.282563
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n175",
@@ -4196,7 +4291,8 @@
           21.880089,
           -102.282697
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n124",
@@ -4212,7 +4308,8 @@
       "m": 59,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n205",
@@ -4250,7 +4347,8 @@
       "m": 8,
       "calle": "Calle Arquitecto José Refugio Reyes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n88",
@@ -4480,7 +4578,8 @@
       "m": 13,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -4532,7 +4631,8 @@
           21.879525,
           -102.275584
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n133",
@@ -4598,7 +4698,8 @@
       "m": 32,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n61",
@@ -4616,7 +4717,8 @@
           21.883121,
           -102.27779
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n223",
@@ -4624,7 +4726,8 @@
       "m": 10,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n224",
@@ -4632,7 +4735,8 @@
       "m": 19,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n225",
@@ -4640,7 +4744,8 @@
       "m": 254,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n115",
@@ -4648,7 +4753,8 @@
       "m": 32,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n222",
@@ -4662,7 +4768,8 @@
           21.883403,
           -102.275662
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n49",
@@ -4676,7 +4783,8 @@
           21.883174,
           -102.279462
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n169",
@@ -4690,7 +4798,8 @@
           21.882721,
           -102.280916
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n64",
@@ -4698,7 +4807,8 @@
       "m": 115,
       "calle": "Avenida Alameda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -4720,7 +4830,8 @@
       "m": 140,
       "calle": "Avenida Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     }
   ]
 }

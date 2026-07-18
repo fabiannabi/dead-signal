@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "CENTRO 10",
+    "sector": "Mercado Teran",
     "distrito": "CENTRO",
     "celda": "S_1_0",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -661,7 +661,8 @@
           21.885033,
           -102.300578
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n1",
@@ -669,7 +670,8 @@
       "m": 68,
       "calle": "Calle Valentín Gómez Farías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n2",
@@ -677,7 +679,8 @@
       "m": 31,
       "calle": "Calle Valentín Gómez Farías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n3",
@@ -685,7 +688,8 @@
       "m": 40,
       "calle": "Calle Valentín Gómez Farías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n4",
@@ -693,7 +697,8 @@
       "m": 109,
       "calle": "Calle Valentín Gómez Farías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n6",
@@ -789,7 +794,8 @@
           21.886772,
           -102.296409
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n15",
@@ -859,7 +865,8 @@
           21.889292,
           -102.300658
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n11",
@@ -917,7 +924,8 @@
       "m": 19,
       "calle": "Calle Plazuela Juárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n21",
@@ -925,7 +933,8 @@
       "m": 81,
       "calle": "Calle Plazuela Juárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n23",
@@ -949,7 +958,8 @@
       "m": 52,
       "calle": "Calle General Guadalupe Victoria",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n25",
@@ -957,7 +967,8 @@
       "m": 18,
       "calle": "Calle General Guadalupe Victoria",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n20",
@@ -975,7 +986,8 @@
           21.883127,
           -102.298176
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n27",
@@ -983,7 +995,8 @@
       "m": 167,
       "calle": "Calle San Ignacio",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -999,7 +1012,8 @@
       "m": 27,
       "calle": "Plazuela Juárez",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n30",
@@ -1017,7 +1031,8 @@
           21.885722,
           -102.298918
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n32",
@@ -1025,7 +1040,8 @@
       "m": 81,
       "calle": "Peatonal Jardín de Zaragoza",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -1043,7 +1059,8 @@
           21.885905,
           -102.295465
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n36",
@@ -1051,7 +1068,9 @@
       "m": 94,
       "calle": "San Antonio",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n38",
@@ -1059,7 +1078,8 @@
       "m": 40,
       "calle": "Calle Licenciado Benito Juárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n39",
@@ -1073,7 +1093,9 @@
           21.886501,
           -102.296987
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n41",
@@ -1121,7 +1143,9 @@
           21.884184,
           -102.293649
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n45",
@@ -1129,7 +1153,8 @@
       "m": 39,
       "calle": "Calle Condell",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -1137,7 +1162,8 @@
       "m": 77,
       "calle": "Calle Condell",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -1171,7 +1197,9 @@
           21.885358,
           -102.294739
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1179,7 +1207,8 @@
       "m": 54,
       "calle": "Pasaje Ortega",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n37",
@@ -1187,7 +1216,8 @@
       "m": 72,
       "calle": "Pasaje Ortega",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n52",
@@ -1195,7 +1225,9 @@
       "m": 128,
       "calle": "Peatonal Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n54",
@@ -1209,7 +1241,8 @@
           21.890188,
           -102.293707
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n56",
@@ -1223,7 +1256,8 @@
           21.890518,
           -102.294077
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n39",
@@ -1231,7 +1265,9 @@
       "m": 47,
       "calle": "Calle Guzmán",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n58",
@@ -1239,7 +1275,9 @@
       "m": 44,
       "calle": "Calle Guzmán",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n59",
@@ -1247,7 +1285,8 @@
       "m": 66,
       "calle": "Calle Guzmán",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -1255,7 +1294,8 @@
       "m": 293,
       "calle": "Calle Guzmán",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -1263,7 +1303,8 @@
       "m": 144,
       "calle": "Calle Guzmán",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -1271,7 +1312,8 @@
       "m": 71,
       "calle": "Calle Larreátegui",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n62",
@@ -1279,7 +1321,8 @@
       "m": 63,
       "calle": "Calle Larreátegui",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n63",
@@ -1287,7 +1330,8 @@
       "m": 51,
       "calle": "Calle Larreátegui",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n64",
@@ -1355,7 +1399,8 @@
           21.886398,
           -102.305264
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n68",
@@ -1363,7 +1408,9 @@
       "m": 44,
       "calle": "secondary_link",
       "clase": "secondary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n14",
@@ -1371,7 +1418,9 @@
       "m": 65,
       "calle": "Calle General José María Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n70",
@@ -1379,7 +1428,8 @@
       "m": 122,
       "calle": "Calle General José María Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n71",
@@ -1401,7 +1451,8 @@
           21.887851,
           -102.295344
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n33",
@@ -1409,7 +1460,8 @@
       "m": 24,
       "calle": "Calle General José María Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -1423,7 +1475,8 @@
           21.88673,
           -102.296311
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n14",
@@ -1431,7 +1484,8 @@
       "m": 31,
       "calle": "Calle José María Morelos y Pavón",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n59",
@@ -1445,7 +1499,9 @@
           21.885384,
           -102.295901
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n49",
@@ -1453,7 +1509,9 @@
       "m": 90,
       "calle": "Calle José María Morelos y Pavón",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n68",
@@ -1491,7 +1549,9 @@
           21.881588,
           -102.294638
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n74",
@@ -1507,7 +1567,8 @@
       "m": 77,
       "calle": "Calle Benjamín de la Mora",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -1559,7 +1620,9 @@
           21.88358,
           -102.296239
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n36",
@@ -1567,7 +1630,9 @@
       "m": 57,
       "calle": "Calle Licenciado Benito Juárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n80",
@@ -1575,7 +1640,9 @@
       "m": 31,
       "calle": "Calle Licenciado Benito Juárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n53",
@@ -1583,7 +1650,9 @@
       "m": 73,
       "calle": "Calle Licenciado Benito Juárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n81",
@@ -1591,7 +1660,8 @@
       "m": 7,
       "calle": "Calle Licenciado Benito Juárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n80",
@@ -1599,7 +1669,9 @@
       "m": 101,
       "calle": "Calle Unión",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1607,7 +1679,8 @@
       "m": 48,
       "calle": "Calle Unión",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n83",
@@ -1637,7 +1710,8 @@
       "m": 22,
       "calle": "Calle General Álvaro Obregón",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n13",
@@ -1651,7 +1725,8 @@
           21.887324,
           -102.29674
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n32",
@@ -1659,7 +1734,8 @@
       "m": 24,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1667,7 +1743,8 @@
       "m": 66,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n84",
@@ -1699,7 +1776,8 @@
       "m": 61,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n5",
@@ -1707,7 +1785,8 @@
       "m": 6,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n52",
@@ -1715,7 +1794,8 @@
       "m": 128,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n62",
@@ -1723,7 +1803,8 @@
       "m": 60,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n86",
@@ -1731,7 +1812,9 @@
       "m": 56,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n87",
@@ -1867,7 +1950,9 @@
       "m": 92,
       "calle": "Calle Unión",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n72",
@@ -1909,7 +1994,8 @@
       "m": 40,
       "calle": "Calle General Guadalupe Victoria",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n30",
@@ -1917,7 +2003,8 @@
       "m": 107,
       "calle": "Calle General Guadalupe Victoria",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n10",
@@ -2027,7 +2114,8 @@
       "m": 154,
       "calle": "Calle Mesones",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n3",
@@ -2035,7 +2123,8 @@
       "m": 60,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n105",
@@ -2051,7 +2140,8 @@
       "m": 45,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n106",
@@ -2079,7 +2169,8 @@
           21.886191,
           -102.297315
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n97",
@@ -2123,7 +2214,8 @@
           21.886805,
           -102.297687
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n114",
@@ -2233,7 +2325,8 @@
       "m": 42,
       "calle": "Privada Victoria",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n24",
@@ -2273,7 +2366,8 @@
       "m": 30,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n40",
@@ -2281,7 +2375,8 @@
       "m": 30,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -2289,7 +2384,8 @@
       "m": 8,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n85",

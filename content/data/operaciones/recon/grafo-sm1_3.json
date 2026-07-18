@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "ORIENTE m13",
+    "sector": "Escuela Normal Superior",
     "distrito": "ORIENTE",
     "celda": "S_-1_3",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1183,7 +1183,8 @@
           21.878297,
           -102.281386
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n16",
@@ -1191,7 +1192,8 @@
       "m": 6,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1199,7 +1201,8 @@
       "m": 63,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n18",
@@ -1207,7 +1210,8 @@
       "m": 54,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n19",
@@ -1275,7 +1279,8 @@
           21.870522,
           -102.281893
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n25",
@@ -1289,7 +1294,8 @@
           21.878449,
           -102.282094
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n27",
@@ -1353,7 +1359,8 @@
       "m": 27,
       "calle": "Calle Chichimeco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n39",
@@ -1361,7 +1368,8 @@
       "m": 70,
       "calle": "Calle Chichimeco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -1377,7 +1385,8 @@
       "m": 55,
       "calle": "Calle Chichimeco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -1385,7 +1394,8 @@
       "m": 34,
       "calle": "Calle Chichimeco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1393,7 +1403,8 @@
       "m": 49,
       "calle": "Calle Chichimeco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1401,7 +1412,8 @@
       "m": 61,
       "calle": "Calle Chichimeco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1415,7 +1427,8 @@
           21.876,
           -102.278904
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n33",
@@ -1443,7 +1456,8 @@
           21.878058,
           -102.276811
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n49",
@@ -1533,7 +1547,8 @@
       "m": 58,
       "calle": "Calle Oscar Eduardo Fernández",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -1547,7 +1562,8 @@
           21.878265,
           -102.27807
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n61",
@@ -1677,7 +1693,8 @@
           21.878079,
           -102.280351
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n31",
@@ -1847,7 +1864,8 @@
       "m": 146,
       "calle": "Calle Garabato",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -1901,7 +1919,8 @@
           21.871133,
           -102.279865
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n89",
@@ -2519,7 +2538,8 @@
       "m": 33,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -2527,7 +2547,8 @@
       "m": 135,
       "calle": "Avenida Héroe de Nacozari Sur",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n144",
@@ -2853,7 +2874,8 @@
           21.878349,
           -102.280102
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n153",
@@ -2861,7 +2883,8 @@
       "m": 13,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n154",
@@ -2869,7 +2892,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n155",
@@ -2895,7 +2919,8 @@
       "m": 86,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n156",
@@ -2909,7 +2934,8 @@
           21.877457,
           -102.278537
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n157",
@@ -2923,7 +2949,8 @@
           21.877211,
           -102.278537
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n158",
@@ -2931,7 +2958,8 @@
       "m": 88,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n154",
@@ -2939,7 +2967,8 @@
       "m": 87,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n159",
@@ -2947,7 +2976,8 @@
       "m": 85,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n156",
@@ -2955,7 +2985,8 @@
       "m": 13,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n159",
@@ -2963,7 +2994,8 @@
       "m": 16,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n158",
@@ -2977,7 +3009,8 @@
           21.877185,
           -102.279366
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n18",
@@ -3015,7 +3048,8 @@
           21.874797,
           -102.284979
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n30",
@@ -3367,7 +3401,8 @@
           21.876962,
           -102.281073
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n73",
@@ -3375,7 +3410,8 @@
       "m": 92,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n170",
@@ -3449,7 +3485,8 @@
           21.877816,
           -102.281515
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n57",
@@ -3503,7 +3540,8 @@
           21.876748,
           -102.279581
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n36",
@@ -3601,7 +3639,8 @@
           21.8777,
           -102.281541
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n45",
@@ -3609,7 +3648,8 @@
       "m": 139,
       "calle": "Avenida Ferrocarril",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n181",
@@ -3617,7 +3657,8 @@
       "m": 115,
       "calle": "Calle 5 de Febrero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n179",
@@ -3625,7 +3666,8 @@
       "m": 14,
       "calle": "Calle 5 de Febrero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n182",
@@ -3709,7 +3751,8 @@
       "m": 9,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     }
   ]
 }

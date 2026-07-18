@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR PONIENTE m2m3",
+    "sector": "Parroquia Santo Niño de Atocha",
     "distrito": "SUR PONIENTE",
     "celda": "S_-2_-3",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -630,7 +630,8 @@
           21.871083,
           -102.312071
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n13",
@@ -658,7 +659,8 @@
           21.872384,
           -102.313586
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n17",
@@ -666,7 +668,9 @@
       "m": 32,
       "calle": "Privada Pistache",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n19",
@@ -674,7 +678,8 @@
       "m": 84,
       "calle": "Calle Vizcaya",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n23",
@@ -690,7 +695,9 @@
       "m": 105,
       "calle": "Calle Colorín",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n26",
@@ -704,7 +711,8 @@
           21.870204,
           -102.314621
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n28",
@@ -720,7 +728,8 @@
       "m": 309,
       "calle": "Calle Santander",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n30",
@@ -728,7 +737,8 @@
       "m": 57,
       "calle": "Calle Santander",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n32",
@@ -768,7 +778,9 @@
       "m": 308,
       "calle": "Calle Segovia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n38",
@@ -776,7 +788,9 @@
       "m": 35,
       "calle": "Calle Segovia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n40",
@@ -784,7 +798,8 @@
       "m": 39,
       "calle": "Calle Níspero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -792,7 +807,8 @@
       "m": 32,
       "calle": "Calle Níspero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -806,7 +822,9 @@
           21.86857,
           -102.316838
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n44",
@@ -856,7 +874,8 @@
       "m": 65,
       "calle": "Calle Nogal",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n26",
@@ -864,7 +883,8 @@
       "m": 63,
       "calle": "Calle Nogal",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n48",
@@ -872,7 +892,9 @@
       "m": 107,
       "calle": "Calle Almendros",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n46",
@@ -880,7 +902,9 @@
       "m": 96,
       "calle": "Calle Almendros",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n49",
@@ -888,7 +912,8 @@
       "m": 70,
       "calle": "Calle Almendros",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n51",
@@ -896,7 +921,8 @@
       "m": 47,
       "calle": "Calle Sauce",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n49",
@@ -904,7 +930,8 @@
       "m": 62,
       "calle": "Calle Sauce",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n52",
@@ -912,7 +939,8 @@
       "m": 89,
       "calle": "Calle Sauce",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -926,7 +954,8 @@
           21.869744,
           -102.315591
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n53",
@@ -934,7 +963,9 @@
       "m": 88,
       "calle": "Calle Fresno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n6",
@@ -974,7 +1005,8 @@
       "m": 83,
       "calle": "Calle Soria",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n59",
@@ -982,7 +1014,9 @@
       "m": 63,
       "calle": "Calle Soria",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n48",
@@ -990,7 +1024,9 @@
       "m": 52,
       "calle": "Calle Soria",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n60",
@@ -998,7 +1034,9 @@
       "m": 17,
       "calle": "Calle Soria",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n61",
@@ -1036,7 +1074,8 @@
       "m": 52,
       "calle": "Calle Zamora",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n30",
@@ -1044,7 +1083,9 @@
       "m": 50,
       "calle": "Calle Zamora",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n62",
@@ -1052,7 +1093,9 @@
       "m": 48,
       "calle": "Calle Zamora",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n38",
@@ -1060,7 +1103,9 @@
       "m": 51,
       "calle": "Calle Zamora",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n63",
@@ -1068,7 +1113,9 @@
       "m": 51,
       "calle": "Calle Zamora",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n64",
@@ -1076,7 +1123,9 @@
       "m": 62,
       "calle": "Calle Cádiz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n54",
@@ -1084,7 +1133,9 @@
       "m": 70,
       "calle": "Calle Cádiz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n65",
@@ -1092,7 +1143,9 @@
       "m": 21,
       "calle": "Calle Cádiz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n63",
@@ -1100,7 +1153,9 @@
       "m": 310,
       "calle": "Calle Cádiz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n66",
@@ -1122,7 +1177,8 @@
           21.872175,
           -102.314192
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n65",
@@ -1130,7 +1186,9 @@
       "m": 52,
       "calle": "Calle Álamo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n39",
@@ -1138,7 +1196,9 @@
       "m": 48,
       "calle": "Calle Álamo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n70",
@@ -1146,7 +1206,9 @@
       "m": 52,
       "calle": "Calle Álamo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n31",
@@ -1154,7 +1216,8 @@
       "m": 53,
       "calle": "Calle Álamo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n0",
@@ -1186,7 +1249,8 @@
       "m": 53,
       "calle": "Calle Pinul",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n19",
@@ -1194,7 +1258,8 @@
       "m": 53,
       "calle": "Calle Pinul",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n72",
@@ -1202,7 +1267,9 @@
       "m": 98,
       "calle": "Calle Pinul",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n52",
@@ -1216,7 +1283,8 @@
           21.870611,
           -102.313046
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n70",
@@ -1224,7 +1292,9 @@
       "m": 47,
       "calle": "Calle Salamanca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n62",
@@ -1232,7 +1302,9 @@
       "m": 308,
       "calle": "Calle Salamanca",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n73",
@@ -1262,7 +1334,8 @@
           21.868526,
           -102.317832
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n75",
@@ -1304,7 +1377,8 @@
           21.868636,
           -102.318084
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n80",
@@ -1338,7 +1412,8 @@
           21.868674,
           -102.317306
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n86",
@@ -1372,7 +1447,8 @@
           21.871746,
           -102.312694
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n15",
@@ -1390,7 +1466,8 @@
           21.871267,
           -102.313744
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n69",
@@ -1416,7 +1493,9 @@
           21.870423,
           -102.315764
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n87",
@@ -1434,7 +1513,8 @@
           21.870164,
           -102.316325
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n27",
@@ -1442,7 +1522,8 @@
       "m": 25,
       "calle": "Bulevar San Marcos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n51",
@@ -1460,7 +1541,8 @@
           21.870677,
           -102.313867
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n50",
@@ -1468,7 +1550,8 @@
       "m": 49,
       "calle": "Bulevar San Marcos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -1502,7 +1585,8 @@
           21.871545,
           -102.311251
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n91",
@@ -1764,7 +1848,8 @@
       "m": 14,
       "calle": "Bulevar San Marcos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n42",
@@ -1778,7 +1863,8 @@
           21.869053,
           -102.316861
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n95",
@@ -1812,7 +1898,8 @@
           21.868678,
           -102.317197
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n102",
@@ -1820,7 +1907,8 @@
       "m": 16,
       "calle": "Bulevar San Marcos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n47",
@@ -1834,7 +1922,8 @@
           21.870192,
           -102.314926
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n103",
@@ -1848,7 +1937,8 @@
           21.869882,
           -102.315675
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n103",
@@ -1874,7 +1964,8 @@
           21.870196,
           -102.315488
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n115",
@@ -1896,7 +1987,8 @@
           21.870326,
           -102.315674
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n116",
@@ -1930,7 +2022,9 @@
           21.867911,
           -102.31638
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n123",
@@ -1944,7 +2038,8 @@
           21.869611,
           -102.315912
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n124",
@@ -1974,7 +2069,9 @@
       "m": 35,
       "calle": "Privada Fresno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1982,7 +2079,9 @@
       "m": 20,
       "calle": "Privada Fresno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n64",
@@ -1990,7 +2089,8 @@
       "m": 105,
       "calle": "Bulevar San Marcos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n123",
@@ -1998,7 +2098,8 @@
       "m": 26,
       "calle": "Bulevar San Marcos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n65",
@@ -2006,7 +2107,9 @@
       "m": 52,
       "calle": "Calle Colorín",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n12",
@@ -2014,7 +2117,8 @@
       "m": 16,
       "calle": "Privada Níspero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -2038,7 +2142,8 @@
       "m": 35,
       "calle": "Calle Cataluña",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n72",
@@ -2046,7 +2151,8 @@
       "m": 62,
       "calle": "Calle Cataluña",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n130",
@@ -2116,7 +2222,8 @@
           21.870199,
           -102.315469
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n132",
@@ -2138,7 +2245,8 @@
           21.870235,
           -102.315541
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n133",
@@ -2146,7 +2254,8 @@
       "m": 2,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n115",
@@ -2154,7 +2263,8 @@
       "m": 2,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     }
   ]
 }

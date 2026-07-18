@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "ORIENTE 14",
+    "sector": "IMSS Clinica 8",
     "distrito": "ORIENTE",
     "celda": "S_1_4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -893,7 +893,8 @@
       "m": 40,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n1",
@@ -901,7 +902,8 @@
       "m": 32,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -909,7 +911,8 @@
       "m": 65,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -1057,7 +1060,8 @@
           21.901245,
           -102.284886
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n14",
@@ -1357,7 +1361,8 @@
       "m": 108,
       "calle": "Calle René Descartes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1365,7 +1370,8 @@
       "m": 100,
       "calle": "Calle René Descartes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n52",
@@ -1379,7 +1385,8 @@
           21.890059,
           -102.274752
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n53",
@@ -1387,7 +1394,8 @@
       "m": 125,
       "calle": "Calle Cedro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -1403,7 +1411,8 @@
       "m": 98,
       "calle": "Calle Fresno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -1411,7 +1420,8 @@
       "m": 126,
       "calle": "Calle Fresno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n12",
@@ -1435,7 +1445,8 @@
       "m": 34,
       "calle": "Calle Conquista",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n52",
@@ -1443,7 +1454,8 @@
       "m": 37,
       "calle": "Calle Conquista",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -1457,7 +1469,8 @@
           21.887049,
           -102.277175
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n62",
@@ -1505,7 +1518,8 @@
       "m": 43,
       "calle": "Calle Mártires de Río Blanco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -1513,7 +1527,8 @@
       "m": 35,
       "calle": "Calle Mártires de Río Blanco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n53",
@@ -1521,7 +1536,8 @@
       "m": 39,
       "calle": "Calle Mártires de Río Blanco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n65",
@@ -1539,7 +1555,8 @@
           21.883402,
           -102.271617
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n67",
@@ -1585,7 +1602,8 @@
       "m": 81,
       "calle": "Calle Segunda 2a. Privada 67",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n67",
@@ -1623,7 +1641,9 @@
           21.884878,
           -102.270076
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n77",
@@ -1631,7 +1651,9 @@
       "m": 26,
       "calle": "Calle Beethoven",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n78",
@@ -1639,7 +1661,8 @@
       "m": 32,
       "calle": "Calle Beethoven",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n79",
@@ -1647,7 +1670,8 @@
       "m": 12,
       "calle": "Calle Beethoven",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n80",
@@ -1655,7 +1679,8 @@
       "m": 96,
       "calle": "Calle Beethoven",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n81",
@@ -1715,7 +1740,8 @@
       "m": 96,
       "calle": "Calle Privada Aguascalientes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n85",
@@ -1807,7 +1833,8 @@
           21.887616,
           -102.270919
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n75",
@@ -1815,7 +1842,8 @@
       "m": 42,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n94",
@@ -1823,7 +1851,8 @@
       "m": 39,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n95",
@@ -1831,7 +1860,8 @@
       "m": 42,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n96",
@@ -1839,7 +1869,8 @@
       "m": 41,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n97",
@@ -1847,7 +1878,8 @@
       "m": 35,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n98",
@@ -1855,7 +1887,8 @@
       "m": 43,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n80",
@@ -1863,7 +1896,8 @@
       "m": 53,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n87",
@@ -1871,7 +1905,9 @@
       "m": 83,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n99",
@@ -1879,7 +1915,8 @@
       "m": 67,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n101",
@@ -1911,7 +1948,8 @@
       "m": 97,
       "calle": "Calle Seguro Social",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n96",
@@ -1919,7 +1957,8 @@
       "m": 14,
       "calle": "Calle Seguro Social",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n3",
@@ -1937,7 +1976,8 @@
           21.884915,
           -102.272338
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n99",
@@ -1945,7 +1985,8 @@
       "m": 13,
       "calle": "Calle Fraternidad",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n106",
@@ -1969,7 +2010,8 @@
       "m": 96,
       "calle": "Calle Privada Forjadores",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n82",
@@ -1985,7 +2027,8 @@
       "m": 56,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n105",
@@ -1993,7 +2036,9 @@
       "m": 133,
       "calle": "Calle Francisco González Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n79",
@@ -2007,7 +2052,8 @@
           21.885944,
           -102.271014
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n104",
@@ -2021,7 +2067,8 @@
           21.886864,
           -102.270348
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n110",
@@ -2059,7 +2106,9 @@
       "m": 213,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n108",
@@ -2067,7 +2116,8 @@
       "m": 15,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n115",
@@ -2285,7 +2335,8 @@
           21.889183,
           -102.276353
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n124",
@@ -2431,7 +2482,8 @@
           21.894863,
           -102.277449
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n147",
@@ -2561,7 +2613,8 @@
           21.890068,
           -102.273784
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n49",
@@ -2773,7 +2826,8 @@
       "m": 153,
       "calle": "Calle Felipe Pescador",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -2825,7 +2879,8 @@
           21.883691,
           -102.274451
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n126",
@@ -2851,7 +2906,8 @@
           21.883937,
           -102.274438
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n165",
@@ -2933,7 +2989,8 @@
       "m": 10,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n168",
@@ -2941,7 +2998,8 @@
       "m": 34,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n168",
@@ -2975,7 +3033,8 @@
           21.884483,
           -102.272548
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n158",
@@ -2989,7 +3048,8 @@
           21.885528,
           -102.27289
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n121",
@@ -3075,7 +3135,9 @@
       "m": 40,
       "calle": "Avenida Tecnológico",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n172",
@@ -3101,7 +3163,9 @@
           21.884444,
           -102.270148
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n173",
@@ -3139,7 +3203,9 @@
           21.884539,
           -102.26992
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n174",
@@ -3157,7 +3223,8 @@
           21.884059,
           -102.273009
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n31",
@@ -3189,7 +3256,8 @@
       "m": 14,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n98",
@@ -3197,7 +3265,8 @@
       "m": 12,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n91",
@@ -3205,7 +3274,8 @@
       "m": 84,
       "calle": "Calle Primera 1a. Privada 67",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n153",
@@ -3305,7 +3375,8 @@
       "m": 39,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n175",
@@ -3313,7 +3384,8 @@
       "m": 125,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n0",
@@ -3327,7 +3399,8 @@
           21.883886,
           -102.272275
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n66",
@@ -3335,7 +3408,9 @@
       "m": 88,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n84",
@@ -3357,7 +3432,8 @@
       "m": 42,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -3383,7 +3459,8 @@
       "m": 15,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n182",
@@ -3401,7 +3478,8 @@
           21.886155,
           -102.270511
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n184",
@@ -3473,7 +3551,9 @@
           21.884822,
           -102.270433
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n188",
@@ -3495,7 +3575,9 @@
           21.885133,
           -102.27101
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n186",
@@ -3503,7 +3585,9 @@
       "m": 13,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n73",
@@ -3529,7 +3613,8 @@
           21.885369,
           -102.270241
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n183",
@@ -3551,7 +3636,8 @@
           21.885824,
           -102.269847
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n78",
@@ -3559,7 +3645,8 @@
       "m": 18,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n100",
@@ -3567,7 +3654,8 @@
       "m": 3,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n1",
@@ -3575,7 +3663,8 @@
       "m": 20,
       "calle": "Prolongación Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n170",
@@ -3597,7 +3686,9 @@
           21.884256,
           -102.270018
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n177",
@@ -3611,7 +3702,8 @@
           21.884962,
           -102.273539
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n40",

@@ -3,8 +3,8 @@
     "descripcion": "Modelo de peligro por criatura × hora × feature de terreno (§1.5). El peso del pathfinding se DERIVA de aquí, no se pinta a mano. peligro.js lo aplica sobre las aristas del grafo del sector.",
     "escala_peligro": "0 = sin riesgo · ~0.5 riesgo moderado · ~0.9 mortal. Es un factor: peso_arista = distancia_m × (1 + Σ peligro de criaturas activas).",
     "horas": "Bandas [inicio, fin) en horas 0–24. Soportan cruce de medianoche (inicio > fin).",
-    "features_de_arista": "clase = tipo de calle OSM · mercado = corredor avenida–mercado · rejilla = coladera/drenaje (pendiente de tag en el grafo).",
-    "nota_canon": "Las bandas horarias no explícitas en el bestiario van marcadas [PROPUESTA — REQUIERE APROBACIÓN]."
+    "features_de_arista": "clase = tipo de calle OSM · mercado = a 200 m de un mercado real (OSM amenity=marketplace) · rejilla = a 90 m de un cauce, drenaje o coladera · parque = a 120 m de un parque · industria = a 180 m de suelo industrial · panteon = a 150 m de un panteón. Todos derivados de OpenStreetMap, ninguno escrito a mano.",
+    "regla_de_autoria": "Solo se escriben reglas para criaturas con BIOMAS DOCUMENTADOS en su ficha del bestiario. Las fichas en estado 'archivo incompleto' no tienen regla: inventarles hábitat sería inventar canon. Las bandas horarias no explícitas van marcadas [PROPUESTA — REQUIERE APROBACIÓN]."
   },
   "reglas": {
     "gusano_de_asfalto": {
@@ -13,6 +13,7 @@
       "aplica": { "clase": ["primary", "secondary", "tertiary", "residential", "living_street", "unclassified", "service", "secondary_link", "primary_link", "tertiary_link"] },
       "peligro": 0.85,
       "canon": "Actividad diurna ligada a la temperatura del asfalto (11:00–15:00); la misma calle es segura de noche.",
+      "biomas_ficha": "Vialidades principales, estacionamientos, zonas de asfalto deteriorado",
       "fuente": "bestiario/gusano-de-asfalto"
     },
     "arana_hidraulica": {
@@ -21,8 +22,8 @@
       "aplica": { "feature": "rejilla" },
       "peligro": 0.9,
       "canon": "Actividad permanente, sin ciclo diurno/nocturno. Usa coladeras/rejillas como red de tránsito y emboscada.",
-      "fuente": "bestiario/arana-hidraulica",
-      "pendiente_datos": "El grafo aún no marca aristas 'rejilla' → esta regla no tiene efecto todavía. Falta tag de drenaje/coladeras en el sector."
+      "biomas_ficha": "Coladeras, sótanos inundados, estacionamientos subterráneos, túneles con agua estancada",
+      "fuente": "bestiario/arana-hidraulica"
     },
     "chacal_de_feria": {
       "nombre": "Chacal de Feria",
@@ -32,6 +33,39 @@
       "canon": "Corredor avenida–mercado; centinela en posición elevada.",
       "fuente": "bestiario/chacal-de-feria",
       "propuesta_horaria": "Franja 10:00–22:00 [PROPUESTA DE CANON — REQUIERE APROBACIÓN]: el bestiario da el corredor pero no hora; una feria/mercado es predador diurno y vespertino."
+    },
+    "cervato_de_concreto": {
+      "nombre": "Cervato de Concreto",
+      "horas": [[6, 9], [18, 21]],
+      "aplica_alguno": [
+        { "feature": "parque" },
+        { "clase": ["residential", "living_street"] }
+      ],
+      "peligro": 0.45,
+      "canon": "Herbívoro estricto de pastoreo en ciclos de tres días sobre un sector fijo. La carga es respuesta antipredador por acorralamiento, no agresión: el peligro está en cruzarse en su ruta de fuga, no en ser cazado.",
+      "biomas_ficha": "Zona residencial, parques abandonados, márgenes de avenida",
+      "fuente": "bestiario/cervato-de-concreto",
+      "propuesta_horaria": "Bandas crepusculares 06–09 y 18–21 [PROPUESTA DE CANON — REQUIERE APROBACIÓN]: la ficha describe actividad crepuscular pero no fija horario."
+    },
+    "rata_coendu": {
+      "nombre": "Rata Coendú",
+      "horas": [[21, 5]],
+      "aplica": { "feature": ["rejilla", "industria"] },
+      "peligro": 0.6,
+      "canon": "Gregaria, manadas de 20 a 50. No huye ante presencia humana: el individuo evita la confrontación, la manada no retrocede. El peligro escala con la densidad, no con la talla.",
+      "biomas_ficha": "Alcantarillas, túneles, sótanos, escombros, zonas de basura, estructuras subterráneas",
+      "fuente": "bestiario/rata-coendu",
+      "propuesta_horaria": "Banda 21:00–05:00 con cruce de medianoche [PROPUESTA DE CANON — REQUIERE APROBACIÓN]: la ficha la describe nocturna sin fijar horas."
+    },
+    "cucaracha_matriarca": {
+      "nombre": "Cucaracha Matriarca",
+      "horas": [[0, 24]],
+      "aplica": { "feature": ["rejilla", "industria", "panteon"] },
+      "peligro": 0.55,
+      "canon": "Colonia con castas diferenciadas: guardia blindada, centinela de inmolación en perímetros y entradas. La amenaza es el nido, no el individuo — y el nido no duerme.",
+      "biomas_ficha": "Acumulaciones de residuos, alcantarillas, sótanos, estructuras abandonadas",
+      "fuente": "bestiario/cucaracha-matriarca",
+      "propuesta_horaria": "Actividad continua [PROPUESTA DE CANON — REQUIERE APROBACIÓN]: la ficha registra actividad diurna y nocturna sin ciclo dominante; una colonia se modela permanente."
     }
   }
 }

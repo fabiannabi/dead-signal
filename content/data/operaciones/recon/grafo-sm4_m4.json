@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR PONIENTE m4m4",
+    "sector": "Parque Educación Álamos",
     "distrito": "SUR PONIENTE",
     "celda": "S_-4_-4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -481,7 +481,8 @@
       "m": 53,
       "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n26",
@@ -489,7 +490,8 @@
       "m": 53,
       "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -497,7 +499,8 @@
       "m": 52,
       "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -505,7 +508,8 @@
       "m": 51,
       "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n29",
@@ -573,7 +577,8 @@
       "m": 214,
       "calle": "Calle Doctor Jesús Romo Armería",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n4",
@@ -677,7 +682,8 @@
       "m": 214,
       "calle": "Calle Escritora Anita Brenner",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -793,7 +799,8 @@
       "m": 214,
       "calle": "Calle Arquitecto Carlos Contreras",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -823,7 +830,8 @@
       "m": 101,
       "calle": "Privada Doctor Jesús Romo Armería",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n26",
@@ -831,7 +839,8 @@
       "m": 82,
       "calle": "Privada Arquitecto Carlos Contreras",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -839,7 +848,8 @@
       "m": 90,
       "calle": "Privada Escritora Anita Brenner",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n72",
@@ -871,7 +881,8 @@
       "m": 53,
       "calle": "Privada Profesor José Ramírez Palos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",

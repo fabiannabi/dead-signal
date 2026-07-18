@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR m31",
+    "sector": "Nuestra Señora de la Asunción",
     "distrito": "SUR",
     "celda": "S_-3_1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -938,7 +938,8 @@
       "m": 39,
       "calle": "Calle Paseo de la Asunción",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -946,7 +947,8 @@
       "m": 74,
       "calle": "Calle Paseo de la Asunción",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -954,7 +956,8 @@
       "m": 81,
       "calle": "Calle Paseo de la Asunción",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -962,7 +965,8 @@
       "m": 82,
       "calle": "Calle Paseo de la Asunción",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -978,7 +982,8 @@
       "m": 130,
       "calle": "Calle Juan B. Orozco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -986,7 +991,8 @@
       "m": 82,
       "calle": "Calle Paseo de la Asunción",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n39",
@@ -994,7 +1000,8 @@
       "m": 82,
       "calle": "Calle Paseo de la Asunción",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -1002,7 +1009,8 @@
       "m": 74,
       "calle": "Calle Paseo de la Asunción",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -1010,7 +1018,8 @@
       "m": 39,
       "calle": "Calle Paseo de la Asunción",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -1122,7 +1131,8 @@
       "m": 130,
       "calle": "Calle Hernando Martell",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -1130,7 +1140,8 @@
       "m": 22,
       "calle": "Calle Hernando Martell",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -1138,7 +1149,8 @@
       "m": 159,
       "calle": "Calle Hernando Martell",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n52",
@@ -1324,7 +1336,8 @@
       "m": 76,
       "calle": "Calle Paseo de la Asunción Sur",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -1528,7 +1541,8 @@
           21.863216,
           -102.293905
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n80",
@@ -1536,7 +1550,8 @@
       "m": 227,
       "calle": "Avenida José María Chávez",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n81",
@@ -1804,7 +1819,8 @@
       "m": 76,
       "calle": "Gaspar López",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n100",
@@ -1988,7 +2004,8 @@
           21.862493,
           -102.291877
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n106",
@@ -2022,7 +2039,8 @@
           21.862467,
           -102.292082
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n107",
@@ -2094,7 +2112,8 @@
       "m": 152,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n96",
@@ -2124,7 +2143,8 @@
       "m": 92,
       "calle": "Avenida José María Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n54",
@@ -2168,7 +2188,8 @@
           21.862093,
           -102.293212
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n31",
@@ -2182,7 +2203,8 @@
           21.86235,
           -102.293154
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n41",
@@ -2208,7 +2230,8 @@
           21.862724,
           -102.293495
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n90",
@@ -2238,7 +2261,8 @@
       "m": 123,
       "calle": "Avenida José María Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n97",
@@ -2326,7 +2350,8 @@
       "m": 133,
       "calle": "Calle Miguel Caldera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n66",
@@ -2334,7 +2359,8 @@
       "m": 25,
       "calle": "Calle Miguel Caldera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -2342,7 +2368,8 @@
       "m": 24,
       "calle": "Calle Miguel Caldera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -2350,7 +2377,8 @@
       "m": 27,
       "calle": "Calle Miguel Caldera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n99",
@@ -2358,7 +2386,8 @@
       "m": 102,
       "calle": "Calle Miguel Caldera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -2398,7 +2427,8 @@
       "m": 158,
       "calle": "Prolongación Cristóbal Colón",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -2406,7 +2436,8 @@
       "m": 11,
       "calle": "Prolongación Cristóbal Colón",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n105",
@@ -2414,7 +2445,8 @@
       "m": 13,
       "calle": "Prolongación Cristóbal Colón",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n39",
@@ -2422,7 +2454,8 @@
       "m": 130,
       "calle": "Prolongación Cristóbal Colón",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -2446,7 +2479,8 @@
       "m": 159,
       "calle": "Calle Juan B. Orozco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -2494,7 +2528,8 @@
       "m": 34,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n79",

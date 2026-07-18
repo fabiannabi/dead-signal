@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR m20",
+    "sector": "Tres Ave Maria",
     "distrito": "SUR",
     "celda": "S_-2_0",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1012,7 +1012,8 @@
       "m": 77,
       "calle": "Calle República de Brasil",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n22",
@@ -1020,7 +1021,8 @@
       "m": 73,
       "calle": "Calle República de Brasil",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n24",
@@ -1114,7 +1116,8 @@
       "m": 61,
       "calle": "Calle Coronel Valente Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n31",
@@ -1130,7 +1133,8 @@
       "m": 50,
       "calle": "Calle República de Chile",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1404,7 +1408,8 @@
       "m": 123,
       "calle": "Calle República de Colombia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n22",
@@ -1412,7 +1417,8 @@
       "m": 120,
       "calle": "Calle República de Colombia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n39",
@@ -1532,7 +1538,8 @@
           21.872115,
           -102.300676
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n55",
@@ -1696,7 +1703,8 @@
           21.86974,
           -102.29289
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n70",
@@ -1760,7 +1768,8 @@
           21.870402,
           -102.293252
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n78",
@@ -1822,7 +1831,8 @@
           21.868244,
           -102.293643
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n62",
@@ -1844,7 +1854,8 @@
           21.869035,
           -102.293004
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n58",
@@ -2024,7 +2035,8 @@
           21.872131,
           -102.297717
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n6",
@@ -2240,7 +2252,8 @@
           21.861236,
           -102.30038
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n105",
@@ -2256,7 +2269,8 @@
       "m": 28,
       "calle": "Calle Galeana Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n13",
@@ -2500,7 +2514,8 @@
           21.870336,
           -102.298681
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n0",
@@ -2628,7 +2643,8 @@
           21.869743,
           -102.298043
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n49",
@@ -2832,7 +2848,8 @@
       "m": 121,
       "calle": "Calle República de Ecuador",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n134",
@@ -2840,7 +2857,8 @@
       "m": 12,
       "calle": "Calle República de Chile",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n72",

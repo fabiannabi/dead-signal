@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE PONIENTE 2m2",
+    "sector": "Avenida Fundición",
     "distrito": "NORTE PONIENTE",
     "celda": "S_2_-2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -913,7 +913,8 @@
       "m": 21,
       "calle": "La Luz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -1035,7 +1036,8 @@
       "m": 129,
       "calle": "Calle Manuel Carpio",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n18",
@@ -1175,7 +1177,8 @@
           21.889699,
           -102.305774
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n26",
@@ -1183,7 +1186,8 @@
       "m": 40,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1249,7 +1253,8 @@
       "m": 60,
       "calle": "Calle Rafaél Arellano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -1257,7 +1262,8 @@
       "m": 57,
       "calle": "Calle Rafaél Arellano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -1265,7 +1271,8 @@
       "m": 12,
       "calle": "Calle Rafaél Arellano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n36",
@@ -1273,7 +1280,8 @@
       "m": 52,
       "calle": "Calle Rafaél Arellano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -1281,7 +1289,8 @@
       "m": 57,
       "calle": "Calle Rafaél Arellano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -1289,7 +1298,8 @@
       "m": 9,
       "calle": "Calle Rafaél Arellano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n39",
@@ -1297,7 +1307,8 @@
       "m": 54,
       "calle": "Calle Rafaél Arellano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -1361,7 +1372,8 @@
       "m": 115,
       "calle": "Calle Felipe Ruiz de Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n36",
@@ -1369,7 +1381,8 @@
       "m": 119,
       "calle": "Calle Felipe Ruiz de Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n0",
@@ -1387,7 +1400,8 @@
           21.889996,
           -102.306234
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n26",
@@ -1445,7 +1459,8 @@
           21.889292,
           -102.300658
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n52",
@@ -1507,7 +1522,8 @@
       "m": 112,
       "calle": "Calle Manuel Carpio",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n12",
@@ -1681,7 +1697,8 @@
       "m": 24,
       "calle": "Calle José María Ávila",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -1689,7 +1706,8 @@
       "m": 121,
       "calle": "Calle José María Ávila",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -1703,7 +1721,8 @@
           21.895142,
           -102.308137
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n75",
@@ -1743,7 +1762,8 @@
       "m": 127,
       "calle": "Calle Felipe Ruiz de Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n83",
@@ -1767,7 +1787,8 @@
       "m": 119,
       "calle": "Calle Felipe Ruiz de Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n35",
@@ -1775,7 +1796,8 @@
       "m": 116,
       "calle": "Calle Felipe Ruiz de Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -1897,7 +1919,8 @@
       "m": 114,
       "calle": "Calle San Felipe",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n97",
@@ -1985,7 +2008,8 @@
           21.890137,
           -102.306202
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n107",
@@ -1993,7 +2017,8 @@
       "m": 118,
       "calle": "Calle Doctor Alberto del Valle",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -2001,7 +2026,8 @@
       "m": 117,
       "calle": "Calle Doctor Alberto del Valle",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -2105,7 +2131,8 @@
       "m": 23,
       "calle": "La Luz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n117",
@@ -2301,7 +2328,8 @@
       "m": 60,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n129",
@@ -2309,7 +2337,8 @@
       "m": 18,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n130",
@@ -2317,7 +2346,8 @@
       "m": 35,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n131",
@@ -2325,7 +2355,8 @@
       "m": 71,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n0",
@@ -2351,7 +2382,8 @@
           21.888866,
           -102.30521
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n1",
@@ -2359,7 +2391,8 @@
       "m": 61,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n133",
@@ -2367,7 +2400,8 @@
       "m": 9,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n134",
@@ -2375,7 +2409,8 @@
       "m": 52,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n96",
@@ -2383,7 +2418,8 @@
       "m": 62,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n61",
@@ -2415,7 +2451,8 @@
       "m": 57,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n84",
@@ -2423,7 +2460,8 @@
       "m": 12,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -2431,7 +2469,8 @@
       "m": 52,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n136",
@@ -2439,7 +2478,8 @@
       "m": 57,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -2447,7 +2487,8 @@
       "m": 8,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n137",
@@ -2521,7 +2562,8 @@
       "m": 114,
       "calle": "Calle Jesús María Rodríguez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n139",
@@ -2539,7 +2581,8 @@
           21.890034,
           -102.306623
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n140",
@@ -2561,7 +2604,8 @@
           21.895201,
           -102.30822
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n39",
@@ -2569,7 +2613,8 @@
       "m": 121,
       "calle": "Calle José María Ávila",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n137",
@@ -2829,7 +2874,8 @@
       "m": 81,
       "calle": "Calle Pedro García Rojas",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n152",
@@ -3057,7 +3103,8 @@
       "m": 57,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -3065,7 +3112,8 @@
       "m": 54,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n81",
@@ -3073,7 +3121,8 @@
       "m": 10,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n104",
@@ -3273,7 +3322,8 @@
       "m": 119,
       "calle": "Calle Doctor Antonio Ávila Castañeda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n173",
@@ -3287,7 +3337,8 @@
           21.889951,
           -102.307307
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n172",
@@ -3303,7 +3354,8 @@
       "m": 24,
       "calle": "Calle San Felipe",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n116",
@@ -3311,7 +3363,8 @@
       "m": 39,
       "calle": "La Luz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n130",
@@ -3333,7 +3386,8 @@
           21.890339,
           -102.307226
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n134",
@@ -3341,7 +3395,8 @@
       "m": 23,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n61",
@@ -3373,7 +3428,8 @@
       "m": 24,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n136",
@@ -3381,7 +3437,8 @@
       "m": 24,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n174",
@@ -3399,7 +3456,8 @@
           21.890019,
           -102.307303
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n165",
@@ -3469,7 +3527,8 @@
       "m": 114,
       "calle": "Calle Santa Irene",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n29",
@@ -3583,7 +3642,8 @@
       "m": 61,
       "calle": "Calle Arroyo de los Arellano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     }
   ]
 }

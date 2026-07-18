@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "CENTRO m10",
+    "sector": "Plaza Miguel Hidalgo",
     "distrito": "CENTRO",
     "celda": "S_-1_0",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -801,7 +801,8 @@
       "m": 97,
       "calle": "Calle Galeana Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -809,7 +810,8 @@
       "m": 15,
       "calle": "Calle Galeana Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -817,7 +819,8 @@
       "m": 68,
       "calle": "Calle Galeana Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -825,7 +828,8 @@
       "m": 67,
       "calle": "Calle Galeana Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -833,7 +837,8 @@
       "m": 109,
       "calle": "Calle Galeana Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -1011,7 +1016,8 @@
       "m": 117,
       "calle": "Vicencio",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1019,7 +1025,8 @@
       "m": 33,
       "calle": "Vicencio",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n29",
@@ -1043,7 +1050,8 @@
       "m": 73,
       "calle": "Calle Pimentel",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -1051,7 +1059,8 @@
       "m": 63,
       "calle": "Calle Pimentel",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -1075,7 +1084,8 @@
       "m": 103,
       "calle": "Calle Pimentel",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -1089,7 +1099,8 @@
           21.875165,
           -102.2934
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n39",
@@ -1149,7 +1160,8 @@
           21.871596,
           -102.296463
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n8",
@@ -1163,7 +1175,8 @@
           21.875962,
           -102.296115
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n46",
@@ -1353,7 +1366,8 @@
           21.873696,
           -102.299376
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n51",
@@ -1361,7 +1375,8 @@
       "m": 132,
       "calle": "Calle Héroes de Chapultepec",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n52",
@@ -1391,7 +1406,8 @@
           21.873654,
           -102.299284
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n55",
@@ -1399,7 +1415,8 @@
       "m": 27,
       "calle": "Calle Lanceros de Aguascalientes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1407,7 +1424,8 @@
       "m": 98,
       "calle": "Calle Lanceros de Aguascalientes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -1415,7 +1433,8 @@
       "m": 67,
       "calle": "Calle Lanceros de Aguascalientes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -1429,7 +1448,8 @@
           21.870843,
           -102.29845
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n59",
@@ -1453,7 +1473,8 @@
       "m": 37,
       "calle": "N. Ortiz G.",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n61",
@@ -1483,7 +1504,8 @@
           21.87259,
           -102.298265
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n27",
@@ -1491,7 +1513,8 @@
       "m": 84,
       "calle": "Privada Quito",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -1505,7 +1528,8 @@
           21.875466,
           -102.295631
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n45",
@@ -1513,7 +1537,8 @@
       "m": 33,
       "calle": "Calle Ignacio T. Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -1521,7 +1546,8 @@
       "m": 138,
       "calle": "Calle Ignacio T. Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n68",
@@ -1577,7 +1603,8 @@
           21.877626,
           -102.293543
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n75",
@@ -1615,7 +1642,9 @@
       "m": 94,
       "calle": "Calle Profesora Vicenta Trujillo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n79",
@@ -1633,7 +1662,8 @@
           21.876102,
           -102.293571
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n81",
@@ -1687,7 +1717,8 @@
       "m": 127,
       "calle": "Calle Galeana Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n65",
@@ -1701,7 +1732,8 @@
           21.872131,
           -102.297717
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n35",
@@ -1741,7 +1773,9 @@
       "m": 35,
       "calle": "Calle José María Chávez",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n78",
@@ -1749,7 +1783,9 @@
       "m": 36,
       "calle": "Calle José María Chávez",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n88",
@@ -1767,7 +1803,8 @@
           21.877043,
           -102.295423
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n89",
@@ -1935,7 +1972,8 @@
           21.874368,
           -102.293654
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n37",
@@ -1943,7 +1981,9 @@
       "m": 112,
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n79",
@@ -1951,7 +1991,8 @@
       "m": 149,
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n74",
@@ -1959,7 +2000,8 @@
       "m": 98,
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n52",
@@ -1967,7 +2009,8 @@
       "m": 53,
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n95",
@@ -1993,7 +2036,8 @@
       "m": 127,
       "calle": "Calle Anáhuac",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -2159,7 +2203,8 @@
       "m": 30,
       "calle": "Vicencio",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n54",
@@ -2167,7 +2212,8 @@
       "m": 83,
       "calle": "N. Ortiz G.",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n89",
@@ -2245,7 +2291,8 @@
       "m": 6,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n107",
@@ -2291,7 +2338,8 @@
       "m": 12,
       "calle": "Calle República de Chile",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n53",
@@ -2299,7 +2347,8 @@
       "m": 56,
       "calle": "Calle José María Chávez",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n115",
@@ -2337,7 +2386,8 @@
       "m": 7,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n118",
@@ -2351,7 +2401,8 @@
           21.87652,
           -102.296945
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n120",
@@ -2365,7 +2416,8 @@
           21.875307,
           -102.294559
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n87",
@@ -2381,7 +2433,8 @@
       "m": 6,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n124",
@@ -2389,7 +2442,8 @@
       "m": 13,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -2397,7 +2451,8 @@
       "m": 70,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n124",
@@ -2405,7 +2460,8 @@
       "m": 69,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n128",
@@ -2445,7 +2501,8 @@
           21.872694,
           -102.296892
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n133",
@@ -2491,7 +2548,8 @@
       "m": 98,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n131",
@@ -2513,7 +2571,8 @@
           21.87318,
           -102.296965
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n36",
@@ -2537,7 +2596,8 @@
       "m": 79,
       "calle": "Peatonal Anáhuac",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n13",
@@ -2569,7 +2629,8 @@
       "m": 6,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n117",
@@ -2577,7 +2638,8 @@
       "m": 51,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n111",
@@ -2585,7 +2647,8 @@
       "m": 32,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n140",
@@ -2703,7 +2766,8 @@
       "m": 19,
       "calle": "Vicencio",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n144",
@@ -2743,7 +2807,8 @@
       "m": 34,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n127",
@@ -2751,7 +2816,8 @@
       "m": 20,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n81",

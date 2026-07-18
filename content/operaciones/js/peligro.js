@@ -19,12 +19,32 @@ export function horaActiva(hora, bandas) {
   return bandas.some(([s, e]) => (s <= e ? hora >= s && hora < e : hora >= s || hora < e));
 }
 
-// ¿La arista cumple las condiciones de una regla? (todas las claves deben pasar)
-function aplica(arista, cond) {
+/**
+ * ¿La arista cumple UN bloque de condiciones? Dentro del bloque todo debe pasar.
+ * `feature` acepta lista: ahí sí basta con una (una alcantarilla y un tiradero son
+ * el mismo hábitat para la misma criatura).
+ */
+function cumple(arista, cond) {
   if (!cond) return false;
   if (cond.clase && !cond.clase.includes(arista.clase)) return false;
-  if (cond.feature && !arista[cond.feature]) return false;
+  if (cond.feature) {
+    const fs = Array.isArray(cond.feature) ? cond.feature : [cond.feature];
+    if (!fs.some(f => arista[f])) return false;
+  }
   return true;
+}
+
+/**
+ * Dos formas de escribir una regla, porque los biomas del bestiario vienen de las
+ * dos maneras:
+ *   `aplica`         — todo junto. El Chacal vive en el corredor avenida–mercado:
+ *                      necesita mercado Y vía principal, no una de las dos.
+ *   `aplica_alguno`  — alternativas. El Cervato pastorea en parques O en calle
+ *                      residencial; cualquiera de los dos lo pone ahí.
+ */
+function aplica(arista, regla) {
+  if (regla.aplica_alguno) return regla.aplica_alguno.some(c => cumple(arista, c));
+  return cumple(arista, regla.aplica);
 }
 
 /**
@@ -36,7 +56,7 @@ export function peligroDeArista(arista, ecologia, hora, criaturas) {
   for (const cid of criaturas) {
     const r = ecologia.reglas[cid];
     if (!r || !horaActiva(hora, r.horas)) continue;
-    if (aplica(arista, r.aplica)) p += r.peligro;
+    if (aplica(arista, r)) p += r.peligro;
   }
   return p;
 }

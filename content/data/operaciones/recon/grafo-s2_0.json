@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE 20",
+    "sector": "Parroquia de Nuestra Señora de San Juan de los Lagos",
     "distrito": "NORTE",
     "celda": "S_2_0",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1034,7 +1034,8 @@
       "m": 52,
       "calle": "Calle México",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1042,7 +1043,8 @@
       "m": 42,
       "calle": "Calle México",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1060,7 +1062,8 @@
           21.890188,
           -102.293707
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n18",
@@ -1134,7 +1137,8 @@
           21.898982,
           -102.29585
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n25",
@@ -1286,7 +1290,8 @@
       "m": 58,
       "calle": "Calle General Ignacio Zaragoza",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -1294,7 +1299,8 @@
       "m": 18,
       "calle": "Calle General Ignacio Zaragoza",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -1302,7 +1308,8 @@
       "m": 63,
       "calle": "Calle General Ignacio Zaragoza",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -1310,7 +1317,8 @@
       "m": 7,
       "calle": "Calle General Ignacio Zaragoza",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1318,7 +1326,8 @@
       "m": 26,
       "calle": "Calle General Ignacio Zaragoza",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1326,7 +1335,8 @@
       "m": 116,
       "calle": "Calle General Ignacio Zaragoza",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -1404,7 +1414,8 @@
       "m": 119,
       "calle": "Calle Palma",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -1508,7 +1519,8 @@
       "m": 12,
       "calle": "Marina Nacional",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -1532,7 +1544,8 @@
       "m": 30,
       "calle": "Calle Marina Nacional",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n70",
@@ -1540,7 +1553,8 @@
       "m": 44,
       "calle": "Calle Marina Nacional",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n71",
@@ -1548,7 +1562,8 @@
       "m": 34,
       "calle": "Calle Marina Nacional",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n72",
@@ -1556,7 +1571,8 @@
       "m": 22,
       "calle": "Calle Marina Nacional",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n66",
@@ -1564,7 +1580,8 @@
       "m": 38,
       "calle": "Calle Marina Nacional",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n73",
@@ -1572,7 +1589,8 @@
       "m": 55,
       "calle": "Calle Marina Nacional",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -1580,7 +1598,8 @@
       "m": 42,
       "calle": "Calle Marina Nacional",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -1588,7 +1607,8 @@
       "m": 118,
       "calle": "Calle Primavera",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -1626,7 +1646,8 @@
       "m": 31,
       "calle": "Calle Coronel Félix de la Paz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n79",
@@ -1634,7 +1655,8 @@
       "m": 40,
       "calle": "Calle Coronel Félix de la Paz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -1642,7 +1664,8 @@
       "m": 41,
       "calle": "Calle Coronel Félix de la Paz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -1650,7 +1673,8 @@
       "m": 58,
       "calle": "Calle Coronel Félix de la Paz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -1714,7 +1738,8 @@
       "m": 51,
       "calle": "Calle Norberto Gómez Hornedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n87",
@@ -1722,7 +1747,8 @@
       "m": 48,
       "calle": "Calle Norberto Gómez Hornedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n88",
@@ -1730,7 +1756,8 @@
       "m": 23,
       "calle": "Calle Norberto Gómez Hornedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n89",
@@ -1738,7 +1765,8 @@
       "m": 27,
       "calle": "Calle Norberto Gómez Hornedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n90",
@@ -1832,7 +1860,8 @@
           21.892142,
           -102.298353
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n95",
@@ -1932,7 +1961,8 @@
           21.891628,
           -102.29566
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n103",
@@ -2008,7 +2038,8 @@
           21.898297,
           -102.296921
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n109",
@@ -2108,7 +2139,8 @@
       "m": 114,
       "calle": "Calle Sauce",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n116",
@@ -2140,7 +2172,8 @@
       "m": 67,
       "calle": "Calle Río San Pedro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n39",
@@ -2180,7 +2213,8 @@
       "m": 113,
       "calle": "Calle Álamo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n81",
@@ -2412,7 +2446,8 @@
           21.892149,
           -102.293315
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n131",
@@ -2420,7 +2455,8 @@
       "m": 121,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n135",
@@ -2550,7 +2586,8 @@
       "m": 109,
       "calle": "Calle Río Morcinique",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n75",
@@ -2566,7 +2603,8 @@
       "m": 80,
       "calle": "Calle Petróleos Mexicanos",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -2610,7 +2648,8 @@
           21.891663,
           -102.295731
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n143",
@@ -2636,7 +2675,8 @@
           21.897438,
           -102.295758
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n144",
@@ -2804,7 +2844,8 @@
           21.891638,
           -102.294887
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n149",
@@ -2812,7 +2853,8 @@
       "m": 12,
       "calle": "Andador Garita de Zacatecas",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n150",
@@ -2820,7 +2862,8 @@
       "m": 76,
       "calle": "Andador Garita de Zacatecas",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n151",
@@ -2834,7 +2877,8 @@
           21.89232,
           -102.294091
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n150",
@@ -2842,7 +2886,8 @@
       "m": 37,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n151",
@@ -2850,7 +2895,8 @@
       "m": 46,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n153",
@@ -2864,7 +2910,8 @@
           21.892657,
           -102.29644
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n154",
@@ -2894,7 +2941,8 @@
           21.892801,
           -102.296413
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n155",
@@ -2948,7 +2996,8 @@
           21.89262,
           -102.296384
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n43",
@@ -2962,7 +3011,8 @@
           21.892646,
           -102.296526
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n89",
@@ -2976,7 +3026,8 @@
           21.892882,
           -102.296406
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n156",
@@ -3042,7 +3093,8 @@
       "m": 9,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n134",
@@ -3050,7 +3102,8 @@
       "m": 11,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n147",
@@ -3058,7 +3111,8 @@
       "m": 84,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n149",
@@ -3066,7 +3120,8 @@
       "m": 84,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n160",
@@ -3082,7 +3137,8 @@
       "m": 136,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n86",
@@ -3090,7 +3146,8 @@
       "m": 60,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n161",
@@ -3104,7 +3161,8 @@
           21.892513,
           -102.295205
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n162",
@@ -3112,7 +3170,8 @@
       "m": 100,
       "calle": "Avenida Independencia",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n14",
@@ -3126,7 +3185,8 @@
           21.891839,
           -102.29451
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n152",
@@ -3152,7 +3212,8 @@
           21.893341,
           -102.293228
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n163",
@@ -3286,7 +3347,8 @@
       "m": 12,
       "calle": "Andador Garita de Zacatecas",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n141",
@@ -3294,7 +3356,8 @@
       "m": 12,
       "calle": "Calle Petróleos Mexicanos",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -3302,7 +3365,8 @@
       "m": 37,
       "calle": "Marina Nacional",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n158",
@@ -3380,7 +3444,8 @@
       "m": 78,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n169",
@@ -3388,7 +3453,8 @@
       "m": 42,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n72",
@@ -3396,7 +3462,8 @@
       "m": 35,
       "calle": "Marina Nacional",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n70",
@@ -3404,7 +3471,8 @@
       "m": 37,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n171",
@@ -3490,7 +3558,8 @@
       "m": 9,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n174",
@@ -3498,7 +3567,8 @@
       "m": 8,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n173",
@@ -3516,7 +3586,8 @@
           21.892229,
           -102.296718
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n176",
@@ -3550,7 +3621,8 @@
           21.892565,
           -102.296798
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n42",
@@ -3558,7 +3630,8 @@
       "m": 7,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n161",
@@ -3572,7 +3645,8 @@
           21.892568,
           -102.295663
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n178",
@@ -3642,7 +3716,8 @@
           21.892534,
           -102.295679
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n13",

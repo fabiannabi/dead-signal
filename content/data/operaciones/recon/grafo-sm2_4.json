@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR ORIENTE m24",
+    "sector": "Zona Recreativa",
     "distrito": "SUR ORIENTE",
     "celda": "S_-2_4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1521,7 +1521,8 @@
           21.871179,
           -102.270453
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n93",
@@ -1555,7 +1556,8 @@
           21.871956,
           -102.270734
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n149",
@@ -1563,7 +1565,8 @@
       "m": 15,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n155",
@@ -1603,7 +1606,8 @@
           21.87246,
           -102.270588
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n70",

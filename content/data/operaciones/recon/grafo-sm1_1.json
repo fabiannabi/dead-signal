@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "CENTRO m11",
+    "sector": "Templo del Senor del Encino",
     "distrito": "CENTRO",
     "celda": "S_-1_1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -633,7 +633,9 @@
           21.878515,
           -102.293597
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n1",
@@ -647,7 +649,8 @@
           21.877275,
           -102.293233
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n2",
@@ -655,7 +658,8 @@
       "m": 112,
       "calle": "Calle Doctor Jesús Díaz de León",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n3",
@@ -663,7 +667,9 @@
       "m": 78,
       "calle": "Calle Doctor Jesús Díaz de León",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n4",
@@ -681,7 +687,8 @@
           21.874929,
           -102.292482
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n5",
@@ -689,7 +696,8 @@
       "m": 121,
       "calle": "Calle Doctor Jesús Díaz de León",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -837,7 +845,8 @@
           21.874847,
           -102.294838
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n22",
@@ -851,7 +860,8 @@
           21.875165,
           -102.2934
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n24",
@@ -867,7 +877,8 @@
       "m": 170,
       "calle": "Calle del Sol",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n1",
@@ -881,7 +892,8 @@
           21.877626,
           -102.293543
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n27",
@@ -889,7 +901,9 @@
       "m": 94,
       "calle": "Calle Profesora Vicenta Trujillo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n28",
@@ -903,7 +917,8 @@
           21.876094,
           -102.293639
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n29",
@@ -911,7 +926,8 @@
       "m": 71,
       "calle": "Calle Profesora Vicenta Trujillo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n23",
@@ -919,7 +935,9 @@
       "m": 104,
       "calle": "E. Trujillo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n30",
@@ -933,7 +951,8 @@
           21.874383,
           -102.293588
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n31",
@@ -951,7 +970,8 @@
           21.874564,
           -102.292772
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n20",
@@ -1143,7 +1163,8 @@
       "m": 154,
       "calle": "Calle Leona Vicario",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1159,7 +1180,8 @@
       "m": 30,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n36",
@@ -1407,7 +1429,8 @@
       "m": 51,
       "calle": "Calle Josefa Ortiz de Domínguez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n53",
@@ -1415,7 +1438,8 @@
       "m": 10,
       "calle": "Calle Josefa Ortiz de Domínguez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n54",
@@ -1423,7 +1447,8 @@
       "m": 52,
       "calle": "Calle Josefa Ortiz de Domínguez",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -1437,7 +1462,8 @@
           21.878483,
           -102.289085
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n17",
@@ -1469,7 +1495,8 @@
       "m": 48,
       "calle": "La Soledad",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -1535,7 +1562,8 @@
           21.878773,
           -102.287586
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n52",
@@ -1981,7 +2009,8 @@
       "m": 119,
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n30",
@@ -1989,7 +2018,8 @@
       "m": 80,
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -1997,7 +2027,9 @@
       "m": 112,
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n28",
@@ -2005,7 +2037,8 @@
       "m": 149,
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n26",
@@ -2019,7 +2052,9 @@
           21.878157,
           -102.294819
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n16",
@@ -2057,7 +2092,8 @@
           21.874708,
           -102.293249
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n73",
@@ -2089,7 +2125,8 @@
       "m": 41,
       "calle": "Del Aguila",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -2097,7 +2134,8 @@
       "m": 5,
       "calle": "La Soledad",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n91",
@@ -2105,7 +2143,8 @@
       "m": 97,
       "calle": "Calle La Soledad",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n92",
@@ -2113,7 +2152,8 @@
       "m": 60,
       "calle": "Calle La Soledad",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n93",
@@ -2171,7 +2211,8 @@
       "m": 99,
       "calle": "Calle Abasolo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -2231,7 +2272,8 @@
           21.878057,
           -102.289435
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n96",
@@ -2283,7 +2325,8 @@
       "m": 57,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n13",
@@ -2397,7 +2440,8 @@
           21.876754,
           -102.288957
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n64",
@@ -2531,7 +2575,8 @@
       "m": 50,
       "calle": "Peatonal Neveros",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n109",
@@ -2597,7 +2642,8 @@
       "m": 64,
       "calle": "Calle 5 de Febrero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n117",
@@ -2605,7 +2651,8 @@
       "m": 3,
       "calle": "Calle 5 de Febrero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n66",
@@ -2613,7 +2660,8 @@
       "m": 96,
       "calle": "Calle 5 de Febrero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     }
   ]
 }

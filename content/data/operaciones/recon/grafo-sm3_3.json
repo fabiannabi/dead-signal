@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR ORIENTE m33",
+    "sector": "Avenida Aguascalientes Sur",
     "distrito": "SUR ORIENTE",
     "celda": "S_-3_3",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -797,7 +797,8 @@
       "m": 37,
       "calle": "Privada Nayarit",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -805,7 +806,8 @@
       "m": 3,
       "calle": "Privada Nayarit",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -823,7 +825,8 @@
           21.865012,
           -102.279101
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n12",
@@ -911,7 +914,8 @@
       "m": 57,
       "calle": "Calle Jesús Yurem",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -919,7 +923,8 @@
       "m": 26,
       "calle": "Calle Jesús Yurem",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n23",
@@ -927,7 +932,8 @@
       "m": 41,
       "calle": "Calle Jesús Yurem",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n24",
@@ -1147,7 +1153,8 @@
       "m": 39,
       "calle": "Andador Plaza Jesús Elías Piña",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n26",
@@ -1353,7 +1360,8 @@
           21.863531,
           -102.279421
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n56",
@@ -1463,7 +1471,8 @@
           21.865475,
           -102.278859
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n67",
@@ -1471,7 +1480,8 @@
       "m": 39,
       "calle": "1a. Nayarit",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n68",
@@ -1519,7 +1529,8 @@
       "m": 38,
       "calle": "Andador Plaza 1 de Mayo",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n72",
@@ -1555,7 +1566,8 @@
           21.863898,
           -102.278047
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n75",
@@ -1909,7 +1921,8 @@
           21.864057,
           -102.278103
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n120",
@@ -2049,7 +2062,8 @@
       "m": 8,
       "calle": "Andador Plaza Jesús Elías Piña",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n132",
@@ -2645,7 +2659,8 @@
       "m": 83,
       "calle": "1a. Nayarit",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -2841,7 +2856,8 @@
       "m": 64,
       "calle": "Andador Franciso Pérez Ríos",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n155",
@@ -2849,7 +2865,8 @@
       "m": 38,
       "calle": "Calle Francisco Pérez Ríos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -2857,7 +2874,8 @@
       "m": 78,
       "calle": "Calle Francisco Pérez Ríos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n156",
@@ -2879,7 +2897,8 @@
           21.863541,
           -102.278253
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n7",
@@ -2887,7 +2906,8 @@
       "m": 64,
       "calle": "Avenida Ayuntamiento",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n11",
@@ -2895,7 +2915,8 @@
       "m": 115,
       "calle": "Avenida Ayuntamiento",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n70",
@@ -2909,7 +2930,8 @@
           21.864048,
           -102.278272
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n71",
@@ -2917,7 +2939,8 @@
       "m": 12,
       "calle": "Andador Plaza 1 de Mayo",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n148",
@@ -2925,7 +2948,8 @@
       "m": 27,
       "calle": "1a. Nayarit",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n158",
@@ -2953,7 +2977,8 @@
           21.865253,
           -102.278312
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n11",
@@ -2961,7 +2986,8 @@
       "m": 48,
       "calle": "Calle Nayarit",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n155",
@@ -2969,7 +2995,8 @@
       "m": 49,
       "calle": "Calle Nayarit",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -2983,7 +3010,8 @@
           21.865226,
           -102.278371
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n159",
@@ -3001,7 +3029,8 @@
           21.865492,
           -102.278708
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n92",

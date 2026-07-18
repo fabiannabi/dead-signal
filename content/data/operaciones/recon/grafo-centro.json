@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "centro — Plaza de la Patria / Catedral",
+    "sector": "Mercado Juárez",
     "fuente": "OpenStreetMap vía Overpass API",
     "consulta": "way[\"highway\"](21.878,-102.3002,21.884,-102.2942);(._;>;);out body;",
     "bbox_SWNE": [
@@ -847,7 +847,7 @@
           -102.296546
         ]
       ],
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n2",
@@ -855,7 +855,8 @@
       "m": 145,
       "calle": "Calle Rivero y Gutiérrez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n4",
@@ -906,7 +907,7 @@
       "calle": "Calle Galeana Norte",
       "clase": "secondary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n8",
@@ -915,7 +916,7 @@
       "calle": "Calle Galeana Norte",
       "clase": "secondary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n1",
@@ -924,7 +925,7 @@
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n10",
@@ -932,7 +933,8 @@
       "m": 89,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n12",
@@ -978,7 +980,9 @@
       "m": 108,
       "calle": "Peatonal Allende Oriente",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n7",
@@ -992,7 +996,8 @@
           21.880703,
           -102.297693
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n18",
@@ -1014,7 +1019,8 @@
           21.880864,
           -102.295584
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n19",
@@ -1022,7 +1028,8 @@
       "m": 11,
       "calle": "Benito Juárez",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -1030,7 +1037,8 @@
       "m": 56,
       "calle": "Calle Rivero y Gutiérrez",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n20",
@@ -1045,7 +1053,7 @@
           -102.296223
         ]
       ],
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n23",
@@ -1063,7 +1071,8 @@
           21.87997,
           -102.302013
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n25",
@@ -1071,7 +1080,8 @@
       "m": 12,
       "calle": "Calle Aracon",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n26",
@@ -1079,7 +1089,8 @@
       "m": 96,
       "calle": "Calle Aracon",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -1087,7 +1098,8 @@
       "m": 45,
       "calle": "Calle Gorostiza",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n29",
@@ -1095,7 +1107,8 @@
       "m": 18,
       "calle": "Calle Gorostiza",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n30",
@@ -1103,7 +1116,8 @@
       "m": 82,
       "calle": "Calle Gorostiza",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n31",
@@ -1111,7 +1125,8 @@
       "m": 59,
       "calle": "Calle Adolfo Torres",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n33",
@@ -1119,7 +1134,8 @@
       "m": 19,
       "calle": "Calle Plazuela Juárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n34",
@@ -1127,7 +1143,8 @@
       "m": 81,
       "calle": "Calle Plazuela Juárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n36",
@@ -1141,7 +1158,8 @@
           21.884269,
           -102.298669
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n33",
@@ -1149,7 +1167,8 @@
       "m": 61,
       "calle": "Calle General Guadalupe Victoria",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n32",
@@ -1157,7 +1176,8 @@
       "m": 57,
       "calle": "Calle General Guadalupe Victoria",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n37",
@@ -1165,7 +1185,8 @@
       "m": 56,
       "calle": "Calle General Guadalupe Victoria",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n34",
@@ -1173,7 +1194,8 @@
       "m": 27,
       "calle": "Plazuela Juárez",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n29",
@@ -1181,7 +1203,8 @@
       "m": 87,
       "calle": "Gorostiza",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n40",
@@ -1245,7 +1268,8 @@
           21.878631,
           -102.2967
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n46",
@@ -1253,7 +1277,8 @@
       "m": 7,
       "calle": "Calle Rayón",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -1262,7 +1287,7 @@
       "calle": "Boulevard José María Chávez",
       "clase": "secondary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n48",
@@ -1314,7 +1339,8 @@
       "m": 83,
       "calle": "Calle Insurgentes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n40",
@@ -1336,7 +1362,9 @@
       "m": 15,
       "calle": "Calle Pedro Parga",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n55",
@@ -1362,7 +1390,9 @@
           21.885205,
           -102.291712
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n57",
@@ -1388,8 +1418,7 @@
           21.881908,
           -102.293094
         ]
-      ],
-      "mercado": true
+      ]
     },
     {
       "a": "n59",
@@ -1403,7 +1432,8 @@
           21.879829,
           -102.294912
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n61",
@@ -1411,7 +1441,9 @@
       "m": 94,
       "calle": "San Antonio",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n47",
@@ -1419,7 +1451,8 @@
       "m": 7,
       "calle": "Calle Francisco G. Hornedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n63",
@@ -1427,7 +1460,8 @@
       "m": 95,
       "calle": "Calle Francisco G. Hornedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n64",
@@ -1445,7 +1479,8 @@
           21.879425,
           -102.294207
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n65",
@@ -1527,7 +1562,9 @@
           21.882192,
           -102.284583
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n67",
@@ -1570,7 +1607,7 @@
           -102.29115
         ]
       ],
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n69",
@@ -1578,7 +1615,8 @@
       "m": 54,
       "calle": "Pasaje Ortega",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n62",
@@ -1586,7 +1624,8 @@
       "m": 72,
       "calle": "Pasaje Ortega",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n71",
@@ -1594,7 +1633,8 @@
       "m": 172,
       "calle": "Calle de Hospitalidad",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n73",
@@ -1602,7 +1642,8 @@
       "m": 132,
       "calle": "Calle Héroes de Chapultepec",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -1634,7 +1675,8 @@
       "m": 233,
       "calle": "Calle General Ignacio Allende",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -1642,7 +1684,9 @@
       "m": 44,
       "calle": "secondary_link",
       "clase": "secondary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n78",
@@ -1664,7 +1708,9 @@
           21.884869,
           -102.295716
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n77",
@@ -1678,7 +1724,9 @@
           21.883958,
           -102.295326
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n54",
@@ -1686,7 +1734,9 @@
       "m": 82,
       "calle": "Calle José María Morelos y Pavón",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n79",
@@ -1694,7 +1744,9 @@
       "m": 3,
       "calle": "Calle José María Morelos y Pavón",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n80",
@@ -1702,7 +1754,9 @@
       "m": 3,
       "calle": "Calle José María Morelos y Pavón",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1710,7 +1764,9 @@
       "m": 84,
       "calle": "Calle José María Morelos y Pavón",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n71",
@@ -1724,8 +1780,7 @@
           21.881588,
           -102.294638
         ]
-      ],
-      "mercado": true
+      ]
     },
     {
       "a": "n21",
@@ -1733,7 +1788,8 @@
       "m": 88,
       "calle": "Calle General Guadalupe Victoria",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n76",
@@ -1756,7 +1812,7 @@
           -102.297075
         ]
       ],
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n84",
@@ -1770,7 +1826,9 @@
           21.88358,
           -102.296239
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n61",
@@ -1778,7 +1836,9 @@
       "m": 57,
       "calle": "Calle Licenciado Benito Juárez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n85",
@@ -1786,7 +1846,9 @@
       "m": 101,
       "calle": "Calle Unión",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n69",
@@ -1794,7 +1856,8 @@
       "m": 48,
       "calle": "Calle Unión",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n84",
@@ -1808,7 +1871,9 @@
           21.883588,
           -102.29567
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n11",
@@ -1816,7 +1881,8 @@
       "m": 61,
       "calle": "Calle Rivero y Gutiérrez",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n70",
@@ -1824,7 +1890,9 @@
       "m": 79,
       "calle": "Calle Rivero y Gutiérrez",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n87",
@@ -1832,7 +1900,9 @@
       "m": 5,
       "calle": "Calle Rivero y Gutiérrez",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n86",
@@ -1858,7 +1928,9 @@
           21.886165,
           -102.297232
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n83",
@@ -1867,7 +1939,7 @@
       "calle": "Calle de Moctezuma",
       "clase": "secondary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n89",
@@ -1875,7 +1947,8 @@
       "m": 43,
       "calle": "Peatonal Plaza Principal",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n90",
@@ -1883,7 +1956,8 @@
       "m": 106,
       "calle": "Peatonal Plaza Principal",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n91",
@@ -1916,7 +1990,7 @@
       "calle": "Boulevard José María Chávez",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n9",
@@ -1924,7 +1998,8 @@
       "m": 61,
       "calle": "Calle Nieto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n95",
@@ -1979,7 +2054,7 @@
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n94",
@@ -1988,7 +2063,7 @@
       "calle": "Boulevard José María Chávez",
       "clase": "secondary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n97",
@@ -2020,7 +2095,8 @@
       "m": 23,
       "calle": "Calle José María Chávez",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n100",
@@ -2034,7 +2110,8 @@
           21.879252,
           -102.296166
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n101",
@@ -2042,7 +2119,8 @@
       "m": 86,
       "calle": "Calle José María Chávez",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n90",
@@ -2050,7 +2128,8 @@
       "m": 4,
       "calle": "Calle José María Chávez",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n103",
@@ -2058,7 +2137,8 @@
       "m": 6,
       "calle": "Peatonal Plaza de la República",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n100",
@@ -2072,7 +2152,8 @@
           21.87919,
           -102.296075
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n101",
@@ -2080,7 +2161,8 @@
       "m": 66,
       "calle": "Peatonal Plaza de la República",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n105",
@@ -2088,7 +2170,8 @@
       "m": 5,
       "calle": "Peatonal Plaza de la República",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n106",
@@ -2096,7 +2179,8 @@
       "m": 28,
       "calle": "Peatonal Plaza de la República",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n104",
@@ -2104,7 +2188,8 @@
       "m": 7,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n108",
@@ -2112,7 +2197,8 @@
       "m": 12,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n109",
@@ -2166,7 +2252,8 @@
           21.880364,
           -102.296916
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n110",
@@ -2174,7 +2261,8 @@
       "m": 25,
       "calle": "Plaza de la República",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n111",
@@ -2196,7 +2284,8 @@
           21.880553,
           -102.296953
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n112",
@@ -2214,7 +2303,8 @@
           21.880775,
           -102.296698
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n110",
@@ -2228,7 +2318,8 @@
           21.88009,
           -102.296478
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n102",
@@ -2242,7 +2333,8 @@
           21.880242,
           -102.296032
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n113",
@@ -2256,7 +2348,8 @@
           21.881107,
           -102.296327
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n114",
@@ -2310,7 +2403,8 @@
       "m": 221,
       "calle": "Calle Nieto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -2319,7 +2413,7 @@
       "calle": "Calle Doctor Jesús Díaz de León",
       "clase": "secondary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n59",
@@ -2334,7 +2428,7 @@
           -102.294127
         ]
       ],
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n96",
@@ -2343,7 +2437,7 @@
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n116",
@@ -2352,7 +2446,7 @@
       "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n115",
@@ -2361,7 +2455,7 @@
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n96",
@@ -2370,7 +2464,7 @@
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n64",
@@ -2379,7 +2473,7 @@
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n119",
@@ -2394,7 +2488,7 @@
           -102.295202
         ]
       ],
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n120",
@@ -2403,7 +2497,7 @@
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n60",
@@ -2412,7 +2506,7 @@
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n118",
@@ -2421,7 +2515,7 @@
       "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n122",
@@ -2430,7 +2524,7 @@
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n123",
@@ -2439,7 +2533,7 @@
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n124",
@@ -2447,7 +2541,8 @@
       "m": 24,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n120",
@@ -2455,7 +2550,8 @@
       "m": 25,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -2464,7 +2560,7 @@
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n118",
@@ -2473,7 +2569,7 @@
       "calle": "Calle Cristóbal Colón",
       "clase": "tertiary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n18",
@@ -2482,7 +2578,7 @@
       "calle": "Calle Juan de Montoro",
       "clase": "tertiary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n127",
@@ -2496,7 +2592,9 @@
           21.883383,
           -102.2938
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n94",
@@ -2505,7 +2603,7 @@
       "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n93",
@@ -2514,7 +2612,7 @@
       "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n129",
@@ -2523,7 +2621,7 @@
       "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n130",
@@ -2532,7 +2630,7 @@
       "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n121",
@@ -2541,7 +2639,7 @@
       "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n131",
@@ -2557,8 +2655,7 @@
       "m": 56,
       "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
       "clase": "primary",
-      "peligro_base": 0,
-      "mercado": true
+      "peligro_base": 0
     },
     {
       "a": "n4",
@@ -2566,8 +2663,7 @@
       "m": 31,
       "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
       "clase": "primary",
-      "peligro_base": 0,
-      "mercado": true
+      "peligro_base": 0
     },
     {
       "a": "n133",
@@ -2575,8 +2671,7 @@
       "m": 37,
       "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
       "clase": "primary",
-      "peligro_base": 0,
-      "mercado": true
+      "peligro_base": 0
     },
     {
       "a": "n128",
@@ -2585,7 +2680,7 @@
       "calle": "Avenida Licenciado Adolfo López Mateos Poniente",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n131",
@@ -2609,7 +2704,8 @@
       "m": 21,
       "calle": "Calle Rivero y Gutiérrez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n134",
@@ -2625,7 +2721,8 @@
       "m": 48,
       "calle": "Calle Guadalupe",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n136",
@@ -2633,7 +2730,8 @@
       "m": 26,
       "calle": "Calle Guadalupe",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n137",
@@ -2651,7 +2749,9 @@
           21.883911,
           -102.300793
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n37",
@@ -2659,7 +2759,8 @@
       "m": 80,
       "calle": "Calle Guadalupe",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n35",
@@ -2667,7 +2768,8 @@
       "m": 28,
       "calle": "Calle Guadalupe",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n58",
@@ -2675,8 +2777,7 @@
       "m": 26,
       "calle": "Avenida Francisco I. Madero",
       "clase": "secondary",
-      "peligro_base": 0,
-      "mercado": true
+      "peligro_base": 0
     },
     {
       "a": "n81",
@@ -2685,7 +2786,7 @@
       "calle": "Avenida Francisco I. Madero",
       "clase": "secondary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n92",
@@ -2702,7 +2803,7 @@
       "calle": "Calle José María Chávez",
       "clase": "primary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n141",
@@ -2710,7 +2811,8 @@
       "m": 61,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n143",
@@ -2718,7 +2820,8 @@
       "m": 14,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n141",
@@ -2726,7 +2829,8 @@
       "m": 19,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n30",
@@ -2734,7 +2838,8 @@
       "m": 40,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n144",
@@ -2742,7 +2847,8 @@
       "m": 72,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n143",
@@ -2756,7 +2862,8 @@
           21.882963,
           -102.300595
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n146",
@@ -2770,7 +2877,8 @@
           21.883201,
           -102.29969
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n148",
@@ -2784,7 +2892,8 @@
           21.883274,
           -102.300054
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n147",
@@ -2792,7 +2901,8 @@
       "m": 6,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n149",
@@ -2806,7 +2916,8 @@
           21.883428,
           -102.299873
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n136",
@@ -2820,7 +2931,8 @@
           21.883433,
           -102.299657
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n150",
@@ -2834,7 +2946,8 @@
           21.883668,
           -102.299838
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n152",
@@ -2842,7 +2955,8 @@
       "m": 6,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n153",
@@ -2850,7 +2964,8 @@
       "m": 6,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n151",
@@ -2858,7 +2973,8 @@
       "m": 53,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n137",
@@ -2866,7 +2982,8 @@
       "m": 9,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n156",
@@ -2880,7 +2997,9 @@
           21.883305,
           -102.29616
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n157",
@@ -2894,7 +3013,9 @@
           21.882994,
           -102.295135
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n158",
@@ -2916,7 +3037,8 @@
           21.882061,
           -102.300328
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n25",
@@ -2924,7 +3046,8 @@
       "m": 10,
       "calle": "Calle General Emiliano Zapata",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n152",
@@ -2932,7 +3055,8 @@
       "m": 13,
       "calle": "Calle General Emiliano Zapata",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n27",
@@ -2940,7 +3064,8 @@
       "m": 30,
       "calle": "Calle General Ignacio Allende",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n20",
@@ -2948,7 +3073,8 @@
       "m": 152,
       "calle": "Peatonal Benito Juárez",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n139",
@@ -2957,7 +3083,7 @@
       "calle": "Avenida Francisco I. Madero",
       "clase": "secondary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n22",
@@ -2976,7 +3102,7 @@
           -102.296986
         ]
       ],
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n8",
@@ -2985,7 +3111,7 @@
       "calle": "Calle de Venustiano Carranza",
       "clase": "tertiary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n140",
@@ -3002,7 +3128,7 @@
       "calle": "Calle Galeana Norte",
       "clase": "secondary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n52",
@@ -3011,7 +3137,7 @@
       "calle": "Calle Galeana Norte",
       "clase": "secondary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n45",
@@ -3019,8 +3145,7 @@
       "m": 31,
       "calle": "Calle Galeana Norte",
       "clase": "secondary",
-      "peligro_base": 0,
-      "mercado": true
+      "peligro_base": 0
     },
     {
       "a": "n81",
@@ -3029,7 +3154,7 @@
       "calle": "Calle José María Morelos y Pavón",
       "clase": "secondary",
       "peligro_base": 0,
-      "mercado": true
+      "parque": true
     },
     {
       "a": "n154",
@@ -3037,7 +3162,9 @@
       "m": 37,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n13",
@@ -3061,7 +3188,8 @@
       "m": 12,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n153",
@@ -3069,7 +3197,8 @@
       "m": 14,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n31",
@@ -3077,7 +3206,8 @@
       "m": 18,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n11",
@@ -3085,7 +3215,8 @@
       "m": 110,
       "calle": "Calle 5 de Mayo",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n87",
@@ -3093,7 +3224,9 @@
       "m": 90,
       "calle": "Peatonal Benito Juárez",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n113",
@@ -3101,7 +3234,8 @@
       "m": 68,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -3109,7 +3243,8 @@
       "m": 23,
       "calle": "Calle José María Chávez",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n108",
@@ -3117,7 +3252,8 @@
       "m": 27,
       "calle": "Peatonal Plaza de la República",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n162",
@@ -3125,7 +3261,8 @@
       "m": 6,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n17",
@@ -3139,7 +3276,8 @@
           21.881472,
           -102.297899
         ]
-      ]
+      ],
+      "parque": true
     }
   ]
 }

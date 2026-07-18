@@ -3,7 +3,9 @@
     "descripcion": "Malla de reconocimiento: 9 distritos × 9 sectores. El sector es la unidad jugable (grafo propio en recon/grafo-<slug>.json); el distrito solo agrupa para la vista general (§1.3).",
     "horneado": "2026-07-18",
     "sector_m": "~667 × 619 m",
-    "nota_canon": "[PROPUESTA DE CANON — REQUIERE APROBACIÓN] La criatura por sector es provisional: gusano_de_asfalto es la única regla de ecología que aplica fuera del centro, porque arana_hidraulica exige aristas `rejilla` (ningún grafo las marca) y chacal_de_feria exige el corredor `mercado`, que solo existe en el centro por el Mercado Juárez. Darle identidad propia a cada sector pide features de terreno nuevas o reglas de ecología para más criaturas."
+    "nota_canon": "[PROPUESTA DE CANON — REQUIERE APROBACIÓN] La criatura por sector se deriva de los features de terreno reales (OSM) cruzados con los biomas documentados en el bestiario. Solo cinco criaturas tienen hábitat documentado; para el resto NO se escribieron reglas.",
+    "nombres": "Cada sector se nombra por su hito más reconocible (mercado, monumento, hospital, panteón, templo, parque) y, si no tiene ninguno, por la calle con más metros dentro de la celda. Nombres de OpenStreetMap.",
+    "asignacion": "La criatura de cada sector se deriva de los features de terreno reales que tiene la celda cruzados con los biomas documentados en el bestiario; la hora se elige dentro de la banda activa de esa criatura, para que la amenaza reportada sea la que de verdad caza a esa hora."
   },
   "distritos": [
     {
@@ -13,7 +15,7 @@
       "sectores": [
         {
           "slug": "s4_m3",
-          "nombre": "NORTE PONIENTE 4m3",
+          "nombre": "Canal",
           "celda": "S_4_-3",
           "S": 21.902,
           "W": -102.3182,
@@ -21,13 +23,14 @@
           "E": -102.3122,
           "nodos": 111,
           "aristas": 141,
-          "hora": "05:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "06:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.77
         },
         {
           "slug": "s4_m2",
-          "nombre": "NORTE PONIENTE 4m2",
+          "nombre": "Avenida Canal Interceptor",
           "celda": "S_4_-2",
           "S": 21.902,
           "W": -102.3122,
@@ -35,13 +38,14 @@
           "E": -102.3062,
           "nodos": 203,
           "aristas": 252,
-          "hora": "08:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "07:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.83
         },
         {
           "slug": "s3_m4",
-          "nombre": "NORTE PONIENTE 3m4",
+          "nombre": "Parque los Sauces",
           "celda": "S_3_-4",
           "S": 21.896,
           "W": -102.3242,
@@ -49,13 +53,14 @@
           "E": -102.3182,
           "nodos": 58,
           "aristas": 71,
-          "hora": "21:00",
+          "hora": "13:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.69
         },
         {
           "slug": "s3_m3",
-          "nombre": "NORTE PONIENTE 3m3",
+          "nombre": "Parque Reyes Heroles",
           "celda": "S_3_-3",
           "S": 21.896,
           "W": -102.3182,
@@ -63,13 +68,14 @@
           "E": -102.3122,
           "nodos": 197,
           "aristas": 267,
-          "hora": "23:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "18:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.72
         },
         {
           "slug": "s3_m2",
-          "nombre": "NORTE PONIENTE 3m2",
+          "nombre": "Hospital General ISSSTE",
           "celda": "S_3_-2",
           "S": 21.896,
           "W": -102.3122,
@@ -77,13 +83,14 @@
           "E": -102.3062,
           "nodos": 125,
           "aristas": 170,
-          "hora": "03:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "19:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.69
         },
         {
           "slug": "s2_m4",
-          "nombre": "NORTE PONIENTE 2m4",
+          "nombre": "Panteón Jardines Eternos",
           "celda": "S_2_-4",
           "S": 21.89,
           "W": -102.3242,
@@ -91,13 +98,14 @@
           "E": -102.3182,
           "nodos": 64,
           "aristas": 81,
-          "hora": "17:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "20:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.99
         },
         {
           "slug": "s2_m3",
-          "nombre": "NORTE PONIENTE 2m3",
+          "nombre": "area verde",
           "celda": "S_2_-3",
           "S": 21.89,
           "W": -102.3182,
@@ -105,13 +113,14 @@
           "E": -102.3122,
           "nodos": 156,
           "aristas": 200,
-          "hora": "19:00",
+          "hora": "13:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.69
         },
         {
           "slug": "s2_m2",
-          "nombre": "NORTE PONIENTE 2m2",
+          "nombre": "Avenida Fundición",
           "celda": "S_2_-2",
           "S": 21.89,
           "W": -102.3122,
@@ -119,9 +128,10 @@
           "E": -102.3062,
           "nodos": 178,
           "aristas": 264,
-          "hora": "21:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "07:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.77
         }
       ]
     },
@@ -132,7 +142,7 @@
       "sectores": [
         {
           "slug": "s4_m1",
-          "nombre": "NORTE 4m1",
+          "nombre": "Prolongación General Ignacio Zaragoza",
           "celda": "S_4_-1",
           "S": 21.902,
           "W": -102.3062,
@@ -140,13 +150,14 @@
           "E": -102.3002,
           "nodos": 145,
           "aristas": 172,
-          "hora": "11:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "08:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.96
         },
         {
           "slug": "s4_0",
-          "nombre": "NORTE 40",
+          "nombre": "Parque La Rinconada",
           "celda": "S_4_0",
           "S": 21.902,
           "W": -102.3002,
@@ -154,13 +165,14 @@
           "E": -102.2942,
           "nodos": 177,
           "aristas": 239,
-          "hora": "12:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "01:00",
+          "criatura": "rata_coendu",
+          "amenaza": "II",
+          "cobertura_peligro": 0.09
         },
         {
           "slug": "s4_1",
-          "nombre": "NORTE 41",
+          "nombre": "Parque Las Hadas",
           "celda": "S_4_1",
           "S": 21.902,
           "W": -102.2942,
@@ -168,13 +180,14 @@
           "E": -102.2882,
           "nodos": 167,
           "aristas": 207,
-          "hora": "13:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "02:00",
+          "criatura": "rata_coendu",
+          "amenaza": "II",
+          "cobertura_peligro": 0.27
         },
         {
           "slug": "s3_m1",
-          "nombre": "NORTE 3m1",
+          "nombre": "Hospital Star Médica Aguascalientes",
           "celda": "S_3_-1",
           "S": 21.896,
           "W": -102.3062,
@@ -182,13 +195,14 @@
           "E": -102.3002,
           "nodos": 167,
           "aristas": 220,
-          "hora": "05:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "20:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.75
         },
         {
           "slug": "s3_0",
-          "nombre": "NORTE 30",
+          "nombre": "La Luz Del mundo",
           "celda": "S_3_0",
           "S": 21.896,
           "W": -102.3002,
@@ -196,13 +210,14 @@
           "E": -102.2942,
           "nodos": 148,
           "aristas": 201,
-          "hora": "08:00",
+          "hora": "11:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.71
         },
         {
           "slug": "s3_1",
-          "nombre": "NORTE 31",
+          "nombre": "IMSS Clinica 10",
           "celda": "S_3_1",
           "S": 21.896,
           "W": -102.2942,
@@ -210,13 +225,14 @@
           "E": -102.2882,
           "nodos": 169,
           "aristas": 215,
-          "hora": "11:00",
+          "hora": "12:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.51
         },
         {
           "slug": "s2_m1",
-          "nombre": "NORTE 2m1",
+          "nombre": "Calle Aquiles Serdán",
           "celda": "S_2_-1",
           "S": 21.89,
           "W": -102.3062,
@@ -224,13 +240,14 @@
           "E": -102.3002,
           "nodos": 152,
           "aristas": 230,
-          "hora": "23:00",
+          "hora": "13:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.83
         },
         {
           "slug": "s2_0",
-          "nombre": "NORTE 20",
+          "nombre": "Parroquia de Nuestra Señora de San Juan de los Lagos",
           "celda": "S_2_0",
           "S": 21.89,
           "W": -102.3002,
@@ -238,13 +255,14 @@
           "E": -102.2942,
           "nodos": 181,
           "aristas": 265,
-          "hora": "03:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "18:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.8
         },
         {
           "slug": "s2_1",
-          "nombre": "NORTE 21",
+          "nombre": "Monumento Guadalupano",
           "celda": "S_2_1",
           "S": 21.89,
           "W": -102.2942,
@@ -252,9 +270,10 @@
           "E": -102.2882,
           "nodos": 131,
           "aristas": 177,
-          "hora": "05:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "19:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.81
         }
       ]
     },
@@ -265,7 +284,7 @@
       "sectores": [
         {
           "slug": "s4_2",
-          "nombre": "NORTE ORIENTE 42",
+          "nombre": "Centro Deportivo las Hadas",
           "celda": "S_4_2",
           "S": 21.902,
           "W": -102.2882,
@@ -273,13 +292,14 @@
           "E": -102.2822,
           "nodos": 196,
           "aristas": 239,
-          "hora": "14:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "20:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.72
         },
         {
           "slug": "s4_3",
-          "nombre": "NORTE ORIENTE 43",
+          "nombre": "Avenida Centaury",
           "celda": "S_4_3",
           "S": 21.902,
           "W": -102.2822,
@@ -287,13 +307,14 @@
           "E": -102.2762,
           "nodos": 136,
           "aristas": 185,
-          "hora": "17:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "18:00",
+          "criatura": "cucaracha_matriarca",
+          "amenaza": "II",
+          "cobertura_peligro": 0.05
         },
         {
           "slug": "s4_4",
-          "nombre": "NORTE ORIENTE 44",
+          "nombre": "Avenida Aguascalientes Oriente",
           "celda": "S_4_4",
           "S": 21.902,
           "W": -102.2762,
@@ -302,12 +323,13 @@
           "nodos": 135,
           "aristas": 163,
           "hora": "19:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "criatura": "cucaracha_matriarca",
+          "amenaza": "II",
+          "cobertura_peligro": 0.04
         },
         {
           "slug": "s3_2",
-          "nombre": "NORTE ORIENTE 32",
+          "nombre": "Velodromo Bicentenario",
           "celda": "S_3_2",
           "S": 21.896,
           "W": -102.2882,
@@ -315,13 +337,14 @@
           "E": -102.2822,
           "nodos": 136,
           "aristas": 177,
-          "hora": "12:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "08:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.63
         },
         {
           "slug": "s3_3",
-          "nombre": "NORTE ORIENTE 33",
+          "nombre": "Avenida Heroico Colegio Militar",
           "celda": "S_3_3",
           "S": 21.896,
           "W": -102.2822,
@@ -329,13 +352,14 @@
           "E": -102.2762,
           "nodos": 197,
           "aristas": 270,
-          "hora": "13:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "18:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.76
         },
         {
           "slug": "s3_4",
-          "nombre": "NORTE ORIENTE 34",
+          "nombre": "Parque del S.T.E.M.A.",
           "celda": "S_3_4",
           "S": 21.896,
           "W": -102.2762,
@@ -343,13 +367,14 @@
           "E": -102.2702,
           "nodos": 179,
           "aristas": 229,
-          "hora": "14:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "19:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.69
         },
         {
           "slug": "s2_2",
-          "nombre": "NORTE ORIENTE 22",
+          "nombre": "Puerta Saturnina de Aguascalientes",
           "celda": "S_2_2",
           "S": 21.89,
           "W": -102.2882,
@@ -357,13 +382,14 @@
           "E": -102.2822,
           "nodos": 187,
           "aristas": 226,
-          "hora": "08:00",
+          "hora": "14:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.44
         },
         {
           "slug": "s2_3",
-          "nombre": "NORTE ORIENTE 23",
+          "nombre": "Centenario Hospital Miguel Hidalgo",
           "celda": "S_2_3",
           "S": 21.89,
           "W": -102.2822,
@@ -371,13 +397,14 @@
           "E": -102.2762,
           "nodos": 203,
           "aristas": 266,
-          "hora": "11:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "00:00",
+          "criatura": "rata_coendu",
+          "amenaza": "II",
+          "cobertura_peligro": 0.25
         },
         {
           "slug": "s2_4",
-          "nombre": "NORTE ORIENTE 24",
+          "nombre": "Avenida Convención de 1914 Oriente",
           "celda": "S_2_4",
           "S": 21.89,
           "W": -102.2762,
@@ -385,9 +412,10 @@
           "E": -102.2702,
           "nodos": 207,
           "aristas": 285,
-          "hora": "12:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "07:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.88
         }
       ]
     },
@@ -398,7 +426,7 @@
       "sectores": [
         {
           "slug": "s1_m4",
-          "nombre": "PONIENTE 1m4",
+          "nombre": "Panteón Municipal",
           "celda": "S_1_-4",
           "S": 21.884,
           "W": -102.3242,
@@ -406,13 +434,14 @@
           "E": -102.3182,
           "nodos": 59,
           "aristas": 65,
-          "hora": "13:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "02:00",
+          "criatura": "cucaracha_matriarca",
+          "amenaza": "II",
+          "cobertura_peligro": 0.29
         },
         {
           "slug": "s1_m3",
-          "nombre": "PONIENTE 1m3",
+          "nombre": "Parque Panorama",
           "celda": "S_1_-3",
           "S": 21.884,
           "W": -102.3182,
@@ -420,13 +449,14 @@
           "E": -102.3122,
           "nodos": 202,
           "aristas": 252,
-          "hora": "14:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "03:00",
+          "criatura": "cucaracha_matriarca",
+          "amenaza": "II",
+          "cobertura_peligro": 0.07
         },
         {
           "slug": "s1_m2",
-          "nombre": "PONIENTE 1m2",
+          "nombre": "Panteón de los Ángeles",
           "celda": "S_1_-2",
           "S": 21.884,
           "W": -102.3122,
@@ -434,13 +464,14 @@
           "E": -102.3062,
           "nodos": 167,
           "aristas": 211,
-          "hora": "17:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "04:00",
+          "criatura": "cucaracha_matriarca",
+          "amenaza": "II",
+          "cobertura_peligro": 0.08
         },
         {
           "slug": "s0_m4",
-          "nombre": "PONIENTE 0m4",
+          "nombre": "Parque San Marcos",
           "celda": "S_0_-4",
           "S": 21.878,
           "W": -102.3242,
@@ -448,13 +479,14 @@
           "E": -102.3182,
           "nodos": 44,
           "aristas": 61,
-          "hora": "11:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "20:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 1
         },
         {
           "slug": "s0_m3",
-          "nombre": "PONIENTE 0m3",
+          "nombre": "IMSS Clinica 7",
           "celda": "S_0_-3",
           "S": 21.878,
           "W": -102.3182,
@@ -462,13 +494,14 @@
           "E": -102.3122,
           "nodos": 131,
           "aristas": 171,
-          "hora": "12:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "06:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.61
         },
         {
           "slug": "s0_m2",
-          "nombre": "PONIENTE 0m2",
+          "nombre": "Calle Asunción",
           "celda": "S_0_-2",
           "S": 21.878,
           "W": -102.3122,
@@ -476,13 +509,14 @@
           "E": -102.3062,
           "nodos": 143,
           "aristas": 180,
-          "hora": "13:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "07:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.82
         },
         {
           "slug": "sm1_m4",
-          "nombre": "PONIENTE m1m4",
+          "nombre": "Parque Río San Pedro",
           "celda": "S_-1_-4",
           "S": 21.872,
           "W": -102.3242,
@@ -490,13 +524,14 @@
           "E": -102.3182,
           "nodos": 101,
           "aristas": 133,
-          "hora": "05:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "08:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.47
         },
         {
           "slug": "sm1_m3",
-          "nombre": "PONIENTE m1m3",
+          "nombre": "Iglesia de Cristo Redentor",
           "celda": "S_-1_-3",
           "S": 21.872,
           "W": -102.3182,
@@ -504,13 +539,14 @@
           "E": -102.3122,
           "nodos": 126,
           "aristas": 166,
-          "hora": "08:00",
+          "hora": "12:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.7
         },
         {
           "slug": "sm1_m2",
-          "nombre": "PONIENTE m1m2",
+          "nombre": "Monumento al encierro",
           "celda": "S_-1_-2",
           "S": 21.872,
           "W": -102.3122,
@@ -518,9 +554,10 @@
           "E": -102.3062,
           "nodos": 205,
           "aristas": 255,
-          "hora": "11:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "19:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.69
         }
       ]
     },
@@ -531,7 +568,7 @@
       "sectores": [
         {
           "slug": "s1_m1",
-          "nombre": "CENTRO 1m1",
+          "nombre": "Templo de Guadalupe",
           "celda": "S_1_-1",
           "S": 21.884,
           "W": -102.3062,
@@ -539,13 +576,14 @@
           "E": -102.3002,
           "nodos": 95,
           "aristas": 119,
-          "hora": "19:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "20:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.76
         },
         {
           "slug": "s1_0",
-          "nombre": "CENTRO 10",
+          "nombre": "Mercado Teran",
           "celda": "S_1_0",
           "S": 21.884,
           "W": -102.3002,
@@ -553,13 +591,14 @@
           "E": -102.2942,
           "nodos": 120,
           "aristas": 144,
-          "hora": "21:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "10:00",
+          "criatura": "chacal_de_feria",
+          "amenaza": "II",
+          "cobertura_peligro": 0.13
         },
         {
           "slug": "s1_1",
-          "nombre": "CENTRO 11",
+          "nombre": "Chalet Douglas",
           "celda": "S_1_1",
           "S": 21.884,
           "W": -102.2942,
@@ -567,13 +606,14 @@
           "E": -102.2882,
           "nodos": 142,
           "aristas": 172,
-          "hora": "23:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "07:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.69
         },
         {
           "slug": "s0_m1",
-          "nombre": "CENTRO 0m1",
+          "nombre": "ZONA PATRIMONIO DE LA HUMANIDAD",
           "celda": "S_0_-1",
           "S": 21.878,
           "W": -102.3062,
@@ -581,13 +621,14 @@
           "E": -102.3002,
           "nodos": 212,
           "aristas": 280,
-          "hora": "14:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "08:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.91
         },
         {
           "slug": "centro",
-          "nombre": "CENTRO",
+          "nombre": "Mercado Juárez",
           "celda": "S_0_0",
           "S": 21.878,
           "W": -102.3002,
@@ -595,13 +636,14 @@
           "E": -102.2942,
           "nodos": 163,
           "aristas": 204,
-          "hora": "17:00",
+          "hora": "13:00",
           "criatura": "chacal_de_feria",
-          "amenaza": "II"
+          "amenaza": "II",
+          "cobertura_peligro": 0.16
         },
         {
           "slug": "s0_1",
-          "nombre": "CENTRO 01",
+          "nombre": "Ramon lopez Velarde",
           "celda": "S_0_1",
           "S": 21.878,
           "W": -102.2942,
@@ -610,12 +652,13 @@
           "nodos": 180,
           "aristas": 204,
           "hora": "19:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.64
         },
         {
           "slug": "sm1_m1",
-          "nombre": "CENTRO m1m1",
+          "nombre": "Monumento a Benito Juárez",
           "celda": "S_-1_-1",
           "S": 21.872,
           "W": -102.3062,
@@ -623,13 +666,14 @@
           "E": -102.3002,
           "nodos": 209,
           "aristas": 284,
-          "hora": "12:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "20:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.5
         },
         {
           "slug": "sm1_0",
-          "nombre": "CENTRO m10",
+          "nombre": "Plaza Miguel Hidalgo",
           "celda": "S_-1_0",
           "S": 21.872,
           "W": -102.3002,
@@ -637,13 +681,14 @@
           "E": -102.2942,
           "nodos": 148,
           "aristas": 170,
-          "hora": "13:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "02:00",
+          "criatura": "rata_coendu",
+          "amenaza": "II",
+          "cobertura_peligro": 0.08
         },
         {
           "slug": "sm1_1",
-          "nombre": "CENTRO m11",
+          "nombre": "Templo del Senor del Encino",
           "celda": "S_-1_1",
           "S": 21.872,
           "W": -102.2942,
@@ -651,9 +696,10 @@
           "E": -102.2882,
           "nodos": 120,
           "aristas": 147,
-          "hora": "14:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "03:00",
+          "criatura": "rata_coendu",
+          "amenaza": "II",
+          "cobertura_peligro": 0.1
         }
       ]
     },
@@ -664,7 +710,7 @@
       "sectores": [
         {
           "slug": "s1_2",
-          "nombre": "ORIENTE 12",
+          "nombre": "Parque El Solar",
           "celda": "S_1_2",
           "S": 21.884,
           "W": -102.2882,
@@ -672,13 +718,14 @@
           "E": -102.2822,
           "nodos": 184,
           "aristas": 222,
-          "hora": "03:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "18:00",
+          "criatura": "chacal_de_feria",
+          "amenaza": "II",
+          "cobertura_peligro": 0.03
         },
         {
           "slug": "s1_3",
-          "nombre": "ORIENTE 13",
+          "nombre": "Parque Tres Centurias",
           "celda": "S_1_3",
           "S": 21.884,
           "W": -102.2822,
@@ -686,13 +733,14 @@
           "E": -102.2762,
           "nodos": 166,
           "aristas": 218,
-          "hora": "05:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "18:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.63
         },
         {
           "slug": "s1_4",
-          "nombre": "ORIENTE 14",
+          "nombre": "IMSS Clinica 8",
           "celda": "S_1_4",
           "S": 21.884,
           "W": -102.2762,
@@ -700,13 +748,14 @@
           "E": -102.2702,
           "nodos": 174,
           "aristas": 242,
-          "hora": "08:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "22:00",
+          "criatura": "rata_coendu",
+          "amenaza": "II",
+          "cobertura_peligro": 0.16
         },
         {
           "slug": "s0_2",
-          "nombre": "ORIENTE 02",
+          "nombre": "mercado reforma",
           "celda": "S_0_2",
           "S": 21.878,
           "W": -102.2882,
@@ -715,12 +764,13 @@
           "nodos": 166,
           "aristas": 206,
           "hora": "21:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "criatura": "chacal_de_feria",
+          "amenaza": "II",
+          "cobertura_peligro": 0.08
         },
         {
           "slug": "s0_3",
-          "nombre": "ORIENTE 03",
+          "nombre": "Monumento a Don Quijote",
           "celda": "S_0_3",
           "S": 21.878,
           "W": -102.2822,
@@ -728,13 +778,14 @@
           "E": -102.2762,
           "nodos": 223,
           "aristas": 274,
-          "hora": "23:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "10:00",
+          "criatura": "chacal_de_feria",
+          "amenaza": "II",
+          "cobertura_peligro": 0.02
         },
         {
           "slug": "s0_4",
-          "nombre": "ORIENTE 04",
+          "nombre": "Alameda",
           "celda": "S_0_4",
           "S": 21.878,
           "W": -102.2762,
@@ -742,13 +793,14 @@
           "E": -102.2702,
           "nodos": 176,
           "aristas": 233,
-          "hora": "03:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "07:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.58
         },
         {
           "slug": "sm1_2",
-          "nombre": "ORIENTE m12",
+          "nombre": "Parque El Llanito",
           "celda": "S_-1_2",
           "S": 21.872,
           "W": -102.2882,
@@ -756,13 +808,14 @@
           "E": -102.2822,
           "nodos": 127,
           "aristas": 151,
-          "hora": "17:00",
+          "hora": "13:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.81
         },
         {
           "slug": "sm1_3",
-          "nombre": "ORIENTE m13",
+          "nombre": "Escuela Normal Superior",
           "celda": "S_-1_3",
           "S": 21.872,
           "W": -102.2822,
@@ -770,13 +823,14 @@
           "E": -102.2762,
           "nodos": 184,
           "aristas": 232,
-          "hora": "19:00",
+          "hora": "14:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.6
         },
         {
           "slug": "sm1_4",
-          "nombre": "ORIENTE m14",
+          "nombre": "Parque Tabachín",
           "celda": "S_-1_4",
           "S": 21.872,
           "W": -102.2762,
@@ -784,9 +838,10 @@
           "E": -102.2702,
           "nodos": 320,
           "aristas": 431,
-          "hora": "21:00",
+          "hora": "11:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.53
         }
       ]
     },
@@ -797,7 +852,7 @@
       "sectores": [
         {
           "slug": "sm2_m4",
-          "nombre": "SUR PONIENTE m2m4",
+          "nombre": "Parque Pirules",
           "celda": "S_-2_-4",
           "S": 21.866,
           "W": -102.3242,
@@ -805,13 +860,14 @@
           "E": -102.3182,
           "nodos": 180,
           "aristas": 224,
-          "hora": "23:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "05:00",
+          "criatura": "arana_hidraulica",
+          "amenaza": "II",
+          "cobertura_peligro": 0.03
         },
         {
           "slug": "sm2_m3",
-          "nombre": "SUR PONIENTE m2m3",
+          "nombre": "Parroquia Santo Niño de Atocha",
           "celda": "S_-2_-3",
           "S": 21.866,
           "W": -102.3182,
@@ -819,13 +875,14 @@
           "E": -102.3122,
           "nodos": 103,
           "aristas": 134,
-          "hora": "03:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "16:00",
+          "criatura": "chacal_de_feria",
+          "amenaza": "II",
+          "cobertura_peligro": 0.1
         },
         {
           "slug": "sm2_m2",
-          "nombre": "SUR PONIENTE m2m2",
+          "nombre": "Polifórum Deportivo y Cultural Universitario Morelos",
           "celda": "S_-2_-2",
           "S": 21.866,
           "W": -102.3122,
@@ -833,13 +890,14 @@
           "E": -102.3062,
           "nodos": 181,
           "aristas": 236,
-          "hora": "05:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "23:00",
+          "criatura": "rata_coendu",
+          "amenaza": "II",
+          "cobertura_peligro": 0.08
         },
         {
           "slug": "sm3_m4",
-          "nombre": "SUR PONIENTE m3m4",
+          "nombre": "Catrina Monumental",
           "celda": "S_-3_-4",
           "S": 21.86,
           "W": -102.3242,
@@ -847,13 +905,14 @@
           "E": -102.3182,
           "nodos": 76,
           "aristas": 103,
-          "hora": "19:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "08:00",
+          "criatura": "arana_hidraulica",
+          "amenaza": "II",
+          "cobertura_peligro": 0.22
         },
         {
           "slug": "sm3_m3",
-          "nombre": "SUR PONIENTE m3m3",
+          "nombre": "Avenida de los Maestros",
           "celda": "S_-3_-3",
           "S": 21.86,
           "W": -102.3182,
@@ -861,13 +920,14 @@
           "E": -102.3122,
           "nodos": 87,
           "aristas": 118,
-          "hora": "21:00",
+          "hora": "12:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.57
         },
         {
           "slug": "sm3_m2",
-          "nombre": "SUR PONIENTE m3m2",
+          "nombre": "Parque Versalles Primera Sección",
           "celda": "S_-3_-2",
           "S": 21.86,
           "W": -102.3122,
@@ -875,13 +935,14 @@
           "E": -102.3062,
           "nodos": 96,
           "aristas": 126,
-          "hora": "23:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "02:00",
+          "criatura": "rata_coendu",
+          "amenaza": "II",
+          "cobertura_peligro": 0.1
         },
         {
           "slug": "sm4_m4",
-          "nombre": "SUR PONIENTE m4m4",
+          "nombre": "Parque Educación Álamos",
           "celda": "S_-4_-4",
           "S": 21.854,
           "W": -102.3242,
@@ -889,13 +950,14 @@
           "E": -102.3182,
           "nodos": 50,
           "aristas": 62,
-          "hora": "14:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "20:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.98
         },
         {
           "slug": "sm4_m3",
-          "nombre": "SUR PONIENTE m4m3",
+          "nombre": "Avenida de los Maestros",
           "celda": "S_-4_-3",
           "S": 21.854,
           "W": -102.3182,
@@ -903,13 +965,14 @@
           "E": -102.3122,
           "nodos": 150,
           "aristas": 195,
-          "hora": "17:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "12:00",
+          "criatura": "arana_hidraulica",
+          "amenaza": "II",
+          "cobertura_peligro": 0.04
         },
         {
           "slug": "sm4_m2",
-          "nombre": "SUR PONIENTE m4m2",
+          "nombre": "Parque Versalles Segunda Sección",
           "celda": "S_-4_-2",
           "S": 21.854,
           "W": -102.3122,
@@ -917,9 +980,10 @@
           "E": -102.3062,
           "nodos": 108,
           "aristas": 135,
-          "hora": "19:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "07:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.67
         }
       ]
     },
@@ -930,7 +994,7 @@
       "sectores": [
         {
           "slug": "sm2_m1",
-          "nombre": "SUR m2m1",
+          "nombre": "Ciencias Biomedicas",
           "celda": "S_-2_-1",
           "S": 21.866,
           "W": -102.3062,
@@ -938,13 +1002,14 @@
           "E": -102.3002,
           "nodos": 130,
           "aristas": 191,
-          "hora": "08:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "22:00",
+          "criatura": "rata_coendu",
+          "amenaza": "II",
+          "cobertura_peligro": 0.03
         },
         {
           "slug": "sm2_0",
-          "nombre": "SUR m20",
+          "nombre": "Tres Ave Maria",
           "celda": "S_-2_0",
           "S": 21.866,
           "W": -102.3002,
@@ -952,13 +1017,14 @@
           "E": -102.2942,
           "nodos": 155,
           "aristas": 199,
-          "hora": "11:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "15:00",
+          "criatura": "arana_hidraulica",
+          "amenaza": "II",
+          "cobertura_peligro": 0.04
         },
         {
           "slug": "sm2_1",
-          "nombre": "SUR m21",
+          "nombre": "IMSS Hospital General de Zona 1",
           "celda": "S_-2_1",
           "S": 21.866,
           "W": -102.2942,
@@ -966,13 +1032,14 @@
           "E": -102.2882,
           "nodos": 119,
           "aristas": 148,
-          "hora": "12:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "19:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.64
         },
         {
           "slug": "sm3_m1",
-          "nombre": "SUR m3m1",
+          "nombre": "Paloma de la Paz",
           "celda": "S_-3_-1",
           "S": 21.86,
           "W": -102.3062,
@@ -980,13 +1047,14 @@
           "E": -102.3002,
           "nodos": 120,
           "aristas": 153,
-          "hora": "03:00",
+          "hora": "12:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.75
         },
         {
           "slug": "sm3_0",
-          "nombre": "SUR m30",
+          "nombre": "Hospital MAC: Aguascalientes (CMQ)",
           "celda": "S_-3_0",
           "S": 21.86,
           "W": -102.3002,
@@ -994,13 +1062,14 @@
           "E": -102.2942,
           "nodos": 160,
           "aristas": 203,
-          "hora": "05:00",
+          "hora": "13:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.53
         },
         {
           "slug": "sm3_1",
-          "nombre": "SUR m31",
+          "nombre": "Nuestra Señora de la Asunción",
           "celda": "S_-3_1",
           "S": 21.86,
           "W": -102.2942,
@@ -1008,13 +1077,14 @@
           "E": -102.2882,
           "nodos": 119,
           "aristas": 164,
-          "hora": "08:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "07:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.74
         },
         {
           "slug": "sm4_m1",
-          "nombre": "SUR m4m1",
+          "nombre": "Calle Profesor Enrique Olivares Santana",
           "celda": "S_-4_-1",
           "S": 21.854,
           "W": -102.3062,
@@ -1022,13 +1092,14 @@
           "E": -102.3002,
           "nodos": 98,
           "aristas": 133,
-          "hora": "21:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "08:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.8
         },
         {
           "slug": "sm4_0",
-          "nombre": "SUR m40",
+          "nombre": "Parque Prados del Sur",
           "celda": "S_-4_0",
           "S": 21.854,
           "W": -102.3002,
@@ -1036,13 +1107,14 @@
           "E": -102.2942,
           "nodos": 194,
           "aristas": 256,
-          "hora": "23:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "18:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.51
         },
         {
           "slug": "sm4_1",
-          "nombre": "SUR m41",
+          "nombre": "Avion",
           "celda": "S_-4_1",
           "S": 21.854,
           "W": -102.2942,
@@ -1050,9 +1122,10 @@
           "E": -102.2882,
           "nodos": 251,
           "aristas": 326,
-          "hora": "03:00",
+          "hora": "13:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.1
         }
       ]
     },
@@ -1063,7 +1136,7 @@
       "sectores": [
         {
           "slug": "sm2_2",
-          "nombre": "SUR ORIENTE m22",
+          "nombre": "Centro Médico La Salud",
           "celda": "S_-2_2",
           "S": 21.866,
           "W": -102.2882,
@@ -1071,13 +1144,14 @@
           "E": -102.2822,
           "nodos": 146,
           "aristas": 186,
-          "hora": "13:00",
+          "hora": "14:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.58
         },
         {
           "slug": "sm2_3",
-          "nombre": "SUR ORIENTE m23",
+          "nombre": "Iglesia del IV Centenario",
           "celda": "S_-2_3",
           "S": 21.866,
           "W": -102.2822,
@@ -1085,13 +1159,14 @@
           "E": -102.2762,
           "nodos": 271,
           "aristas": 346,
-          "hora": "14:00",
+          "hora": "11:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.46
         },
         {
           "slug": "sm2_4",
-          "nombre": "SUR ORIENTE m24",
+          "nombre": "Zona Recreativa",
           "celda": "S_-2_4",
           "S": 21.866,
           "W": -102.2762,
@@ -1099,13 +1174,14 @@
           "E": -102.2702,
           "nodos": 100,
           "aristas": 116,
-          "hora": "17:00",
+          "hora": "12:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.41
         },
         {
           "slug": "sm3_2",
-          "nombre": "SUR ORIENTE m32",
+          "nombre": "Avenida Aguascalientes Sur",
           "celda": "S_-3_2",
           "S": 21.86,
           "W": -102.2882,
@@ -1113,13 +1189,14 @@
           "E": -102.2822,
           "nodos": 133,
           "aristas": 192,
-          "hora": "11:00",
+          "hora": "13:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.71
         },
         {
           "slug": "sm3_3",
-          "nombre": "SUR ORIENTE m33",
+          "nombre": "Avenida Aguascalientes Sur",
           "celda": "S_-3_3",
           "S": 21.86,
           "W": -102.2822,
@@ -1127,13 +1204,14 @@
           "E": -102.2762,
           "nodos": 144,
           "aristas": 185,
-          "hora": "12:00",
-          "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "hora": "18:00",
+          "criatura": "cervato_de_concreto",
+          "amenaza": "I",
+          "cobertura_peligro": 0.67
         },
         {
           "slug": "sm3_4",
-          "nombre": "SUR ORIENTE m34",
+          "nombre": "Avenida Aguascalientes Sur",
           "celda": "S_-3_4",
           "S": 21.86,
           "W": -102.2762,
@@ -1141,13 +1219,14 @@
           "E": -102.2702,
           "nodos": 159,
           "aristas": 214,
-          "hora": "13:00",
+          "hora": "11:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.45
         },
         {
           "slug": "sm4_2",
-          "nombre": "SUR ORIENTE m42",
+          "nombre": "Avenida Aguascalientes Sur",
           "celda": "S_-4_2",
           "S": 21.854,
           "W": -102.2882,
@@ -1155,13 +1234,14 @@
           "E": -102.2822,
           "nodos": 218,
           "aristas": 282,
-          "hora": "05:00",
+          "hora": "12:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.26
         },
         {
           "slug": "sm4_3",
-          "nombre": "SUR ORIENTE m43",
+          "nombre": "Avenida Monte Albán",
           "celda": "S_-4_3",
           "S": 21.854,
           "W": -102.2822,
@@ -1169,13 +1249,14 @@
           "E": -102.2762,
           "nodos": 103,
           "aristas": 134,
-          "hora": "08:00",
+          "hora": "13:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.73
         },
         {
           "slug": "sm4_4",
-          "nombre": "SUR ORIENTE m44",
+          "nombre": "Parque Casa Blanca",
           "celda": "S_-4_4",
           "S": 21.854,
           "W": -102.2762,
@@ -1183,9 +1264,10 @@
           "E": -102.2702,
           "nodos": 132,
           "aristas": 169,
-          "hora": "11:00",
+          "hora": "14:00",
           "criatura": "gusano_de_asfalto",
-          "amenaza": "I"
+          "amenaza": "I",
+          "cobertura_peligro": 0.76
         }
       ]
     }

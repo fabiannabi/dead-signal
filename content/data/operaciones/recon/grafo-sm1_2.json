@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "ORIENTE m12",
+    "sector": "Parque El Llanito",
     "distrito": "ORIENTE",
     "celda": "S_-1_2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -712,7 +712,8 @@
           21.87906,
           -102.286012
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n1",
@@ -802,7 +803,8 @@
       "m": 62,
       "calle": "Calle 5 de Febrero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -810,7 +812,8 @@
       "m": 58,
       "calle": "Calle 5 de Febrero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -1142,7 +1145,8 @@
       "m": 121,
       "calle": "Calle La Soledad",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -1150,7 +1154,8 @@
       "m": 29,
       "calle": "Calle 2 de Abril",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -1158,7 +1163,8 @@
       "m": 82,
       "calle": "Calle 2 de Abril",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -1166,7 +1172,8 @@
       "m": 61,
       "calle": "Calle 2 de Abril",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -1328,7 +1335,8 @@
       "m": 83,
       "calle": "Calle 2 de Enero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -1398,7 +1406,8 @@
       "m": 62,
       "calle": "Calle Eulalio Gutiérrez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -1406,7 +1415,8 @@
       "m": 74,
       "calle": "Calle Eulalio Gutiérrez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n65",
@@ -1988,7 +1998,8 @@
       "m": 147,
       "calle": "Prolongación San Miguel",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n98",
@@ -2054,7 +2065,8 @@
           21.877962,
           -102.283344
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n30",
@@ -2216,7 +2228,8 @@
           21.877416,
           -102.28864
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n108",
@@ -2356,7 +2369,8 @@
           21.877736,
           -102.282101
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n14",
@@ -2584,7 +2598,8 @@
           21.877843,
           -102.288487
         ]
-      ]
+      ],
+      "parque": true
     }
   ]
 }

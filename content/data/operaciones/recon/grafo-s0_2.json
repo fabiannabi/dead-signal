@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "ORIENTE 02",
+    "sector": "mercado reforma",
     "distrito": "ORIENTE",
     "celda": "S_0_2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -919,7 +919,8 @@
           21.881275,
           -102.288238
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n1",
@@ -927,7 +928,8 @@
       "m": 120,
       "calle": "Calle Francisco G. Hornedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -935,7 +937,9 @@
       "m": 45,
       "calle": "Calle Francisco G. Hornedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n3",
@@ -943,7 +947,9 @@
       "m": 42,
       "calle": "Calle Francisco G. Hornedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n4",
@@ -951,7 +957,9 @@
       "m": 26,
       "calle": "Calle Francisco G. Hornedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n5",
@@ -959,7 +967,9 @@
       "m": 38,
       "calle": "Calle Francisco G. Hornedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n6",
@@ -973,7 +983,9 @@
           21.882192,
           -102.284583
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n8",
@@ -1019,7 +1031,8 @@
       "m": 124,
       "calle": "Calle Arquitecto José Refugio Reyes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n16",
@@ -1033,7 +1046,8 @@
           21.880571,
           -102.285549
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n17",
@@ -1047,7 +1061,8 @@
           21.88092,
           -102.284885
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n18",
@@ -1055,7 +1070,9 @@
       "m": 49,
       "calle": "Calle Marte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n20",
@@ -1069,7 +1086,9 @@
           21.882424,
           -102.282981
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n5",
@@ -1087,7 +1106,9 @@
           21.881388,
           -102.285246
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n18",
@@ -1095,7 +1116,8 @@
       "m": 25,
       "calle": "Privada Marte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n24",
@@ -1103,7 +1125,9 @@
       "m": 83,
       "calle": "Calle Rosal",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n26",
@@ -1111,7 +1135,9 @@
       "m": 21,
       "calle": "Calle Diana",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n19",
@@ -1119,7 +1145,9 @@
       "m": 42,
       "calle": "Calle Diana",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1127,7 +1155,9 @@
       "m": 63,
       "calle": "Calle Diana",
       "clase": "living_street",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n6",
@@ -1145,7 +1175,9 @@
           21.88251,
           -102.285634
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n29",
@@ -1159,7 +1191,8 @@
           21.882818,
           -102.287108
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n30",
@@ -1167,7 +1200,8 @@
       "m": 41,
       "calle": "Calle Cosío Norte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n31",
@@ -1175,7 +1209,8 @@
       "m": 21,
       "calle": "Calle Cosío Norte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -1183,7 +1218,8 @@
       "m": 79,
       "calle": "Calle Cosío Norte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -1191,7 +1227,8 @@
       "m": 92,
       "calle": "Calle Cosío Norte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -1343,7 +1380,8 @@
           21.884124,
           -102.285432
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n42",
@@ -1351,7 +1389,9 @@
       "m": 97,
       "calle": "Calle Ezequiel A. Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1359,7 +1399,9 @@
       "m": 97,
       "calle": "Calle Ezequiel A. Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1367,7 +1409,9 @@
       "m": 47,
       "calle": "Diana",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n1",
@@ -1421,7 +1465,9 @@
           21.882355,
           -102.283994
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n20",
@@ -1429,7 +1475,9 @@
       "m": 68,
       "calle": "Avenida Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n17",
@@ -1437,7 +1485,8 @@
       "m": 117,
       "calle": "Calle Amatto",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n52",
@@ -1451,7 +1500,9 @@
           21.882584,
           -102.284542
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n53",
@@ -1459,7 +1510,9 @@
       "m": 60,
       "calle": "Calle Juan de Montoro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n54",
@@ -1467,7 +1520,9 @@
       "m": 71,
       "calle": "Calle Juan de Montoro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n31",
@@ -1475,7 +1530,8 @@
       "m": 61,
       "calle": "Calle Juan de Montoro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -1483,7 +1539,8 @@
       "m": 51,
       "calle": "Calle Marte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n46",
@@ -1505,7 +1562,9 @@
           21.882707,
           -102.284128
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n30",
@@ -1519,7 +1578,9 @@
           21.883121,
           -102.286621
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n59",
@@ -1527,7 +1588,9 @@
       "m": 17,
       "calle": "Calle Enrique M. del Valle",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n60",
@@ -1535,7 +1598,9 @@
       "m": 27,
       "calle": "Calle Enrique M. del Valle",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1549,7 +1614,9 @@
           21.883119,
           -102.285316
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n62",
@@ -1567,7 +1634,9 @@
           21.88285,
           -102.285969
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n63",
@@ -1581,7 +1650,9 @@
           21.879858,
           -102.284605
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n51",
@@ -1603,7 +1674,8 @@
           21.881971,
           -102.288916
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n65",
@@ -1611,7 +1683,8 @@
       "m": 49,
       "calle": "Calle Juan de Montoro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n66",
@@ -1619,7 +1692,8 @@
       "m": 67,
       "calle": "Calle Juan de Montoro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -1627,7 +1701,9 @@
       "m": 118,
       "calle": "Calle Juan de Montoro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n28",
@@ -1635,7 +1711,9 @@
       "m": 3,
       "calle": "Calle Juan de Montoro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n67",
@@ -1643,7 +1721,9 @@
       "m": 119,
       "calle": "Calle Juan de Montoro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n69",
@@ -1651,7 +1731,9 @@
       "m": 40,
       "calle": "Calle Poder Legislativo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n25",
@@ -1659,7 +1741,9 @@
       "m": 106,
       "calle": "Calle Poder Legislativo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n70",
@@ -1685,7 +1769,8 @@
           21.885288,
           -102.284238
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n72",
@@ -1693,7 +1778,9 @@
       "m": 61,
       "calle": "Calle Enrique M. del Valle",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n73",
@@ -1707,7 +1794,9 @@
           21.881612,
           -102.283833
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n60",
@@ -1715,7 +1804,9 @@
       "m": 48,
       "calle": "Calle Enrique M. del Valle",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n75",
@@ -1723,7 +1814,8 @@
       "m": 17,
       "calle": "residential",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n77",
@@ -1741,7 +1833,9 @@
           21.883712,
           -102.283159
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n79",
@@ -1787,7 +1881,8 @@
           21.877479,
           -102.287646
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n86",
@@ -1795,7 +1890,8 @@
       "m": 61,
       "calle": "Calle 2 de Abril",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n87",
@@ -1875,7 +1971,8 @@
       "m": 83,
       "calle": "Calle 2 de Enero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n97",
@@ -1893,7 +1990,8 @@
           21.878248,
           -102.288234
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n98",
@@ -1901,7 +1999,8 @@
       "m": 41,
       "calle": "Calle Neveros",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n99",
@@ -1971,7 +2070,8 @@
       "m": 62,
       "calle": "Calle Eulalio Gutiérrez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n86",
@@ -1979,7 +2079,8 @@
       "m": 74,
       "calle": "Calle Eulalio Gutiérrez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1987,7 +2088,9 @@
       "m": 9,
       "calle": "Avenida Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1995,7 +2098,9 @@
       "m": 140,
       "calle": "Avenida Héroe de Nacozari Norte",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n103",
@@ -2003,7 +2108,8 @@
       "m": 7,
       "calle": "Avenida Héroe de Nacozari Norte",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n42",
@@ -2011,7 +2117,9 @@
       "m": 100,
       "calle": "Avenida Francisco I. Madero",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n72",
@@ -2019,7 +2127,9 @@
       "m": 83,
       "calle": "Avenida Francisco I. Madero",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n105",
@@ -2033,7 +2143,8 @@
           21.883559,
           -102.287149
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n107",
@@ -2047,7 +2158,9 @@
           21.882445,
           -102.284021
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n109",
@@ -2061,7 +2174,9 @@
           21.88229,
           -102.284434
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n7",
@@ -2083,7 +2198,9 @@
           21.882258,
           -102.28422
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n110",
@@ -2097,7 +2214,9 @@
           21.882314,
           -102.28413
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n111",
@@ -2111,7 +2230,9 @@
           21.882364,
           -102.284094
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n49",
@@ -2125,7 +2246,9 @@
           21.882416,
           -102.284076
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n108",
@@ -2147,7 +2270,9 @@
           21.882602,
           -102.284142
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n58",
@@ -2155,7 +2280,9 @@
       "m": 6,
       "calle": "Avenida Glorieta de la Purísima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n69",
@@ -2169,7 +2296,9 @@
           21.882659,
           -102.284284
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n44",
@@ -2191,7 +2320,9 @@
           21.882612,
           -102.284437
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n52",
@@ -2221,7 +2352,9 @@
           21.882412,
           -102.284514
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n68",
@@ -2229,7 +2362,9 @@
       "m": 6,
       "calle": "Avenida Glorieta de la Purísima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n112",
@@ -2237,7 +2372,8 @@
       "m": 57,
       "calle": "Calle Poder Legislativo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n113",
@@ -2245,7 +2381,8 @@
       "m": 22,
       "calle": "Calle Poder Legislativo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n114",
@@ -2253,7 +2390,9 @@
       "m": 18,
       "calle": "Calle Poder Legislativo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n63",
@@ -2261,7 +2400,9 @@
       "m": 124,
       "calle": "Calle Poder Legislativo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n115",
@@ -2269,7 +2410,8 @@
       "m": 34,
       "calle": "Calle Poder Legislativo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n26",
@@ -2277,7 +2419,9 @@
       "m": 36,
       "calle": "Calle Poder Legislativo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n73",
@@ -2285,7 +2429,9 @@
       "m": 76,
       "calle": "Calle Poder Legislativo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n107",
@@ -2293,7 +2439,9 @@
       "m": 12,
       "calle": "Avenida Héroe de Nacozari",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n125",
@@ -2301,7 +2449,9 @@
       "m": 63,
       "calle": "Avenida Héroe de Nacozari",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n102",
@@ -2319,7 +2469,9 @@
           21.882753,
           -102.281014
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n93",
@@ -2333,7 +2485,8 @@
           21.877962,
           -102.283344
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n128",
@@ -2393,7 +2546,9 @@
           21.881301,
           -102.282117
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n128",
@@ -2423,7 +2578,8 @@
           21.878645,
           -102.282148
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n136",
@@ -2439,7 +2595,8 @@
       "m": 224,
       "calle": "Avenida Licenciado Adolfo López Mateos Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n128",
@@ -2587,7 +2744,8 @@
       "m": 49,
       "calle": "Calle Juan de Montoro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -2609,7 +2767,8 @@
           21.882241,
           -102.287453
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n53",
@@ -2617,7 +2776,9 @@
       "m": 11,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n147",
@@ -2625,7 +2786,9 @@
       "m": 259,
       "calle": "Calle Constitución",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n125",
@@ -2633,7 +2796,9 @@
       "m": 9,
       "calle": "Avenida Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n148",
@@ -2641,7 +2806,9 @@
       "m": 23,
       "calle": "Avenida Alameda",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n111",
@@ -2655,7 +2822,9 @@
           21.882288,
           -102.283978
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n149",
@@ -2669,7 +2838,9 @@
           21.881807,
           -102.283189
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n75",
@@ -2677,7 +2848,8 @@
       "m": 20,
       "calle": "Calle Ezequiel A. Chávez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n104",
@@ -2685,7 +2857,8 @@
       "m": 18,
       "calle": "Calle José Refugio Velazco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n76",
@@ -2693,7 +2866,8 @@
       "m": 136,
       "calle": "Calle José Refugio Velazco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n150",
@@ -2701,7 +2875,8 @@
       "m": 59,
       "calle": "Calle José Refugio Velazco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n102",
@@ -2709,7 +2884,9 @@
       "m": 12,
       "calle": "Avenida Héroe de Nacozari",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n132",
@@ -2717,7 +2894,9 @@
       "m": 28,
       "calle": "Avenida Héroe de Nacozari Norte",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n57",
@@ -2731,7 +2910,9 @@
           21.882824,
           -102.283842
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n152",
@@ -2755,7 +2936,8 @@
       "m": 43,
       "calle": "Avenida Héroe de Nacozari Norte",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n105",
@@ -2769,7 +2951,8 @@
           21.88362,
           -102.2871
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n153",
@@ -2879,7 +3062,8 @@
           21.895558,
           -102.291093
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n106",
@@ -2887,7 +3071,8 @@
       "m": 20,
       "calle": "Avenida Francisco I. Madero",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n29",
@@ -2901,7 +3086,8 @@
           21.882905,
           -102.289461
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n4",
@@ -2915,7 +3101,9 @@
           21.881917,
           -102.285749
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n157",
@@ -3007,7 +3195,9 @@
           21.883847,
           -102.286328
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n144",
@@ -3025,7 +3215,8 @@
           21.879631,
           -102.284759
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n113",
@@ -3043,7 +3234,8 @@
           21.879108,
           -102.284721
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n47",
@@ -3059,7 +3251,8 @@
       "m": 42,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n43",
@@ -3067,7 +3260,9 @@
       "m": 55,
       "calle": "Calle María Concepción Aguayo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n24",
@@ -3075,7 +3270,8 @@
       "m": 41,
       "calle": "Calle María Concepción Aguayo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     },
     {
       "a": "n145",
@@ -3105,7 +3301,8 @@
       "m": 33,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -3139,7 +3336,9 @@
           21.881503,
           -102.285933
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n151",
@@ -3147,7 +3346,9 @@
       "m": 61,
       "calle": "Avenida Héroe de Nacozari",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n15",
@@ -3155,7 +3356,8 @@
       "m": 159,
       "calle": "Avenida Héroe de Nacozari Norte",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n193",
@@ -3163,7 +3365,8 @@
       "m": 35,
       "calle": "Privada Profesor Eugenio Alcalá",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n153",
@@ -3171,7 +3374,8 @@
       "m": 7,
       "calle": "Privada Profesor Eugenio Alcalá",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n195",
@@ -3209,7 +3413,8 @@
           21.883443,
           -102.287699
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n80",
@@ -3217,7 +3422,8 @@
       "m": 28,
       "calle": "Privada General Mariano Arista",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -3231,7 +3437,9 @@
           21.881653,
           -102.283799
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n175",
@@ -3239,7 +3447,8 @@
       "m": 5,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -3261,7 +3470,8 @@
           21.880583,
           -102.285588
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n56",
@@ -3269,7 +3479,8 @@
       "m": 38,
       "calle": "Privada Marte",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "mercado": true
     }
   ]
 }

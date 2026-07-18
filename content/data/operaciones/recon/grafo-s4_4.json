@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE ORIENTE 44",
+    "sector": "Avenida Aguascalientes Oriente",
     "distrito": "NORTE ORIENTE",
     "celda": "S_4_4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -788,7 +788,8 @@
           21.907687,
           -102.275159
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n7",
@@ -858,7 +859,8 @@
           21.905398,
           -102.277388
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n8",
@@ -1004,7 +1006,8 @@
           21.90762,
           -102.27523
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n25",
@@ -1152,7 +1155,8 @@
           21.903154,
           -102.283004
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n31",
@@ -2038,7 +2042,8 @@
           21.907478,
           -102.27658
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n24",
@@ -2046,7 +2051,8 @@
       "m": 22,
       "calle": "Calle Camino al Cóbano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n96",
@@ -2054,7 +2060,8 @@
       "m": 8,
       "calle": "Calle Camino al Cóbano",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "panteon": true
     },
     {
       "a": "n6",
@@ -2080,7 +2087,8 @@
           21.908386,
           -102.27421
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n86",
@@ -2212,7 +2220,8 @@
           21.903935,
           -102.283243
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n105",
@@ -2862,7 +2871,8 @@
           21.908249,
           -102.275173
         ]
-      ]
+      ],
+      "panteon": true
     },
     {
       "a": "n12",

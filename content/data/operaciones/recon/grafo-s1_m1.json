@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "CENTRO 1m1",
+    "sector": "Templo de Guadalupe",
     "distrito": "CENTRO",
     "celda": "S_1_-1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -498,7 +498,8 @@
       "m": 74,
       "calle": "Calle Jardín de Guadalupe Poniente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n1",
@@ -506,7 +507,8 @@
       "m": 51,
       "calle": "Calle Jardín de Guadalupe Poniente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -514,7 +516,8 @@
       "m": 78,
       "calle": "Calle Valentín Gómez Farías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n4",
@@ -522,7 +525,8 @@
       "m": 12,
       "calle": "Calle Valentín Gómez Farías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n5",
@@ -536,7 +540,8 @@
           21.885829,
           -102.303905
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n6",
@@ -544,7 +549,8 @@
       "m": 119,
       "calle": "Calle Valentín Gómez Farías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -552,7 +558,8 @@
       "m": 12,
       "calle": "Calle Valentín Gómez Farías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -560,7 +567,8 @@
       "m": 71,
       "calle": "Calle Valentín Gómez Farías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n8",
@@ -568,7 +576,8 @@
       "m": 24,
       "calle": "Calle Valentín Gómez Farías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -576,7 +585,8 @@
       "m": 78,
       "calle": "Calle Valentín Gómez Farías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -602,7 +612,8 @@
           21.884707,
           -102.298855
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n12",
@@ -632,7 +643,8 @@
           21.882868,
           -102.301606
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n14",
@@ -662,7 +674,8 @@
       "m": 39,
       "calle": "Calle Jardín Álvaro Obregón",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n19",
@@ -680,7 +693,8 @@
           21.886421,
           -102.305423
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n20",
@@ -748,7 +762,8 @@
           21.883407,
           -102.303681
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n25",
@@ -794,7 +809,8 @@
       "m": 44,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n31",
@@ -802,7 +818,8 @@
       "m": 40,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -894,7 +911,8 @@
           21.889996,
           -102.306234
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n31",
@@ -902,7 +920,8 @@
       "m": 27,
       "calle": "Calle La Luz",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n36",
@@ -1022,7 +1041,8 @@
           21.885804,
           -102.302105
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n49",
@@ -1030,7 +1050,8 @@
       "m": 162,
       "calle": "Calle Juventino Rosas",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n50",
@@ -1194,7 +1215,8 @@
       "m": 76,
       "calle": "Calle Plan de Ayutla",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n10",
@@ -1224,7 +1246,8 @@
       "m": 126,
       "calle": "Calle Profesor Francisco Antúnez Madrigal",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n12",
@@ -1250,7 +1273,8 @@
           21.884195,
           -102.301588
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n68",
@@ -1258,7 +1282,8 @@
       "m": 66,
       "calle": "Calle Guadalupe",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n0",
@@ -1272,7 +1297,8 @@
           21.884412,
           -102.303094
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n24",
@@ -1314,7 +1340,8 @@
           21.886352,
           -102.299927
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n70",
@@ -1362,7 +1389,8 @@
       "m": 143,
       "calle": "Calle Larreátegui",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n18",
@@ -1380,7 +1408,8 @@
           21.886398,
           -102.305264
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n74",
@@ -1402,7 +1431,8 @@
           21.88644,
           -102.305337
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n15",
@@ -1490,7 +1520,8 @@
           21.890554,
           -102.306982
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n35",
@@ -1498,7 +1529,8 @@
       "m": 85,
       "calle": "Avenida Fundición",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n78",
@@ -1632,7 +1664,8 @@
           21.886318,
           -102.305373
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n3",
@@ -1640,7 +1673,8 @@
       "m": 161,
       "calle": "Calle Alamán",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n73",
@@ -1734,7 +1768,8 @@
           21.883796,
           -102.300462
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n66",
@@ -1742,7 +1777,8 @@
       "m": 54,
       "calle": "Calle Guadalupe",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n101",
@@ -1768,7 +1804,8 @@
           21.886374,
           -102.305455
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n78",
@@ -1824,7 +1861,8 @@
           21.88644,
           -102.304624
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n75",
@@ -1930,7 +1968,8 @@
           21.884359,
           -102.301907
         ]
-      ]
+      ],
+      "parque": true
     }
   ]
 }

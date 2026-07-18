@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE 21",
+    "sector": "Monumento Guadalupano",
     "distrito": "NORTE",
     "celda": "S_2_1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -678,7 +678,8 @@
       "m": 52,
       "calle": "Calle México",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n1",
@@ -686,7 +687,8 @@
       "m": 42,
       "calle": "Calle México",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n2",
@@ -694,7 +696,8 @@
       "m": 42,
       "calle": "Calle México",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -702,7 +705,8 @@
       "m": 53,
       "calle": "Calle México",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n4",
@@ -710,7 +714,8 @@
       "m": 53,
       "calle": "Calle México",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -718,7 +723,8 @@
       "m": 233,
       "calle": "Calle General José María Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n7",
@@ -790,7 +796,8 @@
           21.894321,
           -102.295284
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n11",
@@ -1030,7 +1037,8 @@
       "m": 40,
       "calle": "Calle Zacatecas",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n4",
@@ -1038,7 +1046,8 @@
       "m": 116,
       "calle": "Calle Zacatecas",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -1158,7 +1167,8 @@
       "m": 87,
       "calle": "Calle Fresnillo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -1166,7 +1176,8 @@
       "m": 110,
       "calle": "Calle Fresnillo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1174,7 +1185,8 @@
       "m": 198,
       "calle": "Calle J. Trinidad Pedroza",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -1206,7 +1218,8 @@
           21.891189,
           -102.293399
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n42",
@@ -1214,7 +1227,8 @@
       "m": 70,
       "calle": "Calle J. Concepción Saucedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -1222,7 +1236,8 @@
       "m": 60,
       "calle": "Calle J. Concepción Saucedo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n49",
@@ -1484,7 +1499,8 @@
       "m": 130,
       "calle": "Calle General Enrique Estrada",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n65",
@@ -1572,7 +1588,8 @@
       "m": 185,
       "calle": "Calle Esperanza",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n82",
@@ -1774,7 +1791,8 @@
       "m": 60,
       "calle": "Calle Gran Avenida",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n6",
@@ -1782,7 +1800,8 @@
       "m": 60,
       "calle": "Calle Gran Avenida",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n101",
@@ -1790,7 +1809,8 @@
       "m": 66,
       "calle": "Calle Gran Avenida",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n44",
@@ -1808,7 +1828,8 @@
           21.891702,
           -102.29289
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n55",
@@ -1832,7 +1853,8 @@
       "m": 68,
       "calle": "Calle Gran Avenida",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n103",
@@ -1854,7 +1876,8 @@
           21.89232,
           -102.294091
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n105",
@@ -1880,7 +1903,8 @@
           21.890564,
           -102.293063
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n106",
@@ -1964,7 +1988,8 @@
           21.889902,
           -102.291592
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n40",
@@ -2002,7 +2027,8 @@
           21.890024,
           -102.293111
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n48",
@@ -2010,7 +2036,8 @@
       "m": 11,
       "calle": "Calle General José María Arteaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n0",
@@ -2024,7 +2051,8 @@
           21.891839,
           -102.29451
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n104",
@@ -2032,7 +2060,8 @@
       "m": 5,
       "calle": "Calle Petróleos Mexicanos",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n109",
@@ -2040,7 +2069,8 @@
       "m": 35,
       "calle": "Calle Petróleos Mexicanos",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -2048,7 +2078,8 @@
       "m": 63,
       "calle": "Calle Petróleos Mexicanos",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n51",
@@ -2190,7 +2221,8 @@
           21.88951,
           -102.289089
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n31",
@@ -2396,7 +2428,8 @@
       "m": 8,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n124",
@@ -2418,7 +2451,8 @@
           21.892616,
           -102.294199
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n26",
@@ -2582,7 +2616,8 @@
       "m": 215,
       "calle": "Calle Coronel Jesús R. Macías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n130",

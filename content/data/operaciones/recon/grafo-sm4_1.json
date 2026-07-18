@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR m41",
+    "sector": "Avion",
     "distrito": "SUR",
     "celda": "S_-4_1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -2100,7 +2100,8 @@
           21.86058,
           -102.300331
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n56",
@@ -5188,7 +5189,8 @@
           21.858366,
           -102.294205
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n210",
@@ -5204,7 +5206,8 @@
       "m": 56,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n54",
@@ -5248,7 +5251,8 @@
           21.858677,
           -102.294466
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n48",
@@ -5520,7 +5524,8 @@
           21.859383,
           -102.293579
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n133",
@@ -5596,7 +5601,8 @@
           21.860785,
           -102.293282
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n233",

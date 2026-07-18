@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR PONIENTE m3m2",
+    "sector": "Parque Versalles Primera Sección",
     "distrito": "SUR PONIENTE",
     "celda": "S_-3_-2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -753,7 +753,8 @@
           21.867271,
           -102.316187
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n16",
@@ -827,7 +828,9 @@
           21.868038,
           -102.31572
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n23",
@@ -875,7 +878,8 @@
           21.867138,
           -102.312847
         ]
-      ]
+      ],
+      "mercado": true
     },
     {
       "a": "n26",
@@ -943,7 +947,8 @@
           21.866284,
           -102.306668
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n32",
@@ -951,7 +956,8 @@
       "m": 52,
       "calle": "Calle República de Belice",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n33",
@@ -959,7 +965,8 @@
       "m": 64,
       "calle": "Calle República de Belice",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n35",
@@ -1029,7 +1036,8 @@
       "m": 245,
       "calle": "Calle Galicia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -1043,7 +1051,8 @@
           21.860018,
           -102.308993
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n44",
@@ -1061,7 +1070,8 @@
           21.865655,
           -102.305585
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n45",
@@ -1163,7 +1173,8 @@
       "m": 246,
       "calle": "Calle Málaga",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -1275,7 +1286,9 @@
           21.866332,
           -102.313324
         ]
-      ]
+      ],
+      "mercado": true,
+      "parque": true
     },
     {
       "a": "n62",
@@ -1309,7 +1322,8 @@
       "m": 123,
       "calle": "Calle República Mexicana",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n63",
@@ -1317,7 +1331,8 @@
       "m": 224,
       "calle": "Calle República Mexicana",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n65",
@@ -1325,7 +1340,8 @@
       "m": 233,
       "calle": "Calle Galerías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n66",
@@ -1333,7 +1349,8 @@
       "m": 31,
       "calle": "Calle Galerías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -1341,7 +1358,8 @@
       "m": 213,
       "calle": "Calle Galerías",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1795,7 +1813,9 @@
           21.866054,
           -102.307931
         ]
-      ]
+      ],
+      "parque": true,
+      "industria": true
     },
     {
       "a": "n87",
@@ -1803,7 +1823,8 @@
       "m": 65,
       "calle": "Calle Lima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n54",
@@ -1891,7 +1912,8 @@
       "m": 50,
       "calle": "Calle Lima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -1899,7 +1921,8 @@
       "m": 51,
       "calle": "Calle Lima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -1907,7 +1930,8 @@
       "m": 33,
       "calle": "Calle Lima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -1915,7 +1939,8 @@
       "m": 61,
       "calle": "Calle Lima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n83",
@@ -1923,7 +1948,8 @@
       "m": 216,
       "calle": "Calle Segunda de Granada",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -1993,7 +2019,8 @@
           21.866187,
           -102.309964
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n25",
@@ -2023,7 +2050,8 @@
       "m": 123,
       "calle": "Calle República de Perú",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n87",
@@ -2031,7 +2059,8 @@
       "m": 203,
       "calle": "Calle República de Perú",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n63",
@@ -2039,7 +2068,8 @@
       "m": 53,
       "calle": "Calle Lima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n5",
@@ -2105,7 +2135,8 @@
           21.865197,
           -102.305675
         ]
-      ]
+      ],
+      "industria": true
     },
     {
       "a": "n72",

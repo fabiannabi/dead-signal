@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE ORIENTE 32",
+    "sector": "Velodromo Bicentenario",
     "distrito": "NORTE ORIENTE",
     "celda": "S_3_2",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -931,7 +931,8 @@
           21.896854,
           -102.281343
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n55",
@@ -939,7 +940,8 @@
       "m": 131,
       "calle": "Avenida Heroico Colegio Militar",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -953,7 +955,8 @@
           21.901245,
           -102.284886
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n58",
@@ -971,7 +974,8 @@
           21.901165,
           -102.2851
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n60",
@@ -997,7 +1001,8 @@
           21.901366,
           -102.285235
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n62",
@@ -1005,7 +1010,8 @@
       "m": 15,
       "calle": "Avenida Heroico Colegio Militar",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n64",
@@ -1013,7 +1019,8 @@
       "m": 45,
       "calle": "Circuito de los Almárcigos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n65",
@@ -1021,7 +1028,8 @@
       "m": 78,
       "calle": "Circuito de los Almárcigos",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -1037,7 +1045,8 @@
       "m": 60,
       "calle": "Circuito de la Vid",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n70",
@@ -1085,7 +1094,8 @@
       "m": 76,
       "calle": "Circuito de la Molienda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -1093,7 +1103,8 @@
       "m": 13,
       "calle": "tertiary_link",
       "clase": "tertiary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n78",
@@ -1109,7 +1120,8 @@
       "m": 35,
       "calle": "Avenida Heroico Colegio Militar",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n80",
@@ -1183,7 +1195,8 @@
       "m": 40,
       "calle": "Circuito de la Uva",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n88",
@@ -1191,7 +1204,8 @@
       "m": 171,
       "calle": "Calle Francisco Guel Jiménez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n90",
@@ -1199,7 +1213,8 @@
       "m": 40,
       "calle": "Circuito de las Parras",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n91",
@@ -1207,7 +1222,8 @@
       "m": 9,
       "calle": "Circuito de las Parras",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n92",
@@ -1221,7 +1237,8 @@
           21.899437,
           -102.282437
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n94",
@@ -1229,7 +1246,8 @@
       "m": 74,
       "calle": "Circuito de la Molienda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n96",
@@ -1309,7 +1327,8 @@
       "m": 38,
       "calle": "Circuito de la Vid",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n72",
@@ -1389,7 +1408,8 @@
           21.901753,
           -102.282751
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n110",
@@ -1397,7 +1417,8 @@
       "m": 20,
       "calle": "Vía Lactea",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n112",
@@ -1411,7 +1432,8 @@
           21.901686,
           -102.281983
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n111",
@@ -1419,7 +1441,8 @@
       "m": 20,
       "calle": "Calle Obrero Mundial",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n113",
@@ -1427,7 +1450,8 @@
       "m": 20,
       "calle": "Calle Obrero Mundial",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -1457,7 +1481,8 @@
           21.899857,
           -102.281441
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n119",
@@ -1479,7 +1504,8 @@
           21.899221,
           -102.281729
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n129",
@@ -1487,7 +1513,8 @@
       "m": 142,
       "calle": "Calle Alfredo Lewis",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n110",
@@ -1529,7 +1556,8 @@
           21.903801,
           -102.283729
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n120",
@@ -1537,7 +1565,8 @@
       "m": 34,
       "calle": "primary_link",
       "clase": "primary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n75",
@@ -1577,7 +1606,8 @@
       "m": 15,
       "calle": "tertiary",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n130",
@@ -1585,7 +1615,8 @@
       "m": 44,
       "calle": "Calle Florencia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n59",
@@ -1603,7 +1634,8 @@
           21.90113,
           -102.284889
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n148",
@@ -1611,7 +1643,8 @@
       "m": 148,
       "calle": "Avenida Heroico Colegio Militar",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n149",
@@ -1619,7 +1652,8 @@
       "m": 59,
       "calle": "Avenida Heroico Colegio Militar",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n150",
@@ -1627,7 +1661,8 @@
       "m": 50,
       "calle": "Avenida Heroico Colegio Militar",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n151",
@@ -1635,7 +1670,8 @@
       "m": 38,
       "calle": "Avenida Heroico Colegio Militar",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n152",
@@ -1643,7 +1679,8 @@
       "m": 40,
       "calle": "Avenida Heroico Colegio Militar",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n153",
@@ -1861,7 +1898,8 @@
       "m": 25,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n114",
@@ -1869,7 +1907,8 @@
       "m": 26,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n174",
@@ -1877,7 +1916,8 @@
       "m": 28,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n175",
@@ -1885,7 +1925,8 @@
       "m": 37,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n89",
@@ -1893,7 +1934,8 @@
       "m": 72,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n114",
@@ -1901,7 +1943,8 @@
       "m": 16,
       "calle": "Circuito de la Vendinia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n120",
@@ -1909,7 +1952,8 @@
       "m": 28,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n109",
@@ -1923,7 +1967,8 @@
           21.902172,
           -102.283298
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n178",
@@ -1937,7 +1982,8 @@
           21.901186,
           -102.28419
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n68",
@@ -1945,7 +1991,8 @@
       "m": 40,
       "calle": "Circuito de la Molienda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n95",
@@ -1953,7 +2000,8 @@
       "m": 8,
       "calle": "Circuito de la Molienda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n105",
@@ -1971,7 +2019,8 @@
           21.89958,
           -102.282921
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n181",
@@ -1985,7 +2034,8 @@
           21.899577,
           -102.28289
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n103",
@@ -1993,7 +2043,8 @@
       "m": 70,
       "calle": "Circuito de la Vid",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n115",
@@ -2025,7 +2076,8 @@
       "m": 49,
       "calle": "Circuito de la Vendinia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -2057,7 +2109,8 @@
       "m": 66,
       "calle": "Circuito de la Uva",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -2065,7 +2118,8 @@
       "m": 42,
       "calle": "Circuito de la Molienda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -2073,7 +2127,8 @@
       "m": 33,
       "calle": "Circuito de la Molienda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n96",
@@ -2117,7 +2172,8 @@
       "m": 27,
       "calle": "Vía Lactea",
       "clase": "tertiary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n188",
@@ -2195,7 +2251,8 @@
       "m": 9,
       "calle": "Avenida Manuel Gómez Morín",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n62",
@@ -2203,7 +2260,8 @@
       "m": 72,
       "calle": "Avenida Manuel Gómez Morín",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n191",
@@ -2211,7 +2269,8 @@
       "m": 13,
       "calle": "Avenida Manuel Gómez Morín",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n195",
@@ -2229,7 +2288,8 @@
           21.897685,
           -102.281886
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n64",
@@ -2237,7 +2297,8 @@
       "m": 105,
       "calle": "Calle Florencia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n90",
@@ -2245,7 +2306,8 @@
       "m": 83,
       "calle": "Calle Florencia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -2253,7 +2315,8 @@
       "m": 39,
       "calle": "Calle Florencia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n183",
@@ -2269,7 +2332,8 @@
       "m": 66,
       "calle": "Calle Florencia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n179",
@@ -2277,7 +2341,8 @@
       "m": 26,
       "calle": "Calle Florencia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n88",
@@ -2285,7 +2350,8 @@
       "m": 90,
       "calle": "Calle Florencia",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n196",
@@ -2299,7 +2365,8 @@
           21.898294,
           -102.282688
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n197",
@@ -2313,7 +2380,8 @@
           21.89782,
           -102.28316
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n198",
@@ -2321,7 +2389,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n199",
@@ -2335,7 +2404,8 @@
           21.897981,
           -102.282584
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n200",
@@ -2397,7 +2467,8 @@
           21.89832,
           -102.282785
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n196",
@@ -2405,7 +2476,8 @@
       "m": 34,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n199",
@@ -2413,7 +2485,8 @@
       "m": 8,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n205",
@@ -2463,7 +2536,8 @@
           21.898465,
           -102.282905
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n204",
@@ -2471,7 +2545,8 @@
       "m": 50,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n198",
@@ -2479,7 +2554,8 @@
       "m": 39,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n207",
@@ -2501,7 +2577,8 @@
           21.901807,
           -102.285302
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n208",
@@ -2509,7 +2586,8 @@
       "m": 26,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n209",
@@ -2535,7 +2613,8 @@
           21.89868,
           -102.283545
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n212",
@@ -2565,7 +2644,8 @@
           21.899018,
           -102.283703
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n214",
@@ -2611,7 +2691,8 @@
           21.89906,
           -102.283711
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n215",
@@ -2641,7 +2722,8 @@
           21.899053,
           -102.284187
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n217",
@@ -2715,7 +2797,8 @@
           21.89908,
           -102.2843
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n216",
@@ -2729,7 +2812,8 @@
           21.899389,
           -102.284236
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n214",
@@ -2807,7 +2891,8 @@
       "m": 40,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n215",
@@ -2815,7 +2900,8 @@
       "m": 5,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n212",
@@ -2833,7 +2919,8 @@
           21.898633,
           -102.283873
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n211",
@@ -2841,7 +2928,8 @@
       "m": 11,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n224",
@@ -2849,7 +2937,8 @@
       "m": 31,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n225",
@@ -2883,7 +2972,8 @@
           21.898441,
           -102.283917
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n210",
@@ -2933,7 +3023,8 @@
           21.898803,
           -102.283384
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n224",
@@ -2955,7 +3046,8 @@
           21.899031,
           -102.283596
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n213",
@@ -2969,7 +3061,8 @@
           21.899147,
           -102.283626
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n208",
@@ -2987,7 +3080,8 @@
           21.899658,
           -102.284021
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n218",
@@ -3225,7 +3319,8 @@
       "m": 11,
       "calle": "Circuito de la Molienda",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n184",
@@ -3273,7 +3368,8 @@
       "m": 99,
       "calle": "Convencion de 1914 Oriente",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     }
   ]
 }

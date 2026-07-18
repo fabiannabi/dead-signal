@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR ORIENTE m44",
+    "sector": "Parque Casa Blanca",
     "distrito": "SUR ORIENTE",
     "celda": "S_-4_4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -873,7 +873,8 @@
       "m": 16,
       "calle": "30 de Septiembre",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -881,7 +882,8 @@
       "m": 24,
       "calle": "30 de Septiembre",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -889,7 +891,8 @@
       "m": 28,
       "calle": "30 de Septiembre",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n23",
@@ -897,7 +900,8 @@
       "m": 21,
       "calle": "30 de Septiembre",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n24",
@@ -905,7 +909,8 @@
       "m": 49,
       "calle": "30 de Septiembre",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n25",
@@ -913,7 +918,8 @@
       "m": 36,
       "calle": "30 de Septiembre",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n26",
@@ -921,7 +927,8 @@
       "m": 16,
       "calle": "30 de Septiembre",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -929,7 +936,8 @@
       "m": 37,
       "calle": "30 de Septiembre",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n28",
@@ -969,7 +977,8 @@
       "m": 177,
       "calle": "Calle Sitio de Cuautla",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n26",
@@ -977,7 +986,8 @@
       "m": 116,
       "calle": "Calle Vivero de la Aurora",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -1001,7 +1011,8 @@
       "m": 126,
       "calle": "Vivero del Trópico",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1009,7 +1020,8 @@
       "m": 195,
       "calle": "Calle Primera Constitución",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n38",
@@ -1049,7 +1061,8 @@
       "m": 56,
       "calle": "Avenida Monte Albán",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -1057,7 +1070,8 @@
       "m": 130,
       "calle": "Avenida Monte Albán",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n12",
@@ -1113,7 +1127,8 @@
       "m": 53,
       "calle": "Vivero del Prado",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n49",
@@ -1121,7 +1136,8 @@
       "m": 189,
       "calle": "Calle Albino García",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -1153,7 +1169,8 @@
       "m": 132,
       "calle": "Avenida Monte Albán",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n48",
@@ -1161,7 +1178,8 @@
       "m": 56,
       "calle": "Avenida Monte Albán",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n3",
@@ -1241,7 +1259,8 @@
       "m": 182,
       "calle": "Calle Soldado Insurgente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n62",
@@ -2123,7 +2142,8 @@
       "m": 53,
       "calle": "Calle Vivero del Prado",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n36",
@@ -2131,7 +2151,8 @@
       "m": 105,
       "calle": "Calle Vivero del Prado",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -2139,7 +2160,8 @@
       "m": 52,
       "calle": "Calle Vivero del Prado",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n119",

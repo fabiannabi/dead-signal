@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE ORIENTE 24",
+    "sector": "Avenida Convención de 1914 Oriente",
     "distrito": "NORTE ORIENTE",
     "celda": "S_2_4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1252,7 +1252,8 @@
       "m": 108,
       "calle": "Calle René Descartes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n24",
@@ -1260,7 +1261,8 @@
       "m": 100,
       "calle": "Calle René Descartes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n26",
@@ -1274,7 +1276,8 @@
           21.890059,
           -102.274752
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n27",
@@ -1282,7 +1285,8 @@
       "m": 125,
       "calle": "Calle Cedro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n29",
@@ -1388,7 +1392,8 @@
           21.896405,
           -102.271286
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n42",
@@ -1396,7 +1401,8 @@
       "m": 98,
       "calle": "Calle Fresno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -1404,7 +1410,8 @@
       "m": 126,
       "calle": "Calle Fresno",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n45",
@@ -1426,7 +1433,8 @@
       "m": 34,
       "calle": "Calle Conquista",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n26",
@@ -1434,7 +1442,8 @@
       "m": 37,
       "calle": "Calle Conquista",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -1442,7 +1451,8 @@
       "m": 82,
       "calle": "Calle Conquista",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n48",
@@ -1486,7 +1496,8 @@
           21.892443,
           -102.276474
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n54",
@@ -1512,7 +1523,8 @@
           21.889449,
           -102.275129
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n43",
@@ -1520,7 +1532,8 @@
       "m": 35,
       "calle": "Calle Mártires de Río Blanco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -1528,7 +1541,8 @@
       "m": 39,
       "calle": "Calle Mártires de Río Blanco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -1590,7 +1604,8 @@
           21.896337,
           -102.27147
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n63",
@@ -1718,7 +1733,8 @@
       "m": 53,
       "calle": "Calle Artemio de Valle Arizpe",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n74",
@@ -1766,7 +1782,8 @@
       "m": 100,
       "calle": "Convencion de 1914 Oriente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n81",
@@ -1774,7 +1791,8 @@
       "m": 176,
       "calle": "Convencion de 1914 Oriente",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n83",
@@ -1836,7 +1854,8 @@
           21.896701,
           -102.271266
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n62",
@@ -1844,7 +1863,8 @@
       "m": 19,
       "calle": "Calle Artículo 115",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -1866,7 +1886,8 @@
           21.895964,
           -102.271028
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n85",
@@ -1980,7 +2001,8 @@
       "m": 56,
       "calle": "Calle Teresa de Ávila",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n91",
@@ -2432,7 +2454,8 @@
       "m": 41,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n30",
@@ -2594,7 +2617,8 @@
       "m": 208,
       "calle": "Calle Fernán Caballero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n77",
@@ -2602,7 +2626,8 @@
       "m": 56,
       "calle": "Calle Fernán Caballero",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n70",
@@ -2708,7 +2733,8 @@
       "m": 13,
       "calle": "Calle René Descartes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -2716,7 +2742,8 @@
       "m": 45,
       "calle": "Calle René Descartes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n151",
@@ -2748,7 +2775,8 @@
       "m": 9,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n157",
@@ -2756,7 +2784,8 @@
       "m": 5,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n159",
@@ -2764,7 +2793,8 @@
       "m": 12,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n22",
@@ -2782,7 +2812,8 @@
           21.889911,
           -102.273561
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n161",
@@ -2796,7 +2827,8 @@
           21.89033,
           -102.273831
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n155",
@@ -2804,7 +2836,8 @@
       "m": 23,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n162",
@@ -2812,7 +2845,8 @@
       "m": 113,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n163",
@@ -2820,7 +2854,8 @@
       "m": 36,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n153",
@@ -2844,7 +2879,8 @@
       "m": 26,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n164",
@@ -2858,7 +2894,8 @@
           21.892747,
           -102.275753
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n165",
@@ -2876,7 +2913,8 @@
           21.894863,
           -102.277449
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n167",
@@ -2894,7 +2932,8 @@
           21.893288,
           -102.276398
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n53",
@@ -2902,7 +2941,8 @@
       "m": 70,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n49",
@@ -2918,7 +2958,8 @@
       "m": 91,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n46",
@@ -2926,7 +2967,8 @@
       "m": 130,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n168",
@@ -2934,7 +2976,8 @@
       "m": 11,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n169",
@@ -2942,7 +2985,8 @@
       "m": 22,
       "calle": "Avenida Convención de 1914 Oriente",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n170",
@@ -2956,7 +3000,8 @@
           21.890068,
           -102.273784
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n23",
@@ -2972,7 +3017,8 @@
       "m": 36,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n172",
@@ -3206,7 +3252,8 @@
       "m": 19,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n184",
@@ -3214,7 +3261,8 @@
       "m": 13,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n186",
@@ -3222,7 +3270,8 @@
       "m": 25,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n188",
@@ -3254,7 +3303,8 @@
       "m": 29,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n193",
@@ -3262,7 +3312,8 @@
       "m": 25,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n195",
@@ -3270,7 +3321,8 @@
       "m": 62,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n197",
@@ -3286,7 +3338,8 @@
       "m": 73,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n162",
@@ -3294,7 +3347,8 @@
       "m": 18,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n183",
@@ -3302,7 +3356,8 @@
       "m": 20,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n199",
@@ -3310,7 +3365,8 @@
       "m": 23,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n196",
@@ -3318,7 +3374,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n192",
@@ -3326,7 +3383,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n187",
@@ -3334,7 +3392,8 @@
       "m": 10,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n201",
@@ -3348,7 +3407,8 @@
           21.890942,
           -102.274093
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n202",
@@ -3364,7 +3424,8 @@
       "m": 14,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -3412,7 +3473,8 @@
       "m": 21,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n195",
@@ -3420,7 +3482,8 @@
       "m": 13,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n205",
@@ -3428,7 +3491,8 @@
       "m": 83,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n206",
@@ -3468,7 +3532,8 @@
       "m": 22,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n185",
@@ -3476,7 +3541,8 @@
       "m": 18,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n186",
@@ -3484,7 +3550,8 @@
       "m": 19,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n145",
@@ -3514,7 +3581,8 @@
           21.891655,
           -102.274777
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n89",
@@ -3546,7 +3614,8 @@
       "m": 22,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n218",
@@ -3554,7 +3623,8 @@
       "m": 5,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n156",
@@ -3562,7 +3632,8 @@
       "m": 15,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n160",
@@ -3570,7 +3641,8 @@
       "m": 15,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n169",
@@ -3578,7 +3650,8 @@
       "m": 15,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n158",
@@ -3586,7 +3659,8 @@
       "m": 20,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n219",
@@ -3594,7 +3668,8 @@
       "m": 14,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n168",
@@ -3602,7 +3677,8 @@
       "m": 6,
       "calle": "footway",
       "clase": "footway",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n203",
@@ -3664,7 +3740,8 @@
           21.892546,
           -102.275462
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n221",

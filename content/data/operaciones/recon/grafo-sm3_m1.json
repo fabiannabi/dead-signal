@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR m3m1",
+    "sector": "Paloma de la Paz",
     "distrito": "SUR",
     "celda": "S_-3_-1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -773,7 +773,8 @@
           21.861393,
           -102.302233
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n10",
@@ -1011,7 +1012,8 @@
       "m": 123,
       "calle": "Calle Montevideo",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n33",
@@ -1037,7 +1039,8 @@
           21.859984,
           -102.301747
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n34",
@@ -1051,7 +1054,8 @@
           21.860206,
           -102.303076
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n35",
@@ -1059,7 +1063,8 @@
       "m": 122,
       "calle": "Calle Río de Janeiro",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n13",
@@ -1311,7 +1316,8 @@
           21.860855,
           -102.300428
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n47",
@@ -1519,7 +1525,8 @@
           21.860843,
           -102.300671
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n69",
@@ -1653,7 +1660,8 @@
           21.860122,
           -102.299542
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n70",
@@ -1667,7 +1675,8 @@
           21.86058,
           -102.300331
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n72",
@@ -1783,7 +1792,8 @@
       "m": 111,
       "calle": "Quinta Avenida",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n76",
@@ -1791,7 +1801,8 @@
       "m": 25,
       "calle": "Quinta Avenida",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -1825,7 +1836,8 @@
           21.863686,
           -102.298734
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n16",
@@ -2075,7 +2087,8 @@
       "m": 51,
       "calle": "Avenida Las Américas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n92",
@@ -2083,7 +2096,8 @@
       "m": 92,
       "calle": "Avenida Las Américas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n1",
@@ -2207,7 +2221,8 @@
           21.860028,
           -102.301032
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n72",
@@ -2215,7 +2230,8 @@
       "m": 242,
       "calle": "Avenida Las Américas",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n37",
@@ -2563,7 +2579,8 @@
           21.862118,
           -102.301981
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n114",
@@ -2585,7 +2602,8 @@
           21.861512,
           -102.30199
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n71",
@@ -2593,7 +2611,8 @@
       "m": 6,
       "calle": "Avenida Aguascalientes Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -2615,7 +2634,8 @@
           21.860795,
           -102.300638
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n68",
@@ -2623,7 +2643,8 @@
       "m": 7,
       "calle": "Avenida Aguascalientes Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n115",
@@ -2641,7 +2662,8 @@
           21.860063,
           -102.300286
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n116",
@@ -2649,7 +2671,8 @@
       "m": 29,
       "calle": "primary_link",
       "clase": "primary_link",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -2667,7 +2690,8 @@
           21.86063,
           -102.30116
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n114",
@@ -2693,7 +2717,8 @@
           21.860601,
           -102.301111
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n118",
@@ -2701,7 +2726,8 @@
       "m": 12,
       "calle": "Avenida Aguascalientes Sur",
       "clase": "primary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -2727,7 +2753,8 @@
           21.860098,
           -102.300878
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n95",
@@ -2741,7 +2768,8 @@
           21.860083,
           -102.300697
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n115",
@@ -2779,7 +2807,8 @@
           21.860566,
           -102.300382
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n31",
@@ -2809,7 +2838,8 @@
           21.861313,
           -102.30301
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n70",
@@ -2859,7 +2889,8 @@
           21.860075,
           -102.300156
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n120",
@@ -2915,7 +2946,8 @@
       "m": 124,
       "calle": "Calle República de Perú",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "industria": true
     },
     {
       "a": "n112",

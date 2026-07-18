@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "NORTE 2m1",
+    "sector": "Calle Aquiles Serdán",
     "distrito": "NORTE",
     "celda": "S_2_-1",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1019,7 +1019,8 @@
       "m": 60,
       "calle": "Calle Rafaél Arellano",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n29",
@@ -1053,7 +1054,8 @@
           21.895063,
           -102.309222
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n30",
@@ -1405,7 +1407,8 @@
       "m": 114,
       "calle": "Calle San Felipe",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n66",
@@ -1599,7 +1602,8 @@
           21.890137,
           -102.306202
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n81",
@@ -1607,7 +1611,8 @@
       "m": 118,
       "calle": "Calle Doctor Alberto del Valle",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n29",
@@ -1615,7 +1620,8 @@
       "m": 117,
       "calle": "Calle Doctor Alberto del Valle",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n9",
@@ -1917,7 +1923,8 @@
           21.885885,
           -102.301222
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n105",
@@ -1947,7 +1954,8 @@
           21.896554,
           -102.303248
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n109",
@@ -2041,7 +2049,8 @@
           21.892142,
           -102.298353
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n117",
@@ -2257,7 +2266,8 @@
       "m": 114,
       "calle": "Calle Jesús María Rodríguez",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n133",
@@ -2689,7 +2699,8 @@
           21.897102,
           -102.304548
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n144",
@@ -2885,7 +2896,8 @@
       "m": 114,
       "calle": "Calle Santa Irene",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n24",

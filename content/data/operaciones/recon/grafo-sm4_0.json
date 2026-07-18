@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR m40",
+    "sector": "Parque Prados del Sur",
     "distrito": "SUR",
     "celda": "S_-4_0",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1011,7 +1011,8 @@
           21.858686,
           -102.295883
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n1",
@@ -1033,7 +1034,8 @@
           21.85925,
           -102.297059
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n3",
@@ -1069,7 +1071,8 @@
           21.85956,
           -102.301099
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n8",
@@ -1169,7 +1172,8 @@
           21.854168,
           -102.301006
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n19",
@@ -1177,7 +1181,8 @@
       "m": 88,
       "calle": "Avenida Paseo de la Asunción",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n20",
@@ -1185,7 +1190,8 @@
       "m": 53,
       "calle": "Avenida Paseo de la Asunción",
       "clase": "tertiary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n21",
@@ -1307,7 +1313,8 @@
       "m": 50,
       "calle": "Calle Sargento Luciano Ponce",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n32",
@@ -1315,7 +1322,8 @@
       "m": 27,
       "calle": "Calle Sargento Luciano Ponce",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -1323,7 +1331,8 @@
       "m": 69,
       "calle": "Calle Sargento Luciano Ponce",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n34",
@@ -1385,7 +1394,8 @@
       "m": 66,
       "calle": "Calle Cofre de Perote",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -1393,7 +1403,8 @@
       "m": 182,
       "calle": "Calle Cofre de Perote",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n33",
@@ -1401,7 +1412,8 @@
       "m": 52,
       "calle": "Calle Cofre de Perote",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n15",
@@ -1499,7 +1511,8 @@
           21.858503,
           -102.300361
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n52",
@@ -1515,7 +1528,8 @@
       "m": 153,
       "calle": "Calle Ajusco",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n54",
@@ -1537,7 +1551,8 @@
           21.855248,
           -102.300346
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n55",
@@ -1545,7 +1560,8 @@
       "m": 55,
       "calle": "Calle Mariscal Rafael Oropeza",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -1553,7 +1569,8 @@
       "m": 62,
       "calle": "Calle Mariscal Rafael Oropeza",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n57",
@@ -1585,7 +1602,8 @@
       "m": 57,
       "calle": "Calle Pico de Orizaba",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n53",
@@ -1593,7 +1611,8 @@
       "m": 58,
       "calle": "Calle Pico de Orizaba",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n59",
@@ -1601,7 +1620,8 @@
       "m": 152,
       "calle": "Calle Pico de Orizaba",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n60",
@@ -1617,7 +1637,8 @@
       "m": 52,
       "calle": "Calle Gertrudis Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n61",
@@ -1625,7 +1646,8 @@
       "m": 52,
       "calle": "Calle Gertrudis Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n31",
@@ -1709,7 +1731,8 @@
       "m": 82,
       "calle": "G. Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n55",
@@ -1717,7 +1740,8 @@
       "m": 93,
       "calle": "G. Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n58",
@@ -1947,7 +1971,8 @@
           21.86058,
           -102.300331
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n26",
@@ -2001,7 +2026,8 @@
           21.854447,
           -102.3005
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n85",
@@ -2045,7 +2071,8 @@
       "m": 62,
       "calle": "Calle Mariano Abad Miramontes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n86",
@@ -2053,7 +2080,8 @@
       "m": 57,
       "calle": "Calle Mariano Abad Miramontes",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n27",
@@ -2167,7 +2195,8 @@
           21.858107,
           -102.294798
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n93",
@@ -2185,7 +2214,8 @@
           21.858039,
           -102.295163
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n94",
@@ -2277,7 +2307,8 @@
           21.860179,
           -102.295303
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n101",
@@ -2285,7 +2316,8 @@
       "m": 37,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n102",
@@ -2293,7 +2325,8 @@
       "m": 89,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n93",
@@ -2307,7 +2340,8 @@
           21.858053,
           -102.295041
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n76",
@@ -2411,7 +2445,8 @@
           21.859891,
           -102.299647
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n109",
@@ -2589,7 +2624,8 @@
       "m": 36,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n122",
@@ -2597,7 +2633,8 @@
       "m": 35,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n124",
@@ -2605,7 +2642,8 @@
       "m": 35,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -2613,7 +2651,8 @@
       "m": 35,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n128",
@@ -2643,7 +2682,8 @@
           21.859089,
           -102.296315
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n121",
@@ -2651,7 +2691,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n123",
@@ -2659,7 +2700,8 @@
       "m": 16,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n125",
@@ -2667,7 +2709,8 @@
       "m": 19,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n127",
@@ -2675,7 +2718,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n132",
@@ -2813,7 +2857,8 @@
       "m": 37,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n80",
@@ -2963,7 +3008,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n120",
@@ -2971,7 +3017,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n122",
@@ -2979,7 +3026,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n124",
@@ -2987,7 +3035,8 @@
       "m": 18,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n126",
@@ -2995,7 +3044,8 @@
       "m": 15,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n153",
@@ -3009,7 +3059,8 @@
           21.859308,
           -102.295535
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n9",
@@ -3047,7 +3098,8 @@
       "m": 36,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n92",
@@ -3055,7 +3107,8 @@
       "m": 49,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n154",
@@ -3063,7 +3116,8 @@
       "m": 49,
       "calle": "Avenida Mahatma Gandhi",
       "clase": "secondary",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n155",
@@ -3105,7 +3159,8 @@
           21.865031,
           -102.295537
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n73",
@@ -3301,7 +3356,8 @@
       "m": 41,
       "calle": "Calle Pico de Orizaba",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n42",
@@ -3347,7 +3403,8 @@
       "m": 57,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n79",
@@ -3355,7 +3412,8 @@
       "m": 53,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n47",
@@ -3497,7 +3555,8 @@
           21.858366,
           -102.294205
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n178",
@@ -3513,7 +3572,8 @@
       "m": 56,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n182",
@@ -3521,7 +3581,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n180",
@@ -3529,7 +3590,8 @@
       "m": 17,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n72",
@@ -3569,7 +3631,8 @@
           21.858676,
           -102.293998
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n182",
@@ -3577,7 +3640,8 @@
       "m": 50,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n11",
@@ -3611,7 +3675,8 @@
       "m": 85,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n184",
@@ -3629,7 +3694,8 @@
           21.859454,
           -102.295366
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n185",
@@ -3651,7 +3717,8 @@
           21.860037,
           -102.300111
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n186",
@@ -3675,7 +3742,8 @@
       "m": 2,
       "calle": "service",
       "clase": "service",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n43",
@@ -3699,7 +3767,8 @@
       "m": 120,
       "calle": "Calle Gertrudis Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n41",
@@ -3707,7 +3776,8 @@
       "m": 69,
       "calle": "Calle Gertrudis Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n29",
@@ -3761,7 +3831,8 @@
           21.85275,
           -102.299619
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n68",
@@ -3769,7 +3840,8 @@
       "m": 49,
       "calle": "G. Bocanegra",
       "clase": "pedestrian",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n49",
@@ -3777,7 +3849,8 @@
       "m": 95,
       "calle": "Calle Gertrudis Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n56",
@@ -3785,7 +3858,8 @@
       "m": 96,
       "calle": "Calle Gertrudis Bocanegra",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n67",
@@ -3825,7 +3899,8 @@
       "m": 175,
       "calle": "Calle Nevado de Colima",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "parque": true
     },
     {
       "a": "n61",
@@ -3839,7 +3914,8 @@
           21.857298,
           -102.297068
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n197",

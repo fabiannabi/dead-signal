@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR ORIENTE m43",
+    "sector": "Avenida Monte Albán",
     "distrito": "SUR ORIENTE",
     "celda": "S_-4_3",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -560,7 +560,8 @@
           21.860203,
           -102.2781
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n2",
@@ -638,7 +639,8 @@
           21.856033,
           -102.272357
         ]
-      ]
+      ],
+      "parque": true
     },
     {
       "a": "n12",

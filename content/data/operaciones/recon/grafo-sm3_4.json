@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "sector": "SUR ORIENTE m34",
+    "sector": "Avenida Aguascalientes Sur",
     "distrito": "SUR ORIENTE",
     "celda": "S_-3_4",
     "fuente": "OpenStreetMap vía Overpass API",
@@ -1342,7 +1342,8 @@
       "m": 133,
       "calle": "Privada Misión de San Juan",
       "clase": "residential",
-      "peligro_base": 0
+      "peligro_base": 0,
+      "rejilla": true
     },
     {
       "a": "n41",
@@ -3168,7 +3169,8 @@
           21.866435,
           -102.271559
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n65",
@@ -3182,7 +3184,8 @@
           21.866722,
           -102.270293
         ]
-      ]
+      ],
+      "rejilla": true
     },
     {
       "a": "n99",
