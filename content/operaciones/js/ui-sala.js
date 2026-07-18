@@ -51,10 +51,22 @@ $('sala-obj').textContent = 'Reconocer el sector · recuperar intel';
 const map = L.map('sala-map', { zoomControl: true, attributionControl: false }).setView([foco.lat, foco.lng], 16);
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 19, subdomains: 'abcd' }).addTo(map);
 
+/**
+ * Traza de dibujo de una arista.
+ *
+ * El grafo tiene el grado-2 colapsado (§1.6), así que entre dos intersecciones
+ * puede haber varias cuadras de calle curva. `pts` guarda esos puntos intermedios
+ * — solo geometría: el ruteo sigue usando `m`, la distancia real. Sin esto cada
+ * tramo se dibuja como una recta que no sigue la traza.
+ */
+function trazaDe(e) {
+  const a = grafo.nodos.get(e.a), b = grafo.nodos.get(e.b);
+  return [[a.lat, a.lng], ...(e.pts || []), [b.lat, b.lng]];
+}
+
 const edgeLayer = new Map();
 for (const e of rawGrafo.aristas) {
-  const a = grafo.nodos.get(e.a), b = grafo.nodos.get(e.b);
-  edgeLayer.set(e, L.polyline([[a.lat, a.lng], [b.lat, b.lng]], { color: '#2aa855', weight: 3, opacity: 0.7, interactive: false }).addTo(map));
+  edgeLayer.set(e, L.polyline(trazaDe(e), { color: '#2aa855', weight: 3, opacity: 0.7, interactive: false }).addTo(map));
 }
 /**
  * Cartografía CONOCIDA por CENVAC (§1.7).
@@ -239,20 +251,37 @@ function despachar(destino) {
   if (dstMark) map.removeLayer(dstMark);
   const r = aStar(grafo, unidadNode, destino, { peso });
   if (!r) return;
-  const coords = r.path.map(nodeToLatLng);
+  const tramos = trazaRuta(r.path);
+  const coords = tramos.length ? [tramos[0].a, ...tramos.map(t => t.b)] : [nodeToLatLng(destino)];
   rutaLine = L.polyline(coords, { color: '#8affc0', weight: 4, opacity: 0.95, interactive: false }).addTo(map);
   dstMark = L.circleMarker(nodeToLatLng(destino), { radius: 6, color: '#8affc0', weight: 2, fillColor: '#8affc0', fillOpacity: 0.5, interactive: false }).addTo(map);
   $('sala-estado').textContent = 'en marcha';
   guionar(pick(TRANSITO, 2));
   iniciarMarcha(r, destino);
 }
+/**
+ * Parte la ruta en tramos que siguen la traza real de cada calle, orientados en
+ * el sentido de marcha. Cada sub-tramo conserva su arista, porque el acumulador
+ * de riesgo y el peligro de llegada se cobran por arista, no por punto dibujado.
+ */
+function trazaRuta(path) {
+  const tramos = [];
+  for (let i = 1; i < path.length; i++) {
+    const link = grafo.adj.get(path[i - 1]).find(x => x.to === path[i]);
+    const ar = link ? link.arista : null;
+    let t = ar ? trazaDe(ar) : [nodeToLatLng(path[i - 1]), nodeToLatLng(path[i])];
+    if (ar && ar.a !== path[i - 1]) t = [...t].reverse();   // la traza va de a→b; girarla si marchamos al revés
+    for (let k = 1; k < t.length; k++) tramos.push({ a: t[k - 1], b: t[k], arista: ar });
+  }
+  return tramos;
+}
+
 function iniciarMarcha(r, destino) {
-  const coords = r.path.map(nodeToLatLng);
   const seg = []; let total = 0;
-  for (let i = 1; i < coords.length; i++) {
-    const d = haversine({ lat: coords[i-1][0], lng: coords[i-1][1] }, { lat: coords[i][0], lng: coords[i][1] });
-    const link = grafo.adj.get(r.path[i-1]).find(x => x.to === r.path[i]);
-    seg.push({ a: coords[i-1], b: coords[i], d, acc: total, arista: link ? link.arista : null });
+  for (const t of trazaRuta(r.path)) {
+    const d = haversine({ lat: t.a[0], lng: t.a[1] }, { lat: t.b[0], lng: t.b[1] });
+    if (d <= 0) continue;
+    seg.push({ a: t.a, b: t.b, d, acc: total, arista: t.arista });
     total += d;
   }
   marcha = { seg, total, destino, base: 0, t0: 0, raf: null, riesgo: 0, lastRec: 0 };
