@@ -1,0 +1,2504 @@
+{
+  "_meta": {
+    "sector": "PONIENTE 0m3",
+    "distrito": "PONIENTE",
+    "celda": "S_0_-3",
+    "fuente": "OpenStreetMap vía Overpass API",
+    "consulta": "way[\"highway\"](21.878,-102.3182,21.884,-102.3122);(._;>;);out body;",
+    "bbox_SWNE": [
+      21.878,
+      -102.3182,
+      21.884,
+      -102.3122
+    ],
+    "horneado": "2026-07-18",
+    "nota": "Grafo curado (§1.6): grado-2 colapsado y podado a la componente conexa mayor. `pts` es geometría de dibujo, no interviene en el ruteo (la distancia va en `m`). El peligro es DINÁMICO (hora×criatura), lo deriva peligro.js de ecologia-peligro.json (§1.5); peligro_base=0."
+  },
+  "nodos": [
+    {
+      "id": "n0",
+      "lat": 21.88045,
+      "lng": -102.311676
+    },
+    {
+      "id": "n1",
+      "lat": 21.880642,
+      "lng": -102.312345
+    },
+    {
+      "id": "n2",
+      "lat": 21.880651,
+      "lng": -102.312506
+    },
+    {
+      "id": "n3",
+      "lat": 21.880664,
+      "lng": -102.313268
+    },
+    {
+      "id": "n4",
+      "lat": 21.880665,
+      "lng": -102.313931
+    },
+    {
+      "id": "n5",
+      "lat": 21.880664,
+      "lng": -102.31405
+    },
+    {
+      "id": "n6",
+      "lat": 21.880655,
+      "lng": -102.314748
+    },
+    {
+      "id": "n7",
+      "lat": 21.880655,
+      "lng": -102.315463
+    },
+    {
+      "id": "n8",
+      "lat": 21.880656,
+      "lng": -102.315569
+    },
+    {
+      "id": "n9",
+      "lat": 21.879581,
+      "lng": -102.315571
+    },
+    {
+      "id": "n10",
+      "lat": 21.878517,
+      "lng": -102.315552
+    },
+    {
+      "id": "n11",
+      "lat": 21.873098,
+      "lng": -102.315116
+    },
+    {
+      "id": "n12",
+      "lat": 21.879578,
+      "lng": -102.315454
+    },
+    {
+      "id": "n13",
+      "lat": 21.879559,
+      "lng": -102.314726
+    },
+    {
+      "id": "n14",
+      "lat": 21.879558,
+      "lng": -102.314026
+    },
+    {
+      "id": "n15",
+      "lat": 21.879563,
+      "lng": -102.313917
+    },
+    {
+      "id": "n16",
+      "lat": 21.879569,
+      "lng": -102.313236
+    },
+    {
+      "id": "n17",
+      "lat": 21.879576,
+      "lng": -102.312479
+    },
+    {
+      "id": "n18",
+      "lat": 21.879575,
+      "lng": -102.312304
+    },
+    {
+      "id": "n19",
+      "lat": 21.878897,
+      "lng": -102.311107
+    },
+    {
+      "id": "n20",
+      "lat": 21.878948,
+      "lng": -102.312268
+    },
+    {
+      "id": "n21",
+      "lat": 21.883749,
+      "lng": -102.312374
+    },
+    {
+      "id": "n22",
+      "lat": 21.883711,
+      "lng": -102.311604
+    },
+    {
+      "id": "n23",
+      "lat": 21.881822,
+      "lng": -102.312366
+    },
+    {
+      "id": "n24",
+      "lat": 21.880632,
+      "lng": -102.308659
+    },
+    {
+      "id": "n25",
+      "lat": 21.883419,
+      "lng": -102.31058
+    },
+    {
+      "id": "n26",
+      "lat": 21.883499,
+      "lng": -102.312369
+    },
+    {
+      "id": "n27",
+      "lat": 21.881992,
+      "lng": -102.317133
+    },
+    {
+      "id": "n28",
+      "lat": 21.881998,
+      "lng": -102.316586
+    },
+    {
+      "id": "n29",
+      "lat": 21.882012,
+      "lng": -102.316052
+    },
+    {
+      "id": "n30",
+      "lat": 21.88202,
+      "lng": -102.315513
+    },
+    {
+      "id": "n31",
+      "lat": 21.884972,
+      "lng": -102.31554
+    },
+    {
+      "id": "n32",
+      "lat": 21.883729,
+      "lng": -102.315541
+    },
+    {
+      "id": "n33",
+      "lat": 21.88335,
+      "lng": -102.31554
+    },
+    {
+      "id": "n34",
+      "lat": 21.880722,
+      "lng": -102.315492
+    },
+    {
+      "id": "n35",
+      "lat": 21.880659,
+      "lng": -102.316012
+    },
+    {
+      "id": "n36",
+      "lat": 21.883344,
+      "lng": -102.316052
+    },
+    {
+      "id": "n37",
+      "lat": 21.884956,
+      "lng": -102.316637
+    },
+    {
+      "id": "n38",
+      "lat": 21.883719,
+      "lng": -102.316604
+    },
+    {
+      "id": "n39",
+      "lat": 21.873962,
+      "lng": -102.31287
+    },
+    {
+      "id": "n40",
+      "lat": 21.878541,
+      "lng": -102.313187
+    },
+    {
+      "id": "n41",
+      "lat": 21.881779,
+      "lng": -102.313288
+    },
+    {
+      "id": "n42",
+      "lat": 21.882796,
+      "lng": -102.313293
+    },
+    {
+      "id": "n43",
+      "lat": 21.883392,
+      "lng": -102.313302
+    },
+    {
+      "id": "n44",
+      "lat": 21.883723,
+      "lng": -102.313307
+    },
+    {
+      "id": "n45",
+      "lat": 21.885569,
+      "lng": -102.313269
+    },
+    {
+      "id": "n46",
+      "lat": 21.883329,
+      "lng": -102.316597
+    },
+    {
+      "id": "n47",
+      "lat": 21.883317,
+      "lng": -102.317149
+    },
+    {
+      "id": "n48",
+      "lat": 21.882773,
+      "lng": -102.312546
+    },
+    {
+      "id": "n49",
+      "lat": 21.883728,
+      "lng": -102.316093
+    },
+    {
+      "id": "n50",
+      "lat": 21.884969,
+      "lng": -102.316104
+    },
+    {
+      "id": "n51",
+      "lat": 21.881826,
+      "lng": -102.312524
+    },
+    {
+      "id": "n52",
+      "lat": 21.880648,
+      "lng": -102.317095
+    },
+    {
+      "id": "n53",
+      "lat": 21.883708,
+      "lng": -102.317149
+    },
+    {
+      "id": "n54",
+      "lat": 21.884952,
+      "lng": -102.317159
+    },
+    {
+      "id": "n55",
+      "lat": 21.880654,
+      "lng": -102.316555
+    },
+    {
+      "id": "n56",
+      "lat": 21.883714,
+      "lng": -102.312546
+    },
+    {
+      "id": "n57",
+      "lat": 21.87801,
+      "lng": -102.318024
+    },
+    {
+      "id": "n58",
+      "lat": 21.878013,
+      "lng": -102.31731
+    },
+    {
+      "id": "n59",
+      "lat": 21.873381,
+      "lng": -102.31437
+    },
+    {
+      "id": "n60",
+      "lat": 21.878525,
+      "lng": -102.314732
+    },
+    {
+      "id": "n61",
+      "lat": 21.879554,
+      "lng": -102.317923
+    },
+    {
+      "id": "n62",
+      "lat": 21.879554,
+      "lng": -102.317002
+    },
+    {
+      "id": "n63",
+      "lat": 21.878554,
+      "lng": -102.312403
+    },
+    {
+      "id": "n64",
+      "lat": 21.878535,
+      "lng": -102.313894
+    },
+    {
+      "id": "n65",
+      "lat": 21.878532,
+      "lng": -102.314007
+    },
+    {
+      "id": "n66",
+      "lat": 21.878518,
+      "lng": -102.315447
+    },
+    {
+      "id": "n67",
+      "lat": 21.878503,
+      "lng": -102.316969
+    },
+    {
+      "id": "n68",
+      "lat": 21.872716,
+      "lng": -102.31661
+    },
+    {
+      "id": "n69",
+      "lat": 21.87946,
+      "lng": -102.314025
+    },
+    {
+      "id": "n70",
+      "lat": 21.877553,
+      "lng": -102.313999
+    },
+    {
+      "id": "n71",
+      "lat": 21.872789,
+      "lng": -102.315872
+    },
+    {
+      "id": "n72",
+      "lat": 21.87851,
+      "lng": -102.316265
+    },
+    {
+      "id": "n90",
+      "lat": 21.879011,
+      "lng": -102.312443
+    },
+    {
+      "id": "n91",
+      "lat": 21.878878,
+      "lng": -102.312427
+    },
+    {
+      "id": "n92",
+      "lat": 21.878617,
+      "lng": -102.312407
+    },
+    {
+      "id": "n93",
+      "lat": 21.878482,
+      "lng": -102.312395
+    },
+    {
+      "id": "n94",
+      "lat": 21.878185,
+      "lng": -102.312372
+    },
+    {
+      "id": "n95",
+      "lat": 21.876403,
+      "lng": -102.312192
+    },
+    {
+      "id": "n104",
+      "lat": 21.880444,
+      "lng": -102.317761
+    },
+    {
+      "id": "n105",
+      "lat": 21.880449,
+      "lng": -102.317852
+    },
+    {
+      "id": "n110",
+      "lat": 21.883987,
+      "lng": -102.317589
+    },
+    {
+      "id": "n111",
+      "lat": 21.885237,
+      "lng": -102.317431
+    },
+    {
+      "id": "n112",
+      "lat": 21.883422,
+      "lng": -102.317618
+    },
+    {
+      "id": "n113",
+      "lat": 21.874122,
+      "lng": -102.318373
+    },
+    {
+      "id": "n114",
+      "lat": 21.878493,
+      "lng": -102.317978
+    },
+    {
+      "id": "n115",
+      "lat": 21.878555,
+      "lng": -102.317974
+    },
+    {
+      "id": "n116",
+      "lat": 21.879035,
+      "lng": -102.317946
+    },
+    {
+      "id": "n117",
+      "lat": 21.880008,
+      "lng": -102.317887
+    },
+    {
+      "id": "n118",
+      "lat": 21.880668,
+      "lng": -102.317832
+    },
+    {
+      "id": "n119",
+      "lat": 21.883641,
+      "lng": -102.317555
+    },
+    {
+      "id": "n120",
+      "lat": 21.885244,
+      "lng": -102.317361
+    },
+    {
+      "id": "n124",
+      "lat": 21.881991,
+      "lng": -102.31729
+    },
+    {
+      "id": "n125",
+      "lat": 21.87902,
+      "lng": -102.316972
+    },
+    {
+      "id": "n126",
+      "lat": 21.879035,
+      "lng": -102.317249
+    },
+    {
+      "id": "n130",
+      "lat": 21.878551,
+      "lng": -102.31792
+    },
+    {
+      "id": "n131",
+      "lat": 21.876441,
+      "lng": -102.312076
+    },
+    {
+      "id": "n132",
+      "lat": 21.878197,
+      "lng": -102.312214
+    },
+    {
+      "id": "n133",
+      "lat": 21.878499,
+      "lng": -102.312236
+    },
+    {
+      "id": "n134",
+      "lat": 21.878622,
+      "lng": -102.312245
+    },
+    {
+      "id": "n135",
+      "lat": 21.878888,
+      "lng": -102.312263
+    },
+    {
+      "id": "n136",
+      "lat": 21.879017,
+      "lng": -102.312274
+    },
+    {
+      "id": "n137",
+      "lat": 21.881709,
+      "lng": -102.312365
+    },
+    {
+      "id": "n138",
+      "lat": 21.88188,
+      "lng": -102.312368
+    },
+    {
+      "id": "n139",
+      "lat": 21.882384,
+      "lng": -102.312365
+    },
+    {
+      "id": "n140",
+      "lat": 21.882671,
+      "lng": -102.31236
+    },
+    {
+      "id": "n141",
+      "lat": 21.882765,
+      "lng": -102.31236
+    },
+    {
+      "id": "n142",
+      "lat": 21.883084,
+      "lng": -102.312362
+    },
+    {
+      "id": "n143",
+      "lat": 21.884796,
+      "lng": -102.312393
+    },
+    {
+      "id": "n144",
+      "lat": 21.879457,
+      "lng": -102.313917
+    },
+    {
+      "id": "n145",
+      "lat": 21.881705,
+      "lng": -102.31252
+    },
+    {
+      "id": "n146",
+      "lat": 21.881875,
+      "lng": -102.312525
+    },
+    {
+      "id": "n147",
+      "lat": 21.882379,
+      "lng": -102.312542
+    },
+    {
+      "id": "n148",
+      "lat": 21.882673,
+      "lng": -102.312546
+    },
+    {
+      "id": "n149",
+      "lat": 21.883081,
+      "lng": -102.312552
+    },
+    {
+      "id": "n150",
+      "lat": 21.883498,
+      "lng": -102.312549
+    },
+    {
+      "id": "n151",
+      "lat": 21.88375,
+      "lng": -102.31255
+    },
+    {
+      "id": "n152",
+      "lat": 21.88016,
+      "lng": -102.312497
+    },
+    {
+      "id": "n153",
+      "lat": 21.885499,
+      "lng": -102.312593
+    },
+    {
+      "id": "n154",
+      "lat": 21.882652,
+      "lng": -102.31205
+    },
+    {
+      "id": "n155",
+      "lat": 21.879714,
+      "lng": -102.308986
+    },
+    {
+      "id": "n156",
+      "lat": 21.88026,
+      "lng": -102.317534
+    },
+    {
+      "id": "n157",
+      "lat": 21.879995,
+      "lng": -102.317539
+    },
+    {
+      "id": "n158",
+      "lat": 21.879998,
+      "lng": -102.317677
+    },
+    {
+      "id": "n159",
+      "lat": 21.883407,
+      "lng": -102.314381
+    },
+    {
+      "id": "n160",
+      "lat": 21.883613,
+      "lng": -102.312901
+    },
+    {
+      "id": "n161",
+      "lat": 21.881671,
+      "lng": -102.313393
+    },
+    {
+      "id": "n162",
+      "lat": 21.88166,
+      "lng": -102.31413
+    },
+    {
+      "id": "n163",
+      "lat": 21.882061,
+      "lng": -102.313395
+    },
+    {
+      "id": "n164",
+      "lat": 21.88177,
+      "lng": -102.313391
+    },
+    {
+      "id": "n165",
+      "lat": 21.877555,
+      "lng": -102.313883
+    }
+  ],
+  "aristas": [
+    {
+      "a": "n0",
+      "b": "n1",
+      "m": 72,
+      "calle": "Calle Prolongación Licenciado Aquiles Elorduy",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n1",
+      "b": "n2",
+      "m": 17,
+      "calle": "Calle Prolongación Licenciado Aquiles Elorduy",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n2",
+      "b": "n3",
+      "m": 79,
+      "calle": "Calle Prolongación Licenciado Aquiles Elorduy",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n3",
+      "b": "n4",
+      "m": 68,
+      "calle": "Calle Prolongación Licenciado Aquiles Elorduy",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n4",
+      "b": "n5",
+      "m": 12,
+      "calle": "Calle Prolongación Licenciado Aquiles Elorduy",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n5",
+      "b": "n6",
+      "m": 72,
+      "calle": "Calle Prolongación Licenciado Aquiles Elorduy",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n6",
+      "b": "n7",
+      "m": 74,
+      "calle": "Calle Prolongación Licenciado Aquiles Elorduy",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n8",
+      "b": "n9",
+      "m": 120,
+      "calle": "Calle Campeche",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n9",
+      "b": "n10",
+      "m": 118,
+      "calle": "Calle Campeche",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n10",
+      "b": "n11",
+      "m": 608,
+      "calle": "Calle Campeche",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.87754,
+          -102.315543
+        ],
+        [
+          21.876718,
+          -102.315517
+        ],
+        [
+          21.875447,
+          -102.315422
+        ],
+        [
+          21.874441,
+          -102.315326
+        ],
+        [
+          21.873177,
+          -102.315199
+        ]
+      ]
+    },
+    {
+      "a": "n12",
+      "b": "n13",
+      "m": 75,
+      "calle": "Calle Talamantes",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n13",
+      "b": "n14",
+      "m": 72,
+      "calle": "Calle Talamantes",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n14",
+      "b": "n15",
+      "m": 11,
+      "calle": "Calle Talamantes",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n15",
+      "b": "n16",
+      "m": 70,
+      "calle": "Calle Talamantes",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n16",
+      "b": "n17",
+      "m": 78,
+      "calle": "Calle Talamantes",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n17",
+      "b": "n18",
+      "m": 18,
+      "calle": "Calle Talamantes",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n19",
+      "b": "n20",
+      "m": 120,
+      "calle": "Calle Pueblito",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.878926,
+          -102.311712
+        ]
+      ]
+    },
+    {
+      "a": "n21",
+      "b": "n22",
+      "m": 80,
+      "calle": "Colima",
+      "clase": "pedestrian",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.88374,
+          -102.312112
+        ],
+        [
+          21.883726,
+          -102.311851
+        ]
+      ]
+    },
+    {
+      "a": "n23",
+      "b": "n24",
+      "m": 405,
+      "calle": "Calle 25 de Abril",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.881586,
+          -102.311649
+        ],
+        [
+          21.881235,
+          -102.310544
+        ],
+        [
+          21.88103,
+          -102.3099
+        ],
+        [
+          21.880871,
+          -102.309399
+        ]
+      ]
+    },
+    {
+      "a": "n25",
+      "b": "n26",
+      "m": 185,
+      "calle": "pedestrian",
+      "clase": "pedestrian",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.883429,
+          -102.310837
+        ],
+        [
+          21.883436,
+          -102.310993
+        ],
+        [
+          21.883441,
+          -102.311095
+        ],
+        [
+          21.883454,
+          -102.311367
+        ],
+        [
+          21.883464,
+          -102.311609
+        ],
+        [
+          21.883475,
+          -102.311856
+        ],
+        [
+          21.883483,
+          -102.312037
+        ],
+        [
+          21.883486,
+          -102.312118
+        ]
+      ]
+    },
+    {
+      "a": "n27",
+      "b": "n28",
+      "m": 56,
+      "calle": "Calle Juan de Dios Peza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n28",
+      "b": "n29",
+      "m": 55,
+      "calle": "Calle Juan de Dios Peza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n29",
+      "b": "n30",
+      "m": 56,
+      "calle": "Calle Juan de Dios Peza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n31",
+      "b": "n32",
+      "m": 138,
+      "calle": "Calle Federico García Lorca",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n32",
+      "b": "n33",
+      "m": 42,
+      "calle": "Calle Federico García Lorca",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n33",
+      "b": "n30",
+      "m": 148,
+      "calle": "Calle Federico García Lorca",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n30",
+      "b": "n34",
+      "m": 144,
+      "calle": "Calle Federico García Lorca",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n35",
+      "b": "n29",
+      "m": 150,
+      "calle": "Calle Fray Servando Teresa de Mier",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n29",
+      "b": "n36",
+      "m": 148,
+      "calle": "Calle Fray Servando Teresa de Mier",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n37",
+      "b": "n38",
+      "m": 138,
+      "calle": "Calle Sor Juana Inés de la Cruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n39",
+      "b": "n40",
+      "m": 510,
+      "calle": "Calle 26 de Marzo",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.874614,
+          -102.312929
+        ],
+        [
+          21.875624,
+          -102.31301
+        ],
+        [
+          21.87635,
+          -102.313082
+        ],
+        [
+          21.877081,
+          -102.313142
+        ],
+        [
+          21.877596,
+          -102.313164
+        ]
+      ]
+    },
+    {
+      "a": "n40",
+      "b": "n16",
+      "m": 114,
+      "calle": "Calle 26 de Marzo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n16",
+      "b": "n3",
+      "m": 122,
+      "calle": "Calle 26 de Marzo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n3",
+      "b": "n41",
+      "m": 124,
+      "calle": "Calle 26 de Marzo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n41",
+      "b": "n42",
+      "m": 113,
+      "calle": "Calle 26 de Marzo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n42",
+      "b": "n43",
+      "m": 66,
+      "calle": "Calle 26 de Marzo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n43",
+      "b": "n44",
+      "m": 37,
+      "calle": "Calle 26 de Marzo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n44",
+      "b": "n45",
+      "m": 205,
+      "calle": "Calle 26 de Marzo",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.884512,
+          -102.313297
+        ],
+        [
+          21.884639,
+          -102.313295
+        ]
+      ]
+    },
+    {
+      "a": "n33",
+      "b": "n36",
+      "m": 53,
+      "calle": "Calle Salvador Díaz Mirón",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n36",
+      "b": "n46",
+      "m": 56,
+      "calle": "Calle Salvador Díaz Mirón",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n46",
+      "b": "n47",
+      "m": 57,
+      "calle": "Calle Salvador Díaz Mirón",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n48",
+      "b": "n42",
+      "m": 77,
+      "calle": "Calle Primavera",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n49",
+      "b": "n50",
+      "m": 138,
+      "calle": "Calle Fray Servando Teresa de Mier",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n41",
+      "b": "n51",
+      "m": 79,
+      "calle": "Calle 25 de Abril",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n52",
+      "b": "n27",
+      "m": 149,
+      "calle": "Calle Vicente Riva Palacio",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n27",
+      "b": "n47",
+      "m": 147,
+      "calle": "Calle Vicente Riva Palacio",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n47",
+      "b": "n53",
+      "m": 43,
+      "calle": "Calle Vicente Riva Palacio",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n53",
+      "b": "n54",
+      "m": 138,
+      "calle": "Calle Vicente Riva Palacio",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n46",
+      "b": "n28",
+      "m": 148,
+      "calle": "Calle Sor Juana Inés de la Cruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n28",
+      "b": "n55",
+      "m": 149,
+      "calle": "Calle Sor Juana Inés de la Cruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n53",
+      "b": "n38",
+      "m": 56,
+      "calle": "Calle Manuel Payno",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n38",
+      "b": "n49",
+      "m": 53,
+      "calle": "Calle Manuel Payno",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n49",
+      "b": "n32",
+      "m": 57,
+      "calle": "Calle Manuel Payno",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n44",
+      "b": "n56",
+      "m": 79,
+      "calle": "Calle Colima",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n57",
+      "b": "n58",
+      "m": 74,
+      "calle": "Privada Boticelli",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n59",
+      "b": "n60",
+      "m": 573,
+      "calle": "Calle Guanajuato",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.873556,
+          -102.314379
+        ],
+        [
+          21.874503,
+          -102.314471
+        ],
+        [
+          21.875498,
+          -102.314549
+        ],
+        [
+          21.876837,
+          -102.314683
+        ],
+        [
+          21.877553,
+          -102.314708
+        ]
+      ]
+    },
+    {
+      "a": "n60",
+      "b": "n13",
+      "m": 115,
+      "calle": "Calle Guanajuato",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n13",
+      "b": "n6",
+      "m": 122,
+      "calle": "Calle Guanajuato",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n61",
+      "b": "n62",
+      "m": 95,
+      "calle": "Del Parque",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.879571,
+          -102.31705
+        ]
+      ]
+    },
+    {
+      "a": "n63",
+      "b": "n40",
+      "m": 81,
+      "calle": "Calle Pueblito",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n40",
+      "b": "n64",
+      "m": 73,
+      "calle": "Calle Pueblito",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n64",
+      "b": "n65",
+      "m": 12,
+      "calle": "Calle Pueblito",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n65",
+      "b": "n60",
+      "m": 75,
+      "calle": "Calle Pueblito",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n60",
+      "b": "n66",
+      "m": 74,
+      "calle": "Calle Pueblito",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n67",
+      "b": "n68",
+      "m": 645,
+      "calle": "Calle Londres",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.877521,
+          -102.316944
+        ],
+        [
+          21.876498,
+          -102.316956
+        ],
+        [
+          21.87583,
+          -102.316909
+        ],
+        [
+          21.875342,
+          -102.316862
+        ],
+        [
+          21.874828,
+          -102.31682
+        ],
+        [
+          21.874333,
+          -102.316779
+        ],
+        [
+          21.873816,
+          -102.316735
+        ],
+        [
+          21.87333,
+          -102.316677
+        ]
+      ]
+    },
+    {
+      "a": "n5",
+      "b": "n14",
+      "m": 123,
+      "calle": "Calle Veracruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n14",
+      "b": "n69",
+      "m": 11,
+      "calle": "Calle Veracruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n69",
+      "b": "n65",
+      "m": 103,
+      "calle": "Calle Veracruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n65",
+      "b": "n70",
+      "m": 109,
+      "calle": "Calle Veracruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n71",
+      "b": "n72",
+      "m": 638,
+      "calle": "Calle Fátima",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.874388,
+          -102.316062
+        ],
+        [
+          21.875391,
+          -102.316146
+        ],
+        [
+          21.876609,
+          -102.316247
+        ],
+        [
+          21.877535,
+          -102.316258
+        ]
+      ]
+    },
+    {
+      "a": "n11",
+      "b": "n66",
+      "m": 604,
+      "calle": "Calle Campeche",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.873214,
+          -102.315101
+        ],
+        [
+          21.874449,
+          -102.315218
+        ],
+        [
+          21.875455,
+          -102.315314
+        ],
+        [
+          21.876739,
+          -102.315387
+        ],
+        [
+          21.877541,
+          -102.315426
+        ]
+      ]
+    },
+    {
+      "a": "n66",
+      "b": "n12",
+      "m": 118,
+      "calle": "Calle Campeche",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n12",
+      "b": "n7",
+      "m": 120,
+      "calle": "Calle Campeche",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n17",
+      "b": "n90",
+      "m": 63,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n90",
+      "b": "n91",
+      "m": 15,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n91",
+      "b": "n92",
+      "m": 29,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n92",
+      "b": "n63",
+      "m": 7,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n63",
+      "b": "n93",
+      "m": 8,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n93",
+      "b": "n94",
+      "m": 33,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n94",
+      "b": "n95",
+      "m": 199,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.877931,
+          -102.312349
+        ],
+        [
+          21.87765,
+          -102.312317
+        ],
+        [
+          21.877384,
+          -102.312292
+        ],
+        [
+          21.877195,
+          -102.312275
+        ],
+        [
+          21.876459,
+          -102.312198
+        ]
+      ]
+    },
+    {
+      "a": "n104",
+      "b": "n105",
+      "m": 9,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n110",
+      "b": "n111",
+      "m": 140,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "primary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.884967,
+          -102.317473
+        ]
+      ]
+    },
+    {
+      "a": "n112",
+      "b": "n110",
+      "m": 63,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "primary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.883671,
+          -102.317611
+        ]
+      ]
+    },
+    {
+      "a": "n113",
+      "b": "n57",
+      "m": 434,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "primary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.874208,
+          -102.318359
+        ],
+        [
+          21.874725,
+          -102.318295
+        ],
+        [
+          21.87524,
+          -102.318257
+        ],
+        [
+          21.87575,
+          -102.318212
+        ],
+        [
+          21.87631,
+          -102.318171
+        ],
+        [
+          21.87751,
+          -102.318061
+        ]
+      ]
+    },
+    {
+      "a": "n57",
+      "b": "n114",
+      "m": 54,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n114",
+      "b": "n115",
+      "m": 7,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n115",
+      "b": "n116",
+      "m": 53,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n116",
+      "b": "n61",
+      "m": 58,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n61",
+      "b": "n117",
+      "m": 51,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n117",
+      "b": "n105",
+      "m": 49,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n105",
+      "b": "n118",
+      "m": 24,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n118",
+      "b": "n112",
+      "m": 307,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "primary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.882217,
+          -102.317685
+        ]
+      ]
+    },
+    {
+      "a": "n119",
+      "b": "n120",
+      "m": 179,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "tertiary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.88495,
+          -102.317404
+        ]
+      ]
+    },
+    {
+      "a": "n124",
+      "b": "n27",
+      "m": 16,
+      "calle": "Privada Juan de Dios Peza",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n125",
+      "b": "n67",
+      "m": 57,
+      "calle": "Calle Londres",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n116",
+      "b": "n126",
+      "m": 72,
+      "calle": "Privada Rafael",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n115",
+      "b": "n130",
+      "m": 6,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n131",
+      "b": "n132",
+      "m": 196,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.876476,
+          -102.312079
+        ],
+        [
+          21.877279,
+          -102.312142
+        ],
+        [
+          21.877403,
+          -102.312154
+        ],
+        [
+          21.877667,
+          -102.312171
+        ],
+        [
+          21.877944,
+          -102.312194
+        ]
+      ]
+    },
+    {
+      "a": "n132",
+      "b": "n133",
+      "m": 34,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n133",
+      "b": "n134",
+      "m": 14,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n134",
+      "b": "n135",
+      "m": 30,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n135",
+      "b": "n20",
+      "m": 7,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n20",
+      "b": "n136",
+      "m": 8,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n136",
+      "b": "n18",
+      "m": 62,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n18",
+      "b": "n1",
+      "m": 119,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n1",
+      "b": "n137",
+      "m": 119,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n137",
+      "b": "n23",
+      "m": 13,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n23",
+      "b": "n138",
+      "m": 6,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n138",
+      "b": "n139",
+      "m": 56,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n139",
+      "b": "n140",
+      "m": 32,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n140",
+      "b": "n141",
+      "m": 10,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n141",
+      "b": "n142",
+      "m": 35,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n142",
+      "b": "n26",
+      "m": 46,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n26",
+      "b": "n21",
+      "m": 28,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n21",
+      "b": "n143",
+      "m": 116,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.884067,
+          -102.312375
+        ],
+        [
+          21.884107,
+          -102.312376
+        ],
+        [
+          21.884626,
+          -102.312392
+        ]
+      ]
+    },
+    {
+      "a": "n34",
+      "b": "n8",
+      "m": 11,
+      "calle": "Calle Federico García Lorca",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n7",
+      "b": "n34",
+      "m": 8,
+      "calle": "Calle Federico García Lorca",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n8",
+      "b": "n35",
+      "m": 46,
+      "calle": "Calle Prolongación Licenciado Aquiles Elorduy",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n35",
+      "b": "n55",
+      "m": 56,
+      "calle": "Calle Prolongación Licenciado Aquiles Elorduy",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n55",
+      "b": "n52",
+      "m": 56,
+      "calle": "Calle Prolongación Licenciado Aquiles Elorduy",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n52",
+      "b": "n118",
+      "m": 76,
+      "calle": "Calle Prolongación Licenciado Aquiles Elorduy",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n9",
+      "b": "n12",
+      "m": 12,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n10",
+      "b": "n72",
+      "m": 74,
+      "calle": "Calle Pueblito",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n72",
+      "b": "n67",
+      "m": 73,
+      "calle": "Calle Pueblito",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n67",
+      "b": "n114",
+      "m": 104,
+      "calle": "Calle Pueblito",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n144",
+      "b": "n69",
+      "m": 12,
+      "calle": "Calle Veracruz",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.879472,
+          -102.313951
+        ],
+        [
+          21.879474,
+          -102.313975
+        ],
+        [
+          21.879468,
+          -102.314002
+        ]
+      ]
+    },
+    {
+      "a": "n7",
+      "b": "n8",
+      "m": 11,
+      "calle": "Calle Prolongación Licenciado Aquiles Elorduy",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n145",
+      "b": "n137",
+      "m": 16,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n146",
+      "b": "n138",
+      "m": 16,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n147",
+      "b": "n139",
+      "m": 18,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n148",
+      "b": "n140",
+      "m": 19,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n141",
+      "b": "n48",
+      "m": 19,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n149",
+      "b": "n142",
+      "m": 20,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n150",
+      "b": "n26",
+      "m": 19,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n151",
+      "b": "n21",
+      "m": 18,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n94",
+      "b": "n132",
+      "m": 16,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n93",
+      "b": "n133",
+      "m": 16,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n92",
+      "b": "n134",
+      "m": 17,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n91",
+      "b": "n135",
+      "m": 17,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n90",
+      "b": "n136",
+      "m": 17,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n152",
+      "b": "n17",
+      "m": 65,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n153",
+      "b": "n151",
+      "m": 195,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.885063,
+          -102.312582
+        ],
+        [
+          21.884618,
+          -102.312571
+        ],
+        [
+          21.884502,
+          -102.312568
+        ],
+        [
+          21.884066,
+          -102.312561
+        ]
+      ]
+    },
+    {
+      "a": "n151",
+      "b": "n56",
+      "m": 4,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n56",
+      "b": "n150",
+      "m": 24,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n150",
+      "b": "n149",
+      "m": 46,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n149",
+      "b": "n48",
+      "m": 34,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n48",
+      "b": "n148",
+      "m": 11,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n148",
+      "b": "n147",
+      "m": 33,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n147",
+      "b": "n146",
+      "m": 56,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n146",
+      "b": "n51",
+      "m": 6,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n51",
+      "b": "n145",
+      "m": 13,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n145",
+      "b": "n2",
+      "m": 117,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n2",
+      "b": "n152",
+      "m": 55,
+      "calle": "Avenida Convención de 1914 Poniente",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n154",
+      "b": "n140",
+      "m": 32,
+      "calle": "Primavera",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n18",
+      "b": "n155",
+      "m": 345,
+      "calle": "Calle Talamantes",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.879553,
+          -102.311695
+        ],
+        [
+          21.879537,
+          -102.310941
+        ],
+        [
+          21.879515,
+          -102.310256
+        ],
+        [
+          21.87953,
+          -102.309898
+        ],
+        [
+          21.879656,
+          -102.309254
+        ]
+      ]
+    },
+    {
+      "a": "n156",
+      "b": "n157",
+      "m": 29,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n157",
+      "b": "n158",
+      "m": 73,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.879747,
+          -102.317548
+        ],
+        [
+          21.879721,
+          -102.317565
+        ],
+        [
+          21.87971,
+          -102.3176
+        ],
+        [
+          21.879715,
+          -102.317647
+        ],
+        [
+          21.879732,
+          -102.317678
+        ],
+        [
+          21.879764,
+          -102.317692
+        ]
+      ]
+    },
+    {
+      "a": "n117",
+      "b": "n158",
+      "m": 22,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.880003,
+          -102.317773
+        ]
+      ]
+    },
+    {
+      "a": "n159",
+      "b": "n43",
+      "m": 112,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.88342,
+          -102.313539
+        ],
+        [
+          21.883396,
+          -102.313334
+        ]
+      ]
+    },
+    {
+      "a": "n160",
+      "b": "n150",
+      "m": 49,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.883512,
+          -102.312901
+        ],
+        [
+          21.883498,
+          -102.312894
+        ],
+        [
+          21.883491,
+          -102.312876
+        ]
+      ]
+    },
+    {
+      "a": "n161",
+      "b": "n162",
+      "m": 76,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n163",
+      "b": "n164",
+      "m": 32,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n164",
+      "b": "n161",
+      "m": 11,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n164",
+      "b": "n41",
+      "m": 11,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.881776,
+          -102.313323
+        ]
+      ]
+    },
+    {
+      "a": "n112",
+      "b": "n119",
+      "m": 25,
+      "calle": "Avenida Aguascalientes Poniente",
+      "clase": "tertiary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.883537,
+          -102.317578
+        ]
+      ]
+    },
+    {
+      "a": "n165",
+      "b": "n64",
+      "m": 109,
+      "calle": "Calle Veracruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n64",
+      "b": "n144",
+      "m": 103,
+      "calle": "Calle Veracruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n144",
+      "b": "n15",
+      "m": 12,
+      "calle": "Calle Veracruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n15",
+      "b": "n4",
+      "m": 122,
+      "calle": "Calle Veracruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n62",
+      "b": "n125",
+      "m": 60,
+      "calle": "Del Parque",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.87951,
+          -102.316983
+        ]
+      ]
+    },
+    {
+      "a": "n66",
+      "b": "n10",
+      "m": 11,
+      "calle": "Calle Pueblito",
+      "clase": "residential",
+      "peligro_base": 0
+    }
+  ]
+}

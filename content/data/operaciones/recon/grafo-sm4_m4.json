@@ -1,0 +1,901 @@
+{
+  "_meta": {
+    "sector": "SUR PONIENTE m4m4",
+    "distrito": "SUR PONIENTE",
+    "celda": "S_-4_-4",
+    "fuente": "OpenStreetMap vía Overpass API",
+    "consulta": "way[\"highway\"](21.854,-102.3242,21.86,-102.3182);(._;>;);out body;",
+    "bbox_SWNE": [
+      21.854,
+      -102.3242,
+      21.86,
+      -102.3182
+    ],
+    "horneado": "2026-07-18",
+    "nota": "Grafo curado (§1.6): grado-2 colapsado y podado a la componente conexa mayor. `pts` es geometría de dibujo, no interviene en el ruteo (la distancia va en `m`). El peligro es DINÁMICO (hora×criatura), lo deriva peligro.js de ecologia-peligro.json (§1.5); peligro_base=0."
+  },
+  "nodos": [
+    {
+      "id": "n0",
+      "lat": 21.853466,
+      "lng": -102.317576
+    },
+    {
+      "id": "n1",
+      "lat": 21.853994,
+      "lng": -102.319011
+    },
+    {
+      "id": "n2",
+      "lat": 21.854168,
+      "lng": -102.319483
+    },
+    {
+      "id": "n3",
+      "lat": 21.854339,
+      "lng": -102.319946
+    },
+    {
+      "id": "n4",
+      "lat": 21.854512,
+      "lng": -102.320415
+    },
+    {
+      "id": "n5",
+      "lat": 21.854686,
+      "lng": -102.32089
+    },
+    {
+      "id": "n6",
+      "lat": 21.854861,
+      "lng": -102.321365
+    },
+    {
+      "id": "n7",
+      "lat": 21.855032,
+      "lng": -102.321828
+    },
+    {
+      "id": "n8",
+      "lat": 21.855204,
+      "lng": -102.322295
+    },
+    {
+      "id": "n9",
+      "lat": 21.855379,
+      "lng": -102.322773
+    },
+    {
+      "id": "n10",
+      "lat": 21.855553,
+      "lng": -102.323243
+    },
+    {
+      "id": "n11",
+      "lat": 21.855718,
+      "lng": -102.323691
+    },
+    {
+      "id": "n12",
+      "lat": 21.855894,
+      "lng": -102.324169
+    },
+    {
+      "id": "n13",
+      "lat": 21.856065,
+      "lng": -102.324633
+    },
+    {
+      "id": "n14",
+      "lat": 21.856582,
+      "lng": -102.326039
+    },
+    {
+      "id": "n17",
+      "lat": 21.858188,
+      "lng": -102.324851
+    },
+    {
+      "id": "n18",
+      "lat": 21.85751,
+      "lng": -102.324048
+    },
+    {
+      "id": "n19",
+      "lat": 21.857167,
+      "lng": -102.323648
+    },
+    {
+      "id": "n20",
+      "lat": 21.85683,
+      "lng": -102.323235
+    },
+    {
+      "id": "n21",
+      "lat": 21.856667,
+      "lng": -102.322798
+    },
+    {
+      "id": "n22",
+      "lat": 21.856799,
+      "lng": -102.3222
+    },
+    {
+      "id": "n23",
+      "lat": 21.856961,
+      "lng": -102.321589
+    },
+    {
+      "id": "n24",
+      "lat": 21.856831,
+      "lng": -102.321095
+    },
+    {
+      "id": "n25",
+      "lat": 21.856663,
+      "lng": -102.320638
+    },
+    {
+      "id": "n26",
+      "lat": 21.856488,
+      "lng": -102.320161
+    },
+    {
+      "id": "n27",
+      "lat": 21.856312,
+      "lng": -102.319682
+    },
+    {
+      "id": "n28",
+      "lat": 21.85614,
+      "lng": -102.319212
+    },
+    {
+      "id": "n29",
+      "lat": 21.855971,
+      "lng": -102.318754
+    },
+    {
+      "id": "n30",
+      "lat": 21.855799,
+      "lng": -102.318285
+    },
+    {
+      "id": "n31",
+      "lat": 21.855194,
+      "lng": -102.316636
+    },
+    {
+      "id": "n32",
+      "lat": 21.848237,
+      "lng": -102.321336
+    },
+    {
+      "id": "n33",
+      "lat": 21.854343,
+      "lng": -102.322105
+    },
+    {
+      "id": "n34",
+      "lat": 21.850627,
+      "lng": -102.321999
+    },
+    {
+      "id": "n35",
+      "lat": 21.851665,
+      "lng": -102.324797
+    },
+    {
+      "id": "n36",
+      "lat": 21.857233,
+      "lng": -102.320923
+    },
+    {
+      "id": "n37",
+      "lat": 21.854171,
+      "lng": -102.321651
+    },
+    {
+      "id": "n38",
+      "lat": 21.850974,
+      "lng": -102.322934
+    },
+    {
+      "id": "n39",
+      "lat": 21.850454,
+      "lng": -102.321532
+    },
+    {
+      "id": "n40",
+      "lat": 21.852188,
+      "lng": -102.326204
+    },
+    {
+      "id": "n41",
+      "lat": 21.852021,
+      "lng": -102.325755
+    },
+    {
+      "id": "n42",
+      "lat": 21.851065,
+      "lng": -102.324515
+    },
+    {
+      "id": "n43",
+      "lat": 21.8508,
+      "lng": -102.322466
+    },
+    {
+      "id": "n44",
+      "lat": 21.851845,
+      "lng": -102.325281
+    },
+    {
+      "id": "n69",
+      "lat": 21.857161,
+      "lng": -102.319336
+    },
+    {
+      "id": "n70",
+      "lat": 21.857179,
+      "lng": -102.319882
+    },
+    {
+      "id": "n71",
+      "lat": 21.856896,
+      "lng": -102.318903
+    },
+    {
+      "id": "n72",
+      "lat": 21.856755,
+      "lng": -102.318436
+    },
+    {
+      "id": "n73",
+      "lat": 21.856459,
+      "lng": -102.318019
+    },
+    {
+      "id": "n74",
+      "lat": 21.857108,
+      "lng": -102.320458
+    },
+    {
+      "id": "n75",
+      "lat": 21.852395,
+      "lng": -102.320202
+    }
+  ],
+  "aristas": [
+    {
+      "a": "n0",
+      "b": "n1",
+      "m": 159,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.853653,
+          -102.318084
+        ],
+        [
+          21.853828,
+          -102.318558
+        ]
+      ]
+    },
+    {
+      "a": "n1",
+      "b": "n2",
+      "m": 52,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n2",
+      "b": "n3",
+      "m": 51,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n3",
+      "b": "n4",
+      "m": 52,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n4",
+      "b": "n5",
+      "m": 53,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n5",
+      "b": "n6",
+      "m": 53,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n6",
+      "b": "n7",
+      "m": 51,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n7",
+      "b": "n8",
+      "m": 52,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n8",
+      "b": "n9",
+      "m": 53,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n9",
+      "b": "n10",
+      "m": 52,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n10",
+      "b": "n11",
+      "m": 50,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n11",
+      "b": "n12",
+      "m": 53,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n12",
+      "b": "n13",
+      "m": 52,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n13",
+      "b": "n14",
+      "m": 156,
+      "calle": "Calle Ricardo García Mendoza",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.856239,
+          -102.325107
+        ],
+        [
+          21.856409,
+          -102.325568
+        ]
+      ]
+    },
+    {
+      "a": "n17",
+      "b": "n18",
+      "m": 112,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.857878,
+          -102.324451
+        ]
+      ]
+    },
+    {
+      "a": "n18",
+      "b": "n19",
+      "m": 56,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n19",
+      "b": "n20",
+      "m": 57,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n20",
+      "b": "n21",
+      "m": 49,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n21",
+      "b": "n22",
+      "m": 63,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n22",
+      "b": "n23",
+      "m": 66,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n23",
+      "b": "n24",
+      "m": 54,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.856972,
+          -102.32148
+        ]
+      ]
+    },
+    {
+      "a": "n24",
+      "b": "n25",
+      "m": 51,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n25",
+      "b": "n26",
+      "m": 53,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n26",
+      "b": "n27",
+      "m": 53,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n27",
+      "b": "n28",
+      "m": 52,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n28",
+      "b": "n29",
+      "m": 51,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n29",
+      "b": "n30",
+      "m": 52,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n30",
+      "b": "n31",
+      "m": 183,
+      "calle": "Calle Soberana Convención Militar Revolucionaria Norte",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.855629,
+          -102.317822
+        ],
+        [
+          21.855456,
+          -102.317349
+        ]
+      ]
+    },
+    {
+      "a": "n32",
+      "b": "n1",
+      "m": 684,
+      "calle": "Calle Casimira Arteaga",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.850102,
+          -102.320583
+        ],
+        [
+          21.852219,
+          -102.319729
+        ]
+      ]
+    },
+    {
+      "a": "n1",
+      "b": "n30",
+      "m": 214,
+      "calle": "Calle Casimira Arteaga",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n33",
+      "b": "n7",
+      "m": 82,
+      "calle": "Andador Profesor José Antonio Velarde",
+      "clase": "pedestrian",
+      "peligro_base": 0
+    },
+    {
+      "a": "n27",
+      "b": "n4",
+      "m": 214,
+      "calle": "Calle Doctor Jesús Romo Armería",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n4",
+      "b": "n34",
+      "m": 462,
+      "calle": "Calle Doctor Jesús Romo Armería",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.852742,
+          -102.321137
+        ]
+      ]
+    },
+    {
+      "a": "n21",
+      "b": "n10",
+      "m": 132,
+      "calle": "Calle Licenciado Eduardo Rodríguez Láriz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n10",
+      "b": "n35",
+      "m": 461,
+      "calle": "Calle Licenciado Eduardo Rodríguez Láriz",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.853786,
+          -102.323949
+        ]
+      ]
+    },
+    {
+      "a": "n36",
+      "b": "n24",
+      "m": 48,
+      "calle": "Privada Profesor José Antonio Velarde",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n25",
+      "b": "n6",
+      "m": 214,
+      "calle": "Calle Profesor José Ramírez Palos",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n6",
+      "b": "n37",
+      "m": 82,
+      "calle": "Calle Profesor José Ramírez Palos",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n37",
+      "b": "n38",
+      "m": 379,
+      "calle": "Calle Profesor José Ramírez Palos",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.853752,
+          -102.321813
+        ],
+        [
+          21.853199,
+          -102.322037
+        ],
+        [
+          21.853092,
+          -102.322079
+        ]
+      ]
+    },
+    {
+      "a": "n39",
+      "b": "n3",
+      "m": 462,
+      "calle": "Calle Escritora Anita Brenner",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.852568,
+          -102.320669
+        ]
+      ]
+    },
+    {
+      "a": "n3",
+      "b": "n28",
+      "m": 214,
+      "calle": "Calle Escritora Anita Brenner",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n40",
+      "b": "n13",
+      "m": 461,
+      "calle": "Calle Coronel José María Martínez Valadez",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.853309,
+          -102.32575
+        ],
+        [
+          21.854304,
+          -102.325346
+        ]
+      ]
+    },
+    {
+      "a": "n13",
+      "b": "n18",
+      "m": 172,
+      "calle": "Calle Coronel José María Martínez Valadez",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n19",
+      "b": "n12",
+      "m": 151,
+      "calle": "Calle Teniente Coronel Macario Sarabia",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n12",
+      "b": "n41",
+      "m": 461,
+      "calle": "Calle Teniente Coronel Macario Sarabia",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.854135,
+          -102.324889
+        ]
+      ]
+    },
+    {
+      "a": "n23",
+      "b": "n8",
+      "m": 209,
+      "calle": "Calle General Juventino Espinoza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n42",
+      "b": "n9",
+      "m": 512,
+      "calle": "Calle General Pascual Cornejo Brun",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.851496,
+          -102.32434
+        ],
+        [
+          21.853614,
+          -102.323485
+        ],
+        [
+          21.854045,
+          -102.323311
+        ],
+        [
+          21.854089,
+          -102.323294
+        ],
+        [
+          21.85423,
+          -102.323237
+        ]
+      ]
+    },
+    {
+      "a": "n9",
+      "b": "n22",
+      "m": 169,
+      "calle": "Calle General Pascual Cornejo Brun",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n43",
+      "b": "n5",
+      "m": 462,
+      "calle": "Calle Arquitecto Carlos Contreras",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.852917,
+          -102.321608
+        ]
+      ]
+    },
+    {
+      "a": "n5",
+      "b": "n26",
+      "m": 214,
+      "calle": "Calle Arquitecto Carlos Contreras",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n44",
+      "b": "n11",
+      "m": 461,
+      "calle": "Calle Coronel José Ferrero",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.853958,
+          -102.324414
+        ]
+      ]
+    },
+    {
+      "a": "n11",
+      "b": "n20",
+      "m": 132,
+      "calle": "Calle Coronel José Ferrero",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n69",
+      "b": "n27",
+      "m": 101,
+      "calle": "Privada Doctor Jesús Romo Armería",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n26",
+      "b": "n70",
+      "m": 82,
+      "calle": "Privada Arquitecto Carlos Contreras",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n28",
+      "b": "n71",
+      "m": 90,
+      "calle": "Privada Escritora Anita Brenner",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n72",
+      "b": "n29",
+      "m": 93,
+      "calle": "Calle Rosalía Monroy",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n30",
+      "b": "n73",
+      "m": 78,
+      "calle": "Calle Casimira Arteaga",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n7",
+      "b": "n24",
+      "m": 214,
+      "calle": "Calle Profesor José Antonio Velarde",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n25",
+      "b": "n74",
+      "m": 53,
+      "calle": "Privada Profesor José Ramírez Palos",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n37",
+      "b": "n33",
+      "m": 51,
+      "calle": "residential",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n29",
+      "b": "n2",
+      "m": 214,
+      "calle": "Calle Rosalía Monroy",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n2",
+      "b": "n75",
+      "m": 211,
+      "calle": "Calle Rosalía Monroy",
+      "clase": "residential",
+      "peligro_base": 0
+    }
+  ]
+}

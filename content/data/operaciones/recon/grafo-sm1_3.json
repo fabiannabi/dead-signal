@@ -1,0 +1,3715 @@
+{
+  "_meta": {
+    "sector": "ORIENTE m13",
+    "distrito": "ORIENTE",
+    "celda": "S_-1_3",
+    "fuente": "OpenStreetMap vía Overpass API",
+    "consulta": "way[\"highway\"](21.872,-102.2822,21.878,-102.2762);(._;>;);out body;",
+    "bbox_SWNE": [
+      21.872,
+      -102.2822,
+      21.878,
+      -102.2762
+    ],
+    "horneado": "2026-07-18",
+    "nota": "Grafo curado (§1.6): grado-2 colapsado y podado a la componente conexa mayor. `pts` es geometría de dibujo, no interviene en el ruteo (la distancia va en `m`). El peligro es DINÁMICO (hora×criatura), lo deriva peligro.js de ecologia-peligro.json (§1.5); peligro_base=0."
+  },
+  "nodos": [
+    {
+      "id": "n0",
+      "lat": 21.872751,
+      "lng": -102.290147
+    },
+    {
+      "id": "n1",
+      "lat": 21.873512,
+      "lng": -102.282565
+    },
+    {
+      "id": "n2",
+      "lat": 21.873517,
+      "lng": -102.281697
+    },
+    {
+      "id": "n3",
+      "lat": 21.873517,
+      "lng": -102.281584
+    },
+    {
+      "id": "n4",
+      "lat": 21.873515,
+      "lng": -102.2811
+    },
+    {
+      "id": "n5",
+      "lat": 21.873514,
+      "lng": -102.280649
+    },
+    {
+      "id": "n6",
+      "lat": 21.873513,
+      "lng": -102.280186
+    },
+    {
+      "id": "n7",
+      "lat": 21.873514,
+      "lng": -102.2796
+    },
+    {
+      "id": "n8",
+      "lat": 21.873515,
+      "lng": -102.279364
+    },
+    {
+      "id": "n9",
+      "lat": 21.873518,
+      "lng": -102.278875
+    },
+    {
+      "id": "n10",
+      "lat": 21.873519,
+      "lng": -102.278192
+    },
+    {
+      "id": "n11",
+      "lat": 21.873538,
+      "lng": -102.276827
+    },
+    {
+      "id": "n12",
+      "lat": 21.873539,
+      "lng": -102.276734
+    },
+    {
+      "id": "n13",
+      "lat": 21.873541,
+      "lng": -102.276296
+    },
+    {
+      "id": "n14",
+      "lat": 21.873567,
+      "lng": -102.27139
+    },
+    {
+      "id": "n15",
+      "lat": 21.878438,
+      "lng": -102.281391
+    },
+    {
+      "id": "n16",
+      "lat": 21.877739,
+      "lng": -102.281402
+    },
+    {
+      "id": "n17",
+      "lat": 21.877688,
+      "lng": -102.281406
+    },
+    {
+      "id": "n18",
+      "lat": 21.877122,
+      "lng": -102.281448
+    },
+    {
+      "id": "n19",
+      "lat": 21.876639,
+      "lng": -102.281477
+    },
+    {
+      "id": "n20",
+      "lat": 21.874062,
+      "lng": -102.281662
+    },
+    {
+      "id": "n21",
+      "lat": 21.873617,
+      "lng": -102.28169
+    },
+    {
+      "id": "n22",
+      "lat": 21.872667,
+      "lng": -102.281749
+    },
+    {
+      "id": "n23",
+      "lat": 21.872193,
+      "lng": -102.281777
+    },
+    {
+      "id": "n24",
+      "lat": 21.870173,
+      "lng": -102.281919
+    },
+    {
+      "id": "n25",
+      "lat": 21.878645,
+      "lng": -102.282148
+    },
+    {
+      "id": "n26",
+      "lat": 21.877777,
+      "lng": -102.281976
+    },
+    {
+      "id": "n27",
+      "lat": 21.873746,
+      "lng": -102.282045
+    },
+    {
+      "id": "n28",
+      "lat": 21.874017,
+      "lng": -102.281717
+    },
+    {
+      "id": "n29",
+      "lat": 21.872235,
+      "lng": -102.282105
+    },
+    {
+      "id": "n30",
+      "lat": 21.872266,
+      "lng": -102.282101
+    },
+    {
+      "id": "n31",
+      "lat": 21.875649,
+      "lng": -102.279732
+    },
+    {
+      "id": "n32",
+      "lat": 21.875796,
+      "lng": -102.279313
+    },
+    {
+      "id": "n33",
+      "lat": 21.87593,
+      "lng": -102.27891
+    },
+    {
+      "id": "n34",
+      "lat": 21.876054,
+      "lng": -102.27853
+    },
+    {
+      "id": "n35",
+      "lat": 21.876141,
+      "lng": -102.278244
+    },
+    {
+      "id": "n36",
+      "lat": 21.876211,
+      "lng": -102.280595
+    },
+    {
+      "id": "n37",
+      "lat": 21.876253,
+      "lng": -102.281395
+    },
+    {
+      "id": "n38",
+      "lat": 21.877224,
+      "lng": -102.28133
+    },
+    {
+      "id": "n39",
+      "lat": 21.877208,
+      "lng": -102.28107
+    },
+    {
+      "id": "n40",
+      "lat": 21.877166,
+      "lng": -102.28039
+    },
+    {
+      "id": "n41",
+      "lat": 21.877157,
+      "lng": -102.28023
+    },
+    {
+      "id": "n42",
+      "lat": 21.877125,
+      "lng": -102.2797
+    },
+    {
+      "id": "n43",
+      "lat": 21.877104,
+      "lng": -102.27937
+    },
+    {
+      "id": "n44",
+      "lat": 21.877056,
+      "lng": -102.278895
+    },
+    {
+      "id": "n45",
+      "lat": 21.877019,
+      "lng": -102.278303
+    },
+    {
+      "id": "n46",
+      "lat": 21.875582,
+      "lng": -102.278925
+    },
+    {
+      "id": "n47",
+      "lat": 21.877998,
+      "lng": -102.278074
+    },
+    {
+      "id": "n48",
+      "lat": 21.878053,
+      "lng": -102.276714
+    },
+    {
+      "id": "n49",
+      "lat": 21.875142,
+      "lng": -102.281374
+    },
+    {
+      "id": "n50",
+      "lat": 21.875219,
+      "lng": -102.28083
+    },
+    {
+      "id": "n51",
+      "lat": 21.875774,
+      "lng": -102.280616
+    },
+    {
+      "id": "n52",
+      "lat": 21.874159,
+      "lng": -102.28109
+    },
+    {
+      "id": "n53",
+      "lat": 21.873617,
+      "lng": -102.281095
+    },
+    {
+      "id": "n54",
+      "lat": 21.876739,
+      "lng": -102.281362
+    },
+    {
+      "id": "n55",
+      "lat": 21.876638,
+      "lng": -102.279783
+    },
+    {
+      "id": "n56",
+      "lat": 21.875727,
+      "lng": -102.278009
+    },
+    {
+      "id": "n57",
+      "lat": 21.876271,
+      "lng": -102.27805
+    },
+    {
+      "id": "n58",
+      "lat": 21.876932,
+      "lng": -102.278052
+    },
+    {
+      "id": "n59",
+      "lat": 21.877477,
+      "lng": -102.27807
+    },
+    {
+      "id": "n60",
+      "lat": 21.878297,
+      "lng": -102.278057
+    },
+    {
+      "id": "n61",
+      "lat": 21.874077,
+      "lng": -102.280185
+    },
+    {
+      "id": "n62",
+      "lat": 21.873622,
+      "lng": -102.280183
+    },
+    {
+      "id": "n63",
+      "lat": 21.8742,
+      "lng": -102.281542
+    },
+    {
+      "id": "n64",
+      "lat": 21.874119,
+      "lng": -102.280651
+    },
+    {
+      "id": "n65",
+      "lat": 21.87402,
+      "lng": -102.279576
+    },
+    {
+      "id": "n66",
+      "lat": 21.873627,
+      "lng": -102.279595
+    },
+    {
+      "id": "n67",
+      "lat": 21.874125,
+      "lng": -102.279571
+    },
+    {
+      "id": "n68",
+      "lat": 21.874507,
+      "lng": -102.279553
+    },
+    {
+      "id": "n69",
+      "lat": 21.87493,
+      "lng": -102.279533
+    },
+    {
+      "id": "n70",
+      "lat": 21.87536,
+      "lng": -102.279513
+    },
+    {
+      "id": "n71",
+      "lat": 21.875731,
+      "lng": -102.278518
+    },
+    {
+      "id": "n72",
+      "lat": 21.878516,
+      "lng": -102.280458
+    },
+    {
+      "id": "n73",
+      "lat": 21.877987,
+      "lng": -102.280321
+    },
+    {
+      "id": "n74",
+      "lat": 21.875729,
+      "lng": -102.279734
+    },
+    {
+      "id": "n75",
+      "lat": 21.875815,
+      "lng": -102.28143
+    },
+    {
+      "id": "n76",
+      "lat": 21.874932,
+      "lng": -102.279595
+    },
+    {
+      "id": "n77",
+      "lat": 21.875306,
+      "lng": -102.279969
+    },
+    {
+      "id": "n78",
+      "lat": 21.875323,
+      "lng": -102.279696
+    },
+    {
+      "id": "n79",
+      "lat": 21.875435,
+      "lng": -102.27932
+    },
+    {
+      "id": "n80",
+      "lat": 21.875632,
+      "lng": -102.27879
+    },
+    {
+      "id": "n81",
+      "lat": 21.875819,
+      "lng": -102.278262
+    },
+    {
+      "id": "n82",
+      "lat": 21.873617,
+      "lng": -102.280647
+    },
+    {
+      "id": "n83",
+      "lat": 21.874668,
+      "lng": -102.281508
+    },
+    {
+      "id": "n84",
+      "lat": 21.87752,
+      "lng": -102.276729
+    },
+    {
+      "id": "n85",
+      "lat": 21.876979,
+      "lng": -102.276728
+    },
+    {
+      "id": "n86",
+      "lat": 21.873633,
+      "lng": -102.278876
+    },
+    {
+      "id": "n87",
+      "lat": 21.874413,
+      "lng": -102.278885
+    },
+    {
+      "id": "n88",
+      "lat": 21.870831,
+      "lng": -102.281449
+    },
+    {
+      "id": "n89",
+      "lat": 21.871404,
+      "lng": -102.279646
+    },
+    {
+      "id": "n90",
+      "lat": 21.872185,
+      "lng": -102.278838
+    },
+    {
+      "id": "n91",
+      "lat": 21.872207,
+      "lng": -102.278779
+    },
+    {
+      "id": "n92",
+      "lat": 21.87225,
+      "lng": -102.278497
+    },
+    {
+      "id": "n93",
+      "lat": 21.872263,
+      "lng": -102.278156
+    },
+    {
+      "id": "n94",
+      "lat": 21.872292,
+      "lng": -102.276874
+    },
+    {
+      "id": "n95",
+      "lat": 21.872298,
+      "lng": -102.277338
+    },
+    {
+      "id": "n96",
+      "lat": 21.873642,
+      "lng": -102.278209
+    },
+    {
+      "id": "n97",
+      "lat": 21.872524,
+      "lng": -102.278162
+    },
+    {
+      "id": "n98",
+      "lat": 21.86797,
+      "lng": -102.278057
+    },
+    {
+      "id": "n99",
+      "lat": 21.873095,
+      "lng": -102.278821
+    },
+    {
+      "id": "n100",
+      "lat": 21.872815,
+      "lng": -102.278812
+    },
+    {
+      "id": "n101",
+      "lat": 21.872325,
+      "lng": -102.278618
+    },
+    {
+      "id": "n102",
+      "lat": 21.871573,
+      "lng": -102.278503
+    },
+    {
+      "id": "n103",
+      "lat": 21.872051,
+      "lng": -102.280519
+    },
+    {
+      "id": "n104",
+      "lat": 21.87363,
+      "lng": -102.279365
+    },
+    {
+      "id": "n105",
+      "lat": 21.873113,
+      "lng": -102.279363
+    },
+    {
+      "id": "n106",
+      "lat": 21.872239,
+      "lng": -102.279365
+    },
+    {
+      "id": "n107",
+      "lat": 21.873095,
+      "lng": -102.27685
+    },
+    {
+      "id": "n108",
+      "lat": 21.873114,
+      "lng": -102.277813
+    },
+    {
+      "id": "n109",
+      "lat": 21.872733,
+      "lng": -102.276858
+    },
+    {
+      "id": "n110",
+      "lat": 21.872762,
+      "lng": -102.277387
+    },
+    {
+      "id": "n111",
+      "lat": 21.876813,
+      "lng": -102.275088
+    },
+    {
+      "id": "n112",
+      "lat": 21.876386,
+      "lng": -102.275379
+    },
+    {
+      "id": "n113",
+      "lat": 21.874945,
+      "lng": -102.276453
+    },
+    {
+      "id": "n114",
+      "lat": 21.874655,
+      "lng": -102.276689
+    },
+    {
+      "id": "n115",
+      "lat": 21.874553,
+      "lng": -102.276805
+    },
+    {
+      "id": "n116",
+      "lat": 21.876348,
+      "lng": -102.275316
+    },
+    {
+      "id": "n117",
+      "lat": 21.877379,
+      "lng": -102.276597
+    },
+    {
+      "id": "n120",
+      "lat": 21.874958,
+      "lng": -102.274892
+    },
+    {
+      "id": "n121",
+      "lat": 21.874946,
+      "lng": -102.276358
+    },
+    {
+      "id": "n122",
+      "lat": 21.874938,
+      "lng": -102.276672
+    },
+    {
+      "id": "n123",
+      "lat": 21.873649,
+      "lng": -102.276418
+    },
+    {
+      "id": "n124",
+      "lat": 21.873932,
+      "lng": -102.276414
+    },
+    {
+      "id": "n127",
+      "lat": 21.874425,
+      "lng": -102.276803
+    },
+    {
+      "id": "n128",
+      "lat": 21.874521,
+      "lng": -102.276693
+    },
+    {
+      "id": "n129",
+      "lat": 21.876781,
+      "lng": -102.275023
+    },
+    {
+      "id": "n130",
+      "lat": 21.872415,
+      "lng": -102.276327
+    },
+    {
+      "id": "n131",
+      "lat": 21.872024,
+      "lng": -102.27634
+    },
+    {
+      "id": "n132",
+      "lat": 21.870777,
+      "lng": -102.27641
+    },
+    {
+      "id": "n133",
+      "lat": 21.87202,
+      "lng": -102.274907
+    },
+    {
+      "id": "n134",
+      "lat": 21.872416,
+      "lng": -102.276775
+    },
+    {
+      "id": "n135",
+      "lat": 21.872412,
+      "lng": -102.275046
+    },
+    {
+      "id": "n136",
+      "lat": 21.87324,
+      "lng": -102.276297
+    },
+    {
+      "id": "n137",
+      "lat": 21.872823,
+      "lng": -102.276758
+    },
+    {
+      "id": "n138",
+      "lat": 21.872831,
+      "lng": -102.276038
+    },
+    {
+      "id": "n139",
+      "lat": 21.867022,
+      "lng": -102.28174
+    },
+    {
+      "id": "n140",
+      "lat": 21.873619,
+      "lng": -102.281576
+    },
+    {
+      "id": "n141",
+      "lat": 21.875146,
+      "lng": -102.281476
+    },
+    {
+      "id": "n142",
+      "lat": 21.876932,
+      "lng": -102.281349
+    },
+    {
+      "id": "n143",
+      "lat": 21.878432,
+      "lng": -102.281248
+    },
+    {
+      "id": "n144",
+      "lat": 21.868326,
+      "lng": -102.276922
+    },
+    {
+      "id": "n145",
+      "lat": 21.873383,
+      "lng": -102.276746
+    },
+    {
+      "id": "n146",
+      "lat": 21.87803,
+      "lng": -102.276659
+    },
+    {
+      "id": "n147",
+      "lat": 21.876673,
+      "lng": -102.276739
+    },
+    {
+      "id": "n148",
+      "lat": 21.873675,
+      "lng": -102.270888
+    },
+    {
+      "id": "n149",
+      "lat": 21.873651,
+      "lng": -102.27673
+    },
+    {
+      "id": "n150",
+      "lat": 21.87365,
+      "lng": -102.276825
+    },
+    {
+      "id": "n151",
+      "lat": 21.873635,
+      "lng": -102.285764
+    },
+    {
+      "id": "n152",
+      "lat": 21.872194,
+      "lng": -102.293201
+    },
+    {
+      "id": "n153",
+      "lat": 21.877553,
+      "lng": -102.280187
+    },
+    {
+      "id": "n154",
+      "lat": 21.877433,
+      "lng": -102.280199
+    },
+    {
+      "id": "n155",
+      "lat": 21.877283,
+      "lng": -102.280215
+    },
+    {
+      "id": "n156",
+      "lat": 21.877504,
+      "lng": -102.279353
+    },
+    {
+      "id": "n157",
+      "lat": 21.877339,
+      "lng": -102.278537
+    },
+    {
+      "id": "n158",
+      "lat": 21.877246,
+      "lng": -102.279366
+    },
+    {
+      "id": "n159",
+      "lat": 21.877386,
+      "lng": -102.279358
+    },
+    {
+      "id": "n160",
+      "lat": 21.872494,
+      "lng": -102.282072
+    },
+    {
+      "id": "n161",
+      "lat": 21.875522,
+      "lng": -102.276657
+    },
+    {
+      "id": "n162",
+      "lat": 21.875739,
+      "lng": -102.276656
+    },
+    {
+      "id": "n163",
+      "lat": 21.878435,
+      "lng": -102.276618
+    },
+    {
+      "id": "n164",
+      "lat": 21.87574,
+      "lng": -102.276774
+    },
+    {
+      "id": "n165",
+      "lat": 21.875542,
+      "lng": -102.276775
+    },
+    {
+      "id": "n166",
+      "lat": 21.868612,
+      "lng": -102.277008
+    },
+    {
+      "id": "n167",
+      "lat": 21.871616,
+      "lng": -102.280548
+    },
+    {
+      "id": "n168",
+      "lat": 21.875406,
+      "lng": -102.278252
+    },
+    {
+      "id": "n169",
+      "lat": 21.871934,
+      "lng": -102.278631
+    },
+    {
+      "id": "n170",
+      "lat": 21.878429,
+      "lng": -102.276729
+    },
+    {
+      "id": "n171",
+      "lat": 21.876302,
+      "lng": -102.276758
+    },
+    {
+      "id": "n172",
+      "lat": 21.877041,
+      "lng": -102.279691
+    },
+    {
+      "id": "n173",
+      "lat": 21.876754,
+      "lng": -102.27969
+    },
+    {
+      "id": "n174",
+      "lat": 21.876185,
+      "lng": -102.280172
+    },
+    {
+      "id": "n175",
+      "lat": 21.875412,
+      "lng": -102.278424
+    },
+    {
+      "id": "n176",
+      "lat": 21.875297,
+      "lng": -102.278433
+    },
+    {
+      "id": "n177",
+      "lat": 21.875279,
+      "lng": -102.279208
+    },
+    {
+      "id": "n178",
+      "lat": 21.87204,
+      "lng": -102.279549
+    },
+    {
+      "id": "n179",
+      "lat": 21.877736,
+      "lng": -102.282101
+    },
+    {
+      "id": "n180",
+      "lat": 21.878273,
+      "lng": -102.278319
+    },
+    {
+      "id": "n181",
+      "lat": 21.877403,
+      "lng": -102.283159
+    },
+    {
+      "id": "n182",
+      "lat": 21.874507,
+      "lng": -102.279434
+    },
+    {
+      "id": "n183",
+      "lat": 21.874114,
+      "lng": -102.279428
+    },
+    {
+      "id": "n184",
+      "lat": 21.873805,
+      "lng": -102.279424
+    },
+    {
+      "id": "n185",
+      "lat": 21.875626,
+      "lng": -102.278423
+    },
+    {
+      "id": "n186",
+      "lat": 21.876378,
+      "lng": -102.282569
+    },
+    {
+      "id": "n187",
+      "lat": 21.872286,
+      "lng": -102.282528
+    }
+  ],
+  "aristas": [
+    {
+      "a": "n0",
+      "b": "n1",
+      "m": 797,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.872817,
+          -102.289834
+        ],
+        [
+          21.873198,
+          -102.288709
+        ],
+        [
+          21.873438,
+          -102.288026
+        ],
+        [
+          21.873512,
+          -102.287631
+        ],
+        [
+          21.873557,
+          -102.287193
+        ],
+        [
+          21.873555,
+          -102.287079
+        ],
+        [
+          21.873534,
+          -102.285856
+        ],
+        [
+          21.873523,
+          -102.285168
+        ],
+        [
+          21.873521,
+          -102.284356
+        ],
+        [
+          21.87352,
+          -102.283892
+        ],
+        [
+          21.873518,
+          -102.283615
+        ],
+        [
+          21.873515,
+          -102.28313
+        ]
+      ]
+    },
+    {
+      "a": "n1",
+      "b": "n2",
+      "m": 90,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n2",
+      "b": "n3",
+      "m": 12,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n3",
+      "b": "n4",
+      "m": 50,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n4",
+      "b": "n5",
+      "m": 47,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n5",
+      "b": "n6",
+      "m": 48,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n6",
+      "b": "n7",
+      "m": 60,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n7",
+      "b": "n8",
+      "m": 24,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n8",
+      "b": "n9",
+      "m": 50,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n9",
+      "b": "n10",
+      "m": 71,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n10",
+      "b": "n11",
+      "m": 141,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.873521,
+          -102.278047
+        ]
+      ]
+    },
+    {
+      "a": "n11",
+      "b": "n12",
+      "m": 10,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n12",
+      "b": "n13",
+      "m": 45,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n13",
+      "b": "n14",
+      "m": 506,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.87354,
+          -102.276045
+        ],
+        [
+          21.873542,
+          -102.275626
+        ],
+        [
+          21.873545,
+          -102.275387
+        ],
+        [
+          21.873544,
+          -102.274994
+        ],
+        [
+          21.873541,
+          -102.274896
+        ],
+        [
+          21.873547,
+          -102.27449
+        ],
+        [
+          21.873549,
+          -102.274209
+        ],
+        [
+          21.873553,
+          -102.273851
+        ],
+        [
+          21.873555,
+          -102.273602
+        ],
+        [
+          21.873554,
+          -102.273363
+        ],
+        [
+          21.87356,
+          -102.272979
+        ],
+        [
+          21.87356,
+          -102.272715
+        ],
+        [
+          21.873561,
+          -102.272303
+        ],
+        [
+          21.873561,
+          -102.272219
+        ],
+        [
+          21.873561,
+          -102.271993
+        ],
+        [
+          21.873566,
+          -102.271601
+        ]
+      ]
+    },
+    {
+      "a": "n15",
+      "b": "n16",
+      "m": 78,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.878297,
+          -102.281386
+        ]
+      ]
+    },
+    {
+      "a": "n16",
+      "b": "n17",
+      "m": 6,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n17",
+      "b": "n18",
+      "m": 63,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n18",
+      "b": "n19",
+      "m": 54,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n19",
+      "b": "n20",
+      "m": 287,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.875147,
+          -102.281583
+        ]
+      ]
+    },
+    {
+      "a": "n20",
+      "b": "n21",
+      "m": 50,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n21",
+      "b": "n2",
+      "m": 11,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n2",
+      "b": "n22",
+      "m": 95,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n22",
+      "b": "n23",
+      "m": 53,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n23",
+      "b": "n24",
+      "m": 225,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.871189,
+          -102.281849
+        ],
+        [
+          21.870865,
+          -102.28187
+        ],
+        [
+          21.870522,
+          -102.281893
+        ]
+      ]
+    },
+    {
+      "a": "n25",
+      "b": "n26",
+      "m": 98,
+      "calle": "Calle 5 de Febrero",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.878449,
+          -102.282094
+        ]
+      ]
+    },
+    {
+      "a": "n27",
+      "b": "n28",
+      "m": 45,
+      "calle": "Privada La Soledad",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n29",
+      "b": "n30",
+      "m": 3,
+      "calle": "residential",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n31",
+      "b": "n32",
+      "m": 46,
+      "calle": "Calle Tacuba",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n32",
+      "b": "n33",
+      "m": 44,
+      "calle": "Calle Tacuba",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n33",
+      "b": "n34",
+      "m": 42,
+      "calle": "Calle Tacuba",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n34",
+      "b": "n35",
+      "m": 31,
+      "calle": "Calle Tacuba",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n36",
+      "b": "n37",
+      "m": 83,
+      "calle": "Calle Presillas",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n38",
+      "b": "n39",
+      "m": 27,
+      "calle": "Calle Chichimeco",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n39",
+      "b": "n40",
+      "m": 70,
+      "calle": "Calle Chichimeco",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n40",
+      "b": "n41",
+      "m": 17,
+      "calle": "Calle Chichimeco",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n41",
+      "b": "n42",
+      "m": 55,
+      "calle": "Calle Chichimeco",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n42",
+      "b": "n43",
+      "m": 34,
+      "calle": "Calle Chichimeco",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n43",
+      "b": "n44",
+      "m": 49,
+      "calle": "Calle Chichimeco",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n44",
+      "b": "n45",
+      "m": 61,
+      "calle": "Calle Chichimeco",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n44",
+      "b": "n33",
+      "m": 125,
+      "calle": "Calle Hortelanos",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.876,
+          -102.278904
+        ]
+      ]
+    },
+    {
+      "a": "n33",
+      "b": "n46",
+      "m": 39,
+      "calle": "Calle Hortelanos",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.875861,
+          -102.278916
+        ]
+      ]
+    },
+    {
+      "a": "n47",
+      "b": "n48",
+      "m": 141,
+      "calle": "Calle Bugambilia",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.878058,
+          -102.276811
+        ]
+      ]
+    },
+    {
+      "a": "n49",
+      "b": "n50",
+      "m": 59,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.875128,
+          -102.281023
+        ]
+      ]
+    },
+    {
+      "a": "n36",
+      "b": "n51",
+      "m": 49,
+      "calle": "Calle Peñuelas",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n52",
+      "b": "n53",
+      "m": 60,
+      "calle": "Calle Educación",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n53",
+      "b": "n4",
+      "m": 11,
+      "calle": "Calle Educación",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n54",
+      "b": "n55",
+      "m": 164,
+      "calle": "La Punta",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.876658,
+          -102.279831
+        ]
+      ]
+    },
+    {
+      "a": "n56",
+      "b": "n57",
+      "m": 61,
+      "calle": "Calle Oscar Eduardo Fernández",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.875757,
+          -102.278022
+        ]
+      ]
+    },
+    {
+      "a": "n57",
+      "b": "n58",
+      "m": 74,
+      "calle": "Calle Oscar Eduardo Fernández",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n58",
+      "b": "n59",
+      "m": 61,
+      "calle": "Calle Oscar Eduardo Fernández",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n59",
+      "b": "n47",
+      "m": 58,
+      "calle": "Calle Oscar Eduardo Fernández",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n47",
+      "b": "n60",
+      "m": 34,
+      "calle": "Calle Oscar Eduardo Fernández",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.878265,
+          -102.27807
+        ]
+      ]
+    },
+    {
+      "a": "n61",
+      "b": "n62",
+      "m": 51,
+      "calle": "Calle Hacienda",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n62",
+      "b": "n6",
+      "m": 12,
+      "calle": "Calle Hacienda",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n63",
+      "b": "n52",
+      "m": 47,
+      "calle": "Calle Defensa Nacional",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n52",
+      "b": "n64",
+      "m": 45,
+      "calle": "Calle Defensa Nacional",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n64",
+      "b": "n61",
+      "m": 48,
+      "calle": "Calle Defensa Nacional",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n61",
+      "b": "n65",
+      "m": 63,
+      "calle": "Calle Defensa Nacional",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n7",
+      "b": "n66",
+      "m": 13,
+      "calle": "Calle SAHOP",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n66",
+      "b": "n65",
+      "m": 44,
+      "calle": "Calle SAHOP",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n65",
+      "b": "n67",
+      "m": 12,
+      "calle": "Calle SAHOP",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n67",
+      "b": "n68",
+      "m": 43,
+      "calle": "Calle SAHOP",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n68",
+      "b": "n69",
+      "m": 47,
+      "calle": "Calle SAHOP",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n69",
+      "b": "n70",
+      "m": 48,
+      "calle": "Calle SAHOP",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n34",
+      "b": "n71",
+      "m": 36,
+      "calle": "Calle Garza",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n72",
+      "b": "n73",
+      "m": 63,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.878453,
+          -102.280386
+        ],
+        [
+          21.878416,
+          -102.280363
+        ],
+        [
+          21.878142,
+          -102.280361
+        ],
+        [
+          21.878079,
+          -102.280351
+        ]
+      ]
+    },
+    {
+      "a": "n31",
+      "b": "n74",
+      "m": 9,
+      "calle": "Calle Hacienda",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n74",
+      "b": "n55",
+      "m": 102,
+      "calle": "Calle Hacienda",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.876591,
+          -102.279762
+        ]
+      ]
+    },
+    {
+      "a": "n75",
+      "b": "n51",
+      "m": 84,
+      "calle": "Calle Santa Rosa",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n51",
+      "b": "n74",
+      "m": 91,
+      "calle": "Calle Santa Rosa",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n76",
+      "b": "n77",
+      "m": 78,
+      "calle": "Sahop",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.874957,
+          -102.279933
+        ],
+        [
+          21.874966,
+          -102.279978
+        ],
+        [
+          21.875009,
+          -102.27999
+        ]
+      ]
+    },
+    {
+      "a": "n78",
+      "b": "n70",
+      "m": 20,
+      "calle": "Calle SARH",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.875313,
+          -102.27964
+        ]
+      ]
+    },
+    {
+      "a": "n70",
+      "b": "n79",
+      "m": 22,
+      "calle": "Calle SARH",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n79",
+      "b": "n46",
+      "m": 44,
+      "calle": "Calle SARH",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n46",
+      "b": "n80",
+      "m": 15,
+      "calle": "Calle SARH",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n80",
+      "b": "n71",
+      "m": 30,
+      "calle": "Calle SARH",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n71",
+      "b": "n81",
+      "m": 28,
+      "calle": "Calle SARH",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n64",
+      "b": "n82",
+      "m": 56,
+      "calle": "Calle Salubridad",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n82",
+      "b": "n5",
+      "m": 12,
+      "calle": "Calle Salubridad",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n83",
+      "b": "n68",
+      "m": 202,
+      "calle": "Calle Servicio Militar",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n59",
+      "b": "n84",
+      "m": 138,
+      "calle": "Calle Clavel",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n58",
+      "b": "n85",
+      "m": 137,
+      "calle": "Calle Edén",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n79",
+      "b": "n32",
+      "m": 40,
+      "calle": "Calle Garabato",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n32",
+      "b": "n43",
+      "m": 146,
+      "calle": "Calle Garabato",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n9",
+      "b": "n86",
+      "m": 13,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n86",
+      "b": "n87",
+      "m": 87,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n88",
+      "b": "n89",
+      "m": 213,
+      "calle": "Avenida de los Fundadores",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.870802,
+          -102.281081
+        ],
+        [
+          21.870787,
+          -102.280732
+        ],
+        [
+          21.870797,
+          -102.280496
+        ],
+        [
+          21.870875,
+          -102.280229
+        ],
+        [
+          21.870908,
+          -102.280148
+        ],
+        [
+          21.871038,
+          -102.279962
+        ],
+        [
+          21.871133,
+          -102.279865
+        ]
+      ]
+    },
+    {
+      "a": "n89",
+      "b": "n90",
+      "m": 121,
+      "calle": "Avenida de los Fundadores",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.87163,
+          -102.279456
+        ],
+        [
+          21.871914,
+          -102.279214
+        ]
+      ]
+    },
+    {
+      "a": "n90",
+      "b": "n91",
+      "m": 7,
+      "calle": "Avenida de los Fundadores",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n91",
+      "b": "n92",
+      "m": 30,
+      "calle": "Avenida de los Fundadores",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n92",
+      "b": "n93",
+      "m": 35,
+      "calle": "Avenida de los Fundadores",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n94",
+      "b": "n95",
+      "m": 48,
+      "calle": "Calle Reforma Agraria",
+      "clase": "living_street",
+      "peligro_base": 0
+    },
+    {
+      "a": "n96",
+      "b": "n10",
+      "m": 14,
+      "calle": "Avenida Ferrocarril",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n10",
+      "b": "n97",
+      "m": 111,
+      "calle": "Avenida Ferrocarril",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n97",
+      "b": "n93",
+      "m": 29,
+      "calle": "Avenida Ferrocarril",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n93",
+      "b": "n98",
+      "m": 478,
+      "calle": "Avenida Ferrocarril",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.871331,
+          -102.278133
+        ],
+        [
+          21.870366,
+          -102.278133
+        ],
+        [
+          21.869578,
+          -102.278121
+        ]
+      ]
+    },
+    {
+      "a": "n99",
+      "b": "n100",
+      "m": 31,
+      "calle": "Pasaje Paseo José María Chávez",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.87305,
+          -102.278812
+        ]
+      ]
+    },
+    {
+      "a": "n100",
+      "b": "n91",
+      "m": 68,
+      "calle": "Pasaje Paseo José María Chávez",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.87256,
+          -102.278801
+        ],
+        [
+          21.872426,
+          -102.278797
+        ]
+      ]
+    },
+    {
+      "a": "n101",
+      "b": "n92",
+      "m": 23,
+      "calle": "Retorno Jesús Terán Peredo",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.87235,
+          -102.278593
+        ],
+        [
+          21.872358,
+          -102.278568
+        ],
+        [
+          21.872351,
+          -102.278533
+        ],
+        [
+          21.872326,
+          -102.278501
+        ],
+        [
+          21.872309,
+          -102.278493
+        ]
+      ]
+    },
+    {
+      "a": "n92",
+      "b": "n102",
+      "m": 76,
+      "calle": "Retorno Jesús Terán Peredo",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.871635,
+          -102.278484
+        ]
+      ]
+    },
+    {
+      "a": "n103",
+      "b": "n89",
+      "m": 115,
+      "calle": "Retorno Pasaje Pedro Parga",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.87165,
+          -102.279994
+        ],
+        [
+          21.871588,
+          -102.279914
+        ]
+      ]
+    },
+    {
+      "a": "n104",
+      "b": "n8",
+      "m": 13,
+      "calle": "Pasaje Antonio Díaz Soto y Gama",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n8",
+      "b": "n105",
+      "m": 45,
+      "calle": "Pasaje Antonio Díaz Soto y Gama",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n105",
+      "b": "n106",
+      "m": 97,
+      "calle": "Pasaje Antonio Díaz Soto y Gama",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n100",
+      "b": "n97",
+      "m": 79,
+      "calle": "Pasaje José María Chávez",
+      "clase": "pedestrian",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.872815,
+          -102.27859
+        ],
+        [
+          21.872784,
+          -102.278509
+        ],
+        [
+          21.872527,
+          -102.278217
+        ]
+      ]
+    },
+    {
+      "a": "n107",
+      "b": "n108",
+      "m": 99,
+      "calle": "Calle Comunicaciones y Transportes",
+      "clase": "living_street",
+      "peligro_base": 0
+    },
+    {
+      "a": "n109",
+      "b": "n110",
+      "m": 55,
+      "calle": "Calle Conasupo",
+      "clase": "living_street",
+      "peligro_base": 0
+    },
+    {
+      "a": "n111",
+      "b": "n112",
+      "m": 56,
+      "calle": "Calle Álamo",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n112",
+      "b": "n113",
+      "m": 195,
+      "calle": "Calle Álamo",
+      "clase": "tertiary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.875998,
+          -102.27568
+        ],
+        [
+          21.875504,
+          -102.276064
+        ]
+      ]
+    },
+    {
+      "a": "n113",
+      "b": "n114",
+      "m": 40,
+      "calle": "Calle Álamo",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n114",
+      "b": "n115",
+      "m": 16,
+      "calle": "Calle Álamo",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n116",
+      "b": "n112",
+      "m": 8,
+      "calle": "Calle Ciruelo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n112",
+      "b": "n117",
+      "m": 167,
+      "calle": "Calle Ciruelo",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.876934,
+          -102.276084
+        ]
+      ]
+    },
+    {
+      "a": "n120",
+      "b": "n121",
+      "m": 151,
+      "calle": "Calle Almendro",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.874958,
+          -102.274994
+        ],
+        [
+          21.874953,
+          -102.275427
+        ],
+        [
+          21.874951,
+          -102.275632
+        ],
+        [
+          21.874948,
+          -102.276062
+        ]
+      ]
+    },
+    {
+      "a": "n121",
+      "b": "n113",
+      "m": 10,
+      "calle": "Calle Almendro",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n113",
+      "b": "n122",
+      "m": 23,
+      "calle": "Calle Almendro",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n123",
+      "b": "n124",
+      "m": 31,
+      "calle": "Privada Primera de la Cruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n127",
+      "b": "n128",
+      "m": 16,
+      "calle": "Calle Álamo",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n128",
+      "b": "n121",
+      "m": 59,
+      "calle": "Calle Álamo",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n121",
+      "b": "n116",
+      "m": 189,
+      "calle": "Calle Álamo",
+      "clase": "tertiary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.875358,
+          -102.276065
+        ],
+        [
+          21.875948,
+          -102.275637
+        ],
+        [
+          21.876152,
+          -102.275462
+        ]
+      ]
+    },
+    {
+      "a": "n116",
+      "b": "n129",
+      "m": 57,
+      "calle": "Calle Álamo",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n130",
+      "b": "n131",
+      "m": 44,
+      "calle": "Calle Manuel Ávila Camacho",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n131",
+      "b": "n132",
+      "m": 139,
+      "calle": "Calle Manuel Ávila Camacho",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.871557,
+          -102.276364
+        ],
+        [
+          21.871177,
+          -102.276385
+        ]
+      ]
+    },
+    {
+      "a": "n133",
+      "b": "n131",
+      "m": 148,
+      "calle": "Calle Ignacio Manuel Altamirano",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n134",
+      "b": "n130",
+      "m": 46,
+      "calle": "Calle General Rodolfo Sánchez Taboada",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n130",
+      "b": "n135",
+      "m": 132,
+      "calle": "Calle General Rodolfo Sánchez Taboada",
+      "clase": "tertiary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.872416,
+          -102.276034
+        ],
+        [
+          21.872416,
+          -102.275621
+        ]
+      ]
+    },
+    {
+      "a": "n13",
+      "b": "n136",
+      "m": 33,
+      "calle": "Privada Segunda Paseo de la Cruz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n137",
+      "b": "n138",
+      "m": 74,
+      "calle": "Privada Roble",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n139",
+      "b": "n3",
+      "m": 723,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.867201,
+          -102.281753
+        ],
+        [
+          21.867384,
+          -102.281766
+        ],
+        [
+          21.867571,
+          -102.28178
+        ],
+        [
+          21.867717,
+          -102.281791
+        ],
+        [
+          21.868007,
+          -102.281814
+        ],
+        [
+          21.868633,
+          -102.281859
+        ],
+        [
+          21.869366,
+          -102.281859
+        ],
+        [
+          21.869782,
+          -102.281841
+        ],
+        [
+          21.870511,
+          -102.281787
+        ],
+        [
+          21.870568,
+          -102.281783
+        ],
+        [
+          21.870859,
+          -102.281769
+        ],
+        [
+          21.871243,
+          -102.281742
+        ]
+      ]
+    },
+    {
+      "a": "n3",
+      "b": "n140",
+      "m": 11,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n140",
+      "b": "n63",
+      "m": 65,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n63",
+      "b": "n83",
+      "m": 52,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n83",
+      "b": "n141",
+      "m": 53,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n141",
+      "b": "n75",
+      "m": 75,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n75",
+      "b": "n37",
+      "m": 49,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n37",
+      "b": "n54",
+      "m": 54,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n54",
+      "b": "n142",
+      "m": 21,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n142",
+      "b": "n38",
+      "m": 33,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n38",
+      "b": "n143",
+      "m": 135,
+      "calle": "Avenida Héroe de Nacozari Sur",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n144",
+      "b": "n134",
+      "m": 455,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.869419,
+          -102.276886
+        ],
+        [
+          21.870026,
+          -102.276872
+        ],
+        [
+          21.87038,
+          -102.276861
+        ],
+        [
+          21.870482,
+          -102.276858
+        ],
+        [
+          21.870786,
+          -102.276842
+        ],
+        [
+          21.871559,
+          -102.276813
+        ]
+      ]
+    },
+    {
+      "a": "n134",
+      "b": "n137",
+      "m": 45,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n137",
+      "b": "n145",
+      "m": 62,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n146",
+      "b": "n147",
+      "m": 152,
+      "calle": "primary_link",
+      "clase": "primary_link",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.877953,
+          -102.276662
+        ],
+        [
+          21.877221,
+          -102.276665
+        ],
+        [
+          21.876824,
+          -102.276679
+        ]
+      ]
+    },
+    {
+      "a": "n148",
+      "b": "n123",
+      "m": 571,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.873675,
+          -102.270997
+        ],
+        [
+          21.873671,
+          -102.271207
+        ],
+        [
+          21.873673,
+          -102.271805
+        ],
+        [
+          21.873672,
+          -102.272217
+        ],
+        [
+          21.873671,
+          -102.2723
+        ],
+        [
+          21.873664,
+          -102.27298
+        ],
+        [
+          21.87366,
+          -102.273604
+        ],
+        [
+          21.873659,
+          -102.274209
+        ],
+        [
+          21.873656,
+          -102.274897
+        ],
+        [
+          21.873663,
+          -102.274991
+        ],
+        [
+          21.87365,
+          -102.275626
+        ],
+        [
+          21.873651,
+          -102.276048
+        ]
+      ]
+    },
+    {
+      "a": "n123",
+      "b": "n149",
+      "m": 32,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n149",
+      "b": "n150",
+      "m": 10,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n150",
+      "b": "n96",
+      "m": 143,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.873637,
+          -102.278044
+        ]
+      ]
+    },
+    {
+      "a": "n96",
+      "b": "n86",
+      "m": 69,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n86",
+      "b": "n104",
+      "m": 50,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n104",
+      "b": "n66",
+      "m": 24,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n66",
+      "b": "n62",
+      "m": 61,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n62",
+      "b": "n82",
+      "m": 48,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n82",
+      "b": "n53",
+      "m": 46,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n53",
+      "b": "n140",
+      "m": 50,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n140",
+      "b": "n21",
+      "m": 12,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n21",
+      "b": "n151",
+      "m": 420,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.873612,
+          -102.282245
+        ],
+        [
+          21.873609,
+          -102.28265
+        ],
+        [
+          21.873624,
+          -102.28373
+        ],
+        [
+          21.873635,
+          -102.284583
+        ]
+      ]
+    },
+    {
+      "a": "n151",
+      "b": "n152",
+      "m": 790,
+      "calle": "Avenida Paseo de la Cruz",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.873656,
+          -102.287189
+        ],
+        [
+          21.873614,
+          -102.287655
+        ],
+        [
+          21.873524,
+          -102.288065
+        ],
+        [
+          21.873421,
+          -102.288349
+        ],
+        [
+          21.873278,
+          -102.288747
+        ],
+        [
+          21.872924,
+          -102.289861
+        ],
+        [
+          21.872849,
+          -102.290204
+        ],
+        [
+          21.872733,
+          -102.290742
+        ],
+        [
+          21.872641,
+          -102.291192
+        ],
+        [
+          21.872514,
+          -102.291809
+        ],
+        [
+          21.872289,
+          -102.292799
+        ],
+        [
+          21.872226,
+          -102.29307
+        ]
+      ]
+    },
+    {
+      "a": "n73",
+      "b": "n153",
+      "m": 149,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.878371,
+          -102.280265
+        ],
+        [
+          21.878349,
+          -102.280102
+        ]
+      ]
+    },
+    {
+      "a": "n153",
+      "b": "n154",
+      "m": 13,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n154",
+      "b": "n155",
+      "m": 17,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n155",
+      "b": "n41",
+      "m": 14,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.877242,
+          -102.28022
+        ],
+        [
+          21.877219,
+          -102.280222
+        ]
+      ]
+    },
+    {
+      "a": "n153",
+      "b": "n156",
+      "m": 86,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n156",
+      "b": "n157",
+      "m": 97,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.877457,
+          -102.278537
+        ]
+      ]
+    },
+    {
+      "a": "n157",
+      "b": "n158",
+      "m": 100,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.877211,
+          -102.278537
+        ]
+      ]
+    },
+    {
+      "a": "n158",
+      "b": "n155",
+      "m": 88,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n154",
+      "b": "n159",
+      "m": 87,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n159",
+      "b": "n157",
+      "m": 85,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n156",
+      "b": "n159",
+      "m": 13,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n159",
+      "b": "n158",
+      "m": 16,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n158",
+      "b": "n43",
+      "m": 16,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.877185,
+          -102.279366
+        ]
+      ]
+    },
+    {
+      "a": "n18",
+      "b": "n151",
+      "m": 617,
+      "calle": "Prolongación San Miguel",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.876794,
+          -102.282826
+        ],
+        [
+          21.876471,
+          -102.283319
+        ],
+        [
+          21.876182,
+          -102.283722
+        ],
+        [
+          21.875998,
+          -102.283936
+        ],
+        [
+          21.875588,
+          -102.284415
+        ],
+        [
+          21.87536,
+          -102.284588
+        ],
+        [
+          21.874797,
+          -102.284979
+        ]
+      ]
+    },
+    {
+      "a": "n30",
+      "b": "n160",
+      "m": 26,
+      "calle": "residential",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n161",
+      "b": "n162",
+      "m": 24,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n162",
+      "b": "n117",
+      "m": 182,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n117",
+      "b": "n163",
+      "m": 118,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.877949,
+          -102.276588
+        ],
+        [
+          21.878052,
+          -102.276593
+        ],
+        [
+          21.878085,
+          -102.276594
+        ]
+      ]
+    },
+    {
+      "a": "n164",
+      "b": "n165",
+      "m": 22,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n165",
+      "b": "n115",
+      "m": 110,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n115",
+      "b": "n127",
+      "m": 14,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n127",
+      "b": "n150",
+      "m": 86,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n150",
+      "b": "n11",
+      "m": 12,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n11",
+      "b": "n107",
+      "m": 49,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n107",
+      "b": "n109",
+      "m": 40,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n109",
+      "b": "n94",
+      "m": 49,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n94",
+      "b": "n166",
+      "m": 409,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.871912,
+          -102.276886
+        ],
+        [
+          21.87156,
+          -102.276904
+        ],
+        [
+          21.87115,
+          -102.276923
+        ],
+        [
+          21.87071,
+          -102.276945
+        ],
+        [
+          21.870481,
+          -102.276945
+        ],
+        [
+          21.870071,
+          -102.276953
+        ],
+        [
+          21.870051,
+          -102.276954
+        ],
+        [
+          21.869985,
+          -102.276958
+        ]
+      ]
+    },
+    {
+      "a": "n162",
+      "b": "n164",
+      "m": 12,
+      "calle": "Oscar Eduardo Fernandez",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n164",
+      "b": "n56",
+      "m": 128,
+      "calle": "Calle Oscar Eduardo Fernández",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.875717,
+          -102.277974
+        ]
+      ]
+    },
+    {
+      "a": "n141",
+      "b": "n49",
+      "m": 11,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n28",
+      "b": "n20",
+      "m": 8,
+      "calle": "Privada La Soledad",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n167",
+      "b": "n103",
+      "m": 56,
+      "calle": "Retorno Pasaje Pedro Parga",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.871705,
+          -102.280637
+        ],
+        [
+          21.87175,
+          -102.280657
+        ],
+        [
+          21.871807,
+          -102.28066
+        ]
+      ]
+    },
+    {
+      "a": "n69",
+      "b": "n76",
+      "m": 6,
+      "calle": "Sahop",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n45",
+      "b": "n35",
+      "m": 103,
+      "calle": "Avenida Ferrocarril",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.876995,
+          -102.278241
+        ],
+        [
+          21.876947,
+          -102.278213
+        ],
+        [
+          21.876587,
+          -102.278211
+        ]
+      ]
+    },
+    {
+      "a": "n35",
+      "b": "n81",
+      "m": 36,
+      "calle": "Avenida Ferrocarril",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n81",
+      "b": "n168",
+      "m": 46,
+      "calle": "Avenida Ferrocarril",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n168",
+      "b": "n96",
+      "m": 196,
+      "calle": "Avenida Ferrocarril",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n145",
+      "b": "n12",
+      "m": 17,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n12",
+      "b": "n149",
+      "m": 12,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n149",
+      "b": "n128",
+      "m": 97,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n128",
+      "b": "n114",
+      "m": 15,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n114",
+      "b": "n122",
+      "m": 31,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n122",
+      "b": "n161",
+      "m": 65,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n90",
+      "b": "n169",
+      "m": 35,
+      "calle": "Retorno Jesús Terán Peredo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n1",
+      "b": "n22",
+      "m": 126,
+      "calle": "Calle La Soledad",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n142",
+      "b": "n39",
+      "m": 57,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.876924,
+          -102.281153
+        ],
+        [
+          21.876932,
+          -102.281103
+        ],
+        [
+          21.876962,
+          -102.281073
+        ]
+      ]
+    },
+    {
+      "a": "n73",
+      "b": "n40",
+      "m": 92,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n170",
+      "b": "n48",
+      "m": 42,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n48",
+      "b": "n84",
+      "m": 59,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n84",
+      "b": "n85",
+      "m": 60,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n85",
+      "b": "n147",
+      "m": 34,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n147",
+      "b": "n171",
+      "m": 41,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n171",
+      "b": "n164",
+      "m": 62,
+      "calle": "Avenida Mariano Escobedo",
+      "clase": "primary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n26",
+      "b": "n16",
+      "m": 65,
+      "calle": "Calle 5 de Febrero",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.877866,
+          -102.281671
+        ],
+        [
+          21.877874,
+          -102.281622
+        ],
+        [
+          21.877853,
+          -102.28157
+        ],
+        [
+          21.877816,
+          -102.281515
+        ]
+      ]
+    },
+    {
+      "a": "n57",
+      "b": "n171",
+      "m": 133,
+      "calle": "Calle Tacuba",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n172",
+      "b": "n173",
+      "m": 65,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.87699,
+          -102.279684
+        ],
+        [
+          21.876929,
+          -102.279682
+        ],
+        [
+          21.876926,
+          -102.279604
+        ],
+        [
+          21.876924,
+          -102.27951
+        ],
+        [
+          21.876891,
+          -102.279507
+        ],
+        [
+          21.876858,
+          -102.279506
+        ],
+        [
+          21.876812,
+          -102.279508
+        ],
+        [
+          21.876774,
+          -102.279531
+        ],
+        [
+          21.876748,
+          -102.279581
+        ]
+      ]
+    },
+    {
+      "a": "n36",
+      "b": "n174",
+      "m": 44,
+      "calle": "Privada Presillas",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n168",
+      "b": "n175",
+      "m": 18,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.875413,
+          -102.278379
+        ]
+      ]
+    },
+    {
+      "a": "n175",
+      "b": "n176",
+      "m": 13,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.875369,
+          -102.278426
+        ]
+      ]
+    },
+    {
+      "a": "n80",
+      "b": "n177",
+      "m": 81,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.875332,
+          -102.278777
+        ],
+        [
+          21.875294,
+          -102.278791
+        ],
+        [
+          21.875281,
+          -102.278829
+        ]
+      ]
+    },
+    {
+      "a": "n31",
+      "b": "n78",
+      "m": 37,
+      "calle": "Hacienda",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.875363,
+          -102.279727
+        ]
+      ]
+    },
+    {
+      "a": "n178",
+      "b": "n103",
+      "m": 100,
+      "calle": "Pasaje Antonio Díaz Soto y Gama",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n179",
+      "b": "n17",
+      "m": 86,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.877586,
+          -102.282058
+        ],
+        [
+          21.8777,
+          -102.281541
+        ]
+      ]
+    },
+    {
+      "a": "n45",
+      "b": "n180",
+      "m": 139,
+      "calle": "Avenida Ferrocarril",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n181",
+      "b": "n179",
+      "m": 115,
+      "calle": "Calle 5 de Febrero",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n179",
+      "b": "n26",
+      "m": 14,
+      "calle": "Calle 5 de Febrero",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n182",
+      "b": "n183",
+      "m": 44,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n183",
+      "b": "n184",
+      "m": 34,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n67",
+      "b": "n183",
+      "m": 15,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.87412,
+          -102.27951
+        ]
+      ]
+    },
+    {
+      "a": "n185",
+      "b": "n175",
+      "m": 24,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n186",
+      "b": "n19",
+      "m": 116,
+      "calle": "Calle 9 de Julio",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n187",
+      "b": "n29",
+      "m": 44,
+      "calle": "Calle de la Luna",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n29",
+      "b": "n23",
+      "m": 34,
+      "calle": "Calle de la Luna",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n105",
+      "b": "n99",
+      "m": 57,
+      "calle": "Pasaje Paseo José María Chávez",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.873118,
+          -102.278866
+        ]
+      ]
+    },
+    {
+      "a": "n42",
+      "b": "n172",
+      "m": 9,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    }
+  ]
+}

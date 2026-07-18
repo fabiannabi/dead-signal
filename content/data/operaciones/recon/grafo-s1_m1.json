@@ -1,0 +1,1936 @@
+{
+  "_meta": {
+    "sector": "CENTRO 1m1",
+    "distrito": "CENTRO",
+    "celda": "S_1_-1",
+    "fuente": "OpenStreetMap vía Overpass API",
+    "consulta": "way[\"highway\"](21.884,-102.3062,21.89,-102.3002);(._;>;);out body;",
+    "bbox_SWNE": [
+      21.884,
+      -102.3062,
+      21.89,
+      -102.3002
+    ],
+    "horneado": "2026-07-18",
+    "nota": "Grafo curado (§1.6): grado-2 colapsado y podado a la componente conexa mayor. `pts` es geometría de dibujo, no interviene en el ruteo (la distancia va en `m`). El peligro es DINÁMICO (hora×criatura), lo deriva peligro.js de ecologia-peligro.json (§1.5); peligro_base=0."
+  },
+  "nodos": [
+    {
+      "id": "n0",
+      "lat": 21.88434,
+      "lng": -102.302587
+    },
+    {
+      "id": "n1",
+      "lat": 21.884994,
+      "lng": -102.302431
+    },
+    {
+      "id": "n2",
+      "lat": 21.885439,
+      "lng": -102.30231
+    },
+    {
+      "id": "n3",
+      "lat": 21.886151,
+      "lng": -102.305388
+    },
+    {
+      "id": "n4",
+      "lat": 21.88606,
+      "lng": -102.304639
+    },
+    {
+      "id": "n5",
+      "lat": 21.886029,
+      "lng": -102.304531
+    },
+    {
+      "id": "n6",
+      "lat": 21.885692,
+      "lng": -102.303426
+    },
+    {
+      "id": "n7",
+      "lat": 21.885413,
+      "lng": -102.302199
+    },
+    {
+      "id": "n8",
+      "lat": 21.885259,
+      "lng": -102.301528
+    },
+    {
+      "id": "n9",
+      "lat": 21.885209,
+      "lng": -102.301306
+    },
+    {
+      "id": "n10",
+      "lat": 21.885033,
+      "lng": -102.300578
+    },
+    {
+      "id": "n11",
+      "lat": 21.88451,
+      "lng": -102.297824
+    },
+    {
+      "id": "n12",
+      "lat": 21.88408,
+      "lng": -102.301282
+    },
+    {
+      "id": "n13",
+      "lat": 21.882162,
+      "lng": -102.301684
+    },
+    {
+      "id": "n14",
+      "lat": 21.888598,
+      "lng": -102.306793
+    },
+    {
+      "id": "n15",
+      "lat": 21.88829,
+      "lng": -102.304797
+    },
+    {
+      "id": "n16",
+      "lat": 21.88884,
+      "lng": -102.303656
+    },
+    {
+      "id": "n17",
+      "lat": 21.888114,
+      "lng": -102.303709
+    },
+    {
+      "id": "n18",
+      "lat": 21.886412,
+      "lng": -102.304625
+    },
+    {
+      "id": "n19",
+      "lat": 21.886381,
+      "lng": -102.305359
+    },
+    {
+      "id": "n20",
+      "lat": 21.887376,
+      "lng": -102.306128
+    },
+    {
+      "id": "n21",
+      "lat": 21.885049,
+      "lng": -102.303655
+    },
+    {
+      "id": "n22",
+      "lat": 21.884504,
+      "lng": -102.303839
+    },
+    {
+      "id": "n23",
+      "lat": 21.879951,
+      "lng": -102.303768
+    },
+    {
+      "id": "n24",
+      "lat": 21.884475,
+      "lng": -102.303603
+    },
+    {
+      "id": "n25",
+      "lat": 21.889089,
+      "lng": -102.305463
+    },
+    {
+      "id": "n26",
+      "lat": 21.889304,
+      "lng": -102.307368
+    },
+    {
+      "id": "n27",
+      "lat": 21.888754,
+      "lng": -102.304712
+    },
+    {
+      "id": "n28",
+      "lat": 21.889033,
+      "lng": -102.305035
+    },
+    {
+      "id": "n29",
+      "lat": 21.889383,
+      "lng": -102.305423
+    },
+    {
+      "id": "n30",
+      "lat": 21.889699,
+      "lng": -102.305774
+    },
+    {
+      "id": "n31",
+      "lat": 21.889969,
+      "lng": -102.306089
+    },
+    {
+      "id": "n32",
+      "lat": 21.890204,
+      "lng": -102.306383
+    },
+    {
+      "id": "n33",
+      "lat": 21.889773,
+      "lng": -102.30452
+    },
+    {
+      "id": "n34",
+      "lat": 21.895776,
+      "lng": -102.309834
+    },
+    {
+      "id": "n35",
+      "lat": 21.890075,
+      "lng": -102.306529
+    },
+    {
+      "id": "n36",
+      "lat": 21.889925,
+      "lng": -102.305828
+    },
+    {
+      "id": "n37",
+      "lat": 21.889708,
+      "lng": -102.304533
+    },
+    {
+      "id": "n38",
+      "lat": 21.889532,
+      "lng": -102.303612
+    },
+    {
+      "id": "n39",
+      "lat": 21.889574,
+      "lng": -102.302335
+    },
+    {
+      "id": "n40",
+      "lat": 21.889424,
+      "lng": -102.301477
+    },
+    {
+      "id": "n41",
+      "lat": 21.889292,
+      "lng": -102.300658
+    },
+    {
+      "id": "n42",
+      "lat": 21.889106,
+      "lng": -102.299392
+    },
+    {
+      "id": "n43",
+      "lat": 21.890319,
+      "lng": -102.303497
+    },
+    {
+      "id": "n44",
+      "lat": 21.890032,
+      "lng": -102.305723
+    },
+    {
+      "id": "n45",
+      "lat": 21.887921,
+      "lng": -102.302625
+    },
+    {
+      "id": "n46",
+      "lat": 21.887313,
+      "lng": -102.302747
+    },
+    {
+      "id": "n47",
+      "lat": 21.886781,
+      "lng": -102.30285
+    },
+    {
+      "id": "n48",
+      "lat": 21.886412,
+      "lng": -102.302064
+    },
+    {
+      "id": "n49",
+      "lat": 21.884575,
+      "lng": -102.304523
+    },
+    {
+      "id": "n50",
+      "lat": 21.887807,
+      "lng": -102.301744
+    },
+    {
+      "id": "n51",
+      "lat": 21.888617,
+      "lng": -102.301629
+    },
+    {
+      "id": "n52",
+      "lat": 21.892153,
+      "lng": -102.301001
+    },
+    {
+      "id": "n55",
+      "lat": 21.885885,
+      "lng": -102.301222
+    },
+    {
+      "id": "n56",
+      "lat": 21.885825,
+      "lng": -102.30083
+    },
+    {
+      "id": "n57",
+      "lat": 21.885785,
+      "lng": -102.300404
+    },
+    {
+      "id": "n58",
+      "lat": 21.887247,
+      "lng": -102.302351
+    },
+    {
+      "id": "n59",
+      "lat": 21.887219,
+      "lng": -102.302165
+    },
+    {
+      "id": "n60",
+      "lat": 21.888945,
+      "lng": -102.304677
+    },
+    {
+      "id": "n61",
+      "lat": 21.887496,
+      "lng": -102.302326
+    },
+    {
+      "id": "n62",
+      "lat": 21.891352,
+      "lng": -102.300278
+    },
+    {
+      "id": "n63",
+      "lat": 21.888487,
+      "lng": -102.300795
+    },
+    {
+      "id": "n64",
+      "lat": 21.887678,
+      "lng": -102.30092
+    },
+    {
+      "id": "n65",
+      "lat": 21.886388,
+      "lng": -102.301126
+    },
+    {
+      "id": "n66",
+      "lat": 21.883911,
+      "lng": -102.300793
+    },
+    {
+      "id": "n67",
+      "lat": 21.885496,
+      "lng": -102.300602
+    },
+    {
+      "id": "n68",
+      "lat": 21.884249,
+      "lng": -102.30196
+    },
+    {
+      "id": "n69",
+      "lat": 21.885458,
+      "lng": -102.296781
+    },
+    {
+      "id": "n70",
+      "lat": 21.886366,
+      "lng": -102.300511
+    },
+    {
+      "id": "n71",
+      "lat": 21.886395,
+      "lng": -102.301591
+    },
+    {
+      "id": "n72",
+      "lat": 21.886414,
+      "lng": -102.302213
+    },
+    {
+      "id": "n73",
+      "lat": 21.886426,
+      "lng": -102.303238
+    },
+    {
+      "id": "n74",
+      "lat": 21.888481,
+      "lng": -102.304764
+    },
+    {
+      "id": "n75",
+      "lat": 21.888192,
+      "lng": -102.304194
+    },
+    {
+      "id": "n76",
+      "lat": 21.887153,
+      "lng": -102.298222
+    },
+    {
+      "id": "n77",
+      "lat": 21.892559,
+      "lng": -102.308819
+    },
+    {
+      "id": "n78",
+      "lat": 21.889536,
+      "lng": -102.30595
+    },
+    {
+      "id": "n79",
+      "lat": 21.889221,
+      "lng": -102.305607
+    },
+    {
+      "id": "n80",
+      "lat": 21.888866,
+      "lng": -102.30521
+    },
+    {
+      "id": "n93",
+      "lat": 21.891336,
+      "lng": -102.302026
+    },
+    {
+      "id": "n94",
+      "lat": 21.888749,
+      "lng": -102.30248
+    },
+    {
+      "id": "n95",
+      "lat": 21.888294,
+      "lng": -102.299565
+    },
+    {
+      "id": "n96",
+      "lat": 21.884705,
+      "lng": -102.30553
+    },
+    {
+      "id": "n97",
+      "lat": 21.887182,
+      "lng": -102.301902
+    },
+    {
+      "id": "n98",
+      "lat": 21.884707,
+      "lng": -102.30555
+    },
+    {
+      "id": "n99",
+      "lat": 21.885089,
+      "lng": -102.308867
+    },
+    {
+      "id": "n100",
+      "lat": 21.883351,
+      "lng": -102.299195
+    },
+    {
+      "id": "n101",
+      "lat": 21.886147,
+      "lng": -102.307493
+    },
+    {
+      "id": "n104",
+      "lat": 21.886911,
+      "lng": -102.304608
+    },
+    {
+      "id": "n105",
+      "lat": 21.887337,
+      "lng": -102.304395
+    },
+    {
+      "id": "n106",
+      "lat": 21.887044,
+      "lng": -102.300386
+    },
+    {
+      "id": "n107",
+      "lat": 21.886933,
+      "lng": -102.302181
+    },
+    {
+      "id": "n108",
+      "lat": 21.883994,
+      "lng": -102.305672
+    },
+    {
+      "id": "n109",
+      "lat": 21.887203,
+      "lng": -102.306657
+    },
+    {
+      "id": "n110",
+      "lat": 21.89002,
+      "lng": -102.304474
+    }
+  ],
+  "aristas": [
+    {
+      "a": "n0",
+      "b": "n1",
+      "m": 74,
+      "calle": "Calle Jardín de Guadalupe Poniente",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n1",
+      "b": "n2",
+      "m": 51,
+      "calle": "Calle Jardín de Guadalupe Poniente",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n3",
+      "b": "n4",
+      "m": 78,
+      "calle": "Calle Valentín Gómez Farías",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n4",
+      "b": "n5",
+      "m": 12,
+      "calle": "Calle Valentín Gómez Farías",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n5",
+      "b": "n6",
+      "m": 120,
+      "calle": "Calle Valentín Gómez Farías",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.885829,
+          -102.303905
+        ]
+      ]
+    },
+    {
+      "a": "n6",
+      "b": "n2",
+      "m": 119,
+      "calle": "Calle Valentín Gómez Farías",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n2",
+      "b": "n7",
+      "m": 12,
+      "calle": "Calle Valentín Gómez Farías",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n7",
+      "b": "n8",
+      "m": 71,
+      "calle": "Calle Valentín Gómez Farías",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n8",
+      "b": "n9",
+      "m": 24,
+      "calle": "Calle Valentín Gómez Farías",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n9",
+      "b": "n10",
+      "m": 78,
+      "calle": "Calle Valentín Gómez Farías",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n10",
+      "b": "n11",
+      "m": 290,
+      "calle": "Calle Valentín Gómez Farías",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.884962,
+          -102.300172
+        ],
+        [
+          21.884838,
+          -102.299528
+        ],
+        [
+          21.884781,
+          -102.299237
+        ],
+        [
+          21.884707,
+          -102.298855
+        ]
+      ]
+    },
+    {
+      "a": "n12",
+      "b": "n13",
+      "m": 225,
+      "calle": "Calle Nicolás Bravo",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.884052,
+          -102.301378
+        ],
+        [
+          21.884025,
+          -102.301417
+        ],
+        [
+          21.88399,
+          -102.301441
+        ],
+        [
+          21.883281,
+          -102.301557
+        ],
+        [
+          21.882868,
+          -102.301606
+        ]
+      ]
+    },
+    {
+      "a": "n14",
+      "b": "n15",
+      "m": 209,
+      "calle": "Calle Benjamín de la Mora",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n16",
+      "b": "n17",
+      "m": 81,
+      "calle": "Calle Santo Tomás",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.888298,
+          -102.303684
+        ]
+      ]
+    },
+    {
+      "a": "n4",
+      "b": "n18",
+      "m": 39,
+      "calle": "Calle Jardín Álvaro Obregón",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n19",
+      "b": "n20",
+      "m": 137,
+      "calle": "Calle Reforma",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.886405,
+          -102.305407
+        ],
+        [
+          21.886421,
+          -102.305423
+        ]
+      ]
+    },
+    {
+      "a": "n20",
+      "b": "n14",
+      "m": 153,
+      "calle": "Calle Reforma",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.887834,
+          -102.306401
+        ],
+        [
+          21.888255,
+          -102.306654
+        ]
+      ]
+    },
+    {
+      "a": "n6",
+      "b": "n21",
+      "m": 75,
+      "calle": "Calle Arellano",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n21",
+      "b": "n22",
+      "m": 64,
+      "calle": "Calle Arellano",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n23",
+      "b": "n24",
+      "m": 506,
+      "calle": "Calle Antonio Arias Bernal",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.88069,
+          -102.303915
+        ],
+        [
+          21.880914,
+          -102.303945
+        ],
+        [
+          21.881481,
+          -102.303869
+        ],
+        [
+          21.881831,
+          -102.303822
+        ],
+        [
+          21.88237,
+          -102.303738
+        ],
+        [
+          21.883407,
+          -102.303681
+        ]
+      ]
+    },
+    {
+      "a": "n25",
+      "b": "n26",
+      "m": 199,
+      "calle": "Calle del Carmen",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.889335,
+          -102.306885
+        ]
+      ]
+    },
+    {
+      "a": "n27",
+      "b": "n28",
+      "m": 46,
+      "calle": "Avenida Fundición",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n28",
+      "b": "n29",
+      "m": 56,
+      "calle": "Avenida Fundición",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n29",
+      "b": "n30",
+      "m": 51,
+      "calle": "Avenida Fundición",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n30",
+      "b": "n31",
+      "m": 44,
+      "calle": "Avenida Fundición",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n31",
+      "b": "n32",
+      "m": 40,
+      "calle": "Avenida Fundición",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n33",
+      "b": "n34",
+      "m": 864,
+      "calle": "Calle Rafaél Arellano",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.890055,
+          -102.304793
+        ],
+        [
+          21.890465,
+          -102.305166
+        ],
+        [
+          21.890869,
+          -102.305539
+        ],
+        [
+          21.891287,
+          -102.305905
+        ],
+        [
+          21.891712,
+          -102.306292
+        ],
+        [
+          21.892121,
+          -102.306651
+        ],
+        [
+          21.892531,
+          -102.307012
+        ],
+        [
+          21.892961,
+          -102.307387
+        ],
+        [
+          21.893381,
+          -102.30776
+        ],
+        [
+          21.893777,
+          -102.308103
+        ],
+        [
+          21.893861,
+          -102.308172
+        ],
+        [
+          21.894232,
+          -102.308474
+        ],
+        [
+          21.894628,
+          -102.308831
+        ],
+        [
+          21.894689,
+          -102.308886
+        ],
+        [
+          21.895063,
+          -102.309222
+        ],
+        [
+          21.89545,
+          -102.309571
+        ]
+      ]
+    },
+    {
+      "a": "n35",
+      "b": "n31",
+      "m": 47,
+      "calle": "Calle La Luz",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.890014,
+          -102.30633
+        ],
+        [
+          21.889996,
+          -102.306234
+        ]
+      ]
+    },
+    {
+      "a": "n31",
+      "b": "n36",
+      "m": 27,
+      "calle": "Calle La Luz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n36",
+      "b": "n37",
+      "m": 136,
+      "calle": "Calle La Luz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n37",
+      "b": "n38",
+      "m": 97,
+      "calle": "Calle La Luz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n38",
+      "b": "n39",
+      "m": 148,
+      "calle": "Calle La Luz",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.889488,
+          -102.303319
+        ],
+        [
+          21.889495,
+          -102.303292
+        ],
+        [
+          21.889515,
+          -102.303277
+        ],
+        [
+          21.889666,
+          -102.303234
+        ],
+        [
+          21.889684,
+          -102.303218
+        ],
+        [
+          21.889689,
+          -102.303191
+        ]
+      ]
+    },
+    {
+      "a": "n39",
+      "b": "n40",
+      "m": 90,
+      "calle": "Calle La Luz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n40",
+      "b": "n41",
+      "m": 86,
+      "calle": "Calle La Luz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n41",
+      "b": "n42",
+      "m": 132,
+      "calle": "Calle La Luz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n43",
+      "b": "n38",
+      "m": 88,
+      "calle": "Río Papaloapan",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n44",
+      "b": "n36",
+      "m": 16,
+      "calle": "La Luz",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n45",
+      "b": "n46",
+      "m": 69,
+      "calle": "Privada de la Mora",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n46",
+      "b": "n47",
+      "m": 60,
+      "calle": "Privada de la Mora",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n7",
+      "b": "n48",
+      "m": 112,
+      "calle": "Privada Larreátegui",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.885804,
+          -102.302105
+        ]
+      ]
+    },
+    {
+      "a": "n49",
+      "b": "n5",
+      "m": 162,
+      "calle": "Calle Juventino Rosas",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n50",
+      "b": "n51",
+      "m": 91,
+      "calle": "Calle San Carlos",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n51",
+      "b": "n40",
+      "m": 91,
+      "calle": "Calle San Carlos",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n40",
+      "b": "n52",
+      "m": 308,
+      "calle": "Calle San Carlos",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.890233,
+          -102.301357
+        ],
+        [
+          21.891202,
+          -102.301194
+        ],
+        [
+          21.892074,
+          -102.301022
+        ]
+      ]
+    },
+    {
+      "a": "n55",
+      "b": "n56",
+      "m": 41,
+      "calle": "Plan de Ayutla",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.885867,
+          -102.301107
+        ]
+      ]
+    },
+    {
+      "a": "n56",
+      "b": "n57",
+      "m": 44,
+      "calle": "Plan de Ayutla",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n46",
+      "b": "n58",
+      "m": 41,
+      "calle": "Privada Segunda de la Mora",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n58",
+      "b": "n59",
+      "m": 19,
+      "calle": "Privada Segunda de la Mora",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n16",
+      "b": "n60",
+      "m": 107,
+      "calle": "Calle del Carmen",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.88882,
+          -102.303778
+        ],
+        [
+          21.888828,
+          -102.303938
+        ]
+      ]
+    },
+    {
+      "a": "n58",
+      "b": "n61",
+      "m": 28,
+      "calle": "Privada Tercera de la Mora",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n62",
+      "b": "n41",
+      "m": 232,
+      "calle": "Calle Plan de Ayutla",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.891267,
+          -102.300294
+        ],
+        [
+          21.89106,
+          -102.300325
+        ],
+        [
+          21.890103,
+          -102.300509
+        ]
+      ]
+    },
+    {
+      "a": "n41",
+      "b": "n63",
+      "m": 91,
+      "calle": "Calle Plan de Ayutla",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n63",
+      "b": "n64",
+      "m": 91,
+      "calle": "Calle Plan de Ayutla",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n64",
+      "b": "n65",
+      "m": 145,
+      "calle": "Calle Plan de Ayutla",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n65",
+      "b": "n55",
+      "m": 57,
+      "calle": "Calle Plan de Ayutla",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n55",
+      "b": "n9",
+      "m": 76,
+      "calle": "Calle Plan de Ayutla",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n10",
+      "b": "n66",
+      "m": 127,
+      "calle": "Calle Juan Diego",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n56",
+      "b": "n67",
+      "m": 61,
+      "calle": "Plan de Ayutla",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.885538,
+          -102.300879
+        ]
+      ]
+    },
+    {
+      "a": "n21",
+      "b": "n1",
+      "m": 126,
+      "calle": "Calle Profesor Francisco Antúnez Madrigal",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n12",
+      "b": "n68",
+      "m": 73,
+      "calle": "Calle Guadalupe",
+      "clase": "tertiary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.884117,
+          -102.301378
+        ],
+        [
+          21.884148,
+          -102.301445
+        ],
+        [
+          21.884175,
+          -102.301514
+        ],
+        [
+          21.884195,
+          -102.301588
+        ]
+      ]
+    },
+    {
+      "a": "n68",
+      "b": "n0",
+      "m": 66,
+      "calle": "Calle Guadalupe",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n0",
+      "b": "n24",
+      "m": 106,
+      "calle": "Calle Guadalupe",
+      "clase": "tertiary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.884412,
+          -102.303094
+        ]
+      ]
+    },
+    {
+      "a": "n24",
+      "b": "n22",
+      "m": 25,
+      "calle": "Calle Guadalupe",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n69",
+      "b": "n70",
+      "m": 400,
+      "calle": "Calle Larreátegui",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.885656,
+          -102.297438
+        ],
+        [
+          21.885839,
+          -102.298014
+        ],
+        [
+          21.88598,
+          -102.298481
+        ],
+        [
+          21.886173,
+          -102.299117
+        ],
+        [
+          21.886283,
+          -102.299535
+        ],
+        [
+          21.886352,
+          -102.299927
+        ]
+      ]
+    },
+    {
+      "a": "n70",
+      "b": "n65",
+      "m": 64,
+      "calle": "Calle Larreátegui",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n65",
+      "b": "n71",
+      "m": 48,
+      "calle": "Calle Larreátegui",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n71",
+      "b": "n48",
+      "m": 49,
+      "calle": "Calle Larreátegui",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n48",
+      "b": "n72",
+      "m": 15,
+      "calle": "Calle Larreátegui",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n72",
+      "b": "n73",
+      "m": 106,
+      "calle": "Calle Larreátegui",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n73",
+      "b": "n18",
+      "m": 143,
+      "calle": "Calle Larreátegui",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n18",
+      "b": "n19",
+      "m": 76,
+      "calle": "Calle Larreátegui",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.886403,
+          -102.305213
+        ],
+        [
+          21.886398,
+          -102.305264
+        ]
+      ]
+    },
+    {
+      "a": "n74",
+      "b": "n15",
+      "m": 22,
+      "calle": "Calle Alamán",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n15",
+      "b": "n19",
+      "m": 220,
+      "calle": "Calle Alamán",
+      "clase": "tertiary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.88644,
+          -102.305337
+        ]
+      ]
+    },
+    {
+      "a": "n15",
+      "b": "n75",
+      "m": 63,
+      "calle": "Calle Benjamín de la Mora",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n75",
+      "b": "n17",
+      "m": 51,
+      "calle": "Calle Benjamín de la Mora",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n17",
+      "b": "n45",
+      "m": 114,
+      "calle": "Calle Benjamín de la Mora",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n45",
+      "b": "n50",
+      "m": 92,
+      "calle": "Calle Benjamín de la Mora",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n50",
+      "b": "n64",
+      "m": 86,
+      "calle": "Calle Benjamín de la Mora",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n64",
+      "b": "n76",
+      "m": 285,
+      "calle": "Calle Benjamín de la Mora",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.887479,
+          -102.299729
+        ]
+      ]
+    },
+    {
+      "a": "n77",
+      "b": "n35",
+      "m": 364,
+      "calle": "Avenida Fundición",
+      "clase": "tertiary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.892144,
+          -102.308443
+        ],
+        [
+          21.891718,
+          -102.308064
+        ],
+        [
+          21.891323,
+          -102.30769
+        ],
+        [
+          21.890912,
+          -102.307313
+        ],
+        [
+          21.890789,
+          -102.3072
+        ],
+        [
+          21.890554,
+          -102.306982
+        ]
+      ]
+    },
+    {
+      "a": "n35",
+      "b": "n78",
+      "m": 85,
+      "calle": "Avenida Fundición",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n78",
+      "b": "n79",
+      "m": 50,
+      "calle": "Avenida Fundición",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n79",
+      "b": "n25",
+      "m": 21,
+      "calle": "Avenida Fundición",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n25",
+      "b": "n80",
+      "m": 36,
+      "calle": "Avenida Fundición",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n80",
+      "b": "n74",
+      "m": 63,
+      "calle": "Avenida Fundición",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n93",
+      "b": "n39",
+      "m": 198,
+      "calle": "Calle San Alberto",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.891047,
+          -102.302077
+        ],
+        [
+          21.890557,
+          -102.302163
+        ],
+        [
+          21.890362,
+          -102.302197
+        ]
+      ]
+    },
+    {
+      "a": "n39",
+      "b": "n94",
+      "m": 93,
+      "calle": "Calle San Alberto",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n94",
+      "b": "n45",
+      "m": 93,
+      "calle": "Calle San Alberto",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n16",
+      "b": "n38",
+      "m": 77,
+      "calle": "Calle Santo Tomás",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n95",
+      "b": "n63",
+      "m": 129,
+      "calle": "Calle del Carmen",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n63",
+      "b": "n51",
+      "m": 87,
+      "calle": "Calle del Carmen",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n51",
+      "b": "n94",
+      "m": 89,
+      "calle": "Calle del Carmen",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n94",
+      "b": "n16",
+      "m": 123,
+      "calle": "Calle del Carmen",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.888882,
+          -102.303355
+        ],
+        [
+          21.888879,
+          -102.303526
+        ]
+      ]
+    },
+    {
+      "a": "n19",
+      "b": "n3",
+      "m": 26,
+      "calle": "Calle Alamán",
+      "clase": "tertiary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.886318,
+          -102.305373
+        ]
+      ]
+    },
+    {
+      "a": "n3",
+      "b": "n96",
+      "m": 161,
+      "calle": "Calle Alamán",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n73",
+      "b": "n6",
+      "m": 84,
+      "calle": "Privada Arellano",
+      "clase": "pedestrian",
+      "peligro_base": 0
+    },
+    {
+      "a": "n71",
+      "b": "n97",
+      "m": 113,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.886473,
+          -102.301589
+        ],
+        [
+          21.887114,
+          -102.301589
+        ]
+      ]
+    },
+    {
+      "a": "n22",
+      "b": "n49",
+      "m": 71,
+      "calle": "Calle Guadalupe",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n49",
+      "b": "n96",
+      "m": 105,
+      "calle": "Calle Guadalupe",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n96",
+      "b": "n98",
+      "m": 2,
+      "calle": "Calle Guadalupe",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n98",
+      "b": "n99",
+      "m": 345,
+      "calle": "Calle Guadalupe",
+      "clase": "tertiary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.8849,
+          -102.307284
+        ],
+        [
+          21.885003,
+          -102.308139
+        ],
+        [
+          21.88506,
+          -102.308612
+        ]
+      ]
+    },
+    {
+      "a": "n100",
+      "b": "n66",
+      "m": 176,
+      "calle": "Calle Guadalupe",
+      "clase": "tertiary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.883504,
+          -102.29963
+        ],
+        [
+          21.883586,
+          -102.299865
+        ],
+        [
+          21.883796,
+          -102.300462
+        ]
+      ]
+    },
+    {
+      "a": "n66",
+      "b": "n12",
+      "m": 54,
+      "calle": "Calle Guadalupe",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n101",
+      "b": "n19",
+      "m": 222,
+      "calle": "Calle Larreátegui",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.886164,
+          -102.307332
+        ],
+        [
+          21.886254,
+          -102.306474
+        ],
+        [
+          21.886347,
+          -102.305749
+        ],
+        [
+          21.886374,
+          -102.305455
+        ]
+      ]
+    },
+    {
+      "a": "n78",
+      "b": "n30",
+      "m": 26,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n80",
+      "b": "n28",
+      "m": 26,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0
+    },
+    {
+      "a": "n79",
+      "b": "n29",
+      "m": 31,
+      "calle": "footway",
+      "clase": "footway",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.88923,
+          -102.305527
+        ],
+        [
+          21.889245,
+          -102.30548
+        ],
+        [
+          21.889269,
+          -102.305451
+        ],
+        [
+          21.889304,
+          -102.305435
+        ]
+      ]
+    },
+    {
+      "a": "n104",
+      "b": "n18",
+      "m": 56,
+      "calle": "residential",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.88644,
+          -102.304624
+        ]
+      ]
+    },
+    {
+      "a": "n75",
+      "b": "n105",
+      "m": 97,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.888137,
+          -102.304206
+        ]
+      ]
+    },
+    {
+      "a": "n70",
+      "b": "n106",
+      "m": 76,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n72",
+      "b": "n107",
+      "m": 58,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.886454,
+          -102.302211
+        ]
+      ]
+    },
+    {
+      "a": "n108",
+      "b": "n98",
+      "m": 80,
+      "calle": "Privada Guadalupe",
+      "clase": "service",
+      "peligro_base": 0
+    },
+    {
+      "a": "n109",
+      "b": "n20",
+      "m": 58,
+      "calle": "Calle Reforma",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n110",
+      "b": "n33",
+      "m": 28,
+      "calle": "Calle Alamán",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n33",
+      "b": "n37",
+      "m": 7,
+      "calle": "Calle Alamán",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n37",
+      "b": "n60",
+      "m": 86,
+      "calle": "Calle Alamán",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n60",
+      "b": "n27",
+      "m": 22,
+      "calle": "Calle Alamán",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n27",
+      "b": "n74",
+      "m": 31,
+      "calle": "Calle Alamán",
+      "clase": "tertiary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n68",
+      "b": "n8",
+      "m": 121,
+      "calle": "Peatonal Jardín de Guadalupe Oriente",
+      "clase": "pedestrian",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.884359,
+          -102.301907
+        ]
+      ]
+    }
+  ]
+}

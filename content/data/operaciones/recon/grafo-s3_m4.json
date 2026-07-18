@@ -1,0 +1,1227 @@
+{
+  "_meta": {
+    "sector": "NORTE PONIENTE 3m4",
+    "distrito": "NORTE PONIENTE",
+    "celda": "S_3_-4",
+    "fuente": "OpenStreetMap vía Overpass API",
+    "consulta": "way[\"highway\"](21.896,-102.3242,21.902,-102.3182);(._;>;);out body;",
+    "bbox_SWNE": [
+      21.896,
+      -102.3242,
+      21.902,
+      -102.3182
+    ],
+    "horneado": "2026-07-18",
+    "nota": "Grafo curado (§1.6): grado-2 colapsado y podado a la componente conexa mayor. `pts` es geometría de dibujo, no interviene en el ruteo (la distancia va en `m`). El peligro es DINÁMICO (hora×criatura), lo deriva peligro.js de ecologia-peligro.json (§1.5); peligro_base=0."
+  },
+  "nodos": [
+    {
+      "id": "n17",
+      "lat": 21.897812,
+      "lng": -102.318937
+    },
+    {
+      "id": "n18",
+      "lat": 21.898286,
+      "lng": -102.318895
+    },
+    {
+      "id": "n19",
+      "lat": 21.898699,
+      "lng": -102.323388
+    },
+    {
+      "id": "n20",
+      "lat": 21.898161,
+      "lng": -102.323379
+    },
+    {
+      "id": "n21",
+      "lat": 21.8977,
+      "lng": -102.323371
+    },
+    {
+      "id": "n22",
+      "lat": 21.897214,
+      "lng": -102.323363
+    },
+    {
+      "id": "n23",
+      "lat": 21.896776,
+      "lng": -102.323355
+    },
+    {
+      "id": "n24",
+      "lat": 21.896289,
+      "lng": -102.323347
+    },
+    {
+      "id": "n25",
+      "lat": 21.893918,
+      "lng": -102.323306
+    },
+    {
+      "id": "n26",
+      "lat": 21.89844,
+      "lng": -102.31927
+    },
+    {
+      "id": "n27",
+      "lat": 21.899014,
+      "lng": -102.318261
+    },
+    {
+      "id": "n28",
+      "lat": 21.897714,
+      "lng": -102.321331
+    },
+    {
+      "id": "n29",
+      "lat": 21.897789,
+      "lng": -102.319262
+    },
+    {
+      "id": "n30",
+      "lat": 21.8968,
+      "lng": -102.321316
+    },
+    {
+      "id": "n31",
+      "lat": 21.896823,
+      "lng": -102.319257
+    },
+    {
+      "id": "n32",
+      "lat": 21.896856,
+      "lng": -102.31718
+    },
+    {
+      "id": "n33",
+      "lat": 21.89864,
+      "lng": -102.31799
+    },
+    {
+      "id": "n34",
+      "lat": 21.898484,
+      "lng": -102.318556
+    },
+    {
+      "id": "n35",
+      "lat": 21.892544,
+      "lng": -102.321247
+    },
+    {
+      "id": "n36",
+      "lat": 21.89632,
+      "lng": -102.321308
+    },
+    {
+      "id": "n37",
+      "lat": 21.898817,
+      "lng": -102.320227
+    },
+    {
+      "id": "n38",
+      "lat": 21.898328,
+      "lng": -102.320318
+    },
+    {
+      "id": "n39",
+      "lat": 21.898227,
+      "lng": -102.320399
+    },
+    {
+      "id": "n41",
+      "lat": 21.896258,
+      "lng": -102.325145
+    },
+    {
+      "id": "n42",
+      "lat": 21.897209,
+      "lng": -102.324792
+    },
+    {
+      "id": "n43",
+      "lat": 21.898434,
+      "lng": -102.320624
+    },
+    {
+      "id": "n44",
+      "lat": 21.89932,
+      "lng": -102.320486
+    },
+    {
+      "id": "n45",
+      "lat": 21.898152,
+      "lng": -102.324276
+    },
+    {
+      "id": "n46",
+      "lat": 21.89816,
+      "lng": -102.323887
+    },
+    {
+      "id": "n47",
+      "lat": 21.897678,
+      "lng": -102.324581
+    },
+    {
+      "id": "n48",
+      "lat": 21.896381,
+      "lng": -102.317173
+    },
+    {
+      "id": "n49",
+      "lat": 21.896351,
+      "lng": -102.319248
+    },
+    {
+      "id": "n50",
+      "lat": 21.896735,
+      "lng": -102.324991
+    },
+    {
+      "id": "n51",
+      "lat": 21.897331,
+      "lng": -102.317187
+    },
+    {
+      "id": "n52",
+      "lat": 21.897289,
+      "lng": -102.319266
+    },
+    {
+      "id": "n53",
+      "lat": 21.89725,
+      "lng": -102.321323
+    },
+    {
+      "id": "n54",
+      "lat": 21.898201,
+      "lng": -102.321335
+    },
+    {
+      "id": "n55",
+      "lat": 21.898691,
+      "lng": -102.323482
+    },
+    {
+      "id": "n56",
+      "lat": 21.898919,
+      "lng": -102.323952
+    },
+    {
+      "id": "n57",
+      "lat": 21.898556,
+      "lng": -102.323899
+    },
+    {
+      "id": "n58",
+      "lat": 21.898254,
+      "lng": -102.317452
+    },
+    {
+      "id": "n59",
+      "lat": 21.898576,
+      "lng": -102.317181
+    },
+    {
+      "id": "n60",
+      "lat": 21.898257,
+      "lng": -102.317717
+    },
+    {
+      "id": "n61",
+      "lat": 21.897899,
+      "lng": -102.319219
+    },
+    {
+      "id": "n62",
+      "lat": 21.898177,
+      "lng": -102.31993
+    },
+    {
+      "id": "n63",
+      "lat": 21.89127,
+      "lng": -102.319154
+    },
+    {
+      "id": "n64",
+      "lat": 21.898521,
+      "lng": -102.321334
+    },
+    {
+      "id": "n65",
+      "lat": 21.89864,
+      "lng": -102.321333
+    },
+    {
+      "id": "n66",
+      "lat": 21.898726,
+      "lng": -102.322181
+    },
+    {
+      "id": "n67",
+      "lat": 21.899031,
+      "lng": -102.322129
+    },
+    {
+      "id": "n68",
+      "lat": 21.899036,
+      "lng": -102.323721
+    },
+    {
+      "id": "n69",
+      "lat": 21.898729,
+      "lng": -102.324035
+    },
+    {
+      "id": "n70",
+      "lat": 21.898682,
+      "lng": -102.322894
+    },
+    {
+      "id": "n71",
+      "lat": 21.898553,
+      "lng": -102.321514
+    },
+    {
+      "id": "n72",
+      "lat": 21.89937,
+      "lng": -102.324623
+    },
+    {
+      "id": "n74",
+      "lat": 21.899051,
+      "lng": -102.320217
+    },
+    {
+      "id": "n75",
+      "lat": 21.899626,
+      "lng": -102.324499
+    },
+    {
+      "id": "n76",
+      "lat": 21.899552,
+      "lng": -102.324225
+    }
+  ],
+  "aristas": [
+    {
+      "a": "n17",
+      "b": "n18",
+      "m": 53,
+      "calle": "Calle Ecología",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.898251,
+          -102.318889
+        ]
+      ]
+    },
+    {
+      "a": "n19",
+      "b": "n20",
+      "m": 60,
+      "calle": "Calle Río Lerma",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n20",
+      "b": "n21",
+      "m": 51,
+      "calle": "Calle Río Lerma",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n21",
+      "b": "n22",
+      "m": 54,
+      "calle": "Calle Río Lerma",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n22",
+      "b": "n23",
+      "m": 49,
+      "calle": "Calle Río Lerma",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n23",
+      "b": "n24",
+      "m": 54,
+      "calle": "Calle Río Lerma",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n24",
+      "b": "n25",
+      "m": 264,
+      "calle": "Calle Río Lerma",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.895809,
+          -102.323338
+        ],
+        [
+          21.895343,
+          -102.32333
+        ],
+        [
+          21.894862,
+          -102.323322
+        ],
+        [
+          21.894391,
+          -102.323314
+        ]
+      ]
+    },
+    {
+      "a": "n26",
+      "b": "n27",
+      "m": 124,
+      "calle": "Calle Fauna",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.898571,
+          -102.319172
+        ],
+        [
+          21.89901,
+          -102.318295
+        ]
+      ]
+    },
+    {
+      "a": "n21",
+      "b": "n28",
+      "m": 210,
+      "calle": "Calle Río Arno",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n28",
+      "b": "n29",
+      "m": 214,
+      "calle": "Calle Río Arno",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n23",
+      "b": "n30",
+      "m": 210,
+      "calle": "Calle Mar Caribe",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n30",
+      "b": "n31",
+      "m": 212,
+      "calle": "Calle Mar Caribe",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n31",
+      "b": "n32",
+      "m": 214,
+      "calle": "Calle Mar Caribe",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n33",
+      "b": "n34",
+      "m": 62,
+      "calle": "Calle Flora",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.898488,
+          -102.318371
+        ]
+      ]
+    },
+    {
+      "a": "n35",
+      "b": "n36",
+      "m": 420,
+      "calle": "Calle Río Colorado",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.893028,
+          -102.321255
+        ],
+        [
+          21.893475,
+          -102.321262
+        ],
+        [
+          21.893943,
+          -102.321269
+        ],
+        [
+          21.894421,
+          -102.321277
+        ],
+        [
+          21.894893,
+          -102.321285
+        ],
+        [
+          21.895366,
+          -102.321293
+        ],
+        [
+          21.895898,
+          -102.321301
+        ]
+      ]
+    },
+    {
+      "a": "n37",
+      "b": "n38",
+      "m": 55,
+      "calle": "Calle Ambiente",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n38",
+      "b": "n39",
+      "m": 14,
+      "calle": "Calle Ambiente",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n41",
+      "b": "n24",
+      "m": 186,
+      "calle": "Calle Río Támesis",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n42",
+      "b": "n22",
+      "m": 147,
+      "calle": "Calle Río Nilo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n43",
+      "b": "n44",
+      "m": 100,
+      "calle": "Calle Balconero",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n18",
+      "b": "n26",
+      "m": 42,
+      "calle": "Calle Paraíso",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.898309,
+          -102.318923
+        ]
+      ]
+    },
+    {
+      "a": "n26",
+      "b": "n37",
+      "m": 107,
+      "calle": "Calle Paraíso",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n45",
+      "b": "n46",
+      "m": 40,
+      "calle": "Calle Río Tigris",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n46",
+      "b": "n20",
+      "m": 52,
+      "calle": "Calle Río Tigris",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n21",
+      "b": "n47",
+      "m": 125,
+      "calle": "Calle Río Arno",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n48",
+      "b": "n49",
+      "m": 214,
+      "calle": "Calle Río Támesis",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n49",
+      "b": "n36",
+      "m": 213,
+      "calle": "Calle Río Támesis",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n36",
+      "b": "n24",
+      "m": 210,
+      "calle": "Calle Río Támesis",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n23",
+      "b": "n50",
+      "m": 169,
+      "calle": "Calle Mar Caribe",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n51",
+      "b": "n52",
+      "m": 214,
+      "calle": "Calle Río Nilo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n52",
+      "b": "n53",
+      "m": 212,
+      "calle": "Calle Río Nilo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n53",
+      "b": "n22",
+      "m": 210,
+      "calle": "Calle Río Nilo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n39",
+      "b": "n54",
+      "m": 97,
+      "calle": "Calle Río Tigris",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n54",
+      "b": "n20",
+      "m": 211,
+      "calle": "Calle Río Tigris",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n55",
+      "b": "n56",
+      "m": 56,
+      "calle": "Antiguo puente a San Ignacio",
+      "clase": "footway",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.898738,
+          -102.32368
+        ],
+        [
+          21.898841,
+          -102.323863
+        ],
+        [
+          21.898898,
+          -102.323931
+        ]
+      ]
+    },
+    {
+      "a": "n57",
+      "b": "n46",
+      "m": 44,
+      "calle": "Privada Río Tigris",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n29",
+      "b": "n58",
+      "m": 206,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.897727,
+          -102.319082
+        ],
+        [
+          21.897692,
+          -102.318945
+        ],
+        [
+          21.89768,
+          -102.318787
+        ],
+        [
+          21.897675,
+          -102.318669
+        ],
+        [
+          21.897697,
+          -102.318527
+        ],
+        [
+          21.897747,
+          -102.318355
+        ],
+        [
+          21.897807,
+          -102.318191
+        ],
+        [
+          21.897947,
+          -102.317949
+        ],
+        [
+          21.898141,
+          -102.317635
+        ]
+      ]
+    },
+    {
+      "a": "n59",
+      "b": "n60",
+      "m": 66,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n60",
+      "b": "n17",
+      "m": 139,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.898056,
+          -102.318036
+        ],
+        [
+          21.897961,
+          -102.318208
+        ],
+        [
+          21.897871,
+          -102.318385
+        ],
+        [
+          21.897821,
+          -102.318564
+        ],
+        [
+          21.897797,
+          -102.318731
+        ],
+        [
+          21.897804,
+          -102.318883
+        ]
+      ]
+    },
+    {
+      "a": "n17",
+      "b": "n61",
+      "m": 31,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.897854,
+          -102.319087
+        ]
+      ]
+    },
+    {
+      "a": "n61",
+      "b": "n62",
+      "m": 80,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n49",
+      "b": "n63",
+      "m": 565,
+      "calle": "Calle Río Bravo",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.895908,
+          -102.31924
+        ],
+        [
+          21.895399,
+          -102.319231
+        ],
+        [
+          21.894924,
+          -102.319222
+        ],
+        [
+          21.894452,
+          -102.319213
+        ],
+        [
+          21.893969,
+          -102.319204
+        ],
+        [
+          21.893503,
+          -102.319195
+        ],
+        [
+          21.89305,
+          -102.319187
+        ],
+        [
+          21.892554,
+          -102.319178
+        ],
+        [
+          21.892105,
+          -102.319169
+        ],
+        [
+          21.891638,
+          -102.319161
+        ]
+      ]
+    },
+    {
+      "a": "n36",
+      "b": "n30",
+      "m": 53,
+      "calle": "Calle Río Colorado",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n30",
+      "b": "n53",
+      "m": 50,
+      "calle": "Calle Río Colorado",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n53",
+      "b": "n28",
+      "m": 52,
+      "calle": "Calle Río Colorado",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n28",
+      "b": "n54",
+      "m": 54,
+      "calle": "Calle Río Colorado",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n54",
+      "b": "n64",
+      "m": 36,
+      "calle": "Calle Río Colorado",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n64",
+      "b": "n65",
+      "m": 13,
+      "calle": "Calle Río Colorado",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n29",
+      "b": "n52",
+      "m": 56,
+      "calle": "Calle Río Bravo",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.897714,
+          -102.319274
+        ]
+      ]
+    },
+    {
+      "a": "n52",
+      "b": "n31",
+      "m": 52,
+      "calle": "Calle Río Bravo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n31",
+      "b": "n49",
+      "m": 52,
+      "calle": "Calle Río Bravo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n66",
+      "b": "n67",
+      "m": 34,
+      "calle": "service",
+      "clase": "service",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.89878,
+          -102.322172
+        ]
+      ]
+    },
+    {
+      "a": "n62",
+      "b": "n38",
+      "m": 43,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n38",
+      "b": "n43",
+      "m": 34,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n43",
+      "b": "n65",
+      "m": 77,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.89849,
+          -102.320844
+        ],
+        [
+          21.898532,
+          -102.320996
+        ],
+        [
+          21.898584,
+          -102.321153
+        ]
+      ]
+    },
+    {
+      "a": "n65",
+      "b": "n66",
+      "m": 88,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.898664,
+          -102.321612
+        ]
+      ]
+    },
+    {
+      "a": "n66",
+      "b": "n68",
+      "m": 165,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.8988,
+          -102.322866
+        ],
+        [
+          21.898852,
+          -102.323323
+        ],
+        [
+          21.898892,
+          -102.323451
+        ],
+        [
+          21.898953,
+          -102.323574
+        ]
+      ]
+    },
+    {
+      "a": "n69",
+      "b": "n55",
+      "m": 59,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.898678,
+          -102.323898
+        ],
+        [
+          21.898658,
+          -102.323771
+        ],
+        [
+          21.898669,
+          -102.3236
+        ]
+      ]
+    },
+    {
+      "a": "n55",
+      "b": "n19",
+      "m": 10,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n19",
+      "b": "n70",
+      "m": 51,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n70",
+      "b": "n71",
+      "m": 143,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.898612,
+          -102.322211
+        ]
+      ]
+    },
+    {
+      "a": "n72",
+      "b": "n69",
+      "m": 97,
+      "calle": "secondary",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.899163,
+          -102.324528
+        ],
+        [
+          21.899101,
+          -102.324493
+        ],
+        [
+          21.89904,
+          -102.324454
+        ],
+        [
+          21.898976,
+          -102.324407
+        ],
+        [
+          21.898916,
+          -102.324355
+        ],
+        [
+          21.898874,
+          -102.324305
+        ],
+        [
+          21.898836,
+          -102.324252
+        ],
+        [
+          21.898801,
+          -102.324196
+        ],
+        [
+          21.898762,
+          -102.324117
+        ]
+      ]
+    },
+    {
+      "a": "n71",
+      "b": "n64",
+      "m": 19,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0
+    },
+    {
+      "a": "n64",
+      "b": "n39",
+      "m": 102,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.898462,
+          -102.32113
+        ],
+        [
+          21.898441,
+          -102.321073
+        ]
+      ]
+    },
+    {
+      "a": "n39",
+      "b": "n29",
+      "m": 127,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.898045,
+          -102.319908
+        ]
+      ]
+    },
+    {
+      "a": "n27",
+      "b": "n33",
+      "m": 50,
+      "calle": "Calle Edén",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.898997,
+          -102.318235
+        ]
+      ]
+    },
+    {
+      "a": "n33",
+      "b": "n60",
+      "m": 51,
+      "calle": "Calle Edén",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n61",
+      "b": "n29",
+      "m": 13,
+      "calle": "Calle Río Bravo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n74",
+      "b": "n37",
+      "m": 26,
+      "calle": "Calle Ambiente",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n56",
+      "b": "n75",
+      "m": 97,
+      "calle": "Antiguo puente a San Ignacio",
+      "clase": "footway",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.899086,
+          -102.324082
+        ],
+        [
+          21.899546,
+          -102.324436
+        ]
+      ]
+    },
+    {
+      "a": "n68",
+      "b": "n76",
+      "m": 77,
+      "calle": "Calle Antiguo Camino a San Ignacio",
+      "clase": "secondary",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.899113,
+          -102.323806
+        ]
+      ]
+    }
+  ]
+}

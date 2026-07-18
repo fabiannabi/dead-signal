@@ -1,0 +1,811 @@
+{
+  "_meta": {
+    "sector": "PONIENTE 0m4",
+    "distrito": "PONIENTE",
+    "celda": "S_0_-4",
+    "fuente": "OpenStreetMap vía Overpass API",
+    "consulta": "way[\"highway\"](21.878,-102.3242,21.884,-102.3182);(._;>;);out body;",
+    "bbox_SWNE": [
+      21.878,
+      -102.3242,
+      21.884,
+      -102.3182
+    ],
+    "horneado": "2026-07-18",
+    "nota": "Grafo curado (§1.6): grado-2 colapsado y podado a la componente conexa mayor. `pts` es geometría de dibujo, no interviene en el ruteo (la distancia va en `m`). El peligro es DINÁMICO (hora×criatura), lo deriva peligro.js de ecologia-peligro.json (§1.5); peligro_base=0."
+  },
+  "nodos": [
+    {
+      "id": "n16",
+      "lat": 21.882472,
+      "lng": -102.318074
+    },
+    {
+      "id": "n17",
+      "lat": 21.882465,
+      "lng": -102.31845
+    },
+    {
+      "id": "n18",
+      "lat": 21.882503,
+      "lng": -102.319539
+    },
+    {
+      "id": "n19",
+      "lat": 21.882537,
+      "lng": -102.321001
+    },
+    {
+      "id": "n20",
+      "lat": 21.881484,
+      "lng": -102.321018
+    },
+    {
+      "id": "n21",
+      "lat": 21.881972,
+      "lng": -102.321008
+    },
+    {
+      "id": "n22",
+      "lat": 21.882452,
+      "lng": -102.321003
+    },
+    {
+      "id": "n23",
+      "lat": 21.883014,
+      "lng": -102.320983
+    },
+    {
+      "id": "n24",
+      "lat": 21.8835,
+      "lng": -102.320972
+    },
+    {
+      "id": "n25",
+      "lat": 21.883982,
+      "lng": -102.320958
+    },
+    {
+      "id": "n26",
+      "lat": 21.88545,
+      "lng": -102.320921
+    },
+    {
+      "id": "n27",
+      "lat": 21.883462,
+      "lng": -102.319
+    },
+    {
+      "id": "n28",
+      "lat": 21.883867,
+      "lng": -102.318989
+    },
+    {
+      "id": "n31",
+      "lat": 21.885453,
+      "lng": -102.321017
+    },
+    {
+      "id": "n32",
+      "lat": 21.883985,
+      "lng": -102.321047
+    },
+    {
+      "id": "n33",
+      "lat": 21.883505,
+      "lng": -102.32106
+    },
+    {
+      "id": "n34",
+      "lat": 21.883017,
+      "lng": -102.321082
+    },
+    {
+      "id": "n35",
+      "lat": 21.882538,
+      "lng": -102.321095
+    },
+    {
+      "id": "n36",
+      "lat": 21.882454,
+      "lng": -102.321095
+    },
+    {
+      "id": "n37",
+      "lat": 21.881974,
+      "lng": -102.321098
+    },
+    {
+      "id": "n38",
+      "lat": 21.881486,
+      "lng": -102.321116
+    },
+    {
+      "id": "n41",
+      "lat": 21.883035,
+      "lng": -102.321927
+    },
+    {
+      "id": "n42",
+      "lat": 21.881431,
+      "lng": -102.319022
+    },
+    {
+      "id": "n43",
+      "lat": 21.880861,
+      "lng": -102.319073
+    },
+    {
+      "id": "n45",
+      "lat": 21.881449,
+      "lng": -102.319571
+    },
+    {
+      "id": "n46",
+      "lat": 21.881945,
+      "lng": -102.319556
+    },
+    {
+      "id": "n47",
+      "lat": 21.882426,
+      "lng": -102.319542
+    },
+    {
+      "id": "n48",
+      "lat": 21.882981,
+      "lng": -102.319532
+    },
+    {
+      "id": "n49",
+      "lat": 21.883477,
+      "lng": -102.319523
+    },
+    {
+      "id": "n50",
+      "lat": 21.883969,
+      "lng": -102.319515
+    },
+    {
+      "id": "n51",
+      "lat": 21.884453,
+      "lng": -102.319509
+    },
+    {
+      "id": "n56",
+      "lat": 21.881923,
+      "lng": -102.318461
+    },
+    {
+      "id": "n57",
+      "lat": 21.881423,
+      "lng": -102.318465
+    },
+    {
+      "id": "n58",
+      "lat": 21.881423,
+      "lng": -102.31841
+    },
+    {
+      "id": "n59",
+      "lat": 21.883393,
+      "lng": -102.318464
+    },
+    {
+      "id": "n60",
+      "lat": 21.883517,
+      "lng": -102.321704
+    },
+    {
+      "id": "n68",
+      "lat": 21.882973,
+      "lng": -102.318439
+    },
+    {
+      "id": "n69",
+      "lat": 21.881416,
+      "lng": -102.318046
+    },
+    {
+      "id": "n78",
+      "lat": 21.881523,
+      "lng": -102.322463
+    },
+    {
+      "id": "n79",
+      "lat": 21.882397,
+      "lng": -102.318451
+    },
+    {
+      "id": "n80",
+      "lat": 21.882357,
+      "lng": -102.318074
+    },
+    {
+      "id": "n81",
+      "lat": 21.882521,
+      "lng": -102.322114
+    },
+    {
+      "id": "n82",
+      "lat": 21.884005,
+      "lng": -102.321623
+    },
+    {
+      "id": "n83",
+      "lat": 21.881994,
+      "lng": -102.322326
+    }
+  ],
+  "aristas": [
+    {
+      "a": "n16",
+      "b": "n17",
+      "m": 39,
+      "calle": "Calle Valle de Santiago",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.882459,
+          -102.318137
+        ],
+        [
+          21.882461,
+          -102.318225
+        ]
+      ]
+    },
+    {
+      "a": "n17",
+      "b": "n18",
+      "m": 112,
+      "calle": "Calle Valle de Santiago",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n18",
+      "b": "n19",
+      "m": 151,
+      "calle": "Calle Valle de Santiago",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n20",
+      "b": "n21",
+      "m": 54,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n21",
+      "b": "n22",
+      "m": 53,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n22",
+      "b": "n19",
+      "m": 9,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n19",
+      "b": "n23",
+      "m": 53,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n23",
+      "b": "n24",
+      "m": 54,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n24",
+      "b": "n25",
+      "m": 54,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n25",
+      "b": "n26",
+      "m": 163,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.884478,
+          -102.320949
+        ],
+        [
+          21.884963,
+          -102.320934
+        ]
+      ]
+    },
+    {
+      "a": "n27",
+      "b": "n28",
+      "m": 45,
+      "calle": "Calle Valle del Mezquite",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n31",
+      "b": "n32",
+      "m": 163,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.884965,
+          -102.321028
+        ],
+        [
+          21.88448,
+          -102.321035
+        ]
+      ]
+    },
+    {
+      "a": "n32",
+      "b": "n33",
+      "m": 53,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n33",
+      "b": "n34",
+      "m": 54,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n34",
+      "b": "n35",
+      "m": 53,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n35",
+      "b": "n36",
+      "m": 9,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n36",
+      "b": "n37",
+      "m": 53,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n37",
+      "b": "n38",
+      "m": 54,
+      "calle": "Calle Valle",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n41",
+      "b": "n34",
+      "m": 87,
+      "calle": "Privada Valle de Bravo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n42",
+      "b": "n43",
+      "m": 64,
+      "calle": "Valle Nacional",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.880951,
+          -102.319043
+        ]
+      ]
+    },
+    {
+      "a": "n45",
+      "b": "n46",
+      "m": 55,
+      "calle": "Calle Valle del Oro",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n46",
+      "b": "n47",
+      "m": 54,
+      "calle": "Calle Valle del Oro",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n47",
+      "b": "n18",
+      "m": 9,
+      "calle": "Calle Valle del Oro",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n18",
+      "b": "n48",
+      "m": 53,
+      "calle": "Calle Valle del Oro",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n48",
+      "b": "n49",
+      "m": 55,
+      "calle": "Calle Valle del Oro",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n49",
+      "b": "n50",
+      "m": 55,
+      "calle": "Calle Valle del Oro",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n50",
+      "b": "n51",
+      "m": 54,
+      "calle": "Calle Valle del Oro",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n25",
+      "b": "n32",
+      "m": 9,
+      "calle": "Calle Barranca del Cobre",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n56",
+      "b": "n46",
+      "m": 113,
+      "calle": "Calle Valle de San José",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n46",
+      "b": "n21",
+      "m": 150,
+      "calle": "Calle Valle de San José",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n20",
+      "b": "n45",
+      "m": 149,
+      "calle": "Calle Valle Nacional",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n45",
+      "b": "n42",
+      "m": 57,
+      "calle": "Calle Valle Nacional",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n42",
+      "b": "n57",
+      "m": 57,
+      "calle": "Calle Valle Nacional",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n57",
+      "b": "n58",
+      "m": 6,
+      "calle": "Calle Valle Nacional",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n59",
+      "b": "n27",
+      "m": 56,
+      "calle": "Privada Valle del Mezquital",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.883428,
+          -102.318587
+        ],
+        [
+          21.883447,
+          -102.318751
+        ]
+      ]
+    },
+    {
+      "a": "n27",
+      "b": "n49",
+      "m": 54,
+      "calle": "Privada Valle del Mezquital",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n49",
+      "b": "n24",
+      "m": 150,
+      "calle": "Privada Valle del Mezquital",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n24",
+      "b": "n33",
+      "m": 9,
+      "calle": "Privada Valle del Mezquital",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n33",
+      "b": "n60",
+      "m": 66,
+      "calle": "Privada Valle del Mezquital",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n23",
+      "b": "n48",
+      "m": 150,
+      "calle": "Calle Valle de Bravo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n48",
+      "b": "n68",
+      "m": 113,
+      "calle": "Calle Valle de Bravo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n58",
+      "b": "n69",
+      "m": 38,
+      "calle": "Calle Valle Nacional",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n57",
+      "b": "n56",
+      "m": 56,
+      "calle": "Valle Nacional",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n25",
+      "b": "n50",
+      "m": 149,
+      "calle": "Calle Barranca del Cobre",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n78",
+      "b": "n38",
+      "m": 139,
+      "calle": "Privada Valle Nacional",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n56",
+      "b": "n79",
+      "m": 53,
+      "calle": "Valle del Mezquital",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n79",
+      "b": "n17",
+      "m": 8,
+      "calle": "Valle del Mezquital",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n17",
+      "b": "n68",
+      "m": 56,
+      "calle": "Valle del Mezquital",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n68",
+      "b": "n59",
+      "m": 48,
+      "calle": "Valle del Mezquital",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.883341,
+          -102.318431
+        ]
+      ]
+    },
+    {
+      "a": "n22",
+      "b": "n47",
+      "m": 151,
+      "calle": "Calle Valle de Santiago",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n47",
+      "b": "n79",
+      "m": 113,
+      "calle": "Calle Valle de Santiago",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n79",
+      "b": "n80",
+      "m": 39,
+      "calle": "Calle Valle de Santiago",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.882387,
+          -102.318223
+        ],
+        [
+          21.882375,
+          -102.318129
+        ]
+      ]
+    },
+    {
+      "a": "n35",
+      "b": "n81",
+      "m": 108,
+      "calle": "Privada Valle de Santiago",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.882559,
+          -102.322085
+        ],
+        [
+          21.882551,
+          -102.322103
+        ]
+      ]
+    },
+    {
+      "a": "n81",
+      "b": "n36",
+      "m": 108,
+      "calle": "Privada Valle de Santiago",
+      "clase": "residential",
+      "peligro_base": 0,
+      "pts": [
+        [
+          21.882495,
+          -102.322104
+        ],
+        [
+          21.882487,
+          -102.322087
+        ]
+      ]
+    },
+    {
+      "a": "n34",
+      "b": "n23",
+      "m": 10,
+      "calle": "Calle Valle de Bravo",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n32",
+      "b": "n82",
+      "m": 60,
+      "calle": "Privada Barranca del Cobre",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n37",
+      "b": "n83",
+      "m": 127,
+      "calle": "Privada Valle de San José",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n19",
+      "b": "n35",
+      "m": 10,
+      "calle": "Calle Valle de Santiago",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n36",
+      "b": "n22",
+      "m": 9,
+      "calle": "Calle Valle de Santiago",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n21",
+      "b": "n37",
+      "m": 9,
+      "calle": "Calle Valle de San José",
+      "clase": "residential",
+      "peligro_base": 0
+    },
+    {
+      "a": "n38",
+      "b": "n20",
+      "m": 10,
+      "calle": "Calle Valle Nacional",
+      "clase": "residential",
+      "peligro_base": 0
+    }
+  ]
+}
