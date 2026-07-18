@@ -109,14 +109,14 @@
   background: var(--tint, var(--text3)); opacity: .35; transition: opacity .12s, box-shadow .12s;
 }
 .lab-canal-nom { font-size: 12px; letter-spacing: 1px; color: var(--tint, var(--text2)); }
-.lab-canal-det { font-size: 10px; color: var(--text3); line-height: 1.45; grid-column: 2 / -1; }
-.lab-canal-freq { font-size: 10px; color: var(--text3); }
+.lab-canal-det { font-size: 13px; color: var(--text3); line-height: 1.45; grid-column: 2 / -1; }
+.lab-canal-freq { font-size: 13px; color: var(--text3); }
 /* Canal transmitiendo ahora */
 .lab-canal.on { background: rgba(255, 255, 255, .03); border-color: var(--tint); }
 .lab-canal.on .lab-canal-luz { opacity: 1; box-shadow: 0 0 8px var(--tint); }
 /* Canal asignado al rol que estás editando */
 .lab-canal.asignado::after {
-  content: 'ASIGNADO'; grid-column: 3; font-size: 9px; letter-spacing: 1px; color: var(--tint);
+  content: 'ASIGNADO'; grid-column: 3; font-size: 12px; letter-spacing: 1px; color: var(--tint);
 }
 
 .lab-log {
@@ -128,7 +128,7 @@
 .lab-tx.izq { align-self: flex-start; }
 .lab-tx.der { align-self: flex-end; text-align: right; }
 .lab-tx.centro { align-self: center; text-align: center; }
-.lab-tx-cab { font-size: 10px; letter-spacing: .8px; margin-bottom: 2px; color: var(--tint, var(--accent)); }
+.lab-tx-cab { font-size: 13px; letter-spacing: .8px; margin-bottom: 2px; color: var(--tint, var(--accent)); }
 .lab-tx-txt { font-size: 13px; line-height: 1.6; color: var(--text); }
 .lab-tx.vieja { opacity: .4; }
 .lab-cursor { color: var(--accent); }
@@ -165,4 +165,4 @@
 
 /* Chip de SFX que ya tiene grabacion real (no sintetizado) */
 .lab-chip.real { border-color: var(--amber); color: var(--amber); }
-.lab-chip.real::before { content: "CF "; font-size: 8px; }
+.lab-chip.real::before { content: "CF "; font-size: 11px; }

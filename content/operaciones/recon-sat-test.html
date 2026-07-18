@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RECON SAT — vista satelital fósforo (spike)</title>
+<style>
+  /* Spike de vista satelital fósforo — sin controles. Base para el recon real. */
+  :root { --bg:#04100a; --ph:#4dff7a; --ph2:#1c8a44; --amber:#ffc24d; --red:#ff6a55;
+    --chip:rgba(2,12,6,.62); --glow:0 0 3px #000, 0 0 7px rgba(77,255,122,.55); }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); overflow:hidden;
+    color:var(--ph); font-family:'Share Tech Mono',ui-monospace,monospace; }
+
+  /* Satélite monocromo con detalle conservado (contraste bajo = se ven las calles) */
+  #map { position:absolute; inset:0; z-index:0; filter:grayscale(1) contrast(.98) brightness(1); }
+  /* Tinte verde por blend 'color' (conserva luminancia → NO se satura ni se pierde detalle).
+     La opacidad regula qué tan verde: más baja = más gris/legible. */
+  #phosphor { position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:#1ee65e; mix-blend-mode:color; opacity:.2; }
+
+  .fx { position:absolute; inset:0; pointer-events:none; }
+  #glow  { z-index:5; mix-blend-mode:screen;
+    background:radial-gradient(120% 120% at 50% 42%, rgba(77,255,122,.10), rgba(4,16,8,0) 55%); }
+  #vig   { z-index:6; background:radial-gradient(130% 130% at 50% 45%, transparent 55%, rgba(1,6,3,.7) 100%); }
+  #grid  { z-index:7; opacity:.12; mix-blend-mode:screen;
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0 47px, rgba(77,255,122,.5) 47px 48px),
+      repeating-linear-gradient(90deg, transparent 0 47px, rgba(77,255,122,.5) 47px 48px); }
+  /* Barrido de radar que rota */
+  #sweep { z-index:8; mix-blend-mode:screen; transform-origin:50% 50%;
+    background:conic-gradient(from 0deg at 50% 50%,
+      rgba(77,255,122,.14) 0deg, rgba(77,255,122,.03) 24deg, transparent 44deg 360deg);
+    animation:rot 7s linear infinite; }
+  @keyframes rot { to { transform:rotate(360deg); } }
+  /* Estática / grano animado (sutil) */
+  #static { z-index:9; opacity:.06; mix-blend-mode:screen; inset:-20%;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:180px 180px; animation:grain .42s steps(3) infinite; }
+  @keyframes grain {
+    0%{transform:translate(0,0)} 33%{transform:translate(-4%,3%)}
+    66%{transform:translate(3%,-2%)} 100%{transform:translate(-2%,-3%)} }
+  #scanlines { z-index:10; opacity:.5;
+    background:repeating-linear-gradient(0deg, rgba(0,0,0,.10) 0 1px, transparent 1px 3px);
+    animation:flick 6s infinite steps(60); }
+  @keyframes flick { 0%,97%,100%{opacity:.5} 98%{opacity:.34} 99%{opacity:.62} }
+
+  /* ── HUD (con fondo oscuro para legibilidad sobre el verde) ─────────────────── */
+  .hud { position:absolute; z-index:20; }
+  .chip { background:var(--chip); border:1px solid rgba(28,138,68,.55); border-radius:3px;
+    padding:5px 9px; text-shadow:var(--glow); backdrop-filter:blur(1px); }
+  #eyebrow { top:12px; left:14px; font-size:12px; letter-spacing:2px; color:#d6ffe1; }
+  #eyebrow .live { display:inline-block; width:7px; height:7px; border-radius:50%;
+    background:var(--ph); box-shadow:0 0 8px var(--ph); margin-right:7px; vertical-align:middle;
+    animation:pulse 1.5s infinite; }
+  #eyebrow .sub { color:#7fe0a0; letter-spacing:1.5px; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+  #hud { top:12px; right:14px; text-align:right; font-size:11px; line-height:1.7; letter-spacing:1px; color:#d6ffe1; }
+  #hud .evt { color:var(--amber); font-size:15px; letter-spacing:2px; }
+  #hud .amenaza { color:var(--red); }
+
+  #foot { bottom:12px; left:14px; right:14px; z-index:20; display:flex; justify-content:space-between;
+    gap:12px; font-size:11px; letter-spacing:1px; }
+  #foot > span { color:#d6ffe1; }
+  #foot .k { color:var(--amber); }
+  #notice { color:var(--red); text-align:center; }
+
+  /* Chrome de esquina */
+  #frame { z-index:19; }
+  #frame span { position:absolute; width:24px; height:24px; border:2px solid rgba(28,138,68,.75); }
+  #frame .tl{top:8px;left:8px;border-right:0;border-bottom:0}#frame .tr{top:8px;right:8px;border-left:0;border-bottom:0}
+  #frame .bl{bottom:8px;left:8px;border-right:0;border-top:0}#frame .br{bottom:8px;right:8px;border-left:0;border-top:0}
+
+  /* ── Zonas de interés (recuadro completo, tipadas por color, alto contraste) ──── */
+  .zona { position:absolute; z-index:16; pointer-events:none; transform:translate(-50%,-50%); --zc:var(--ph);
+    border:1.5px solid var(--zc);
+    background:color-mix(in srgb, var(--zc) 13%, transparent);
+    box-shadow:0 0 11px color-mix(in srgb, var(--zc) 60%, transparent),
+               inset 0 0 16px color-mix(in srgb, var(--zc) 16%, transparent); }
+  /* Corchetes gruesos sobre las esquinas del recuadro */
+  .zona .brk { position:absolute; width:13px; height:13px; border:3px solid var(--zc); filter:drop-shadow(0 0 4px #000); }
+  .zona .tl{top:-1px;left:-1px;border-right:0;border-bottom:0}.zona .tr{top:-1px;right:-1px;border-left:0;border-bottom:0}
+  .zona .bl{bottom:-1px;left:-1px;border-right:0;border-top:0}.zona .br{bottom:-1px;right:-1px;border-left:0;border-top:0}
+  /* Etiqueta sólida (fondo del color, texto oscuro) — máximo contraste */
+  .zona .z-label { position:absolute; top:-19px; left:-1.5px; font-size:13px; font-weight:bold; letter-spacing:1px;
+    color:#04120a; background:var(--zc); padding:1px 6px; border-radius:2px; white-space:nowrap;
+    box-shadow:0 0 8px color-mix(in srgb, var(--zc) 55%, transparent); }
+  /* Tipos: objetivo (ámbar) · estructura (cian) · amenaza (rojo) · vía (magenta) — ninguno verde para que resalten */
+  .zona.t-obj { --zc:#ffc24d; }   /* objetivo */
+  .zona.t-est { --zc:#3fe8ff; }   /* estructura */
+  .zona.t-ame { --zc:#ff5340; }   /* amenaza (otros eventos) */
+  .zona.t-via { --zc:#ff62d0; }   /* vía principal */
+  .zona.t-enclave { --zc:#5c9bff; } /* enclave aliado (personajes) */
+  .zona.t-recurso { --zc:#eaf1ff; } /* recurso médico */
+  .zona.t-ref { --zc:#9fb0aa; }     /* referencia */
+  .zona.t-obj .brk { width:17px; height:17px; }
+  /* Objetivo: anillo + tick que rotan sobre el foco */
+  .zona.t-obj .ring { position:absolute; top:50%; left:50%; width:50px; height:50px; transform:translate(-50%,-50%);
+    border:1.5px solid var(--amber); border-radius:50%; opacity:.5; animation:ringpulse 2s infinite; }
+  .zona.t-obj .tick { position:absolute; top:50%; left:50%; width:30px; height:2px; background:var(--amber);
+    transform-origin:0 50%; box-shadow:0 0 6px var(--amber); animation:rot 3.5s linear infinite; }
+  .zona.t-obj .core { position:absolute; top:50%; left:50%; width:6px; height:6px; transform:translate(-50%,-50%);
+    background:var(--amber); border-radius:50%; box-shadow:0 0 10px var(--amber); }
+  @keyframes ringpulse { 0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.55}
+    50%{transform:translate(-50%,-50%) scale(1.3);opacity:.12} }
+</style>
+</head>
+<body>
+
+<div id="map"></div>
+<div id="phosphor"></div>
+
+<div id="glow"  class="fx"></div>
+<div id="grid"  class="fx"></div>
+<div id="sweep" class="fx"></div>
+<div id="static" class="fx"></div>
+<div id="vig"   class="fx"></div>
+<div id="scanlines" class="fx"></div>
+
+<div id="frame" class="fx"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+
+<!-- Las zonas de interés se generan dinámicamente en JS y se anclan por lat/lng -->
+
+<div id="eyebrow" class="hud chip"><span class="live"></span>CENVAC · RECONOCIMIENTO SATELITAL <span class="sub">// CANAL SEGURO</span></div>
+
+<div id="hud" class="hud chip">
+  <div class="evt" id="hud-evt">—</div>
+  <div id="hud-coords">—</div>
+  <div class="amenaza" id="hud-amenaza">—</div>
+</div>
+
+<div id="foot" class="hud">
+  <span class="chip"><span class="k">SITIO</span> · <span id="foot-sitio">—</span></span>
+  <span id="notice"></span>
+  <span class="chip"><span id="foot-criatura">—</span> · <span class="k">OBJETIVO</span></span>
+</div>
+
+<script type="module">
+import { MAPS_API_KEY } from './js/maps-key.js';
+import { DATA_BASE, fetchJSON } from './js/main.js';
+
+const $ = (id) => document.getElementById(id);
+const EVENTO_POR_DEFECTO = 'EVT-AGS-2026-0117';
+const OSM_BAKED = `${DATA_BASE}/recon/osm`;
+const notice = (t) => $('notice').textContent = t || '';
+
+function prettify(slug) {
+  return (slug||'').split('_').map(w => w.charAt(0).toUpperCase()+w.slice(1)).join(' ');
+}
+function focoDe(ev) {
+  const f = ev.coordenadas_foco;
+  return { lat:(f?.lat ?? ev.lat), lng:(f?.lng ?? ev.lng) };
+}
+
+function loadMaps(key) {
+  return new Promise((resolve, reject) => {
+    if (window.google && window.google.maps) return resolve();
+    window.__satReady = () => resolve();
+    const s = document.createElement('script');
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(key)}`
+      + `&v=weekly&language=es&region=MX&callback=__satReady`;
+    s.async = true;
+    s.onerror = () => reject(new Error('sdk_error'));
+    document.head.appendChild(s);
+  });
+}
+window.gm_authFailure = () => notice('SEÑAL SATELITAL RECHAZADA — clave/referrer (usa localhost:8099)');
+
+function pintarHUD(ev) {
+  const f = focoDe(ev);
+  $('hud-evt').textContent = `EVT ${ev.id}`;
+  $('hud-coords').textContent = `${f.lat.toFixed(4)} · ${f.lng.toFixed(4)}`;
+  $('hud-amenaza').textContent = `AMENAZA ${ev.nivel_amenaza_estimado || '—'}`;
+  $('foot-sitio').textContent = ev.sitio_tipo ? prettify(ev.sitio_tipo) : (ev.ubicacion_descrita||'—').slice(0,40);
+  $('foot-criatura').textContent = prettify(ev.criatura_sospechada);
+}
+
+(async function init() {
+  const evtId = new URLSearchParams(location.search).get('evt') || EVENTO_POR_DEFECTO;
+
+  let eventos = [], evento;
+  try {
+    eventos = await fetchJSON(`${DATA_BASE}/events/active-events.json`);
+    evento = eventos.find(e => e.id === evtId) || eventos[0];
+  } catch { return notice('ARCHIVO DE EVENTOS NO ACCESIBLE'); }
+  if (!evento) return notice(`EVENTO NO ENCONTRADO — ${evtId}`);
+  pintarHUD(evento);
+
+  // Puntos de interés de la ciudad (personajes, hospitales, referencias).
+  let pois = [];
+  try { pois = await fetchJSON(`${OSM_BAKED}/pois-ags.json`); } catch { /* opcional */ }
+
+  if (!MAPS_API_KEY || MAPS_API_KEY === 'TU_API_KEY_AQUI') {
+    return notice('CLAVE DE RECONOCIMIENTO NO CONFIGURADA (maps-key.js)');
+  }
+  try { await loadMaps(MAPS_API_KEY); }
+  catch { return notice('SEÑAL SATELITAL NO DISPONIBLE'); }
+
+  const { Map } = await google.maps.importLibrary('maps');
+  const foco = focoDe(evento);
+  const map = new Map($('map'), {
+    center: foco, zoom: 15, mapTypeId: 'hybrid',   // híbrido: satélite + nombres de calle
+    tilt: 0, heading: 0,
+    disableDefaultUI: true, gestureHandling: 'greedy', keyboardShortcuts: false,
+    styles: [
+      // Mundo post-Emergencia: sin negocios ni nombres de lugares/barrios.
+      { featureType: 'poi', stylers: [{ visibility: 'off' }] },
+      { featureType: 'poi.business', stylers: [{ visibility: 'off' }] },
+      { featureType: 'transit', stylers: [{ visibility: 'off' }] },
+      { featureType: 'administrative', elementType: 'labels', stylers: [{ visibility: 'off' }] },
+      // Conserva SOLO nombres de calle, tenues y verdes para pegar con el fósforo.
+      { featureType: 'road', elementType: 'labels.text.fill', stylers: [{ color: '#bfffce' }] },
+      { featureType: 'road', elementType: 'labels.text.stroke', stylers: [{ color: '#04120a' }, { weight: 2 }] },
+      { featureType: 'road', elementType: 'labels.icon', stylers: [{ visibility: 'off' }] },
+    ],
+  });
+
+  anclarZonas(map, evento, foco, eventos, pois);
+})();
+
+// ── Zonas de interés: variadas, tipadas y ancladas a coordenadas reales ─────────
+// Cada zona: lat/lng + tamaño en METROS (área real). El pixelaje se recalcula con el
+// zoom → siempre cubre la misma superficie. Tipos: obj / est(ructura) / ame(naza) / via.
+async function anclarZonas(map, ev, foco, eventos = [], pois = []) {
+  const zonas = [
+    { type:'obj', label:'ZONA DE INTERÉS · OBJETIVO', lat:foco.lat, lng:foco.lng, w:190, h:140 },
+  ];
+
+  // Estructuras reales: los edificios más grandes del sitio (naves, bodegas) desde OSM.
+  try {
+    const r = await fetch(`${OSM_BAKED}/${ev.id}.json`);
+    if (r.ok) {
+      const osm = await r.json();
+      edificiosGrandes(osm, foco, 5).forEach((b, i) =>
+        zonas.push({ type:'est', label:`ESTRUCTURA · E-${String(i+1).padStart(2,'0')}`,
+          lat:b.lat, lng:b.lng, w:b.w, h:b.h }));
+    }
+  } catch { /* sin footprints horneados — solo van objetivo + tipadas */ }
+
+  // Otros eventos activos de la ciudad → zonas de AMENAZA (amenazas reportadas).
+  for (const e of eventos) {
+    if (e.id === ev.id) continue;
+    const f = focoDe(e);
+    zonas.push({ type:'ame', label:`AMENAZA · ${prettify(e.criatura_sospechada).toUpperCase()}`,
+      lat:f.lat, lng:f.lng, w:150, h:115 });
+  }
+
+  // Puntos de interés de la ciudad (enclaves de personajes, hospitales, referencias).
+  for (const p of pois) {
+    zonas.push({ type:p.type || 'ref', label:p.name, lat:p.lat, lng:p.lng, w:p.w || 140, h:p.h || 110 });
+  }
+
+  // Crea el DOM de cada zona.
+  for (const z of zonas) z.el = crearZona(z);
+
+  // Encuadra TODAS las zonas al arrancar (se ve la ciudad entera con sus puntos).
+  const bounds = new google.maps.LatLngBounds();
+  zonas.forEach(z => bounds.extend(new google.maps.LatLng(z.lat, z.lng)));
+  if (!bounds.isEmpty()) map.fitBounds(bounds, 90);
+
+  const overlay = new google.maps.OverlayView();
+  overlay.onAdd = () => {};
+  overlay.onRemove = () => {};
+  overlay.draw = function () {
+    const proj = this.getProjection();
+    if (!proj) return;
+    const LL = (lat, lng) => new google.maps.LatLng(lat, lng);
+    for (const z of zonas) {
+      const c = proj.fromLatLngToContainerPixel(LL(z.lat, z.lng));
+      const dLat = (z.h / 2) / 111320;
+      const dLng = (z.w / 2) / (111320 * Math.cos(z.lat * Math.PI / 180));
+      const corner = proj.fromLatLngToContainerPixel(LL(z.lat + dLat, z.lng + dLng));
+      if (!c || !corner) { z.el.style.display = 'none'; continue; }
+      const w = Math.max(24, Math.abs(corner.x - c.x) * 2);
+      const h = Math.max(18, Math.abs(corner.y - c.y) * 2);
+      z.el.style.display = '';
+      z.el.style.left = c.x + 'px'; z.el.style.top = c.y + 'px';
+      z.el.style.width = w + 'px';  z.el.style.height = h + 'px';
+    }
+  };
+  overlay.setMap(map);
+}
+
+// Construye el DOM de una zona (corchetes + etiqueta; + anillo/tick si es objetivo).
+function crearZona(z) {
+  const el = document.createElement('div');
+  el.className = `zona t-${z.type}`;
+  el.innerHTML =
+    `<span class="z-label">${z.label}</span>` +
+    `<span class="brk tl"></span><span class="brk tr"></span><span class="brk bl"></span><span class="brk br"></span>` +
+    (z.type === 'obj' ? `<span class="ring"></span><span class="tick"></span><span class="core"></span>` : '');
+  document.body.appendChild(el);
+  return el;
+}
+
+// Extrae los N edificios de mayor área de un dump Overpass, con centroide y tamaño (m).
+function edificiosGrandes(osm, foco, n) {
+  const nodes = new Map();
+  for (const el of osm.elements) if (el.type === 'node') nodes.set(el.id, el);
+  const mLat = 111320, mLng = 111320 * Math.cos(foco.lat * Math.PI / 180);
+  const out = [];
+  for (const el of osm.elements) {
+    if (el.type !== 'way' || !el.nodes || !(el.tags && el.tags.building)) continue;
+    const pts = el.nodes.map(id => nodes.get(id)).filter(Boolean);
+    if (pts.length < 4) continue;
+    let minLat=Infinity, maxLat=-Infinity, minLng=Infinity, maxLng=-Infinity, sLat=0, sLng=0;
+    for (const p of pts) {
+      minLat=Math.min(minLat,p.lat); maxLat=Math.max(maxLat,p.lat);
+      minLng=Math.min(minLng,p.lon); maxLng=Math.max(maxLng,p.lon);
+      sLat+=p.lat; sLng+=p.lon;
+    }
+    const w = (maxLng - minLng) * mLng, h = (maxLat - minLat) * mLat;
+    out.push({ lat:sLat/pts.length, lng:sLng/pts.length, w:Math.max(45,w), h:Math.max(35,h), area:w*h });
+  }
+  out.sort((a, b) => b.area - a.area);
+  return out.slice(0, n);
+}
+</script>
+</body>
+</html>
