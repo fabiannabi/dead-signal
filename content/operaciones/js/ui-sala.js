@@ -13,6 +13,9 @@ import { construirGrafo, aStar, nodoMasCercano, haversine } from './pathfinding.
 import { peligroDeArista, criaturasActivas } from './peligro.js';
 import { consolidarOperacion } from './roster-store.js';
 import { AJUSTES, crearVozSim, perfilVoz, ritmoChar } from './voz-sim.js';
+import { crearAmbiente } from './ambiente.js';
+import { crearMusica } from './musica.js';
+import { crearAudioLib } from './audio-lib.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -213,7 +216,13 @@ function tick(now) {
   blip.setLatLng([lat, lng]);
 
   const nuevo = revelarCercanos(lat, lng);
-  if (nuevo) { detener(); $('sala-estado').textContent = '¡contacto! · en espera'; guionar(CONTACTO); return; }
+  if (nuevo) {
+    detener(); $('sala-estado').textContent = '¡contacto! · en espera';
+    if (amb) amb.golpe('contacto');
+    if (mus) mus.golpe('impacto');
+    ambEstado('contacto');
+    guionar(CONTACTO); return;
+  }
   const enc = contactos.find(c => !c.encontrado && haversine({ lat, lng }, c) < ENCUENTRO_R);
   if (enc) { enc.encontrado = true; pausar(rec); asalto(enc); return; }
   const dEdge = s.arista ? peligroDeArista(s.arista, ecologia, horaActual, CRIATURAS) : 0;
@@ -223,7 +232,7 @@ function tick(now) {
   m.lastRec = rec;
   if (m.riesgo >= UMBRAL_RIESGO) { m.riesgo = 0; pausar(rec); hazard(); return; }
   // Decisión de Control cada cierto tramo recorrido (acumulado en la misión).
-  if (distAcumulada >= UMBRAL_DECISION) { distAcumulada = 0; pausar(rec); $('sala-estado').textContent = 'decisión'; mostrarDecision(pickOne(DECISIONES), reanudar); return; }
+  if (distAcumulada >= UMBRAL_DECISION) { distAcumulada = 0; pausar(rec); $('sala-estado').textContent = 'decisión'; ambEstado('decision'); mostrarDecision(pickOne(DECISIONES), () => { ambEstado('marcha'); reanudar(); }); return; }
 
   if (rec >= m.total) { moving = false; marcha.raf = null; return llegada(m.destino); }
   m.raf = requestAnimationFrame(tick);
@@ -232,6 +241,7 @@ function llegada(destino) {
   unidadNode = destino;
   $('sala-pos').textContent = calleDe(destino);
   $('sala-estado').textContent = 'en posición';
+  ambEstado('posicion');
   const poi = pois.find(p => p.node === destino && !p.reconocido);
   if (poi) return reconocer(poi);
   const inc = grafo.adj.get(destino).map(x => peligroDeArista(x.arista, ecologia, horaActual, CRIATURAS));
@@ -247,6 +257,7 @@ function reconocer(poi) {
   const r = Math.random();
   if (r < 0.55) {                       // intel
     intel++; sfxIntel();
+    if (mus) mus.golpe('hallazgo');
     guionar([{ rol: 'lider', t: `Registrado. Hay datos aquí — ${calleDe(poi.node)}. Documentando.` }, { rol: 'control', t: 'Recibido. Buen material. Sigan.' }]);
   } else if (r < 0.75) {                // rastro → revela un contacto
     revelarMasCercano();
@@ -260,11 +271,23 @@ function reconocer(poi) {
 
 // ── Eventos de peligro ───────────────────────────────────────────────────────
 function hazard() {
-  if (Math.random() < 0.65) { $('sala-estado').textContent = '¡reflejo!'; mostrarQTE(pickOne(QTE), (ok) => { if (!ok) herir(); reanudar(); }); }
-  else { $('sala-estado').textContent = 'falso positivo'; guionar([pickOne(FALSO)]); setTimeout(reanudar, 1500); }
+  if (Math.random() < 0.65) {
+    $('sala-estado').textContent = '¡reflejo!';
+    if (mus) mus.golpe('susto');            // el respingo antes del golpe
+    ambEstado('reflejo');
+    mostrarQTE(pickOne(QTE), (ok) => { if (!ok) herir(); ambEstado('marcha'); reanudar(); });
+  } else {
+    $('sala-estado').textContent = 'falso positivo';
+    ambEstado('falso');
+    guionar([pickOne(FALSO)]);
+    setTimeout(() => { ambEstado('marcha'); reanudar(); }, 1500);
+  }
 }
 async function asalto(c) {
   $('sala-estado').textContent = '¡ASALTO!';
+  if (amb) amb.golpe('contacto');
+  if (mus) mus.golpe('impacto');
+  ambEstado('asalto');
   let danos = 0;
   await decir(ASALTO_INTRO);
   if (!await qtePromise({ txt: '¡EMBISTE! ¡ESQUIVA!' })) danos++;
@@ -278,6 +301,7 @@ async function asalto(c) {
   else await decir([{ rol: 'lider', t: '¡Lo repelimos limpio! Se replegó.' }]);
   despejarContacto(c);
   $('sala-estado').textContent = 'en marcha';
+  ambEstado('marcha');
   reanudar();
 }
 
@@ -309,6 +333,12 @@ function aplicarEfectos(efectos) {
 // ── Extracción → cierre → reporte ────────────────────────────────────────────
 function extraer() {
   if (marcha && marcha.raf) cancelAnimationFrame(marcha.raf);
+  // La unidad sale: el sector se calma. Si vuelven rotos, la música lo sabe.
+  if (amb) {
+    const rotos = equipo.some(a => (a.estado.heridas || []).some(h => h.severidad >= 3));
+    if (rotos) { amb.golpe('baja'); amb.setLuto(true); }
+    ambEstado('extraccion');
+  }
   const intelOk = intel >= Math.ceil(pois.length / 2);
   const misionId = 'recon-' + evento.id;
   const estado = {
@@ -455,31 +485,57 @@ function escribir(el, texto, voz, emo, done) {
 function apagarTalking() { $('sala-port-left').classList.remove('talking'); $('sala-port-right').classList.remove('talking'); }
 // ── Audio: ambiente + SFX (WebAudio) + voz (speechSynthesis) ─────────────────
 // Todo sintetizado en el navegador: sin archivos, sin llaves, offline.
-let audioOn = true, ambGain = null, master = null, volMaster = 0.35;
+let audioOn = true, master = null, volMaster = 0.35;
 function ensureCtx() {
   if (!actx) { try { actx = new (window.AudioContext || window.webkitAudioContext)(); } catch { return null; } }
   if (actx && !master) { master = actx.createGain(); master.gain.value = volMaster; master.connect(actx.destination); }  // volumen general
   if (actx.state === 'suspended') actx.resume();
   return actx;
 }
-// Drone de dread + estática filtrada con respiración lenta. Arranca al primer gesto.
+/**
+ * Ambiente, música y grabaciones — los mismos módulos que el banco de pruebas.
+ *
+ * Antes acá vivía un drone inline (3 osciladores + estática) que no reaccionaba a
+ * nada: sonaba igual en una patrulla tranquila que en un asalto. Se jubiló a favor de
+ * `ambiente.js`, que además de su propio drone trae los sonidos del sector, sube y
+ * baja con la tensión de la escena y agacha la cama cuando pasa algo.
+ *
+ * `audio-lib.js` va enganchado al ambiente: las claves con grabación suenan del
+ * archivo y el resto cae al sintetizador, así se pueden ir reemplazando de a una.
+ */
+let amb = null, mus = null, lib = null;
+const VOL_AMB = 0.8, VOL_MUS = 0.45;
+
 function iniciarAmbiente() {
-  if (!audioOn || ambGain) return;
+  if (!audioOn || amb) return;
   const ctx = ensureCtx(); if (!ctx) return;
-  ambGain = ctx.createGain(); ambGain.gain.value = 0; ambGain.connect(master);
-  [55, 82.4, 110].forEach((f, i) => {
-    const o = ctx.createOscillator(); o.type = i === 2 ? 'sine' : 'triangle'; o.frequency.value = f;
-    const g = ctx.createGain(); g.gain.value = i === 2 ? 0.02 : 0.045; o.connect(g); g.connect(ambGain); o.start();
-  });
-  const buf = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate);
-  const d = buf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * 0.5;
-  const noise = ctx.createBufferSource(); noise.buffer = buf; noise.loop = true;
-  const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 440;
-  const ng = ctx.createGain(); ng.gain.value = 0.02; noise.connect(lp); lp.connect(ng); ng.connect(ambGain); noise.start();
-  const lfo = ctx.createOscillator(); lfo.frequency.value = 0.08; const lfoG = ctx.createGain(); lfoG.gain.value = 0.25;
-  lfo.connect(lfoG); lfoG.connect(ambGain.gain); lfo.start();
-  ambGain.gain.setValueAtTime(0, ctx.currentTime);
-  ambGain.gain.linearRampToValueAtTime(0.85, ctx.currentTime + 3);
+  lib = crearAudioLib(ctx, master);
+  lib.precargar().catch(() => { });          // si falla, todo cae al sintetizador
+  // El callback deja que un evento del ambiente agache también la música: si solo se
+  // agacha la cama, la reverb de la música sigue tapando el golpe.
+  amb = crearAmbiente(ctx, master, lib, (prof) => { if (mus) mus.duck(prof + 0.08); });
+  mus = crearMusica(ctx, master);
+  amb.start(VOL_AMB);
+  mus.start(VOL_MUS);
+  ambEstado('marcha');
+}
+
+/**
+ * Traduce el estado de la sala a tensión de ambiente + estado de música.
+ * Un solo lugar donde se decide cómo suena cada momento, en vez de repartir
+ * setTension por toda la lógica de la misión.
+ */
+const TENSION_SALA = {
+  marcha: 0.18, posicion: 0.22, falso: 0.30, decision: 0.42,
+  contacto: 0.62, reflejo: 0.72, asalto: 0.95, extraccion: 0.15,
+};
+
+function ambEstado(nombre) {
+  if (!amb) return;
+  const t = TENSION_SALA[nombre] ?? 0.2;
+  // Sube rápido y baja lento: el susto es inmediato, la calma cuesta.
+  amb.setTension(t, t > (amb.tension || 0) ? 0.6 : 4);
+  if (mus) mus.setEstado(mus.porTension(t, amb.luto));
 }
 function tono(freq, type, dur, peak) {
   if (!audioOn) return; const ctx = ensureCtx(); if (!ctx) return;
@@ -516,8 +572,14 @@ function cerrarCanal() { if (vozSim) vozSim.cerrarCanal(); }
 function toggleAudio() {
   audioOn = !audioOn;
   const btn = $('sala-audio'); if (btn) btn.textContent = audioOn ? '♪ AUDIO ON' : '♪ AUDIO OFF';
-  if (!audioOn) { if (vozSim) vozSim.cerrarCanal(); if (ambGain) ambGain.gain.value = 0; }
-  else if (ambGain) ambGain.gain.value = 0.85;
+  if (!audioOn) {
+    if (vozSim) vozSim.cerrarCanal();
+    if (amb) amb.master.gain.value = 0;
+    if (mus) mus.setVolumen(0);
+  } else if (amb) {
+    amb.master.gain.value = VOL_AMB;
+    if (mus) mus.setVolumen(VOL_MUS);
+  }
 }
 
 // ── QTE (multi-tecla) ────────────────────────────────────────────────────────
