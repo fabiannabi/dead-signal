@@ -1,0 +1,7 @@
+[
+  { "name": "UAA CAMPUS SUR", "type": "enclave", "lat": 21.7923, "lng": -102.2926, "w": 300, "h": 240, "nota": "Enclave F-05 · Carlos — campus sur UAA" },
+  { "name": "UAA CENTRO", "type": "ref", "lat": 21.8812, "lng": -102.2925, "w": 130, "h": 110, "nota": "Rectoría UAA — centro histórico" },
+  { "name": "HOSPITAL MIGUEL HIDALGO", "type": "recurso", "lat": 21.8947, "lng": -102.2823, "w": 190, "h": 150, "nota": "Centenario Hospital Miguel Hidalgo" },
+  { "name": "HOSPITAL TERCER MILENIO", "type": "recurso", "lat": 21.8562, "lng": -102.2557, "w": 210, "h": 160, "nota": "Hospital General Tercer Milenio — sureste" },
+  { "name": "CATEDRAL — CENTRO", "type": "ref", "lat": 21.8806, "lng": -102.2972, "w": 150, "h": 120, "nota": "Plaza de la Patria — referencia central" }
+]

@@ -1,0 +1,313 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.4 2390de5a",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-06T20:55:42Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 1232389788,
+  "nodes": [
+    11431727350,
+    11433471030,
+    11431727351,
+    11431727352,
+    11431727353,
+    11435769285,
+    11431727350
+  ],
+  "tags": {
+    "amenity": "bank",
+    "atm": "yes",
+    "branch": "Universidad",
+    "brand": "Banorte",
+    "brand:wikidata": "Q806914",
+    "building": "yes",
+    "name": "Banorte",
+    "operator": "Banorte"
+  }
+},
+{
+  "type": "way",
+  "id": 1232567566,
+  "nodes": [
+    11431727358,
+    11433471034,
+    11433471031,
+    11435769281,
+    11433471032,
+    11433471033,
+    11431727358
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Mueblería del Carmen",
+    "opening_hours": "Mo-Fr 09:30-16:30; Sa 09:30-14:00",
+    "phone": "+524497553227",
+    "shop": "furniture"
+  }
+},
+{
+  "type": "way",
+  "id": 1232567567,
+  "nodes": [
+    11433471036,
+    11433471037,
+    11433471038,
+    11431727354,
+    11433471036
+  ],
+  "tags": {
+    "addr:city": "Aguascalientes",
+    "addr:housenumber": "112",
+    "addr:postcode": "20130",
+    "addr:street": "Calle San Juan de los Lagos",
+    "building": "warehouse",
+    "name": "Tae Global Foods",
+    "phone": "+524499140073",
+    "website": "https://taeglobalfoods.com.mx/"
+  }
+},
+{
+  "type": "way",
+  "id": 1232769209,
+  "nodes": [
+    11431727351,
+    11435769282,
+    11433471031,
+    11435769281,
+    11431727352,
+    11431727351
+  ],
+  "tags": {
+    "building": "yes",
+    "name": "Muebles Avanti",
+    "opening_hours": "Mo-Sa 10:00-20:00; Su 12:00-19:00",
+    "phone": "+524491453340;+524499200229",
+    "shop": "furniture",
+    "website": "https://mueblesavanti.com.mx/"
+  }
+},
+{
+  "type": "way",
+  "id": 1232769210,
+  "nodes": [
+    11431727353,
+    11435769283,
+    11435769284,
+    11435769285,
+    11431727353
+  ],
+  "tags": {
+    "addr:city": "Aguascalientes",
+    "addr:housenumber": "632",
+    "addr:postcode": "20130",
+    "addr:street": "Calle Tepezalá",
+    "building": "yes",
+    "craft": "metal_construction",
+    "name": "Surtidora de Alambres y Aceros del Centro",
+    "short_name": "SAACSA",
+    "website": "https://www.saacsa.com"
+  }
+},
+{
+  "type": "way",
+  "id": 1232769211,
+  "nodes": [
+    11435769284,
+    11435769286,
+    11431727350,
+    11435769285,
+    11435769284
+  ],
+  "tags": {
+    "addr:city": "Aguascalientes",
+    "addr:housenumber": "625B",
+    "addr:postcode": "20130",
+    "addr:street": "Avenida Universidad",
+    "building": "yes",
+    "name": "All4Bikes",
+    "opening_hours": "Mo-Fr 11:00-20:00; Sa 11:00-18:00",
+    "phone": "+524491532504",
+    "shop": "bicycle"
+  }
+},
+{
+  "type": "way",
+  "id": 1232769212,
+  "nodes": [
+    11435769287,
+    11435769291,
+    11435769288,
+    11435769289,
+    11435769290,
+    11435769287
+  ],
+  "tags": {
+    "addr:city": "Aguascalientes",
+    "addr:housenumber": "628",
+    "addr:postcode": "20130",
+    "addr:street": "Calle Tepezalá",
+    "agrarian": "feed",
+    "building": "yes",
+    "name": "Alimentos Balanceados Api Alba",
+    "phone": "+524499140755",
+    "shop": "agrarian"
+  }
+},
+{
+  "type": "node",
+  "id": 11431727350,
+  "lat": 21.9070339,
+  "lon": -102.3094658
+},
+{
+  "type": "node",
+  "id": 11431727351,
+  "lat": 21.9068821,
+  "lon": -102.3093925
+},
+{
+  "type": "node",
+  "id": 11431727352,
+  "lat": 21.9069210,
+  "lon": -102.3090444
+},
+{
+  "type": "node",
+  "id": 11431727353,
+  "lat": 21.9070731,
+  "lon": -102.3090634
+},
+{
+  "type": "node",
+  "id": 11431727354,
+  "lat": 21.9065729,
+  "lon": -102.3086725
+},
+{
+  "type": "node",
+  "id": 11431727358,
+  "lat": 21.9065810,
+  "lon": -102.3092525
+},
+{
+  "type": "node",
+  "id": 11433471030,
+  "lat": 21.9069123,
+  "lon": -102.3094066
+},
+{
+  "type": "node",
+  "id": 11433471031,
+  "lat": 21.9067069,
+  "lon": -102.3093143
+},
+{
+  "type": "node",
+  "id": 11433471032,
+  "lat": 21.9067414,
+  "lon": -102.3089545
+},
+{
+  "type": "node",
+  "id": 11433471033,
+  "lat": 21.9066152,
+  "lon": -102.3089425
+},
+{
+  "type": "node",
+  "id": 11433471034,
+  "lat": 21.9066433,
+  "lon": -102.3092850
+},
+{
+  "type": "node",
+  "id": 11433471036,
+  "lat": 21.9065498,
+  "lon": -102.3088834
+},
+{
+  "type": "node",
+  "id": 11433471037,
+  "lat": 21.9062095,
+  "lon": -102.3088460
+},
+{
+  "type": "node",
+  "id": 11433471038,
+  "lat": 21.9062289,
+  "lon": -102.3086378
+},
+{
+  "type": "node",
+  "id": 11435769281,
+  "lat": 21.9067345,
+  "lon": -102.3090241
+},
+{
+  "type": "node",
+  "id": 11435769282,
+  "lat": 21.9067939,
+  "lon": -102.3093545
+},
+{
+  "type": "node",
+  "id": 11435769283,
+  "lat": 21.9072518,
+  "lon": -102.3090862
+},
+{
+  "type": "node",
+  "id": 11435769284,
+  "lat": 21.9072362,
+  "lon": -102.3092292
+},
+{
+  "type": "node",
+  "id": 11435769285,
+  "lat": 21.9070574,
+  "lon": -102.3092065
+},
+{
+  "type": "node",
+  "id": 11435769286,
+  "lat": 21.9072039,
+  "lon": -102.3095545
+},
+{
+  "type": "node",
+  "id": 11435769287,
+  "lat": 21.9072698,
+  "lon": -102.3089303
+},
+{
+  "type": "node",
+  "id": 11435769288,
+  "lat": 21.9072864,
+  "lon": -102.3087606
+},
+{
+  "type": "node",
+  "id": 11435769289,
+  "lat": 21.9069585,
+  "lon": -102.3087234
+},
+{
+  "type": "node",
+  "id": 11435769290,
+  "lat": 21.9069419,
+  "lon": -102.3088930
+},
+{
+  "type": "node",
+  "id": 11435769291,
+  "lat": 21.9072781,
+  "lon": -102.3088454
+}
+
+  ]
+}
