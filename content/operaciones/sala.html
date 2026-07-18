@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CENVAC — Sala de Vigilancia</title>
-<link rel="stylesheet" href="./css/operaciones.css?v=4">
+<link rel="stylesheet" href="./css/operaciones.css?v=5">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body class="sala-page">
@@ -33,6 +33,15 @@
     <div style="margin-top:5px">› click en <b>nodo</b>: la unidad marcha ahí y reconoce</div>
     <div>› al detectar contacto se detiene; empujá para enfrentarlo</div>
   </div>
+  <div class="sala-sep"></div>
+  <div class="sala-stat"><span class="k">Órdenes</span><b id="sala-orden">sin órdenes en tránsito</b></div>
+  <div class="sala-ordenes">
+    <button class="btn-op" id="btn-replegarse">REPLEGARSE</button>
+    <button class="btn-op" id="btn-mantener">MANTENER</button>
+    <button class="btn-op" id="btn-abortar">ABORTAR</button>
+  </div>
+  <div class="sala-legend"><div>› la orden se <b>transmite</b>, no ocurre: tarda en llegar, y si están en contacto espera</div></div>
+
   <button class="btn-op" id="sala-audio">♪ AUDIO ON</button>
   <div class="sala-vol"><label>Volumen <span id="sala-vol-val">35</span></label><input type="range" id="sala-volumen" min="0" max="100" step="1" value="35"></div>
   <button class="btn-op primary" id="btn-extraer">EXTRAER → CIERRE</button>
@@ -64,6 +73,6 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script type="module" src="./js/ui-sala.js?v=16"></script>
+<script type="module" src="./js/ui-sala.js?v=17"></script>
 </body>
 </html>

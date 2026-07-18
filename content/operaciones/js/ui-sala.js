@@ -246,6 +246,7 @@ const peso = (e) => e.m * (1 + (conocidas.has(e) ? peligroDeArista(e, ecologia, 
 
 function despachar(destino) {
   if (moving || destino === unidadNode) return;
+  enEspera = false; pintarOrdenes();   // mandarlos a algún lado levanta el MANTENER
   sfxSelect(); iniciarAmbiente();
   if (rutaLine) map.removeLayer(rutaLine);
   if (dstMark) map.removeLayer(dstMark);
@@ -299,6 +300,97 @@ function detener() {
   if (dstMark) { map.removeLayer(dstMark); dstMark = null; }
   $('sala-pos').textContent = calleDe(unidadNode);
 }
+// ── Órdenes de protocolo (§3.2 · intervención limitada) ──────────────────────
+/**
+ * Ni tiempo real pleno ni despachar-y-esperar: la sala corre sola, y lo único que
+ * el jugador puede hacer a media misión es emitir una orden de protocolo.
+ *
+ * Lo que la mantiene del lado de CENVAC y no del RTS es la LATENCIA. La orden no
+ * ocurre: se transmite. Entre que la mandas y que la unidad la acata pasan varios
+ * segundos, y en ese hueco puede pasar cualquier cosa — es el mismo mecanismo del
+ * cuarto de cámaras, donde ves con retraso y ya no alcanzas a evitarlo.
+ *
+ * Y si la unidad está en contacto, la orden NO se pierde: queda esperando a que
+ * puedan atenderla. Gritar "repliéguense" mientras los tienen encima no sirve de
+ * nada, y esa impotencia es el punto.
+ */
+const ORDENES = {
+  replegarse: {
+    label: 'REPLEGARSE', ms: 4200,
+    eco: 'Repliéguense. Vuelvan sobre sus pasos, ahora.',
+    // Deshacer el tramo cuesta ánimo: nadie camina tranquilo de regreso.
+    aplicar() {
+      mermarCordura(6);
+      // Ojo con el orden: `detener()` reubica unidadNode al punto donde quedó el
+      // blip, así que el origen del tramo hay que capturarlo ANTES.
+      const volverA = moving ? unidadNode : entrada;
+      detener();
+      despachar(volverA);
+      return volverA === entrada ? 'de regreso al corredor de entrada' : 'volviendo sobre sus pasos';
+    },
+  },
+  mantener: {
+    label: 'MANTENER', ms: 2400,
+    eco: 'Mantengan posición. No avancen hasta nueva orden.',
+    // Quedarse quieto a la intemperie desgasta, pero deja pasar la hora mala.
+    aplicar() {
+      if (moving) detener();
+      mermarCordura(3);
+      enEspera = true;
+      ambEstado('posicion');
+      return 'en espera · manda a un nodo para reanudar';
+    },
+  },
+  abortar: {
+    label: 'ABORTAR', ms: 6000,
+    eco: 'Operación abortada. Sáquenlos de ahí.',
+    aplicar() { extraer(); return 'extracción en curso'; },
+  },
+};
+
+let orden = null, ordenTimer = null, enEspera = false, comprometida = false;
+
+function pintarOrdenes() {
+  const el = $('sala-orden');
+  if (el) el.textContent = orden
+    ? `${ORDENES[orden].label} — transmitiendo…`
+    : (enEspera ? 'unidad en espera' : 'sin órdenes en tránsito');
+  for (const k of Object.keys(ORDENES)) {
+    const b = $(`btn-${k}`); if (b) b.disabled = !!orden;
+  }
+}
+
+function emitirOrden(tipo) {
+  if (orden || !ORDENES[tipo]) return;      // una a la vez: no se acumulan gritos
+  orden = tipo;
+  iniciarAmbiente();
+  sfxSelect();
+  pintarOrdenes();
+  guionar([{ rol: 'control', t: ORDENES[tipo].eco }]);
+  ordenTimer = setTimeout(aplicarOrden, ORDENES[tipo].ms);
+}
+
+function aplicarOrden() {
+  const o = ORDENES[orden];
+  if (!o) { orden = null; pintarOrdenes(); return; }
+  // Comprometida = en asalto o en un QTE. La orden espera, no se descarta.
+  if (comprometida) {
+    guionar([{ rol: 'lider', t: 'No podemos, Control. Los tenemos encima.' }]);
+    ordenTimer = setTimeout(aplicarOrden, 2000);
+    return;
+  }
+  const nota = o.aplicar();
+  orden = null; ordenTimer = null;
+  pintarOrdenes();
+  if (nota) $('sala-estado').textContent = nota;
+}
+
+for (const k of Object.keys(ORDENES)) {
+  const b = $(`btn-${k}`);
+  if (b) b.addEventListener('click', () => emitirOrden(k));
+}
+pintarOrdenes();
+
 function tick(now) {
   const m = marcha;
   const rec = Math.min(m.total, m.base + (now - m.t0) / 1000 * VEL);
@@ -373,9 +465,10 @@ function reconocer(poi) {
 function hazard() {
   if (Math.random() < 0.65) {
     $('sala-estado').textContent = '¡reflejo!';
+    comprometida = true;
     if (mus) mus.golpe('susto');            // el respingo antes del golpe
     ambEstado('reflejo');
-    mostrarQTE(pickOne(QTE), (ok) => { if (!ok) herir(); ambEstado('marcha'); reanudar(); });
+    mostrarQTE(pickOne(QTE), (ok) => { if (!ok) herir(); comprometida = false; ambEstado('marcha'); reanudar(); });
   } else {
     $('sala-estado').textContent = 'falso positivo';
     ambEstado('falso');
@@ -385,6 +478,7 @@ function hazard() {
 }
 async function asalto(c) {
   $('sala-estado').textContent = '¡ASALTO!';
+  comprometida = true;              // las órdenes esperan: no pueden atender la radio
   if (amb) amb.golpe('contacto');
   if (mus) mus.golpe('impacto');
   ambEstado('asalto');
@@ -400,6 +494,7 @@ async function asalto(c) {
   else if (danos === 1) await decir([{ rol: 'lider', t: '¡Rompimos contacto! Un golpe, nada grave.' }]);
   else await decir([{ rol: 'lider', t: '¡Lo repelimos limpio! Se replegó.' }]);
   despejarContacto(c);
+  comprometida = false;
   $('sala-estado').textContent = 'en marcha';
   ambEstado('marcha');
   reanudar();
