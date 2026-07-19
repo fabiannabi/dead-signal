@@ -1,157 +1,143 @@
 # Sala de Vigilancia (Módulo Operaciones) — Notas de progreso
 
-Reencuadre del Módulo de Operaciones como **Sala de Vigilancia** de CENVAC: el jugador es
-despachador, ve a la unidad asignada reconocer un sector en vivo (blip sobre mapa real),
-con peligro derivado del bestiario, contactos/asaltos, decisiones a Control y coms con voz.
-Rama: `feature/sala-de-vigilancia`. Brief original: `_incoming/operaciones-sala-de-vigilancia.md`.
+Reencuadre del Módulo de Operaciones como **Sala de Vigilancia** de CENVAC: eres despachador,
+ves a la unidad asignada reconocer un sector en vivo (blip sobre mapa real), con peligro
+derivado del bestiario, contactos, asaltos, decisiones a Control y coms con voz sintetizada.
+
+- Rama: `feature/sala-de-vigilancia` (pusheada).
+- Brief original: `_incoming/operaciones-sala-de-vigilancia.md`.
+- Servidor: `npx quartz build --serve` **desde la raíz del repo** → http://localhost:8080/operaciones/
+
+Última actualización: **18 jul 2026**.
 
 ---
 
-## Dónde estamos (hecho ✓)
+## Estado: Fases 0–5 completas
 
-- **Fase 0 — Auditoría.** Inventario del módulo previo (scan/coms/briefing).
-- **Fase 1 — Auto-armado de equipo.** El jugador ya no elige agentes; el sistema los asigna por
-  protocolo/disponibilidad. La identidad se revela mínima en el briefing y el **expediente completo
-  + "lo que perdura"** (heridas/cordura/cicatrices que se arrastran) sale en el reporte.
-- **Fase 2 — Grafo + A\* + ecología de peligro.**
-  - `grafo-centro.json`: grafo curado de calles reales del centro (163 nodos / 204 aristas), con
-    `clase` de calle y flag `mercado` por arista. Horneado desde OSM/Overpass.
-  - `js/pathfinding.js`: A\* vanilla (peso = distancia × peligro).
-  - `ecologia-peligro.json` + `js/peligro.js`: el peligro de cada calle sale del bestiario
-    (criatura × hora × feature). Gusano en el asfalto 11–15h; Chacal en el corredor del mercado
-    10–22h `[PROPUESTA]`. El mapa "respira" con la hora.
-- **Fase 3 — Sala de vigilancia (flujo real).**
-  - Mapa principal `index.html` = **malla de cuadrantes 3×3**; solo el CENTRO es operable
-    (tiene grafo). Click → briefing → sala. **Se eliminó el scan y el flujo de coms.**
-  - `sala.html` + `js/ui-sala.js`: despacho en vivo. Recon de puntos (**intel / rastro / nada**),
-    contactos ocultos que se revelan por proximidad y **asaltos multi-fase** (QTE encadenados,
-    algunos de dos teclas), **decisiones a Control** con temporizador y **efectos que pesan**
-    (ruido→revela contacto, fatiga→merma cordura, intel→+1), indicador de Unidad en el HUD.
-    Al **EXTRAER** se cierra a `reporte.html` con intel + bajas/heridas.
-- **Audio.**
-  - **SFX + ambiente** sintetizados con WebAudio (drone de dread, ping, alarma, impacto, intel…).
-  - **Voz del códec**: reproduce **clips pre-renderizados de ElevenLabs** (horneados, ver abajo)
-    pasados por una **cadena de radio** (banda angosta + estática + squelch). Fallback a TTS del
-    navegador (robótico) para líneas dinámicas o sin clip.
-  - **Slider de volumen** maestro + botón mute en el HUD.
-
----
-
-## Sesión 17–18 jul 2026 — Se reemplazó el bake de voces por audio procedural
-
-El bake de ElevenLabs **quedó descartado**: no escalaba (un MP3 por línea, y las
-variantes por resultado multiplican el costo). Los MP3 viejos siguen en
-`assets/audio/coms/` y `scripts/bake-coms-voz.mjs` sin usar — se pueden borrar.
-
-**Módulos nuevos, todos en `content/operaciones/js/`:**
-
-| Archivo | Qué hace |
-|---|---|
-| `voz-sim.js` | Voz del códec estilo Undertale: un blip por **sílaba** (solo vocales), formantes reales del español en paralelo, 8 emociones, 8 canales de radio |
-| `ambiente.js` | Mundo reactivo: drone, viento, disonancia, latido (65→129 lpm) + **31 SFX** agendados según tensión |
-| `musica.js` | BGM procedural: 4 estados (recon/sospecha/combate/duelo) × **5 estilos**, reverb por convolución, secuenciador con lookahead |
-| `audio-lib.js` | Reproductor de **grabaciones reales** con caída automática al sintetizador |
-| `voz-lab.html` + `ui-voz-lab.js` | Banco de pruebas: 4 macros, guion por escena, comparador de canales, catálogo de SFX, salida JSON |
-
-**Decisiones que costaron encontrar** (no repetir los errores):
-- Los formantes van **en paralelo**, no en serie — en serie la voz era casi inaudible.
-- Un blip **por letra** suena a máquina de escribir; por sílaba suena a habla.
-- Voz y ambiente en **buses separados**; anidados se comen dos atenuaciones y no se oye.
-- Lo procedural tiene techo: **disparos, gritos y criaturas necesitan grabaciones**.
-
----
-
-## Para mañana
-
-**1. Cargar audio real (lo primero).**
-Carpeta y sistema ya listos: `content/data/operaciones/audio/` con `manifest.json`
-y un README con fuentes, términos de búsqueda y cómo preparar los archivos.
-Empezar por seis: `disparo` (×3), `grito`, `rugido`, `pasos` (×3), `explosion`, `vidrio`.
-Fuente principal: **Sonniss GDC Bundle** (royalty-free, sin atribución, uso comercial).
-
-**2. Misiones combinatorias a partir de la biblioteca de sonido.** ← idea grande
-La librería de Sonniss trae miles de sonidos, y el sistema ya sabe elegir por
-estado y tensión. En vez de escribir misiones a mano, **generarlas combinando**:
-
-- **Paleta sonora por cuadrante** — cada zona con su set de SFX y su estilo musical.
-  El mercado suena distinto al panteón aunque el mapa sea el mismo.
-- **Criatura → firma sonora** — cada bicho del bestiario con sus vocalizaciones,
-  pisada y rastro. El jugador aprende a identificarlas *de oído* antes de verlas,
-  que es el mejor sistema de tensión posible y sale gratis con lo que ya está.
-- **Eventos combinables** — hallazgo, emboscada, otra unidad en problemas, señal
-  intervenida, civil escondido. Cada uno con su repertorio; el generador arma la
-  misión eligiendo eventos y el audio se adapta solo.
-- **Los canales como recurso narrativo** — "grabación recuperada" y "señal
-  intervenida" ya existen: una misión donde lo que oís es una cinta vieja, u otra
-  donde alguien más entra en la frecuencia.
-- **Hora del día × paleta** — la ecología por hora ya existe (`peligro.js`);
-  falta cruzarla con el audio: grillos de noche, mercado de día.
-
-**3. Pendientes menores.**
-- Llevar los estilos musicales y el catálogo de SFX a `ui-sala.js` (hoy solo el lab).
-- Elegir canal definitivo para Control (candidatos en el lab: base, repetidora,
-  búnker, satelital).
-- Nada de esto está commiteado todavía.
-
----
-
-## Qué falta / backlog
-
-**Audio (afinar):**
-- Balancear capas por separado (voz vs música vs SFX) una vez que haya grabaciones.
-
-**Contenido / datos:**
-- **Mementos** en los POIs (fragmento humano VERSION_B, §1.8) — el paso 2 del recon; aún no está.
-- **Grafos de otros cuadrantes** para activarlos (hoy solo el centro tiene cartografía).
-- **Ecología de más criaturas** (mosca no tiene regla; "Fulgor" no existe aún).
-- **Criatura/contexto por cuadrante** (cada zona con su amenaza real).
-- Más líneas de coms / variedad; más tipos de decisión y QTE.
-
-**Técnico / limpieza:**
-- `coms.html` / `movil.html` quedaron **huérfanos** (descartados del flujo) — se pueden borrar.
-- El flujo completo `index → briefing → sala → reporte` está sin verificación exhaustiva en
-  navegador; puede haber bugs de runtime por cazar.
-- `git push` cuando se quiera publicar (aún sin push).
-
----
-
-## Cómo regenerar las voces (bake de ElevenLabs)
-
-Las voces del códec son **MP3 pre-renderizados** que viven en el repo
-(`content/operaciones/assets/audio/coms/`). Se hornean **offline** con tu API key (la key
-**nunca** se commitea; vive solo en tu terminal). Script: `scripts/bake-coms-voz.mjs`.
-
-### Voces usadas (ElevenLabs voice IDs)
-
-| Rol | Voz | voice_id |
+| Fase | Qué es | Estado |
 |---|---|---|
-| Control | Alberto Rodríguez — Serious, Narrative | `l1zE9xgNpUTaQCZzpNJa` |
-| Líder | Flavio Francisco — Deep and Captivating | `x6uRgOliu4lpcrqMH3s1` |
-| Miembro | Mauricio — Calm and Conversational | `94zOad0g7T7K4oa7zhDq` |
+| 0 | Auditoría del módulo previo | ✓ |
+| 1 | Auto-armado de unidad + expediente al cierre | ✓ |
+| 2 | Grafo + A\* + ecología de peligro | ✓ |
+| 3 | Sala de vigilancia con blips | ✓ |
+| 4 | Mementos en el mapa | ✓ mecánica · contenido a medias |
+| 5 | Voz / coms | ✓ procedural |
 
-### Comando (PowerShell, desde la raíz del repo)
+### Lo que hay hoy
 
-```powershell
-$env:ELEVEN_API_KEY       = "sk_TU_KEY"          # tu key; no se guarda en ningún archivo
-$env:ELEVEN_VOICE_CONTROL = "l1zE9xgNpUTaQCZzpNJa"
-$env:ELEVEN_VOICE_LIDER   = "x6uRgOliu4lpcrqMH3s1"
-$env:ELEVEN_VOICE_MIEMBRO = "94zOad0g7T7K4oa7zhDq"
-$env:ELEVEN_FORCE         = "1"                  # regenera aunque el clip ya exista (opcional)
-# $env:ELEVEN_MODEL       = "eleven_v3"          # opcional: emoción por tags (si tenés acceso a v3)
-node scripts/bake-coms-voz.mjs
-```
+**Mapa.** Malla de **9 distritos × 80 sectores** (~667 × 619 m cada uno), cubriendo unos
+6.0 × 5.6 km de Aguascalientes. Navegación de dos niveles: la vista general muestra distritos,
+entras a uno y se abre en sus sectores. Cada sector tiene su grafo de calles horneado desde
+OSM, con la traza real (`pts`) y podado a su componente conexa mayor.
 
-### Notas del bake
+**Identidad por sector.** Los features de terreno (mercado, rejilla, parque, industria,
+panteón) se marcan en las aristas a partir de datos reales de OSM, y cruzados con los biomas
+del bestiario deciden qué criatura habita cada sector: cervato 34, gusano 22, rata 9, chacal 6,
+cucaracha 5, araña 4. **La hora de cada sector cae dentro de la banda activa de su criatura**,
+para que la amenaza reportada sea la que de verdad caza a esa hora.
 
-- **Listar tus voces** (valida la key y da los voice_id):
-  ```powershell
-  (Invoke-RestMethod -Headers @{ "xi-api-key" = $env:ELEVEN_API_KEY } "https://api.elevenlabs.io/v1/voices").voices | Select-Object name, voice_id
-  ```
-- Sin `ELEVEN_FORCE`, el bake es **incremental** (salta los clips que ya existen). Con `=1`, regenera todo.
-- Cada línea del array `LINEAS` es `[rol, texto, tag_emocion]`. El **texto debe coincidir** con el
-  de `js/ui-sala.js` (la clave del MP3 se calcula de `rol+texto` vía `js/coms-hash.js`). El `tag`
-  entre `[...]` solo se usa con modelo **v3**.
-- Expresividad: `voice_settings` en el script (`stability` bajo = más emoción, `style`, `speaker_boost`).
-- Genera ~45 MP3 + `manifest.json`. La sala reproduce el clip si su clave está en el manifiesto;
-  si no (líneas dinámicas con nombre de calle), cae al TTS del navegador.
-- **Los MP3 sí se commitean** (son el asset de prod). La única que jamás se commitea es la API key.
+**Nombres.** 63 sectores se llaman por su hito real (mercado, hospital, panteón, templo,
+parque, monumento) y 17 por su calle más larga.
+
+**§1.7 — peligro parcial.** Lo que se **pinta** y lo que el A\* usa para rutear es el peligro
+*conocido*; lo que se **cobra** durante la marcha y al llegar es el *real*. Las calles sin
+reportar van en punteado gris, no en verde: mentir convertiría la mecánica en trampa barata.
+El intel dejó de ser un contador — reconocer un punto revela 180 m de cartografía.
+
+**§3.2 — órdenes de protocolo.** REPLEGARSE / MANTENER / ABORTAR, con **latencia** (4.2 s /
+2.4 s / 6 s). La orden no ocurre: se transmite. Y si la unidad está en contacto, **espera** en
+vez de descartarse.
+
+**Audio.** Todo procedural: voz de códec, ambiente reactivo a la tensión, música por estados,
+más ocho grabaciones reales de SFX. La cama hace *ducking* cuando suena un evento.
+
+**Coms.** Banco en `data/operaciones/coms.json`: 119 líneas + 8 decisiones. Los pozos se
+arman por **franja horaria × criatura**, y no se repite nada dentro de una misma operación.
+
+**Mementos (§1.8).** `sites.json` con 608 sitios reales con nombre, repartidos en los 80
+sectores. Los puntos de recon se anclan a edificios, así que la unidad va *a un lugar*. Al
+llegar puede aflorar un memento: panel serif, cálido, papel — sin cromo de radio, sin beeps.
+Se detiene la marcha y calla la radio. Ese cambio de registro es el mecanismo central.
+
+---
+
+## Lo siguiente (en orden de impacto)
+
+### 1. Mementos Clase 1 — autoría de Fabián
+Los VERSION_B canónicos periféricos de los cinco sujetos, donde CENVAC marca pero no comenta.
+La mecánica ya está lista y esperando; solo falta el texto. Van en
+`data/operaciones/mementos.json` con `"clase": 1`.
+
+### 2. Curar los 24 borradores Clase 2
+Están marcados `[BORRADOR — PENDIENTE DE CURADURÍA]` en el `_meta` del archivo. Se escribieron
+como punto de partida: algunos van a funcionar y otros seguramente no. Son anónimos,
+autocontenidos, y ninguno toca lo sobrenatural ni ████-A.
+
+### 3. Cerrar el círculo del memento con el reporte
+Los mementos hallados ya se guardan en `mementosHallados` dentro de `ui-sala.js`, pero **aún
+no se muestran en el reporte final**. Que una operación deje bajas *y* deje esto es
+probablemente el incremento que más se va a sentir, y es trabajo chico.
+
+### 4. Más reglas de ecología
+Solo **5 de las 17** criaturas del bestiario tienen biomas documentados. Las otras 12 son
+fichas en "archivo incompleto", y deliberadamente **no se les inventó hábitat**. Si les
+escribes biomas en la ficha, las reglas de `ecologia-peligro.json` salen casi solas.
+
+### 5. Calibrar la cartografía inicial
+Hoy el sector arranca con ~11% conocido. Puede sentirse demasiado oscuro; conviene juzgarlo
+a ojo ahora que las calles se dibujan con su traza real. Se ajusta con los radios de siembra
+en `ui-sala.js` (110 m entrada / 130 m foco).
+
+### Backlog menor
+- Los sonidos grabados son provisionales: hacen falta muchas variantes por sonido para que el
+  reproductor las alterne, y firma sonora por criatura (identificarlas de oído antes de verlas).
+- Grafos más allá de la malla actual, si se quiere cubrir más ciudad.
+
+---
+
+## Reglas de autoría (no romper)
+
+- **Solo se escriben reglas de ecología para criaturas con biomas documentados** en su ficha.
+  Inventarle hábitat a un placeholder es inventar canon.
+- Todo lo inventado va marcado `[PROPUESTA DE CANON — REQUIERE APROBACIÓN]`.
+- **El texto de misión nunca se hardcodea** (§1.9): sale de los bancos.
+- Los mementos Clase 2 jamás tocan lo sobrenatural, ████-A ni el meta-misterio.
+- Las voces son **agentes de CENVAC anónimos**, nunca los cinco sujetos (§2.1).
+- Español de México. Nada de voseo.
+
+---
+
+## Trampas de este repo (costaron tiempo real)
+
+- **Nunca uses `Set-Content` de PowerShell** sobre archivos con acentos: relee el UTF-8 mal y
+  deja todo doble-codificado (`â€"`). Usar node con `utf8` explícito o la herramienta de edición.
+- **Here-strings de PowerShell** (`@'…'@`): el `'@` va **solo en su línea**, y el contenido no
+  puede llevar comillas dobles — git recibe la cola como si fuera un nombre de archivo.
+- **`grep` con clases de caracteres acentuados** (`pon[eé]s`) falla en UTF-8 multibyte. Buscar
+  la palabra literal.
+- **Quartz**: el watcher muere al borrar archivos que él ya quitó de `public/`. Relanzarlo
+  **siempre desde la raíz del repo**. Si el puerto 8080 responde `EADDRINUSE`, el server viejo
+  sigue vivo y ya recompiló — no hace falta relanzar.
+- **Todo grafo nuevo debe podarse a su componente conexa mayor.** Un nodo visible pero
+  inalcanzable produce un click que no hace nada: el peor fallo posible, el silencioso.
+- Verificar no solo que los archivos existan, sino **que exista lo que el código va a pedir**.
+  El saneador de slug se comía el guion bajo y `sm4_0` terminaba pidiendo `sm40` → 404.
+- `fetchJSON` **lanza** en 404, no devuelve `null`. Sin `.catch()`, la página se queda colgada
+  en "cargando sector…" en vez de volver a la malla.
+
+---
+
+## Cómo regenerar los datos
+
+Los scripts de horneado viven en el scratchpad de la sesión y **no se commitean**. Lo que sí
+queda en el repo es la **procedencia**: cada `grafo-*.json` trae en su `_meta` la consulta
+Overpass exacta con la que se generó, así que se puede rehacer sin adivinar.
+
+Fuentes usadas, todas OpenStreetMap vía Overpass API (requiere `User-Agent` y `POST`; con
+`GET` a secas responde 406):
+
+- **Calles** — `way["highway"](bbox)` sobre la malla completa, en una sola consulta.
+- **Features y sitios** — mercados, cauces, parques, industria, panteones, y todo lo que tenga
+  nombre (`amenity`, `leisure`, `landuse`, `historic`, `building` con `name`).
+
+Bbox de la malla 9×9 (S, W, N, E): `21.854, -102.3242, 21.908, -102.2702`.
