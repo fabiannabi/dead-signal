@@ -1,0 +1,81 @@
+# Etiquetas del pipeline de aportes — Señal Muerta
+#
+# Estas etiquetas DEBEN existir en el repo antes de publicar cualquier Issue Form.
+# Si una etiqueta declarada en un form no existe, GitHub acepta el issue sin ella
+# y el script nunca lo procesa (falla en silencio).
+#
+# Crear/sincronizar:
+#   gh label create "tipo:criatura" --color BFD4F2 --description "..."
+# o con una acción de sincronización de labels apuntando a este archivo.
+
+# ─────────────────────────────────────────────────────────────
+# tipo: — ruteo. Lo aplica el formulario. Uno y solo uno por issue.
+# Cada etiqueta corresponde 1:1 con una tarjeta y con prompts/<nombre>.md
+#
+#   tipo:criatura   → 01-criatura.yml   → prompts/criatura.md
+#   tipo:evidencia  → 02-evidencia.yml  → prompts/evidencia.md
+#   tipo:incidente  → 03-incidente.yml  → prompts/incidente.md
+# ─────────────────────────────────────────────────────────────
+
+- name: "tipo:criatura"
+  color: "BFD4F2"
+  description: "Lo que se sabe de una criatura — existente o nueva"
+
+- name: "tipo:evidencia"
+  color: "BFD4F2"
+  description: "Material visual o sonoro adjunto"
+
+- name: "tipo:incidente"
+  color: "BFD4F2"
+  description: "Reporte EXP o INC — un hecho con lugar y hora"
+
+# ─────────────────────────────────────────────────────────────
+# estado: — ciclo de vida. Lo aplica el script y el revisor.
+# Uno a la vez. El script solo toma issues en estado:nuevo.
+# ─────────────────────────────────────────────────────────────
+
+- name: "estado:nuevo"
+  color: "0E8A16"
+  description: "Sin procesar — pendiente de generar"
+
+- name: "estado:generado"
+  color: "FBCA04"
+  description: "PR abierto, esperando revisión"
+
+- name: "estado:integrado"
+  color: "5319E7"
+  description: "PR fusionado — cerrado"
+
+- name: "estado:rechazado"
+  color: "B60205"
+  description: "No entra al archivo"
+
+- name: "estado:bloqueado"
+  color: "D93F0B"
+  description: "Requiere decisión de canon antes de generar"
+
+# ─────────────────────────────────────────────────────────────
+# Transversales — informativas, no afectan el ruteo.
+# ─────────────────────────────────────────────────────────────
+
+- name: "aporte"
+  color: "C5DEF5"
+  description: "Contribución externa — paraguas de todos los tipo:"
+
+- name: "canon:propuesta"
+  color: "E99695"
+  description: "Contiene invención marcada que requiere aprobación"
+
+# ─────────────────────────────────────────────────────────────
+# Reservadas — declaradas, NO creadas todavía.
+# No tienen tarjeta ni prompt. Crear solo cuando exista el par
+# formulario + prompt, o serán rutas muertas.
+# ─────────────────────────────────────────────────────────────
+
+# - name: "tipo:memento"
+#   color: "BFD4F2"
+#   description: "Narrativa humana autocontenida — Clase 2"
+#
+# - name: "tipo:sitio-mapa"
+#   color: "BFD4F2"
+#   description: "Ubicación para el mapa de sitios"

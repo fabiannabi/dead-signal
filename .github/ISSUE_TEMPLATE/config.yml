@@ -1,0 +1,8 @@
+# Apaga el issue en blanco: todo aporte entra por una de las tres tarjetas,
+# porque el ruteo del generador depende de la etiqueta tipo: que aplica el formulario.
+blank_issues_enabled: false
+
+contact_links:
+  - name: Leer el archivo
+    url: https://fabiannabi.github.io/dead-signal
+    about: Antes de aportar, date una vuelta por el bestiario. Ayuda a escribir en el mismo tono.

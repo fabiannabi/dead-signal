@@ -1,0 +1,83 @@
+# Tarjeta 2 — evidencia visual y sonora.
+#
+# La CLASE no se pregunta, se deriva: material de contribuidor es Clase C por
+# definición (Clase A es "procesado en laboratorio APE"). El ID <INI>-VIS-00N lo
+# deriva el script contando la galería, nunca el contribuidor.
+#
+# CONTRATO DE PARSEO: el generador lee por el TEXTO de cada "label", no por el "id".
+
+name: Tengo un dibujo o una grabación
+description: Un boceto, una foto de tu libreta, un audio. Material que se ve o se oye.
+title: "[evidencia] "
+labels: ["aporte", "tipo:evidencia", "estado:nuevo"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Un dibujo a mano vale más que una foto perfecta. Lo que se busca es material
+        de campo: apurado, incompleto, hecho por alguien que tenía prisa.
+
+  - type: dropdown
+    id: criatura
+    attributes:
+      label: ¿De cuál criatura?
+      description: Si es de un animal que todavía no está registrado, escoge la última opción.
+      options:
+        - Cervato de Concreto
+        - Gusano de Asfalto
+        - Roca
+        - Roca Negra
+        - Cucaracha Matriarca
+        - Chacal de Feria
+        - Araña Hidráulica
+        - Araña de Casa
+        - Mosca Forúnculo
+        - Hormiga Coordinadora
+        - Coyote Mutado
+        - Enredadera Acelerada
+        - Hongo de Cemento
+        - Una que no está en la lista
+    validations:
+      required: true
+
+  - type: textarea
+    id: archivo
+    attributes:
+      label: El archivo
+      description: >-
+        Arrastra aquí la imagen o el audio y suéltalo. GitHub lo sube solo y deja un
+        link en la caja — no borres ese link. Puedes soltar varios.
+      placeholder: Arrastra el archivo a esta caja…
+    validations:
+      required: true
+
+  - type: textarea
+    id: contexto
+    attributes:
+      label: ¿Qué estamos viendo?
+      description: >-
+        Qué parte del animal es, en qué momento, y qué no se alcanza a ver o a oír.
+      placeholder: |
+        Es la pata de atrás, la izquierda. La dibujé de memoria como media hora
+        después, por eso el tamaño de la garra no lo garantizo.
+
+        Lo que se ve borroso arriba es la placa del lomo — desde donde yo estaba
+        nunca se alcanzó a ver completa.
+    validations:
+      required: true
+
+  - type: input
+    id: lugar_fecha
+    attributes:
+      label: ¿Dónde y cuándo?
+      description: Aunque sea aproximado. "Como a los dos meses, por el sur" sirve.
+      placeholder: Canal de la avenida, tarde, tercera semana
+
+  - type: textarea
+    id: inventado
+    attributes:
+      label: ¿Qué te inventaste?
+      description: Sin problema si inventaste — nomás dilo. Se revisa aparte.
+      placeholder: |
+        El ojo lo puse porque el dibujo se veía raro sin él, pero nunca le vi la cara.

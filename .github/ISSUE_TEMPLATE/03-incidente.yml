@@ -1,0 +1,91 @@
+# Tarjeta 3 — expedientes EXP / INC.
+#
+# La FASE DE TÉRMINO es siempre retenida por construcción (modelo AH-EXP-001:
+# fases 1 y 2 accesibles, término bajo Clase A). Por eso no se pregunta el
+# desenlace: el contribuidor no tiene que inventar la parte difícil, y la
+# retención *es* el desenlace.
+#
+# GUARDIÁN EN EL CONTROL: no hay campo para decir quién estaba. Sin campo, nadie
+# atribuye nada a un sobreviviente nombrado y no hace falta advertirlo por escrito.
+#
+# CONTRATO DE PARSEO: el generador lee por el TEXTO de cada "label", no por el "id".
+
+name: Pasó algo
+description: Un encuentro, un accidente, un intento de resolver algo. Un hecho con lugar y hora.
+title: "[incidente] "
+labels: ["aporte", "tipo:incidente", "estado:nuevo"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        No hace falta que sepas cómo terminó. Cuenta lo que alcanzaste a ver;
+        el final lo cierra el archivo.
+
+  - type: dropdown
+    id: criatura
+    attributes:
+      label: ¿Cuál criatura estuvo involucrada?
+      description: Si fue un animal que todavía no está registrado, escoge la última opción.
+      options:
+        - Cervato de Concreto
+        - Gusano de Asfalto
+        - Roca
+        - Roca Negra
+        - Cucaracha Matriarca
+        - Chacal de Feria
+        - Araña Hidráulica
+        - Araña de Casa
+        - Mosca Forúnculo
+        - Hormiga Coordinadora
+        - Coyote Mutado
+        - Enredadera Acelerada
+        - Hongo de Cemento
+        - Una que no está en la lista
+    validations:
+      required: true
+
+  - type: textarea
+    id: relato
+    attributes:
+      label: ¿Qué pasó?
+      description: >-
+        En orden, desde antes de que empezara. Qué se estaba haciendo, qué salió
+        distinto, y hasta dónde alcanzaste a ver.
+      placeholder: |
+        Íbamos a sacar agua del tanque de arriba, como todas las semanas. La escalera
+        estaba mojada del lado norte, que ya era raro porque no había llovido.
+
+        A media subida empezó el ruido de agua adentro del tanque, y el tanque
+        estaba vacío desde hacía días.
+
+        Alcancé a bajar seis escalones. De ahí para adelante ya no vi nada.
+    validations:
+      required: true
+
+  - type: input
+    id: lugar_fecha
+    attributes:
+      label: ¿Dónde y cuándo?
+      description: Aunque sea aproximado. Sirve más la hora del día que la fecha exacta.
+      placeholder: Tanque elevado del fraccionamiento, poco antes del amanecer
+
+  - type: textarea
+    id: consecuencia
+    attributes:
+      label: ¿Qué cambió después?
+      description: >-
+        Qué se dejó de hacer, qué regla nueva salió de ahí, qué ya no se toca.
+        Esto es lo que vuelve útil un incidente.
+      placeholder: |
+        Al tanque de arriba ya no sube nadie solo, y nunca antes de que aclare.
+        El agua ahora se saca del de abajo aunque salga con tierra.
+
+  - type: textarea
+    id: inventado
+    attributes:
+      label: ¿Qué te inventaste?
+      description: Sin problema si inventaste — nomás dilo. Se revisa aparte.
+      placeholder: |
+        Lo del ruido de agua es real. Lo de que la escalera estaba mojada lo agregué
+        yo para que cuadrara, no me consta.
