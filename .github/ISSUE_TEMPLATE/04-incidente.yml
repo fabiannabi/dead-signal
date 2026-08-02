@@ -89,3 +89,18 @@ body:
       placeholder: |
         Lo del ruido de agua es real. Lo de que la escalera estaba mojada lo agregué
         yo para que cuadrara, no me consta.
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Qué pasa con esto**
+
+        Se abre un expediente aparte, con su propia clave, y queda colgado de la
+        pestaña **Resumen** de la ficha en "Archivos confidenciales".
+
+        El final del expediente queda **clasificado**. Así están todos: se lee cómo
+        empezó y cómo iba, y el desenlace aparece tachado. Por eso no te lo
+        preguntamos — no es un hueco, es como se ven estos documentos.
+
+        No se publica solo. Sale como propuesta de cambio y alguien lo revisa.

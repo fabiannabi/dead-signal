@@ -12,14 +12,19 @@
 # tipo: — ruteo. Lo aplica el formulario. Uno y solo uno por issue.
 # Cada etiqueta corresponde 1:1 con una tarjeta y con prompts/<nombre>.md
 #
-#   tipo:criatura   → 01-criatura.yml   → prompts/criatura.md
-#   tipo:evidencia  → 02-evidencia.yml  → prompts/evidencia.md
-#   tipo:incidente  → 03-incidente.yml  → prompts/incidente.md
+#   tipo:bestia-adicion → 01-bestia-adicion.yml → prompts/bestia-adicion.md
+#   tipo:bestia-nueva   → 02-bestia-nueva.yml   → prompts/bestia-nueva.md
+#   tipo:evidencia      → 03-evidencia.yml      → prompts/evidencia.md
+#   tipo:incidente      → 04-incidente.yml      → prompts/incidente.md
 # ─────────────────────────────────────────────────────────────
 
-- name: "tipo:criatura"
+- name: "tipo:bestia-adicion"
   color: "BFD4F2"
-  description: "Lo que se sabe de una criatura — existente o nueva"
+  description: "Aporte a una ficha del bestiario que ya existe"
+
+- name: "tipo:bestia-nueva"
+  color: "BFD4F2"
+  description: "Criatura que todavía no está registrada"
 
 - name: "tipo:evidencia"
   color: "BFD4F2"

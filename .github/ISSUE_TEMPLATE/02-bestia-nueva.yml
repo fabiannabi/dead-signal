@@ -1,0 +1,119 @@
+# Tarjeta 2 — criatura que todavía no está en el bestiario.
+#
+# GUARDIÁN EN EL CONTROL: el dropdown de peligro solo ofrece los equivalentes de
+# amenaza I y II. III y IV no son seleccionables y el contribuidor nunca supo que
+# existían. La traducción a vocabulario del índice la hace el script:
+#   "Te puede lastimar" → amenaza-i    "Te puede matar" → amenaza-ii
+#   Plantas → herbivoro · Carne → carnivoro · Vive de otro animal → parasito
+#   Restos → descomponedor
+#
+# ATRIBUCIÓN: sale siempre con data-tags "sin-atribucion". No se atribuye a un
+# sobreviviente nombrado, por eso no hay campo para decir quién la vio.
+#
+# CONTRATO DE PARSEO: el generador lee por el TEXTO de cada "label", no por el "id".
+
+name: Una bestia que no está registrada
+description: Un animal que no aparece en el bestiario. Entra como ficha nueva, en clasificación.
+title: "[bestia nueva] "
+labels: ["aporte", "tipo:bestia-nueva", "estado:nuevo"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Escribe de corrido, como se lo contarías a alguien. No hace falta que
+        ordenes nada ni que uses palabras técnicas — de eso se encarga el archivo.
+
+        Si algo no lo sabes, déjalo así. Un hueco declarado vale más que un relleno.
+
+  - type: input
+    id: nombre
+    attributes:
+      label: ¿Cómo se llama?
+      description: >-
+        El nombre que le pusieron quienes la vieron, no uno científico. Si nadie le
+        ha puesto nombre, descríbela en dos palabras y ya.
+      placeholder: La sierra, el trapero, cosa de la presa…
+    validations:
+      required: true
+
+  - type: textarea
+    id: relato
+    attributes:
+      label: Cuéntame
+      description: >-
+        Si puedes, dime qué la delata antes de verla, qué error se paga caro,
+        cuánto mide, dónde vive, qué come y qué se la come.
+      placeholder: |
+        La vi tres veces en el arroyo de atrás de la secundaria, siempre como a las
+        seis de la tarde. Huele a fierro mojado antes de que la veas — eso es lo que
+        te salva. Es del tamaño de un perro grande pero se mueve como si le pesara
+        la cabeza, y cuando se para hace un ruido de agua adentro.
+
+        Una vez se llevó un gato y no le tronó los huesos: se lo tragó entero.
+
+        El error caro es acercarse por el lado del agua. Ahí no te oye venir, pero
+        tampoco la oyes tú.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: peligro
+    attributes:
+      label: ¿Qué tan peligrosa es?
+      description: Si dudas, escoge la primera.
+      options:
+        - Te puede lastimar
+        - Te puede matar
+    validations:
+      required: true
+
+  - type: dropdown
+    id: comida
+    attributes:
+      label: ¿Qué come?
+      options:
+        - Plantas
+        - Carne
+        - Vive de otro animal
+        - Restos
+    validations:
+      required: true
+
+  - type: textarea
+    id: inaccesible
+    attributes:
+      label: ¿Qué no se puede saber de ella, y por qué?
+      description: >-
+        Algo que nadie ha podido averiguar, y la razón. No es un hueco: decir por qué
+        no se puede saber también dice algo del animal.
+      placeholder: |
+        Nadie ha visto dónde duerme. La única vez que seguimos el rastro se metió al
+        colector de la avenida, y ahí ya no entra nadie desde el invierno.
+    validations:
+      required: true
+
+  - type: textarea
+    id: inventado
+    attributes:
+      label: ¿Qué te inventaste?
+      description: >-
+        Sin problema si inventaste — nomás dilo. Lo que marques aquí se revisa aparte
+        antes de entrar al archivo.
+      placeholder: |
+        El nombre me lo saqué de la manga. Lo del olor a fierro sí es real; lo de que
+        cazan en pareja es suposición mía, porque siempre vi dos.
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Qué pasa con esto**
+
+        Se abre una ficha nueva en el bestiario y una tarjeta en el índice. Sale
+        marcada **"en clasificación"** y **sin atribuir a nadie** — así arrancan
+        todas las entradas que no vienen de un sobreviviente del archivo.
+
+        No se publica sola. Sale como propuesta de cambio, alguien la revisa y la
+        acepta, la ajusta o la rechaza. Si algo de lo tuyo no encaja con el archivo,
+        se dice y ya.

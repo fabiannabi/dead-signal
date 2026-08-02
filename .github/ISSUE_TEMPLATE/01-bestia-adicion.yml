@@ -1,14 +1,17 @@
-# Tarjeta 1 — el embudo. Absorbe protocolo, hipótesis, ecología, medidas,
-# morfología, criatura nueva y todo lo que no sepas dónde poner.
+# Tarjeta 1 — aporte a una ficha que ya existe.
+#
+# Los checkboxes de sección son GUÍA, no reja: le dicen al contribuidor a qué
+# parte de la ficha va a parar lo que escribió, y le dan al generador un blanco
+# al cual anexar. Nadie tiene que acertarle — el relato manda sobre las marcas.
 #
 # CONTRATO DE PARSEO: el generador lee el cuerpo del issue por el TEXTO de cada
 # "label", no por el "id". Cambiar el texto de una label rompe el parser.
 # Tratarlas como nombres de variable.
 
-name: Sé algo de una criatura
-description: Lo que viste, oíste o dedujiste de un animal del archivo — o de uno que no está en la lista.
-title: "[criatura] "
-labels: ["aporte", "tipo:criatura", "estado:nuevo"]
+name: Añadir a una bestia que ya está
+description: Morfología, ecología, comportamiento, medidas — lo que sepas de un animal ya registrado.
+title: "[bestia] "
+labels: ["aporte", "tipo:bestia-adicion", "estado:nuevo"]
 
 body:
   - type: markdown
@@ -23,7 +26,9 @@ body:
     id: criatura
     attributes:
       label: ¿Cuál criatura?
-      description: Si lo tuyo es un animal que todavía no está registrado, escoge la última opción.
+      description: >-
+        ¿No está en la lista? Entonces la tarjeta que buscas es
+        "Una bestia que no está registrada".
       options:
         - Cervato de Concreto
         - Gusano de Asfalto
@@ -38,18 +43,23 @@ body:
         - Coyote Mutado
         - Enredadera Acelerada
         - Hongo de Cemento
-        - Una que no está en la lista
     validations:
       required: true
 
-  - type: input
-    id: nombre
+  - type: checkboxes
+    id: secciones
     attributes:
-      label: ¿Cómo se llama?
+      label: ¿De qué parte sabes algo?
       description: >-
-        Solo si escogiste "una que no está en la lista". El nombre que le pusieron
-        quienes la vieron, no uno científico.
-      placeholder: La sierra, el trapero, cosa de la presa…
+        Marca las que apliquen. Es para saber a qué parte de la ficha mandar lo que
+        escribas — si le atinas a medias no pasa nada, el texto manda sobre las marcas.
+      options:
+        - label: Cómo es por fuera — tamaño, color, partes del cuerpo
+        - label: Cuánto mide o cuánto pesa
+        - label: Dónde vive y de qué — dónde la has visto, qué come, qué se la come
+        - label: Cómo se porta — si caza sola o en bola, a qué hora sale
+        - label: Cómo saber que está cerca antes de verla — ruido, olor, rastro
+        - label: Qué hacer si te la topas — qué funciona y qué se paga caro
 
   - type: textarea
     id: relato
@@ -71,38 +81,16 @@ body:
     validations:
       required: true
 
-  - type: dropdown
-    id: peligro
-    attributes:
-      label: ¿Qué tan peligrosa es?
-      description: Solo si es una criatura nueva. Si dudas, escoge la de arriba.
-      options:
-        - Te puede lastimar
-        - Te puede matar
-
-  - type: dropdown
-    id: comida
-    attributes:
-      label: ¿Qué come?
-      description: Solo si es una criatura nueva.
-      options:
-        - Plantas
-        - Carne
-        - Vive de otro animal
-        - Restos
-
   - type: textarea
     id: inaccesible
     attributes:
       label: ¿Qué no se puede saber de ella, y por qué?
       description: >-
-        Algo que nadie ha podido averiguar, y la razón. No es un hueco: decir por qué
-        no se puede saber también dice algo del animal.
+        Opcional. Algo que nadie ha podido averiguar, y la razón. No es un hueco:
+        decir por qué no se puede saber también dice algo del animal.
       placeholder: |
         Nadie ha visto dónde duerme. La única vez que seguimos el rastro se metió al
         colector de la avenida, y ahí ya no entra nadie desde el invierno.
-    validations:
-      required: true
 
   - type: textarea
     id: inventado
@@ -114,3 +102,16 @@ body:
       placeholder: |
         El nombre me lo saqué de la manga. Lo del olor a fierro sí es real; lo de que
         cazan en pareja es suposición mía, porque siempre vi dos.
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Qué pasa con esto**
+
+        Entra a la ficha de la criatura que escogiste, en las pestañas que marcaste
+        arriba. **Nada se sobrescribe**: lo tuyo se anexa a lo que ya está.
+
+        No se publica solo. Sale como propuesta de cambio, alguien la revisa y la
+        acepta, la ajusta o la rechaza. Si algo de lo tuyo no encaja con el archivo,
+        se dice y ya.

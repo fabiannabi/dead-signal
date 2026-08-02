@@ -6,7 +6,7 @@
 #
 # CONTRATO DE PARSEO: el generador lee por el TEXTO de cada "label", no por el "id".
 
-name: Tengo un dibujo o una grabación
+name: Un dibujo o una grabación
 description: Un boceto, una foto de tu libreta, un audio. Material que se ve o se oye.
 title: "[evidencia] "
 labels: ["aporte", "tipo:evidencia", "estado:nuevo"]
@@ -81,3 +81,18 @@ body:
       description: Sin problema si inventaste — nomás dilo. Se revisa aparte.
       placeholder: |
         El ojo lo puse porque el dibujo se veía raro sin él, pero nunca le vi la cara.
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Qué pasa con esto**
+
+        Entra a la pestaña **Evidencia** de la ficha, en la galería o en la lista de
+        audios. Se anexa al final; lo que ya estaba no se toca.
+
+        Entra como **Clase C — evidencia primaria sin procesar**. No es un demérito:
+        es la clase de todo lo que viene directo de campo. Clase A y B se reservan
+        para material que pasó por laboratorio.
+
+        No se publica solo. Sale como propuesta de cambio y alguien lo revisa.
