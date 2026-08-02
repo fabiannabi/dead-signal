@@ -90,7 +90,7 @@ cssclasses: [bestiario-terminal]
   </div>
   <div class="conf-item">
     <div class="conf-id">AH-EXP-003 / Experimento — Respuesta a estímulos lumínicos</div>
-    <div class="conf-desc">Protocolo de exposición lumínica en espécimen capturado. Fases 1–4. Incluye observaciones sobre respuesta fotosensible, reflejo del <em>tapetum lucidum</em> y período refractario. Parcialmente desclasificado. <span class="redacted">███</span> miembros del equipo afectados durante el procedimiento.</div>
+    <div class="conf-desc">Protocolo de exposición lumínica en espécimen capturado. Fases 1–4. Incluye observaciones sobre respuesta fotosensible, reflejo del <em>tapetum lucidum</em> y período refractario. Parcialmente desclasificado. <span class="redact">███</span> miembros del equipo afectados durante el procedimiento.</div>
     <div class="conf-access">Clase B — Acceso restringido</div>
   </div>
   <div class="conf-item">
