@@ -10,6 +10,9 @@
 # ATRIBUCIÓN: sale siempre con data-tags "sin-atribucion". No se atribuye a un
 # sobreviviente nombrado, por eso no hay campo para decir quién la vio.
 #
+# El último campo reemplaza al viejo "¿qué te inventaste?": pregunta por FUENTE,
+# no por confesión. Ver nota en 01-bestia-adicion.yml.
+#
 # CONTRATO DE PARSEO: el generador lee por el TEXTO de cada "label", no por el "id".
 
 name: Una bestia que no está registrada
@@ -21,8 +24,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Escribe de corrido, como se lo contarías a alguien. No hace falta que
-        ordenes nada ni que uses palabras técnicas — de eso se encarga el archivo.
+        Escribe de corrido, como se lo contarías a alguien. No hace falta que ordenes
+        nada, que uses palabras técnicas ni que suene bien: el archivo reescribe todo
+        a su registro. Lo que no puede hacer es inventar lo que tú viste.
 
         Si algo no lo sabes, déjalo así. Un hueco declarado vale más que un relleno.
 
@@ -31,8 +35,9 @@ body:
     attributes:
       label: ¿Cómo se llama?
       description: >-
-        El nombre que le pusieron quienes la vieron, no uno científico. Si nadie le
-        ha puesto nombre, descríbela en dos palabras y ya.
+        El nombre que le pusieron quienes la vieron, no uno científico ni de catálogo.
+        Así se llaman todas en el archivo: la Roca, el Cervato de Concreto, la Mosca
+        Forúnculo. Si nadie le ha puesto nombre, descríbela en dos palabras y ya.
       placeholder: La sierra, el trapero, cosa de la presa…
     validations:
       required: true
@@ -42,8 +47,9 @@ body:
     attributes:
       label: Cuéntame
       description: >-
-        Si puedes, dime qué la delata antes de verla, qué error se paga caro,
-        cuánto mide, dónde vive, qué come y qué se la come.
+        Lo más útil no son los datos duros: es qué la delata antes de verla, qué error
+        se paga caro, cómo se mueve, a qué hora sale. Si además sabes cuánto mide,
+        dónde vive, qué come y qué se la come, mejor — pero con lo primero basta.
       placeholder: |
         La vi tres veces en el arroyo de atrás de la secundaria, siempre como a las
         seis de la tarde. Huele a fierro mojado antes de que la veas — eso es lo que
@@ -61,7 +67,10 @@ body:
     id: peligro
     attributes:
       label: ¿Qué tan peligrosa es?
-      description: Si dudas, escoge la primera.
+      description: >-
+        De esto sale el nivel de amenaza de la ficha y el color de su tarjeta en el
+        índice. Si dudas, escoge la primera: subir de nivel después es fácil, bajarlo
+        deja el expediente raro.
       options:
         - Te puede lastimar
         - Te puede matar
@@ -72,6 +81,10 @@ body:
     id: comida
     attributes:
       label: ¿Qué come?
+      description: >-
+        De esto sale su lugar en la red trófica y el filtro por el que la va a
+        encontrar la gente. "Vive de otro animal" es para las que se le montan a algo
+        vivo sin matarlo de inmediato.
       options:
         - Plantas
         - Carne
@@ -85,8 +98,9 @@ body:
     attributes:
       label: ¿Qué no se puede saber de ella, y por qué?
       description: >-
-        Algo que nadie ha podido averiguar, y la razón. No es un hueco: decir por qué
-        no se puede saber también dice algo del animal.
+        El archivo trata los huecos como dato: no es lo mismo "nadie lo ha medido" que
+        "quien fue a medirlo no volvió". Una ficha sin huecos declarados se lee como
+        inventada — este campo es el que la hace creíble.
       placeholder: |
         Nadie ha visto dónde duerme. La única vez que seguimos el rastro se metió al
         colector de la avenida, y ahí ya no entra nadie desde el invierno.
@@ -94,15 +108,19 @@ body:
       required: true
 
   - type: textarea
-    id: inventado
+    id: fuente
     attributes:
-      label: ¿Qué te inventaste?
+      label: ¿Qué te consta y qué estás suponiendo?
       description: >-
-        Sin problema si inventaste — nomás dilo. Lo que marques aquí se revisa aparte
-        antes de entrar al archivo.
+        Separa lo que viste tú de lo que dedujiste o te contaron. Las dos cosas entran:
+        lo observado como dato, lo supuesto como hipótesis abierta con tu nombre encima.
+        Nada se tira por ser suposición — lo único que rompe una ficha es no saber cuál
+        es cuál.
       placeholder: |
-        El nombre me lo saqué de la manga. Lo del olor a fierro sí es real; lo de que
-        cazan en pareja es suposición mía, porque siempre vi dos.
+        Me consta el olor a fierro y que se llevó al gato: eso lo vi yo.
+
+        Que cazan en pareja es suposición mía, nomás porque siempre vi dos juntas.
+        Lo del ruido de agua adentro me lo contó otra persona, yo no se lo oí.
 
   - type: markdown
     attributes:
@@ -114,6 +132,9 @@ body:
         marcada **"en clasificación"** y **sin atribuir a nadie** — así arrancan
         todas las entradas que no vienen de un sobreviviente del archivo.
 
+        Nace incompleta a propósito: las pestañas que nadie ha podido llenar salen
+        declaradas como huecos, no rellenadas a la brava. Se va completando conforme
+        llegue más material sobre ella.
+
         No se publica sola. Sale como propuesta de cambio, alguien la revisa y la
-        acepta, la ajusta o la rechaza. Si algo de lo tuyo no encaja con el archivo,
-        se dice y ya.
+        acepta, la ajusta o la rechaza.

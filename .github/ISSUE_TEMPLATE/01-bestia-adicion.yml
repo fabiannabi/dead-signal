@@ -4,6 +4,10 @@
 # parte de la ficha va a parar lo que escribió, y le dan al generador un blanco
 # al cual anexar. Nadie tiene que acertarle — el relato manda sobre las marcas.
 #
+# El último campo reemplaza al viejo "¿qué te inventaste?": pregunta por FUENTE,
+# no por confesión. Sigue disparando canon:propuesta cuando la parte de suposición
+# introduce material nuevo, pero se lee como método del archivo y no como sospecha.
+#
 # CONTRATO DE PARSEO: el generador lee el cuerpo del issue por el TEXTO de cada
 # "label", no por el "id". Cambiar el texto de una label rompe el parser.
 # Tratarlas como nombres de variable.
@@ -17,8 +21,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Escribe de corrido, como se lo contarías a alguien. No hace falta que
-        ordenes nada ni que uses palabras técnicas — de eso se encarga el archivo.
+        Escribe de corrido, como se lo contarías a alguien. No hace falta que ordenes
+        nada, que uses palabras técnicas ni que suene bien: el archivo reescribe todo
+        a su registro. Lo que no puede hacer es inventar lo que tú viste.
 
         Si algo no lo sabes, déjalo así. Un hueco declarado vale más que un relleno.
 
@@ -27,8 +32,9 @@ body:
     attributes:
       label: ¿Cuál criatura?
       description: >-
-        ¿No está en la lista? Entonces la tarjeta que buscas es
-        "Una bestia que no está registrada".
+        Solo aparecen las fichas abiertas a aportes. Las que faltan tienen el
+        expediente cerrado. ¿No está la tuya porque nadie la ha registrado? Entonces
+        la tarjeta que buscas es "Una bestia que no está registrada".
       options:
         - Cervato de Concreto
         - Gusano de Asfalto
@@ -51,23 +57,25 @@ body:
     attributes:
       label: ¿De qué parte sabes algo?
       description: >-
-        Marca las que apliquen. Es para saber a qué parte de la ficha mandar lo que
-        escribas — si le atinas a medias no pasa nada, el texto manda sobre las marcas.
+        Cada casilla es una parte distinta de la ficha. Marcarlas le dice al archivo
+        dónde acomodar tu texto — no es una lista de requisitos, y si le atinas a
+        medias no pasa nada: el relato manda sobre las marcas.
       options:
-        - label: Cómo es por fuera — tamaño, color, partes del cuerpo
-        - label: Cuánto mide o cuánto pesa
-        - label: Dónde vive y de qué — dónde la has visto, qué come, qué se la come
-        - label: Cómo se porta — si caza sola o en bola, a qué hora sale
-        - label: Cómo saber que está cerca antes de verla — ruido, olor, rastro
-        - label: Qué hacer si te la topas — qué funciona y qué se paga caro
+        - label: Cómo es por fuera — tamaño, color, partes del cuerpo · va a MORFOLOGÍA
+        - label: Cuánto mide o cuánto pesa · va a MORFOLOGÍA, tabla de medidas
+        - label: Dónde vive y de qué — dónde la has visto, qué come, qué se la come · va a ECOLOGÍA
+        - label: Cómo se porta — si caza sola o en bola, a qué hora sale · va a RESUMEN
+        - label: Cómo saber que está cerca antes de verla — ruido, olor, rastro · va a RESUMEN, detección
+        - label: Qué hacer si te la topas — qué funciona y qué se paga caro · va al PROTOCOLO DE CONTACTO
 
   - type: textarea
     id: relato
     attributes:
       label: Cuéntame
       description: >-
-        Si puedes, dime qué la delata antes de verla, qué error se paga caro,
-        cuánto mide, dónde vive, qué come y qué se la come.
+        Lo más útil no son los datos duros: es qué la delata antes de verla, qué error
+        se paga caro, cómo se mueve, a qué hora sale. Si además sabes cuánto mide,
+        dónde vive, qué come y qué se la come, mejor — pero con lo primero basta.
       placeholder: |
         La vi tres veces en el arroyo de atrás de la secundaria, siempre como a las
         seis de la tarde. Huele a fierro mojado antes de que la veas — eso es lo que
@@ -86,22 +94,27 @@ body:
     attributes:
       label: ¿Qué no se puede saber de ella, y por qué?
       description: >-
-        Opcional. Algo que nadie ha podido averiguar, y la razón. No es un hueco:
-        decir por qué no se puede saber también dice algo del animal.
+        Opcional. El archivo trata los huecos como dato: no es lo mismo "nadie lo ha
+        medido" que "quien fue a medirlo no volvió". Si sabes de algo que no se puede
+        averiguar y por qué, eso entra a la ficha tal cual.
       placeholder: |
         Nadie ha visto dónde duerme. La única vez que seguimos el rastro se metió al
         colector de la avenida, y ahí ya no entra nadie desde el invierno.
 
   - type: textarea
-    id: inventado
+    id: fuente
     attributes:
-      label: ¿Qué te inventaste?
+      label: ¿Qué te consta y qué estás suponiendo?
       description: >-
-        Sin problema si inventaste — nomás dilo. Lo que marques aquí se revisa aparte
-        antes de entrar al archivo.
+        Separa lo que viste tú de lo que dedujiste o te contaron. Las dos cosas entran:
+        lo observado como dato, lo supuesto como hipótesis abierta con tu nombre encima.
+        Nada se tira por ser suposición — lo único que rompe una ficha es no saber cuál
+        es cuál.
       placeholder: |
-        El nombre me lo saqué de la manga. Lo del olor a fierro sí es real; lo de que
-        cazan en pareja es suposición mía, porque siempre vi dos.
+        Me consta el olor a fierro y que se llevó al gato: eso lo vi yo.
+
+        Que cazan en pareja es suposición mía, nomás porque siempre vi dos juntas.
+        Lo del ruido de agua adentro me lo contó otra persona, yo no se lo oí.
 
   - type: markdown
     attributes:
@@ -109,7 +122,7 @@ body:
         ---
         **Qué pasa con esto**
 
-        Entra a la ficha de la criatura que escogiste, en las pestañas que marcaste
+        Entra a la ficha de la criatura que escogiste, en las partes que marcaste
         arriba. **Nada se sobrescribe**: lo tuyo se anexa a lo que ya está.
 
         No se publica solo. Sale como propuesta de cambio, alguien la revisa y la

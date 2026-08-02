@@ -1,4 +1,4 @@
-# Tarjeta 3 — expedientes EXP / INC.
+# Tarjeta 4 — expedientes EXP / INC.
 #
 # La FASE DE TÉRMINO es siempre retenida por construcción (modelo AH-EXP-001:
 # fases 1 y 2 accesibles, término bajo Clase A). Por eso no se pregunta el
@@ -7,6 +7,9 @@
 #
 # GUARDIÁN EN EL CONTROL: no hay campo para decir quién estaba. Sin campo, nadie
 # atribuye nada a un sobreviviente nombrado y no hace falta advertirlo por escrito.
+#
+# El último campo reemplaza al viejo "¿qué te inventaste?": pregunta por FUENTE,
+# no por confesión. Ver nota en 01-bestia-adicion.yml.
 #
 # CONTRATO DE PARSEO: el generador lee por el TEXTO de cada "label", no por el "id".
 
@@ -19,14 +22,19 @@ body:
   - type: markdown
     attributes:
       value: |
-        No hace falta que sepas cómo terminó. Cuenta lo que alcanzaste a ver;
-        el final lo cierra el archivo.
+        Un expediente no es la ficha del animal: es lo que pasó una vez, en un lugar,
+        a una hora. Se lee aparte y se le cuelga a la ficha.
+
+        **No hace falta que sepas cómo terminó.** Cuenta hasta donde alcanzaste a ver;
+        el final lo cierra el archivo, y lo cierra tachado.
 
   - type: dropdown
     id: criatura
     attributes:
       label: ¿Cuál criatura estuvo involucrada?
-      description: Si fue un animal que todavía no está registrado, escoge la última opción.
+      description: >-
+        Si fue un animal que todavía no está registrado, escoge la última opción: el
+        expediente se guarda y se le cuelga a su ficha en cuanto exista.
       options:
         - Cervato de Concreto
         - Gusano de Asfalto
@@ -50,8 +58,10 @@ body:
     attributes:
       label: ¿Qué pasó?
       description: >-
-        En orden, desde antes de que empezara. Qué se estaba haciendo, qué salió
-        distinto, y hasta dónde alcanzaste a ver.
+        En orden, desde antes de que empezara. Qué se estaba haciendo, qué se notó
+        distinto, y hasta dónde alcanzaste a ver. Lo que hace bueno un expediente es
+        el detalle que en su momento no significaba nada — el charco donde no había
+        llovido, el ruido que se oyó dos veces.
       placeholder: |
         Íbamos a sacar agua del tanque de arriba, como todas las semanas. La escalera
         estaba mojada del lado norte, que ya era raro porque no había llovido.
@@ -67,7 +77,10 @@ body:
     id: lugar_fecha
     attributes:
       label: ¿Dónde y cuándo?
-      description: Aunque sea aproximado. Sirve más la hora del día que la fecha exacta.
+      description: >-
+        Aunque sea aproximado. En el archivo casi nadie tiene fecha exacta: se cuenta
+        el tiempo por semanas desde la Emergencia, y la hora del día importa más que
+        el día — muchas de estas cosas solo pasan de noche o al amanecer.
       placeholder: Tanque elevado del fraccionamiento, poco antes del amanecer
 
   - type: textarea
@@ -75,20 +88,26 @@ body:
     attributes:
       label: ¿Qué cambió después?
       description: >-
-        Qué se dejó de hacer, qué regla nueva salió de ahí, qué ya no se toca.
-        Esto es lo que vuelve útil un incidente.
+        Qué se dejó de hacer, qué regla nueva salió de ahí, qué ya no se toca. Esto es
+        lo que vuelve útil un incidente: sin esta parte es una anécdota, con ella es
+        un protocolo. De aquí salen las reglas que aparecen en la ficha del animal.
       placeholder: |
         Al tanque de arriba ya no sube nadie solo, y nunca antes de que aclare.
         El agua ahora se saca del de abajo aunque salga con tierra.
 
   - type: textarea
-    id: inventado
+    id: fuente
     attributes:
-      label: ¿Qué te inventaste?
-      description: Sin problema si inventaste — nomás dilo. Se revisa aparte.
+      label: ¿Qué te consta y qué estás suponiendo?
+      description: >-
+        Separa lo que viste de lo que reconstruiste después o te contaron. Las dos
+        cosas entran: lo presenciado como registro, lo reconstruido marcado como tal.
+        Un expediente donde no se distingue una cosa de la otra no se puede usar.
       placeholder: |
-        Lo del ruido de agua es real. Lo de que la escalera estaba mojada lo agregué
-        yo para que cuadrara, no me consta.
+        Lo del ruido de agua me consta, lo oí yo desde la escalera.
+
+        Lo de que estaba mojada del lado norte lo agregué al recordarlo, no juraría
+        que fue así. Que se metió por el desagüe nos lo contaron después.
 
   - type: markdown
     attributes:

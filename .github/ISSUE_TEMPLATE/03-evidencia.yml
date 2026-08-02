@@ -1,8 +1,11 @@
-# Tarjeta 2 — evidencia visual y sonora.
+# Tarjeta 3 — evidencia visual y sonora.
 #
 # La CLASE no se pregunta, se deriva: material de contribuidor es Clase C por
 # definición (Clase A es "procesado en laboratorio APE"). El ID <INI>-VIS-00N lo
 # deriva el script contando la galería, nunca el contribuidor.
+#
+# El último campo reemplaza al viejo "¿qué te inventaste?": pregunta por FUENTE,
+# no por confesión. Ver nota en 01-bestia-adicion.yml.
 #
 # CONTRATO DE PARSEO: el generador lee por el TEXTO de cada "label", no por el "id".
 
@@ -16,13 +19,16 @@ body:
     attributes:
       value: |
         Un dibujo a mano vale más que una foto perfecta. Lo que se busca es material
-        de campo: apurado, incompleto, hecho por alguien que tenía prisa.
+        de campo: apurado, incompleto, hecho por alguien que tenía prisa y poca luz.
+        Si te salió chueco, así sirve.
 
   - type: dropdown
     id: criatura
     attributes:
       label: ¿De cuál criatura?
-      description: Si es de un animal que todavía no está registrado, escoge la última opción.
+      description: >-
+        Si es de un animal que todavía no está registrado, escoge la última opción:
+        el material se guarda y se le cuelga a su ficha en cuanto exista.
       options:
         - Cervato de Concreto
         - Gusano de Asfalto
@@ -47,7 +53,8 @@ body:
       label: El archivo
       description: >-
         Arrastra aquí la imagen o el audio y suéltalo. GitHub lo sube solo y deja un
-        link en la caja — no borres ese link. Puedes soltar varios.
+        link en la caja — no borres ese link, es el archivo. Puedes soltar varios.
+        Sirve imagen (dibujo, foto, escaneo) y audio.
       placeholder: Arrastra el archivo a esta caja…
     validations:
       required: true
@@ -57,7 +64,10 @@ body:
     attributes:
       label: ¿Qué estamos viendo?
       description: >-
-        Qué parte del animal es, en qué momento, y qué no se alcanza a ver o a oír.
+        Esto se convierte en el pie de foto dentro de la ficha, así que es lo que va a
+        leer todo el mundo. Di qué parte del animal es, en qué momento, y sobre todo
+        qué NO se alcanza a ver o a oír — el archivo prefiere una imagen con sus
+        límites declarados que una que promete de más.
       placeholder: |
         Es la pata de atrás, la izquierda. La dibujé de memoria como media hora
         después, por eso el tamaño de la garra no lo garantizo.
@@ -71,15 +81,23 @@ body:
     id: lugar_fecha
     attributes:
       label: ¿Dónde y cuándo?
-      description: Aunque sea aproximado. "Como a los dos meses, por el sur" sirve.
+      description: >-
+        Aunque sea aproximado — "como a los dos meses, por el sur" sirve. En el archivo
+        casi nadie tiene fecha exacta: se cuenta el tiempo por semanas desde la
+        Emergencia, y la hora del día importa más que el día.
       placeholder: Canal de la avenida, tarde, tercera semana
 
   - type: textarea
-    id: inventado
+    id: fuente
     attributes:
-      label: ¿Qué te inventaste?
-      description: Sin problema si inventaste — nomás dilo. Se revisa aparte.
+      label: ¿Qué te consta y qué estás suponiendo?
+      description: >-
+        En un dibujo casi siempre hay las dos cosas: partes que viste y partes que
+        completaste para que la figura cerrara. Di cuáles son cuáles. Las dos entran —
+        lo completado se anota en el pie como reconstrucción, no se borra.
       placeholder: |
+        Las patas y el lomo los vi bien, estaba como a diez metros.
+
         El ojo lo puse porque el dibujo se veía raro sin él, pero nunca le vi la cara.
 
   - type: markdown
@@ -92,7 +110,8 @@ body:
         audios. Se anexa al final; lo que ya estaba no se toca.
 
         Entra como **Clase C — evidencia primaria sin procesar**. No es un demérito:
-        es la clase de todo lo que viene directo de campo. Clase A y B se reservan
-        para material que pasó por laboratorio.
+        es la clase de todo lo que viene directo de campo, y es la única que se puede
+        leer sin autorización. Clase A y B se reservan para material que pasó por
+        laboratorio.
 
         No se publica solo. Sale como propuesta de cambio y alguien lo revisa.
