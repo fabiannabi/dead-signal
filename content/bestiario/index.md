@@ -121,6 +121,7 @@ title: "Bestiario"
       <button class="tag-btn" data-filter="f-02">F-02 Felipe</button>
       <button class="tag-btn" data-filter="f-03">F-03 Gaby</button>
       <button class="tag-btn" data-filter="f-05">F-05 Carlos</button>
+      <button class="tag-btn" data-filter="sin-atribucion">Sin atribuir · sensor CENVAC</button>
     </div>
   </div>
 </div>
@@ -312,7 +313,7 @@ title: "Bestiario"
   </div>
 </a>
 
-<a href="/bestiario/rata-coendu" class="entry-item" data-tags="amenaza-ii,carnivoro">
+<a href="/bestiario/rata-coendu" class="entry-item" data-tags="amenaza-ii,carnivoro,sin-atribucion">
   <div class="entry-header">
     <span class="entry-threat">Amenaza II — Omnívoro</span>
     <div class="entry-status documentado"><span class="entry-status-dot"></span>documentado</div>
